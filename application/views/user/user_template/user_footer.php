@@ -16,11 +16,37 @@
 			</div>
 		</div>
 	</div>
-	
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url()?>assets/js/fontsmoothie.min.js" async></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url()?>assets/js/unslider-min.js"></script>
+	<script src="<?php echo base_url()?>assets/js/fontsmoothie.min.js"></script>
+	<script src="<?php echo base_url()?>assets/js/wow.min.js"></script>
+	<script type="text/javascript">
+		//EFFECT TRANSITION
+		var wow = new WOW(
+			{
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       100,          // distance to the element when triggering the animation (default is 0)
+				mobile:       true,       // trigger animations on mobile devices (default is true)
+				live:         true,       // act on asynchronously loaded content (default is true)
+				callback:     function(box) {
+				  // the callback is fired every time an animation is started
+				  // the argument that is passed in is the DOM node being animated
+				}
+			}
+		);
+		wow.init();
+		
+		//slider function
+		$('.infinite-slider').unslider({
+			animation: 'fade',
+			delay: 5000,
+			autoplay: true,
+			arrows: true
+		});
+	</script>
   </body>
 </html>
