@@ -51,7 +51,7 @@
 			</div>
 			<div class="col-md-4 inner-beauty wow zoomIn">
 				<img src="<?php echo base_url()?>assets/img/img-3.svg" />
-				<h4>Tingkatkan Kemampuan Anda</h4>
+				<h4>Tumbuhkan Kecerdasan Anda</h4>
 				<p>Whatever your skill level, working on open source software is a great way to learn new things.</p>
 			</div>
 		</div>
