@@ -19,8 +19,27 @@ class Daftar extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-// 		echo 'haidar';
+		// echo 'haidar';
 		$data['title'] = "haidar";
 		$this->load->user_template('user/signup', $data);
 	}
+
+	public function submit() {
+		$post = $this->input->post();
+		if($post) {
+			unset($post['re_password']);
+			//print_r($post);
+			$this->mdaftar->insertUser($post);
+			redirect('daftar/berhasil');
+		}
+	}
+	
+	public function berhasil() {
+		$data['title'] = "berhasil";
+		$this->load->user_template('user/signup_success', $data);
+	}
+	
 }
+
+
+

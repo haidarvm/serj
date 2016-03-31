@@ -21,25 +21,24 @@
 			<div class="col-md-6 col-md-offset-3 single-inner wow fadeIn">
 				<div class="box-form">
 					<h2 class="wow pulse">Daftar</h2>
-					
 					<div class="bform">
-						<form>
+						<form action="<?php echo site_url()?>daftar/submit" id="validation-reg" method="post">
 							<div class="form-group">
 								<label>Nama Lengkap</label>
-								<input type="text" class="form-control">
+								<input type="text" name="full_name" class="form-control">
 							</div>
 							<div class="gender">
 								<label>Kelamin</label>
 							</div>
 							<div class="radio-inline">
 							  <label>
-								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								<input type="radio" name="gender" id="optionsRadios1" value="l" checked>
 								Laki-laki
 							  </label>
 							</div>
 							<div class="radio-inline">
 							  <label>
-								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								<input type="radio" name="gender" id="optionsRadios1" value="p">
 								Perempuan
 							  </label>
 							</div>
@@ -49,29 +48,34 @@
 							</div>
 							<div class="three-col">
 								<div class="form-group">
-									<input type="text" class="form-control" id="date-picker" placeholder="Day">
+									<input type="date" name="date_birth" class="form-control">
 								</div>
 								<div class="clearfix"></div>
 							</div>
 							
 							<div class="form-group">
-								<label>Email Address</label>
-								<input type="email" class="form-control">
+								<label>Alamat email</label>
+								<input type="email" name="email" class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Password</label>
-								<input type="password" class="form-control">
+								<input type="password" name="password" id="password" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Confirm Password</label>
-								<input type="password" class="form-control">
+								<label>Ulangi Password</label>
+								<input type="password" name="re_password" id="re_password"  class="form-control">
 							</div>
-							
-							<div class="checkbox">
-								<label>
-									<input type="checkbox"> Agree with <a href="#">Terms & Conditions</a>
-								</label>
-								<div class="clearfix"></div>
+							<div class="form-group">
+								<label>Nama Sekolah</label>
+								<input type="text" name="school" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Kelas</label>
+								<input type="text" name="grade" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Kota</label>
+								<input type="text" name="city" class="form-control">
 							</div>
 							
 							<button type="submit" class="btn btn-success">Sign up</button>
@@ -80,7 +84,7 @@
 							<div class="tagline nopadding"><hr /></div>
 							
 							<div class="form-group wow fadeIn">
-								<p>Already a member? <a href="#">Sign in here</a>.</p>
+								<p>Sudah menjadi member? <a href="#">Masuk di sini</a>.</p>
 							</div>
 						</form>
 					</div>
