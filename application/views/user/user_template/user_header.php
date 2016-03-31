@@ -26,15 +26,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand">MBS-foundation</a>
+          <a href="<?php echo site_url()?>" class="navbar-brand">MBS-foundation</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#contact">BJEE</a></li>
-            <li><a href="#contact">Serbuk</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#contact">Kontak</a></li>
+            <li class="active"><a href="<?php echo site_url()?>">Home</a></li>
+            <li><a href="#bjee">BJEE</a></li>
+            <li><a href="#serbuk">Serbuk</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#kontak">Kontak</a></li>
             <!--<li class="dropdown">
               <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
