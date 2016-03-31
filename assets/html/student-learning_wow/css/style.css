@@ -117,6 +117,11 @@ body {
 	box-shadow: 0 0 3px 0 #dedede !important;
 }
 
+.inner-sign {
+	background: #f9f9f9;
+	margin-top: -20px;
+	margin-bottom: -20px;
+}
 .inner-beauty {
 	text-align: center;
 	margin-bottom: 40px;
@@ -482,48 +487,59 @@ body {
 	text-align: center;
 }
 
-.signin .tagline{ 
+.box-form .tagline{ 
 	margin: 40px 0 0;
 }
-.signin {
-	min-height: 565px;
-	text-align: center;
-	padding: 100px 50px 0;
-	box-shadow: 0 0 45px 30px #eee inset;
-}
-.signin h2 {
-	margin-bottom: 50px;
-}
-.signin button {
+.bform {
 	margin: 0 auto;
-	width: 70%;
+    width: 70%;
+}
+.signin {
+	padding-top: 100px;
+	background: #f9f9f9;
+	/* box-shadow: 0 0 45px 30px #eee inset; */
+}
+.box-form h2 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.box-form button {
+	margin: 0 auto;
+	width: 100%;
 	font-size: 16px;
 	border-radius: 0;
+	border-width: 2px;
+}
+.box-form p {
+	text-align: center;
 }
 .form-control {
-	border: 0;
-	border-bottom: 2px solid #dedede;
+	border: 2px solid #dedede;
+	height: 40px;
 	box-shadow: none;
-	width: 70%;
 	margin: 0 auto;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 	border-radius: 0;
 }
 .form-control:focus {
-	border-bottom: 2px solid #e8400d;
+	border: 2px solid #e8400d;
 	box-shadow: none;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
+label {
+	font-weight: normal !important;
+	text-align: left !important;
+}
 .checkbox {
 	text-align: left;
-	margin-left: 80px;
+	margin-left: 15px;
 	margin-bottom: 30px;
 }
 .checkbox a{
 	float: right;
-	margin-right: 80px;
+	margin-right: 15px;
 	color: #e8400d;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
@@ -585,14 +601,11 @@ body {
 }
 .three-col {
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
 }
-.signup .firstradio {
-	margin-left: 95px;
-	float: left;
-}
-.signup .radio-inline {
-	float: left;
+.box-form .radio-inline {
+	margin-bottom: 10px;
+	margin-left: 15px;
 }
 .signup label {
 	font-weight: normal;
@@ -603,13 +616,24 @@ body {
 }
 .signup button {
 	margin: 0 auto;
-	width: 70%;
+	width: 100%;
 	font-size: 16px;
 	border-radius: 0;
 }
-.signup .three-col .form-group input {
+.three-col .form-group input {
 	width: 100%;
 }
-.signup .col-md-3 {
-	margin-right: 5px !important;
+.col-md-3 {
+	margin-right: 10px !important;
+}
+
+.single-inner {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+.box-form {
+	background: #fff;
+	border-bottom: 3px solid #dadada;
+	padding: 10px 20px;
+	box-shadow: 0 0 45px 10px #eee;
 }

@@ -17,78 +17,73 @@
 	<!-- form login -->
 	<div class="container">
 		<div class="row">
-		
-		
 			<!-- sign up -->
-			<div class="col-md-12 nopadding box-sign wow fadeIn">
-				<div class="col-md-6 signup">
-					<h2>Daftar</h2>
-					<div class="form-group">
-						<input type="text" name="full_name" class="form-control" placeholder="Nama Lengkap">
-					</div>
-					<div class="radio-inline firstradio">
-					  <label>
-						<input type="radio" name="gender" id="optionsRadios1" value="option1" checked>
-						Male
-					  </label>
-					</div>
-					<div class="radio-inline">
-					  <label>
-						<input type="radio" name="gender" id="optionsRadios1" value="option1">
-						Female
-					  </label>
-					</div>
-					<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3 single-inner wow fadeIn">
+				<div class="box-form">
+					<h2 class="wow pulse">Daftar</h2>
 					
-					<div class="three-col">
-						<div class="col-md-3 nopadding">
+					<div class="bform">
+						<form>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Tanngal">
+								<label>Nama Lengkap</label>
+								<input type="text" class="form-control">
 							</div>
-						</div>
-						<div class="col-md-3 nopadding">
+							<div class="gender">
+								<label>Kelamin</label>
+							</div>
+							<div class="radio-inline">
+							  <label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Laki-laki
+							  </label>
+							</div>
+							<div class="radio-inline">
+							  <label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Perempuan
+							  </label>
+							</div>
+							
+							<div class="gender">
+								<label>Tanggal Lahir</label>
+							</div>
+							<div class="three-col">
+								<div class="form-group">
+									<input type="text" class="form-control" id="date-picker" placeholder="Day">
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Bulan">
+								<label>Email Address</label>
+								<input type="email" class="form-control">
 							</div>
-						</div>
-						<div class="col-md-3 nopadding">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Tahun">
+								<label>Password</label>
+								<input type="password" class="form-control">
 							</div>
-						</div>
+							<div class="form-group">
+								<label>Confirm Password</label>
+								<input type="password" class="form-control">
+							</div>
+							
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Agree with <a href="#">Terms & Conditions</a>
+								</label>
+								<div class="clearfix"></div>
+							</div>
+							
+							<button type="submit" class="btn btn-success">Sign up</button>
+							
+							<!-- line fullscreen line -->
+							<div class="tagline nopadding"><hr /></div>
+							
+							<div class="form-group wow fadeIn">
+								<p>Already a member? <a href="#">Sign in here</a>.</p>
+							</div>
+						</form>
 					</div>
-					
-					<div class="form-group">
-						<input type="email" class="form-control" placeholder="Alamat Email">
-					</div>
-					<div class="form-group">
-						<input type="text" name="full_name" class="form-control" placeholder="Nama Sekolah">
-					</div>
-					<div class="form-group">
-						<input type="text" name="full_name" class="form-control" placeholder="Kelas">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Password">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Ulangi Password">
-					</div>
-					
-					
-					
-					<button type="submit" class="btn btn-success">Daftar</button>
-					
-					<!-- line fullscreen line -->
-					<div class="tagline nopadding"><hr /></div>
-					
-					<div class="form-group">
-						<p>Already a member? <a href="#">Sign in here</a>.</p>
-					</div>
-			</div>
-				
-				<div class="col-md-6 nopadding inner-img wow fadeIn">
-				<img src="<?php echo base_url()?>assets/img/img11.jpg" alt="" width="564" height="564" border="0" />
-					<div class="box-shadow-img"></div>
 				</div>
 			</div>
 		</div>

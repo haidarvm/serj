@@ -50,8 +50,8 @@
           <ul class="nav navbar-nav navbar-right">
             <!--<li class="active"><a href="#">Fixed top</a></li>
             <li><a href="#">Fixed top</a></li>-->
-            <li><button type="button" class="btn btn-default navbar-btn">Masuk</button></li>
-            <li><button type="button" class="btn btn-success navbar-btn">Daftar</button></li>
+            <li><a href="<?php echo site_url()?>masuk" class="btn btn-default navbar-btn">Masuk</a></li>
+            <li><a href="<?php echo site_url()?>daftar" class="btn btn-success navbar-btn">Daftar</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

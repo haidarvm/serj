@@ -48,8 +48,6 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#">Fixed top</a></li>
             <li><a href="#">Fixed top</a></li>
-            <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
-            <li><button type="button" class="btn btn-success navbar-btn">Sign up</button></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -74,77 +72,89 @@
 	<div class="container">
 		<div class="row">
 			<!-- sign up -->
-			<div class="col-md-12 nopadding box-sign wow fadeIn">
-				<div class="col-md-6 signup">
-					<h2>Sign up</h2>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="First Name">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Last Name">
-					</div>
-					<div class="radio-inline firstradio">
-					  <label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-						Male
-					  </label>
-					</div>
-					<div class="radio-inline">
-					  <label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-						Female
-					  </label>
-					</div>
-					<div class="clearfix"></div>
+			<div class="col-md-6 col-md-offset-3 single-inner wow fadeIn">
+				<div class="box-form">
+					<h2 class="wow pulse">Sign up</h2>
 					
-					<div class="three-col">
-						<div class="col-md-3 nopadding">
+					<div class="bform">
+						<form>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Day">
+								<label>First Name</label>
+								<input type="text" class="form-control">
 							</div>
-						</div>
-						<div class="col-md-3 nopadding">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Month">
+								<label>Last Name</label>
+								<input type="text" class="form-control">
 							</div>
-						</div>
-						<div class="col-md-3 nopadding">
+							
+							<div class="gender">
+								<label>Gender</label>
+							</div>
+							<div class="radio-inline">
+							  <label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Male
+							  </label>
+							</div>
+							<div class="radio-inline">
+							  <label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Female
+							  </label>
+							</div>
+							
+							<div class="gender">
+								<label>Birth</label>
+							</div>
+							<div class="three-col">
+								<div class="col-md-3 nopadding">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Day">
+									</div>
+								</div>
+								<div class="col-md-3 nopadding">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Month">
+									</div>
+								</div>
+								<div class="col-md-3 nopadding">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Year">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Year">
+								<label>Email Address</label>
+								<input type="email" class="form-control">
 							</div>
-						</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Confirm Password</label>
+								<input type="password" class="form-control">
+							</div>
+							
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Agree with <a href="#">Terms & Conditions</a>
+								</label>
+								<div class="clearfix"></div>
+							</div>
+							
+							<button type="submit" class="btn btn-success">Sign up</button>
+							
+							<!-- line fullscreen line -->
+							<div class="tagline nopadding"><hr /></div>
+							
+							<div class="form-group wow fadeIn">
+								<p>Already a member? <a href="#">Sign in here</a>.</p>
+							</div>
+						</form>
 					</div>
-					
-					<div class="form-group">
-						<input type="email" class="form-control" placeholder="Email Address">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Password">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Confirm Password">
-					</div>
-					
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Agree with <a href="#">Terms & Conditions</a>
-						</label>
-						<div class="clearfix"></div>
-					</div>
-					
-					<button type="submit" class="btn btn-success">Sign up</button>
-					
-					<!-- line fullscreen line -->
-					<div class="tagline nopadding"><hr /></div>
-					
-					<div class="form-group">
-						<p>Already a member? <a href="#">Sign in here</a>.</p>
-					</div>
-			</div>
-				
-				<div class="col-md-6 nopadding inner-img wow fadeIn">
-				<img src="img/img11.jpg" alt="" width="564" height="564" border="0" />
-					<div class="box-shadow-img"></div>
 				</div>
 			</div>
 		</div>
