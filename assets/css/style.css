@@ -342,7 +342,7 @@ body {
 		width: 100%;
 	}
 	.half-column img {
-		width: 50%;
+		width: 40%;
 		display: table;
 		margin: 0 auto;
 	}
@@ -738,6 +738,12 @@ label {
 		height: 300px;
 	}
 	.half-column img {
-		width: 20%;
+		width: 30%;
+	}
+	.inner-beauty p {
+		padding: 0 100px;
+	}
+	.half-column p {
+		padding: 0 100px;
 	}
 }
