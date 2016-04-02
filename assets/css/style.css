@@ -343,6 +343,7 @@ body {
 .unslider-wrap img{
 	width: 100%;
 	position: relative;
+	height: 433px;
 }
 .unslider-wrap.unslider-carousel>li{
 	float: left;
@@ -430,7 +431,7 @@ body {
 }
 .unslider-arrow.prev {
 	left: 15px;
-	top: 50%;
+	top: 45%;
 	text-indent: -999em;
 	background-position: 15px 10px;
 	-moz-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
@@ -443,11 +444,11 @@ body {
 	text-indent: -999em;
 	background-position: 14px 12px;
 	right: 15px;
-	top: 50%;
+	top: 45%;
 }
 
 .infinite-slider {
-	height: 525px;
+	height: 435px;
 }
 .desc-slider {
 	position: absolute;
