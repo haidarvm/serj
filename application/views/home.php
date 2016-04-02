@@ -35,23 +35,23 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 inner-beauty wow fadeInUp">
-				<h2>Bandung Juara Education Expo 2016</h2>
+				<h2>Bandung Juara Education Expo BJEE 2016</h2>
 				
-				<h3>Open source software is free for you to use and explore. Get involved to perfect your craft and be part of something big.</h3> 
+				<h3>Smart Learning, Future Leading.</h3> 
 			</div>
 			<div class="col-md-4 inner-beauty wow zoomIn">
 				<img src="<?php echo base_url()?>assets/img/img-1.svg" />
-				<h4>Membangun Masa Depan Anda</h4>
+				<h4>Membangun Masa Depan</h4>
 				<p>Your contributions help make technology better for everyone, developers and non-developers alike.</p>
 			</div>
 			<div class="col-md-4 inner-beauty wow zoomIn">
 				<img src="<?php echo base_url()?>assets/img/img-2.svg" />
-				<h4>Menjadi Pemenang Perlombaan</h4>
+				<h4>Menjadi Pemenang Peradaban</h4>
 				<p>Amazing developers use GitHub. Contribute code to projects that change how software is built.</p>
 			</div>
 			<div class="col-md-4 inner-beauty wow zoomIn">
 				<img src="<?php echo base_url()?>assets/img/img-3.svg" />
-				<h4>Tumbuhkan Kecerdasan Anda</h4>
+				<h4>Tumbuhkan Kepedulian Sosial</h4>
 				<p>Whatever your skill level, working on open source software is a great way to learn new things.</p>
 			</div>
 		</div>
@@ -83,7 +83,7 @@ Memperebutkan Trofi Walikota Bandung.</p>
 					<h2>Lomba Fotografi</h2>
 					<p>Bagi siswa SMP/SMA sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota dan hadiah jutaan rupiah</p>
+Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
 				</div>
 				
 				<div class="col-md-5 half-column go-right wow fadeIn">
@@ -100,8 +100,7 @@ Memperebutkan Trofi Walikota dan hadiah jutaan rupiah</p>
 				</div>
 				
 				<div class="col-md-6 half-column wow zoomInLeft">
-					<h2>Test Bakat</h2>
-					<p>Talk Show Pendidikan: “Kenali Bakatmu, Asah Potensimu”
+					<h2>Talk Show Pendidikan: “Kenali Bakatmu, Asah Potensimu”</h2>
 <p>Dr. H. Elih Suryapermana (Kadisdik )</p>
 <p>Witrin Gamayanti M.Si Psikologi</p>
 <p>Free Konsultasi </p>
@@ -137,21 +136,6 @@ Memperebutkan Trofi Walikota dan hadiah jutaan rupiah</p>
 				</div>
 			</div>
 			
-			<!-- line half screen line inset -->
-			<div class="col-md-12 tagline"><hr /></div>
-			
-			<div class="left-img">
-				<div class="col-md-6 half-column go-right wow fadeIn">
-					<img src="<?php echo base_url()?>assets/img/talkshow.jpg" alt="" width="453" height="242" border="0" />
-				</div>
-				<div class="col-md-6 half-column wow zoomInRight">
-					<h2>Talk Show Pendidikan: “Kenali Bakatmu, Asah Potensimu”</h2>
-					<p>Dr. H. Elih Suryapermana (Kadisdik )</p>
-					<p>Witrin Gamayanti M.Si Psikologi</p>
-					<p>Free Konsultasi </p>
-					<p>Tes Minat & Bakat</p>
-				</div>
-			</div>
 			
 			<!-- line half screen line inset -->
 			<div class="col-md-12 tagline"><hr /></div>
@@ -159,7 +143,7 @@ Memperebutkan Trofi Walikota dan hadiah jutaan rupiah</p>
 			<div class="right-img">
 				<div class="col-md-6 half-column wow zoomInLeft">
 					<h2>Juara</h2>
-					<p>Memperoleh penghargaan Trofi Walikota dan hadiah jutaan rupiah</p>
+					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
 				</div>
 				
 				<div class="col-md-6 half-column go-right wow fadeIn">
