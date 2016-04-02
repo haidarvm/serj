@@ -284,6 +284,9 @@ body {
 
 
 @media (max-width: 960px) {
+	.navbar-default .navbar-nav > li > a {
+		padding: 25px 17px;
+	}
 	.left-img {
 		border-bottom: 1px solid #eee;
 		box-shadow: 0 0 3px 0 #dedede !important;
