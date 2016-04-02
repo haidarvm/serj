@@ -77,6 +77,11 @@
 								<label>Kota</label>
 								<input type="text" name="city" class="form-control">
 							</div>
+							<div class="form-group">
+								<label>Ikuti Lomba foto
+								<input type="checkbox" name="lomba_foto" value="1">
+								</label>
+							</div>
 							
 							<button type="submit" class="btn btn-success">Sign up</button>
 							

@@ -28,7 +28,7 @@ class Daftar extends MY_Controller {
 		$post = $this->input->post();
 		if($post) {
 			unset($post['re_password']);
-			//print_r($post);
+			//print_r($post);exit;
 			$this->mdaftar->insertUser($post);
 			redirect('daftar/berhasil');
 		}

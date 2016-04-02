@@ -26,7 +26,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="<?php echo site_url()?>" class="navbar-brand">MBS-foundation</a>
+          <a href="<?php echo site_url()?>" class="navbar-brand">
+          <img src="<?php echo base_url()?>assets/img/logo.jpg" alt="" width="63" height="60" border="0" /></a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">

@@ -52,7 +52,6 @@ body {
 .nopadding {
 	padding: 0 !important;
 }
-
 .carousel-inner {
 	margin-bottom: 30px;
 	box-shadow: 0 0 5px 2px #000 !important;
@@ -85,9 +84,7 @@ body {
 	color: #e8400d !important;
 }
 .navbar-brand {
-	height: auto !important;
-	min-height: 50px;
-	padding: 25px 15px !important;
+	padding: 7px 10px 0 0 !important;
 }
 .navbar-btn {
     margin-top: 18px !important;

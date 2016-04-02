@@ -68,8 +68,10 @@
 				</div>
 				
 				<div class="col-md-6 half-column wow zoomInLeft">
-					<h2>Lomba Mewarnai</h2>
-					<p>You can showcase projects you create and share them with potential contributors using GitHub Pages—free, public web pages hosted on GitHub.</p>
+					<h2>Lomba Mewarnai & Lomba Menggambar</h2>
+					<p>Bagi siswa TK / SD / Sederajat
+Se-kota Bandung dan sekitarnya
+Memperebutkan Trofi Walikota Bandung.</p>
 				</div>
 			</div>
 			
@@ -79,7 +81,9 @@
 			<div class="right-img">
 				<div class="col-md-7 half-column wow zoomInRight">
 					<h2>Lomba Fotografi</h2>
-					<p>Code that you contribute to public and open source projects will appear on your GitHub Profile, a visual record of your work.</p>
+					<p>Bagi siswa SMP/SMA sederajat
+Se-kota Bandung dan sekitarnya
+Memperebutkan Trofi Walikota dan hadiah jutaan rupiah</p>
 				</div>
 				
 				<div class="col-md-5 half-column go-right wow fadeIn">
@@ -97,7 +101,11 @@
 				
 				<div class="col-md-6 half-column wow zoomInLeft">
 					<h2>Test Bakat</h2>
-					<p>You can showcase projects you create and share them with potential contributors using GitHub Pages—free, public web pages hosted on GitHub.</p>
+					<p>Talk Show Pendidikan: “Kenali Bakatmu, Asah Potensimu”
+<p>Dr. H. Elih Suryapermana (Kadisdik )</p>
+<p>Witrin Gamayanti M.Si Psikologi</p>
+<p>Free Konsultasi </p>
+<p>Tes Minat & Bakat</p>
 				</div>
 			</div>
 		</div>
@@ -108,8 +116,7 @@
 		<div class="row">
 			<div class="col-md-7 box-quote wow pulse">
 				<h2>Mari Bergabung</h2>
-
-				<p>Whether you are new to code or ready to start a big project, there are a few ways to get involved in open source.</p>
+				<p>Kesekertariatan Bandung Juara Education Expo 2016/Muara Bhakti Organizer</p>
 			</div>
 		</div>
 	</div>
@@ -117,13 +124,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="right-img">
-				<div class="col-md-6 half-column wow zoomInLeft">
-					<h2>Diskusi</h2>
-					<p>Code that you contribute to public and open source projects will appear on your GitHub Profile, a visual record of your work.</p>
+				<div class="col-md-6 half-column wow zoomInRight">
+					<h2>Konsultasi Open House (Terbuka untuk Umum)</h2>
+					<p>Pameran Pendidikan </p>
+					<p>Konsultasi Minat Bakat</p>
+					<p>Komunitas Pendidikan</p>
+					<p>Pameran Beasiswa</p>
+					<p>Serta beragam stand menarik lainnya</p>
 				</div>
-				
 				<div class="col-md-6 half-column go-right wow fadeIn">
-					<img src="<?php echo base_url()?>assets/img/img5.png" alt="" width="326" height="318" border="0" />
+					<img src="<?php echo base_url()?>assets/img/img5.png" alt="" width="453" height="242" border="0" />
 				</div>
 			</div>
 			
@@ -132,12 +142,14 @@
 			
 			<div class="left-img">
 				<div class="col-md-6 half-column go-right wow fadeIn">
-					<img src="<?php echo base_url()?>assets/img/img2.png" alt="" width="453" height="242" border="0" />
+					<img src="<?php echo base_url()?>assets/img/talkshow.jpg" alt="" width="453" height="242" border="0" />
 				</div>
-				
 				<div class="col-md-6 half-column wow zoomInRight">
-					<h2>Tanya Jawab</h2>
-					<p>You can showcase projects you create and share them with potential contributors using GitHub Pages—free, public web pages hosted on GitHub.</p>
+					<h2>Talk Show Pendidikan: “Kenali Bakatmu, Asah Potensimu”</h2>
+					<p>Dr. H. Elih Suryapermana (Kadisdik )</p>
+					<p>Witrin Gamayanti M.Si Psikologi</p>
+					<p>Free Konsultasi </p>
+					<p>Tes Minat & Bakat</p>
 				</div>
 			</div>
 			
@@ -147,11 +159,11 @@
 			<div class="right-img">
 				<div class="col-md-6 half-column wow zoomInLeft">
 					<h2>Juara</h2>
-					<p>Code that you contribute to public and open source projects will appear on your GitHub Profile, a visual record of your work.</p>
+					<p>Memperoleh penghargaan Trofi Walikota dan hadiah jutaan rupiah</p>
 				</div>
 				
 				<div class="col-md-6 half-column go-right wow fadeIn">
-					<img src="<?php echo base_url()?>assets/img/img1.png" alt="" width="254" height="194" border="0" />
+					<img src="<?php echo base_url()?>assets/img/award.png" alt="" width="254" height="194" border="0" />
 				</div>
 			</div>
 		</div>
