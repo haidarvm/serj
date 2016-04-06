@@ -1,5 +1,72 @@
+@font-face {
+	font-family:'helveticaneuebold';
+	src: url('../fonts/helveticaneuebold.eot');
+	src: url('../fonts/helveticaneuebold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/helveticaneuebold.woff') format('woff'),
+		url('../fonts/helveticaneuebold.ttf') format('truetype'),
+		url('../fonts/helveticaneuebold.svg#helveticaneuebold') format('svg');
+		letter-spacing: 0.4 !important;
+}
+@font-face {
+	font-family:'sanpro';
+	src: url('../fonts/sanpro.eot');
+	src: url('../fonts/sanpro.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/sanpro.woff') format('woff'),
+		url('../fonts/sanpro.ttf') format('truetype'),
+		url('../fonts/sanpro.svg#sanpro') format('svg');
+}
+@font-face {
+	font-family:'helveticaneue';
+	src: url('../fonts/helveticaneue.eot');
+	src: url('../fonts/helveticaneue.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/helveticaneue.woff') format('woff'),
+		url('../fonts/helveticaneue.ttf') format('truetype'),
+		url('../fonts/helveticaneue.svg#helveticaneue') format('svg');
+}
+/* font smoothing for safari */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+}
+/* font smoothing for safari */
+btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn.active.focus,
+.btn:hover {
+	-webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  outline: none;
+  outline-offset: 0;
+}
+.btn {
+	-webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+a:hover {
+  text-decoration: none;
+  color: #d77b31 !important;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+a:focus {
+  outline: none;
+  text-decoration: none !important;
+}
+a:visited {
+  text-decoration: none;
+}
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family:'sanpro';
   background: url(../img/bg.png) no-repeat fixed;
   background-size: 100%;
   position: relative;
@@ -80,7 +147,7 @@ footer .copy{
 .header .form{
    margin-top:10px;
    width:100%;
-   max-width:350px;
+   max-width:400px;
    margin:10px auto;
 }
 
@@ -105,8 +172,9 @@ footer .copy{
 }
 
 .header .navbar .nav > li > a{
+	font-family:'sanpro';
    color:#000 !important;
-   font-size:13px !important;
+   font-size:16px !important;
    border-bottom:0px !important;
    margin-top:0px !important;
 }
@@ -222,7 +290,7 @@ footer .copy{
 .content-box, .content-box-large {
    margin-bottom:30px;
    background:#fff;
-   border-radius:10px;
+   border-radius:4px;
    padding:10px;
    border-left:1px solid #eee;
    border-top:1px solid #eee;
@@ -242,11 +310,11 @@ footer .copy{
 
 .content-box-header {
   min-height: 40px;
-   font-size: 16px;
+   font-size: 18px;
    background:#f5f5f5;
-   border-top-left-radius:5px;
-   border-top-right-radius:5px;
-   padding:10px;
+   border-top-left-radius:4px;
+   border-top-right-radius:4px;
+   padding:5px 0;
    border-left:1px solid #eee;
    border-top:1px solid #eee;
    border-right:2px solid #eee;
@@ -275,7 +343,7 @@ footer .copy{
 .sidebar .nav > li {
 	text-align: center;
 	margin: 0;
-   border-bottom:1px dashed #eee;
+   border-bottom:1px solid #e3e3e3;
 }
 .sidebar .nav > li i.fa {
 	font-size: 30px;
@@ -283,6 +351,7 @@ footer .copy{
 
 .sidebar .nav > li:last-child{
    border-bottom:0px;
+   padding-bottom: 45px;
 }
 
 .sidebar .nav > li li {
@@ -294,7 +363,8 @@ footer .copy{
 }
 
 .sidebar .nav > li > a {
-	font-size: 16px;
+	font-family:'helveticaneuebold';
+	font-size: 13px;
 	line-height: 20px;
 	padding: 15px 15px;
 	color: #999;
@@ -308,13 +378,14 @@ footer .copy{
 
 .sidebar .nav > li > a > i{
    margin-right:5px;
+   margin-bottom: 20px;
 }
 
 .sidebar .nav > li > ul > li > a {
 	font-size: 13px;
 	line-height: 20px;
 	padding: 8px 10px 8px 40px;
-	color: #999;
+	color: #d77b31;
    background:#fff;
 	display: block;
 	text-decoration: none;
@@ -325,24 +396,26 @@ footer .copy{
 .sidebar .nav > li > ul > li.active > a{
    background:#fff;
    border-top:0px;
-   color:#555;
+   color:#d77b31;
 }
 
 .sidebar .nav > li > ul > li > a:hover{
    background:#fff;
-   color:#555;
+   color:#d77b31;
    border-bottom:0px;
 }
 
 .sidebar .nav li a:hover, .sidebar .nav li.current > a {
 	background: #fff;
-	color: #555;
+	color: #d77b31;
    border-bottom:0px;
+   font-family: 'helveticaneuebold';
+   font-size: 13px;
 }
 
 .sidebar .nav li.open > a {
    background:#fff;
-   color: #555;
+   color: #d77b31;
    border-bottom:1px dashed #eee;
 }
 
@@ -564,6 +637,8 @@ body {
     float: left;
     padding: 10px 15px;
     padding-top: 0px;
+	font-family:'helveticaneuebold';
+	font-size: 18px;
 }
 
 .panel-heading>.panel-title>*, .content-box-header .panel-title>* {
@@ -668,24 +743,34 @@ body {
 }
 .navbar.navbar-inverse {
     float: right;
-    width: 60%;
+    width: 40%;
 }
 .header .navbar .nav > li > a {
-	float: left;
+	float: right;
+    padding: 15px 0;
 }
 .navbar-right {
     float: right !important;
     width: 100%;
+	padding: 0 !important;
 }
 .dropdown, .nav.navbar-nav {
     width: 100%;
 }
 .attention-panel {
-	float: left;
+	float: right;
 	position: relative;
+	margin-left: 45px;
+}
+.attention-panel i.fa.fa-plus {
+	color: #d77b31;
+	font-size: 20px;
+	position: relative;
+	top: 3px;
 }
 .attention-panel a {
 	color: #000;
+	font-family:'sanpro';
 }
 .attention-panel a:hover {
 	text-decoration: none;
@@ -694,10 +779,10 @@ body {
 	font-size: 16px;
 }
 .attention-panel span{
-	font-size: 14px;
+	font-size: 16px;
 	color: #000;
     line-height: 50px;
-	margin: 0 3px;
+	margin: 0 5px;
 }
 .notice {
 	color: #fff !important;
@@ -714,7 +799,8 @@ body {
 	border-radius: 99px;
 }
 .img-author {
-	float: left;
+	float: right;
+	margin-right: 10px;
     height: 50px;
     position: relative;
     width: 50px;
@@ -754,13 +840,19 @@ body {
     border-color: #d77b31;
     color: #ffffff;
 }
+.panel-all-green p {
+	font-size: 12px;
+}
 .panel-all-green {
 	background: #638e43;
 	border-color: #638e43;
 	color: #fff;
+	font-family:'helveticaneuebold';
 }
 .panel-all-green h2 {
+	font-family:'helveticaneuebold';
 	margin-top: 0;
+	font-size: 18px;
 }
 .listing {
 	padding: 0;
@@ -775,11 +867,12 @@ body {
 }
 .listing li a{
 	padding: 10px 20px;
+	font-family:'helveticaneuebold';
 	line-height: 30px;
 	color: #aaaaaa;
 	display: block;
 	border-bottom: 1px solid #f2f2f2;
-	font-size: 15px;
+	font-size: 14px;
 }
 .listing li a:last-child{
 	border-bottom: 0;
@@ -788,6 +881,7 @@ body {
 	text-decoration: none;
 }
 .listing li a i.fa{
+	font-size: 18px;
 	float: right;
 	line-height: 30px;
 }
@@ -800,28 +894,36 @@ body {
 	font-weight: bold;
 }
 
+.activity-listing:last-child{
+	border-bottom: 0;
+	padding-bottom: 30px;
+}
 .activity-listing {
-	border-bottom: 1px solid #f2f2f2;
+	border-bottom: 1px solid #e3e3e3;
 	padding: 20px 0;
 	text-align: center;
 }
 .activity-listing .see{
 	color: #131313;
-	font-size: 18px;
+	font-size: 16px;
+	text-transform: capitalize;
+	font-family: 'helveticaneuebold';
 }
 .left-words {
 	text-align: left;
 }
 .left-words h2 {
+	line-height: 30px;
 	margin: 0;
-	color: #000;
-	font-size: 24px;
-	font-weight: bold;
+	color: #505050;
+	font-family: 'helveticaneuebold';
+	font-size: 18px;
 }
 .left-words p {
+	font-family: 'helveticaneuebold';
 	margin: 0;
-	font-size: 13px;
-	color: #aaa;
+	font-size: 12px;
+	color: #939393;
 }
 .right-words {
 	text-align: right;
@@ -833,22 +935,40 @@ body {
 }
 .right-words p {
 	margin: 0;
-	color: #aaa;
-	font-size: 13px;
+	color: #939393;
+	font-size: 12px;
+	font-family:'helveticaneue';
 }
 .note.black {
-	font-size: 14px;
+	font-family: 'helveticaneue';
+	font-size: 13px;
 	color: #000;
+	line-height: 30px;
 }
 .note.red {
-	font-size: 14px;
+	font-family: 'helveticaneue';
+	line-height: 30px;
+	font-size: 13px;
 	color: #dd4343;
 	font-size: 20px;
 }
 .note.green {
-	font-size: 14px;
+	line-height: 30px;
+	font-family: 'helveticaneue';
+	font-weight: bold;
+	font-size: 13px;
 	color: #71ad49;
 	font-size: 20px;
+}
+.header .container {
+    width: 95% !important;
+	padding: 0 !important;
+}
+
+/* left sidebar */
+.col-md-2.left-sidebar {
+	width: 13%;
+	margin-left: 20px;
 }
 
 
