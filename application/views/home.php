@@ -29,7 +29,6 @@
 				</div>
 			</li>
 		</ul>
-		
 	</div>
 	
 	<div class="container">
@@ -71,7 +70,7 @@
 					<h2>Lomba Mewarnai & Lomba Menggambar</h2>
 					<p>Bagi siswa TK / SD / Sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota Bandung.</p>
+Memperebutkan Trofi Walikota Bandung ...<a href="#">Telusuri</a></p>
 				</div>
 			</div>
 			
@@ -83,7 +82,7 @@ Memperebutkan Trofi Walikota Bandung.</p>
 					<h2>Lomba Fotografi</h2>
 					<p>Bagi siswa SMP/SMA sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
+Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="#">Telusuri</a></p>
 				</div>
 				
 				<div class="col-md-5 half-column go-right wow fadeIn">
@@ -104,7 +103,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
 <p>Dr. H. Elih Suryapermana (Kadisdik )</p>
 <p>Witrin Gamayanti M.Si Psikologi</p>
 <p>Free Konsultasi </p>
-<p>Tes Minat & Bakat</p>
+<p>Tes Minat & Bakat ... <a href="#">Telusuri</a></p>
 				</div>
 			</div>
 		</div>
@@ -115,7 +114,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
 		<div class="row">
 			<div class="col-md-7 box-quote wow pulse">
 				<h2>Mari Bergabung</h2>
-				<p>Kesekertariatan Bandung Juara Education Expo 2016/Muara Bhakti Organizer</p>
+				<p>Kesekertariatan Bandung Juara Education Expo 2016/Muara Bhakti Organizer... <a href="#">Telusuri</a></p>
 			</div>
 		</div>
 	</div>
@@ -129,7 +128,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
 					<p>Konsultasi Minat Bakat</p>
 					<p>Komunitas Pendidikan</p>
 					<p>Pameran Beasiswa</p>
-					<p>Serta beragam stand menarik lainnya</p>
+					<p>Serta beragam stand menarik lainnya ... <a href="#">Telusuri</a></p>
 				</div>
 				<div class="col-md-6 half-column go-right wow fadeIn">
 					<img src="<?php echo base_url()?>assets/img/img5.png" alt="" width="453" height="242" border="0" />
@@ -143,7 +142,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
 			<div class="right-img">
 				<div class="col-md-6 half-column wow zoomInLeft">
 					<h2>Juara</h2>
-					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah</p>
+					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah ... <a href="#">Telusuri</a></p>
 				</div>
 				
 				<div class="col-md-6 half-column go-right wow fadeIn">
