@@ -54,7 +54,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #d77b31 !important;
+  color: #0092BD !important;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -385,7 +385,7 @@ footer .copy{
 	font-size: 13px;
 	line-height: 20px;
 	padding: 8px 10px 8px 40px;
-	color: #d77b31;
+	color: #0092BD;
    background:#fff;
 	display: block;
 	text-decoration: none;
@@ -396,18 +396,18 @@ footer .copy{
 .sidebar .nav > li > ul > li.active > a{
    background:#fff;
    border-top:0px;
-   color:#d77b31;
+   color:#0092BD;
 }
 
 .sidebar .nav > li > ul > li > a:hover{
    background:#fff;
-   color:#d77b31;
+   color:#0092BD;
    border-bottom:0px;
 }
 
 .sidebar .nav li a:hover, .sidebar .nav li.current > a {
 	background: #fff;
-	color: #d77b31;
+	color:#0092BD;
    border-bottom:0px;
    font-family: 'helveticaneuebold';
    font-size: 13px;
@@ -415,7 +415,7 @@ footer .copy{
 
 .sidebar .nav li.open > a {
    background:#fff;
-   color: #d77b31;
+   color: #0092BD;
    border-bottom:1px dashed #eee;
 }
 
