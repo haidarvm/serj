@@ -363,8 +363,12 @@ footer .copy{
 }
 
 .sidebar .nav > li > a {
+<<<<<<< Updated upstream
 	font-family:'helveticaneuebold';
 	font-size: 13px;
+=======
+	font-size: 12px;
+>>>>>>> Stashed changes
 	line-height: 20px;
 	padding: 15px 15px;
 	color: #999;
@@ -373,7 +377,7 @@ footer .copy{
    background:none;
 	text-decoration: none;
    border-top:0px;
-   font-weight:bold;
+   font-weight:nor;
 }
 
 .sidebar .nav > li > a > i{
@@ -396,18 +400,30 @@ footer .copy{
 .sidebar .nav > li > ul > li.active > a{
    background:#fff;
    border-top:0px;
+<<<<<<< Updated upstream
    color:#d77b31;
+=======
+   color:#c9452b;
+>>>>>>> Stashed changes
 }
 
 .sidebar .nav > li > ul > li > a:hover{
    background:#fff;
+<<<<<<< Updated upstream
    color:#d77b31;
+=======
+   color:#c9452b;
+>>>>>>> Stashed changes
    border-bottom:0px;
 }
 
 .sidebar .nav li a:hover, .sidebar .nav li.current > a {
 	background: #fff;
+<<<<<<< Updated upstream
 	color: #d77b31;
+=======
+	color: #c9452b;
+>>>>>>> Stashed changes
    border-bottom:0px;
    font-family: 'helveticaneuebold';
    font-size: 13px;
