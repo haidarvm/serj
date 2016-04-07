@@ -287,6 +287,11 @@ body {
 
 
 
+@media (min-width: 961px) and (max-width: 1124px){
+	.box-img a img {
+		margin: 0 10px;
+	}
+}
 @media (max-width: 960px) {
 	.navbar-default .navbar-nav > li > a {
 		padding: 25px 17px;
@@ -733,6 +738,20 @@ label {
 }
 
 @media (min-width: 481px) and (max-width: 767px){
+	.box-img {
+		display: inherit;
+	}
+	.box-img a {
+		display: inherit;
+		margin-bottom: 40px;
+		width: 50%;
+		float: left;
+	}
+	.space {
+		display: block;
+		 clear: both;
+
+	}
 	.navbar-brand > img {
 		margin-left: 20px;
 		width: 45px;
