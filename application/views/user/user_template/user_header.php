@@ -32,10 +32,10 @@
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php echo site_url()?>">Home</a></li>
-            <li><a href="#bjee">BJEE</a></li>
-            <li><a href="#serbuk">Serbuk</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="<?php echo site_url()?>wp/bjee2016">BJEE</a></li>
+            <li><a href="<?php echo site_url()?>wp/serbuk">Serbuk</a></li>
+            <li><a href="<?php echo site_url()?>wp/tenang">Tentang Kami</a></li>
+            <li><a href="<?php echo site_url()?>wp/kontak">Kontak</a></li>
             <!--<li class="dropdown">
               <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
