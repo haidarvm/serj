@@ -1,7 +1,17 @@
 .DS_Store
 
+#ignore this configuration if not working add this "git rm -r  --cached ." "git add ." "git commit -m 'fixed ignore'"
 mbs-error_log
 
+pmin/*
+awstats-icon
+awstatsicons
+icon/*
+info.php
+pmin/*
+stats/*
+
+wp/wp-config.php
 application/config/database.php
 application/cache/*
 !application/cache/index.html

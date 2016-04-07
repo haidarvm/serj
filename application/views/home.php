@@ -28,6 +28,22 @@
 					<a href="#" class="btn btn-success btn-lg">Learn more</a>-->
 				</div>
 			</li>
+			<li>
+				<img src="<?php echo base_url()?>assets/img/slide4.jpg" alt="" width="100%" height="822" border="0" />
+				<div class="desc-slider desc-right">
+					<!--<h2>Open source</h2>
+					<p>Open source software is free for you to use and explore. Get involved to perfect your craft and be part of something big. Your contributions help make technology better for everyone, developers and non-developers alike.</p>
+					<a href="#" class="btn btn-success btn-lg">Learn more</a>-->
+				</div>
+			</li>
+			<li>
+				<img src="<?php echo base_url()?>assets/img/slide5.jpg" alt="" width="100%" height="822" border="0" />
+				<div class="desc-slider desc-right">
+					<!--<h2>Open source</h2>
+					<p>Open source software is free for you to use and explore. Get involved to perfect your craft and be part of something big. Your contributions help make technology better for everyone, developers and non-developers alike.</p>
+					<a href="#" class="btn btn-success btn-lg">Learn more</a>-->
+				</div>
+			</li>
 		</ul>
 	</div>
 	
@@ -70,7 +86,7 @@
 					<h2>Lomba Mewarnai & Lomba Menggambar</h2>
 					<p>Bagi siswa TK / SD / Sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota Bandung ...<a href="#">Telusuri</a></p>
+Memperebutkan Trofi Walikota Bandung ...<a href="<?php echo site_url()?>wp/#gambar">Telusuri</a></p>
 				</div>
 			</div>
 			
@@ -82,7 +98,7 @@ Memperebutkan Trofi Walikota Bandung ...<a href="#">Telusuri</a></p>
 					<h2>Lomba Fotografi</h2>
 					<p>Bagi siswa SMP/SMA sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="#">Telusuri</a></p>
+Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php echo site_url()?>wp#foto">Telusuri</a></p>
 				</div>
 				
 				<div class="col-md-5 half-column go-right wow fadeIn">
@@ -103,7 +119,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="#">Tel
 <p>Dr. H. Elih Suryapermana (Kadisdik )</p>
 <p>Witrin Gamayanti M.Si Psikologi</p>
 <p>Free Konsultasi </p>
-<p>Tes Minat & Bakat ... <a href="#">Telusuri</a></p>
+<p>Tes Minat & Bakat ... <a href="<?php echo site_url()?>wp#bakat">Telusuri</a></p>
 				</div>
 			</div>
 		</div>
@@ -114,7 +130,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="#">Tel
 		<div class="row">
 			<div class="col-md-7 box-quote wow pulse">
 				<h2>Mari Bergabung</h2>
-				<p>Kesekertariatan Bandung Juara Education Expo 2016/Muara Bhakti Organizer... <a href="#">Telusuri</a></p>
+				<p>Kesekertariatan Bandung Juara Education Expo 2016/Muara Bhakti Organizer... <a href="<?php echo site_url()?>daftar">Telusuri</a></p>
 			</div>
 		</div>
 	</div>
@@ -142,7 +158,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="#">Tel
 			<div class="right-img">
 				<div class="col-md-6 half-column wow zoomInLeft">
 					<h2>Juara</h2>
-					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah ... <a href="#">Telusuri</a></p>
+					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah ... <a href="<?php echo site_url()?>wp/#juara">Telusuri</a></p>
 				</div>
 				
 				<div class="col-md-6 half-column go-right wow fadeIn">
