@@ -763,7 +763,7 @@ body {
 .attention-panel {
 	float: right;
 	position: relative;
-	margin-left: 45px;
+	margin-left: 25px;
 }
 .attention-panel i.fa.fa-plus {
 	color: #d77b31;
