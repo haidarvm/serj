@@ -28,6 +28,22 @@
 					<a href="#" class="btn btn-success btn-lg">Learn more</a>-->
 				</div>
 			</li>
+			<li>
+				<img src="<?php echo base_url()?>assets/img/slide4.jpg" alt="" width="100%" height="822" border="0" />
+				<div class="desc-slider desc-right">
+					<!--<h2>Open source</h2>
+					<p>Open source software is free for you to use and explore. Get involved to perfect your craft and be part of something big. Your contributions help make technology better for everyone, developers and non-developers alike.</p>
+					<a href="#" class="btn btn-success btn-lg">Learn more</a>-->
+				</div>
+			</li>
+			<li>
+				<img src="<?php echo base_url()?>assets/img/slide5.jpg" alt="" width="100%" height="822" border="0" />
+				<div class="desc-slider desc-right">
+					<!--<h2>Open source</h2>
+					<p>Open source software is free for you to use and explore. Get involved to perfect your craft and be part of something big. Your contributions help make technology better for everyone, developers and non-developers alike.</p>
+					<a href="#" class="btn btn-success btn-lg">Learn more</a>-->
+				</div>
+			</li>
 		</ul>
 	</div>
 	

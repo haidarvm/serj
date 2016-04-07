@@ -1,5 +1,6 @@
 .DS_Store
 
+#ignore this configuration if not working add this "git rm -r  --cached ." "git add ." "git commit -m 'fixed ignore'"
 mbs-error_log
 
 application/config/database.php
