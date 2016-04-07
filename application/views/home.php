@@ -177,14 +177,14 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php 
 				<h2>Didukung Oleh Komunitas:</h2>
 				
 				<div class="box-img">
-					<a href="#"><img src="<?php echo base_url()?>assets/img/formi.jpg" alt="" width="144" height="148" border="0" /></a>
-					<a href="#"><img src="<?php echo base_url()?>assets/img/kompaq.jpg" alt="" width="150" height="150" border="0" /></a>
+					<a href="#"><img src="<?php echo base_url()?>assets/img/formi.jpg" alt="" width="215" height="218" border="0" /></a>
+					<a href="#"><img src="<?php echo base_url()?>assets/img/kompaq.jpg" alt="" width="215" height="218" border="0" /></a>
 					<a href="#"><img src="<?php echo base_url()?>assets/img/koala.jpg" alt="" width="215" height="218" border="0" /></a>
 				</div>
 				<div class="box-img">
-					<a href="#"><img src="<?php echo base_url()?>assets/img/mfc_logo.jpg" alt="" width="153" height="153" border="0" /></a>
-					<a href="#"><img src="<?php echo base_url()?>assets/img/ls3t.jpg" alt="" width="193" height="200" border="0" /></a>
-					<a href="#"><img src="<?php echo base_url()?>assets/img/resonansi.jpg" alt="" width="153" height="153" border="0" /></a>
+					<a href="#"><img src="<?php echo base_url()?>assets/img/mfc_logo.jpg" alt="" width="215" height="218" border="0" /></a>
+					<a href="#"><img src="<?php echo base_url()?>assets/img/ls3t.jpg" alt="" width="215" height="218" border="0" /></a>
+					<a href="#"><img src="<?php echo base_url()?>assets/img/resonansi.jpg" alt="" width="215" height="218" border="0" /></a>
 				</div>
 				<div class="col-md-12">
 					<a href="#" class="btn btn-success btn-lg space">Learn More</a>
