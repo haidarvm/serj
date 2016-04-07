@@ -77,6 +77,22 @@
 								<label>Kota</label>
 								<input type="text" name="city" class="form-control">
 							</div>
+							<p>Daftar Lomba Kontes Photography</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+							</div>
+							<p>Daftar Lomba Kontes Photography</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+							</div>
+							<p>Daftar Lomba Kontes Photography</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+							</div>
+							<p>Daftar Lomba Kontes Photography</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+							</div>
 							
 							<button type="submit" class="btn btn-success">Daftar</button>
 							
