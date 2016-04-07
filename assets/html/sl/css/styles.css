@@ -143,6 +143,9 @@ footer .copy{
 .header .logo h1 span{
    color:#cc7177;
 }
+.header .logo img{
+   width: 160px;
+}
 
 .header .form{
    margin-top:10px;
