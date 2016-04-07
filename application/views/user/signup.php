@@ -78,7 +78,7 @@
 								<input type="text" name="city" class="form-control">
 							</div>
 							
-							<button type="submit" class="btn btn-success">Sign up</button>
+							<button type="submit" class="btn btn-success">Daftar</button>
 							
 							<!-- line fullscreen line -->
 							<div class="tagline nopadding"><hr /></div>

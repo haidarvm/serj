@@ -1,0 +1,969 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Activello\n"
+"POT-Creation-Date: 2016-02-17 15:36+0200\n"
+"PO-Revision-Date: 2016-02-17 15:36+0200\n"
+"Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr__;esc_html__;esc_html_e;"
+"esc_attr_x:1,2c;_nx:4c,1,2;_n:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Fehler! Diese Seite konnte nicht gefunden werden."
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Scheinbar wurde die gewünschte Seite nicht gefunden. Möchtest Du einen der "
+"folgenden Links benutzen oder eine neue Suche starten?"
+
+#: 404.php:25
+#, fuzzy
+msgid "Recent Posts"
+msgstr "Zeigt Reiter der beliebtesten und neusten Beiträge & Kommentare"
+
+#: 404.php:31
+msgid "Most Used Categories"
+msgstr "Meist genutzte Kategorien"
+
+#: 404.php:52
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Schaue in den Monatsarchiven. %1$s"
+
+#: 404.php:53 archive.php:66 sidebar.php:31
+msgid "Archives"
+msgstr "Archive"
+
+#: 404.php:58
+#, fuzzy
+msgid "Tags"
+msgstr "Benutzt in P tags"
+
+#: archive.php:27
+#, php-format
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: archive.php:30
+#, php-format
+msgid "Day: %s"
+msgstr "Tag: %s"
+
+#: archive.php:33
+#, php-format
+msgid "Month: %s"
+msgstr "Monat: %s"
+
+#: archive.php:36
+#, php-format
+msgid "Year: %s"
+msgstr "Jahr: %s"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Nebenbemerkungen"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "Galerien"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Bilder"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Videos"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Zitate"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "Status"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "Audio"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "Chats"
+
+#: comments.php:28
+#, php-format
+msgctxt "comments title"
+msgid "1 Comment"
+msgid_plural "%1$s Comment"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:35 comments.php:54
+msgid "Comment navigation"
+msgstr "Kommentare navigieren"
+
+#: comments.php:36 comments.php:55
+msgid "&larr; Older Comments"
+msgstr "&larr; ältere Kommentare"
+
+#: comments.php:37 comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr "Neueste Kommentare &rarr;"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "Kommentare sind deaktiviert."
+
+#: comments.php:77
+msgid "Name"
+msgstr ""
+
+#: comments.php:81
+msgid "Email"
+msgstr ""
+
+#: comments.php:85
+msgid "Website"
+msgstr ""
+
+#: comments.php:94
+msgid "Post Reply"
+msgstr ""
+
+#: content-grid.php:16 content-page.php:32 inc/extras.php:252
+msgid "Edit"
+msgstr "Editiere"
+
+#: content-grid.php:28 content.php:41 content.php:67 inc/extras.php:137
+msgid "Read More"
+msgstr "Weiterlesen"
+
+#: content-grid.php:37 content-page.php:21 content-single.php:43 content.php:56
+#: image.php:79
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Nichts gefunden "
+
+#: content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Ersten Artikel veröffentlichen? <a href=\"%1$s\">Hier starten</a>."
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Leider war die Suche nicht erfolgreich. Versuche es mit anderen Suchwörtern."
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Scheinbar konnten wir das Gewünschte nicht finden. Vielleicht hilft Dir die "
+"Suche."
+
+#: content-single.php:21 content.php:22
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: content-single.php:55 content.php:73
+msgid "Leave a comment"
+msgstr "Kommentieren"
+
+#: content-single.php:55
+msgid "Comment (1)"
+msgstr ""
+
+#: content-single.php:55
+msgid "Comments (%)"
+msgstr ""
+
+#: content.php:73
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: content.php:73
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: functions.php:71
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: functions.php:112
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: functions.php:226
+msgid "Left Sidebar"
+msgstr "Linke Sidebar"
+
+#: functions.php:226
+msgid "Right Sidebar"
+msgstr "Rechte Sidebar"
+
+#: functions.php:226
+msgid "No Sidebar"
+msgstr ""
+
+#: functions.php:226
+msgid "Full Width"
+msgstr ""
+
+#: functions.php:228
+msgid "Logo Only"
+msgstr ""
+
+#: functions.php:229
+msgid "Logo + Tagline"
+msgstr ""
+
+#: functions.php:230
+msgid "Title Only"
+msgstr ""
+
+#: functions.php:231
+msgid "Title + Tagline"
+msgstr ""
+
+#: functions.php:266 searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: functions.php:266 searchform.php:14
+msgctxt "submit button"
+msgid "Search"
+msgstr "Suche"
+
+#: header.php:40
+msgid "Toggle navigation"
+msgstr ""
+
+#: image.php:22
+msgid "<i class=\"fa fa-chevron-left\"></i> Previous"
+msgstr "<i class=\"fa fa-chevron-left\"></i> vorher"
+
+#: image.php:23
+msgid "Next <i class=\"fa fa-chevron-right\"></i>"
+msgstr "nächste <i class=\"fa fa-chevron-right\"></i>"
+
+#: inc/customizer.php:30
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Show"
+msgstr ""
+
+#: inc/customizer.php:53
+msgid "Activello Options"
+msgstr ""
+
+#: inc/customizer.php:54
+msgid "Panel to update activello theme options"
+msgstr ""
+
+#: inc/customizer.php:60
+#, fuzzy
+msgid "Content Options"
+msgstr "Einstellungen speichern"
+
+#: inc/customizer.php:73
+msgid "Show post excerpts?"
+msgstr ""
+
+#: inc/customizer.php:85
+#, fuzzy
+msgid "Display Comments on Static Pages?"
+msgstr "Wird auf der Startseite angezeigt"
+
+#: inc/customizer.php:94
+msgid "Slider Option"
+msgstr ""
+
+#: inc/customizer.php:127
+msgid "Layout options"
+msgstr ""
+
+#: inc/customizer.php:138
+msgid "Website Layout Options"
+msgstr "Website Layout Einstellungen"
+
+#: inc/customizer.php:141
+msgid "Choose between different layout options to be used as default"
+msgstr ""
+
+#: inc/customizer.php:150
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer.php:151 inc/customizer.php:161 inc/customizer.php:171
+msgid "Default used if no color is selected"
+msgstr "Standardeinstellung wenn keine Farbe ausgewählt wurde"
+
+#: inc/customizer.php:160
+msgid "Social icon color"
+msgstr "Social Icon Farbe"
+
+#: inc/customizer.php:170
+msgid "Social Icon:hover Color"
+msgstr ""
+
+#: inc/customizer.php:177
+msgid "Footer"
+msgstr "Footer"
+
+#: inc/customizer.php:195
+msgid "Other"
+msgstr "Andere"
+
+#: inc/customizer.php:204
+msgid "Custom CSS"
+msgstr "Benutzerdefiniertes CSS"
+
+#: inc/customizer.php:205
+msgid "Additional CSS"
+msgstr "Zusätzliches CSS"
+
+#: inc/customizer.php:213
+msgid "Support and Documentation"
+msgstr "Support und Dokumentation"
+
+#: inc/customizer.php:356
+msgid "Activello Documentation"
+msgstr ""
+
+#: inc/customizer.php:357
+msgid ""
+"The best way to contact us with <b>support questions</b> and <b>bug reports</"
+"b> is via"
+msgstr ""
+"Der beste Weg uns zu <b>Support Anfragen</b> und <b>Fehler Reports</b> zu "
+"kontaktieren ist via"
+
+#: inc/customizer.php:357
+msgid "Colorlib support forum"
+msgstr "Colorlib Support Forum"
+
+#: inc/customizer.php:358
+msgid "If you like this theme, I'd appreciate any of the following:"
+msgstr "Wenn Dir dieses Theme gefällt, dann freue ich mich über:"
+
+#: inc/customizer.php:360
+msgid "Rate this Theme"
+msgstr "Dieses Theme bewerten"
+
+#: inc/customizer.php:361
+msgid "Like on Facebook"
+msgstr "Auf Facebook Liken"
+
+#: inc/customizer.php:362
+msgid "Follow on Twitter"
+msgstr "Auf Twitter folgen"
+
+#: inc/extras.php:54
+msgid "Untitled"
+msgstr ""
+
+#: inc/extras.php:71
+msgid ""
+"<p>This post is password protected. To view it please enter your password "
+"below:</p>"
+msgstr ""
+"<p>Dieser Artikel ist mit einem Passwort geschützt. Gib Dein Passwort ein, "
+"um den Artikel zu lesen:</p>"
+
+#: inc/extras.php:72
+msgid "Password:"
+msgstr "Passwort:"
+
+#: inc/extras.php:75
+msgid "Submit"
+msgstr "Absenden"
+
+#: inc/extras.php:158
+#, php-format
+msgid "Theme by %1$s Powered by %2$s"
+msgstr "Theme von %1$s Powered by %2$s"
+
+#: inc/extras.php:246
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/extras.php:252
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/extras.php:259
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/metaboxes.php:16
+msgid ""
+"Select layout for this specific Page only ( Note: This setting only reflects "
+"if page Template is set as Default Template and Blog Type Templates.)"
+msgstr ""
+
+#: inc/metaboxes.php:21
+msgid "Select layout for this specific Post only"
+msgstr ""
+
+#: inc/metaboxes.php:28
+msgid "Select layout for this specific Product only"
+msgstr ""
+
+#: inc/metaboxes.php:58
+msgid "Default"
+msgstr ""
+
+#: inc/navwalker.php:196
+msgid "Add a menu"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Posts Navigation"
+
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Post Navigation"
+
+#: inc/template-tags.php:86
+msgid "Posted on"
+msgstr ""
+
+#: inc/widgets/widget-categories.php:11
+msgid "Activello widget to display categories"
+msgstr ""
+
+#: inc/widgets/widget-categories.php:12
+msgid "Activello Categories"
+msgstr ""
+
+#: inc/widgets/widget-categories.php:17 inc/widgets/widget-categories.php:76
+msgid "Categories"
+msgstr "Kategorien"
+
+#: inc/widgets/widget-categories.php:83 inc/widgets/widget-social.php:49
+msgid "Title "
+msgstr "Titel"
+
+#: inc/widgets/widget-categories.php:91
+msgid "Limit Categories "
+msgstr "Kategorien Limit"
+
+#: inc/widgets/widget-categories.php:104
+msgid "Enable Posts Count"
+msgstr "Beitragszähler benutzen"
+
+#: inc/widgets/widget-recent-posts.php:11
+msgid "Activello recent posts widget with thumbnails"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:12
+msgid "Activello Recent Posts Widget"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:17
+#: inc/widgets/widget-recent-posts.php:91
+msgid "recent Posts"
+msgstr ""
+
+#: inc/widgets/widget-recent-posts.php:96
+msgid "Title"
+msgstr "Titel"
+
+#: inc/widgets/widget-recent-posts.php:104
+msgid "Limit Posts Number"
+msgstr "Begrenze Beitragsanzahl"
+
+#: inc/widgets/widget-social.php:11
+msgid "Activello theme widget to display social media icons"
+msgstr ""
+
+#: inc/widgets/widget-social.php:12
+msgid "Activello Social Widget"
+msgstr ""
+
+#: inc/widgets/widget-social.php:17 inc/widgets/widget-social.php:46
+msgid "Follow us"
+msgstr "Folgen Sie uns"
+
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: searchform.php:11
+#, fuzzy
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search&hellip;"
+msgstr "Suche&hellip;"
+
+#: searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: sidebar.php:38
+msgid "Meta"
+msgstr "Meta"
+
+#~ msgid "Footer Links"
+#~ msgstr "Fußzeilenmenü"
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "Ein Kommentar zu &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#~ msgid ", "
+#~ msgstr ","
+
+#~ msgid " %1$s"
+#~ msgstr " %1$s"
+
+#~ msgid "Homepage Widget 1"
+#~ msgstr "Homepage Widget 1"
+
+#~ msgid "Displays on the Home Page"
+#~ msgstr "Wird auf der Startseite angezeigt"
+
+#~ msgid "Homepage Widget 2"
+#~ msgstr "Homepage Widget 2"
+
+#~ msgid "Homepage Widget 3"
+#~ msgstr "Homepage Widget 3"
+
+#~ msgid "Footer Widget 1"
+#~ msgstr "Footer Widget 1"
+
+#~ msgid "Used for footer widget area"
+#~ msgstr "Platz für Footer Widgets"
+
+#~ msgid "Footer Widget 2"
+#~ msgstr "Footer Widget 2"
+
+#~ msgid "Footer Widget 3"
+#~ msgstr "Footer Widget 3"
+
+#~ msgid "Theme Options"
+#~ msgstr "Theme Optionen"
+
+#~ msgid "Click OK to reset. Any theme settings will be lost!"
+#~ msgstr ""
+#~ "Klicke OK um alles rückgängig zu machen. Theme Änderungen werden nicht "
+#~ "gespeichert!"
+
+#~ msgid "Default options restored."
+#~ msgstr "Standardeinstellungen wieder hergestellt."
+
+#~ msgid "Options saved."
+#~ msgstr "Einstellungen gespeichert."
+
+#~ msgid "No file chosen"
+#~ msgstr "Keine Datei ausgewählt"
+
+#~ msgid "Upload"
+#~ msgstr "Upload"
+
+#~ msgid "Remove"
+#~ msgstr "Entfernen"
+
+#~ msgid "Upgrade your version of WordPress for full media support."
+#~ msgstr "Lade die neueste WordPress Version für vollständigen Mediensupport."
+
+#~ msgid "View File"
+#~ msgstr "Datei anzeigen"
+
+#~ msgid "No Repeat"
+#~ msgstr "Ohne Wiederholung"
+
+#~ msgid "Repeat Horizontally"
+#~ msgstr "Horizontale Wiederholung"
+
+#~ msgid "Repeat Vertically"
+#~ msgstr "Vertikale Wiederholung"
+
+#~ msgid "Repeat All"
+#~ msgstr "Wiederholen"
+
+#~ msgid "Top Left"
+#~ msgstr "Oben links"
+
+#~ msgid "Top Center"
+#~ msgstr "Oben Zentrum"
+
+#~ msgid "Top Right"
+#~ msgstr "Oben rechts"
+
+#~ msgid "Middle Left"
+#~ msgstr "Mitte links"
+
+#~ msgid "Middle Center"
+#~ msgstr "Mitte Zentrum"
+
+#~ msgid "Middle Right"
+#~ msgstr "Mitte rechts"
+
+#~ msgid "Bottom Left"
+#~ msgstr "Unten links"
+
+#~ msgid "Bottom Center"
+#~ msgstr "Unten Zentrum"
+
+#~ msgid "Bottom Right"
+#~ msgstr "Unten rechts"
+
+#~ msgid "Scroll Normally"
+#~ msgstr "Normal scrollen"
+
+#~ msgid "Fixed in Place"
+#~ msgstr "Am Platz fixiert"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Italic"
+#~ msgstr "Kursiv"
+
+#~ msgid "Bold"
+#~ msgstr "Fett"
+
+#~ msgid "Bold Italic"
+#~ msgstr "Fett Kursiv"
+
+#~ msgid "Page %s"
+#~ msgstr "Seite %s"
+
+#~ msgid "Follow us on "
+#~ msgstr "Folge uns auf"
+
+#~ msgid "Sparkling Documentation"
+#~ msgstr "Sparkling Dokumentation"
+
+#~ msgid "<i class=\"fa fa-chevron-left\"></i> Older posts"
+#~ msgstr "<i class=\"fa fa-chevron-left\"></i> ältere Artikel"
+
+#~ msgid "Newer posts <i class=\"fa fa-chevron-right\"></i>"
+#~ msgstr "neuere Artikel <i class=\"fa fa-chevron-right\"></i>"
+
+#~ msgid "Sparkling Categories"
+#~ msgstr "Sparkling Kategorien"
+
+#~ msgid "Sparkling Popular Posts Widget"
+#~ msgstr "Sparkling Beliebte Beiträge Widget"
+
+#~ msgid "Popular Posts"
+#~ msgstr "Beliebte Beiträge"
+
+#~ msgid "Sparkling Social Widget"
+#~ msgstr "Sparkling Social Widget"
+
+#~ msgid "One"
+#~ msgstr "eins"
+
+#~ msgid "Two"
+#~ msgstr "Zwei"
+
+#~ msgid "Three"
+#~ msgstr "Drei"
+
+#~ msgid "Four"
+#~ msgstr "Vier"
+
+#~ msgid "Five"
+#~ msgstr "Fünf"
+
+#~ msgid "French Toast"
+#~ msgstr "Französischer Toast"
+
+#~ msgid "Pancake"
+#~ msgstr "Pfannkuchen"
+
+#~ msgid "Omelette"
+#~ msgstr "Omelette"
+
+#~ msgid "Crepe"
+#~ msgstr "Crepe"
+
+#~ msgid "Waffle"
+#~ msgstr "Waffel"
+
+#~ msgid "Main"
+#~ msgstr "Haupt"
+
+#~ msgid "Do You want to display image slider on the Home Page?"
+#~ msgstr "Möchtest Du den Image Slider auf der Startseite anzeigen?"
+
+#~ msgid "Check if you want to enable slider"
+#~ msgstr "Anhaken, wenn der Slider angezeigt werden soll"
+
+#~ msgid "Slider Category"
+#~ msgstr "Slider Kategorie"
+
+#~ msgid "Select a category for the featured post slider"
+#~ msgstr "Wähle eine Anzeigekategorie für die Beiträge im Slider"
+
+#~ msgid "Number of slide items"
+#~ msgstr "Anzahl Slider Bilder"
+
+#~ msgid "Enter the number of slide items"
+#~ msgstr "Gib die Anzahl der Bilder im Slider an"
+
+#~ msgid "Choose between Left and Right sidebar options to be used as default"
+#~ msgstr "Wähle ob die linke oder rechte Seitenleiste voreingestellt ist"
+
+#~ msgid "Element color"
+#~ msgstr "Element Farbe"
+
+#~ msgid "Element color on hover"
+#~ msgstr "Element Farbe für hover (Maus gleitet über Linkelement)"
+
+#~ msgid "Custom Favicon"
+#~ msgstr "Benutzerdefiniertes Favicon"
+
+#~ msgid ""
+#~ "Upload a 32px x 32px PNG/GIF image that will represent your websites "
+#~ "favicon"
+#~ msgstr "Laden Sie ein 32px x 32px PNG/GIF Bild als Favicon hoch"
+
+#~ msgid "Action Button"
+#~ msgstr "Aktionsbutton"
+
+#~ msgid "Call For Action Text"
+#~ msgstr "Aktionsbutton Text"
+
+#~ msgid "Enter the text for call for action section"
+#~ msgstr "Gib den Text für den Aktionsbutton-Abschnitt ein"
+
+#~ msgid "Call For Action Button Title"
+#~ msgstr "Aktionsbutton Titel"
+
+#~ msgid "Enter the title for Call For Action button"
+#~ msgstr "Gib den Titel für den Aktionsbutton ein"
+
+#~ msgid "CFA button link"
+#~ msgstr "Aktionsbutton Link"
+
+#~ msgid "Enter the link for Call For Action button"
+#~ msgstr "Gib den Link für den Aktionsbutton ein"
+
+#~ msgid "Call For Action Text Color"
+#~ msgstr "Aktionsbutton Textfarbe"
+
+#~ msgid "Call For Action Background Color"
+#~ msgstr "Aktionsbutton Hintergrundfarbe"
+
+#~ msgid "Call For Action Button Border Color"
+#~ msgstr "Aktionsbutton Rahmenfarbe"
+
+#~ msgid "Call For Action Button Text Color"
+#~ msgstr "Aktionsbutton Text Farbe"
+
+#~ msgid "Typography"
+#~ msgstr "Typographie"
+
+#~ msgid "Main Body Text"
+#~ msgstr "Main Body Text"
+
+#~ msgid "Used in P tags"
+#~ msgstr "Benutzt in P tags"
+
+#~ msgid "Heading Color"
+#~ msgstr "Überschriftenfarbe"
+
+#~ msgid "Color for all headings (h1-h6)"
+#~ msgstr "Farbe für alle Überschriften (h1-h6)"
+
+#~ msgid "Link Color"
+#~ msgstr "Link Farbe"
+
+#~ msgid "Link:hover Color"
+#~ msgstr "Link:hover Farbe"
+
+#~ msgid "Header"
+#~ msgstr "Kopf"
+
+#~ msgid "Top nav background color"
+#~ msgstr "Top nav Hintergrund Farbe"
+
+#~ msgid "Top nav item color"
+#~ msgstr "Top nav Element Farbe"
+
+#~ msgid "Link color"
+#~ msgstr "Link Farbe"
+
+#~ msgid "Top nav item hover color"
+#~ msgstr "Top nav Element hover Farbe"
+
+#~ msgid "Link:hover color"
+#~ msgstr "Link:hover Farbe"
+
+#~ msgid "Top nav dropdown background color"
+#~ msgstr "Top nav Dropdown Hintergrund Farbe"
+
+#~ msgid "Background of dropdown item hover color"
+#~ msgstr "Hintergrund Dropdown Element hover Farbe"
+
+#~ msgid "Top nav dropdown item color"
+#~ msgstr "Top nav Dropdown Element Farbe"
+
+#~ msgid "Dropdown item color"
+#~ msgstr "Dropdown Element Farbe"
+
+#~ msgid "Top nav dropdown item hover color"
+#~ msgstr "Top nav dropdown Eintrag - Hover Farbe"
+
+#~ msgid "Dropdown item hover color"
+#~ msgstr "Dropdown Eintrag - Hover Farbe"
+
+#~ msgid "Top nav dropdown item background hover color"
+#~ msgstr "Top nav dropdown Eintrag - Hover Hintergrundfarbe"
+
+#~ msgid "Footer widget area background color"
+#~ msgstr "Footer Widget Bereich Hintergrund Farbe"
+
+#~ msgid "Footer background color"
+#~ msgstr "Footer Hintergrund Farbe"
+
+#~ msgid "Footer text color"
+#~ msgstr "Footer Text Farbe"
+
+#~ msgid "Footer link color"
+#~ msgstr "Footer Link Farbe"
+
+#~ msgid "Footer information"
+#~ msgstr "Footer Information"
+
+#~ msgid "Copyright text in footer"
+#~ msgstr "Copyright Text im Footer"
+
+#, fuzzy
+#~ msgid "Footer Social Icons"
+#~ msgstr "Footer Social Icon Farbe"
+
+#, fuzzy
+#~ msgid "Show/Hide social icons in footer"
+#~ msgstr "Footer Social Icon Farbe"
+
+#~ msgid "Social"
+#~ msgstr "Social"
+
+#~ msgid "Footer social icon color"
+#~ msgstr "Footer Social Icon Farbe"
+
+#~ msgid "Add full URL for your social network profiles"
+#~ msgstr "Füge die vollständigen URL's Deiner Social Network Profile hinzu"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "LinkedIn"
+#~ msgstr "LinkedIn"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "RSS Feed"
+#~ msgstr "RSS Feed"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "SoundCloud"
+#~ msgstr "SoundCloud"
+
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "Save Options"
+#~ msgstr "Einstellungen speichern"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Standardeinstellungen wieder herstellen"
+
+#~ msgctxt "Previous post link"
+#~ msgid "<i class=\"fa fa-chevron-left\"></i> %title"
+#~ msgstr "<i class=\"fa fa-chevron-left\"></i> %title [Voriger Beitrag]"
+
+#~ msgctxt "Next post link"
+#~ msgid "%title <i class=\"fa fa-chevron-right\"></i>"
+#~ msgstr "%title <i class=\"fa fa-chevron-right\"></i> [Nächster Beitrag]"
+
+#, fuzzy
+#~ msgctxt "placeholder"
+#~ msgid "Search..."
+#~ msgstr "Suche..."
