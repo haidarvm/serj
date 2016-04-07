@@ -86,7 +86,7 @@
 					<h2>Lomba Mewarnai & Lomba Menggambar</h2>
 					<p>Bagi siswa TK / SD / Sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota Bandung ...<a href="<?php echo site_url()?>wp/#gambar">Telusuri</a></p>
+Memperebutkan Trofi Walikota Bandung ...<a href="<?php echo site_url()?>web/#gambar">Telusuri</a></p>
 				</div>
 			</div>
 			
@@ -158,7 +158,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php 
 			<div class="right-img">
 				<div class="col-md-6 half-column wow zoomInLeft">
 					<h2>Juara</h2>
-					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah ... <a href="<?php echo site_url()?>wp/#juara">Telusuri</a></p>
+					<p>Memperoleh penghargaan Trofi Walikota Bandung dan hadiah jutaan rupiah ... <a href="<?php echo site_url()?>web/#juara">Telusuri</a></p>
 				</div>
 				
 				<div class="col-md-6 half-column go-right wow fadeIn">
