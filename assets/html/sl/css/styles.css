@@ -364,19 +364,21 @@ footer .copy{
 .sidebar .nav > li li a{
    padding-left:25px;
 }
-
+.sidebar.content-box {
+    padding: 15px 0;
+}
 .sidebar .nav > li > a {
-	font-family:'helveticaneuebold';
-	font-size: 13px;
+	font-family:'helveticaneue';
+	font-size: 12px;
 	line-height: 20px;
-	padding: 15px 15px;
+	padding: 15px 0;
 	color: #999;
 	display: block;
    font-weight:bold;
    background:none;
 	text-decoration: none;
    border-top:0px;
-   font-weight:bold;
+   letter-spacing: 0.4px;
 }
 
 .sidebar .nav > li > a > i{
@@ -412,8 +414,9 @@ footer .copy{
 	background: #fff;
 	color:#0092BD;
    border-bottom:0px;
-   font-family: 'helveticaneuebold';
-   font-size: 13px;
+   font-family: 'helveticaneue';
+   font-size: 12px;
+   letter-spacing: 0.4px;
 }
 
 .sidebar .nav li.open > a {
