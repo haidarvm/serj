@@ -206,7 +206,7 @@ body {
 }
 .box-img {
 	display: table;
-	width: 50%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	padding: 20px 0;
@@ -687,6 +687,13 @@ label {
 }
 
 @media (max-width: 480px) {
+	.box-img {
+		display: inherit;
+	}
+	.box-img a {
+		display: inherit;
+		margin-bottom: 30px;
+	}
 	.navbar-brand > img {
 		margin-left: 20px;
 		width: 45px;
