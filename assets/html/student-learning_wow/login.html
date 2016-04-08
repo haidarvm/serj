@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Being awesome! Student Learning.</title>
+
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+	
+	
+  </head>
+  <body class="signin">
+	
+	<!-- form login -->
+	<div class="container">
+		<div class="row">
+			<!-- sign in -->
+			<div class="col-md-6 col-md-offset-3 single-inner wow fadeIn">
+				<div class="box-form">
+					<h2 class="wow pulse">Sign in</h2>
+					
+					<div class="bform">
+						<form>
+							<div class="form-group">
+								<label>Username</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" class="form-control">
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Keep me in
+								</label>
+								<a href="#">Forgot password?</a>
+								<div class="clearfix"></div>
+							</div>
+							<button type="submit" class="btn btn-success">Sign in</button>
+							
+							<!-- line fullscreen line -->
+							<div class="tagline nopadding"><hr /></div>
+							
+							<div class="form-group">
+								<p>Not a member? <a href="#">Create Account</a>.</p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/unslider-min.js"></script>
+	<script src="js/fontsmoothie.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script type="text/javascript">
+		//EFFECT TRANSITION
+		var wow = new WOW(
+			{
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       100,          // distance to the element when triggering the animation (default is 0)
+				mobile:       true,       // trigger animations on mobile devices (default is true)
+				live:         true,       // act on asynchronously loaded content (default is true)
+				callback:     function(box) {
+				  // the callback is fired every time an animation is started
+				  // the argument that is passed in is the DOM node being animated
+				}
+			}
+		);
+		wow.init();
+		
+		//slider function
+		$('.infinite-slider').unslider({
+			animation: 'fade',
+			delay: 5000,
+			autoplay: true,
+			arrows: true
+		});
+	</script>
+  </body>
+</html>
