@@ -67,8 +67,7 @@ a:visited {
 }
 body {
   font-family:'sanpro';
-  background: url(../img/bg.png) no-repeat fixed;
-  background-size: 100%;
+  background: url(../img/bg.png) repeat;
   position: relative;
   margin: 0px;
   font-size: 12px;
