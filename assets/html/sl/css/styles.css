@@ -67,7 +67,8 @@ a:visited {
 }
 body {
   font-family:'sanpro';
-  background: url(../img/bg.png) repeat;
+  background: url(../img/bg.png) no-repeat fixed;
+  background-size: 100%;
   position: relative;
   margin: 0px;
   font-size: 12px;
@@ -353,7 +354,7 @@ footer .copy{
 
 .sidebar .nav > li:last-child{
    border-bottom:0px;
-   padding-bottom: 45px;
+   padding-bottom: 0px;
 }
 
 .sidebar .nav > li li {
