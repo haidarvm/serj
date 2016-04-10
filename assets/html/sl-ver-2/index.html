@@ -93,22 +93,19 @@
       </div>
     </nav>
 	
-	<div class="navbar-static-top">
+	<!-- <div class="navbar-static-top">
 		<div class="col-md-12 heading">
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<!-- compact sidebar -->
 					<li class="active wow zoomIn" data-placement="right" data-toggle="tooltip" title="Minimalis Sidebar">
 						<button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> 
 							<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
 						</button>
 					</li>
 					
-					<!-- searcing -->
 					<li>
 						<div class="search">
 							<form class="form-inline">
-							  <div class="form-group">
 							  <div class="form-group">
 								<label for="search" class="sr-only">Password</label>
 								<input type="text" class="form-control" id="search" placeholder="Cari...">
@@ -120,12 +117,32 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 	
 	<div id="wrapper">
 		<!-- Sidebar -->
 		<div id="sidebar-wrapper" class="sidebar">
+			<div class="compact">
+				<div class="wow fadeIn">
+					<button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> 
+						<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+					</button>
+				</div>
+				
+				<!-- <li>
+					<div class="search">
+						<form class="form-inline">
+						  <div class="form-group">
+							<label for="search" class="sr-only">Password</label>
+							<input type="text" class="form-control" id="search" placeholder="Cari...">
+							<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+						  </div>
+						</form>
+					</div>
+				</li> -->
+			</div>
+		
 			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
 				<li class="current">
@@ -157,6 +174,9 @@
 				</li>
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user"></i></span>Data Siswa</a>
+				</li>
+				<li>
+					<div class="compact" style="min-height: 4px;"></div>
 				</li>
 			</ul>
 		</div><!-- /#sidebar-wrapper -->

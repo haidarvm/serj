@@ -180,7 +180,7 @@ body {
 	box-shadow: 0 0 2px 0 #4bb5ef;
 }
 
-.heading {
+/* .heading {
 	background: #4bb5ef;
 	height: 60px;
 	margin-top: 80px;
@@ -253,18 +253,7 @@ body {
 			}
 		}
 	}
-	
-	.quotes {
-		padding: 33px 40px 0;
-		
-		h2 {
-			color: #fff;
-			font-family: 'sl-semibold';
-			font-size: 18px;
-			margin: 0;
-		}
-	}
-}
+} */
 
 /* sidebar */
 .nav-pills > li > a {
@@ -277,10 +266,24 @@ body {
 	position: relative;
     z-index: 1;
 	
+	.compact {
+		float: left;
+		width: 100%;
+		background: #4bb5ef;
+		padding-left: 10px;
+		
+		.navbar-toggle {
+			margin: 0;
+			border-radius: 0;
+			color: #fff;
+			float: left;
+		}
+	}
 	ul {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		float: left;
 		margin-right: -7px !important;
 		width: 250px;
 		background: #f8f8f8;

@@ -193,97 +193,80 @@ body {
   border-bottom: 0.1px solid #4bb5ef;
   box-shadow: 0 0 2px 0 #4bb5ef;
 }
-.heading {
-  background: #4bb5ef;
-  height: 60px;
-  margin-top: 80px;
-  width: 100%;
-}
-.heading .collapse.navbar-collapse {
-  padding: 0 !important;
-}
-.heading .collapse.navbar-collapse .nav.navbar-nav {
-  float: left !important;
-  height: 100%;
-}
-.heading .collapse.navbar-collapse .nav.navbar-nav button span {
-  color: #fff;
-  font-size: 30px;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.heading .collapse.navbar-collapse .nav.navbar-nav button span:hover {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.heading .collapse.navbar-collapse .nav.navbar-nav button:hover span {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  color: #0092bd !important;
-}
-.heading .collapse.navbar-collapse .nav.navbar-nav button:hover span:hover {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.heading .collapse.navbar-collapse .navbar-toggle {
-  margin-top: 4px !important;
-  margin-right: 0 !important;
-  margin-bottom: 0 !important;
-  margin-left: -10px;
-}
-.heading .search {
-  display: inline-block;
-  height: 60px;
-  line-height: 55px;
-  padding: 0 10px;
-}
-.heading .search input[type="text"] {
-  border: 0;
-  border-radius: 3px 0 0 3px;
-  width: 100px;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  background: #f9f9f9;
-  float: left;
-  height: 30px;
-  color: #0092bd;
-  font-size: 12px;
-  box-shadow: 2px 0 5px #ccc inset;
-}
-.heading .search input[type="text"]:hover {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.heading .search input[type="text"]:focus {
-  width: 200px;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.heading .search input[type="text"]:focus:hover {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.heading .search button {
-  box-shadow: 0 0 3px #ccc inset;
-  float: left;
-  border: 0;
-  border-radius: 0 3px 3px 0;
-  height: 30px;
-  background: #f9f9f9;
-  margin-left: -2px;
-}
-.heading .search button i.fa {
-  color: #0092bd;
-}
-.heading .quotes {
-  padding: 33px 40px 0;
-}
-.heading .quotes h2 {
-  color: #fff;
-  font-family: 'sl-semibold';
-  font-size: 18px;
-  margin: 0;
-}
+/* .heading {
+	background: #4bb5ef;
+	height: 60px;
+	margin-top: 80px;
+	
+	width: 100%;
+	
+	.collapse.navbar-collapse {
+		padding: 0 !important;
+		
+		.nav.navbar-nav {
+			float: left !important;
+			height: 100%;
+			
+			button {
+				span {
+					color: #fff;
+					font-size: 30px;
+					.effect;
+				}
+				
+				&:hover span {
+					.effect;
+					.sl-hover !important;
+				}
+			}
+		}
+		.navbar-toggle {
+			margin-top: 4px !important;
+			margin-bottom: 0 !important;
+			margin-right: 0 !important;
+			margin-bottom: 0 !important;
+			margin-left: -10px;
+		}
+	}
+	
+	.search {
+		display: inline-block;
+		height: 60px;
+		line-height: 55px;
+		padding: 0 10px;
+		
+		input[type="text"] {
+			border: 0;
+			border-radius: 3px 0 0 3px;
+			width: 100px;
+			.effect;
+			background: #f9f9f9;
+			float: left;
+			height: 30px;
+			.sl-hover;
+			font-size: 12px;
+			box-shadow: 2px 0 5px #ccc inset;
+			
+			&:focus {
+				width: 200px;
+				.effect;
+			}
+		}
+		button {
+			box-shadow: 0 0 3px #ccc inset;
+			float: left;
+			border: 0;
+			border-radius: 0 3px 3px 0;
+			height: 30px;
+			background: #f9f9f9;
+			margin-left: -2px;
+			
+			i.fa {
+				.sl-hover;
+			}
+		}
+	}
+} */
 /* sidebar */
 .nav-pills > li > a {
   border-radius: 0;
@@ -295,10 +278,23 @@ body {
   position: relative;
   z-index: 1;
 }
+.sidebar .compact {
+  float: left;
+  width: 100%;
+  background: #4bb5ef;
+  padding-left: 10px;
+}
+.sidebar .compact .navbar-toggle {
+  margin: 0;
+  border-radius: 0;
+  color: #fff;
+  float: left;
+}
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  float: left;
   margin-right: -7px !important;
   width: 250px;
   background: #f8f8f8;
