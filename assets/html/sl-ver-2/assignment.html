@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Smart Learning</title>
+	
+	<!-- jQuery UI -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="/js/jquery.knob-mini.js"></script>
+
+	<!-- stylesheet  -->
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/simple-sidebar.css" type="text/css" rel="stylesheet" />
+	<link href="css/pace.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
+	
+	<!-- LESS and JS -->
+	<link rel="stylesheet/less" href="css/styles.less" />
+	<script type="text/javascript" src="js/less.min.js"></script>
+  </head>
+  
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			  
+				<!-- Logo -->
+				<a href="#" class="navbar-brand"><img src="img/logo.png" alt="" width="125" height="30" border="0" /></a>
+			</div>
+			
+			<div class="navbar-collapse collapse" id="navbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<div class="pict">
+							<img src="img/img-author.jpg" alt="" width="30" height="30" border="0" />
+						</div>
+					</li>
+					<li>
+						<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Veranda<i class="fa fa-angle-double-down"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+							<li><a href="#"><i class="fa fa-gear"></i> Pengaturan</a></li>
+							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>
+							
+							<li class="divider" role="separator"></li>
+							<li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">
+							<i class="fa fa-plus"></i>
+							Buat Tugas
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-bell-o"></i>
+							Notification
+						</a>
+						
+						<!-- <ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+						</ul> -->
+					</li>
+				</ul>
+			</div>
+      </div>
+    </nav>
+	
+	<!-- <div class="navbar-static-top">
+		<div class="col-md-12 heading">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active wow zoomIn" data-placement="right" data-toggle="tooltip" title="Minimalis Sidebar">
+						<button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> 
+							<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+						</button>
+					</li>
+					
+					<li>
+						<div class="search">
+							<form class="form-inline">
+							  <div class="form-group">
+								<label for="search" class="sr-only">Password</label>
+								<input type="text" class="form-control" id="search" placeholder="Cari...">
+								<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+							  </div>
+							</form>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div> -->
+	
+	
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper" class="sidebar">
+			<div class="compact">
+				<div class="wow fadeIn">
+					<button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> 
+						<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+					</button>
+				</div>
+				
+				<!-- <li>
+					<div class="search">
+						<form class="form-inline">
+						  <div class="form-group">
+							<label for="search" class="sr-only">Password</label>
+							<input type="text" class="form-control" id="search" placeholder="Cari...">
+							<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+						  </div>
+						</form>
+					</div>
+				</li> -->
+			</div>
+		
+			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+
+				<li class="current">
+					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop"></i></span> Dashboard</a>
+						<!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+							<li><a href="#">link1</a></li>
+							<li><a href="#">link2</a></li>
+						</ul> -->
+				</li>
+				<li>
+					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-book"></i></span> Materi</a>
+					<!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+						<li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
+						<li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
+
+					</ul> -->
+				</li>
+				<li>
+					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
+				</li>
+				<li>
+					<a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
+				</li>
+				<li>
+					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calendar"></i></span>Jadwal</a>
+				</li>
+				<li>
+					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o"></i></span>Laporan</a>
+				</li>
+				<li>
+					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user"></i></span>Data Siswa</a>
+				</li>
+			</ul>
+		</div><!-- /#sidebar-wrapper -->
+		
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- left content -->
+					<div class="col-md-12 main-content">
+					
+						
+						
+						<div class="box-panel col-md-8 wow fadeIn">
+							<div class="head-panel pink">
+								<h2>Catatan &amp; Kegiatan</h2>
+								<i class="fa fa-thumb-tack"></i>
+							</div>
+							
+							<div id="content-1" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle-o"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle-o"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-check-circle-o"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-pencil"></i> Edit
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
+											</span>
+											<span class="just-right">
+												1 minggu lalu
+											</span>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="box-panel col-md-4 wow fadeIn">
+							<div class="head-panel green">
+								<h2>Aktifitas</h2>
+								<i class="fa fa-clock-o"></i>
+							</div>
+							
+							<div id="content-2" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-bullhorn"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-circle"></i>
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-files-o"></i> Kategori: Diskusi
+											</span>
+											<span class="just-right">
+												Baru saja
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-bullhorn"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-circle"></i>
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-files-o"></i> Kategori: Diskusi
+											</span>
+											<span class="just-right">
+												Baru saja
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-bullhorn"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-circle"></i>
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-files-o"></i> Kategori: Diskusi
+											</span>
+											<span class="just-right">
+												Baru saja
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-bullhorn"></i>
+										</div>
+										
+										<h3>Rapat Besar Tengah Tahun</h3>
+										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-circle"></i>
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-files-o"></i> Kategori: Diskusi
+											</span>
+											<span class="just-right">
+												Baru saja
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-pencil-square-o"></i>
+										</div>
+										
+										<h3>@veranda</h3>
+										<p>Perihal: Pengumpulan Tugas II</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-circle"></i>
+										</div>
+										
+										<div class="feed-update for-notice">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- username -->
+											<span class="just-left">
+												@veranda
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												baru saja
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-bullhorn"></i>
+										</div>
+										
+										<h3>Tugas baru telah dibuat</h3>
+										<p>Materi: Pembentukan Karakter I</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-circle"></i>
+										</div>
+										
+										<div class="feed-update for-notice">
+											<span class="just-left">
+												<i class="fa fa-files-o"></i> Kategori: Materi
+											</span>
+											<span class="just-right">
+												Baru saja
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<h3>Kumpulan kisi-kisi UN 2015</h3>
+										<p>Kategori: Diskusi</p>
+										
+										<div class="feed-icon">
+											<!-- <i class="fa fa-circle"></i> -->
+										</div>
+										
+										<div class="feed-update for-notice">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- username -->
+											<span class="just-left">
+												@veranda
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												2 Jam Lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<div class="icon-notice">
+											<i class="fa fa-pencil-square-o"></i>
+										</div>
+										
+										<h3>Pengumpulan Tugas I</h3>
+										<p>Materi: Pembentukan Karakter</p>
+										
+										<div class="feed-icon">
+											<!-- <i class="fa fa-circle"></i> -->
+										</div>
+										
+										<div class="feed-update for-notice">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- username -->
+											<span class="just-left">
+												@veranda
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												2 Jam Lalu
+											</span>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="box-panel col-md-4 wow fadeIn">
+							<div class="head-panel blue">
+								<h2>Daftar Kelas</h2>
+								<i class="fa fa-tags"></i>
+							</div>
+							
+							<div id="content-3" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Kelas VII A</h3>
+										<p>Jumlah siswa: 35</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-building-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-calendar"></i> Jadwal Mengajar
+											</span>
+											<!-- <span class="just-right">
+												<i class="fa fa-users"></i>
+											</span> -->
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Kelas VII B</h3>
+										<p>Jumlah siswa: 35</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-building-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-calendar"></i> Jadwal Mengajar
+											</span>
+											<span class="just-right">
+												<i class="fa fa-users"></i> Wali
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Kelas VII C</h3>
+										<p>Jumlah siswa: 35</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-building-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-calendar"></i> Jadwal Mengajar
+											</span>
+											<!-- <span class="just-right">
+												<i class="fa fa-users"></i>
+											</span> -->
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="box-panel col-md-4 wow fadeIn">
+							<div class="head-panel red">
+								<h2>materi</h2>
+								<i class="fa fa-files-o"></i>
+							</div>
+							
+							<div id="content-4" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-file-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-file-text-o"></i> Bahasa Indonesia
+											</span>
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-file-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-file-text-o"></i> Bahasa Indonesia
+											</span>
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-file-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-file-text-o"></i> Bahasa Indonesia
+											</span>
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-file-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-file-text-o"></i> Bahasa Indonesia
+											</span>
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-file-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-file-text-o"></i> Bahasa Indonesia
+											</span>
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-file-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<span class="just-left">
+												<i class="fa fa-file-text-o"></i> Bahasa Indonesia
+											</span>
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="box-panel col-md-4 wow fadeIn">
+							<div class="head-panel purple">
+								<h2>diskusi</h2>
+								<i class="fa fa-comments-o"></i>
+							</div>
+							
+							<div id="content-5" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Persiapan UN</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Bahaya Narkoba</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+								<div class="bottom-devider">
+									<a href="#">
+										<h3>Persiapan UN</h3>
+										<p>Lorem ipsum dolor si amet, need vectors or want to use on the desktop?...</p>
+										
+										<div class="feed-icon">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										
+										<div class="feed-update">
+											<!-- photo -->
+											<div class="pict-auhtor">
+												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+											</div>
+											<!-- usename -->
+											<span class="just-left">
+												@budi_anduk
+											</span>
+											<!-- times update -->
+											<span class="just-right">
+												4 Jam lalu
+											</span>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="footer">
+				<p>Copyright &copy; 2016. All Right Reserved.</p>
+				<p>Smart Learning Dashboard <img src="img/logo.png" alt="" border="0" /></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/sidebar_menu.js"></script>
+	<script src="js/pace.min.js"></script>
+	<script src="js/jquery.knob.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script type="text/javascript">
+		//EFFECT TRANSITION
+		var wow = new WOW(
+			{
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       100,          // distance to the element when triggering the animation (default is 0)
+				mobile:       true,       // trigger animations on mobile devices (default is true)
+				live:         true,       // act on asynchronously loaded content (default is true)
+				callback:     function(box) {
+				  // the callback is fired every time an animation is started
+				  // the argument that is passed in is the DOM node being animated
+				}
+			}
+		);
+		wow.init();
+		
+		// custom scrolling with style
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
+		
+		
+	</script>
+	
+</body>
+</html>
+
