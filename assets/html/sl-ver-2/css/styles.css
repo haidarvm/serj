@@ -298,6 +298,7 @@ body {
   margin-right: -7px !important;
   width: 250px;
   background: #f8f8f8;
+  border-bottom: 4px solid #f1f1f1;
 }
 .sidebar ul li a {
   padding: 15px 0 15px 15px;
@@ -508,14 +509,13 @@ body {
   margin-right: 3px;
 }
 .footer {
-  background: #EEEEEE;
-  color: #333;
+  background: #263238;
+  color: #fff;
   font-family: 'sl-light';
   padding: 8px 30px;
   width: 100%;
   float: left;
   display: block;
-  border-top: 2px solid #4bb5ef;
 }
 .footer p {
   display: inline-block;
