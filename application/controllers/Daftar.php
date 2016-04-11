@@ -29,9 +29,30 @@ class Daftar extends MY_Controller {
 		if($post) {
 			unset($post['re_password']);
 			//print_r($post);exit;
-			$this->mdaftar->insertUser($post);
-			
-// 			if()
+			//$data['user'] = 
+			$data_user = array('full_name' => $post['full_name'], 'gender' => $post['full_name'], 'date_birth' => $post['date_birth'] , 'email' => $post['email'] , 'school' => $post['school'] ,
+				'grade' =>$post['grade'] , 	'city' => $post['city']
+			);
+			$user_id = $this->mdaftar->insertUser($data_user);
+			$data_lomba = array('user_id' => $user_id);
+			if($post['bakat']) {
+				$this->mdaftar->insertBakat($data_lomba);
+			}
+			if($post['lomba_foto']) {
+				$this->mdaftar->insertLombaFoto($data_lomba);
+			}
+			if($post['lomba_cover_lagu']) {
+				$this->mdaftar->insertLombaCover($data_lomba);
+			}
+			if($post['lomba_gambar']) {
+				$this->mdaftar->insertLombaGambar($data_lomba);
+			}
+			if($post['lomba_mewarnai']) {
+				$this->mdaftar->insertLombaMewarnai($data_lomba);
+			}
+			if($post['parenting']) {
+				$this->mdaftar->insertParenting($data_lomba);
+			}
 			redirect('daftar/berhasil');
 		}
 	}

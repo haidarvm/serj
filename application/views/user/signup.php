@@ -79,23 +79,27 @@
 							</div>
 							<p>Daftar Lomba Test Bakat</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Lomba Test Bakat  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+								<label><input type="checkbox" name="bakat"> Biaya Pendaftaran 50.000 </label>
 							</div>
 							<p>Daftar Lomba Foto</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Lomba Foto  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+								<label><input type="checkbox" name="lomba_foto"> </label>
+							</div>
+							<p>Daftar Lomba Cover Lagu</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_cover_lagu"> Biaya Pendaftaran 35.000 </label>
 							</div>
 							<p>Daftar Lomba Gambar</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+								<label><input type="checkbox" name="lomba_gambar"> Biaya Pendaftaran 35.000</label>
 							</div>
 							<p>Daftar Lomba Mewarnai</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+								<label><input type="checkbox" name="lomba_mewarnai"> Biaya Pendaftaran 35.000 </label>
 							</div>
 							<p>Daftar Lomba Parenting</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+								<label><input type="checkbox" name="parenting"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
 							</div>
 							<button type="submit" class="btn btn-success">Daftar</button>
 							
