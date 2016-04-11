@@ -43,7 +43,7 @@ class MDaftar extends CI_Model {
     }
     
     function insertParenting($data){
-    	$this->db->insert("lomba_parenting",$data);
+    	$this->db->insert("parenting",$data);
     	return $this->db->insert_id();
     }
     
