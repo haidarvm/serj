@@ -1,20 +1,13 @@
-
-	
 	<!-- quotes suka-suka -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 box-quote wow zoomIn">
+			<div class="col-md-9 box-quote wow zoomIn">
 				<h2>Mari Bergabung</h2>
-
-				<p>Whether you are new to code or ready to start a big project, there are a few ways to get involved in open source.</p>
+				<p>Bandung Juara Education Expo 2016 "Smart Leading, Future Leading".</p>
 			</div>
 		</div>
 	</div>
-	
-	<!-- line fullscreen line -->
-	<div class="container tagline nopadding"><hr /></div>
-	
-	<!-- form login -->
+	<!-- form signup -->
 	<div class="container">
 		<div class="row">
 			<!-- sign up -->
@@ -77,29 +70,23 @@
 								<label>Kota</label>
 								<input type="text" name="city" class="form-control">
 							</div>
-							<p>Daftar Lomba Test Bakat</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="bakat"> Biaya Pendaftaran 50.000 </label>
+								<label><input type="checkbox" name="bakat">Daftar Lomba Test Bakat Biaya Pendaftaran 50.000 </label>
 							</div>
-							<p>Daftar Lomba Foto</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_foto"> </label>
+								<label><input type="checkbox" name="lomba_foto">Daftar Lomba Foto Biaya Pendaftaran 35.000</label>
 							</div>
-							<p>Daftar Lomba Cover Lagu</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_cover_lagu"> Biaya Pendaftaran 35.000 </label>
+								<label><input type="checkbox" name="lomba_cover_lagu">Daftar Lomba Cover Lagu Biaya Pendaftaran 35.000 </label>
 							</div>
-							<p>Daftar Lomba Gambar</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Biaya Pendaftaran 35.000</label>
+								<label><input type="checkbox" name="lomba_gambar">Daftar Lomba Gambar Biaya Pendaftaran 35.000</label>
 							</div>
-							<p>Daftar Lomba Mewarnai</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_mewarnai"> Biaya Pendaftaran 35.000 </label>
+								<label><input type="checkbox" name="lomba_mewarnai">Daftar Lomba Mewarnai Biaya Pendaftaran 35.000 </label>
 							</div>
-							<p>Daftar Lomba Parenting</p>
 							<div class="form-group">
-								<label><input type="checkbox" name="parenting"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+								<label><input type="checkbox" name="parenting">Daftar Parenting Biaya Pendaftaran 100.000</label>
 							</div>
 							<button type="submit" class="btn btn-success">Daftar</button>
 							
