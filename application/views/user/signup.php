@@ -59,11 +59,11 @@
 								<input type="password" name="re_password" id="re_password"  class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Nama Sekolah</label>
+								<label>Nama Sekolah/Perguruan Tinggi/Instansi</label>
 								<input type="text" name="school" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Kelas</label>
+								<label>Kelas/Jurusan/Pekerjaan</label>
 								<input type="text" name="grade" class="form-control">
 							</div>
 							<div class="form-group">
