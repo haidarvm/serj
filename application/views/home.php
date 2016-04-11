@@ -98,7 +98,7 @@ Memperebutkan Trofi Walikota Bandung ...<a href="<?php echo site_url()?>web/#gam
 					<h2>Lomba Fotografi</h2>
 					<p>Bagi siswa SMP/SMA sederajat
 Se-kota Bandung dan sekitarnya
-Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php echo site_url()?>wp#foto">Telusuri</a></p>
+Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php echo site_url()?>web/#foto">Telusuri</a></p>
 				</div>
 				
 				<div class="col-md-5 half-column go-right wow fadeIn">
@@ -119,7 +119,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php 
 <p>Dr. H. Elih Suryapermana (Kadisdik )</p>
 <p>Witrin Gamayanti M.Si Psikologi</p>
 <p>Free Konsultasi </p>
-<p>Tes Minat & Bakat ... <a href="<?php echo site_url()?>wp#bakat">Telusuri</a></p>
+<p>Tes Minat & Bakat ... <a href="<?php echo site_url()?>web/#bakat">Telusuri</a></p>
 				</div>
 			</div>
 		</div>
@@ -144,7 +144,7 @@ Memperebutkan Trofi Walikota Bandung dan hadiah jutaan rupiah ...<a href="<?php 
 					<p>Konsultasi Minat Bakat</p>
 					<p>Komunitas Pendidikan</p>
 					<p>Pameran Beasiswa</p>
-					<p>Serta beragam stand menarik lainnya ... <a href="#">Telusuri</a></p>
+					<p>Serta beragam stand menarik lainnya ... <a href="<?php echo site_url()?>web/">Telusuri</a></p>
 				</div>
 				<div class="col-md-6 half-column go-right wow fadeIn">
 					<img src="<?php echo base_url()?>assets/img/img5.png" alt="" width="453" height="242" border="0" />

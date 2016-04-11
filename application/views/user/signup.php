@@ -77,23 +77,26 @@
 								<label>Kota</label>
 								<input type="text" name="city" class="form-control">
 							</div>
-							<!--  <p>Daftar Lomba Kontes Photography</p>
+							<p>Daftar Lomba Test Bakat</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_gambar"> Lomba Test Bakat  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+							</div>
+							<p>Daftar Lomba Foto</p>
+							<div class="form-group">
+								<label><input type="checkbox" name="lomba_gambar"> Lomba Foto  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
+							</div>
+							<p>Daftar Lomba Gambar</p>
 							<div class="form-group">
 								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
 							</div>
-							<p>Daftar Lomba Kontes Photography</p>
+							<p>Daftar Lomba Mewarnai</p>
 							<div class="form-group">
 								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
 							</div>
-							<p>Daftar Lomba Kontes Photography</p>
+							<p>Daftar Lomba Parenting</p>
 							<div class="form-group">
 								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
 							</div>
-							<p>Daftar Lomba Kontes Photography</p>
-							<div class="form-group">
-								<label><input type="checkbox" name="lomba_gambar"> Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar  Lomba Gambar </label>
-							</div>
-							-->
 							<button type="submit" class="btn btn-success">Daftar</button>
 							
 							<!-- line fullscreen line -->
