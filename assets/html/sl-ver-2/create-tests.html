@@ -10,9 +10,32 @@
 	<!-- jQuery UI -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
     <script src="/js/jquery.knob-mini.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 
 	<!-- stylesheet  -->
-    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet">
 	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="css/animate.css" />
@@ -28,7 +51,7 @@
   
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="col-md-12">
 			<div class="navbar-header">
 				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
 					<span class="sr-only">Toggle navigation</span>
@@ -53,8 +76,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
 							<li><a href="#"><i class="fa fa-gear"></i> Pengaturan</a></li>
-							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>
-							
+							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>				
 							<li class="divider" role="separator"></li>
 							<li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
 						</ul>
@@ -63,16 +85,29 @@
 				
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#">
+						<a href="create-tests.html">
 							<i class="fa fa-plus"></i>
 							Buat Tugas
 						</a>
 					</li>
-					<li>
-						<a href="#">
+		
+                    <li id="notification_li">
+                        <span id="notification_count">3</span>
+                        <a href="#" id="notificationLink"><i class="fa fa-bell-o"></i>Notifications</a>
+                        <div id="notificationContainer">
+                        <div id="notificationTitle"><i class="fa fa-bell-o"></i>Notifications</div>
+                        <div id="notificationsBody" class="notifications">
+                            
+                            
+                            
+                        </div>
+                        <div id="notificationFooter"><a href="#">See All</a></div>
+                        </div>
+                    </li>
+						<!--a href="#">
 							<i class="fa fa-bell-o"></i>
 							Notification
-						</a>
+						</a->
 						
 						<!-- <ul class="dropdown-menu">
 							<li><a href="#">Action</a></li>
@@ -82,7 +117,6 @@
 							<li><a href="#">Another action</a></li>
 							<li><a href="#">Something else here</a></li>
 						</ul> -->
-					</li>
 				</ul>
 			</div>
       </div>
@@ -178,219 +212,37 @@
 				<div class="row">
 					<!-- left content -->
 					<div class="col-md-12 main-content">
-						<div class="box-panel col-md-12 wow fadeIn">
-							<div class="head-panel pink">
-								<h2>Tugas : Biologi</h2>
-								<i class="fa fa-pencil"></i>
-							</div>
-							
-							<div id="content-1" class="content light body-panel" data-mcs-theme="minimal-dark">
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>1. Sebutkan nama binatang disamping ?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Ayam</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Kucing</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Kodok</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Kuda</label>
-                                                </li>
-                                            </ul>
+						<div class="panel-group">
+                            <div class="box-panel col-md-12 wow fadeIn">
+                                <div class="head-panel blue">
+                                    <h2>Buat Tugas</h2>
+                                    <i class="fa fa-tags"></i>
+                                </div>
+
+                                <div id="content-3 text-center" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
+                                    <div class="container">
+                                        <div class="tittle-panel text-center"><h4>Pilih salah satu</h4></div>
+                                        <div class="col-md-4 text-center">
+                                         1
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <img src="img/q-1.jpg" style="width:300px;" />
+
+                                        <div class="col-md-4 text-center">
+                                         2
+                                        </div>
+
+                                        <div class="col-md-4 text-center">
+                                         3
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>2. Manusia bernafas menggunakan?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Mulut</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Hidung</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Paru-paru</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Telinga</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>3. Kodok Bernafas dengan?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Kulit</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Ingsang</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Paru-paru</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Telinga</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>4. Kodok Bernafas dengan?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Kulit</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Ingsang</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Paru-paru</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Telinga</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>5. Kodok Bernafas dengan?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Kulit</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Ingsang</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Paru-paru</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Telinga</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>6. Kodok Bernafas dengan?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Kulit</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Ingsang</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Paru-paru</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Telinga</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            <h4>7. Kodok Bernafas dengan?</h4>
-                                            <ul class="col-md-6">
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">A. Kulit</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">B. Ingsang</label>
-                                                </li>
-                                            </ul>
-                                            <ul class="col-md-6">
-                                                 <li class="radio">
-                                                     <label><input type="radio" name="optradio">C. Paru-paru</label>
-                                                </li>
-                                                <li class="radio">
-                                                     <label><input type="radio" name="optradio">D. Telinga</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="question">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
+                            </div>
+				        </div>
+				    </div>
 				</div>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+</div>
+
 	
 	
 	<div class="container-fluid">
