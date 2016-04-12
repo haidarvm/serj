@@ -10,6 +10,29 @@
 	<!-- jQuery UI -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
     <script src="/js/jquery.knob-mini.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 
 	<!-- stylesheet  -->
     <link href="css/custom.css" rel="stylesheet">
@@ -28,7 +51,7 @@
   
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="col-md-12">
 			<div class="navbar-header">
 				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
 					<span class="sr-only">Toggle navigation</span>
@@ -53,8 +76,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
 							<li><a href="#"><i class="fa fa-gear"></i> Pengaturan</a></li>
-							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>
-							
+							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>				
 							<li class="divider" role="separator"></li>
 							<li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
 						</ul>
@@ -63,16 +85,29 @@
 				
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#">
+						<a href="create-tests.html">
 							<i class="fa fa-plus"></i>
 							Buat Tugas
 						</a>
 					</li>
-					<li>
-						<a href="#">
+		
+                    <li id="notification_li">
+                        <span id="notification_count">3</span>
+                        <a href="#" id="notificationLink"><i class="fa fa-bell-o"></i>Notifications</a>
+                        <div id="notificationContainer">
+                        <div id="notificationTitle"><i class="fa fa-bell-o"></i>Notifications</div>
+                        <div id="notificationsBody" class="notifications">
+                            
+                            
+                            
+                        </div>
+                        <div id="notificationFooter"><a href="#">See All</a></div>
+                        </div>
+                    </li>
+						<!--a href="#">
 							<i class="fa fa-bell-o"></i>
 							Notification
-						</a>
+						</a->
 						
 						<!-- <ul class="dropdown-menu">
 							<li><a href="#">Action</a></li>
@@ -82,7 +117,6 @@
 							<li><a href="#">Another action</a></li>
 							<li><a href="#">Something else here</a></li>
 						</ul> -->
-					</li>
 				</ul>
 			</div>
       </div>
@@ -159,7 +193,7 @@
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
 				</li>
 				<li>
-					<a href="assignment.html"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
+					<a href="tests.html"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
 				</li>
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calendar"></i></span>Jadwal</a>
