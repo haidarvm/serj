@@ -10,8 +10,32 @@
 	<!-- jQuery UI -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
     <script src="/js/jquery.knob-mini.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 
 	<!-- stylesheet  -->
+    <link href="css/custom.css" rel="stylesheet">
 	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="css/animate.css" />
@@ -27,7 +51,7 @@
   
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="col-md-12">
 			<div class="navbar-header">
 				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
 					<span class="sr-only">Toggle navigation</span>
@@ -67,11 +91,24 @@
 							Buat Tugas
 						</a>
 					</li>
-					<li>
-						<a href="#">
+		
+                    <li id="notification_li">
+                        <span id="notification_count">3</span>
+                        <a href="#" id="notificationLink"><i class="fa fa-bell-o"></i>Notifications</a>
+                        <div id="notificationContainer">
+                        <div id="notificationTitle"><i class="fa fa-bell-o"></i>Notifications</div>
+                        <div id="notificationsBody" class="notifications">
+                            
+                            
+                            
+                        </div>
+                        <div id="notificationFooter"><a href="#">See All</a></div>
+                        </div>
+                    </li>
+						<!--a href="#">
 							<i class="fa fa-bell-o"></i>
 							Notification
-						</a>
+						</a->
 						
 						<!-- <ul class="dropdown-menu">
 							<li><a href="#">Action</a></li>
@@ -81,7 +118,6 @@
 							<li><a href="#">Another action</a></li>
 							<li><a href="#">Something else here</a></li>
 						</ul> -->
-					</li>
 				</ul>
 			</div>
       </div>
@@ -140,7 +176,7 @@
 			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
 				<li class="current">
-					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop"></i></span> Dashboard</a>
+					<a href="index.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop"></i></span> Dashboard</a>
 						<!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
 							<li><a href="#">link1</a></li>
 							<li><a href="#">link2</a></li>
@@ -158,7 +194,7 @@
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
 				</li>
 				<li>
-					<a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
+					<a href="assignment.html"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
 				</li>
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calendar"></i></span>Jadwal</a>
@@ -177,7 +213,7 @@
 				<div class="row">
 					<!-- left content -->
 					<div class="col-md-12 main-content">
-						<div class="box-panel col-md-12 wow fadeIn no-min-height">
+						<div class="box-panel col-md-8 wow fadeIn no-min-height">
 							<div class="head-panel teal">
 								<h2>Persentasi Nilai</h2>
 								<i class="fa fa-pie-chart"></i>
@@ -194,171 +230,66 @@
 						</div>
 						
 						
-						<div class="box-panel col-md-8 wow fadeIn">
+						<div class="box-panel col-md-4 wow fadeIn">
 							<div class="head-panel pink">
-								<h2>Catatan &amp; Kegiatan</h2>
-								<i class="fa fa-thumb-tack"></i>
+								<h2>Data saya</h2>
+								<i class="fa fa-info-circle" aria-hidden="true"></i>
 							</div>
 							
 							<div id="content-1" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
 								<div class="bottom-devider">
 									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <h4>10</h4>
 										</div>
 									</a>
 								</div>
 								<div class="bottom-devider">
 									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <span class="data-count"><h4>10</h4></span>
 										</div>
 									</a>
 								</div>
 								<div class="bottom-devider">
 									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle"></i>
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <h4>10</h4>
 										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
+									</a>
+								</div>
+									<div class="bottom-devider">
+									<a href="#">
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <h4>10</h4>
 										</div>
 									</a>
 								</div>
 								<div class="bottom-devider">
 									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <h4>10</h4>
 										</div>
 									</a>
 								</div>
 								<div class="bottom-devider">
 									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle-o"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <h4>10</h4>
 										</div>
 									</a>
 								</div>
 								<div class="bottom-devider">
 									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle-o"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-check-circle-o"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-pencil"></i> Edit
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-pencil-square-o"></i> Kategori: Tugas
-											</span>
-											<span class="just-right">
-												1 minggu lalu
-											</span>
+								        <h4><i class="fa fa-pencil"></i> Tests</h4>
+                                        <div class="feed-icon">
+                                            <h4>10</h4>
 										</div>
 									</a>
 								</div>
@@ -366,219 +297,7 @@
 						</div>
 						
 						
-						<div class="box-panel col-md-4 wow fadeIn">
-							<div class="head-panel green">
-								<h2>Aktifitas</h2>
-								<i class="fa fa-clock-o"></i>
-							</div>
-							
-							<div id="content-2" class="content mCustomScrollbar light body-panel" data-mcs-theme="minimal-dark">
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-bullhorn"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-circle"></i>
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-files-o"></i> Kategori: Diskusi
-											</span>
-											<span class="just-right">
-												Baru saja
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-bullhorn"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-circle"></i>
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-files-o"></i> Kategori: Diskusi
-											</span>
-											<span class="just-right">
-												Baru saja
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-bullhorn"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-circle"></i>
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-files-o"></i> Kategori: Diskusi
-											</span>
-											<span class="just-right">
-												Baru saja
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-bullhorn"></i>
-										</div>
-										
-										<h3>Rapat Besar Tengah Tahun</h3>
-										<p>Perihal: Laporan Kinerja Awal Tahun Ajaran</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-circle"></i>
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-files-o"></i> Kategori: Diskusi
-											</span>
-											<span class="just-right">
-												Baru saja
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-pencil-square-o"></i>
-										</div>
-										
-										<h3>@veranda</h3>
-										<p>Perihal: Pengumpulan Tugas II</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-circle"></i>
-										</div>
-										
-										<div class="feed-update for-notice">
-											<!-- photo -->
-											<div class="pict-auhtor">
-												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
-											</div>
-											<!-- username -->
-											<span class="just-left">
-												@veranda
-											</span>
-											<!-- times update -->
-											<span class="just-right">
-												baru saja
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-bullhorn"></i>
-										</div>
-										
-										<h3>Tugas baru telah dibuat</h3>
-										<p>Materi: Pembentukan Karakter I</p>
-										
-										<div class="feed-icon">
-											<i class="fa fa-circle"></i>
-										</div>
-										
-										<div class="feed-update for-notice">
-											<span class="just-left">
-												<i class="fa fa-files-o"></i> Kategori: Materi
-											</span>
-											<span class="just-right">
-												Baru saja
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-comments-o"></i>
-										</div>
-										
-										<h3>Kumpulan kisi-kisi UN 2015</h3>
-										<p>Kategori: Diskusi</p>
-										
-										<div class="feed-icon">
-											<!-- <i class="fa fa-circle"></i> -->
-										</div>
-										
-										<div class="feed-update for-notice">
-											<!-- photo -->
-											<div class="pict-auhtor">
-												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
-											</div>
-											<!-- username -->
-											<span class="just-left">
-												@veranda
-											</span>
-											<!-- times update -->
-											<span class="just-right">
-												2 Jam Lalu
-											</span>
-										</div>
-									</a>
-								</div>
-								<div class="bottom-devider">
-									<a href="#">
-										<div class="icon-notice">
-											<i class="fa fa-pencil-square-o"></i>
-										</div>
-										
-										<h3>Pengumpulan Tugas I</h3>
-										<p>Materi: Pembentukan Karakter</p>
-										
-										<div class="feed-icon">
-											<!-- <i class="fa fa-circle"></i> -->
-										</div>
-										
-										<div class="feed-update for-notice">
-											<!-- photo -->
-											<div class="pict-auhtor">
-												<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
-											</div>
-											<!-- username -->
-											<span class="just-left">
-												@veranda
-											</span>
-											<!-- times update -->
-											<span class="just-right">
-												2 Jam Lalu
-											</span>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-						
-						
+    
 						<div class="box-panel col-md-4 wow fadeIn">
 							<div class="head-panel blue">
 								<h2>Daftar Kelas</h2>
