@@ -184,31 +184,7 @@
 							</div>
 							
 							<div class="body-panel">
-								<div class="col-md-2 only-donut wow zoomIn">
-                                    <input type="text" value="75" class="knob second dial" data-thickness=".3" data-inputColor="#333" data-fgColor="#f44336" data-bgColor="#ffebee" data-width="150">
-                                    <h5>Sangat Kurang</h5>
-                                    <p>0% - 19%</p>
-								</div>
-								<div class="col-md-2 only-donut wow zoomIn">
-									<input type="text" value="75" class="knob second dial" data-thickness=".3" data-inputColor="#333" data-fgColor="#FF8F00" data-bgColor="#FFE0B2" data-width="150">
-                                     <h5>Kurang</h5>
-                                    <p>20% - 39%</p>
-								</div>
-								<div class="col-md-2 only-donut wow zoomIn">
-                                    <input type="text" value="75" class="knob second dial" data-thickness=".3" data-inputColor="#333" data-fgColor="#FFD600" data-bgColor="#FFFF8D" data-width="150">
-                                    <h5>Cukup</h5>
-                                    <p>40% - 59%</p>
-								</div>
-								<div class="col-md-2 only-donut wow zoomIn">
-									<input type="text" value="75" class="knob second dial" data-thickness=".3" data-inputColor="#333" data-fgColor="#43A047" data-bgColor="#c4e9aa" data-width="150">
-                                     <h5>Bagus</h5>
-                                    <p>60% - 79%</p>
-								</div>
-                                <div class="col-md-2 only-donut wow zoomIn">
-									<input type="text" value="75" class="knob second dial" data-thickness=".3" data-inputColor="#333" data-fgColor="#1B5E20" data-bgColor="#c4e9aa" data-width="150">
-                                     <h5>Sangat Bagus</h5>
-                                    <p>80% - 100%</p>
-								</div>
+								<div id="chart-pie" style="width: 900px; height: 400px; margin: 0 auto"></div>
                                 <script>    
                                     $(function() {
                                             $(".dial").knob();
@@ -1029,6 +1005,9 @@
 	<script src="js/pace.min.js"></script>
 	<script src="js/jquery.knob.js"></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	
 	<script type="text/javascript">
 		//EFFECT TRANSITION
@@ -1053,6 +1032,139 @@
 		})
 		
 		
+	</script>
+	<script type="text/javascript">
+	$(function () {
+
+    var colors = Highcharts.getOptions().colors,
+        categories = ['Sangat Kurang', 'Kurang', 'Cukup', 'Bagus', 'Sangat Bagus'],
+        data = [{
+            y: 20,
+            color: colors[0],
+            drilldown: {
+                name: '',
+                categories: [''],
+                data: [],
+                color: colors[0]
+            }
+        }, {
+            y: 20,
+            color: colors[1],
+            drilldown: {
+                name: '',
+                categories: [''],
+                data: [],
+                color: colors[1]
+            }
+        }, {
+            y: 20,
+            color: colors[2],
+            drilldown: {
+                name: '',
+                categories: [''],
+                data: [],
+                color: colors[2]
+            }
+        }, {
+            y: 20,
+            color: colors[3],
+            drilldown: {
+                name: '',
+                categories: [''],
+                data: [],
+                color: colors[3]
+            }
+        }, {
+            y: 20,
+            color: colors[4],
+            drilldown: {
+                name: '',
+                categories: [''],
+                data: [],
+                color: colors[4]
+            }
+        }, ],
+        browserData = [],
+        versionsData = [],
+        i,
+        j,
+        dataLen = data.length,
+        drillDataLen,
+        brightness;
+
+
+    // Build the data arrays
+    for (i = 0; i < dataLen; i += 1) {
+
+        // add browser data
+        browserData.push({
+            name: categories[i],
+            y: data[i].y,
+            color: data[i].color
+        });
+
+        // add version data
+        drillDataLen = data[i].drilldown.data.length;
+        for (j = 0; j < drillDataLen; j += 1) {
+            brightness = 0.2 - (j / drillDataLen) / 5;
+            versionsData.push({
+                name: data[i].drilldown.categories[j],
+                y: data[i].drilldown.data[j],
+                color: Highcharts.Color(data[i].color).brighten(brightness).get()
+            });
+        }
+    }
+
+    // Create the chart
+    $('#chart-pie').highcharts({
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        plotOptions: {
+            pie: {
+                shadow: false,
+                center: ['50%', '50%']
+            }
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        series: [{
+            name: 'Nilai',
+            data: browserData,
+            size: '60%',
+            dataLabels: {
+                formatter: function () {
+                    return this.y > 5 ? this.point.name : null;
+                },
+                color: '#ffffff',
+                distance: -30
+            }
+        }, {
+            name: 'Versions',
+            data: versionsData,
+            size: '80%',
+            innerSize: '60%',
+            dataLabels: {
+                formatter: function () {
+                    // display only if larger than 1
+                    return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + '%' : null;
+                }
+            }
+        }]
+    });
+});
 	</script>
 	
 </body>
