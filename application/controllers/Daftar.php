@@ -35,6 +35,7 @@ class Daftar extends MY_Controller {
 			);
 			$user_id = $this->mdaftar->insertUser($data_user);
 			$data_lomba = array('user_id' => $user_id);
+			//print_r($post);exit;
 			if($post['bakat']) {
 				$this->mdaftar->insertBakat($data_lomba);
 			}

@@ -71,10 +71,10 @@
 								<input type="text" name="city" class="form-control">
 							</div>
 							<div class="form-group">
-								<label><input type="checkbox" name="bakat">Daftar Lomba Test Bakat Biaya Pendaftaran 50.000 </label>
+								<label><input type="checkbox" value="1" name="bakat">Daftar Lomba Test Bakat Biaya Pendaftaran 50.000 </label>
 							</div>
 							<div class="form-group">
-								<label><input type="checkbox" name="lomba_foto">Daftar Lomba Foto Biaya Pendaftaran 35.000</label>
+								<label><input type="checkbox" value="1" name="lomba_foto">Daftar Lomba Foto Biaya Pendaftaran 35.000</label>
 							</div>
 							<div class="form-group">
 								<label><input type="checkbox" name="lomba_cover_lagu">Daftar Lomba Cover Lagu Biaya Pendaftaran 35.000 </label>
