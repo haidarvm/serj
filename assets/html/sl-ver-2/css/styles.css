@@ -402,7 +402,7 @@ body {
   padding: 10px;
   background: #f9f9f9;
   border: 1px solid #f2f2f2;
-  height: 422px;
+  height: 360px;
   border-radius: 0 0 4px 4px;
 }
 .main-content .box-panel .body-panel .bottom-devider {
@@ -506,6 +506,34 @@ body {
 }
 .main-content .box-panel .body-panel .feed-icon i.fa {
   margin-right: 3px;
+}
+.space-bottom {
+  margin-bottom: 80px;
+}
+.another-space-top {
+  padding-top: 40px;
+}
+.another-space-bottom {
+  padding-bottom: 80px;
+}
+.question img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 75%;
+}
+.dataTables_length {
+  padding: 20px 0 10px;
+}
+.dataTables_filter {
+  padding: 20px 0 10px;
+}
+table.table .progress {
+  margin: 0;
+}
+table.dataTable thead .sorting::after,
+table.dataTable thead .sorting_asc::after,
+table.dataTable thead .sorting_desc::after {
+  top: 10px !important;
 }
 .footer {
   background: #263238;
