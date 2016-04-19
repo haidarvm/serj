@@ -470,14 +470,17 @@ body {
   display: block;
   padding: 3px;
   float: left;
+  cursor: pointer;
   width: 100%;
 }
 .main-content .box-panel .body-panel a:hover {
   -webkit-transition: all 0.5s ease-out;
+  cursor: pointer;
   transition: all 0.5s ease-out;
 }
 .main-content .box-panel .body-panel a:hover {
-  background: #f4f4f4;
+  background: transparent;
+  cursor: pointer;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
