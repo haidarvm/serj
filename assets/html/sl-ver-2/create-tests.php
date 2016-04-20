@@ -18,7 +18,7 @@
                                         <div class="col-md-4 text-center">
                                             <h2>1</h2>
                                             <h1><i class="fa fa-file-text"></i></h1>
-                                            <h4><a href="create-question.html">Buat Pertanyaan</a></h4>
+                                            <h4><a href="create-question.php">Buat Pertanyaan</a></h4>
                                         </div>
 
                                         <div class="col-md-4 text-center">

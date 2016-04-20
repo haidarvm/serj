@@ -88,7 +88,7 @@
 				
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#">
+						<a href="create-tests.php">
 							<i class="fa fa-plus"></i>
 							Buat Tugas
 						</a>
@@ -185,7 +185,7 @@
 						</ul> -->
 				</li>
 				<li>
-					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-book"></i></span> Materi</a>
+					<a href="materi.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-book"></i></span> Materi</a>
 					<!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
 						<li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
 						<li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
@@ -202,7 +202,7 @@
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calendar"></i></span>Jadwal</a>
 				</li>
 				<li>
-					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o"></i></span>Laporan</a>
+					<a href="tugas_detail.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o"></i></span>Laporan</a>
 				</li>
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user"></i></span>Data Siswa</a>
