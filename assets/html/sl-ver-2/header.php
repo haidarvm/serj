@@ -178,7 +178,7 @@
 			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
 				<li>
-					<a href="index.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop"></i></span> Dashboard</a>
+					<a href="index.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop"></i></span> Dashboard</a>
 						<!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
 							<li><a href="#">link1</a></li>
 							<li><a href="#">link2</a></li>
@@ -196,7 +196,7 @@
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
 				</li>
 				<li class="current">
-					<a href="assignment.html"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
+					<a href="tugas.php"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
 				</li>
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calendar"></i></span>Jadwal</a>
