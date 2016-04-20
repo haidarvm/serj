@@ -8,8 +8,6 @@
     <title>Smart Learning</title>
 	
 	<!-- jQuery UI -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/js/jquery.knob-mini.js"></script>
     <script type="text/javascript" >
         $(document).ready(function()
@@ -44,6 +42,9 @@
 	<link href="css/simple-sidebar.css" type="text/css" rel="stylesheet" />
 	<link href="css/pace.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
+
+	<link href="css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 	
 	<!-- LESS and JS -->
 	<link rel="stylesheet/less" href="css/styles.less" />
@@ -77,7 +78,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
 							<li><a href="#"><i class="fa fa-gear"></i> Pengaturan</a></li>
-							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>				
+							<li><a href="#"><i class="fa fa-inbox"></i> Laporan</a></li>
+							
 							<li class="divider" role="separator"></li>
 							<li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
 						</ul>
@@ -86,7 +88,7 @@
 				
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="create-tests.html">
+						<a href="#">
 							<i class="fa fa-plus"></i>
 							Buat Tugas
 						</a>
@@ -175,7 +177,7 @@
 		
 			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
-				<li class="current">
+				<li>
 					<a href="index.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-desktop"></i></span> Dashboard</a>
 						<!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
 							<li><a href="#">link1</a></li>
@@ -193,8 +195,8 @@
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
 				</li>
-				<li>
-					<a href="tests.html"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
+				<li class="current">
+					<a href="assignment.html"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>
 				</li>
 				<li>
 					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calendar"></i></span>Jadwal</a>
@@ -207,119 +209,3 @@
 				</li>
 			</ul>
 		</div><!-- /#sidebar-wrapper -->
-		
-		<div id="page-content-wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<!-- left content -->
-					<div class="col-md-12 main-content">
-						<div class="panel-group">
-                            <div class="box-panel col-md-12 wow fadeIn">
-                                <div class="head-panel blue">
-                                    <h2>Tugas Biologi</h2>
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                </div>
-
-                                <div id="content-3 text-center" class="content long-panel" data-mcs-theme="minimal-dark">
-                                    <div class="container">
-                                        <div class="tittle-panel text-center"><strong>0 Pertanyaan</strong></div>
-                                        <div class="container">
-                                            <label for="comment">Pilih Jenis Pertanyaan:</label>
-
-                                            <div class="dropdown">
-                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilihan Ganda
-                                                <span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                  <li><a href="#">Benar atau salah</a></li>
-                                                  <li><a href="#">Essay</a></li>
-                                                </ul>
-                                            </div>
-                                            <br/><br/>
-                                            <div class="form-group">
-                                              <label for="comment">Pertanyaan:</label>
-                                              <textarea class="form-control" rows="5" id="comment"></textarea>
-                                                <br/><br/>
-                                              <label for="comment">Jawaban opsi A</label>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox" value="">Pilih sebagai jawaban yang benar</label>
-                                                </div>
-                                              <textarea class="form-control" rows="5" id="comment"></textarea>
-                                                <br/>
-                                              <label for="comment">Jawaban opsi B</label>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox" value="">Pilih sebagai jawaban yang benar</label>
-                                                </div>
-                                              <textarea class="form-control" rows="5" id="comment"></textarea>
-                                                <br/>
-                                              <label for="comment">Jawaban opsi C</label>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox" value="">Pilih sebagai jawaban yang benar</label>
-                                                </div>
-                                              <textarea class="form-control" rows="5" id="comment"></textarea>
-                                                <br/>
-                                              <label for="comment">Jawaban opsi D</label>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox" value="">Pilih sebagai jawaban yang benar</label>
-                                                </div>
-                                              <textarea class="form-control" rows="5" id="comment"></textarea>
-                                            </div>
-                                            <button type="button" class="btn btn-success">Simpan</button>
-                                            <button type="button" class="btn btn-danger">Batal</button> 
-										</div>
-                                </div>
-                            </div>
-				        </div>
-				    </div>
-				</div>
-            </div>
-        </div>
-</div>
-
-	
-	
-	<div class="container-fluid">
-		<div class="row">
-			<div class="footer">
-				<p>Copyright &copy; 2016. All Right Reserved.</p>
-				<p>Smart Learning Dashboard <img src="img/logo.png" alt="" border="0" /></p>
-			</div>
-		</div>
-	</div>
-
-	<!-- jQuery (necessary for JavaScript plugins) -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/sidebar_menu.js"></script>
-	<script src="js/pace.min.js"></script>
-	<script src="js/jquery.knob.js"></script>
-	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-	
-	<script type="text/javascript">
-		//EFFECT TRANSITION
-		var wow = new WOW(
-			{
-				boxClass:     'wow',      // animated element css class (default is wow)
-				animateClass: 'animated', // animation css class (default is animated)
-				offset:       100,          // distance to the element when triggering the animation (default is 0)
-				mobile:       true,       // trigger animations on mobile devices (default is true)
-				live:         true,       // act on asynchronously loaded content (default is true)
-				callback:     function(box) {
-				  // the callback is fired every time an animation is started
-				  // the argument that is passed in is the DOM node being animated
-				}
-			}
-		);
-		wow.init();
-		
-		// custom scrolling with style
-		$(function () {
-		  $('[data-toggle="tooltip"]').tooltip()
-		})
-		
-		
-	</script>
-	
-</body>
-</html>
-
