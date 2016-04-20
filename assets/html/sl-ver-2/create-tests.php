@@ -30,7 +30,7 @@
                                         <div class="col-md-4 text-center">
                                             <h2>3</h2>
                                             <h1><i class="fa fa-check-circle-o" aria-hidden="true"></i></h1>
-                                            <h4><a href="">Lihat Hasil Tes</a></h4>
+                                            <h4><a href="tests.php">Lihat Hasil Tes</a></h4>
                                         </div>
                                     </div>
                                 </div>

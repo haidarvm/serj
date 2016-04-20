@@ -205,7 +205,7 @@
 					<a href="tugas_detail.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o"></i></span>Laporan</a>
 				</li>
 				<li>
-					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user"></i></span>Data Siswa</a>
+					<a href="data_siswa.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user"></i></span>Data Siswa</a>
 				</li>
 			</ul>
 		</div><!-- /#sidebar-wrapper -->
