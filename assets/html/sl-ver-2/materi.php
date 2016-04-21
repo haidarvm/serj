@@ -39,7 +39,7 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="materi_detail.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
                 </tr>
                 
                 <tr>
@@ -56,7 +56,7 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="materi_detail.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
                 </tr>
                 <tr>
                   <td>Pecahan</td>
@@ -72,7 +72,7 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="materi_detail.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
                 <tr>
                   <td>Bilangan Bulat</td>
                   <td>Matematika</td>
@@ -87,7 +87,7 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="materi_detail.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
                 </tr>
                 </tbody>
               </table>

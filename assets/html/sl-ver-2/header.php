@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Smart Learning</title>
 	
-	<!-- jQuery UI -->
+	<!-- jQuery UI 
     <script src="/js/jquery.knob-mini.js"></script>
     <script type="text/javascript" >
         $(document).ready(function()
@@ -32,7 +32,7 @@
 
         });
     </script>
-
+-->
 	<!-- stylesheet  -->
     <link href="css/custom.css" rel="stylesheet">
 	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
@@ -46,9 +46,9 @@
 	<link href="css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 	
-	<!-- LESS and JS -->
+	<!-- LESS and JS 
 	<link rel="stylesheet/less" href="css/styles.less" />
-	<script type="text/javascript" src="js/less.min.js"></script>
+	<script type="text/javascript" src="js/less.min.js"></script>-->
   </head>
   
 <body>
@@ -209,3 +209,4 @@
 				</li>
 			</ul>
 		</div><!-- /#sidebar-wrapper -->
+		

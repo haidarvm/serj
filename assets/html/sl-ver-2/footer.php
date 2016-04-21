@@ -1,29 +1,34 @@
+</div>
 <div class="container-fluid">
-		<div class="row">
-			<div class="footer">
-				<p>Copyright &copy; 2016. All Right Reserved.</p>
-				<p>Smart Learning Dashboard <img src="img/logo.png" alt="" border="0" /></p>
-			</div>
+	<div class="row">
+		<div class="footer">
+			<p>Copyright &copy; 2016. All Right Reserved.</p>
+			<p>
+				Smart Learning Dashboard <img src="img/logo.png" alt="" border="0" />
+			</p>
 		</div>
 	</div>
+</div>
 
-	<!-- jQuery (necessary for JavaScript plugins) -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/sidebar_menu.js"></script>
-	<script src="js/pace.min.js"></script>
-	<script src="js/jquery.knob.js"></script>
-	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- jQuery (necessary for JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/sidebar_menu.js"></script>
+<script src="js/pace.min.js"></script>
+<script src="js/jquery.knob.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.categories.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/learn.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-	<!-- DataTables -->
+<!-- DataTables
 	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script> -->
 
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
-	
-	<script type="text/javascript">
+
+<script type="text/javascript">
 		//EFFECT TRANSITION
 		var wow = new WOW(
 			{
@@ -47,7 +52,7 @@
 		
 		
 	</script>
-	<script type="text/javascript">
+<!--  <script type="text/javascript">
 	  $(function () {
 	    $("#example1").DataTable();
 	    $('#example2').DataTable({
@@ -59,8 +64,8 @@
 	      "autoWidth": false
 	    });
 	  });
-	</script>
-	
+	</script>-->
+
 </body>
 </html>
 
