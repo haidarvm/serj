@@ -18,7 +18,9 @@
                   <th>Nama</th>
                   <th>Kelas</th>
                   <th>Peringkat</th>
-                  <th>Rata-rata Nilai</th>
+                  <th>Rata-rata Nilai Bhs Indo</th>
+                  <th>Rata-rata Nilai Math</th>
+                  <th>Rata-rata Nilai Biology</th>
                   <th>Lihat Prestasi</th>
                 </tr>
                 </thead>
@@ -28,35 +30,45 @@
                   <td>5A</td>
                   <td>2</td>
                   <td>90</td>
-                  <td><a href="tugas_detail.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
+                  <td>90</td>
+                  <td>90</td>
+                  <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
                 <tr>
                   <td>Rudi</td>
                   <td>5A</td>
                   <td>3</td>
                   <td>80</td>
-                  <td><a href="tugas_detail.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
+                  <td>80</td>
+                  <td>80</td>
+                  <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
                 <tr>
                   <td>Asep</td>
                   <td>5A</td>
                   <td>4</td>
                   <td>70</td>
-                  <td><a href="tugas_detail.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
+                  <td>70</td>
+                  <td>70</td>
+                  <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
                 <tr>
                   <td>Agus</td>
                   <td>5A</td>
                   <td>5</td>
                   <td>60</td>
-                  <td><a href="tugas_detail.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
+                  <td>60</td>
+                  <td>60</td>
+                  <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
                 <tr>
                   <td>Andi</td>
                   <td>5A</td>
                   <td>6</td>
                   <td>50</td>
-                  <td><a href="tugas_detail.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
                 </tbody>
               </table>
