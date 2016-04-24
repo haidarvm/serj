@@ -193,7 +193,7 @@
 					</ul> -->
 				</li>
 				<li>
-					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
+					<a href="diskusi.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
 				</li>
 				<li class="current">
 					<a href="tugas.php"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>

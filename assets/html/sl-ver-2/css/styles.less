@@ -384,6 +384,13 @@ body {
 			float: left;
 			border-radius: 4px 4px 0 0;
 			
+			a {
+				color: #fff;
+
+				&:hover{
+					color: #444;
+				}
+			}
 			h2 {
 				margin: 0;
 				font-family: 'sl-semibold';
@@ -587,9 +594,34 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 		left: -65px;
 	}
 }
+
+.border-bottom {
+	border-bottom: 3px solid #0092bd;
+	margin-bottom: 30px;
+	padding-bottom: 10px !important;
+}
 .add-single-line {
 	padding: 0 0 25px 0;
 	text-align: right;
+	
+	.form-inline {
+		float: right;
+		margin-left: 20px;
+	}
+	button {
+		margin-left: 20px;
+	}
+
+	h3 {
+		margin: 5px 0 0;
+		font-size: 30px;
+		text-align: left;
+		.sl;
+
+		i.fa {
+			color: #0092bd;
+		}
+	}
 
 	.blue-button {
 		padding: 7px 25px;
@@ -603,6 +635,11 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 			margin-left: 5px;
 		}
 
+		i.fa.fa-comments {
+			position: relative;
+			top: 0;
+		}
+
 		i.fa {
 			position: relative;
 			top: 1px;
@@ -611,5 +648,15 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 		&:hover {
 			background-color: #006064;
 		}
+	}
+}
+
+.show-comments {
+	min-height: 50px;
+	max-height: 80px;
+	padding: 8px 25px 5px 10px;
+
+	&:first-child {
+		padding-top: 5px;
 	}
 }

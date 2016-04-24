@@ -382,6 +382,12 @@ body {
   float: left;
   border-radius: 4px 4px 0 0;
 }
+.main-content .box-panel .head-panel a {
+  color: #fff;
+}
+.main-content .box-panel .head-panel a:hover {
+  color: #444;
+}
 .main-content .box-panel .head-panel h2 {
   margin: 0;
   font-family: 'sl-semibold';
@@ -570,9 +576,30 @@ table.dataTable thead .sorting_desc::after {
 .nav.navbar-nav.display-user .dropdown-menu {
   left: -65px;
 }
+.border-bottom {
+  border-bottom: 3px solid #0092bd;
+  margin-bottom: 30px;
+  padding-bottom: 10px !important;
+}
 .add-single-line {
   padding: 0 0 25px 0;
   text-align: right;
+}
+.add-single-line .form-inline {
+  float: right;
+  margin-left: 20px;
+}
+.add-single-line button {
+  margin-left: 20px;
+}
+.add-single-line h3 {
+  margin: 5px 0 0;
+  font-size: 30px;
+  text-align: left;
+  color: #333;
+}
+.add-single-line h3 i.fa {
+  color: #0092bd;
 }
 .add-single-line .blue-button {
   padding: 7px 25px;
@@ -585,10 +612,22 @@ table.dataTable thead .sorting_desc::after {
 .add-single-line .blue-button span {
   margin-left: 5px;
 }
+.add-single-line .blue-button i.fa.fa-comments {
+  position: relative;
+  top: 0;
+}
 .add-single-line .blue-button i.fa {
   position: relative;
   top: 1px;
 }
 .add-single-line .blue-button:hover {
   background-color: #006064;
+}
+.show-comments {
+  min-height: 50px;
+  max-height: 80px;
+  padding: 8px 25px 5px 10px;
+}
+.show-comments:first-child {
+  padding-top: 5px;
 }
