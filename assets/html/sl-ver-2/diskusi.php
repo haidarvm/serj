@@ -28,7 +28,7 @@
 							
 							<div class="col-md-6 box-panel">
 								<div class="head-panel teal">
-									<h2><a href="#">Tahun ajaran baru 2015/2016, Apa yang baru?</a></h2>
+									<h2><a href="diskusi_detail.php">Tahun ajaran baru 2015/2016, Apa yang baru?</a></h2>
 									<i class="fa fa-comments-o"></i>
 								</div>
 								<!-- /.box-header -->
@@ -148,7 +148,7 @@
 							
 							<div class="col-md-6 box-panel">
 								<div class="head-panel pink">
-									<h2><a href="#">Tunjangan pengajar mengalami kenaikan 15%.</a></h2>
+									<h2><a href="diskusi_detail.php">Tunjangan pengajar mengalami kenaikan 15%.</a></h2>
 									<i class="fa fa-comments-o"></i>
 								</div>
 								<!-- /.box-header -->
@@ -268,7 +268,7 @@
 							
 							<div class="col-md-6 box-panel">
 								<div class="head-panel green">
-									<h2><a href="#">Tahun ajaran baru 2015/2016, Apa yang baru?</a></h2>
+									<h2><a href="diskusi_detail.php">Tahun ajaran baru 2015/2016, Apa yang baru?</a></h2>
 									<i class="fa fa-comments-o"></i>
 								</div>
 								<!-- /.box-header -->
@@ -388,7 +388,7 @@
 							
 							<div class="col-md-6 box-panel">
 								<div class="head-panel blue">
-									<h2><a href="#">Pengangkatan Kepala Sekolah masa jabatan 2015/2016</a></h2>
+									<h2><a href="diskusi_detail.php">Pengangkatan Kepala Sekolah masa jabatan 2015/2016</a></h2>
 									<i class="fa fa-comments-o"></i>
 								</div>
 								<!-- /.box-header -->
@@ -508,7 +508,7 @@
 							
 							<div class="col-md-6 box-panel">
 								<div class="head-panel blue">
-									<h2><a href="#">Tahun ajaran baru 2015/2016, Apa yang baru?</a></h2>
+									<h2><a href="diskusi_detail.php">Tahun ajaran baru 2015/2016, Apa yang baru?</a></h2>
 									<i class="fa fa-comments-o"></i>
 								</div>
 								<!-- /.box-header -->
@@ -628,7 +628,7 @@
 							
 							<div class="col-md-6 box-panel">
 								<div class="head-panel purple">
-									<h2><a href="#">Pengangkatan Kepala Sekolah masa jabatan 2015/2016</a></h2>
+									<h2><a href="diskusi_detail.php">Pengangkatan Kepala Sekolah masa jabatan 2015/2016</a></h2>
 									<i class="fa fa-comments-o"></i>
 								</div>
 								<!-- /.box-header -->
