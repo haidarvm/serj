@@ -659,6 +659,34 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	&:first-child {
 		padding-top: 5px;
 	}
+	.form-group {
+		width: 100%;
+		float: left;
+	}
+	textarea {
+		width: 80%;
+		resize: vertical;
+		min-height: 100px;
+		float: left;
+		border: 1px solid #dedede;
+		border-radius: 4px;
+		padding: 5px;
+		color: #757575;
+	}
+	button {
+		float: left;
+		margin: 0 15px;
+	}
+	label {
+		color: #757575;
+		font-size: 16px;
+		float: left;
+		display: block !important;
+		font-weight: normal;
+		margin-right: 15px;
+		width: 100%;
+	}
+
 }
 
 .box-multipurpose {
@@ -701,4 +729,80 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 		background-color: transparent;
 		text-decoration: underline;
 	}
+}
+
+.box-body.body-panel.no-min-height {
+	height: inherit !important;
+}
+.detail-discuss {
+	float: left;
+	padding: 10px 10px 20px;
+	border-bottom: 1px solid #f1f1f1;
+	margin: 0 0 30px;
+
+	p {
+		font-size: 14px !important;
+		line-height: 20px !important;
+		margin-bottom: 15px !important;
+	}
+
+	.detail-author {
+		float: right;
+		width: auto;
+		display: block;
+		text-align: right;
+
+		.just-left {
+			font-size: 14px;
+		}
+		.just-right {
+			font-size: 14px;
+			float: left;
+			margin-left: 10px;
+			color: #0092bd !important;
+			
+			a {
+				width: inherit !important; 
+				padding: 0;
+				margin: 0 5px;
+
+				&:hover {
+					background-color: transparent;
+				}
+			}
+			i.fa {
+				font-size: 20px;
+				margin: 0 5px;
+				color: #0092bd;
+			}
+		}
+	}
+}
+
+.detail-comment {
+	float: left;
+	padding: 0 30px;
+	width: 100%;
+
+
+	.bottom-devider.show-comments {
+		margin-bottom: 20px;
+		float: none !important;
+
+		p {
+			font-size: 13px;
+		}
+		span {
+			font-size: 13px;
+		}
+	
+	}
+
+	.bottom-devider.show-comments.form-comm {
+		margin-bottom: 20px;
+		float: none !important;
+	}
+}
+.detail-comment .bottom-devider.show-comments.form-comm {
+	
 }
