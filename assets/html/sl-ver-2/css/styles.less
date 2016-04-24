@@ -609,7 +609,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 		margin-left: 20px;
 	}
 	button {
-		margin-left: 20px;
+		margin-left: 15px;
 	}
 
 	h3 {
@@ -658,5 +658,47 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 
 	&:first-child {
 		padding-top: 5px;
+	}
+}
+
+.box-multipurpose {
+	background: #f9f9f9;
+	padding: 0 20px 0;
+	border: 1px solid #dedede;
+	margin-bottom: 30px;
+	border-radius: 4px;
+}
+
+.load-more {
+	text-align: center;
+	.teal;
+	padding: 5px 0 0;
+	border-radius: 4px;
+
+	ul {
+		margin: 0;
+
+		li {
+
+			a {
+				font-size: 14px;
+
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.pagination > li > a, .pagination > li > span {
+		background-color: transparent;
+		color: #fff;
+		border: 0;
+	}
+	.disabled > a:hover {
+	    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	}
+	.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+		background-color: transparent;
+		text-decoration: underline;
 	}
 }
