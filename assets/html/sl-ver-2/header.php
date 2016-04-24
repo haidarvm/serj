@@ -67,7 +67,7 @@
 			</div>
 			
 			<div class="navbar-collapse collapse" id="navbar">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav display-user">
 					<li>
 						<div class="pict">
 							<img src="img/img-author.jpg" alt="" width="30" height="30" border="0" />

@@ -5,12 +5,19 @@
 					<!-- left content -->
 					<div class="col-md-12 main-content">
 						<div class="box-panel col-md-12 wow fadeIn">
+							<div class="col-md-12 add-single-line">
+								<a href="#" class="blue-button">
+									<i aria-hidden="true" class="fa fa-plus-square-o"></i>
+									<span>Tambah Materi Baru</span>
+								</a>
+							</div>
+						
 							<div class="head-panel purple">
 								<h2>Materi Status</h2>
 								<i class="fa fa-files-o"></i>
 							</div>
-							
 							<!-- /.box-header -->
+							
             <div class="box-body">
               <table  class="table table-bordered table-striped">
                 <thead>

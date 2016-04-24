@@ -402,7 +402,7 @@ body {
   padding: 10px;
   background: #f9f9f9;
   border: 1px solid #f2f2f2;
-  height: 422px;
+  height: 360px;
   border-radius: 0 0 4px 4px;
 }
 .main-content .box-panel .body-panel .bottom-devider {
@@ -470,17 +470,14 @@ body {
   display: block;
   padding: 3px;
   float: left;
-  cursor: pointer;
   width: 100%;
 }
 .main-content .box-panel .body-panel a:hover {
   -webkit-transition: all 0.5s ease-out;
-  cursor: pointer;
   transition: all 0.5s ease-out;
 }
 .main-content .box-panel .body-panel a:hover {
-  background: transparent;
-  cursor: pointer;
+  background: #f4f4f4;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -566,4 +563,32 @@ table.dataTable thead .sorting_desc::after {
   .main-content .box-panel .body-panel {
     margin-bottom: 50px !important;
   }
+}
+.nav.navbar-nav.display-user {
+  padding-right: 30px;
+}
+.nav.navbar-nav.display-user .dropdown-menu {
+  left: -65px;
+}
+.add-single-line {
+  padding: 0 0 25px 0;
+  text-align: right;
+}
+.add-single-line .blue-button {
+  padding: 7px 25px;
+  color: #fff;
+  background-color: #0092bd;
+  border: 0;
+  display: inline-block;
+  border-radius: 4px;
+}
+.add-single-line .blue-button span {
+  margin-left: 5px;
+}
+.add-single-line .blue-button i.fa {
+  position: relative;
+  top: 1px;
+}
+.add-single-line .blue-button:hover {
+  background-color: #006064;
 }
