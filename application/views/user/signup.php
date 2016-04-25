@@ -59,6 +59,18 @@
 								<input type="password" name="re_password" id="re_password"  class="form-control">
 							</div>
 							<div class="form-group">
+								<label>No Telp</label>
+								<input type="text" name="phone" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Pin BBM</label>
+								<input type="text" name="bbm" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Nama Sekolah/Perguruan Tinggi/Instansi</label>
+								<input type="text" name="school" class="form-control">
+							</div>
+							<div class="form-group">
 								<label>Nama Sekolah/Perguruan Tinggi/Instansi</label>
 								<input type="text" name="school" class="form-control">
 							</div>

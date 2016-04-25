@@ -33,6 +33,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php echo site_url()?>">Home</a></li>
             <li><a href="<?php echo site_url()?>web/">BJEE</a></li>
+            <li><a href="<?php echo site_url()?>web/stand">Stand</a></li>
             <li><a href="<?php echo site_url()?>web/serbuk">Serbuk</a></li>
             <li><a href="<?php echo site_url()?>web/tentang-kami">Tentang Kami</a></li>
             <li><a href="<?php echo site_url()?>web/kontak">Kontak</a></li>

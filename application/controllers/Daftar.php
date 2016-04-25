@@ -27,10 +27,10 @@ class Daftar extends MY_Controller {
 	public function submit() {
 		$post = $this->input->post();
 		if($post) {
-			unset($post['re_password']);
 			//print_r($post);exit;
 			//$data['user'] = 
-			$data_user = array('full_name' => $post['full_name'], 'gender' => $post['full_name'], 'date_birth' => $post['date_birth'] , 'email' => $post['email'] , 'school' => $post['school'] ,
+			$data_user = array('full_name' => $post['full_name'], 'gender' => $post['gender'],
+				'password'=> $post['password'] ,'date_birth' => $post['date_birth'] , 'phone' => $post['phone'], 'bbm' => $post['bbm'], 'email' => $post['email'] , 'school' => $post['school'] ,
 				'grade' =>$post['grade'] , 	'city' => $post['city']
 			);
 			$user_id = $this->mdaftar->insertUser($data_user);
