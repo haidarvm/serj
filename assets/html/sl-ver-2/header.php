@@ -67,7 +67,7 @@
 			</div>
 			
 			<div class="navbar-collapse collapse" id="navbar">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav display-user">
 					<li>
 						<div class="pict">
 							<img src="img/img-author.jpg" alt="" width="30" height="30" border="0" />
@@ -193,7 +193,7 @@
 					</ul> -->
 				</li>
 				<li>
-					<a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
+					<a href="diskusi.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments"></i></span>Diskusi</a>
 				</li>
 				<li class="current">
 					<a href="tugas.php"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-pencil"></i></span>Tugas</a>

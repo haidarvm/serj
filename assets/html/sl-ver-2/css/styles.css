@@ -382,6 +382,12 @@ body {
   float: left;
   border-radius: 4px 4px 0 0;
 }
+.main-content .box-panel .head-panel a {
+  color: #fff;
+}
+.main-content .box-panel .head-panel a:hover {
+  color: #444;
+}
 .main-content .box-panel .head-panel h2 {
   margin: 0;
   font-family: 'sl-semibold';
@@ -402,7 +408,7 @@ body {
   padding: 10px;
   background: #f9f9f9;
   border: 1px solid #f2f2f2;
-  height: 422px;
+  height: 360px;
   border-radius: 0 0 4px 4px;
 }
 .main-content .box-panel .body-panel .bottom-devider {
@@ -470,17 +476,14 @@ body {
   display: block;
   padding: 3px;
   float: left;
-  cursor: pointer;
   width: 100%;
 }
 .main-content .box-panel .body-panel a:hover {
   -webkit-transition: all 0.5s ease-out;
-  cursor: pointer;
   transition: all 0.5s ease-out;
 }
 .main-content .box-panel .body-panel a:hover {
-  background: transparent;
-  cursor: pointer;
+  background: #f4f4f4;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -566,4 +569,193 @@ table.dataTable thead .sorting_desc::after {
   .main-content .box-panel .body-panel {
     margin-bottom: 50px !important;
   }
+}
+.nav.navbar-nav.display-user {
+  padding-right: 30px;
+}
+.nav.navbar-nav.display-user .dropdown-menu {
+  left: -65px;
+}
+.border-bottom {
+  border-bottom: 3px solid #0092bd;
+  margin-bottom: 30px;
+  padding-bottom: 10px !important;
+}
+.add-single-line {
+  padding: 0 0 25px 0;
+  text-align: right;
+}
+.add-single-line .form-inline {
+  float: right;
+  margin-left: 20px;
+}
+.add-single-line button {
+  margin-left: 15px;
+}
+.add-single-line h3 {
+  margin: 5px 0 0;
+  font-size: 30px;
+  text-align: left;
+  color: #333;
+}
+.add-single-line h3 i.fa {
+  color: #0092bd;
+}
+.add-single-line .blue-button {
+  padding: 7px 25px;
+  color: #fff;
+  background-color: #0092bd;
+  border: 0;
+  display: inline-block;
+  border-radius: 4px;
+}
+.add-single-line .blue-button span {
+  margin-left: 5px;
+}
+.add-single-line .blue-button i.fa.fa-comments {
+  position: relative;
+  top: 0;
+}
+.add-single-line .blue-button i.fa {
+  position: relative;
+  top: 1px;
+}
+.add-single-line .blue-button:hover {
+  background-color: #006064;
+}
+.show-comments {
+  min-height: 50px;
+  max-height: 80px;
+  padding: 8px 25px 5px 10px;
+}
+.show-comments:first-child {
+  padding-top: 5px;
+}
+.show-comments .form-group {
+  width: 100%;
+  float: left;
+}
+.show-comments textarea {
+  width: 80%;
+  resize: vertical;
+  min-height: 100px;
+  float: left;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: 5px;
+  color: #757575;
+}
+.show-comments button {
+  float: left;
+  margin: 0 15px;
+}
+.show-comments label {
+  color: #757575;
+  font-size: 16px;
+  float: left;
+  display: block !important;
+  font-weight: normal;
+  margin-right: 15px;
+  width: 100%;
+}
+.box-multipurpose {
+  background: #f9f9f9;
+  padding: 0 20px 0;
+  border: 1px solid #dedede;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+.load-more {
+  text-align: center;
+  background: #009688;
+  padding: 5px 0 0;
+  border-radius: 4px;
+}
+.load-more ul {
+  margin: 0;
+}
+.load-more ul li a {
+  font-size: 14px;
+}
+.load-more ul li a:hover {
+  text-decoration: underline;
+}
+.load-more .pagination > li > a,
+.load-more .pagination > li > span {
+  background-color: transparent;
+  color: #fff;
+  border: 0;
+}
+.load-more .disabled > a:hover {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.load-more .pagination > .active > a,
+.load-more .pagination > .active > span,
+.load-more .pagination > .active > a:hover,
+.load-more .pagination > .active > span:hover,
+.load-more .pagination > .active > a:focus,
+.load-more .pagination > .active > span:focus {
+  background-color: transparent;
+  text-decoration: underline;
+}
+.box-body.body-panel.no-min-height {
+  height: inherit !important;
+}
+.detail-discuss {
+  float: left;
+  padding: 10px 10px 20px;
+  border-bottom: 1px solid #f1f1f1;
+  margin: 0 0 30px;
+}
+.detail-discuss p {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  margin-bottom: 15px !important;
+}
+.detail-discuss .detail-author {
+  float: right;
+  width: auto;
+  display: block;
+  text-align: right;
+}
+.detail-discuss .detail-author .just-left {
+  font-size: 14px;
+}
+.detail-discuss .detail-author .just-right {
+  font-size: 14px;
+  float: left;
+  margin-left: 10px;
+  color: #0092bd !important;
+}
+.detail-discuss .detail-author .just-right a {
+  width: inherit !important;
+  padding: 0;
+  margin: 0 5px;
+}
+.detail-discuss .detail-author .just-right a:hover {
+  background-color: transparent;
+}
+.detail-discuss .detail-author .just-right i.fa {
+  font-size: 20px;
+  margin: 0 5px;
+  color: #0092bd;
+}
+.detail-comment {
+  float: left;
+  padding: 0 30px;
+  width: 100%;
+}
+.detail-comment .bottom-devider.show-comments {
+  margin-bottom: 20px;
+  float: none !important;
+}
+.detail-comment .bottom-devider.show-comments p {
+  font-size: 13px;
+}
+.detail-comment .bottom-devider.show-comments span {
+  font-size: 13px;
+}
+.detail-comment .bottom-devider.show-comments.form-comm {
+  margin-bottom: 20px;
+  float: none !important;
 }
