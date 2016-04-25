@@ -15,12 +15,13 @@
               <table  class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nama</th>
-                  <th>Pelajaran</th>
+                  <th><i class="fa fa-users"></i> Nama</th>
+                  <th><i class="fa fa-book"></i> Pelajaran</th>
                   <th>Kelas</th>
                   <th>Mulai</th>
                   <th>Selesai</th>
-                  <th>Tugas Terkumpul</th>
+                  <th><i class="fa fa-pencil"></i> Tugas Terkumpul</th>
+                  <th><i class="fa fa-comments"></i> Diskusi</th>
                   <th>Lihat</th>
                 </tr>
                 </thead>
@@ -39,7 +40,8 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td>5</td>
+                  <td><a href="kubus.php"><i class="fa fa-book"></i> Lihat Materi</a></td>
                 </tr>
                 
                 <tr>
@@ -56,7 +58,8 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td>5</td>
+                  <td><a href="kubus.php"><i class="fa fa-book"></i> Lihat Materi</a></td>
                 </tr>
                 <tr>
                   <td>Pecahan</td>
@@ -72,7 +75,8 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td>5</td>
+                  <td><a href="kubus.php"><i class="fa fa-book"></i> Lihat Materi</a></td>
                 <tr>
                   <td>Bilangan Bulat</td>
                   <td>Matematika</td>
@@ -87,7 +91,8 @@
 					  </div>
 					</div>
 					</td>
-                  <td><a href="kubus.php"><i class="fa fa-user"></i> Lihat Materi</a></td>
+                  <td>5</td>
+                  <td><a href="kubus.php"><i class="fa fa-book"></i> Lihat Materi</a></td>
                 </tr>
                 </tbody>
               </table>

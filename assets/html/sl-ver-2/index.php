@@ -4,6 +4,7 @@
 		<div class="row">
 			<!-- left content -->
 			<div class="col-md-12 main-content">
+			
 				<div class="box-panel col-md-12 wow fadeIn no-min-height">
 					<div class="head-panel teal">
 						<h2>Persentasi Nilai Rata-rata Siswa</h2>
@@ -12,22 +13,22 @@
 
 					<div class="body-panel">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3 text-center">
 								<h3>Kelas III</h3>
 								<div id="placeholder" class="demo-placeholder"
 									style="height: 200px; width: 200px;"></div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 text-center">
 								<h3>Kelas IV</h3>
 								<div id="placeholder2" class="demo-placeholder"
 									style="height: 200px; width: 200px;"></div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 text-center">
 								<h3>Kelas V</h3>
 								<div id="placeholder3" class="demo-placeholder"
 									style="height: 200px; width: 200px;"></div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 text-center">
 								<h3>Kelas VI</h3>
 								<div id="placeholder4" class="demo-placeholder"
 									style="height: 200px; width: 200px;"></div>
@@ -303,7 +304,7 @@
 						data-mcs-theme="minimal-dark">
 						<div class="bottom-devider">
 							<a href="#">
-								<h3>Bahaya Narkoba</h3>
+								<h3>Bilangan Bulat</h3>
 								<p>Lorem ipsum dolor si amet, need vectors or want to use on the
 									desktop?...</p>
 
@@ -313,14 +314,14 @@
 
 								<div class="feed-update">
 									<span class="just-left"> <i class="fa fa-file-text-o"></i>
-										Bahasa Indonesia
+										Matematika
 									</span> <span class="just-right"> 4 Jam lalu </span>
 								</div>
 							</a>
 						</div>
 						<div class="bottom-devider">
 							<a href="#">
-								<h3>Bahaya Narkoba</h3>
+								<h3>Pecahan</h3>
 								<p>Lorem ipsum dolor si amet, need vectors or want to use on the
 									desktop?...</p>
 
@@ -330,14 +331,14 @@
 
 								<div class="feed-update">
 									<span class="just-left"> <i class="fa fa-file-text-o"></i>
-										Bahasa Indonesia
+										Matematika
 									</span> <span class="just-right"> 4 Jam lalu </span>
 								</div>
 							</a>
 						</div>
 						<div class="bottom-devider">
 							<a href="#">
-								<h3>Bahaya Narkoba</h3>
+								<h3>Volume Kubus</h3>
 								<p>Lorem ipsum dolor si amet, need vectors or want to use on the
 									desktop?...</p>
 
@@ -347,7 +348,7 @@
 
 								<div class="feed-update">
 									<span class="just-left"> <i class="fa fa-file-text-o"></i>
-										Bahasa Indonesia
+										Matematika
 									</span> <span class="just-right"> 4 Jam lalu </span>
 								</div>
 							</a>

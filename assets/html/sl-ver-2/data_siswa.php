@@ -39,7 +39,7 @@
                   <td>5A</td>
                   <td>3</td>
                   <td>80</td>
-                  <td>80</td>
+                  <td><b class="text-success">80</b></td>
                   <td>80</td>
                   <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
@@ -48,7 +48,7 @@
                   <td>5A</td>
                   <td>4</td>
                   <td>70</td>
-                  <td>70</td>
+                  <td><b class="text-primary">80</b></td>
                   <td>70</td>
                   <td><a href="nilai_stat.php"><i class="fa fa-user"></i> Lihat Prestasi</a></td>
                 </tr>
