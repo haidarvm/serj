@@ -4,6 +4,11 @@
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'qikkireg';
+  src: url('../fonts/qikkireg.eot');
+  src: url('../fonts/qikkireg.eot?#iefix') format('embedded-opentype'), url('../fonts/qikkireg.woff') format('woff'), url('../fonts/qikkireg.ttf') format('truetype'), url('../fonts/qikkireg.svg#RockwellStd') format('svg');
+}
+@font-face {
   font-family: 'sl';
   src: url('../fonts/sl.eot');
   src: url('../fonts/sl.eot?#iefix') format('embedded-opentype'), url('../fonts/sl.woff') format('woff'), url('../fonts/sl.ttf') format('truetype'), url('../fonts/sl.svg#RockwellStd') format('svg');
@@ -532,6 +537,11 @@ body {
   text-align: center;
   padding-top: 3%;
   padding-bottom: 3%;
+}
+.main-container .no-data h2 {
+  font-family: 'qikkireg';
+  color: #bfbfbf;
+  font-size: 20px;
 }
 .main-container .box-material {
   margin-bottom: 30px;
