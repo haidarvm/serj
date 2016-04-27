@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="img/favicon.png" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Landing - Smart Learning</title>
+	
+	<!-- jQuery UI -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="/js/jquery.knob-mini.js"></script>
+
+	<!-- stylesheet  -->
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/simple-sidebar.css" type="text/css" rel="stylesheet" />
+	<link href="css/pace.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
+	
+	<!-- LESS and JS -->
+	<link rel="stylesheet/less" href="css/styles.less" />
+	<script type="text/javascript" src="js/less.min.js"></script>
+  </head>
+  
+<body>
+	<!-- background for landing -->
+	<div class="pic-wrapper">
+	  <figure class="pic-1"></figure>
+	  <figure class="pic-2"></figure>
+	  <figure class="pic-3"></figure>
+	  <figure class="pic-4"></figure>
+	</div>
+
+	<div class="container-fluid">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="col-md-12">
+				<div class="navbar-header">
+					<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				  
+					<!-- Logo -->
+					<a href="#" class="navbar-brand"><img src="img/logo.png" alt="Smart Learning" width="207" height="80" border="0" /></a>
+				</div>
+				
+				<div class="navbar-collapse collapse" id="navbar">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#" target="_Blank"><img src="img/apps.png" alt="" width="115" height="36" border="0" /></a>
+						</li>
+						<li>
+							<button class="btn btn-primary">
+								<span>Daftar</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+		  </div>
+		</nav>
+	</div>
+	
+	<div class="container-fluid space-top">
+		<div class="row">
+			<div class="col-md-6 box-login-form wow zoomIn">
+				<h2>AYO BELAJAR BERSAMA KAMI</h2>
+				
+				<div class="col-md-6 nopadding">
+					<form>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Username">
+					  </div>
+					  <div class="form-group">
+						<input type="password" class="form-control" placeholder="Password">
+					  </div>
+					  
+					  <button type="submit" class="btn btn-pink">Masuk</button>
+					  <p>Kamu belum terdaftar ? Ayo buat akun mu <a href="#">disini</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- foonter use for landing page only -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 footer">
+				<ul class="nav-footer">
+					<li>
+						<a href="#">Privacy</a>
+					</li>
+					<li>
+						<a href="#">Register</a>
+					</li>
+					<li>
+						<a href="#">FAQ</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+				</ul>
+				
+				<p>Copyright &copy; 2016 SmartLearning</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery (necessary for JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/sidebar_menu.js"></script>
+	<script src="js/pace.min.js"></script>
+	<script src="js/jquery.knob.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script type="text/javascript">
+		//EFFECT TRANSITION
+		var wow = new WOW(
+			{
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       100,          // distance to the element when triggering the animation (default is 0)
+				mobile:       true,       // trigger animations on mobile devices (default is true)
+				live:         true,       // act on asynchronously loaded content (default is true)
+				callback:     function(box) {
+				  // the callback is fired every time an animation is started
+				  // the argument that is passed in is the DOM node being animated
+				}
+			}
+		);
+		wow.init();
+	</script>
+	
+</body>
+</html>
+
