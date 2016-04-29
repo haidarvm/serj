@@ -192,6 +192,10 @@ body {
 	left: inherit;
 	right: 0;
 }
+.dropdown-menu.drop-default {
+	left: 0;
+	right: inherit;
+}
 .nav.navbar-nav {
     float: right;
 	margin-top: 8px;
@@ -531,6 +535,32 @@ body {
 	min-height: 300px;
 	margin-bottom: 50px;
 	
+	.box-cate {
+		margin-bottom: 20px;
+		
+		.dropdown.open {
+			span {
+				.font-blue;
+			}
+		}
+		.dropdown span {
+			color: #8e8e8e;
+			font-size: 16px;
+			font-family: 'sl';
+			
+			&:hover {
+				.font-blue;
+			}
+			i.fa {
+				.font-blue;
+			}
+		}
+		.dropdown-menu.drop-default > li > a:hover, .dropdown-menu.drop-default > li > a:focus {
+			background-color: transparent;
+			.font-pink;
+		}
+	}
+	
 	.single-box {
 		
 		.panel-heading {
@@ -648,6 +678,7 @@ body {
 		.bg-white;
 		text-align: center;
 		border-radius: 4px;
+		float: left;
 		
 		h2 {
 			font-size: 16px;
@@ -656,17 +687,20 @@ body {
 			font-family: 'sl-bold';
 			padding: 15px 10px;
 			text-align: left;
+			float: left;
+			width: 100%;
 		}
 		
 		img {
 			width: 100%;
 			height: 175px;
+			float: left;
 		}
 		a {
 			border: 2px solid #1e97d3;
 			padding: 5px 10px;
 			display: inline-block;
-			margin: 15px 0;
+			margin: 0 0 15px;
 			border-radius: 5px;
 			.effect;
 			text-transform: uppercase;
@@ -682,7 +716,7 @@ body {
 		
 		.info {
 			text-align: center;
-			padding: 10px 0 0;
+			padding: 15px 0;
 			float: left;
 			width: 100%;
 			
@@ -698,11 +732,69 @@ body {
 				color: #acacac;
 				font-family: 'sl-bold';
 			}
+			.value {
+				border-radius: 99px;
+				padding: 14px 0 14px 5px;
+				text-align: center;
+				width: 80%;
+				
+				h3 {
+					font-family: 'qikkireg' !important;
+					font-size: 30px !important;
+					margin: 0 !important;
+					padding: 0 !important;
+				}
+			}
+		}
+		.must-left {
+			text-align: left !important;
+			padding: 10px 0 20px;
+			
+			.col-md-4 {
+				height: 70px;
+				
+				h3 {
+					margin-top: 20px;
+					font-family: 'sl';
+					font-size: 14px;
+				}
+				p {
+					font-family: 'sl';
+					font-size: 14px;
+				}
+			}
 		}
 	}
 }
 
-
+.red {
+	border: 4px	 solid #ff0c00;
+	
+	h3 {
+		color: #ff0c00 !important;
+	}
+}
+.yellow {
+	border: 4px	 solid #ffcc75;
+	
+	h3 {
+		color: #ffcc75 !important;
+	}
+}
+.greens {
+	border: 4px	 solid #4dbc52;
+	
+	h3 {
+		color: #4dbc52 !important;
+	}
+}
+.blues {
+	border: 4px	 solid #1191d0;
+	
+	h3 {
+		color: #1191d0 !important;
+	}
+}
 
 /* footer landing page*/
 .footer {
