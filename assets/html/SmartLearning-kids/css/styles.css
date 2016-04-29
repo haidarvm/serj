@@ -556,6 +556,91 @@ body {
   min-height: 300px;
   margin-bottom: 50px;
 }
+.main-container .single-box .panel-heading {
+  border-radius: 4px;
+  position: relative;
+}
+.main-container .single-box .panel-heading h4 {
+  padding: 3px 0;
+}
+.main-container .single-box .panel-heading h4:hover {
+  color: #ed047a;
+}
+.main-container .single-box .panel-heading h4 .left-head {
+  display: inline-block;
+  font-family: 'sl';
+  font-size: 22px;
+}
+.main-container .single-box .panel-heading h4 .left-head i.fa {
+  margin-right: 10px;
+  color: #1e97d3;
+  font-size: 22px;
+}
+.main-container .single-box .panel-heading h4 .right-head {
+  position: absolute;
+  right: 30px;
+  top: 12px;
+  text-align: right;
+}
+.main-container .single-box .panel-heading h4 .right-head span {
+  position: relative;
+  top: 3px;
+  font-size: 18px;
+  font-family: 'sl';
+  color: #7c7c7c;
+}
+.main-container .single-box .panel-heading h4 .right-head img {
+  margin-right: 5px;
+}
+.main-container .single-box .panel {
+  background: transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+}
+.main-container .single-box .panel-default {
+  border: 0;
+}
+.main-container .single-box .panel-body {
+  border: 0 !important;
+  background: transparent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 0;
+}
+.main-container .single-box .panel-body .list-cat-material {
+  padding: 10px;
+  border-radius: 4px;
+  background: #fff;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.main-container .single-box .panel-body .list-cat-material img {
+  float: left;
+  margin: 3px 12px 0 5px;
+}
+.main-container .single-box .panel-body .list-cat-material h3 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-family: 'sl-bold';
+  line-height: 30px;
+}
+.main-container .single-box .panel-body .list-cat-material a {
+  float: right;
+  line-height: 30px;
+  background: #1e97d3;
+  color: #fff;
+  font-family: 'sl-semibold';
+  padding: 0 20px;
+  border-radius: 8px;
+  margin-right: 20px;
+  font-size: 12px;
+  height: 30px;
+}
+.main-container .single-box .panel-body .list-cat-material a:hover {
+  background: #ed047a;
+}
 .main-container .no-data {
   text-align: center;
   padding-top: 3%;

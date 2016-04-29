@@ -406,7 +406,7 @@ body {
 			.active {
 				.effect;
 				border-bottom: 4px solid #1191d0;
-				
+								
 				p {
 					color: #1191d0;
 				}
@@ -530,6 +530,106 @@ body {
 .main-container {
 	min-height: 300px;
 	margin-bottom: 50px;
+	
+	.single-box {
+		
+		.panel-heading {
+			border-radius: 4px;
+			position: relative;	
+			
+			h4 {
+				padding: 3px 0;
+				
+				&:hover {
+					.font-pink;
+				}
+				
+				.left-head {
+					display: inline-block;
+					font-family: 'sl';
+					font-size: 22px;
+					
+					i.fa {
+						margin-right: 10px;
+						.font-blue;
+						font-size: 22px;
+					}
+				}
+				.right-head {
+					position: absolute;
+					right: 30px;
+					top: 12px;
+					text-align: right;
+					
+					span {
+						position: relative;
+						top: 3px;
+						font-size: 18px;
+						font-family: 'sl';
+						color: #7c7c7c;
+					}
+					
+					img {
+						margin-right: 5px;
+					}
+					
+				}
+			}
+		}
+		.panel {
+			background: transparent;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+		}
+		.panel-default {
+			border: 0;
+		}
+		.panel-body {
+			border: 0 !important;
+			background: transparent;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-right: 0;
+			
+			
+			.list-cat-material {
+				padding: 10px;
+				border-radius: 4px;
+				background: #fff;
+				margin-left: 20px;
+				margin-bottom: 5px;
+				
+				img {
+					float: left;
+					margin: 3px 12px 0 5px;
+				}
+				h3 {
+					margin: 0;
+					padding: 0;
+					display: inline-block;
+					float: left;
+					font-size: 14px;
+					font-family: 'sl-bold';
+					line-height: 30px;
+				}
+				a {
+					float: right;
+					line-height: 30px;
+					.bg-blue;
+					.font-white;
+					font-family: 'sl-semibold';
+					padding: 0 20px;
+					border-radius: 8px;
+					margin-right: 20px;
+					font-size: 12px;
+					height: 30px;
+					
+					&:hover {
+						.bg-pink;
+					}
+				}
+			}
+		}
+	}
 	
 	.no-data {
 		text-align: center;
