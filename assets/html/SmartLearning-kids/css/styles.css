@@ -856,6 +856,19 @@ textarea.form-control {
   margin: 30px 0 0;
   border-radius: 4px;
 }
+.box-yellow .box-editing {
+  text-align: right;
+  margin: 20px 0 0;
+}
+.box-yellow .box-editing a {
+  margin: 0 5px;
+  color: #ed047a;
+  font-family: 'sl';
+  font-size: 13px;
+}
+.box-yellow .box-editing a:hover {
+  color: #1e97d3;
+}
 .box-yellow h3 {
   font-family: 'sl-semibold';
   font-size: 20px;
