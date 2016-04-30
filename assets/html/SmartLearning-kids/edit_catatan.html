@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="img/favicon.png" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Catatan - Smart Learning</title>
+    <title>Edit Catatan - Smart Learning</title>
 	
 	<!-- jQuery UI -->
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> -->
@@ -183,68 +183,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 main-container nopadding">
-				<div class="box-cate col-md-12">
-					<div class="dropdown">
-					  <span id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Semua Kategori
-						<i class="fa fa-caret-down"></i>
-					  </span>
-					  <ul class="dropdown-menu drop-default" aria-labelledby="dLabel">
-						<li><a href="#">Semua Kategori</a></li>
-						<li><a href="#">IPA</a></li>
-						<li><a href="#">IPS</a></li>
-						<li><a href="#">B. Indonesia</a></li>
-						<li><a href="#">B. Inggris</a></li>
-						<li><a href="#">PKN</a></li>
-					  </ul>
-					</div>
-				</div>
-				
-				
-				<div class="col-md-12">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
-						<i class="fa fa-pencil-square-o"></i>
-						<span>Buat Catatan</span>
-					</button>
-					
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-					  <div class="modal-dialog" role="document">
-						<div class="modal-content">
-						  <div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="exampleModalLabel"><i class="fa fa-pencil-square"></i> Catatan Baru</h4>
-						  </div>
-						  <div class="modal-body">
-							<form>
-							  <div class="form-group">
-								<label for="recipient-name" class="control-label">Judul</label>
-								<input type="text" class="form-control" id="recipient-name">
-							  </div>
-							  <div class="form-group">
-								<label for="message-text" class="control-label">Catatan</label>
-								<textarea class="form-control" id="message-text"></textarea>
-							  </div>
-							</form>
-						  </div>
-						  <div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i aria-hidden="true" class="fa fa-ban"></i> Batal</button>
-							<button type="button" class="btn btn-primary"><i aria-hidden="true" class="fa fa-floppy-o"></i> Simpan</button>
-						  </div>
-						</div>
-					  </div>
-					</div>
-				</div>
-				
-				
 				<div class="col-md-10 col-md-offset-1">
-					<div class="box-yellow box-shadow-only">
-						<h3><a href="#"><i class="fa fa-paperclip"></i> Mengenal Bilangan Cacah, Genap & Ganji, Prima dan Bilangan Mutlak.</a></h3>
-						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500s...</p>
-						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500s...</p>
-						
-						<div class="box-editing">
-							<a href="#"><i class="fa fa-pencil-square-o"></i> Edit</a>
-							<a href="#"><i class="fa fa-trash-o"></i> Hapus</a>
+					<div class="box-yellow box-shadow-only col-md-12">
+						<div class="box-for-form col-md-8">
+							<form>	
+								<div class="form-group">
+									<input type="text" class="form-control" name="judul" placeholder="Judul Catatan" value="Mengenal Bilangan Cacah, Genap & Ganji, Prima dan Bilangan Mutlak." />
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" name="catatan" placeholder="Catatan">Lorem Ipsum has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500 has been the industry's standard dummy text ever since the 1500s</textarea>
+								</div>
+								<button name="save" class="btn-blue"><i class="fa fa-floppy-o"></i> Save</btton>
+								<button name="save" class="btn-pink"><i class="fa fa-ban"></i> Cancel</btton>
+							</form>
 						</div>
 					</div>
 				</div>

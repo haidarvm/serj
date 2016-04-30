@@ -109,6 +109,52 @@ body {
 	color: #333;
 }
 
+button.btn-blue {
+	border: 0;
+	.bg-blue;
+	padding: 6px 18px;
+	border-radius: 4px;
+	.font-white;
+	font-size: 13px;
+	.effect;
+	margin-right: 15px;
+	
+	i.fa {
+		margin-right: 5px;
+	}
+	
+	&:hover {
+		.effect;
+		.bg-pink;
+	}
+	&:focus {
+		.effect;
+		.bg-pink;
+	}
+}
+button.btn-pink {
+	border: 0;
+	.bg-pink;
+	padding: 6px 18px;
+	border-radius: 4px;
+	.font-white;
+	font-size: 13px;
+	.effect;
+	margin-right: 15px;
+	
+	i.fa {
+		margin-right: 5px;
+	}
+	
+	&:hover {
+		.effect;
+		.bg-blue;
+	}
+	&:focus {
+		.effect;
+		.bg-blue;
+	}
+}
 
 /* header */
 .navbar.navbar-default.navbar-fixed-top {
@@ -856,6 +902,52 @@ body {
 /* modal catatan */
 textarea.form-control {
 	resize: vertical;
+}
+
+.box-detail {
+	margin-bottom: 30px;
+	
+	.danger {
+		float: right;
+		margin: 0 !important;
+	}
+}
+.downloads {
+	margin: 0 0 30px;
+	
+	a {
+		margin: 0 10px !important;
+		display: inline-block;
+	}
+}
+.box-for-form {
+	margin: 30px auto 30px;
+	float: none;
+	width: 80% !important;
+	
+	textarea {
+		min-height: 200px;
+		font-size: 13px;
+		font-family: 'sl';
+	}
+	input {
+		font-size: 13px;
+		font-family: 'sl';
+	}
+}
+.fullblue {
+	.bg-blue;
+	.font-white;
+	padding: 5px 10px !important;
+	font-size: 12px !important;
+	
+	&:hover {
+		.bg-pink !important;
+		border: 2px solid #ed047a !important;
+	}
+}
+.box-shadow-only {
+	box-shadow: 0 0 3px 0px rgba(0,0,0,0.2);
 }
 
 .box-yellow {
