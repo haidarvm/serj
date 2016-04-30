@@ -686,6 +686,18 @@ button.btn-pink:focus:hover {
 .main-container .single-box .panel-heading h4:hover {
   color: #ed047a;
 }
+.main-container .single-box .panel-heading h4 a.collapsed i.fa.fa-plus {
+  display: inline-block;
+}
+.main-container .single-box .panel-heading h4 a.collapsed i.fa.fa-minus {
+  display: none;
+}
+.main-container .single-box .panel-heading h4 a i.fa.fa-plus {
+  display: none;
+}
+.main-container .single-box .panel-heading h4 a i.fa.fa-minus {
+  display: inline-block;
+}
 .main-container .single-box .panel-heading h4 .left-head {
   display: inline-block;
   font-family: 'sl';
