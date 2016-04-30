@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="img/favicon.png" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Homepgae - Smart Learning</title>
+    <title>Tambah Pengumuman Guru - Smart Learning</title>
 	
 	<!-- jQuery UI -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> -->
     <script src="/js/jquery.knob-mini.js"></script>
 
 	<!-- stylesheet  -->
@@ -101,41 +101,45 @@
 			<div class="col-md-12 header nopadding">
 				<!-- highlight profile -->
 				<div class="col-md-4 col-md-offset-4 highlight-user">
-					<div class="box-highlight">
-						<h2>LEVEL</h2>
-						<div class="bg-level wow fadeInUp">
-							<span>11</span>
-						</div>
-						
+					<div class="box-highlight dashboard">
 						<div class="photo-user">
 							<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
 						</div>
 						
 						<div class="detail-user">
 							<h2>Aminah Sukmara</h2>
-							<span>Junior Lab School Gilimanuk</span>
+							<span>Guru <strong>Junior Lab School</strong> Gilimanuk</span>
 						</div>
 					</div>
 					
 					<div class="rewards">
-						<h2>PRESTASI</h2>
-						<ul>
-							<li><span class="trophy wow zoomIn"></span></li>
-							<li><span class="trophy wow zoomIn"></span></li>
-							<li><span class="trophy wow zoomIn"></span></li>
-							<li><span class="trophy wow zoomIn"></span></li>
-							<li><span class="trophy wow zoomIn"></span></li>
-							<li><span class="trophy wow zoomIn"></span></li>
-						</ul>
+						<div class="col-md-3">
+							<h3>50</h3>
+							<p>tugas</p>
+						</div>
+						<div class="col-md-3">
+							<h3>30</h3>
+							<p>materi</p>
+						</div>
+						<div class="col-md-3">
+							<h3>5</h3>
+							<p>kelas</p>
+						</div>
+						<div class="col-md-3">
+							<h3>350</h3>
+							<p>murid</p>
+						</div>
 					</div>
 				</div>
 				
 				<!-- nav menu -->
 				<div class="col-md-12 nav-menu-content nopadding">
-					<div class="col-md-7 box-menu">
+
+					<div class="col-md-7 box-menu wow zoomInUp">
+
 						<ul>
 							<li>
-								<a href="#" class="active">
+								<a href="#">
 									<span><img src="img/img-1.png" alt="" width="100" height="68" border="0" /></span>
 									<p>Tugas</p>
 								</a>
@@ -161,11 +165,11 @@
 							<li>
 								<a href="#">
 									<span><img src="img/img-5.png" alt="" width="100" height="68" border="0" /></span>
-									<p>prestasi</p>
+									<p>catatan</p>
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="#" class="active">
 									<span><img src="img/img-6.png" alt="" width="100" height="68" border="0" /></span>
 									<p>pengumuman</p>
 								</a>
@@ -181,9 +185,87 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 main-container nopadding">
-				<div class="no-data wow zoomIn">
-					<img src="img/img-empty.png" alt="" width="371" height="211" border="0" />
-					<h2>Belum ada tugas baru.</h2>
+				<div class="two-cols">
+					<div class="col-md-3 nopadding">
+						<ul class="nav nav-pills nav-stacked">
+							<!-- <li class="active">
+								<a href="#">
+									<div class="photo-user">
+										<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+									</div>
+
+									<div class="detail-user">
+										<h2>Bapak Sukmara</h2>
+										<span>Pengumuman</span>
+										<i class="fa fa-bullhorn"></i>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="photo-user">
+										<img src="img/img-author.jpg" alt="" width="600" height="800" border="0" />
+									</div>
+
+									<div class="detail-user">
+										<h2>Ibu Sukmara</h2>
+										<span>Pesan</span>
+										<i class="fa fa-envelope-o"></i>
+									</div>
+								</a>
+							</li> -->
+						</ul>
+						<a href="#" class="big-one fullblue">Buat Baru</a>
+					</div>
+					
+					<div class="col-md-9 right-content">
+						<div class="main-side wow fadeInUp">
+							<div>
+								<!-- Nav tabs -->
+								  <ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#pesan" aria-controls="home" role="tab" data-toggle="tab">Pesan</a></li>
+									<li role="presentation"><a href="#pengumuman" aria-controls="messages" role="tab" data-toggle="tab">Pengumuman</a></li>
+								  </ul>
+
+								  <!-- Tab panes -->
+								  <div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="pesan">
+										<form>
+										  <div class="form-group">
+											<label for="towho">Kepada</label>
+											<input type="email" class="form-control" id="towho" />
+										  </div>
+										  <div class="form-group">
+											<label for="subject">Subjek</label>
+											<input type="password" class="form-control" id="subject" />
+										  </div>
+										  <div class="form-group">
+											<label for="exampleInputPassword1">Pesan</label>
+											<textarea rows="4" class="form-control">
+											</textarea>
+										  </div>
+										  <button type="submit" class="btn btn-default">Kirim</button>
+										</form>
+									</div>
+									
+									<div role="tabpanel" class="tab-pane" id="pengumuman">
+										<form>
+										  <div class="form-group">
+											<label for="subject">Subjek</label>
+											<input type="password" class="form-control" id="subject" />
+										  </div>
+										  <div class="form-group">
+											<label for="exampleInputPassword1">Pesan</label>
+											<textarea rows="4" class="form-control">
+											</textarea>
+										  </div>
+										  <button type="submit" class="btn btn-default">Kirim</button>
+										</form>
+									</div>
+								  </div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

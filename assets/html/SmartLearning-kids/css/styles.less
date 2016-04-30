@@ -297,6 +297,9 @@ button.btn-pink {
 .space-top {
 	margin-top: 100px;
 }
+.space-top-half {
+	margin-top: 10px;
+}
 .box-login-form {
 	padding-left: 30px;
 	.font-white;
@@ -367,11 +370,26 @@ button.btn-pink {
 			font-family: 'sl';
 			font-size: 13px;
 			
+			.fa.fa-circle.ifalse {
+				color: #d01d00;
+			}
+			.fa.fa-circle {
+				color: #009607;
+			}
+			
 			a {
 				margin: 0;
 			}
 		}
 	}
+}
+
+.must-big {
+	font-family: 'sl' !important;
+	font-size: 30px !important;
+	padding-left: 0 !important;
+	padding-top: 30px !important;
+	
 }
 
 .bg-heroes {
@@ -981,6 +999,10 @@ textarea.form-control {
 	display: block;
 	border-radius: 4px;
 	margin-bottom: 40px;
+	
+	.col-md-3 {
+		min-height: 475px;
+	}
 }
 .nav-pills > li > a {
     border-radius: 0;
@@ -1084,6 +1106,19 @@ textarea.form-control {
 			font-size: 13px;	
 		}
 	}
+	.tab-pane {
+		padding: 20px;
+	}
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+		.font-pink !important;
+	}
+	.nav > li > a:hover, .nav > li > a:focus {
+		background-color: #f1f1f1;
+		cursor: pointer;
+	}
+}
+span.label {
+	.font-white !important;
 }
 
 .discuss-line {
@@ -1303,6 +1338,26 @@ textarea.form-control {
 	.font-white;
 	padding: 5px 10px !important;
 	font-size: 12px !important;
+	
+	&:hover {
+		.bg-pink !important;
+		border: 2px solid #ed047a !important;
+	}
+}
+.big-one.fullblue {
+	.bg-blue;
+	.font-white;
+	padding: 15px 0 !important;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+	font-size: 20px !important;
+	border: 2px solid #1191d0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	
 	&:hover {
 		.bg-pink !important;

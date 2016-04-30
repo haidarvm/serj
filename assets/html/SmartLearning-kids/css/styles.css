@@ -350,6 +350,9 @@ button.btn-pink:focus:hover {
 .space-top {
   margin-top: 100px;
 }
+.space-top-half {
+  margin-top: 10px;
+}
 .box-login-form {
   padding-left: 30px;
   color: #fff;
@@ -420,8 +423,20 @@ button.btn-pink:focus:hover {
   font-family: 'sl';
   font-size: 13px;
 }
+.one-cols .box-detail td .fa.fa-circle.ifalse {
+  color: #d01d00;
+}
+.one-cols .box-detail td .fa.fa-circle {
+  color: #009607;
+}
 .one-cols .box-detail td a {
   margin: 0;
+}
+.must-big {
+  font-family: 'sl' !important;
+  font-size: 30px !important;
+  padding-left: 0 !important;
+  padding-top: 30px !important;
 }
 .bg-heroes {
   padding: 10px 15px;
@@ -993,6 +1008,9 @@ textarea.form-control {
   border-radius: 4px;
   margin-bottom: 40px;
 }
+.two-cols .col-md-3 {
+  min-height: 475px;
+}
 .nav-pills > li > a {
   border-radius: 0;
   float: left;
@@ -1081,6 +1099,22 @@ textarea.form-control {
 .right-content .main-side li,
 .right-content .main-side p {
   font-size: 13px;
+}
+.right-content .tab-pane {
+  padding: 20px;
+}
+.right-content .nav-tabs > li.active > a,
+.right-content .nav-tabs > li.active > a:hover,
+.right-content .nav-tabs > li.active > a:focus {
+  color: #ed047a !important;
+}
+.right-content .nav > li > a:hover,
+.right-content .nav > li > a:focus {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+span.label {
+  color: #fff !important;
 }
 .discuss-line {
   border-top: 3px solid #eee;
@@ -1277,6 +1311,25 @@ textarea.form-control {
   font-size: 12px !important;
 }
 .fullblue:hover {
+  background: #ed047a !important;
+  border: 2px solid #ed047a !important;
+}
+.big-one.fullblue {
+  background: #1e97d3;
+  color: #fff;
+  padding: 15px 0 !important;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px !important;
+  border: 2px solid #1191d0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.big-one.fullblue:hover {
   background: #ed047a !important;
   border: 2px solid #ed047a !important;
 }
