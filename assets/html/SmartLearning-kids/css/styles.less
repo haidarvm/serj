@@ -909,7 +909,7 @@ textarea.form-control {
 	
 	.danger {
 		float: right;
-		margin: 0 !important;
+		margin: 10px 0 !important;
 	}
 }
 .downloads {
@@ -1030,6 +1030,203 @@ textarea.form-control {
 			font-size: 13px;	
 		}
 	}
+}
+
+.discuss-line {
+	border-top: 3px solid #eee;
+	border-bottom: 3px solid #eee;
+	margin: 10px 0 15px;
+	float: left;
+	padding: 20px 0;
+}
+
+.replay-comment {
+	width: 100%;
+	margin: 0 20px 50px;
+	height: 50px;
+	float: left;
+	
+	.photo-user {
+		margin-right: 10px;
+		position: relative;
+		overflow: hidden;
+		width: 60px;
+		height: 60px;
+		border-radius: 99px;
+		text-align: left;
+		float: left;
+		
+		img {
+			border-radius: 99px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 60px;
+			height: 60px;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+	input {
+		width: 80%;
+		float: left;
+		height: 40px;
+		margin-top: 10px;
+		font-size: 13px;
+	}
+	button {
+		float: left;
+		margin: 10px 10px 0;
+		height: 40px;
+		font-size: 14px;
+	}
+}
+
+.grid-panel {
+	margin: 50px 0 0;
+	h3 {
+		margin: 0;
+		font-size: 16px;
+		display: inline-block;
+		
+		i.fa {
+			font-size: 20px;
+			position: relative;
+			bottom: 5px;
+			color: #a1a1a1;
+		}
+	}
+	.interaction {
+		display: inline;
+		float: right;
+		
+		span {
+			margin: 0 5px;
+			color: #a1a1a1;
+		}
+	}
+}
+
+.list-grid {
+	border-top: 1px solid #dedede;
+	text-align: left;
+	padding-top: 30px;
+	
+	a {
+		color: #000 !important;
+		border: 0 !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		
+		&:hover {
+			background: none !important;
+			.font-pink !important;
+		}
+	}
+	h2 {
+		padding: 10px 0 5px !important;
+		font-family: 'sl-semibold' !important;
+		
+		a {
+			font-size: 14px !important;
+		}
+		
+		span {
+			color: #a1a1a1;
+			float: right;
+			margin-top: 3px;
+			font-size: 10px;
+			
+		}
+	}
+	p {
+		font-size: 12px;
+	}
+	.box-grid {
+		border: 1px solid #eee;
+		border-radius: 4px;
+		margin: 10px;
+		padding: 5px 10px;
+		float: left;
+		
+		.box-comments.right {
+			.photo-user {
+				float: right;
+				margin-left: 0;
+			}
+			.comments {
+				float: right;
+				.bg-pink;
+				margin-left: 0;
+				margin-right: 15px;
+			}
+		}
+		.box-comments {
+			float: left;
+			width: 100%;
+			display: block;
+			margin-bottom: 20px;
+			
+			.photo-user {
+				margin-left: 20px;
+				position: relative;
+				overflow: hidden;
+				width: 60px;
+				height: 60px;
+				border-radius: 99px;
+				text-align: left;
+				float: left;
+				
+				img {
+					border-radius: 99px;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 60px;
+					height: 60px;
+					transform: translate(-50%, -50%);
+				}
+			}
+			.comments {
+				position: relative;
+				margin-left: 15px;
+				line-height: 30px;
+				.bg-blue;
+				padding: 10px;
+				border-radius: 10px;
+				width: auto;
+				z-index: 1;
+				display: inline-block;
+				float: left;
+				
+				i.fa.fa-caret-left {
+					position: absolute;
+					top: 15px;
+					left: -6px;
+					font-size: 20px;
+					.font-blue;
+				}
+				i.fa.fa-caret-right {
+					position: absolute;
+					top: 15px;
+					right: -6px;
+					font-size: 20px;
+					.font-pink;
+				}
+				
+				p{
+					margin: 0 20px;
+					.font-white;	
+				}
+			}
+		}
+	}
+	.col-md-6 {
+	}
+}
+.head-tit {
+	display: inline;
+	width: auto !important;
 }
 
 .box-for-form {

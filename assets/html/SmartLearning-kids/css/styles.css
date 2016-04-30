@@ -926,7 +926,7 @@ textarea.form-control {
 }
 .box-detail .danger {
   float: right;
-  margin: 0 !important;
+  margin: 10px 0 !important;
 }
 .downloads {
   margin: 0 0 30px;
@@ -1031,6 +1031,180 @@ textarea.form-control {
 .right-content .main-side li,
 .right-content .main-side p {
   font-size: 13px;
+}
+.discuss-line {
+  border-top: 3px solid #eee;
+  border-bottom: 3px solid #eee;
+  margin: 10px 0 15px;
+  float: left;
+  padding: 20px 0;
+}
+.replay-comment {
+  width: 100%;
+  margin: 0 20px 50px;
+  height: 50px;
+  float: left;
+}
+.replay-comment .photo-user {
+  margin-right: 10px;
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  border-radius: 99px;
+  text-align: left;
+  float: left;
+}
+.replay-comment .photo-user img {
+  border-radius: 99px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+}
+.replay-comment input {
+  width: 80%;
+  float: left;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.replay-comment button {
+  float: left;
+  margin: 10px 10px 0;
+  height: 40px;
+  font-size: 14px;
+}
+.grid-panel {
+  margin: 50px 0 0;
+}
+.grid-panel h3 {
+  margin: 0;
+  font-size: 16px;
+  display: inline-block;
+}
+.grid-panel h3 i.fa {
+  font-size: 20px;
+  position: relative;
+  bottom: 5px;
+  color: #a1a1a1;
+}
+.grid-panel .interaction {
+  display: inline;
+  float: right;
+}
+.grid-panel .interaction span {
+  margin: 0 5px;
+  color: #a1a1a1;
+}
+.list-grid {
+  border-top: 1px solid #dedede;
+  text-align: left;
+  padding-top: 30px;
+}
+.list-grid a {
+  color: #000 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.list-grid a:hover {
+  background: none !important;
+  color: #ed047a !important;
+}
+.list-grid h2 {
+  padding: 10px 0 5px !important;
+  font-family: 'sl-semibold' !important;
+}
+.list-grid h2 a {
+  font-size: 14px !important;
+}
+.list-grid h2 span {
+  color: #a1a1a1;
+  float: right;
+  margin-top: 3px;
+  font-size: 10px;
+}
+.list-grid p {
+  font-size: 12px;
+}
+.list-grid .box-grid {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 5px 10px;
+  float: left;
+}
+.list-grid .box-grid .box-comments.right .photo-user {
+  float: right;
+  margin-left: 0;
+}
+.list-grid .box-grid .box-comments.right .comments {
+  float: right;
+  background: #ed047a;
+  margin-left: 0;
+  margin-right: 15px;
+}
+.list-grid .box-grid .box-comments {
+  float: left;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+.list-grid .box-grid .box-comments .photo-user {
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  border-radius: 99px;
+  text-align: left;
+  float: left;
+}
+.list-grid .box-grid .box-comments .photo-user img {
+  border-radius: 99px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+}
+.list-grid .box-grid .box-comments .comments {
+  position: relative;
+  margin-left: 15px;
+  line-height: 30px;
+  background: #1e97d3;
+  padding: 10px;
+  border-radius: 10px;
+  width: auto;
+  z-index: 1;
+  display: inline-block;
+  float: left;
+}
+.list-grid .box-grid .box-comments .comments i.fa.fa-caret-left {
+  position: absolute;
+  top: 15px;
+  left: -6px;
+  font-size: 20px;
+  color: #1e97d3;
+}
+.list-grid .box-grid .box-comments .comments i.fa.fa-caret-right {
+  position: absolute;
+  top: 15px;
+  right: -6px;
+  font-size: 20px;
+  color: #ed047a;
+}
+.list-grid .box-grid .box-comments .comments p {
+  margin: 0 20px;
+  color: #fff;
+}
+.head-tit {
+  display: inline;
+  width: auto !important;
 }
 .box-for-form {
   margin: 30px auto 30px;
