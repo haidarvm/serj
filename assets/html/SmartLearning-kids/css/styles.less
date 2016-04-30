@@ -756,6 +756,13 @@ button.btn-pink {
 		border-radius: 4px;
 		float: left;
 		width: 100%;
+		.effect;
+		box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
+		
+		&:hover {
+			box-shadow: 0 0 5px 1px rgba(17,145,208,0.4);
+			.effect;
+		}
 		
 		h2 {
 			font-size: 16px;
@@ -1345,8 +1352,49 @@ textarea.form-control {
 	}
 }
 
+.box-material.must-center {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 3px dashed #909090;
+	
+	h3 {
+		color: #acacac;
+		font-family: 'sl';
+		font-size: 24px;
+	}
+	a {
+		border: 0;
+		margin: 0;
+		
+		&:hover {
+			background: none;
+			.font-pink !important;	
+		}
+		
+		i.fa {
+			color: #909090;
+			font-size: 50px;
+			margin: 20px 0%;
+			.effect;
+			
+			&:hover {
+				.effect;
+				.font-pink !important;
+			}
+		}
+	} 
+	.info {
+		
+		p {
+			font-family: 'sl' !important;
+			color: #909090;
+		}
+	}
+}
+
 .box-highlight.dashboard {
-	padding-top: 55px;
+	padding-top: 50px;
 	padding-bottom: 65px;
 	
 	.detail-user {

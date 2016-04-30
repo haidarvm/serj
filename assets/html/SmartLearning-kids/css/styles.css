@@ -778,6 +778,22 @@ button.btn-pink:focus:hover {
   border-radius: 4px;
   float: left;
   width: 100%;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+.main-container .box-material:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.main-container .box-material:hover {
+  box-shadow: 0 0 5px 1px rgba(17, 145, 208, 0.4);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.main-container .box-material:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .main-container .box-material h2 {
   font-size: 16px;
@@ -1303,8 +1319,51 @@ textarea.form-control {
   margin-bottom: 0;
   font-style: italic;
 }
+.box-material.must-center {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 3px dashed #909090;
+}
+.box-material.must-center h3 {
+  color: #acacac;
+  font-family: 'sl';
+  font-size: 24px;
+}
+.box-material.must-center a {
+  border: 0;
+  margin: 0;
+}
+.box-material.must-center a:hover {
+  background: none;
+  color: #ed047a !important;
+}
+.box-material.must-center a i.fa {
+  color: #909090;
+  font-size: 50px;
+  margin: 20px 0%;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.box-material.must-center a i.fa:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.box-material.must-center a i.fa:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  color: #ed047a !important;
+}
+.box-material.must-center a i.fa:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.box-material.must-center .info p {
+  font-family: 'sl' !important;
+  color: #909090;
+}
 .box-highlight.dashboard {
-  padding-top: 55px;
+  padding-top: 50px;
   padding-bottom: 65px;
 }
 .box-highlight.dashboard .detail-user h2 {
