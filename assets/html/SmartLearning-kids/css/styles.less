@@ -234,10 +234,6 @@ button.btn-pink {
 		}
 	}
 }
-.dropdown-menu {
-	left: inherit;
-	right: 0;
-}
 .dropdown-menu.drop-default {
 	left: 0;
 	right: inherit;
@@ -257,7 +253,10 @@ button.btn-pink {
 			opacity: .6;
 		}
 	}
-	
+	.dropdown-menu {
+		left: inherit;
+		right: 0;
+	}
 	.pict {
 		overflow: hidden;
 		position: relative;
@@ -340,6 +339,33 @@ button.btn-pink {
 			.bg-blue;
 			.effect;
 			.font-white;
+		}
+	}
+}
+
+.one-cols {
+	
+	.dropdown {
+		float: left;
+		margin-right: 15px;
+		margin-bottom: 25px;
+	}
+	
+	.box-detail {
+		
+		th {
+			text-align: center;
+			.bg-blue;
+			.font-white;
+			border: 0;
+			font-family: 'sl-semibold';
+			font-size: 14px;
+			font-weight: normal;
+		}
+		td {
+			border: 0;
+			font-family: 'sl';
+			font-size: 13px;
 		}
 	}
 }
@@ -1312,6 +1338,41 @@ textarea.form-control {
 		padding-top: 20px;
 		margin-bottom: 0;
 		font-style: italic;
+	}
+}
+
+.box-highlight.dashboard {
+	padding-top: 55px;
+	padding-bottom: 65px;
+	
+	.detail-user {
+		
+		h2 {
+			color: #000;
+			text-transform: capitalize;
+			font-size: 24px;
+			letter-spacing: inherit;
+		}
+		span {
+			color: #000;
+		}
+	}
+}
+.highlight-user {
+	
+	.rewards {
+		h3 {
+			font-family: 'sl-bold';
+			color: #000;
+			font-size: 24px;
+			margin: 0;
+		}
+		p {
+			font-family: 'sl-semibold';
+			font-size: 13px;
+			color: #a1a1a1;
+			text-transform: capitalize;	
+		}
 	}
 }
 

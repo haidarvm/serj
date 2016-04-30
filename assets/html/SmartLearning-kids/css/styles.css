@@ -273,10 +273,6 @@ button.btn-pink:focus:hover {
   opacity: 1;
   color: #ed047a;
 }
-.dropdown-menu {
-  left: inherit;
-  right: 0;
-}
 .dropdown-menu.drop-default {
   left: 0;
   right: inherit;
@@ -304,6 +300,10 @@ button.btn-pink:focus:hover {
 .nav.navbar-nav a:hover:hover {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+.nav.navbar-nav .dropdown-menu {
+  left: inherit;
+  right: 0;
 }
 .nav.navbar-nav .pict {
   overflow: hidden;
@@ -400,6 +400,25 @@ button.btn-pink:focus:hover {
 .box-login-form .btn.btn-pink:hover:hover {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+.one-cols .dropdown {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 25px;
+}
+.one-cols .box-detail th {
+  text-align: center;
+  background: #1e97d3;
+  color: #fff;
+  border: 0;
+  font-family: 'sl-semibold';
+  font-size: 14px;
+  font-weight: normal;
+}
+.one-cols .box-detail td {
+  border: 0;
+  font-family: 'sl';
+  font-size: 13px;
 }
 .bg-heroes {
   padding: 10px 15px;
@@ -1280,6 +1299,31 @@ textarea.form-control {
   padding-top: 20px;
   margin-bottom: 0;
   font-style: italic;
+}
+.box-highlight.dashboard {
+  padding-top: 55px;
+  padding-bottom: 65px;
+}
+.box-highlight.dashboard .detail-user h2 {
+  color: #000;
+  text-transform: capitalize;
+  font-size: 24px;
+  letter-spacing: inherit;
+}
+.box-highlight.dashboard .detail-user span {
+  color: #000;
+}
+.highlight-user .rewards h3 {
+  font-family: 'sl-bold';
+  color: #000;
+  font-size: 24px;
+  margin: 0;
+}
+.highlight-user .rewards p {
+  font-family: 'sl-semibold';
+  font-size: 13px;
+  color: #a1a1a1;
+  text-transform: capitalize;
 }
 /* footer landing page*/
 .footer {
