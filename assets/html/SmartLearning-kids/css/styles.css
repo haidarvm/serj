@@ -420,6 +420,9 @@ button.btn-pink:focus:hover {
   font-family: 'sl';
   font-size: 13px;
 }
+.one-cols .box-detail td a {
+  margin: 0;
+}
 .bg-heroes {
   padding: 10px 15px;
   text-align: center;
