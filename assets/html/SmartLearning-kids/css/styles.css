@@ -463,11 +463,12 @@ button.btn-pink:focus:hover {
 .header {
   background: url(../img/bg-home.jpg) repeat-x;
   min-height: 700px;
-  padding-top: 60px !important;
+  padding-top: 100px !important;
 }
 .header.for-single {
   background: #fff !important;
   min-height: inherit !important;
+  padding-top: 60px !important;
 }
 .nav-menu-content {
   margin: 25px 0 0;
