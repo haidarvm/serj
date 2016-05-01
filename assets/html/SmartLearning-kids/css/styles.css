@@ -463,7 +463,11 @@ button.btn-pink:focus:hover {
 .header {
   background: url(../img/bg-home.jpg) repeat-x;
   min-height: 700px;
-  padding-top: 100px !important;
+  padding-top: 60px !important;
+}
+.header.for-single {
+  background: #fff !important;
+  min-height: inherit !important;
 }
 .nav-menu-content {
   margin: 25px 0 0;
@@ -665,6 +669,12 @@ button.btn-pink:focus:hover {
   height: 28px;
 }
 /* main content */
+.box-single {
+  background: #fff;
+  border-radius: 4px;
+  margin: 30px 0;
+  padding: 20px !important;
+}
 .main-container {
   min-height: 300px;
   margin-bottom: 50px;
