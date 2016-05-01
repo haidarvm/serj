@@ -692,6 +692,9 @@ button.btn-pink:focus:hover {
 .box-pagination .pagination {
   margin-top: 10px;
 }
+.box-pagination .pagination > li.active > a {
+  border-radius: 99px;
+}
 .box-pagination .pagination > li > a,
 .box-pagination .pagination > li > span {
   border: 0;
