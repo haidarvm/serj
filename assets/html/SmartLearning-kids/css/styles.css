@@ -469,6 +469,7 @@ button.btn-pink:focus:hover {
   background: #fff !important;
   min-height: inherit !important;
   padding-top: 60px !important;
+  margin-bottom: 40px;
 }
 .nav-menu-content {
   margin: 25px 0 0;
@@ -675,6 +676,72 @@ button.btn-pink:focus:hover {
   border-radius: 4px;
   margin: 30px 0;
   padding: 20px !important;
+  min-height: 800px;
+}
+.for-404 {
+  margin: 5% 0 15% !important;
+}
+.box-pagination {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  display: block;
+  float: left;
+  border-top: 2px solid #3fa6d9;
+}
+.box-pagination .pagination {
+  margin-top: 10px;
+}
+.box-pagination .pagination > li > a,
+.box-pagination .pagination > li > span {
+  border: 0;
+}
+.box-pagination .pagination > li > a:hover,
+.box-pagination .pagination > li > span:hover,
+.box-pagination .pagination > li > a:focus,
+.box-pagination .pagination > li > span:focus {
+  background-color: transparent;
+  color: #ed047a !important;
+}
+.must-center {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.must-center img {
+  width: 95px;
+  height: 130px;
+  margin-bottom: 5px;
+}
+.must-center a {
+  color: #1e97d3;
+}
+.must-center a:hover {
+  color: #ed047a;
+}
+.jumbotron-single {
+  min-height: 300px;
+  background: #1e97d3;
+  border-bottom: 5px solid #ed047a;
+  margin: 20px 0 0;
+}
+.jumbotron-single .main-jumbotron {
+  height: 300px;
+  vertical-align: middle;
+  color: #fff;
+  display: table-cell;
+}
+.jumbotron-single .main-jumbotron h2 {
+  margin: 0 0 5px;
+  font-size: 50px;
+}
+.jumbotron-single .main-jumbotron p {
+  font-size: 16px;
+}
+.grid-download h2 {
+  border-bottom: 2px solid #3fa6d9;
+  padding: 0 0 20px;
+  margin: 0 0 20px;
 }
 .main-container {
   min-height: 300px;
