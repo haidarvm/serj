@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 box-quote wow zoomIn">
-				<h2>Log Mobile Terakhir</h2>
+				<h2>Data Semua Pendaftaran Online</h2>
 
 				<table class="table">
 					<thead> 
@@ -12,6 +12,7 @@
 							<th>UserID</th> 
 							<th>Nama</th> 
 							<th>Telp</th> 
+							<th>email</th> 
 							<th>Sekolah</th> 
 							<th>Kelas</th> 
 							<th>Kota</th> 
@@ -30,6 +31,7 @@
 							<td><?php echo $daftar->user_id; ?></td>
 							<td><b><?php echo $daftar->full_name; ?></b></td> 
 							<td><b><?php echo $daftar->phone; ?></b></td> 
+							<td><b><?php echo $daftar->email; ?></b></td> 
 							<td><b><?php echo $daftar->school; ?></b></td> 
 							<td><b><?php echo $daftar->grade; ?></b></td> 
 							<td><b><?php echo $daftar->city; ?></b></td> 
