@@ -30,7 +30,7 @@ class Daftar extends MY_Controller {
 			//print_r($post);exit;
 			//$data['user'] = 
 			$data_user = array('full_name' => $post['full_name'], 'gender' => $post['gender'],
-				'password'=> $post['password'] ,'date_birth' => $post['date_birth'] , 'phone' => $post['phone'], 'bbm' => $post['bbm'], 'email' => $post['email'] , 'school' => $post['school'] ,
+				'password'=> md5($post['password']) ,'date_birth' => $post['date_birth'] , 'phone' => $post['phone'], 'bbm' => $post['bbm'], 'email' => $post['email'] , 'school' => $post['school'] ,
 				'grade' =>$post['grade'] , 	'city' => $post['city']
 			);
 			$user_id = $this->mdaftar->insertUser($data_user);
@@ -61,6 +61,12 @@ class Daftar extends MY_Controller {
 	public function berhasil() {
 		$data['title'] = "berhasil";
 		$this->load->user_template('user/signup_success', $data);
+	}
+	
+	public function get_daftar() {
+		$data['title'] = "Pendaftaran";
+		$data['all_daftar'] =  $this->mdaftar->getAllDaftar();
+		$this->load->user_template('user/all_daftar', $data);
 	}
 	
 }
