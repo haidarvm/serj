@@ -29,6 +29,10 @@
 						<tr> 
 							<td><?php echo $daftar->user_id; ?></td>
 							<td><b><?php echo $daftar->full_name; ?></b></td> 
+							<td><b><?php echo $daftar->phone; ?></b></td> 
+							<td><b><?php echo $daftar->school; ?></b></td> 
+							<td><b><?php echo $daftar->grade; ?></b></td> 
+							<td><b><?php echo $daftar->city; ?></b></td> 
 							<td><?php echo $daftar->create_date ;?></td>
 							<td><?php echo $daftar->lomba_foto_id != NULL ? "ikut" : "" ;?></td> 
 							<td><?php echo $daftar->lomba_cover_id != NULL ? "ikut" : "" ;?></td> 
