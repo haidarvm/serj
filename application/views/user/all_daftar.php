@@ -9,7 +9,6 @@
 				<table class="table">
 					<thead> 
 						<tr> 
-							<th>UserID</th> 
 							<th>Nama</th> 
 							<th>Telp</th> 
 							<th>email</th> 
@@ -28,7 +27,6 @@
 					<tbody> 
 						<?php foreach($all_daftar as $daftar) { ?>
 						<tr> 
-							<td><?php echo $daftar->user_id; ?></td>
 							<td><b><?php echo $daftar->full_name; ?></b></td> 
 							<td><b><?php echo $daftar->phone; ?></b></td> 
 							<td><b><?php echo $daftar->email; ?></b></td> 
