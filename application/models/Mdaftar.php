@@ -48,7 +48,7 @@ class MDaftar extends CI_Model {
     }
     
     function getAllDaftar() {
-		$sql = "SELECT * FROM {PRE}user u
+		$sql = "SELECT *, u.create_date as create_date FROM {PRE}user u
 				LEFT JOIN {PRE}lomba_cover_lagu l ON l.user_id = u.user_id 
 				LEFT JOIN {PRE}lomba_foto f ON f.user_id = u.user_id 
 				LEFT JOIN {PRE}lomba_gambar g ON g.user_id = u.user_id 
