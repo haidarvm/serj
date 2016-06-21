@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     		// For a bar chart
-    		var ctx = document.getElementById("myChart");
-    		var myChart = new Chart(ctx, {
+    		var myBar = document.getElementById("myBar");
+    		var myBarChart = new Chart(myBar, {
     		    type: 'bar',
     		    data: {
     		        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
