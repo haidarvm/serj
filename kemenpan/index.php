@@ -108,8 +108,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Users Behavior</h4>
-                                <p class="category">24 Hours performance</p>
+                                <h4 class="title">Temuan</h4>
+                                <p class="category">REKAPITULASI STATUS TINDAKLANJUT REKOMENDASI BPK</p>
                             </div>
                             <div class="content">
                             	<canvas id="myBar"  class="full-width" width="600" height="300"  style="width: 600px; height: 300px;></canvas>
@@ -155,7 +155,7 @@
                     <div class="col-md-6">
                         <div class="card ">
                             <div class="header">
-                                <h4 class="title">2015 Sales</h4>
+                                <h4 class="title">2016 Rekomendasi</h4>
                                 <p class="category">All products including Taxes</p>
                             </div>
                             <div class="content">
