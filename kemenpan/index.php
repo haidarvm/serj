@@ -159,7 +159,7 @@
                                 <p class="category">All products including Taxes</p>
                             </div>
                             <div class="content">
-                                <div id="chartActivity" class="ct-chart"></div>
+                            	<canvas id="myLine" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
 
                                 <div class="footer">
                                     <div class="chart-legend">
