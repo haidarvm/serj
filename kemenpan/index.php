@@ -112,7 +112,7 @@
                                 <p class="category">24 Hours performance</p>
                             </div>
                             <div class="content">
-                            	<canvas id="myChart"  class="full-width" width="300" height="300"></canvas>
+                            	<canvas id="myChart"  class="full-width" width="600" height="300"  style="width: 600px; height: 300px;></canvas>
                                 <div class="footer">
                                     <div class="chart-legend">
                                         <i class="fa fa-circle text-info"></i> Open
