@@ -115,7 +115,7 @@ $(document)
 					// For a pie chart
 					var myPie = document.getElementById("myPie");
 					var data2 = {
-						labels : [ "Red", "Blue", "Yellow" ],
+						labels : [ "Sesuai Dengan Rekomendasi", "Belum Sesuai", "Belum ditindaklanjuti" ],
 						datasets : [ {
 							data : [ 300, 50, 100 ],
 							backgroundColor : [ "#FF6384", "#36A2EB", "#FFCE56" ],
@@ -132,13 +132,13 @@ $(document)
 					// Demo Line
 
 					var dataLine = {
-						labels : [ "January", "February", "March", "April",
-								"May", "June", "July" ],
+						labels : [ "2010", "2011", "2012", "2013",
+								"2014", "2015", "2016" ],
 						datasets : [ {
-							label : "My First dataset",
+							label : "Temuan",
 							fill : false,
 							lineTension : 0.1,
-							backgroundColor : "rgba(75,192,192,0.4)",
+							backgroundColor : "rgb(0, 204, 102)",
 							borderColor : "rgba(75,192,192,1)",
 							borderCapStyle : 'butt',
 							borderDash : [],
@@ -155,10 +155,10 @@ $(document)
 							pointHitRadius : 10,
 							data : [ 65, 59, 80, 81, 56, 55, 40 ],
 						}, {
-							label : "My Sec dataset",
+							label : "Rekomendasi",
 							fill : false,
 							lineTension : 0.1,
-							backgroundColor : "rgba(75,160,192,0.4)",
+							backgroundColor : "rgb(102, 153, 255)",
 							borderColor : "rgba(30,160,130,1)",
 							borderCapStyle : 'butt',
 							borderDash : [],

@@ -133,7 +133,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Email Statistics</h4>
+                                <h4 class="title">Hasil Pemantauan Tindak Lanjut</h4>
                                 <p class="category">Last Campaign Performance</p>
                             </div>
                             <div class="content">
@@ -141,9 +141,9 @@
 
                                 <div class="footer">
                                     <div class="chart-legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Bounce
-                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                        <i class="fa fa-circle text-info"></i> Sesuai Dengan Rekomendasi
+                                        <i class="fa fa-circle text-danger"></i> Belum Sesuai
+                                        <i class="fa fa-circle text-warning"></i> Belum ditindaklanjuti
                                     </div>
                                     <hr>
                                     <div class="stats">
@@ -156,7 +156,7 @@
                     <div class="col-md-6">
                         <div class="card ">
                             <div class="header">
-                                <h4 class="title">2016 Rekomendasi</h4>
+                                <h4 class="title">Rekomendasi</h4>
                                 <p class="category">All products including Taxes</p>
                             </div>
                             <div class="content">
@@ -164,8 +164,8 @@
 
                                 <div class="footer">
                                     <div class="chart-legend">
-                                        <i class="fa fa-circle text-info"></i> Tesla Model S
-                                        <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                                        <i class="fa fa-circle text-info"></i> Temuan
+                                        <i class="fa fa-circle text-primary"></i> Rekomendasi
                                     </div>
                                     <hr>
                                     <div class="stats">

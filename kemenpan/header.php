@@ -52,20 +52,20 @@
             <ul class="nav">
                 <li class="active">
                     <a href="index.php">
-                        <i class="ti-panel"></i>
-                        <p>Dashboard</p>
+                        <i class="ti-bar-chart"></i>
+                        <p>Chart</p>
                     </a>
                 </li>
                 <li>
                     <a href="form.php">
-                        <i class="ti-user"></i>
+                        <i class="ti-view-list-alt"></i>
                         <p>Rekapitulasi</p>
                     </a>
                 </li>
                 <li>
                     <a href="table.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>Table List</p>
+                        <i class="ti-harddrives"></i>
+                        <p>Report</p>
                     </a>
                 </li>
                 <li>
