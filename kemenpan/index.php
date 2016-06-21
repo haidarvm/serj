@@ -103,16 +103,16 @@
                         </div>
                     </div>
                 </div>
+				
                 <div class="row">
-
-                    <div class="col-md-12">
+					<div class="col-md-12">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Users Behavior</h4>
                                 <p class="category">24 Hours performance</p>
                             </div>
                             <div class="content">
-                            	<canvas id="myBar"  class="full-width" width="600" height="300"  style="width: 600px; height: 300px;></canvas>
+                            	<canvas id="myBar"  class="full-width" width="600" height="300"  style="width: 600px; height: 300px;"></canvas>
                                 <div class="footer">
                                     <div class="chart-legend">
                                         <i class="fa fa-circle text-info"></i> Open
@@ -128,6 +128,7 @@
                         </div>
                     </div>
                 </div>
+				
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
