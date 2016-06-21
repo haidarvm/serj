@@ -112,7 +112,7 @@
                                 <p class="category">24 Hours performance</p>
                             </div>
                             <div class="content">
-                            	<canvas id="myChart" width="400" height="400"></canvas>
+                            	<canvas id="myChart"  class="full-width" width="300" height="300"></canvas>
                                 <div class="footer">
                                     <div class="chart-legend">
                                         <i class="fa fa-circle text-info"></i> Open
@@ -136,7 +136,7 @@
                                 <p class="category">Last Campaign Performance</p>
                             </div>
                             <div class="content">
-                            	<canvas id="myPie" width="200" height="200" style="width: 481px; height: 240px;"></canvas>
+                            	<canvas id="myPie" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
 
                                 <div class="footer">
                                     <div class="chart-legend">
