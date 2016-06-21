@@ -4,14 +4,13 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-7">
                         <div class="card">
-								
+							<div class="content">	
 							<form>
 							
 								<div class="header">
 									<h3 class="title">PEMANTAUAN TINDAK LANJUT REKOMENDASI HASIL PEMERIKSAAN</h3>
 								</div>
 								
-								<div class="content">
 								   <div class="row">
 										<div class="col-md-6">
 											<h4>ST</h4>
@@ -61,9 +60,7 @@
 											<div class="col-md-6"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-6">
 											<h4>Tim Pemeriksa</h4>
@@ -91,9 +88,7 @@
 										</div>
 										<div class="col-md-6"></div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>LHP</h4>
@@ -121,9 +116,7 @@
 											<div class="col-md-3"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>Judul Temuan</h4>
@@ -158,9 +151,7 @@
 											<div class="col-md-12"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>Rekomendasi</h4>
@@ -201,9 +192,7 @@
 											<div class="col-md-12"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>Tindak Lanjut Entitas Yang Telah Dilakukan</h4>
@@ -238,9 +227,7 @@
 											<div class="col-md-12"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h3>Hasil Tindak Lanjut</h3>
@@ -262,9 +249,7 @@
 											<div class="col-md-12"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>Belum Sesuai Rekomendasi dan Dalam Proses di Tindak Lanjuti</h4>
@@ -284,9 +269,7 @@
 											<div class="col-md-12"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>Belum di Tindak Lanjuti</h4>
@@ -306,9 +289,7 @@
 											<div class="col-md-12"></div>
 										</div>
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<h4>Tidak Dapat Di Tindak Lanjuti Karena Alasan Yang Sah</h4>
@@ -330,17 +311,15 @@
 										
 										
 									</div>
-								</div>
 								
-								<div class="content">
 									<div class="row">
 										<div class="col-md-12">
 											<button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
 										</div>
 									</div>
-								</div>
 								
 							</form>	
+						</div>
                     </div>
                 </div>
             </div>
