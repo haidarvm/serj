@@ -15,12 +15,12 @@
                                                 <label>Objek Pemeriksaan</label>
                                                 <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
 LHP Kinerja atas Penetapan Formasi PNS dan Pemberian Pendapat atas Ketersediaan Anggaran Tahun 2009 dan 2010 pada Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi
-</textarea>
+                                                </textarea>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <div class="row">
+                                    <div class="col-md-12">
                                     	<h4>Temuan Pemeriksaan</h4>
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -36,7 +36,7 @@ LHP Kinerja atas Penetapan Formasi PNS dan Pemberian Pendapat atas Ketersediaan 
                                         </div>
                                     </div>
                                     
-                                    <div class="row">
+                                    <div class="col-md-12">
                                     	<h4>Rekomendasi</h4>
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -53,7 +53,7 @@ LHP Kinerja atas Penetapan Formasi PNS dan Pemberian Pendapat atas Ketersediaan 
                                     </div>
 
 
-                                    <div class="text-center">
+                                    <div class="col-md-12">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
                                     </div>
                                     <div class="clearfix"></div>
