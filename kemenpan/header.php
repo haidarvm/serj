@@ -68,12 +68,12 @@
                         <p>Report</p>
                     </a>
                 </li>
-                <li>
+                <!--li>
                     <a href="table.php">
                         <i class="ti-harddrives"></i>
                         <p>Report</p>
                     </a>
-                </li>
+                </li-->
                 <li>
                     <a href="typography.php">
                         <i class="ti-text"></i>
