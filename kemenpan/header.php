@@ -63,6 +63,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="report.php">
+                        <i class="ti-agenda"></i>
+                        <p>Report</p>
+                    </a>
+                </li>
+                <li>
                     <a href="table.php">
                         <i class="ti-harddrives"></i>
                         <p>Report</p>

@@ -3313,3 +3313,42 @@ textarea.form-control {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+
+/* custome css */
+.add-button {
+	background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.nopadding {
+	padding: 0 !important;
+}
+.bottom-space {
+	margin-bottom: 40px;
+}
+.must-center {
+	text-align: center !important;
+}
+.custom-tab {
+	margin: 0 20px !important;
+    overflow-x: auto !important;
+    padding: 20px 0 !important;
+}
+.custom-tab th{
+	text-align: center;
+	font-size: 14px !important;
+}
+.custom-tab td{
+	text-align: center;
+	font-size: 13px !important;
+}
+
+@media (max-width: 960px) {
+	.custom-tab {
+		margin: 0 !important;
+		overflow-x: visible !important;
+		padding: 20px 0 !important;
+	}
+}
