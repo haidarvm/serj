@@ -5,8 +5,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Striped Table</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">REKAPITULASI TINDAK LANJUT REKOMEDASI HASIL PEMERIKSAAN BPK SAMPAI DENGAN SEMESTER II 2014</h4>
+                                <p class="category">REKAP</p>
                             </div>
 							
 							<div class="content table-responsive table-full-width custom-tab">
