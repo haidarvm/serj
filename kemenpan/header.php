@@ -52,20 +52,20 @@
             <ul class="nav">
                 <li class="active">
                     <a href="index.php">
-                        <i class="ti-bar-chart"></i>
-                        <p>Chart</p>
+                        <i class="ti-user"></i>
+                        <p>Manajemant User</p>
                     </a>
                 </li>
                 <li>
                     <a href="form.php">
                         <i class="ti-view-list-alt"></i>
-                        <p>Rekapitulasi</p>
+                        <p>Buat LHP baru</p>
                     </a>
                 </li>
                 <li>
                     <a href="report.php">
                         <i class="ti-agenda"></i>
-                        <p>Report</p>
+                        <p>Update LHP</p>
                     </a>
                 </li>
                 <!--li>
@@ -77,25 +77,25 @@
                 <li>
                     <a href="typography.php">
                         <i class="ti-text"></i>
-                        <p>Typography</p>
+                        <p>Template Laporan</p>
                     </a>
                 </li>
                 <li>
                     <a href="icons.php">
                         <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
+                        <p>Kodefikasi</p>
                     </a>
                 </li>
                 <li>
                     <a href="maps.php">
                         <i class="ti-map"></i>
-                        <p>Maps</p>
+                        <p>Login History</p>
                     </a>
                 </li>
                 <li>
                     <a href="notifications.php">
                         <i class="ti-bell"></i>
-                        <p>Notifications</p>
+                        <p>Log Out</p>
                     </a>
                 </li>
             </ul>
