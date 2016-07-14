@@ -133,7 +133,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Hasil Pemantauan Tindak Lanjut</h4>
+                                <h4 class="title">TINDAK LANJUT HASIL PENGAWASAN</h4>
                                 <p class="category">Last Campaign Performance</p>
                             </div>
                             <div class="content">
@@ -141,9 +141,10 @@
 
                                 <div class="footer">
                                     <div class="chart-legend">
-                                        <i class="fa fa-circle text-info"></i> Sesuai Dengan Rekomendasi
-                                        <i class="fa fa-circle text-danger"></i> Belum Sesuai
-                                        <i class="fa fa-circle text-warning"></i> Belum ditindaklanjuti
+                                        <i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut
+                                        <i class="fa fa-circle text-danger"></i> Selesai tindak lanjut
+                                        <i class="fa fa-circle text-warning"></i> Belum selesai
+                                        <i class="fa fa-circle text-success"></i> Belum tindak lanjut
                                     </div>
                                     <hr>
                                     <div class="stats">
