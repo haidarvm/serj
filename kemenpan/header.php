@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
@@ -52,6 +53,12 @@
             <ul class="nav">
                 <li class="active">
                     <a href="index.php">
+                        <i class="ti-dashboard"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="manus.php">
                         <i class="ti-user"></i>
                         <p>Manajemant User</p>
                     </a>
