@@ -39,11 +39,13 @@
                
         <nav class="navbar navbar-default">
             <div class="col-mmd-12">
-                <div class="navbar-header .col-xs-12 .col-sm-6 .col-md-8">
-                    <a class="navbar-brand" href="#">Kementrian Pendayagunaan Aparatur Negara</a>
+                <div class="logo"><a href="#"><img src="assets/img/logo.png"></a></div>
+                <div class="navbar-header .col-md-6">
+                   
+                    <a class="navbar-brand" href="#"><i class="ti-menu"></i></a>
                 </div>
             
-                <div class="collapse navbar-collapse .col-xs-6 .col-md-4">
+                <div class="collapse navbar-collapse .col-md-3">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -54,7 +56,7 @@
                               <ul class="dropdown-menu">
                                 <li><a href="#">Edit profile</a></li>
                                 <li><a href="#">Setting</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li><a href="#">Log out</a></li>
                               </ul>
                         </li>
                     </ul>
@@ -65,7 +67,7 @@
         
     </header>
 <div class="wrapper">
-    <div class="sidebar" data-background-color="white" data-active-color="info">
+    <div class="sidebar" data-background-color="blue" data-active-color="info">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"

@@ -19,6 +19,16 @@ header {
     padding: 0;
     top : 0;
 }
+.logo {
+    background-color: #2196F3;
+    width: 260px;
+    height: auto;
+    float: left;
+    padding: 26px;
+}
+.logo img{
+    width: 160px;
+}
 #topnav {
     margin: 0;
     border: none;
@@ -29,6 +39,7 @@ header {
     right: 0;
     position: fixed !important;
     z-index: 1200;
+    
 }
 .profile-pic {
     width: 30px;
