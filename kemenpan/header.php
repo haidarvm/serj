@@ -13,8 +13,9 @@
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
 
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
@@ -34,9 +35,37 @@
 
 </head>
 <body>
+    <header id="topnav" class="navbar-fixed-up">
+               
+        <nav class="navbar navbar-default">
+            <div class="col-mmd-12">
+                <div class="navbar-header .col-xs-12 .col-sm-6 .col-md-8">
+                    <a class="navbar-brand" href="#">Kementrian Pendayagunaan Aparatur Negara</a>
+                </div>
+            
+                <div class="collapse navbar-collapse .col-xs-6 .col-md-4">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="assets/img/faces/face-2.jpg" alt="..." class="img-circle profile-pic">
+									<p>Welcome, Super admin</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Edit profile</a></li>
+                                <li><a href="#">Setting</a></li>
+                                <li><a href="#">Log Out</a></li>
+                              </ul>
+                        </li>
+                    </ul>
 
+                </div>
+            </div>
+        </nav>
+        
+    </header>
 <div class="wrapper">
-    <div class="sidebar" data-background-color="black" data-active-color="info">
+    <div class="sidebar" data-background-color="white" data-active-color="info">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -65,7 +94,7 @@
                 </li>
                 <li>
                     <a href="form.php">
-                        <i class="ti-view-list-alt"></i>
+                        <i class="ti-pencil-alt"></i>
                         <p>Buat LHP baru</p>
                     </a>
                 </li>
@@ -110,7 +139,7 @@
     </div>
 
     <div class="main-panel">
-        <nav class="navbar navbar-default">
+        <!--nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -154,5 +183,5 @@
 
                 </div>
             </div>
-        </nav>
+            </nav-->
         

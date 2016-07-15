@@ -124,7 +124,7 @@
                                     <div class="table-action">
                                         <a class="btn btn-info" href="#"><i class="fa fa-plus fa-lg"></i> Tambah User</a>
                                         <a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a>
-                                        <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> batal</a>
+                                        <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> Batal</a>
                                     </div>
                             </div>
                         </div>

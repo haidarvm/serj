@@ -1,3 +1,41 @@
+/* --------------------------------------------------------
+Style Sheet for Website's E4
+
+version: 1.0
+author: Aldo Siregar
+email: siregaraldo@gmail.com
+
+----------------------------------------------------------*/
+
+/* -----------------------------------------------------------
+CONTENTS:
+=HEADER
+
+------------------------------------------------------------*/
+
+/*** HEADER ***/
+header {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    top : 0;
+}
+#topnav {
+    margin: 0;
+    border: none;
+}
+.navbar-fixed-up {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed !important;
+    z-index: 1200;
+}
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+}
+
 /*** TABLE STYLE ***/
 
 .table {
