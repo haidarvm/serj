@@ -1,4 +1,6 @@
-<?php include('header.php')?>
+<?php 
+header("Location: menusa.php");
+include('header.php')?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
