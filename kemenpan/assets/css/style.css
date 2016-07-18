@@ -12,7 +12,12 @@ CONTENTS:
 =HEADER
 
 ------------------------------------------------------------*/
-
+.clearfix {
+    clear: both;
+}
+.inner{
+    padding: 0 0 20px 0 ;
+}
 /*** HEADER ***/
 header {
     margin: 10px 0 20px 0;

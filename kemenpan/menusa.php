@@ -1,6 +1,6 @@
 <?php include('header.php')?>
 <div class="content">
-	<div class="container-fluid">
+
 		<div class="row">
 			<div class="col-md-6">
 				<div class="card">
@@ -11,36 +11,22 @@
 						<!--                                 <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-						<table style="width: 100%">
-							<tr>
-								<td>TOTAL TEMUAN SEJAK TAHUN 2013</td>
-								<td>: 50</td>
-							</tr>
-							<tr>
-								<td>TOTAL REKOMENDASI SEJAK TAHUN 2013</td>
-								<td>: 70</td>
-							</tr>
-						</table>
-						<br />
-						<table style="width: 100%">
-							<tr>
-								<td>SELESAI DITINDAKLANJUTI</td>
-								<td>: 40</td>
-							</tr>
-							<tr>
-								<td>BELUM SESUAI REKOMENDASI</td>
-								<td>: 15</td>
-							</tr>
-							<tr>
-								<td>BELUM DITINDAKLANJUTI</td>
-								<td>: 30</td>
-							</tr>
-							<tr>
-								<td>TIDAK DAPAT DITINDAKLANJUTI</td>
-								<td>: 2</td>
-							</tr>
-						</table>
+						<div class="inner col-md-10">
+				            <p>TOTAL TEMUAN SEJAK TAHUN 2013</p>	
+						    <p>TOTAL REKOMENDASI SEJAK TAHUN 2013</p><br />
+                            <p>BELUM SESUAI REKOMENDASI</p>
+                            <p>BELUM DITINDAKLANJUTI</p>
+                            <p>TIDAK DAPAT DITINDAKLANJUTI</p>
+						</div>	
+                        <div class="inner col-md-2">
+				            <p>: 50</p>	
+						    <p>: 70</p><br />
+                            <p>: 40</p>
+                            <p>: 15</p>
+                            <p>: 30</p>
+						</div>
 					</div>
+                    <div class="clearfix"></div>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -52,33 +38,23 @@
 						<!--                                 <p class="category">All products including Taxes</p> -->
 					</div>
 					<div class="content">
-						<table style="width: 100%">
-							<tr>
-								<td>KERUGIAN NEGARA SEJAK TAHUN 2013</td>
-								<td>: 50</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-						</table>
-						<br />
-						<table style="width: 100%">
-							<tr>
-								<td>TELAH DISETOR KE KAS NEGARA</td>
-								<td>: 40</td>
-							</tr>
-							<tr>
-								<td>BELUM DISETOR KE KAS NEGARA</td>
-								<td>: 15</td>
-							</tr>
-						</table>
-						<a class="btn btn-info" href="#"><i class="fa fa-print fa-lg"></i>
-							Cetak</a>
+						<div class="inner col-md-8">
+				            <p>KERUGIAN NEGARA SEJAK TAHUN 2013</p><br />	
+						    <p>TELAH DISTOR KE KAS NEGARA</p>
+                            <p>BELUM DISTOR KE KAS NEGARA</p>
+						</div>	
+                        <div class="inner col-md-4">
+				            <p>: Rp 8.000.000</p><br />	
+						    <p>: Rp 5.000.000</p>	
+                            <p>: Rp 3.000.000</p>	
+						</div>
+                        <a class="btn btn-info" href="#"><i class="fa fa-print fa-lg"></i>Cetak</a>
+					</div>
+                    <div class="clearfix"></div>
 					</div>
 				</div>
 			</div>
-		</div>
+
 
 		<div class="row">
 			<div class="col-md-6">
