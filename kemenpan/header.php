@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'lhp.php' ? 'class="active"' : '' ?>>
-                    <a href="index.php">
+                    <a href="ulhp.php">
                         <i class="ti-new-window"></i>
                         <p>Update LHP</p>
                     </a>
