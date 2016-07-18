@@ -82,8 +82,8 @@
             </div>
 
             <ul class="nav">
-                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'index.php' ? 'class="active"' : '' ?>>
-                    <a href="manus.php">
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php' ? 'class="active"' : '' ?>>
+                    <a href="menusa.php">
                         <i class="ti-dashboard"></i>
                         <p>Dashboard </p>
                     </a>

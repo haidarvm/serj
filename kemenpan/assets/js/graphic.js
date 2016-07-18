@@ -1,5 +1,4 @@
-$(document)
-		.ready(
+$(document).ready(
 				function() {
 
 					function addCommas(nStr) {
@@ -26,8 +25,9 @@ $(document)
 								+ label.value.toString().replace(
 										/\B(?=(\d{3})+(?!\d))/g, ".");
 					}; // "<%= value %>";
+					
 					// For a bar chart
-					var myBar = document.getElementById("myBar");
+					/*var myBar = document.getElementById("myBar");
 					var myBarChart = new Chart(
 							myBar,
 							{
@@ -110,28 +110,44 @@ $(document)
 										} ]
 									}
 								}
-							});
+							});*/
 
 					// For a pie chart
-					var myPie = document.getElementById("myPie");
-					var data2 = {
-						labels : [ "Sesuai Dengan Rekomendasi", "Belum Sesuai", "Belum ditindaklanjuti" ],
+					var pieTindakLanjut = $("#pieTindakLanjut");
+					var dataTindakLanjut = {
+						labels : [ "TIDAK DAPAT TL", "SELESAI TL", "BELUM SESUAI", "BELUM TL" ],
 						datasets : [ {
-							data : [ 300, 50, 100 ],
+							data : [ 10, 40, 30, 100 ],
 							backgroundColor : [ "#FF6384", "#36A2EB", "#FFCE56" ],
 							hoverBackgroundColor : [ "#FF6384", "#36A2EB",
 									"#FFCE56" ]
 						} ]
 					};
 
-					var myPieChart = new Chart(myPie, {
+					var pieTindakLanjutChart = new Chart(pieTindakLanjut, {
 						type : 'pie',
-						data : data2,
+						data : dataTindakLanjut,
+					});
+					
+					// For a pie chart
+					var pieKerugian = $("#pieKerugian");
+					var dataKerugian = {
+						labels : [ "TELAH DISETOR", "BELUM DISETOR" ],
+						datasets : [ {
+							data : [ 62, 38 ],
+							backgroundColor : [ "#FF6384", "#36A2EB", "#FFCE56" ],
+							hoverBackgroundColor : [ "#FF6384", "#36A2EB",
+									"#FFCE56" ]
+						} ]
+					};
+
+					var pieKerugianChart = new Chart(pieKerugian, {
+						type : 'pie',
+						data : dataKerugian,
 					});
 
 					// Demo Line
-
-					var dataLine = {
+					/*var dataLine = {
 						labels : [ "2010", "2011", "2012", "2013",
 								"2014", "2015", "2016" ],
 						datasets : [ {
@@ -181,7 +197,7 @@ $(document)
 					var myLineChart = Chart.Line(myLine, {
 						type : 'line',
 						data : dataLine,
-					});
+					});*/
 
 					// demo.initChartist();
 
