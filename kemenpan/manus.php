@@ -5,8 +5,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">REKAPITULASI TINDAK LANJUT REKOMEDASI HASIL PEMERIKSAAN BPK SAMPAI DENGAN SEMESTER II 2014</h4>
-                                <p class="category">REKAP</p>
+                                <h4 class="title">Management User</h4>
+                                <p class="category">List User</p>
                             </div>
                               <div class="content table-responsive table-full-width custom-tab col-12">
                                 <!--div class="table-action">
@@ -30,15 +30,33 @@
 
                                     <div class="rows">
                                         <div class="cells">1</div>
-                                        <div class="cells">Luke Peters</div>
-                                        <div class="cells">25378174641</div>
-                                        <div class="cells">Freelance Web Developer</div>
-                                        <div class="cells">Brookline</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
+                                        <div class="cells">Devi Anantha</div>
+                                        <div class="cells">1963032</div>
+                                        <div class="cells">INSPEKTUR</div>
+                                        <div class="cells">DEVI.ANANTHA</div>
+                                        <div class="cells">DEVI1963</div>
                                         <div class="cells">
-                                            
+                                        	<select name="jabatan">
+                                        		<option>DEPUTI I</option>
+                                        		<option>DEPUTI II</option>
+                                        		<option>DEPUTI III</option>
+                                        		<option>DEPUTI IV</option>
+                                        		<option>STAF AHLI</option>
+                                        		<option>INSPEKTORAT</option>
+                                        		<option>BIRO SDMU</option>
+                                        		<option>BIRO HUKIP</option>
+                                        		<option>BIRO BMOK</option>
+                                        		<option>KASN</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
+                                        	<select name="status">
+                                        		<option>Super Admin</option>
+                                        		<option>Admin</option>
+                                        		<option>User</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
                                               <a class="btn btn-default" href="path/to/settings">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
@@ -48,19 +66,37 @@
                                               <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
                                               <span class="sr-only">Delete</span>
                                             </a>
-                                        
                                         </div>
                                     </div>
 
                                     <div class="rows">
                                         <div class="cells">2</div>
-                                        <div class="cells">Joseph Smith</div>
-                                        <div class="cells">25378174641</div>
-                                        <div class="cells">Project Manager</div>
-                                        <div class="cells">Somerville</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
+                                        <div class="cells">Devi Anantha</div>
+                                        <div class="cells">1963032</div>
+                                        <div class="cells">INSPEKTUR</div>
+                                        <div class="cells">DEVI.ANANTHA</div>
+                                        <div class="cells">DEVI1963</div>
+                                        <div class="cells">
+                                        	<select name="jabatan">
+                                        		<option>DEPUTI I</option>
+                                        		<option>DEPUTI II</option>
+                                        		<option>DEPUTI III</option>
+                                        		<option>DEPUTI IV</option>
+                                        		<option>STAF AHLI</option>
+                                        		<option>INSPEKTORAT</option>
+                                        		<option>BIRO SDMU</option>
+                                        		<option>BIRO HUKIP</option>
+                                        		<option>BIRO BMOK</option>
+                                        		<option>KASN</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
+                                        	<select name="status">
+                                        		<option>Super Admin</option>
+                                        		<option>Admin</option>
+                                        		<option>User</option>
+                                        	</select>
+                                        </div>
                                         <div class="cells">
                                               <a class="btn btn-default" href="path/to/settings">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
@@ -76,16 +112,34 @@
 
                                     <div class="rows">
                                         <div class="cells">3</div>
-                                        <div class="cells">Maxwell Johnson</div>
-                                        <div class="cells">25378174641</div>
-                                        <div class="cells">UX Architect & Designer</div>
-                                        <div class="cells">Arlington</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
+                                        <div class="cells">Devi Anantha</div>
+                                        <div class="cells">1963032</div>
+                                        <div class="cells">INSPEKTUR</div>
+                                        <div class="cells">DEVI.ANANTHA</div>
+                                        <div class="cells">DEVI1963</div>
                                         <div class="cells">
-                                        
-                                            <a class="btn btn-default" href="path/to/settings">
+                                        	<select name="jabatan">
+                                        		<option>DEPUTI I</option>
+                                        		<option>DEPUTI II</option>
+                                        		<option>DEPUTI III</option>
+                                        		<option>DEPUTI IV</option>
+                                        		<option>STAF AHLI</option>
+                                        		<option>INSPEKTORAT</option>
+                                        		<option>BIRO SDMU</option>
+                                        		<option>BIRO HUKIP</option>
+                                        		<option>BIRO BMOK</option>
+                                        		<option>KASN</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
+                                        	<select name="status">
+                                        		<option>Super Admin</option>
+                                        		<option>Admin</option>
+                                        		<option>User</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
+                                              <a class="btn btn-default" href="path/to/settings">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
                                             </a>
@@ -94,21 +148,39 @@
                                               <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
                                               <span class="sr-only">Delete</span>
                                             </a>
-                                            
                                         </div>
                                     </div>
 
                                     <div class="rows">
                                         <div class="cells">4</div>
-                                        <div class="cells">Harry Harrison</div>
-                                        <div class="cells">25378174641</div>
-                                        <div class="cells">Front-End Developer</div>
-                                        <div class="cells">Boston, MA</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells">Brookline, MA</div>
-                                        <div class="cells"> 
-                                            <a class="btn btn-default" href="path/to/settings">
+                                        <div class="cells">Devi Anantha</div>
+                                        <div class="cells">1963032</div>
+                                        <div class="cells">INSPEKTUR</div>
+                                        <div class="cells">DEVI.ANANTHA</div>
+                                        <div class="cells">DEVI1963</div>
+                                        <div class="cells">
+                                        	<select name="jabatan">
+                                        		<option>DEPUTI I</option>
+                                        		<option>DEPUTI II</option>
+                                        		<option>DEPUTI III</option>
+                                        		<option>DEPUTI IV</option>
+                                        		<option>STAF AHLI</option>
+                                        		<option>INSPEKTORAT</option>
+                                        		<option>BIRO SDMU</option>
+                                        		<option>BIRO HUKIP</option>
+                                        		<option>BIRO BMOK</option>
+                                        		<option>KASN</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
+                                        	<select name="status">
+                                        		<option>Super Admin</option>
+                                        		<option>Admin</option>
+                                        		<option>User</option>
+                                        	</select>
+                                        </div>
+                                        <div class="cells">
+                                              <a class="btn btn-default" href="path/to/settings">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
                                             </a>

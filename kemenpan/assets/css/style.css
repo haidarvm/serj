@@ -21,7 +21,7 @@ header {
 }
 .logo {
     background-color: #2196F3;
-    width: 260px;
+    width: 258px;
     height: auto;
     float: left;
     padding: 26px;
@@ -74,7 +74,7 @@ header {
 .rows.header {
   font-weight: 900;
   color: #ffffff;
-  background: #ea6153;
+  background: #2196F3;
 }
 .rows.green {
   background: #27ae60;
@@ -90,7 +90,7 @@ header {
 }
 
 .cells {
-  padding: 6px 12px;
+  padding: 6px 6px;
   display: table-cell;
 }
 @media screen and (max-width: 580px) {

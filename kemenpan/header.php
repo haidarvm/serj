@@ -82,58 +82,52 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="index.php">
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'index.php' ? 'class="active"' : '' ?>>
+                    <a href="manus.php">
                         <i class="ti-dashboard"></i>
-                        <p>Dashboard</p>
+                        <p>Dashboard </p>
                     </a>
                 </li>
-                <li>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'manus.php' ? 'class="active"' : '' ?>>
                     <a href="manus.php">
                         <i class="ti-user"></i>
-                        <p>Manajemant User</p>
+                        <p>Managment User </p>
                     </a>
                 </li>
-                <li>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>>
                     <a href="form.php">
                         <i class="ti-pencil-alt"></i>
-                        <p>Buat LHP baru</p>
+                        <p>Buat LHP Baru</p>
                     </a>
                 </li>
-                <li>
-                    <a href="report.php">
-                        <i class="ti-agenda"></i>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'lhp.php' ? 'class="active"' : '' ?>>
+                    <a href="index.php">
+                        <i class="ti-new-window"></i>
                         <p>Update LHP</p>
                     </a>
                 </li>
-                <!--li>
-                    <a href="table.php">
-                        <i class="ti-harddrives"></i>
-                        <p>Report</p>
-                    </a>
-                </li>-->
-                <li>
-                    <a href="typography.php">
-                        <i class="ti-text"></i>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'daftarlap.php' ? 'class="active"' : '' ?>>
+                    <a href="daftarlap.php">
+                        <i class="ti-agenda"></i>
                         <p>Template Laporan</p>
                     </a>
                 </li>
-                <li>
-                    <a href="icons.php">
-                        <i class="ti-pencil-alt2"></i>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'kodefikasi.php' ? 'class="active"' : '' ?>>
+                    <a href="kodefikasi.php">
+                        <i class="ti-menu-alt"></i>
                         <p>Kodefikasi</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.php">
-                        <i class="ti-map"></i>
-                        <p>Login History</p>
+                    <a href="index.php">
+                        <i class="ti-archive"></i>
+                        <p>Log History</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.php">
+                    <a href="index.php">
                         <i class="ti-power-off"></i>
-                        <p>Log Out</p>
+                        <p>Logout</p>
                     </a>
                 </li>
             </ul>
