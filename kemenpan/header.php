@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.php">
+                    <a href="loghistory.php">
                         <i class="ti-archive"></i>
                         <p>Log History</p>
                     </a>

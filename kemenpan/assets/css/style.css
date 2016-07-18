@@ -90,7 +90,7 @@ header {
 }
 
 .cells {
-  padding: 6px 6px;
+  padding: 5px 20px;
   display: table-cell;
 }
 @media screen and (max-width: 580px) {
