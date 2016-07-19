@@ -118,7 +118,7 @@
                         <p>Kodefikasi</p>
                     </a>
                 </li>
-                <li>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'loghistory.php' ? 'class="active"' : '' ?>>
                     <a href="loghistory.php">
                         <i class="ti-archive"></i>
                         <p>Log History</p>
