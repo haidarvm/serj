@@ -1,4 +1,3 @@
-<?php include('header.php')?>
 <div class="content">
 
 		<div class="row">
@@ -110,4 +109,3 @@
 		</div>
 	</div>
 </div>
-<?php include('footer.php')?>
