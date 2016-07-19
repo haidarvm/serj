@@ -113,7 +113,7 @@
                 </div>
 			</div>
             <!-- 2nd Table --->
-            <div class="col-md-6">
+            <div class="col-md-12">
 				<div class="card">
 					<div class="content">
                                  <div class="header">
@@ -203,7 +203,7 @@
                     </div>
 		      </div>
                    <!-- 3rd Table --->
-            <div class="col-md-6">
+            <div class="col-md-12">
 				<div class="card">
 					<div class="content">
                                  <div class="header">
