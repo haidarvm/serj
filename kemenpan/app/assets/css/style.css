@@ -1,0 +1,106 @@
+/* --------------------------------------------------------
+Style Sheet for Website's E4
+
+version: 1.0
+author: Aldo Siregar
+email: siregaraldo@gmail.com
+
+----------------------------------------------------------*/
+
+/* -----------------------------------------------------------
+CONTENTS:
+=HEADER
+
+------------------------------------------------------------*/
+.clearfix {
+    clear: both;
+}
+.inner{
+    padding: 0 0 20px 0 ;
+}
+/*** HEADER ***/
+header {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    top : 0;
+}
+.logo {
+    background-color: #2196F3;
+    width: 259px;
+    height: auto;
+    float: left;
+    padding: 22px;
+}
+.logo img{
+    width: 209px;
+}
+#topnav {
+    margin: 0;
+    border: none;
+}
+.navbar-fixed-up {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed !important;
+    z-index: 1200;
+    
+}
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+}
+
+/*** TABLE STYLE ***/
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.table-action {
+    margin: 10px 0 10px 0;
+}
+.rows {
+  display: table-row;
+  background: #f6f6f6;
+}
+.rows:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.rows.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #2196F3;
+}
+.rows.green {
+  background: #27ae60;
+}
+.rows.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .rows {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cells {
+  padding: 10px 20px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cells {
+    padding: 2px 12px;
+    display: block;
+  }
+}
