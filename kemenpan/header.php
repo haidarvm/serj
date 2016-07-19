@@ -27,12 +27,17 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
 
-
+	
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
 
+	<!-- #######################################
+			StyleSheet And LESS Compailer
+		########################################-->
+	<link href="assets/css/custom.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/less.min.js"></script>
 </head>
 <body>
     <header id="topnav" class="navbar-fixed-up">
