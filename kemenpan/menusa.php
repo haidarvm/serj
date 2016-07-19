@@ -12,18 +12,18 @@
 					</div>
 					<div class="content">
 						<div class="inner col-md-10">
-				            <p>TOTAL TEMUAN SEJAK TAHUN 2013</p>	
-						    <p>TOTAL REKOMENDASI SEJAK TAHUN 2013</p><br />
-                            <p>BELUM SESUAI REKOMENDASI</p>
-                            <p>BELUM DITINDAKLANJUTI</p>
-                            <p>TIDAK DAPAT DITINDAKLANJUTI</p>
+				            <p class="h6">TOTAL TEMUAN SEJAK TAHUN 2013</p>	
+						    <p class="h6">TOTAL REKOMENDASI SEJAK TAHUN 2013</p><br />
+                            <p class="h6">BELUM SESUAI REKOMENDASI</p>
+                            <p class="h6">BELUM DITINDAKLANJUTI</p>
+                            <p class="h6">TIDAK DAPAT DITINDAKLANJUTI</p>
 						</div>	
                         <div class="inner col-md-2">
-				            <p>: 50</p>	
-						    <p>: 70</p><br />
-                            <p>: 40</p>
-                            <p>: 15</p>
-                            <p>: 30</p>
+				            <p class="h6">: 50</p>	
+						    <p class="h6">: 70</p><br />
+                            <p class="h6">: 40</p>
+                            <p class="h6">: 15</p>
+                            <p class="h6">: 30</p>
 						</div>
 					</div>
                     <div class="clearfix"></div>
@@ -39,14 +39,14 @@
 					</div>
 					<div class="content">
 						<div class="inner col-md-8">
-				            <p>KERUGIAN NEGARA SEJAK TAHUN 2013</p><br />	
-						    <p>TELAH DISTOR KE KAS NEGARA</p>
-                            <p>BELUM DISTOR KE KAS NEGARA</p>
+				            <p class="h6">KERUGIAN NEGARA SEJAK TAHUN 2013</p><br />	
+						    <p class="h6">TELAH DISTOR KE KAS NEGARA</p>
+                            <p class="h6">BELUM DISTOR KE KAS NEGARA</p>
 						</div>	
                         <div class="inner col-md-4">
-				            <p>: Rp 8.000.000</p><br />	
-						    <p>: Rp 5.000.000</p>	
-                            <p>: Rp 3.000.000</p>	
+				            <p class="h6">: Rp 8.000.000</p><br />	
+						    <p class="h6">: Rp 5.000.000</p>	
+                            <p class="h6">: Rp 3.000.000</p>	
 						</div>
                         <a class="btn btn-info" href="#"><i class="fa fa-print fa-lg"></i>Cetak</a>
 					</div>
