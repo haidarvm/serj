@@ -100,7 +100,7 @@
                     </a>
                 </li>
                 <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>>
-                    <a href="form.php">
+                    <a href="addlhp.php">
                         <i class="ti-pencil-alt"></i>
                         <p>Buat LHP Baru</p>
                     </a>
