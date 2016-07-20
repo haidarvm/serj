@@ -4,6 +4,9 @@
 .modal-dialog {
   margin-top: 10%;
 }
+.clr {
+  clear: both;
+}
 .bg-blue {
   background: url(../img/bg-blue.png) repeat;
 }
