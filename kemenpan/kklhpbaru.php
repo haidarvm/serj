@@ -6,7 +6,7 @@
                         <div class="card">
 							<div class="content table-responsive table-full-width custom-tab">	
 								<div class="header">
-									<h3 class="title must-center">PEMANTAUAN TINDAK LANJUT REKOMENDASI HASIL PEMERIKSAAN</h3>
+									<h2 class="title must-center">MATRIKS PEMANTAUAN TINDAK LANJUT</h2>
 								</div>
 								
 								  <table class="table table-bordered">
