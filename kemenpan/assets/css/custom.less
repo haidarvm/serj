@@ -1,3 +1,10 @@
+.modal-backdrop {
+	display: none;
+}
+.modal-dialog {
+    margin-top: 10%;
+}
+
 .bg-blue{
 	background: url(../img/bg-blue.png) repeat;
 }
@@ -205,6 +212,17 @@
 	float: left;
 	font-size: 18px;
 	margin-top: 6px;
+}
+
+@media (max-width: 480px){ 
+	.modal-dialog {
+		margin-top: 30%;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px){ 
+	.modal-dialog {
+		margin-top: 20%;
+	}
 }
 
 @media (max-width: 767px){
