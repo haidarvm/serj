@@ -42,13 +42,17 @@
 				            <p>KERUGIAN NEGARA SEJAK TAHUN 2013</p><br />	
 						    <p>TELAH DISTOR KE KAS NEGARA</p>
                             <p>BELUM DISTOR KE KAS NEGARA</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
 						</div>	
                         <div class="inner col-md-4">
 				            <p>: Rp 8.000.000</p><br />	
 						    <p>: Rp 5.000.000</p>	
                             <p>: Rp 3.000.000</p>	
+                            <p></p>
+                            <p></p>
 						</div>
-                        <a class="btn btn-info" href="#"><i class="fa fa-print fa-lg"></i>Cetak</a>
+                        <a class="btn btn-info pull-left" href="#"><i class="fa fa-print fa-lg"></i>Cetak</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
