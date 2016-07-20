@@ -1,0 +1,260 @@
+.bg-blue {
+  background: url(../img/bg-blue.png) repeat;
+}
+.f-left {
+  float: left !important;
+}
+.f-right {
+  float: right !important;
+}
+.t-left {
+  text-align: left !important;
+}
+.t-right {
+  text-align: right !important;
+}
+.nopadding {
+  padding: 0 !important;
+}
+.effect {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.effect:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.top-head {
+  padding: 20px 0 0;
+}
+.desc-content {
+  text-align: center;
+  padding: 3% 0 20px;
+}
+.desc-content p {
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+.grid-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 40px;
+}
+.grid-box P {
+  margin: 0 0 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+.grid-box input[type="text"] {
+  background-color: #eeeeee;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #bfbfbf;
+  text-align: center;
+  border: 0;
+}
+.grid-box input[type="password"] {
+  background-color: #eeeeee;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #bfbfbf;
+  text-align: center;
+  border: 0;
+}
+.grid-box .btn.btn-blue {
+  background: #438bcb;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  border: 0;
+  border-radius: 4px;
+  width: 100%;
+  color: #fff;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 600;
+}
+.grid-box .btn.btn-blue:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.grid-box .btn.btn-blue:hover {
+  background: #5ea0db;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.grid-box .btn.btn-blue:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks {
+  background: #fff;
+  text-align: center;
+  margin: 0 15px 30px;
+  padding: 0;
+  width: 255px;
+  border-radius: 10px;
+  min-height: 280px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside {
+  padding: 20px 10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside h3 {
+  color: #aeaeae;
+  font-size: 14px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-family: 'Montserrat', sans-serif;
+}
+.picks .inside h3:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside:hover h3 {
+  color: #000000;
+  font-size: 14px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks .inside:hover h3:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks:hover a {
+  display: inline-block;
+  background: #438bcb;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  border: 0;
+  color: #fff;
+  padding: 10px 30px 8px;
+  margin: 10px 0;
+  font-size: 13px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+.picks:hover a:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks:hover a:hover {
+  background: #5ea0db;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks:hover a:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks a {
+  background: #438bcb;
+  display: none;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  border: 0;
+  color: #fff;
+  padding: 10px 30px 8px;
+  margin: 10px 0;
+  font-size: 13px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+.picks a:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks a:hover {
+  background: #5ea0db;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.picks a:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.footer-black {
+  background: url(../img/bg-black.png) repeat;
+  height: 71px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.footer-black p {
+  color: #fff;
+  margin-top: 27px;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+}
+.top-space {
+  margin-top: 30px !important;
+  text-align: center;
+}
+.both-space {
+  padding: 25px !important;
+}
+.t-center {
+  text-align: center;
+}
+.btn,
+.navbar .navbar-nav > li > a.btn {
+  margin: 3px 0;
+  padding: 5px;
+}
+.date-input {
+  float: right;
+  width: 83%;
+}
+.date-input-big {
+  float: right;
+  width: 91%;
+}
+.card label {
+  font-size: 13px !important;
+  line-height: 35px;
+}
+.icn {
+  float: left;
+  font-size: 18px;
+  margin-top: 6px;
+}
+@media (max-width: 767px) {
+  .top-head {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .footer {
+    position: inherit;
+  }
+}
