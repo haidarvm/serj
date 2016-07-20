@@ -198,7 +198,8 @@
                                         <a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a>
                                         <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> Batal</a>
                                     </div>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal test</button>
+                                   
+								   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal test</button>
 									
 									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 									  <div class="modal-dialog" role="document">
