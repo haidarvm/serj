@@ -50,12 +50,12 @@
 				<div class="grid-box">
 					<p><img src="assets/img/icon_logo.png" alt="" width="86" height="111" border="0" /></p>
 					
-					<form>
+					<form action="post.php" method="post">
 					  <div class="form-group">
-						<input type="text" class="form-control" placeholder="USERNAME">
+						<input type="text" class="form-control" name="username" placeholder="USERNAME" value="admin">
 					  </div>
 					  <div class="form-group">
-						<input type="password" class="form-control" placeholder="PASSWORD">
+						<input type="password" class="form-control" name="password" placeholder="PASSWORD" value="admin">
 					  </div>
 					  
 					  <button type="submit" class="btn btn-default btn-blue">LOGIN</button>
@@ -67,7 +67,7 @@
 	
 	<div class="container-fluid footer-black nopadding">
 		<p>&copy;2016, DATABASE HASIL PENGAWASAN INSPEKTORAT
-                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI.</p>
+                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI	.</p>
 	</div>
 
    <!--   Core JS Files   -->

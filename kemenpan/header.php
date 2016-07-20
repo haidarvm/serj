@@ -80,12 +80,18 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://ptcaf.id/kemenpan" class="simple-text">
+                <a href="index.php" class="simple-text">
                     Kemenpan
                 </a>
             </div>
 
             <ul class="nav">
+            	<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'index.php' ? 'class="active"' : '' ?>>
+                    <a href="index.php">
+                        <i class="ti-flag-alt"></i>
+                        <p>Index</p>
+                    </a>
+                </li>
                 <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php' ? 'class="active"' : '' ?>>
                     <a href="menusa.php">
                         <i class="ti-dashboard"></i>
@@ -98,10 +104,16 @@
                         <p>Managment User </p>
                     </a>
                 </li>
-                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'addlhp.php' ? 'class="active"' : '' ?>>
                     <a href="addlhp.php">
                         <i class="ti-pencil-alt"></i>
                         <p>Buat LHP Baru</p>
+                    </a>
+                </li>
+                <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'kklhpbaru.php' ? 'class="active"' : '' ?>>
+                    <a href="kklhpbaru.php">
+                        <i class="ti-ruler-pencil"></i>
+                        <p>KKLHP Baru</p>
                     </a>
                 </li>
                 <li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'lhp.php' ? 'class="active"' : '' ?>>
