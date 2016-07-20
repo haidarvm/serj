@@ -6,16 +6,12 @@
                         <div class="card">
 							<div class="content table-responsive table-full-width custom-tab">	
 								<div class="header">
-									<h3 class="title must-center">PEMANTAUAN TINDAK LANJUT REKOMENDASI HASIL PEMERIKSAAN</h3>
+									<h2 class="title must-center">MATRIKS PEMANTAUAN TINDAK LANJUT</h2>
 								</div>
 								
 								  <table class="table table-bordered">
 									<thead>
-										<tr class="danger">
-											<td colspan="15">&nbsp;</td>
-											<td colspan="8">JUDUL TEMUAN</td>
-										</tr>
-										<tr class="danger">
+										<tr class="warning">
 											<td colspan="6">JUDUL TEMUAN</td>
 											<td colspan="5">REKOMENDASI</td>
 											<td colspan="4">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN</td>
@@ -48,6 +44,243 @@
 											<td>NILAI (Rp.)</td>
 											<td>JUMLAH</td>
 											<td>NILAI (Rp.)</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>
+												<select class="form-control">
+												  <option>1111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>11111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" disabled />
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												1
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>1111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>Ada</option>
+												  <option>Tidak</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>DEPUTI I</option>
+												  <option>DEPUTI II</option>
+												  <option>DEPUTI III</option>
+												  <option>DEPUTI IV</option>
+												  <option>STAFF AHLI</option>
+												  <option>INSPEKTORAT</option>
+												  <option>BIRO SDMU</option>
+												  <option>BIRO HUKIP</option>
+												  <option>BIRO BMOK</option>
+												  <option>BIRO KASN</option>
+												</select>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>
+												<select class="form-control">
+												  <option>1111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>11111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" disabled />
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												1
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>1111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>Ada</option>
+												  <option>Tidak</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>DEPUTI I</option>
+												  <option>DEPUTI II</option>
+												  <option>DEPUTI III</option>
+												  <option>DEPUTI IV</option>
+												  <option>STAFF AHLI</option>
+												  <option>INSPEKTORAT</option>
+												  <option>BIRO SDMU</option>
+												  <option>BIRO HUKIP</option>
+												  <option>BIRO BMOK</option>
+												  <option>BIRO KASN</option>
+												</select>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>
+												<select class="form-control">
+												  <option>1111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>11111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" disabled />
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												1
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>1111</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>Ada</option>
+												  <option>Tidak</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input" placeholder="" value="" />
+											</td>
+											<td>
+												<select class="form-control">
+												  <option>DEPUTI I</option>
+												  <option>DEPUTI II</option>
+												  <option>DEPUTI III</option>
+												  <option>DEPUTI IV</option>
+												  <option>STAFF AHLI</option>
+												  <option>INSPEKTORAT</option>
+												  <option>BIRO SDMU</option>
+												  <option>BIRO HUKIP</option>
+												  <option>BIRO BMOK</option>
+												  <option>BIRO KASN</option>
+												</select>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>1</td>

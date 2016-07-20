@@ -118,9 +118,9 @@ $(document).ready(
 						labels : [ "TIDAK DAPAT TL", "SELESAI TL", "BELUM SESUAI", "BELUM TL" ],
 						datasets : [ {
 							data : [ 10, 40, 30, 100 ],
-							backgroundColor : [ "#FF6384", "#36A2EB", "#FFCE56" ],
+							backgroundColor : [ "#FF6384", "#36A2EB", "#FFCE56", "#7AC29A" ],
 							hoverBackgroundColor : [ "#FF6384", "#36A2EB",
-									"#FFCE56" ]
+									"#FFCE56","#62E43A" ]
 						} ]
 					};
 
