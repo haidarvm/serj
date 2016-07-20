@@ -1,3 +1,4 @@
+<?php include('header.php')?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -7,68 +8,93 @@
                                 <h4 class="title">LOG HISTORY</h4>
                                 <p class="category">List History</p>
                             </div>
-                              <div class="content table-responsive table-full-width custom-tab col-12">
-                                <!--div class="table-action">
-                                        <a class="btn btn-info" href="#"><i class="fa fa-plus fa-lg"></i> Tambah User</a>
-                                        <a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a>
-                                        <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> batal</a>
-                                  </div-->
-                                  <div class="table">
 
-                                    <div class="rows header">
-                                        <div class="cells">No</div>
-                                        <div class="cells">Nama</div>
-                                        <div class="cells">Username</div>
-                                        <div class="cells">Jabatan</div>
-                                        <div class="cells">Unit Kerja</div>
-                                        <div class="cells">Last Login</div>
-                                        <div class="cells">Lama Penggunaan</div>
-                                    </div>
+							<div class="content">
+								<div class="table-responsive">
+								  <table class="table table-striped">
+									<thead>
+										<tr class="danger">
+											<td>NO</td>
+											<td>NAMA</td>
+											<td>USERNAME</td>
+											<td>JABATAN</td>
+											<td>UNIT KERJA</td>
+											<td>LAST LOGIN</td>
+											<td>LAMA PENGGUNAAN</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Devi Anantha</td>
+											<td>DEVI.ANANTHA</td>
+											<td>INSPEKTUR</td>
+											<td>INSPEKTORAT</td>
+											<td>17/5/2016 12:33:58</td>
+											<td>00:24:15</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Devi Anantha</td>
+											<td>DEVI.ANANTHA</td>
+											<td>INSPEKTUR</td>
+											<td>INSPEKTORAT</td>
+											<td>17/5/2016 12:33:58</td>
+											<td>00:24:15</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Devi Anantha</td>
+											<td>DEVI.ANANTHA</td>
+											<td>INSPEKTUR</td>
+											<td>INSPEKTORAT</td>
+											<td>17/5/2016 12:33:58</td>
+											<td>00:24:15</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Devi Anantha</td>
+											<td>DEVI.ANANTHA</td>
+											<td>INSPEKTUR</td>
+											<td>INSPEKTORAT</td>
+											<td>17/5/2016 12:33:58</td>
+											<td>00:24:15</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>Devi Anantha</td>
+											<td>DEVI.ANANTHA</td>
+											<td>INSPEKTUR</td>
+											<td>INSPEKTORAT</td>
+											<td>17/5/2016 12:33:58</td>
+											<td>00:24:15</td>
+										</tr>
+									</tbody>
+								  </table>
+								</div>
+							</div>
+							
+							<div class="t-center">
+								<ul class="pagination"> 
+									<li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li> 
+									<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li> 
+									<li><a href="#">2</a></li> 
+									<li><a href="#">3</a></li> 
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li> 
+									<li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li> 
+								</ul>
+							</div>
+                              
+							<div class="both-space t-right">
+								<a class="btn btn-info" href="#"><i class="fa fa-print"></i> Print</a>
+								<a class="btn btn-success" href="#"><i class="fa fa-file-pdf-o"></i> PDF</a>
+								<a class="btn btn-danger" href="#"><i class="fa fa-undo"></i> Kembali</a>
+							</div>
 
-                                    <div class="rows">
-                                        <div class="cells">1</div>
-                                        <div class="cells">Devi Anantha</div>
-                                        <div class="cells">DEVI.ANANTHA</div>
-                                        <div class="cells">INSPEKTUR</div>
-                                        <div class="cells">INSPEKTORAT</div>
-                                        <div class="cells">17/5/2016 12:33:58</div>
-                                        <div class="cells">00:24:15</div>
-                                    </div>
-
-                                    <div class="rows">
-                                        <div class="cells">2</div>
-                                        <div class="cells">Devi Anantha</div>
-                                        <div class="cells">DEVI.ANANTHA</div>
-                                        <div class="cells">INSPEKTUR</div>
-                                        <div class="cells">INSPEKTORAT</div>
-                                        <div class="cells">17/5/2016 12:33:58</div>
-                                        <div class="cells">00:24:15</div>
-                                    </div>
-
-                                    <div class="rows">
-                                        <div class="cells">3</div>
-                                        <div class="cells">Devi Anantha</div>
-                                        <div class="cells">DEVI.ANANTHA</div>
-                                        <div class="cells">INSPEKTUR</div>
-                                        <div class="cells">INSPEKTORAT</div>
-                                        <div class="cells">17/5/2016 12:33:58</div>
-                                        <div class="cells">00:24:15</div>
-                                    </div>
-
-                                    <div class="rows">
-                                        <div class="cells">4</div>
-                                        <div class="cells">Devi Anantha</div>
-                                        <div class="cells">DEVI.ANANTHA</div>
-                                        <div class="cells">INSPEKTUR</div>
-                                        <div class="cells">INSPEKTORAT</div>
-                                        <div class="cells">17/5/2016 12:33:58</div>
-                                        <div class="cells">00:24:15</div>
-                                    </div>
-
-                                  </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+<?php include('footer.php')?>
