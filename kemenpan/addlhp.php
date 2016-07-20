@@ -15,7 +15,6 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">NOMOR SURAT TUGAS</label>
-											
 											<div class="col-sm-8">
 												<input type="text" class="form-control border-input" placeholder="" value="" />
 											</div>
