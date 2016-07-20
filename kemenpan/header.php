@@ -37,7 +37,6 @@
 			StyleSheet And LESS Compailer
 		########################################-->
 	<link href="assets/css/custom.css" rel="stylesheet" />
-	<script type="text/javascript" src="js/less.min.js"></script>
 </head>
 <body>
     <header id="topnav" class="navbar-fixed-up">

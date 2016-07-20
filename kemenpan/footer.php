@@ -39,10 +39,11 @@
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
 
+	<?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php'){?>
 	<!--  Charts Plugin -->
 	<script src="assets/js/Chart.js"></script>
 	<script src="assets/js/graphic.js"></script>
-
+	<?php }?>
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
 
