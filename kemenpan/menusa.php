@@ -12,7 +12,7 @@
 					</div>
 					<div class="content">
 						<div class="inner col-md-10">
-				            <p>TOTAL TEMUAN SEJAK TAHUN 2013</p>	
+				            <p class="h6">TOTAL TEMUAN SEJAK TAHUN 2013</p>	
 						    <p>TOTAL REKOMENDASI SEJAK TAHUN 2013</p><br />
                             <p>BELUM SESUAI REKOMENDASI</p>
                             <p>BELUM DITINDAKLANJUTI</p>
@@ -74,9 +74,9 @@
 						<div class="footer">
 							<div class="chart-legend">
 								<i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut
-								<i class="fa fa-circle text-danger"></i> Selesai tindak lanjut <i
-									class="fa fa-circle text-warning"></i> Belum sesuai <i
-									class="fa fa-circle text-success"></i> Belum tindak lanjut
+								<i class="fa fa-circle text-danger"></i> Selesai tindak lanjut 
+                                <i class="fa fa-circle text-warning"></i> Belum sesuai 
+                                <i class="fa fa-circle text-success"></i> Belum tindak lanjut
 							</div>
 							<hr>
 							<div class="stats">
