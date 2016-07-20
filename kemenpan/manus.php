@@ -57,12 +57,12 @@
                                         	</select>
                                         </div>
                                         <div class="cells">
-                                              <a class="btn btn-default" href="path/to/settings">
+                                              <a class="btn btn-default" href="#">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
                                             </a>
                                             
-                                            <a class="btn btn-danger" href="path/to/settings">
+                                            <a class="btn btn-danger" href="#">
                                               <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
                                               <span class="sr-only">Delete</span>
                                             </a>
@@ -98,12 +98,12 @@
                                         	</select>
                                         </div>
                                         <div class="cells">
-                                              <a class="btn btn-default" href="path/to/settings">
+                                              <a class="btn btn-default" href="#">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
                                             </a>
                                             
-                                            <a class="btn btn-danger" href="path/to/settings">
+                                            <a class="btn btn-danger" href="#">
                                               <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
                                               <span class="sr-only">Delete</span>
                                             </a>
@@ -139,12 +139,12 @@
                                         	</select>
                                         </div>
                                         <div class="cells">
-                                              <a class="btn btn-default" href="path/to/settings">
+                                              <a class="btn btn-default" href="#">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
                                             </a>
                                             
-                                            <a class="btn btn-danger" href="path/to/settings">
+                                            <a class="btn btn-danger" href="#">
                                               <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
                                               <span class="sr-only">Delete</span>
                                             </a>
@@ -180,12 +180,12 @@
                                         	</select>
                                         </div>
                                         <div class="cells">
-                                              <a class="btn btn-default" href="path/to/settings">
+                                              <a class="btn btn-default" href="#">
                                               <i class="fa fa-cog" title="Settings" aria-hidden="true"></i>
                                               <span class="sr-only">Settings</span>
                                             </a>
                                             
-                                            <a class="btn btn-danger" href="path/to/settings">
+                                            <a class="btn btn-danger" href="#">
                                               <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
                                               <span class="sr-only">Delete</span>
                                             </a>
