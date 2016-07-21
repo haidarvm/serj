@@ -8,7 +8,7 @@
   clear: both;
 }
 .bg-blue {
-  background: url(../img/bg-blue.png) repeat;
+  background: #2196f3;
 }
 .f-left {
   float: left !important;
