@@ -48,10 +48,10 @@
 											<option>Admin</option>
 											<option>User</option>
 									</select></td>
-									<td><a class="btn btn-default" href="#"> <i
+									<td><a class="btn btn-default circle-perfect" href="#"> <i
 											class="ti-pencil-alt" title="Edit" aria-hidden="true"></i> <span
 											class="sr-only">Settings</span>
-									</a> <a class="btn btn-danger" href="#"> <i
+									</a> <a class="btn btn-danger circle-perfect" href="#"> <i
 											class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
 											<span class="sr-only">Delete</span>
 									</a></td>
@@ -81,10 +81,10 @@
 											<option>Admin</option>
 											<option>User</option>
 									</select></td>
-									<td><a class="btn btn-default" href="#"> <i
+									<td><a class="btn btn-default circle-perfect" href="#"> <i
 											class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
 											<span class="sr-only">Settings</span>
-									</a> <a class="btn btn-danger" href="#"> <i
+									</a> <a class="btn btn-danger circle-perfect" href="#"> <i
 											class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
 											<span class="sr-only">Delete</span>
 									</a></td>
@@ -114,10 +114,10 @@
 											<option>Admin</option>
 											<option>User</option>
 									</select></td>
-									<td><a class="btn btn-default" href="#"> <i
+									<td><a class="btn btn-default circle-perfect" href="#"> <i
 											class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
 											<span class="sr-only">Settings</span>
-									</a> <a class="btn btn-danger" href="#"> <i
+									</a> <a class="btn btn-danger circle-perfect" href="#"> <i
 											class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
 											<span class="sr-only">Delete</span>
 									</a></td>
@@ -147,10 +147,10 @@
 											<option>Admin</option>
 											<option>User</option>
 									</select></td>
-									<td><a class="btn btn-default" href="#"> <i
+									<td><a class="btn btn-default circle-perfect" href="#"> <i
 											class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
 											<span class="sr-only">Settings</span>
-									</a> <a class="btn btn-danger" href="#"> <i
+									</a> <a class="btn btn-danger circle-perfect" href="#"> <i
 											class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
 											<span class="sr-only">Delete</span>
 									</a></td>

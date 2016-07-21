@@ -31,8 +31,18 @@
 									<td>00</td>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>1</td>
@@ -40,8 +50,18 @@
 									<td>00</td>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>1</td>
@@ -49,8 +69,18 @@
 									<td>00</td>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>1</td>
@@ -58,8 +88,18 @@
 									<td>00</td>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 							</tbody>
 						  </table>
@@ -89,26 +129,66 @@
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 							</tbody>
 						  </table>
@@ -138,26 +218,66 @@
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 								<tr>
 									<td>Lorem ipsum</td>
 									<td>Lorem ipsum</td>
-									<td><i class="ti-settings"></i></td>
-									<td><i class="ti-close"></i></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="#"> 
+											<i aria-hidden="true" class="fa fa-cogs"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
+									<td>
+										<a class="btn btn-danger circle-perfect" href="#"> 
+											<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+											<span class="sr-only">Delete</span>
+										</a>
+									</td>
 								</tr>
 							</tbody>
 						  </table>

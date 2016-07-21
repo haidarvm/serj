@@ -121,6 +121,7 @@
 					<span class="icon-bar bar2"></span>
 					<span class="icon-bar bar3"></span>
 				</button>
+				<h3>Data Tables</h3>
 			</div>
 			
 			<div class="collapse navbar-collapse .col-md-3">
