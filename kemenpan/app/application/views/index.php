@@ -8,26 +8,25 @@
     <title>Login Super User</title>
 
     <!-- Bootstrap -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/assets/css/style.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/assets/css/bootstrap.min.css" rel="stylesheet" />
 
 
     <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+    <link href="<?php echo base_url();?>assets/assets/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Paper Dashboard core CSS    -->
-    <link href="assets/css/paper-dashboard.css" rel="stylesheet"/>
+    <link href="<?php echo base_url();?>assets/assets/css/paper-dashboard.css" rel="stylesheet"/>
 	
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/assets/css/demo.css" rel="stylesheet" />
 
 	<!-- #######################################
 			StyleSheet And LESS Compailer and font
 		########################################-->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href="assets/css/custom.css" rel="stylesheet" />
-	<script type="text/javascript" src="js/less.min.js"></script>
+	<link href="<?php echo base_url();?>assets/assets/css/custom.css" rel="stylesheet" />
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

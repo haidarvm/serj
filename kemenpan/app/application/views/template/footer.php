@@ -33,26 +33,26 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap-checkbox-radio.js"></script>
 
 	<?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php'){?>
 	<!--  Charts Plugin -->
-	<script src="assets/js/Chart.js"></script>
-	<script src="assets/js/graphic.js"></script>
+	<script src="<?php echo base_url();?>assets/js/Chart.js"></script>
+	<script src="<?php echo base_url();?>assets/js/graphic.js"></script>
 	<?php }?>
     <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
+    <script src="<?php echo base_url();?>assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>-->
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="assets/js/paper-dashboard.js"></script>
+	<script src="<?php echo base_url();?>assets/js/paper-dashboard.js"></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="assets/js/demo.js"></script>
+	<script src="<?php echo base_url();?>assets/js/demo.js"></script>
 </html>

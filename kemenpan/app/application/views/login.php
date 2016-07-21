@@ -8,24 +8,24 @@
     <title>Login Super User</title>
 
     <!-- Bootstrap -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" />
 
 
     <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+    <link href="<?php echo base_url();?>assets/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Paper Dashboard core CSS    -->
-    <link href="assets/css/paper-dashboard.css" rel="stylesheet"/>
+    <link href="<?php echo base_url();?>assets/css/paper-dashboard.css" rel="stylesheet"/>
 	
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/css/demo.css" rel="stylesheet" />
 
 	<!-- #######################################
 			StyleSheet And LESS Compailer
 		########################################-->
-	<link href="assets/css/custom.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/custom.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/less.min.js"></script>
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -39,7 +39,7 @@
     <div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-1 top-head logo">
-				<a href="index.php"><img src="assets/img/logo.png" alt=""/></a>
+				<a href="index.php"><img src="<?php echo base_url();?>assets/img/logo.png" alt=""/></a>
 			</div>
 			
 			<div class="col-md-8 col-md-offset-2 desc-content">
@@ -48,7 +48,7 @@
 			
 			<div class="col-md-4 col-md-offset-4 box-login">
 				<div class="grid-box">
-					<p><img src="assets/img/icon_logo.png" alt="" width="86" height="111" border="0" /></p>
+					<p><img src="<?php echo base_url();?>assets/img/icon_logo.png" alt="" width="86" height="111" border="0" /></p>
 					
 					<form action="post.php" method="post">
 					  <div class="form-group">
@@ -71,26 +71,26 @@
 	</div>
 
    <!--   Core JS Files   -->
-    <script src="assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap-checkbox-radio.js"></script>
 
 	<!--  Charts Plugin
-	<script src="assets/js/Chart.js"></script>
-	<script src="assets/js/graphic.js"></script> -->
+	<script src="<?php echo base_url();?>assets/js/Chart.js"></script>
+	<script src="<?php echo base_url();?>assets/js/graphic.js"></script> -->
 
     <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
+    <script src="<?php echo base_url();?>assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>-->
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="assets/js/paper-dashboard.js"></script>
+	<script src="<?php echo base_url();?>assets/js/paper-dashboard.js"></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="assets/js/demo.js"></script>
+	<script src="<?php echo base_url();?>assets/js/demo.js"></script>
   </body>
 </html>

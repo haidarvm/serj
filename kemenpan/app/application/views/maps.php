@@ -1,5 +1,3 @@
-<?php include('header.php')?>
-
 		<div class="content">
             <div class="container-fluid">
                 <div class="card card-map">
@@ -12,5 +10,3 @@
 				</div>
 			</div>
 		</div>
-
-<?php include('footer.php')?>
