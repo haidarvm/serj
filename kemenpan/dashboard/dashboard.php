@@ -12,6 +12,7 @@
 					</div>
 					<div class="content">
 				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
                         
 					</div>
                     <div class="clearfix"></div>
@@ -27,6 +28,7 @@
 					</div>
 					<div class="content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
@@ -41,6 +43,7 @@
 					</div>
 					<div class="content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
@@ -56,8 +59,8 @@
 						<!--                                 <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-				
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 				</div>
@@ -72,6 +75,7 @@
 					</div>
 					<div class="content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
@@ -86,6 +90,7 @@
 					</div>
 					<div class="content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
@@ -103,6 +108,7 @@
 					<div class="content">
 				
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 				</div>
@@ -117,6 +123,7 @@
 					</div>
 					<div class="content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
@@ -131,6 +138,7 @@
 					</div>
 					<div class="content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+                        <a class="btn btn-info" href="#">Lihat Selengkapnya</a>
 					</div>
                     <div class="clearfix"></div>
 					</div>
