@@ -35,8 +35,16 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-pencil-alt"></i></td>
-                                        	<td><i class="ti-trash"></i></td>
+                                        	<td colspan="2">
+												<a class="btn btn-default circle-perfect" href="#"> 
+													<i class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
+													<span class="sr-only">Settings</span>
+												</a> 
+												<a class="btn btn-danger circle-perfect" href="#"> 
+													<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+													<span class="sr-only">Delete</span>
+												</a>
+											</td>
                                         </tr>
                                         <tr>
                                         	<td>2</td>
@@ -47,8 +55,16 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-pencil-alt"></i></td>
-                                        	<td><i class="ti-trash"></i></td>
+                                        	<td colspan="2">
+												<a class="btn btn-default circle-perfect" href="#"> 
+													<i class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
+													<span class="sr-only">Settings</span>
+												</a> 
+												<a class="btn btn-danger circle-perfect" href="#"> 
+													<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+													<span class="sr-only">Delete</span>
+												</a>
+											</td>
                                         </tr>
                                         <tr>
                                         	<td>3</td>
@@ -59,8 +75,16 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-pencil-alt"></i></td>
-                                        	<td><i class="ti-trash"></i></td>
+                                        	<td colspan="2">
+												<a class="btn btn-default circle-perfect" href="#"> 
+													<i class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
+													<span class="sr-only">Settings</span>
+												</a> 
+												<a class="btn btn-danger circle-perfect" href="#"> 
+													<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+													<span class="sr-only">Delete</span>
+												</a>
+											</td>
                                         </tr>
                                         <tr>
                                         	<td>4</td>
@@ -71,8 +95,16 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-pencil-alt"></i></td>
-                                        	<td><i class="ti-trash"></i></td>
+                                        	<td colspan="2">
+												<a class="btn btn-default circle-perfect" href="#"> 
+													<i class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
+													<span class="sr-only">Settings</span>
+												</a> 
+												<a class="btn btn-danger circle-perfect" href="#"> 
+													<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+													<span class="sr-only">Delete</span>
+												</a>
+											</td>
                                         </tr>
                                         <tr>
                                         	<td>5</td>
@@ -83,8 +115,16 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-pencil-alt"></i></td>
-                                        	<td><i class="ti-trash"></i></td>
+                                        	<td colspan="2">
+												<a class="btn btn-default circle-perfect" href="#"> 
+													<i class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
+													<span class="sr-only">Settings</span>
+												</a> 
+												<a class="btn btn-danger circle-perfect" href="#"> 
+													<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+													<span class="sr-only">Delete</span>
+												</a>
+											</td>
                                         </tr>
                                         <tr>
                                         	<td>6</td>
@@ -95,8 +135,16 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-pencil-alt"></i></td>
-                                        	<td><i class="ti-trash"></i></td>
+                                        	<td colspan="2">
+												<a class="btn btn-default circle-perfect" href="#"> 
+													<i class="ti-pencil-alt" title="Settings" aria-hidden="true"></i>
+													<span class="sr-only">Settings</span>
+												</a> 
+												<a class="btn btn-danger circle-perfect" href="#"> 
+													<i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
+													<span class="sr-only">Delete</span>
+												</a>
+											</td>
                                         </tr>
                                     </tbody>
                                 </table>
