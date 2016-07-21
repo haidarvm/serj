@@ -1,0 +1,240 @@
+.modal-backdrop {
+	display: none;
+}
+.modal-dialog {
+    margin-top: 10%;
+}
+.clr {
+	clear: both;
+}
+
+.bg-blue{
+	background: url(../img/bg-blue.png) repeat;
+}
+.f-left {
+	float: left !important;
+}
+.f-right {
+	float: right !important;
+}
+.t-left {
+	text-align: left !important;
+}
+.t-right {
+	text-align: right !important;
+}
+.nopadding {
+	padding: 0 !important;
+}
+.effect {
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	
+	&:hover {
+		-webkit-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+}
+
+.top-head {
+	padding: 20px 0 0;
+}
+.desc-content {
+	text-align: center;
+	padding: 3% 0 20px;
+	
+	p {
+		color: #fff;
+		font-weight: 600;
+		font-family: 'Montserrat', sans-serif;
+	}
+}
+
+.grid-box {
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	text-align: center;
+	margin: 0 40px;
+	
+	P{
+		margin: 0 0 20px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	
+	input[type="text"] {
+		background-color: #eeeeee;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 13px;
+		color: #bfbfbf;
+		text-align: center;
+		border: 0;
+	}
+	input[type="password"] {
+		background-color: #eeeeee;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 13px;
+		color: #bfbfbf;
+		text-align: center;
+		border: 0;
+	}
+	.btn.btn-blue {
+		background: #438bcb;
+		.effect;
+		border: 0;
+		border-radius: 4px;
+		width: 100%;
+		color: #fff;
+		padding-top: 12px; 
+		padding-bottom: 12px; 
+		font-weight: 600;
+		
+		&:hover {
+			background: #5ea0db;
+			.effect;
+		}
+	}
+}
+
+.picks {
+	background: #fff;
+	text-align: center;
+	margin: 0 15px 30px;
+	padding: 0;
+	width: 255px;
+	border-radius: 10px;
+	min-height: 280px;
+	.effect;
+	
+	.inside {
+		padding: 20px 10px;
+		.effect;
+		
+		h3 {
+			color: #aeaeae;
+			font-size: 14px;
+			.effect;
+			font-family: 'Montserrat', sans-serif;
+		}
+		
+		&:hover {
+			.effect;
+			h3 {
+				color: #000000;
+				font-size: 14px;
+				.effect;
+			}
+		}
+	}
+	
+	
+	&:hover {
+		.effect;
+		a {
+			display: inline-block;
+			background: #438bcb;
+			.effect;
+			border: 0;
+			color: #fff;
+			padding: 10px 30px 8px;
+			margin: 10px 0;
+			font-size: 13px;
+			border-radius: 10px;
+			font-family: 'Montserrat', sans-serif;
+			
+			&:hover {
+				background: #5ea0db;
+				.effect
+			}
+		}
+	}
+	a {
+		background: #438bcb;
+		display: none;
+		.effect;
+		border: 0;
+		color: #fff;
+		padding: 10px 30px 8px;
+		margin: 10px 0;
+		font-size: 13px;
+		border-radius: 10px;
+		font-family: 'Montserrat', sans-serif;
+		
+		&:hover {
+			background: #5ea0db;
+			.effect
+		}
+	}
+}
+
+.footer-black {
+	background: url(../img/bg-black.png) repeat;
+	height: 71px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	display: block;
+	
+	p {
+		color: #fff;
+		margin-top: 27px;
+		font-size: 13px;
+		font-family: 'Montserrat', sans-serif;
+	}
+}
+
+.top-space {
+	margin-top: 30px !important;
+	text-align: center;
+}
+.both-space {
+	padding: 25px !important;
+}
+.t-center {
+	text-align: center;
+}
+.btn, .navbar .navbar-nav > li > a.btn {
+	margin: 3px 0;
+    padding: 5px;
+}
+
+.date-input {
+	float: right;
+    width: 83%;
+}
+.date-input-big {
+	float: right;
+    width: 91%;
+}
+.card label {
+	font-size: 13px !important;
+	line-height: 35px;
+}
+.icn {
+	float: left;
+	font-size: 18px;
+	margin-top: 6px;
+}
+
+@media (max-width: 480px){ 
+	.modal-dialog {
+		margin-top: 30%;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px){ 
+	.modal-dialog {
+		margin-top: 20%;
+	}
+}
+
+@media (max-width: 767px){
+	.top-head {
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+	.footer {
+		position: inherit;
+	}
+}

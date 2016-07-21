@@ -12,7 +12,7 @@
                             <div class="content table-responsive">
                                 <table class="table table-striped t-center">
                                     <thead>
-										<tr class="danger">
+										<tr class="info">
 											<td>No</td>
 											<td>NOMOR LAP.</td>
 											<td>PERIODE LAPORAN</td>
@@ -35,8 +35,8 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-settings"></i></td>
-                                        	<td><i class="ti-close"></i></td>
+                                        	<td><i class="ti-pencil-alt"></i></td>
+                                        	<td><i class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                         	<td>2</td>
@@ -47,8 +47,8 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-settings"></i></td>
-                                        	<td><i class="ti-close"></i></td>
+                                        	<td><i class="ti-pencil-alt"></i></td>
+                                        	<td><i class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                         	<td>3</td>
@@ -59,8 +59,8 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-settings"></i></td>
-                                        	<td><i class="ti-close"></i></td>
+                                        	<td><i class="ti-pencil-alt"></i></td>
+                                        	<td><i class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                         	<td>4</td>
@@ -71,8 +71,8 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-settings"></i></td>
-                                        	<td><i class="ti-close"></i></td>
+                                        	<td><i class="ti-pencil-alt"></i></td>
+                                        	<td><i class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                         	<td>5</td>
@@ -83,8 +83,8 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-settings"></i></td>
-                                        	<td><i class="ti-close"></i></td>
+                                        	<td><i class="ti-pencil-alt"></i></td>
+                                        	<td><i class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                         	<td>6</td>
@@ -95,8 +95,8 @@
                                         	<td>JUDUL</td>
                                         	<td><i class="fa fa-file-pdf-o"></i> PDF</td>
                                         	<td><i class="fa fa-print"></i> Cetak</td>
-                                        	<td><i class="ti-settings"></i></td>
-                                        	<td><i class="ti-close"></i></td>
+                                        	<td><i class="ti-pencil-alt"></i></td>
+                                        	<td><i class="ti-trash"></i></td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -12,7 +12,7 @@
 					</div>
 					<div class="content">
 						<div class="inner col-md-10">
-				            <p>TOTAL TEMUAN SEJAK TAHUN 2013</p>	
+				            <p class="h6">TOTAL TEMUAN SEJAK TAHUN 2013</p>	
 						    <p>TOTAL REKOMENDASI SEJAK TAHUN 2013</p><br />
                             <p>BELUM SESUAI REKOMENDASI</p>
                             <p>BELUM DITINDAKLANJUTI</p>
@@ -65,7 +65,7 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title"><b>TINDAK LANJUT HASIL PENGAWASAN</b></h4>
-						<p class="category">Last Campaign Performance</p>
+						<p class="category">Pie Chart</p>
 					</div>
 					<div class="content">
 						<canvas id="pieTindakLanjut" class="full-width" width="300" height="200"
@@ -74,13 +74,13 @@
 						<div class="footer">
 							<div class="chart-legend">
 								<i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut
-								<i class="fa fa-circle text-danger"></i> Selesai tindak lanjut <i
-									class="fa fa-circle text-warning"></i> Belum selesai <i
-									class="fa fa-circle text-success"></i> Belum tindak lanjut
+								<i class="fa fa-circle text-danger"></i> Selesai tindak lanjut 
+                                <i class="fa fa-circle text-warning"></i> Belum sesuai 
+                                <i class="fa fa-circle text-success"></i> Belum tindak lanjut
 							</div>
 							<hr>
 							<div class="stats">
-								<i class="ti-timer"></i> Campaign sent 2 days ago
+								<i class="ti-timer"></i> Update 2 days ago
 							</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title"><b>KERUGIAN KEUANGAN NEGARA</b></h4>
-						<p class="category">Last Campaign Performance</p>
+						<p class="category">Pie Chart</p>
 					</div>
 					<div class="content">
 						<canvas id="pieKerugian" class="full-width" width="300" height="200"
@@ -105,7 +105,7 @@
 							</div>
 							<hr>
 							<div class="stats">
-								<i class="ti-timer"></i> Campaign sent 2 days ago
+								<i class="ti-timer"></i> Update 2 days ago
 							</div>
 						</div>
 					</div>

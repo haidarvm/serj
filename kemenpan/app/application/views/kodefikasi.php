@@ -14,7 +14,7 @@
 						<div class="table-responsive">
 						  <table class="table table-striped">
 							<thead>
-								<tr class="danger">
+								<tr class="info">
 									<td>KEL</td>
 									<td>SUB KEL</td>
 									<td>JENIS</td>
@@ -78,7 +78,7 @@
 						<div class="table-responsive">
 						  <table class="table table-striped">
 							<thead>
-								<tr class="danger">
+								<tr class="info">
 									<td>JENIS</td>
 									<td>DESKRIPSI</td>
 									<td>EDIT</td>
@@ -127,7 +127,7 @@
 						<div class="table-responsive">
 						  <table class="table table-striped">
 							<thead>
-								<tr class="danger">
+								<tr class="info">
 									<td>JENIS</td>
 									<td>DESKRIPSI</td>
 									<td>EDIT</td>

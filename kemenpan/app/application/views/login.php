@@ -23,9 +23,8 @@
     <link href="assets/css/demo.css" rel="stylesheet" />
 
 	<!-- #######################################
-			StyleSheet And LESS Compailer and font
+			StyleSheet And LESS Compailer
 		########################################-->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href="assets/css/custom.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/less.min.js"></script>
 	
@@ -44,46 +43,31 @@
 			</div>
 			
 			<div class="col-md-8 col-md-offset-2 desc-content">
-				<p>KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
+				<p>DATABASE HASIL PENGAWASAN INSPEKTORAT <br /> KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
 			</div>
 			
-			<div class="container">
-				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="assets/img/img-1.png" alt="" width="128" height="168" border="0" />
-						<h3>INSPEKTORAT KEMENTERIAN PANRB</h3>
-						<a href="login.php">LOGIN</a>
-					</div>
+			<div class="col-md-4 col-md-offset-4 box-login">
+				<div class="grid-box">
+					<p><img src="assets/img/icon_logo.png" alt="" width="86" height="111" border="0" /></p>
+					
+					<form action="post.php" method="post">
+					  <div class="form-group">
+						<input type="text" class="form-control" name="username" placeholder="USERNAME" value="admin">
+					  </div>
+					  <div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="PASSWORD" value="admin">
+					  </div>
+					  
+					  <button type="submit" class="btn btn-default btn-blue">LOGIN</button>
+					</form>
 				</div>
-				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="assets/img/img-2.png" alt="" width="162" height="168" border="0" />
-						<h3>BADAN PEMERIKSA KEUANGAN</h3>
-						<a href="login.php">LOGIN</a>
-					</div>
-				</div>
-				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="assets/img/img-3.png" alt="" width="192" height="168" border="0" />
-						<h3>BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN</h3>
-						<a href="login.php">LOGIN</a>
-					</div>
-				</div>
-				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="assets/img/img-4.png" alt="" width="206" height="168" border="0" />
-						<h3>OMBUDSMAN RI</h3>
-						<a href="login.php">LOGIN</a>
-					</div>
-				</div>
-				
 			</div>
 		</div>
 	</div>
 	
 	<div class="container-fluid footer-black nopadding">
 		<p>&copy;2016, DATABASE HASIL PENGAWASAN INSPEKTORAT
-                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI.</p>
+                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI	.</p>
 	</div>
 
    <!--   Core JS Files   -->
@@ -93,9 +77,9 @@
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
 
-	<!--  Charts Plugin -->
+	<!--  Charts Plugin
 	<script src="assets/js/Chart.js"></script>
-	<script src="assets/js/graphic.js"></script>
+	<script src="assets/js/graphic.js"></script> -->
 
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
