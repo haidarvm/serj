@@ -1,4 +1,3 @@
-<?php include('header.php')?>
         <div class="content">
             <div class="container-fluid">
                 <div class="card">
@@ -86,5 +85,3 @@
                 </div>
             </div>
         </div>
-
-<?php include('footer.php')?>
