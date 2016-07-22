@@ -157,14 +157,13 @@
 						
 						</table>
 						<div class="table-action">
-							<a class="btn btn-info" href="#"><i class="fa fa-plus fa-lg"></i>
-								Tambah User</a> <a class="btn btn-success" href="#"><i
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-plus fa-lg"></i> Tambah User</button>
+							<a class="btn btn-success" href="#"><i
 								class="fa fa-save"></i> Simpan</a> <a class="btn btn-danger"
 								href="#"><i class="fa fa-ban"></i> Batal</a>
 						</div>
 
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal test</button>
-
+						
 						<div class="modal fade" id="exampleModal" tabindex="-1"
 							role="dialog" aria-labelledby="exampleModalLabel">
 							<div class="modal-dialog" role="document">
@@ -174,12 +173,28 @@
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
-										<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+										<h4 class="modal-title" id="exampleModalLabel">New User</h4>
 									</div>
 									<div class="modal-body">
 										<form>
 											<div class="form-group">
-												<label for="recipient-name" class="control-label">Recipient:</label>
+												<label for="recipient-name" class="control-label">Nama:</label>
+												<input type="text" class="form-control" id="recipient-name">
+											</div>
+											<div class="form-group">
+												<label for="recipient-name" class="control-label">Jabatan:</label>
+												<input type="text" class="form-control" id="recipient-name">
+											</div>
+											<div class="form-group">
+												<label for="recipient-name" class="control-label">Username:</label>
+												<input type="text" class="form-control" id="recipient-name">
+											</div>
+											<div class="form-group">
+												<label for="recipient-name" class="control-label">Password:</label>
+												<input type="text" class="form-control" id="recipient-name">
+											</div>
+											<div class="form-group">
+												<label for="recipient-name" class="control-label">Unit Kerja:</label>
 												<input type="text" class="form-control" id="recipient-name">
 											</div>
 											<div class="form-group">

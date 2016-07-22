@@ -7,7 +7,7 @@
 					<div class="header text-center">
 						<!-- 						<h5 class="title">Dashboard</h5> -->
 						<button class="btn btn-lg btn-fill">
-							&nbsp; <span class="btn-label"> <i class="ti-settings"></i>
+							&nbsp; <span class="btn-label"> <i class="ti-video-camera"></i>
 							</span> CCTV &nbsp;
 						</button>
 					</div>
@@ -21,7 +21,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="green">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; PERJANJIAN KINERJA
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-settings"></i>
+							</span> PERJANJIAN KINERJA
 							&nbsp;</button>
 					</div>
 					<div class="content">
@@ -34,7 +35,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="orange">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; DISPOSISI SURAT &nbsp;
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-briefcase"></i>
+							</span> DISPOSISI SURAT &nbsp;
 						</button>
 					</div>
 					<div class="content">
@@ -49,7 +51,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="brown">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; PENUGASAN &nbsp;</button>
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-announcement"></i>
+							</span> PENUGASAN &nbsp;</button>
 					</div>
 					<div class="content">
 						<p class="description">Lorem ipsum dolor sit amet, consectetur
@@ -62,7 +65,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="blue">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; POS &nbsp;</button>
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-bag"></i>
+							</span> POS &nbsp;</button>
 					</div>
 					<div class="content">
 						<p class="description">Lorem ipsum dolor sit amet, consectetur
@@ -75,7 +79,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="green">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; JADWAL PEGAWAI &nbsp;</button>
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-settings"></i>
+							</span> JADWAL PEGAWAI &nbsp;</button>
 					</div>
 					<div class="content">
 						<p class="description">Lorem ipsum dolor sit amet, consectetur
@@ -90,7 +95,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="orange">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; LAPORAN LAPORAN &nbsp;
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-agenda"></i>
+							</span> LAPORAN LAPORAN &nbsp;
 						</button>
 					</div>
 					<div class="content">
@@ -104,8 +110,9 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="brown">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; MONITORING TLHP &nbsp;
-						</button>
+						<a href="<?php echo site_url();?>tlhp" class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-pencil-alt"></i>
+							</span> MONITORING TLHP &nbsp;
+						</a>
 					</div>
 					<div class="content">
 						<p class="description">Lorem ipsum dolor sit amet, consectetur
@@ -118,7 +125,8 @@
 				<div class="card card-circle-chart" data-background="color"
 					data-color="blue">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">&nbsp; LAPORAN GRATIFIKASI
+						<button class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-bookmark-alt"></i>
+							</span> LAPORAN GRATIFIKASI
 							&nbsp;</button>
 					</div>
 					<div class="content">

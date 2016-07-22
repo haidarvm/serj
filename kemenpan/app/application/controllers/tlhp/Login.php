@@ -7,7 +7,7 @@ if (! defined('BASEPATH'))
  * @author Haidar Mar'ie
  *         email : haidarvm@gmail.com
  */
-class Manus extends MY_Controller {
+class Login extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -19,9 +19,13 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "MANAGEMENT USER";
+		$data['title'] = "DAFTAR LAPORAN";
 		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->tlhp_template('tlhp/manus', $data);
+		$this->load->view('tlhp/login', $data);
+	}
+	
+	public function do_login() {
+		redirect("tlhp/menusa");
 	}
 
 	/**

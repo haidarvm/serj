@@ -50,7 +50,7 @@
 				<div class="grid-box">
 					<p><img src="<?php echo base_url();?>assets/img/icon_logo.png" alt="" width="86" height="111" border="0" /></p>
 					
-					<form action="post.php" method="post">
+					<form action="<?php echo site_url();?>tlhp/login/do_login" method="post">
 					  <div class="form-group">
 						<input type="text" class="form-control" name="username" placeholder="USERNAME" value="admin">
 					  </div>

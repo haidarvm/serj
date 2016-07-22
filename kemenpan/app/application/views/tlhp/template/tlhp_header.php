@@ -55,49 +55,49 @@
 				<div class="clr"></div>
 	            <ul class="nav">
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php' ? 'class="active"' : '' ?>>
-						<a href="menusa.php">
+						<a href="<?php echo site_url();?>tlhp/menusa.php">
 							<i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard </p>
 						</a>
 					</li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'manus.php' ? 'class="active"' : '' ?>>
-						<a href="manus.php">
+						<a href="<?php echo site_url();?>tlhp/manus.php">
 							<i class="ti-user"></i>
 							<p title="Managment User">Managment User </p>
 						</a>
 					</li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>>
-						<a href="addlhp.php">
+						<a href="<?php echo site_url();?>tlhp/addlhp.php">
 							<i class="ti-pencil-alt"></i>
 							<p title="Buat LHP Baru">Buat LHP Baru</p>
 						</a>
 					</li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'pilihlhp.php' ? 'class="active"' : '' ?>>
-						<a href="pilihlhp.php">
+						<a href="<?php echo site_url();?>tlhp/pilihlhp.php">
 							<i class="ti-new-window"></i>
 							<p title="Update LHP">Update LHP</p>
 						</a>
 					</li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'daftarlap.php' ? 'class="active"' : '' ?>>
-						<a href="daftarlap.php">
+						<a href="<?php echo site_url();?>tlhp/daftarlap.php">
 							<i class="ti-agenda"></i>
 							<p title="Template Laporan">Template Laporan</p>
 						</a>
 					</li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'kodefikasi.php' ? 'class="active"' : '' ?>>
-						<a href="kodefikasi.php">
+						<a href="<?php echo site_url();?>tlhp/kodefikasi.php">
 							<i class="ti-menu-alt"></i>
 							<p title="Kodefikasi">Kodefikasi</p>
 						</a>
 					</li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'loghistory.php' ? 'class="active"' : '' ?>>
-						<a href="loghistory.php">
+						<a href="<?php echo site_url();?>tlhp/loghistory.php">
 							<i class="ti-archive"></i>
 							<p title="Log History">Log History</p>
 						</a>
 					</li>
 					<li>
-						<a href="index.php">
+						<a href="<?php echo site_url();?>tlhp/welcome.php">
 							<i class="ti-power-off"></i>
 							<p title="Logout">Logout</p>
 						</a>
