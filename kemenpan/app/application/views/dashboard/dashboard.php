@@ -116,7 +116,7 @@
 
 			<div class="col-lg-4 col-sm-6">
 				<div class="card card-circle-chart" data-background="color"
-					data-color="brown">
+					data-color="blue">
 					<div class="header text-center">
 						<button class="btn btn-lg btn-fill">&nbsp; LAPORAN GRATIFIKASI
 							&nbsp;</button>
