@@ -6,10 +6,14 @@
 					data-color="blue">
 					<div class="header text-center">
 						<!-- 						<h5 class="title">Dashboard</h5> -->
-						<button class="btn btn-lg btn-fill">&nbsp; CCTV &nbsp;</button>
+						<button class="btn btn-lg btn-fill">
+							&nbsp; <span class="btn-label"> <i class="ti-settings"></i>
+							</span> CCTV &nbsp;
+						</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
@@ -21,7 +25,8 @@
 							&nbsp;</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
@@ -33,7 +38,8 @@
 						</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
@@ -46,31 +52,34 @@
 						<button class="btn btn-lg btn-fill">&nbsp; PENUGASAN &nbsp;</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-sm-6">
 				<div class="card card-circle-chart" data-background="color"
-					data-color="brown">
+					data-color="blue">
 					<div class="header text-center">
 						<button class="btn btn-lg btn-fill">&nbsp; POS &nbsp;</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-sm-6">
 				<div class="card card-circle-chart" data-background="color"
-					data-color="brown">
+					data-color="green">
 					<div class="header text-center">
 						<button class="btn btn-lg btn-fill">&nbsp; JADWAL PEGAWAI &nbsp;</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
@@ -79,13 +88,14 @@
 		<div class="row">
 			<div class="col-lg-4 col-sm-6">
 				<div class="card card-circle-chart" data-background="color"
-					data-color="brown">
+					data-color="orange">
 					<div class="header text-center">
 						<button class="btn btn-lg btn-fill">&nbsp; LAPORAN LAPORAN &nbsp;
 						</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
@@ -98,7 +108,8 @@
 						</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
@@ -111,7 +122,8 @@
 							&nbsp;</button>
 					</div>
 					<div class="content">
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit.</p>
 					</div>
 				</div>
 			</div>
