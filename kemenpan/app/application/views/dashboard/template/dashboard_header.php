@@ -54,14 +54,14 @@
 				</div>
 				<div class="clr"></div>
 	            <ul class="nav">
-					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php' ? 'class="active"' : '' ?>>
-						<a href="menusa.php">
+					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'dashboard.php' ? 'class="active"' : '' ?>>
+						<a href="<?php echo site_url();?>dashboard/">
 							<i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard </p>
 						</a>
 					</li>
-					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'manus.php' ? 'class="active"' : '' ?>>
-						<a href="manus.php">
+					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'pengumuman.php' ? 'class="active"' : '' ?>>
+						<a href="<?php echo site_url();?>dashboard/pengumuman.php">
 							<i class="ti-announcement"></i>
 							<p title="Managment User">Buat Pengumuman </p>
 						</a>

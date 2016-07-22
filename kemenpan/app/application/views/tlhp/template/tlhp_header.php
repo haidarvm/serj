@@ -50,7 +50,7 @@
 		
 		<div class="sidebar-wrapper">
 				<div class="logo t-center">
-					<a href="#"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
+					<a href="<?php echo site_url();?>dashboard/"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
 				</div>
 				<div class="clr"></div>
 	            <ul class="nav">

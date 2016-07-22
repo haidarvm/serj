@@ -7,7 +7,7 @@ if (! defined('BASEPATH'))
  * @author Haidar Mar'ie
  *         email : haidarvm@gmail.com
  */
-class Dashboard extends MY_Controller {
+class Pengumuman extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -19,9 +19,9 @@ class Dashboard extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "Management Dashboard";
+		$data['title'] = "Pengumuman";
 		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->dashboard_template('dashboard/dashboard', $data);
+		$this->load->dashboard_template('dashboard/pengumuman', $data);
 	}
 
 	/**
