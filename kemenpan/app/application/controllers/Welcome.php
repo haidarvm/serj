@@ -20,6 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		echo 'dashboard';
+		redirect('tlhp/menusa');
+		//$this->load->view('welcome_message');
 	}
 }

@@ -7,3 +7,7 @@
 [Thu Jul 21 18:31:25.100437 2016] [:error] [pid 18269] [client 127.0.0.1:44686] script '/home/public_html/serj/kemenpan/dashboard/menusa.php' not found or unable to stat
 [Thu Jul 21 18:31:33.152517 2016] [:error] [pid 18241] [client 127.0.0.1:44688] script '/home/public_html/serj/kemenpan/dashboard/menusa.php' not found or unable to stat
 [Thu Jul 21 18:31:39.344477 2016] [:error] [pid 18241] [client 127.0.0.1:44688] script '/home/public_html/serj/kemenpan/dashboard/menusa.php' not found or unable to stat, referer: http://serj.dev/kemenpan/dashboard/manus.php
+[Fri Jul 22 07:18:22.764483 2016] [:error] [pid 5553] [client 127.0.0.1:34518] script '/home/public_html/serj/kemenpan/menusa.php' not found or unable to stat
+[Fri Jul 22 07:56:09.516673 2016] [:error] [pid 6709] [client 127.0.0.1:34782] script '/home/public_html/serj/kemenpan/dashboard/menusa.php' not found or unable to stat
+[Fri Jul 22 07:57:53.409285 2016] [:error] [pid 6710] [client 127.0.0.1:34796] script '/home/public_html/serj/kemenpan/dashboard/menusa.php' not found or unable to stat, referer: http://serj.dev/kemenpan/dashboard/dashboard.php
+[Fri Jul 22 08:22:54.545524 2016] [:error] [pid 7644] [client 127.0.0.1:35096] PHP Fatal error:  Class 'MY_Controller' not found in /home/public_html/serj/kemenpan/app/application/controllers/tlhp/Menusa.php on line 10

@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url();?>assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Kementrian Pendayagunaan Aparatur Negara.</title>
+	<title><?php echo (isset($title)) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -29,7 +29,7 @@
 
 	
     <!--  Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url();?>assets/css/themify-icons.css" rel="stylesheet">
 
@@ -72,8 +72,8 @@
 							<p title="Buat LHP Baru">Buat LHP Baru</p>
 						</a>
 					</li>
-					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'lhp.php' ? 'class="active"' : '' ?>>
-						<a href="ulhp.php">
+					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'pilihlhp.php' ? 'class="active"' : '' ?>>
+						<a href="pilihlhp.php">
 							<i class="ti-new-window"></i>
 							<p title="Update LHP">Update LHP</p>
 						</a>
@@ -121,6 +121,7 @@
 					<span class="icon-bar bar2"></span>
 					<span class="icon-bar bar3"></span>
 				</button>
+				<h3><?php echo (isset($title)) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></h3>
 			</div>
 			
 			<div class="collapse navbar-collapse .col-md-3">

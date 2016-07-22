@@ -12,7 +12,7 @@
 								<div class="table-responsive">
 								  <table class="table table-striped">
 									<thead>
-										<tr class="danger">
+										<tr class="info">
 											<td>NO</td>
 											<td>NAMA</td>
 											<td>USERNAME</td>

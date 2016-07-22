@@ -7,7 +7,7 @@ if (! defined('BASEPATH'))
  * @author Haidar Mar'ie
  *         email : haidarvm@gmail.com
  */
-class Menusa extends MY_Controller {
+class Pilihlhp extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -19,7 +19,9 @@ class Menusa extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$this->dashboard();
+		$data['title'] = "PILIH LHP";
+		//$data['getAll'] = $this->muser->getAllUser();
+		$this->load->tlhp_template('tlhp/ulhp', $data);
 	}
 
 	/**
@@ -27,10 +29,5 @@ class Menusa extends MY_Controller {
 	 *
 	 * @param string Category slug
 	 */
-	public function dashboard() {
-		$data['title'] = "Admin User List";
-		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->template('menusa', $data);
-	}
 	
 }

@@ -30,7 +30,7 @@ class User extends MY_Controller {
 	public function user_list() {
 		$data['title'] = "Admin User List";
 		$data['getAll'] = $this->muser->getAllUser();
-		$this->load->admin_template('admin/user_list', $data);
+		$this->load->tlhp_template('admin/user_list', $data);
 	}
 
 	/**
@@ -51,7 +51,7 @@ class User extends MY_Controller {
 			$insertUserId = $this->muser->insertUser($post);
 			redirect(site_url() . 'admin/user');
 		}
-		$this->load->admin_template('admin/user', $data);
+		$this->load->tlhp_template('admin/user', $data);
 	}
 
 	/**
@@ -81,7 +81,7 @@ class User extends MY_Controller {
 			}
 		} else {
 			$data['user'] = $this->muser->getUser($id);
-			$this->load->admin_template('admin/user', $data);
+			$this->load->tlhp_template('admin/user', $data);
 		}
 	}
 

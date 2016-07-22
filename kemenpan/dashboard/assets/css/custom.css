@@ -1,3 +1,48 @@
+.sidebar-mini {
+  background-color: #2196f3 !important;
+}
+.circle-perfect {
+  border-radius: 99px;
+  line-height: 0 !important;
+  padding: 0 !important;
+  height: 30px;
+  width: 30px;
+}
+.circle-perfect .fa.fa-trash-o {
+  font-size: 18px;
+  position: relative;
+  top: 4px;
+}
+.circle-perfect .fa.fa-cogs {
+  font-size: 16px;
+  position: relative;
+  top: 5px;
+  left: -1px;
+}
+.navbar-brand.navbar-minimize {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.navbar-brand.navbar-minimize:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.navbar-brand.navbar-minimize:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  color: #2196f3 !important;
+}
+.navbar-brand.navbar-minimize:hover:hover {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.top-head {
+  background: transparent;
+}
+.navbar-header h3 {
+  margin-left: -20px;
+  margin-top: 22px;
+}
 .modal-backdrop {
   display: none;
 }
@@ -8,7 +53,7 @@
   clear: both;
 }
 .bg-blue {
-  background: #2196f3;
+  background: url(../img/bg-blue.png) repeat;
 }
 .f-left {
   float: left !important;

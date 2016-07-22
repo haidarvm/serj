@@ -1,6 +1,7 @@
 TLHP
 
-- codeigniter
+- ci tlhp
+- ci dashboard
 - datepicker
 - modal for add user
 - modal for edit user

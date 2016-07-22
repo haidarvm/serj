@@ -7,7 +7,7 @@ if (! defined('BASEPATH'))
  * @author Haidar Mar'ie
  *         email : haidarvm@gmail.com
  */
-class Manus extends MY_Controller {
+class Kodefikasi extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -19,7 +19,9 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$this->user_list();
+		$data['title'] = "Kodefikasi";
+		//$data['getAll'] = $this->muser->getAllUser();
+		$this->load->tlhp_template('tlhp/kodefikasi', $data);
 	}
 
 	/**
@@ -27,10 +29,5 @@ class Manus extends MY_Controller {
 	 *
 	 * @param string Category slug
 	 */
-	public function user_list() {
-		$data['title'] = "Admin User List";
-		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->template('manus', $data);
-	}
 	
 }
