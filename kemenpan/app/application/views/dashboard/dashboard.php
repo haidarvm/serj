@@ -1,139 +1,120 @@
 <div class="content">
 	<div class="container-fluid">
-        <div class="row">
-			<div class="col-md-4">
-				<div class="card">
-					<div class="header">
-						<h4 class="title">
-							<b>CCTV</b>
-						</h4>
-						<!--                                 <p class="category">Last Campaign Performance</p> -->
+		<div class="row">
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="blue">
+					<div class="header text-center">
+						<!-- 						<h5 class="title">Dashboard</h5> -->
+						<button class="btn btn-lg btn-fill">&nbsp; CCTV &nbsp;</button>
 					</div>
 					<div class="content">
-				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
-                        
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</div>
-                    <div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="card ">
-					<div class="header">
-						<h4 class="title">
-							<b>PERJANJIAN KINERJA</b>
-						</h4>
-						<!--                                 <p class="category">All products including Taxes</p> -->
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="green">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; PERJANJIAN KINERJA
+							&nbsp;</button>
 					</div>
 					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</div>
-                    <div class="clearfix"></div>
-					</div>
-            </div>
-            <div class="col-md-4">
-				<div class="card ">
-					<div class="header">
-						<h4 class="title">
-							<b>DISPOSISI SURAT</b>
-						</h4>
-						<!--                                 <p class="category">All products including Taxes</p> -->
-					</div>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
-					</div>
-                    <div class="clearfix"></div>
-					</div>
-            </div>
-        </div>
-        <div class="row">
-			<div class="col-md-4">
-				<div class="card">
-					<div class="header">
-						<h4 class="title">
-							<b>PENUGASAN</b>
-						</h4>
-						<!--                                 <p class="category">Last Campaign Performance</p> -->
-					</div>
-					<div class="content">
-				
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
-					</div>
-                    <div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="card ">
-					<div class="header">
-						<h4 class="title">
-							<b>POS</b>
-						</h4>
-						<!--                                 <p class="category">All products including Taxes</p> -->
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="orange">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; DISPOSISI SURAT &nbsp;
+						</button>
 					</div>
 					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</div>
-                    <div class="clearfix"></div>
-					</div>
-            </div>
-            <div class="col-md-4">
-				<div class="card ">
-					<div class="header">
-						<h4 class="title">
-							<b>JADWAL PEGAWAI</b>
-						</h4>
-						<!--                                 <p class="category">All products including Taxes</p> -->
-					</div>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
-					</div>
-                    <div class="clearfix"></div>
-					</div>
-            </div>
-        </div>
-        <div class="row">
-			<div class="col-md-4">
-				<div class="card">
-					<div class="header">
-						<h4 class="title">
-							<b>LAPORAN</b>
-						</h4>
-						<!--                                 <p class="category">Last Campaign Performance</p> -->
-					</div>
-					<div class="content">
-				
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
-					</div>
-                    <div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="card ">
-					<div class="header">
-						<h4 class="title">
-							<b>MONITORING THLP</b>
-						</h4>
-						<!--                                 <p class="category">All products including Taxes</p> -->
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="brown">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; PENUGASAN &nbsp;</button>
 					</div>
 					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</div>
-                    <div class="clearfix"></div>
-					</div>
-            </div>
-            <div class="col-md-4">
-				<div class="card ">
-					<div class="header">
-						<h4 class="title">
-							<b>LAPORAN GRATIFIKASI</b>
-						</h4>
-						<!--                                 <p class="category">All products including Taxes</p> -->
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="brown">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; POS &nbsp;</button>
 					</div>
 					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. In eo enim positum est id, quod dicimus esse expetendum. Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Duo Reges: constructio interrete. Ex rebus enim timiditas, non ex vocabulis nascitur. Aeque enim contingit omnibus fidibus, ut incontentae sint. Summum a vobis bonum voluptas dicitur.</p>
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</div>
-                    <div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="brown">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; JADWAL PEGAWAI &nbsp;</button>
 					</div>
-            </div>
-        </div>
+					<div class="content">
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="brown">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; LAPORAN LAPORAN &nbsp;
+						</button>
+					</div>
+					<div class="content">
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="brown">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; MONITORING TLHP &nbsp;
+						</button>
+					</div>
+					<div class="content">
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6">
+				<div class="card card-circle-chart" data-background="color"
+					data-color="brown">
+					<div class="header text-center">
+						<button class="btn btn-lg btn-fill">&nbsp; LAPORAN GRATIFIKASI
+							&nbsp;</button>
+					</div>
+					<div class="content">
+						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
