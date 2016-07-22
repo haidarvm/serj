@@ -1,6 +1,10 @@
 .sidebar-mini {
   background-color: #2196f3 !important;
 }
+button.btn {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
 .custom-form .form-horizontal .control-label {
   line-height: 17px;
   padding-top: 4px !important;
