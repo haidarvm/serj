@@ -21,7 +21,7 @@
     <link href="<?php echo base_url();?>assets/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Paper Dashboard core CSS    -->
-    <link href="<?php echo base_url();?>assets/css/paper-dashboard.css" rel="stylesheet"/>
+    <link href="<?php echo base_url();?>assets/css/paper-tlhp-dashboard.css" rel="stylesheet"/>
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->

@@ -21,7 +21,7 @@ class Dashboard extends MY_Controller {
 	public function index() {
 		$data['title'] = "MANAGEMENT DASHBOARD";
 		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->dashboard_template('dashboard/manus', $data);
+		$this->load->dashboard_template('dashboard/dashboard', $data);
 	}
 
 	/**
