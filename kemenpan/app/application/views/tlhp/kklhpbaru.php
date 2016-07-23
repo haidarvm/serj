@@ -364,6 +364,9 @@
 									<tbody>
 									</tbody>
 								  </table>
+								  
+								  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-plus fa-lg"></i> Edit</button>
+							
 							</div>
 						</div>
 					</div>

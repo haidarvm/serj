@@ -72,3 +72,24 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /kemenpan/app/index.php?/$1 [L]
 </IfModule>
+
+
+
+
+* review client
+- Electronic follow up recommendation (index.php) & RB
+- index dashboard tlhp legend on pie chart
+- footer add logo kemenpan
+- print dashboard layout 
+- menu layout addlhp fix width & height
+- menu addlhpbaru tgl penugasan & skop pemeriksaan tidak dapat lebih muda dari surat tugas
+- addlhpbaru ganti upload laporan
+- addlhp all require
+- kklhpbaru tambah A. Sistem, B. Kepatuhan tombol tambah 
+- kklhpbaru kode rekomendasi dropdown chain sub kelompok
+- kklhpbaru checkbox kerugian negara
+- kklhpbaru kode sebab muncul kan uriaian text nya
+- tambah setelah unit kerja nama ppk & PJ Kegiatan
+- kklhp tambah tombol apabila tindak lanjut
+* user / admin
+tombol detail periode tindak lanjut ganti detail

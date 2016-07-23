@@ -189,14 +189,6 @@
 												<label for="recipient-name" class="control-label">Username:</label>
 												<input type="text" class="form-control" id="recipient-name">
 											</div>
-											<div class="form-group">
-												<label for="recipient-name" class="control-label">Password:</label>
-												<input type="text" class="form-control" id="recipient-name">
-											</div>
-											<div class="form-group">
-												<label for="recipient-name" class="control-label">Unit Kerja:</label>
-												<input type="text" class="form-control" id="recipient-name">
-											</div>
 										</form>
 									</div>
 									<div class="modal-footer">

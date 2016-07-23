@@ -7,7 +7,7 @@ if (! defined('BASEPATH'))
  * @author Haidar Mar'ie
  *         email : haidarvm@gmail.com
  */
-class Manus extends MY_Controller {
+class Template extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -19,16 +19,9 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "MANAGEMENT USER";
+		$data['title'] = "PILIH Template";
 		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->tlhp_template('tlhp/manus', $data);
-	}
-	
-	public function stat() {
-		$data['title'] = "Stat";
-		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->tlhp_template('tlhp/stat', $data);
-		
+		$this->load->tlhp_template('tlhp/template', $data);
 	}
 
 	/**

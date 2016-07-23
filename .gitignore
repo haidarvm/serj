@@ -3,6 +3,7 @@
 #ignore this configuration if not working add this "git rm -r  --cached ." "git add ." "git commit -m 'fixed ignore'"
 mbs-error_log
 
+kemenpan/app/.htaccess
 pmin/*
 awstats-icon
 awstatsicons
