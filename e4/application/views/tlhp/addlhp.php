@@ -1,7 +1,7 @@
-        <div class="content">
+	<div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12 col-md-7">
+                    <div class="col-md-12 custom-form">
                         <div class="card">
 							<div class="content">	
 							<form class="form-horizontal">
@@ -11,7 +11,7 @@
 								</div-->
 								
 							   <div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4 box-margin-ur">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">NOMOR SURAT TUGAS</label>
 											<div class="col-sm-8">
@@ -82,13 +82,13 @@
 										</div>
 										
 										<div class="form-group">
-											<div class="col-md-12 t-right">
+											<div class="col-md-12 t-center"><br />
 												<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">TAMBAH</button>
 											</div>
 										</div>
 									</div>
 									
-									<div class="col-md-6 f-right">
+									<div class="col-md-4 bg-grey box-margin-ur">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">ST PERPANJANGAN</label>
 											
@@ -160,15 +160,13 @@
 										</div>
 										
 										<div class="form-group">
-											<div class="col-md-12 t-right">
+											<div class="col-md-12 t-center"><br />
 												<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">TAMBAH</button>
 											</div>
 										</div>
 									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-6">
+									
+									<div class="col-md-4 box-margin-ur">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">JENIS PENGAWASAN</label>
 											
@@ -204,25 +202,25 @@
 										</div>
 										
 										<div class="form-group">
-											<label for="inputEmail3" class="col-sm-4 control-label t-left">UPLOAD LAPORAN</label>
-											<span class="btn btn-default btn-file">
-												Browse <input type="file">
-											</span>
+											<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label>
+										    <input type="file" id="exampleInputFile">
+											<div class="col-sm-12">
+												<button type="submit" class="btn btn-info f-right small-margin">CARI</button>
+												<button type="submit" class="btn btn-warning f-right small-margin">SCAN</button>
+											</div>
 										</div>
 										
 										<div class="form-group">
-											<div class="col-md-12 t-left top-space">
+											<div class="col-md-12 t-center">
 												<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">BUAT LHP BARU</button>
 											</div>
 										</div>
 									</div>
 								</div>
-								
-								
 							</form>	
 						</div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+	</div>
