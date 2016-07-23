@@ -19,7 +19,7 @@ class Addlhp extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "BUAT LHP BARU";
+		$data['title'] = "Buat LHP Baru";
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/addlhp', $data);
 	}
