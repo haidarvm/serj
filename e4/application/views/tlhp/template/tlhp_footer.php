@@ -39,7 +39,7 @@
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="<?php echo base_url();?>assets/js/bootstrap-checkbox-radio.js"></script>
 
-	<?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'stat.php'){?>
+	<?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php'){?>
 	<!--  Charts Plugin -->
 	<script src="<?php echo base_url();?>assets/js/Chart.js"></script>
 	<script src="<?php echo base_url();?>assets/js/graphic.js"></script>
