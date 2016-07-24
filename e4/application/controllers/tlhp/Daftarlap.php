@@ -19,7 +19,7 @@ class Daftarlap extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "DAFTAR LAPORAN";
+		$data['title'] = "Daftar Laporan";
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/daftarlap', $data);
 	}
