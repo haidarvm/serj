@@ -10,7 +10,7 @@
 
 							<div class="content">
 								<div class="table-responsive">
-								  <table class="table table-striped">
+								  <table class="table table-striped table-custom-head">
 									<thead>
 										<tr class="info">
 											<td>NO</td>

@@ -8,7 +8,7 @@
 						<p class="category">List User</p>
 					</div>
 					<div class="content table-responsive">
-						<table class="table table-striped t-center">
+						<table class="table table-striped t-center table-custom-head">
 							<thead>
 								<tr class="info">
 									<td>No</td>

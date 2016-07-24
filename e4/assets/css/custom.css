@@ -6,6 +6,9 @@
 .table-custom .warning {
   font-weight: bold;
 }
+.table-custom-head .info {
+  font-weight: bold;
+}
 .tab-res-lg {
   width: auto;
   overflow-x: scroll !important;
@@ -87,6 +90,7 @@ button.btn {
   background: transparent;
 }
 .navbar-header h3 {
+  margin-left: -20px;
   margin-top: 22px;
 }
 .modal-backdrop {
