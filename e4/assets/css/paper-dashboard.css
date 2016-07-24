@@ -4255,7 +4255,7 @@ strong {
 }
 .sidebar .logo,
 .off-canvas-sidebar .logo {
-  padding: 18px 0px;
+  padding: 18px 60px 0 0;
   margin: 0;
   height: 75px;
   position: relative;
