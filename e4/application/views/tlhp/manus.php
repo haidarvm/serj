@@ -162,7 +162,6 @@
 								class="fa fa-save"></i> Simpan</a> <a class="btn btn-danger"
 								href="#"><i class="fa fa-ban"></i> Batal</a>
 						</div>
-
 						
 						<div class="modal fade" id="exampleModal" tabindex="-1"
 							role="dialog" aria-labelledby="exampleModalLabel">

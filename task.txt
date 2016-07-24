@@ -1,14 +1,15 @@
-ASK
-dokumen pendukung
+
 
 TLHP
-- ci tlhp
-- ci dashboard
+
+- ci tlhp ... done
+- ci dashboard ... done
 - datepicker
 - modal for add user
 - modal for edit user
 - data table 
 
+Dashboard
 
 
 # real htaccess
