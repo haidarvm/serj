@@ -19,7 +19,7 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "MANAGEMENT USER";
+		$data['title'] = "Management User";
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/manus', $data);
 	}
