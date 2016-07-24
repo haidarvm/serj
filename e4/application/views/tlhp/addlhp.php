@@ -115,21 +115,10 @@
 												<input type="text" class="form-control border-input" placeholder="" value="" />
 											</div>
 										</div>
-										<div class="form-group">
-											<label for="inputEmail3" class="col-sm-4 control-label t-left">SKOP PEMERIKSAAN</label>
-											<div class="col-sm-8">
-												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" class="form-control border-input date-input-big" placeholder="" value="" />
-											</div>
-										</div>
 										
 										<div class="form-group">
 											<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label>
 										    <input type="file" id="exampleInputFile">
-											<div class="col-sm-12">
-												<button type="submit" class="btn btn-info f-right small-margin">CARI</button>
-												<button type="submit" class="btn btn-warning f-right small-margin">SCAN</button>
-											</div>
 										</div>
 										
 										<div class="form-group">

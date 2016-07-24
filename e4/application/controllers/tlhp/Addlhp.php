@@ -26,7 +26,7 @@ class Addlhp extends MY_Controller {
 
 	/**
 	 * List All Product
-	 *
+	 * -
 	 * @param string Category slug
 	 */
 	
