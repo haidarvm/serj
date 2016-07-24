@@ -4257,7 +4257,7 @@ strong {
 .off-canvas-sidebar .logo {
   padding: 18px 60px 0 0;
   margin: 0;
-  height: 75px;
+  height: 82px;
   position: relative;
   z-index: 4;
 }
@@ -4358,7 +4358,7 @@ strong {
 .off-canvas-sidebar:before,
 .off-canvas-sidebar[data-background-color="white"]:after,
 .off-canvas-sidebar[data-background-color="white"]:before {
-  background-color: #2196f3;
+  background-color: #2e79b5;
 }
 .sidebar .user,
 .sidebar .mini-logo, .sidebar[data-background-color="white"] .user,

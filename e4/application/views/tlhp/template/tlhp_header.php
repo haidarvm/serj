@@ -24,6 +24,8 @@
     <link href="<?php echo base_url();?>assets/css/paper-tlhp-dashboard.css" rel="stylesheet"/>
 
 
+
+
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="<?php echo base_url();?>assets/css/demo.css" rel="stylesheet" />
 
@@ -41,7 +43,7 @@
 <body>
 	
 <div class="wrapper">
-    <div class="sidebar" data-background-color="blue" data-active-color="info">
+    <div class="sidebar" data-background-color="white" data-active-color="info">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -50,7 +52,7 @@
 		
 		<div class="sidebar-wrapper">
 				<div class="logo t-center">
-					<a href="<?php echo site_url();?>dashboard/"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
+					<a href="<?php echo site_url();?>dashboard/"><img src="<?php echo base_url();?>assets/img/logo-black.png"></a>
 				</div>
 				<div class="clr"></div>
 	            <ul class="nav">
@@ -109,7 +111,7 @@
     <div class="main-panel">
 		<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-minimize"></i>
+			<div class="navbar-minimize">
 				<a class="navbar-brand navbar-minimize" href="#" id="minimizeSidebar">
 					<i class="ti-menu"></i>
 				</a>
@@ -142,7 +144,7 @@
 
 			</div>
 		</div>
-	</nav>
+	   </nav>
 	
         <!--nav class="navbar navbar-default">
             <div class="container-fluid">
