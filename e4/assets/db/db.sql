@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50712
 File Encoding         : 65001
 
-Date: 2016-07-24 17:33:51
+Date: 2016-07-24 19:19:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,10 +26,10 @@ CREATE TABLE `tlhp_jenis_pengawasan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for tlhp_kertas_kerja
+-- Table structure for tlhp_kertas_kerja_temuan
 -- ----------------------------
-DROP TABLE IF EXISTS `tlhp_kertas_kerja`;
-CREATE TABLE `tlhp_kertas_kerja` (
+DROP TABLE IF EXISTS `tlhp_kertas_kerja_temuan`;
+CREATE TABLE `tlhp_kertas_kerja_temuan` (
   `kertas_kerja_id` int(10) NOT NULL AUTO_INCREMENT,
   `lhp_id` int(11) NOT NULL,
   `jenis_temuan` enum('sistem pengendalian internal','kepatuhan terhadap peraturan') DEFAULT NULL,
@@ -39,16 +39,8 @@ CREATE TABLE `tlhp_kertas_kerja` (
   `kode_sebab_id` int(4) DEFAULT NULL,
   `uraian_sebab` varchar(500) DEFAULT NULL,
   `nilai_temuan` varchar(500) DEFAULT NULL,
-  `kode_rekomendasi_id` int(4) DEFAULT NULL,
-  `uraian_rekomendasi` varchar(500) DEFAULT NULL,
-  `kerugian_negara` tinyint(1) DEFAULT NULL,
-  `nilai_rekomendasi` double DEFAULT NULL,
-  `unit_kerja_id` tinyint(3) DEFAULT NULL,
   `nama_ppk` varchar(500) DEFAULT NULL,
   `nama_pj_kegiatan` varchar(500) DEFAULT NULL,
-  `periode_tindak_lanjut` varchar(500) DEFAULT NULL,
-  `tindak_lanjut` varchar(500) DEFAULT NULL,
-  `dokumen_pendukung` varchar(500) DEFAULT NULL,
   `jumlah_sesuai` int(10) DEFAULT NULL,
   `nilai_sesuai` double DEFAULT NULL,
   `jumlah_belum_sesuai` int(10) DEFAULT NULL,
@@ -64,18 +56,12 @@ CREATE TABLE `tlhp_kertas_kerja` (
   KEY `fk_kk_user` (`user_id`),
   KEY `fk_kk_lhp` (`lhp_id`),
   KEY `fk_kk_kode_temuan` (`kode_temuan_id`),
-  KEY `fk_kk_unit_kerja` (`unit_kerja_id`),
-  KEY `fk_kk_kode_rekomendasi_idx` (`kode_rekomendasi_id`),
   KEY `fk_kk_kode_sebab_idx` (`kode_sebab_id`),
-  CONSTRAINT `fk_kk_kode_rekomendasi` FOREIGN KEY (`kode_rekomendasi_id`) REFERENCES `tlhp_kode_rekomendasi` (`kode_rekomendasi_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_kk_kode_sebab` FOREIGN KEY (`kode_sebab_id`) REFERENCES `tlhp_kode_sebab` (`kode_sebab_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_kk_kode_temuan` FOREIGN KEY (`kode_temuan_id`) REFERENCES `tlhp_kode_temuan` (`kode_temuan_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `fk_kk_lhp` FOREIGN KEY (`lhp_id`) REFERENCES `tlhp_lhp` (`lhp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_kk_unit_kerja` FOREIGN KEY (`unit_kerja_id`) REFERENCES `tlhp_unit_kerja` (`unit_kerja_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_kk_user` FOREIGN KEY (`user_id`) REFERENCES `tlhp_user` (`user_id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- bikin table rekomendasi
 
 -- ----------------------------
 -- Table structure for tlhp_kode_rekomendasi
@@ -167,6 +153,24 @@ CREATE TABLE `tlhp_persetujuan_tl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Table structure for tlhp_rekomendasi
+-- ----------------------------
+DROP TABLE IF EXISTS `tlhp_rekomendasi`;
+CREATE TABLE `tlhp_rekomendasi` (
+  `rekomendasi_id` int(11) NOT NULL AUTO_INCREMENT,
+  `kertas_kerja_id` int(10) NOT NULL,
+  `kode_rekomendasi_id` int(4) DEFAULT NULL,
+  `uraian_rekomendasi` varchar(500) DEFAULT NULL,
+  `kerugian_negara` tinyint(1) DEFAULT NULL,
+  `nilai_rekomendasi` double DEFAULT NULL,
+  PRIMARY KEY (`rekomendasi_id`),
+  KEY `fk_kode_rekomen` (`kode_rekomendasi_id`),
+  KEY `fk_rekomen_kk` (`kertas_kerja_id`),
+  CONSTRAINT `fk_kode_rekomen` FOREIGN KEY (`kode_rekomendasi_id`) REFERENCES `tlhp_kode_rekomendasi` (`kode_rekomendasi_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_rekomen_kk` FOREIGN KEY (`kertas_kerja_id`) REFERENCES `tlhp_kertas_kerja_temuan` (`kertas_kerja_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 -- Table structure for tlhp_template_laporan
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_template_laporan`;
@@ -220,11 +224,19 @@ DROP TABLE IF EXISTS `tlhp_tindak_lanjut`;
 CREATE TABLE `tlhp_tindak_lanjut` (
   `tindak_lanjut_id` int(10) NOT NULL AUTO_INCREMENT,
   `tindak_lanjut` varchar(500) DEFAULT NULL,
+  `rekomendasi_id` int(11) NOT NULL,
   `nilai` double DEFAULT NULL,
+  `tanggal_tl` date NOT NULL,
   `user_id` int(11) NOT NULL,
+  `nama_ppk` varchar(500) DEFAULT NULL,
+  `nama_pj_kegiatan` varchar(500) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`tindak_lanjut_id`)
+  PRIMARY KEY (`tindak_lanjut_id`),
+  KEY `fk_tl_kk_idx` (`rekomendasi_id`),
+  KEY `fk_tl_user` (`user_id`),
+  CONSTRAINT `fk_tl_rekomen` FOREIGN KEY (`rekomendasi_id`) REFERENCES `tlhp_rekomendasi` (`rekomendasi_id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_tl_user` FOREIGN KEY (`user_id`) REFERENCES `tlhp_user` (`user_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
