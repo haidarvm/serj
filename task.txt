@@ -10,11 +10,12 @@ TLHP
 - data table 
 
 CSS
-- datatables manus
+- datatables manus.php
 - bug on datepicker addlhp
+- css upload addlhp
+- modal dialog remote edit / view user
 - upload
 - bug button 
-- css upload addlhp
 
 Dashboard
 

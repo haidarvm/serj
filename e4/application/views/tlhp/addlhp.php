@@ -8,8 +8,8 @@
 						<form class="form-horizontal" method="post" action="<?php echo base_url()?>tlhp/addlhp/insert">
 
 							<!-- <div class="header">
-									<h3 class="title must-center">PEMANTAUAN TINDAK LANJUT REKOMENDASI HASIL PEMERIKSAAN</h3>
-								</div> -->
+								<h4 class="title must-center">Buat LHP Baru</h4>
+							</div> -->
 
 							<div class="row">
 								<div class="col-md-4 box-margin-ur">
@@ -88,6 +88,7 @@
 											</select>
 										</div>
 									</div>
+									<!-- End Tim More -->
 
 									<div class="form-group">
 										<div class="col-md-12 t-center">
@@ -217,7 +218,7 @@
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
-											<button id="add-tim" class="btn btn-sm btn-fill">
+											<button id="add-tim-perpanjangan" class="btn btn-sm btn-fill">
 												<span class="btn-label"> <i class="ti-plus"></i>
 												</span>&nbsp; TAMBAH &nbsp;
 											</button>
