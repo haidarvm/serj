@@ -172,7 +172,7 @@
 										</button>
 										<h4 class="modal-title" id="exampleModalLabel">Edit User</h4>
 									</div>
-									<div class="modal-body">
+									<div class="modal-body modal-form">
 										<form>
 											<div class="row">
 												<div class="col-md-5">
