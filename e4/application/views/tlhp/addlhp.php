@@ -8,8 +8,8 @@
 						<form class="form-horizontal" method="post" action="<?php echo base_url()?>tlhp/addlhp/insert">
 
 							<!-- <div class="header">
-									<h3 class="title must-center">PEMANTAUAN TINDAK LANJUT REKOMENDASI HASIL PEMERIKSAAN</h3>
-								</div> -->
+								<h4 class="title must-center">Buat LHP Baru</h4>
+							</div> -->
 
 							<div class="row">
 								<div class="col-md-4 box-margin-ur">
@@ -88,11 +88,15 @@
 											</select>
 										</div>
 									</div>
+									<!-- End Tim More -->
 
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
-											<button id="add-tim" class="btn btn-info btn-fill btn-wd bottom-space">TAMBAH</button>
+											<button id="add-tim" class="btn btn-sm btn-fill">
+												<span class="btn-label"> <i class="ti-plus"></i>
+												</span>&nbsp; TAMBAH &nbsp;
+											</button>
 										</div>
 									</div>
 								</div>
@@ -102,8 +106,8 @@
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JENIS PENGAWASAN</label>
 										<div class="col-sm-8">
 											<select name="jenis_pengawasan_id" class="form-control">
-												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
+												<option><?php echo $pengawas->jenis_pengawasan;?></option>
 												<?php } ?>
 											</select>
 										</div>
@@ -127,6 +131,12 @@
 											<input type="text" name="nomor_lhp" class="form-control border-input" />
 										</div>
 									</div>
+									<div class="form-group">
+										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
+										<div class="col-sm-8">
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" />
+										</div>
+									</div>
 
 									<div class="form-group">
 										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label> 
@@ -139,7 +149,11 @@
 									
 									<div class="form-group">
 										<div class="col-md-12 t-center">
-											<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">BUAT LHP BARU</button>
+											<br /> <br />
+											<button type="button" class="btn btn-wd btn-success btn-fill btn-rotate">
+												<span class="btn-label"> <i class="ti-save"></i>
+												</span> SAVE
+											</button>
 										</div>
 									</div>
 								</div>
@@ -185,11 +199,9 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+												<?php foreach($getAllJenisTim as $tim) {?>
+												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
@@ -201,11 +213,9 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+												<?php foreach($getAllJenisTim as $tim) {?>
+												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
@@ -213,7 +223,10 @@
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
-											<button id="add-tim-perpanjangan" class="btn btn-info btn-fill btn-wd bottom-space">TAMBAH</button>
+											<button id="add-tim-perpanjangan" class="btn btn-sm btn-fill">
+												<span class="btn-label"> <i class="ti-plus"></i>
+												</span>&nbsp; TAMBAH &nbsp;
+											</button>
 										</div>
 									</div>
 								</div>

@@ -23,6 +23,7 @@ class Addlhp extends MY_Controller {
 	public function index() {
 		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
 		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
+		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();
 		$this->load->tlhp_template('tlhp/addlhp', $data);
 	}
 
