@@ -21,7 +21,7 @@
   margin-bottom: 20px !important;
 }
 .sidebar-mini {
-  background-color: #2196f3 !important;
+  background-color: #f4f3ef !important;
 }
 button.btn {
   font-size: 12px;
@@ -69,6 +69,11 @@ button.btn {
   top: 5px;
   left: -1px;
 }
+
+.navbar {
+  z-index: 1;
+}
+
 .navbar-brand.navbar-minimize {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
@@ -93,11 +98,19 @@ button.btn {
   margin-left: -20px;
   margin-top: 22px;
 }
+
+.modal.modal-wide .modal-dialog {
+  width: 90%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
 .modal-backdrop {
   display: none;
 }
 .modal-dialog {
-  margin-top: 10%;
+  /* margin-top: 10%; */
 }
 .clr {
   clear: both;

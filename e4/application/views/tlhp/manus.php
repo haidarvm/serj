@@ -163,7 +163,7 @@
 							<a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a> <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> Batal</a>
 						</div>
 
-						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+						<div id="exampleModal" class="modal modal-wide fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -173,6 +173,22 @@
 										<h4 class="modal-title" id="exampleModalLabel">New User</h4>
 									</div>
 									<div class="modal-body">
+										<div class="container col-md-12">
+											<div class="row">
+												<div class="col-md-3">
+													<p>1st col 3</p>
+												</div>
+												<div class="col-md-3">
+													<p>2nd col 3</p>
+												</div>
+												<div class="col-md-3">
+													<p>3rd col 3</p>
+												</div>
+												<div class="col-md-3">
+													<p>4th col 3</p>
+												</div>
+											</div>
+										</div>
 										<form>
 											<div class="form-group">
 												<label for="recipient-name" class="control-label">Nama:</label> <input type="text" class="form-control" id="recipient-name">
