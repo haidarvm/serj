@@ -31,6 +31,23 @@ button.btn {
   line-height: 17px;
   padding-top: 4px !important;
 }
+.modal-title {		
+    margin: 0;		
+    line-height: 10px;		
+    text-align: center;		
+}		
+.modal-footer {		
+    padding: 5px;		
+}		
+.modal.modal-wide .modal-dialog {		
+  width: 90%;		
+}		
+.modal-wide .modal-body {		
+  overflow-y: auto;		
+}		
+.modal-form .form-group {		
+    margin-bottom: 0;		
+}
 .custom-form .form-group {
   margin-bottom: 15px !important;
 }
