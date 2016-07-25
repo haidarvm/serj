@@ -102,8 +102,8 @@
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JENIS PENGAWASAN</label>
 										<div class="col-sm-8">
 											<select name="jenis_pengawasan_id" class="form-control">
-												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
+												<option><?php echo $pengawas->jenis_pengawasan;?></option>
 												<?php } ?>
 											</select>
 										</div>
@@ -180,11 +180,9 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+												<?php foreach($getAllJenisTim as $tim) {?>
+												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
@@ -196,11 +194,9 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+												<?php foreach($getAllJenisTim as $tim) {?>
+												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>

@@ -41,4 +41,9 @@ class MLhp extends CI_Model {
 		$query = $this->db->get("tim");
 		return checkRes($query);
 	}
+	
+	function getAllJenisPengawasan() {
+		$query = $this->db->get("jenis_pengawasan");
+		return checkRes($query);
+	}
 }
