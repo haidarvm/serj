@@ -34,6 +34,19 @@ button.btn {
 .custom-form .form-group {
   margin-bottom: 15px !important;
 }
+
+.modal-title {
+    margin: 0;
+    line-height: 10px;
+    text-align: center;
+}
+.modal-footer {
+    padding: 5px;
+}
+
+.modal-form .form-group {
+    margin-bottom: 0;
+}
 .nopadding-right {
   padding-right: 0 !important;
 }
