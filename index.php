@@ -1,2 +1,2 @@
 <?php 
-header("Location: kemenpan/tlhp/index.php");
+header("Location: e4/tlhp/index.php");

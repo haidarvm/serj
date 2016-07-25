@@ -9,6 +9,18 @@ class MLhp extends CI_Model {
 		parent::__construct();
 	}
 
+	
+	function addAllLHP($param = NULL) {
+		if ($param != NULL) {
+			$table = 'lhp';
+			$this->db->insert_batch($table, $param);
+			return $this->db->insert_id();
+		}
+	}
+	
+	
+	
+	
 	/**
 	 * Get All User
 	 *

@@ -31,26 +31,25 @@ button.btn {
   line-height: 17px;
   padding-top: 4px !important;
 }
+.modal-title {		
+    margin: 0;		
+    line-height: 10px;		
+    text-align: center;		
+}		
+.modal-footer {		
+    padding: 5px;		
+}		
+.modal.modal-wide .modal-dialog {		
+  width: 90%;		
+}		
+.modal-wide .modal-body {		
+  overflow-y: auto;		
+}		
+.modal-form .form-group {		
+    margin-bottom: 0;		
+}
 .custom-form .form-group {
   margin-bottom: 15px !important;
-}
-
-.modal-title {
-    margin: 0;
-    line-height: 10px;
-    text-align: center;
-}
-.modal-footer {
-    padding: 5px;
-}
-.modal.modal-wide .modal-dialog {
-  width: 90%;
-}
-.modal-wide .modal-body {
-  overflow-y: auto;
-}
-.modal-form .form-group {
-    margin-bottom: 0;
 }
 .nopadding-right {
   padding-right: 0 !important;
@@ -379,6 +378,11 @@ button.btn {
 tbody td {
   padding: 3px 8px !important;
 }
+.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::after,
+.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::before,
+.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour {
+  content: none !important;
+}
 .footer {
   z-index: -1;
 }
@@ -412,10 +416,9 @@ tbody td {
   height: 30px;
   margin-left: 10px;
 }
-.dataTables_info,
-.dataTables_length {
-  margin-top: 40px;
-}
+/* .dataTables_info, .dataTables_length {
+	margin-top: 40px;
+} */
 .t-grid {
   margin-top: 15px;
 }

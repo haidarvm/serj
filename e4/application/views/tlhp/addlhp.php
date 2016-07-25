@@ -10,7 +10,7 @@
 							<!-- <div class="header">
 								<h4 class="title must-center">Buat LHP Baru</h4>
 							</div> -->
-
+							
 							<div class="row">
 								<div class="col-md-4 box-margin-ur">
 									<div class="form-group">
@@ -22,7 +22,7 @@
 
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL SURAT TUGAS</label>
-										<div class="col-sm-8">
+										<div class="col-sm-8 form_datetime">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" />
 										</div>
 									</div>
@@ -53,9 +53,11 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
-												<?php foreach($getAllJenisTim as $tim) {?>
+												<?php if ($getAllJenisTim) {?>
+												<?php  foreach($getAllJenisTim as $tim) {?>
 												<option><?php echo $tim->jenis_tim;?></option>
-												<?php } ?>
+												<?php } ?> 
+												<?php }?>
 											</select>
 										</div>
 									</div>
@@ -67,8 +69,10 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
+												<?php if ($getAllJenisTim) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
 												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 												<?php } ?>
 											</select>
 										</div>
@@ -82,8 +86,10 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
+												<?php if ($getAllJenisTim) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
 												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 												<?php } ?>
 											</select>
 										</div>
@@ -106,8 +112,10 @@
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JENIS PENGAWASAN</label>
 										<div class="col-sm-8">
 											<select name="jenis_pengawasan_id" class="form-control">
+												<?php if ($getAllJenisPengawasan) {?>
 												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
-												<option><?php echo $pengawas->jenis_pengawasan;?></option>
+												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?php echo $pengawas->nama_jenis_penugasan;?></option>
+												<?php } ?>
 												<?php } ?>
 											</select>
 										</div>
@@ -134,7 +142,11 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
 										<div class="col-sm-8">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" />
+<<<<<<< HEAD
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_lhp" class="form-control border-input date-input datepicker" />
+=======
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" />
+>>>>>>> a52631d7c1f4bc5702dcd03983150caa5cadb712
 										</div>
 									</div>
 
@@ -149,7 +161,7 @@
 									
 									<div class="form-group">
 										<div class="col-md-12 t-center">
-											<button type="button" class="btn btn-wd btn-success btn-fill btn-rotate">
+											<button type="submit" class="btn btn-wd btn-success btn-fill btn-rotate">
 												<span class="btn-label"> <i class="ti-save"></i>
 												</span> SAVE
 											</button>
@@ -180,7 +192,7 @@
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input datepicker" />
 										</div>
 									</div>
-									<div class="form-group">
+									<div class="form-group hide">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">SKOP PEMERIKSAAN</label>
 										<div class="col-sm-4">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input datepicker" />
@@ -198,8 +210,10 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
+												<?php if ($getAllJenisTim ) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
 												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 												<?php } ?>
 											</select>
 										</div>
@@ -212,8 +226,10 @@
 										</div>
 										<div class="col-sm-5">
 											<select class="form-control">
+												<?php if ($getAllJenisTim ) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
 												<option><?php echo $tim->jenis_tim;?></option>
+												<?php } ?>
 												<?php } ?>
 											</select>
 										</div>
