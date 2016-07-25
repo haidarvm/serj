@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50712
 File Encoding         : 65001
 
-Date: 2016-07-25 14:16:06
+Date: 2016-07-25 19:43:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,13 +21,19 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `tlhp_jenis_pengawasan`;
 CREATE TABLE `tlhp_jenis_pengawasan` (
   `jenis_pengawasan_id` tinyint(3) NOT NULL AUTO_INCREMENT,
-  `nama_jenis_penugasan` varchar(500) DEFAULT NULL,
+  `jenis_pengawasan` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`jenis_pengawasan_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tlhp_jenis_pengawasan
 -- ----------------------------
+INSERT INTO `tlhp_jenis_pengawasan` VALUES ('1', 'AUDIT');
+INSERT INTO `tlhp_jenis_pengawasan` VALUES ('2', 'REVIU');
+INSERT INTO `tlhp_jenis_pengawasan` VALUES ('3', 'EVALUASI');
+INSERT INTO `tlhp_jenis_pengawasan` VALUES ('4', 'PEMANTAUAN');
+INSERT INTO `tlhp_jenis_pengawasan` VALUES ('5', 'TINDAK LANJUT PENGADUAN');
+INSERT INTO `tlhp_jenis_pengawasan` VALUES ('6', 'PENGAWASAN LAIN');
 
 -- ----------------------------
 -- Table structure for tlhp_kertas_kerja_temuan
@@ -129,8 +135,8 @@ CREATE TABLE `tlhp_lhp` (
   `tanggal_surat_tugas` varchar(200) DEFAULT NULL,
   `hari_awal_penugasan` date DEFAULT NULL,
   `hari_akhir_penugasan` date DEFAULT NULL,
-  `skop_awal_penugasan` varchar(200) DEFAULT NULL,
-  `skop_akhir_penugasan` varchar(200) DEFAULT NULL,
+  `skop_awal_penugasan` date DEFAULT NULL,
+  `skop_akhir_penugasan` date DEFAULT NULL,
   `jenis_pengawasan_id` tinyint(3) DEFAULT NULL,
   `objek_pengawasan` varchar(200) DEFAULT NULL,
   `judul_lhp` varchar(200) DEFAULT NULL,
@@ -232,11 +238,15 @@ CREATE TABLE `tlhp_tim` (
   `tim_id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis_tim` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`tim_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tlhp_tim
 -- ----------------------------
+INSERT INTO `tlhp_tim` VALUES ('1', 'PEMBANTU PJ');
+INSERT INTO `tlhp_tim` VALUES ('2', 'PENGENDALI MUTU');
+INSERT INTO `tlhp_tim` VALUES ('3', 'PENGENDALI TEKNIS');
+INSERT INTO `tlhp_tim` VALUES ('4', 'KETUA TIM');
 
 -- ----------------------------
 -- Table structure for tlhp_tim_lhp
