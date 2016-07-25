@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => 'agus811@omap',
 	'database' => 'kemenpan',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => 'tlhp_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,

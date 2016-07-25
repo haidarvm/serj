@@ -80,5 +80,6 @@ $().ready(function(){
             // Init DatetimePicker
             demo.initFormExtendedDatetimepickers();
         });
-    </script>
+		
+    </script> 
 </html>

@@ -60,7 +60,6 @@ class Addlhp extends MY_Controller {
 			$hari_akhir_perpanjangan_penugasan = $post['hari_akhir_perpanjangan_penugasan'];
 			$hari_awal_pemeriksaan_penugasan = $post['hari_awal_pemeriksaan_penugasan'];
 			
-			
 			$param = array(
 					array (
 							'no_surat_tugas' => $no_surat_tugas,
@@ -81,11 +80,8 @@ class Addlhp extends MY_Controller {
 							'user_id' =>1 ,
 					)
 			);
-			
-			echo $this->mlhp->addAllLHP($param);
-			
-			//print_r($post);
-			exit;
+			$this->mlhp->addAllLHP($param);
+			redirect('tlhp/kklhpbaru');
 		}
 	}
 	
