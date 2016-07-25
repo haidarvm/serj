@@ -9,6 +9,15 @@ TLHP
 - modal for edit user
 - data table 
 
+CSS
+- bug on footer garis sidebar
+- bug on datepicker klik field tanggal addlhp
+- css upload addlhp ... done
+- modal dialog remote edit / view user
+- datatables manus.php
+- upload
+- bug button 
+
 Dashboard
 
 
@@ -50,3 +59,5 @@ CREATE TABLE user (
 - kklhp tambah tombol apabila tindak lanjut
 * user / admin
 tombol detail periode tindak lanjut ganti detail
+
+

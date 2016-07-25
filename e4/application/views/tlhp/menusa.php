@@ -260,11 +260,8 @@
 						<br />
 						<p class="h6">: Rp 5.000.000</p>
 						<p class="h6">: Rp 3.000.000</p>
-						<p class="h6"></p>
-						<p class="h6"></p>
 					</div>
-					<a class="btn btn-info pull-left" href="#"><i
-						class="fa fa-print fa-lg"></i>Cetak</a>
+					<a class="btn btn-info pull-left" href="#"><i class="fa fa-print fa-lg"></i>Cetak</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -283,16 +280,21 @@
 					<p class="category">Pie Chart</p>
 				</div>
 				<div class="content">
-					<canvas id="pieTindakLanjut" class="full-width" width="300"
-						height="200" style="width: 300px; height: 200px;"></canvas>
+					<canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
 
 					<div class="footer">
+<<<<<<< HEAD
 						<!--div class="chart-legend">
 							<i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut
 							<i class="fa fa-circle text-danger"></i> Selesai tindak lanjut <i
 								class="fa fa-circle text-warning"></i> Belum sesuai <i
 								class="fa fa-circle text-success"></i> Belum tindak lanjut
 						</div-->
+=======
+						<div class="chart-legend">
+							<i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut <i class="fa fa-circle text-danger"></i> Selesai tindak lanjut <i class="fa fa-circle text-warning"></i> Belum sesuai <i class="fa fa-circle text-success"></i> Belum tindak lanjut
+						</div>
+>>>>>>> origin/master
 						<hr>
 						<div class="stats">
 							<i class="ti-timer"></i> Update 2 days ago
@@ -310,16 +312,21 @@
 					<p class="category">Pie Chart</p>
 				</div>
 				<div class="content">
-					<canvas id="pieKerugian" class="full-width" width="300"
-						height="200" style="width: 300px; height: 200px;"></canvas>
+					<canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
 
 					<div class="footer">
+<<<<<<< HEAD
 						<!--div class="chart-legend">
 							<i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut
 							<i class="fa fa-circle text-danger"></i> Selesai tindak lanjut <i
 								class="fa fa-circle text-warning"></i> Belum selesai <i
 								class="fa fa-circle text-success"></i> Belum tindak lanjut
 						</div-->
+=======
+						<div class="chart-legend">
+							<i class="fa fa-circle text-info"></i> Tidak dapat tindak lanjut <i class="fa fa-circle text-danger"></i> Selesai tindak lanjut <i class="fa fa-circle text-warning"></i> Belum selesai <i class="fa fa-circle text-success"></i> Belum tindak lanjut
+						</div>
+>>>>>>> origin/master
 						<hr>
 						<div class="stats">
 							<i class="ti-timer"></i> Update 2 days ago

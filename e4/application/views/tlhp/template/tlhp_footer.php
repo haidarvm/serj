@@ -22,8 +22,13 @@
 					<div class="copyright pull-right col-md-12">
 						<!--&copy; <script>document.write(new Date().getFullYear())</script>,-->
 						<div class="footer-logo">
+<<<<<<< HEAD
 							<img src="<?php echo base_url();?>assets/img/img-1.png">
+=======
+							<img src="<?php echo base_url();?>assets/img/logo-black.png" />
+>>>>>>> origin/master
 							<p class="copy-right">&copy; Copy Right 2016 E-FOUR KEMENPAN RB</p>
+							<img src="<?php echo base_url();?>assets/img/img-1.png" class="right-img-footer"/>
 						</div>
 						<p class="footer-text">DATABASE HASIL PENGAWASAN INSPEKTORAT KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
 					</div>
@@ -38,11 +43,16 @@
 
 <!--   Core JS Files   -->
 <script src="<?php echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/jquery-ui.min.js" type="text/javascript"></script>
+
 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
 
-<!--   TLHP JS Files   -->
-<script src="<?php echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
+
 
 <!--  Checkbox, Radio & Switch Plugins -->
 <script src="<?php echo base_url();?>assets/js/bootstrap-checkbox-radio.js"></script>
@@ -60,7 +70,19 @@
 
 <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 <script src="<?php echo base_url();?>assets/js/paper-dashboard.js"></script>
-
+<!--   TLHP JS Files   -->
+<script src="<?php echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script>
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url();?>assets/js/demo.js"></script>
+<script type="text/javascript">
+$().ready(function(){
+	$(function () {
+	    $('#datetimepicker1').datetimepicker();
+	});
+});
+        $().ready(function(){
+            // Init DatetimePicker
+            demo.initFormExtendedDatetimepickers();
+        });
+    </script>
 </html>
