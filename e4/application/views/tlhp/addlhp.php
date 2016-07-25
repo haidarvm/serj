@@ -22,29 +22,30 @@
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL SURAT TUGAS</label>
 											<div class="col-sm-8">
-												<input type="text" name="tanggal_surat_tugas" class="form-control datepicker" placeholder="" value="" />
+												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
+												<input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">HARI PENUGASAN</label>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="hari_awal_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="hari_awal_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">SKOP PEMERIKSAAN</label>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="skop_awal_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 										</div>
 										
@@ -131,7 +132,6 @@
 									<div class="col-md-4 bg-grey box-margin-ur">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">ST PERPANJANGAN</label>
-											
 											<div class="col-sm-8">
 												<input type="text" name="st_perpanjangan" class="form-control border-input" placeholder="" value="" />
 											</div>
@@ -140,29 +140,30 @@
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">TGL ST PERPANJANGAN</label>
 											<div class="col-sm-8">
-												<input type="text" name="tgl_st_perpanjangan" class="form-control border-input" placeholder="" value="" />
+												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
+												<input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">HARI PENUGASAN</label>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="hari_awal_perpanjangan_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="hari_awal_perpanjangan_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-4 control-label t-left">SKOP PEMERIKSAAN</label>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 											<div class="col-sm-4">
 												<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input" placeholder="" value="" />
+												<input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input datepicker" placeholder="" value="" />
 											</div>
 										</div>
 										

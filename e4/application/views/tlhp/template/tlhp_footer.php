@@ -38,14 +38,15 @@
 
 <!--   Core JS Files   -->
 <script src="<?php echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/jquery-ui.min.js" type="text/javascript"></script>
+
 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/moment.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>script>
+
+<script src="<?php echo base_url();?>assets/js/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
-
-
 
 
 <!--  Checkbox, Radio & Switch Plugins -->
@@ -64,8 +65,19 @@
 
 <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 <script src="<?php echo base_url();?>assets/js/paper-dashboard.js"></script>
-<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?php echo base_url();?>assets/js/demo.js"></script>
 <!--   TLHP JS Files   -->
 <script src="<?php echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script>
+<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+<script src="<?php echo base_url();?>assets/js/demo.js"></script>
+<script type="text/javascript">
+$().ready(function(){
+	$(function () {
+	    $('#datetimepicker1').datetimepicker();
+	});
+});
+        $().ready(function(){
+            // Init DatetimePicker
+            demo.initFormExtendedDatetimepickers();
+        });
+    </script>
 </html>
