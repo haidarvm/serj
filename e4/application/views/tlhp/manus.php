@@ -163,33 +163,88 @@
 							<a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a> <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> Batal</a>
 						</div>
 
-						<div id="exampleModal" class="modal modal-wide fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+						<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
-										<h4 class="modal-title" id="exampleModalLabel">New User</h4>
+										<h4 class="modal-title" id="exampleModalLabel">Edit User</h4>
 									</div>
 									<div class="modal-body">
-										<div class="container col-md-12">
+										<form>
 											<div class="row">
-												<div class="col-md-3">
-													<p>1st col 3</p>
+												<div class="col-md-5">
+													<div class="form-group">
+														<label>Company</label> <input type="text" class="form-control border-input" disabled placeholder="Company" value="Creative Code Inc.">
+													</div>
 												</div>
 												<div class="col-md-3">
-													<p>2nd col 3</p>
+													<div class="form-group">
+														<label>Username</label> <input type="text" class="form-control border-input" placeholder="Username" value="michael23">
+													</div>
 												</div>
-												<div class="col-md-3">
-													<p>3rd col 3</p>
-												</div>
-												<div class="col-md-3">
-													<p>4th col 3</p>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label for="exampleInputEmail1">Email address</label> <input type="email" class="form-control border-input" placeholder="Email">
+													</div>
 												</div>
 											</div>
-										</div>
-										<form>
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>First Name</label> <input type="text" class="form-control border-input" placeholder="Company" value="Chet">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Last Name</label> <input type="text" class="form-control border-input" placeholder="Last Name" value="Faker">
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-12">
+													<div class="form-group">
+														<label>Address</label> <input type="text" class="form-control border-input" placeholder="Home Address" value="Melbourne, Australia">
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>City</label> <input type="text" class="form-control border-input" placeholder="City" value="Melbourne">
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Country</label> <input type="text" class="form-control border-input" placeholder="Country" value="Australia">
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Postal Code</label> <input type="number" class="form-control border-input" placeholder="ZIP Code">
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-12">
+													<div class="form-group">
+														<label>About Me</label>
+														<textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">Oh so, your weak rhyme
+You doubt I'll bother, reading into it
+I'll probably won't, left to my own devices
+But that's the difference in our opinions.</textarea>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</form>
+										<!-- <form>
 											<div class="form-group">
 												<label for="recipient-name" class="control-label">Nama:</label> <input type="text" class="form-control" id="recipient-name">
 											</div>
@@ -211,7 +266,7 @@
 											<div class="form-group">
 												<label for="recipient-name" class="control-label">Status:</label> <input type="text" class="form-control" id="recipient-name">
 											</div>
-										</form>
+										</form> -->
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
