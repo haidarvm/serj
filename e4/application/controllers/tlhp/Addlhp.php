@@ -12,7 +12,9 @@ class Addlhp extends MY_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('muser');
+		$this->load->model('mlhp');
 		$this->muser = new MUser();
+		$this->mlhp = new MLhp();
 	}
 
 	/**
@@ -20,7 +22,7 @@ class Addlhp extends MY_Controller {
 	 */
 	public function index() {
 		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
-		//$data['getAll'] = $this->muser->getAllUser();
+		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
 		$this->load->tlhp_template('tlhp/addlhp', $data);
 	}
 
@@ -31,9 +33,7 @@ class Addlhp extends MY_Controller {
 	 */
 	
 	public function insert(){
-		
 		$post = $this->input->post();
-		
 		if ($post){
 			print_r($post);exit;
 		}

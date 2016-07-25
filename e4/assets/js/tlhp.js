@@ -28,4 +28,22 @@ $(document).ready(function() {
 					}]
           });
       });
+ 	 
+ 	// add tim
+	$('#add-tim').click(function(event){
+		event.preventDefault();
+		console.log('tambah tim');
+		var add_more = $('.add-more-tim').last().clone(true).show();
+//			$('#noper-more').append($('.add-more-noper').show());
+		$('#tim-more').append(add_more);
+	});
+	
+ 	// add tim oerpanjangan
+	$('#add-tim').click(function(event){
+		event.preventDefault();
+		console.log('tambah tim');
+		var add_more = $('.add-more-tim').last().clone(true).show();
+//			$('#noper-more').append($('.add-more-noper').show());
+		$('#tim-more').append(add_more);
+	});
 });
