@@ -96,14 +96,8 @@ button.btn {
 .modal-backdrop {
   display: none;
 }
-.modal.modal-wide .modal-dialog {
-  width: 90%;
-}
-.modal-wide .modal-body {
-	overflow-y: auto;
-}
 .modal-dialog {
-  
+  margin-top: 10%;
 }
 .clr {
   clear: both;
@@ -344,9 +338,6 @@ button.btn {
   margin: 3px 0;
   padding: 5px;
 }
-.navbar {
-	z-index: 1;
-}
 .date-input {
   float: right;
   width: 75%;
@@ -357,7 +348,6 @@ button.btn {
 }
 .card label {
   font-size: 13px !important;
-  color: #66615b;
   line-height: 35px;
 }
 .icn {
