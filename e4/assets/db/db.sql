@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50712
 File Encoding         : 65001
 
-Date: 2016-07-24 19:19:57
+Date: 2016-07-25 14:16:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,6 +24,10 @@ CREATE TABLE `tlhp_jenis_pengawasan` (
   `nama_jenis_penugasan` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`jenis_pengawasan_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_jenis_pengawasan
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_kertas_kerja_temuan
@@ -64,6 +68,10 @@ CREATE TABLE `tlhp_kertas_kerja_temuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_kertas_kerja_temuan
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_kode_rekomendasi
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_kode_rekomendasi`;
@@ -75,6 +83,10 @@ CREATE TABLE `tlhp_kode_rekomendasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_kode_rekomendasi
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_kode_sebab
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_kode_sebab`;
@@ -84,6 +96,10 @@ CREATE TABLE `tlhp_kode_sebab` (
   `deskripsi` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`kode_sebab_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_kode_sebab
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_kode_temuan
@@ -98,6 +114,10 @@ CREATE TABLE `tlhp_kode_temuan` (
   `atl_rekom` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`kode_temuan_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_kode_temuan
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_lhp
@@ -133,6 +153,10 @@ CREATE TABLE `tlhp_lhp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_lhp
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_persetujuan_tl
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_persetujuan_tl`;
@@ -153,6 +177,10 @@ CREATE TABLE `tlhp_persetujuan_tl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_persetujuan_tl
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_rekomendasi
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_rekomendasi`;
@@ -169,6 +197,10 @@ CREATE TABLE `tlhp_rekomendasi` (
   CONSTRAINT `fk_kode_rekomen` FOREIGN KEY (`kode_rekomendasi_id`) REFERENCES `tlhp_kode_rekomendasi` (`kode_rekomendasi_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_rekomen_kk` FOREIGN KEY (`kertas_kerja_id`) REFERENCES `tlhp_kertas_kerja_temuan` (`kertas_kerja_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_rekomendasi
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_template_laporan
@@ -189,6 +221,10 @@ CREATE TABLE `tlhp_template_laporan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_template_laporan
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_tim
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_tim`;
@@ -197,6 +233,10 @@ CREATE TABLE `tlhp_tim` (
   `jenis_tim` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`tim_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_tim
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_tim_lhp
@@ -216,6 +256,10 @@ CREATE TABLE `tlhp_tim_lhp` (
   CONSTRAINT `fk_tim_id` FOREIGN KEY (`tim_id`) REFERENCES `tlhp_tim` (`tim_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `fk_tim_lhp` FOREIGN KEY (`lhp_id`) REFERENCES `tlhp_lhp` (`lhp_id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_tim_lhp
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_tindak_lanjut
@@ -240,6 +284,10 @@ CREATE TABLE `tlhp_tindak_lanjut` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_tindak_lanjut
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_unit_kerja
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_unit_kerja`;
@@ -247,7 +295,22 @@ CREATE TABLE `tlhp_unit_kerja` (
   `unit_kerja_id` tinyint(3) NOT NULL AUTO_INCREMENT,
   `unit_kerja` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`unit_kerja_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_unit_kerja
+-- ----------------------------
+INSERT INTO `tlhp_unit_kerja` VALUES ('1', 'DEPUTI I');
+INSERT INTO `tlhp_unit_kerja` VALUES ('2', 'DEPUTI II');
+INSERT INTO `tlhp_unit_kerja` VALUES ('3', 'DEPUTI III');
+INSERT INTO `tlhp_unit_kerja` VALUES ('4', 'DEPUTI IV');
+INSERT INTO `tlhp_unit_kerja` VALUES ('5', 'STAF AHLI');
+INSERT INTO `tlhp_unit_kerja` VALUES ('6', 'INSPEKTORAT');
+INSERT INTO `tlhp_unit_kerja` VALUES ('7', 'BIRO SDMU');
+INSERT INTO `tlhp_unit_kerja` VALUES ('8', 'BIRO HUKIP');
+INSERT INTO `tlhp_unit_kerja` VALUES ('9', 'BIRO BMOK');
+INSERT INTO `tlhp_unit_kerja` VALUES ('10', 'KASN');
+INSERT INTO `tlhp_unit_kerja` VALUES ('11', 'ALL');
 
 -- ----------------------------
 -- Table structure for tlhp_upload_lhp
@@ -271,6 +334,10 @@ CREATE TABLE `tlhp_upload_lhp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_upload_lhp
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_upload_template_laporan
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_upload_template_laporan`;
@@ -290,6 +357,10 @@ CREATE TABLE `tlhp_upload_template_laporan` (
   KEY `fk_upload_template` (`template_laporan_id`),
   CONSTRAINT `fk_upload_template` FOREIGN KEY (`template_laporan_id`) REFERENCES `tlhp_template_laporan` (`template_laporan_id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_upload_template_laporan
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_upload_tl
@@ -313,6 +384,10 @@ CREATE TABLE `tlhp_upload_tl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of tlhp_upload_tl
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tlhp_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_user`;
@@ -322,11 +397,13 @@ CREATE TABLE `tlhp_user` (
   `first_name` varchar(200) DEFAULT NULL,
   `last_name` varchar(200) DEFAULT NULL,
   `full_name` varchar(200) DEFAULT NULL,
+  `nip` varchar(255) DEFAULT NULL,
+  `jabatan_id` tinyint(3) DEFAULT NULL,
   `user_level_id` tinyint(2) DEFAULT NULL,
   `unit_kerja_id` tinyint(3) DEFAULT NULL,
   `password` varchar(200) DEFAULT NULL,
-  `address` varchar(200) DEFAULT NULL,
-  `address2` varchar(200) DEFAULT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `address2` varchar(500) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
   `phone` varchar(200) DEFAULT NULL,
   `city` varchar(200) DEFAULT NULL,
@@ -336,7 +413,7 @@ CREATE TABLE `tlhp_user` (
   `other_phone` varchar(200) DEFAULT NULL,
   `active` varchar(200) DEFAULT NULL,
   `activation_key` varchar(200) DEFAULT NULL,
-  `last_visit` varchar(200) DEFAULT NULL,
+  `last_visit` datetime DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -345,7 +422,13 @@ CREATE TABLE `tlhp_user` (
   KEY `fk_user_unit_kerja` (`unit_kerja_id`),
   CONSTRAINT `fk_user_level` FOREIGN KEY (`user_level_id`) REFERENCES `tlhp_user_level` (`user_level_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `fk_user_unit_kerja` FOREIGN KEY (`unit_kerja_id`) REFERENCES `tlhp_unit_kerja` (`unit_kerja_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_user
+-- ----------------------------
+INSERT INTO `tlhp_user` VALUES ('4', 'asdf', 'sadf', 'sadf', 'asdf', '1231231', '12', '1', '11', 'asdfsdf', null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-07-24 19:40:42', '2016-07-25 12:07:38');
+INSERT INTO `tlhp_user` VALUES ('5', 'fdgdfg', 'cvbcvb', 'sdf', 'erwrw', '324324', '12', '1', '2', 'werwer', null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-07-24 19:41:06', '2016-07-25 12:07:40');
 
 -- ----------------------------
 -- Table structure for tlhp_user_history
@@ -360,7 +443,11 @@ CREATE TABLE `tlhp_user_history` (
   PRIMARY KEY (`log_id`),
   KEY `fk_user_history` (`user_id`),
   CONSTRAINT `fk_user_history` FOREIGN KEY (`user_id`) REFERENCES `tlhp_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_user_history
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tlhp_user_level
@@ -371,4 +458,11 @@ CREATE TABLE `tlhp_user_level` (
   `user_level` varchar(200) NOT NULL,
   PRIMARY KEY (`user_level_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tlhp_user_level
+-- ----------------------------
+INSERT INTO `tlhp_user_level` VALUES ('1', 'super admin');
+INSERT INTO `tlhp_user_level` VALUES ('2', 'admin');
+INSERT INTO `tlhp_user_level` VALUES ('3', 'user');
 SET FOREIGN_KEY_CHECKS=1;
