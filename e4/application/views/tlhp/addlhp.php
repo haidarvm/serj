@@ -149,7 +149,6 @@
 									
 									<div class="form-group">
 										<div class="col-md-12 t-center">
-											<br /> <br />
 											<button type="button" class="btn btn-wd btn-success btn-fill btn-rotate">
 												<span class="btn-label"> <i class="ti-save"></i>
 												</span> SAVE

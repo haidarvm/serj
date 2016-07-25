@@ -365,8 +365,26 @@ button.btn {
   font-size: 18px;
   margin-top: 6px;
 }
+.icn .fa.fa-calendar {
+  color: #9a9a9a;
+}
 .footer {
   z-index: -1;
+}
+.footer .footer-text {
+  float: none;
+  clear: both;
+  display: block;
+  margin: 0;
+  padding-top: 0;
+}
+.footer .right-img-footer {
+  width: 40px;
+  position: relative;
+  top: -10px;
+}
+.footer .copyright {
+  margin: 15px 3px 0;
 }
 .paginate_button.next,
 .paginate_button.previous {
@@ -398,6 +416,9 @@ button.btn {
 .dataTables_info,
 .dataTables_paginate.paging_simple_numbers {
   text-align: center;
+}
+.table.table-striped.t-center.table-custom-head select {
+  height: 30px;
 }
 @media (max-width: 480px) {
   .modal-dialog {
