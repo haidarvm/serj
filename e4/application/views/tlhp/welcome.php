@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url();?>assets/img/favicon.png">
     <title>Login Super User</title>
 
     <!-- Bootstrap -->
@@ -39,8 +40,8 @@
   <body class="bg-blue">
     <div class="container-fluid">
 		<div class="row">
-			<div class="col-md-4 col-md-offset-1 top-head logo">
-				<a href="<?php echo site_url();?>tlhp"><img src="<?php echo base_url();?>assets/img/logo.png" alt=""/></a>
+			<div class="col-md-4 col-md-offset-1 top-head logo-landing">
+				<a href="<?php echo site_url();?>tlhp"><img src="<?php echo base_url();?>assets/img/logo-white.png" alt=""/></a>
 			</div>
 			
 			<div class="col-md-8 col-md-offset-2 desc-content">

@@ -44,6 +44,9 @@ header {
 .logo img{
     width: 150px;
 }
+.logo-landing img{
+    width: 150px;
+}
 #topnav {
     margin: 0;
     border: none;

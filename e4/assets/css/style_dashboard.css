@@ -23,7 +23,7 @@ header {
     top : 0;
 }
 .logo {
-    background-color: #ffffff;
+    background-color: transparent;
     width: 259px;
     height: auto;
     float: left;
