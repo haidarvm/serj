@@ -30,6 +30,49 @@ class Manus extends MY_Controller {
 		$this->load->tlhp_template('tlhp/stat', $data);
 		
 	}
+	
+	/**
+	 * For All User
+	 */
+	function get_all_user() {
+		$requestData = $this->input->post();
+		// print_r($requestData['search']['value']);exit;
+		$columns = array( 0 => 'user_id', 1 => 'full_name', 2 => 'nip', 3 => 'jabatan_id', 4 => 'username', 5 => 'unit_kerja', 6 => 'user_level' );
+		// echo $sql;
+		// $order_by = " ORDER BY employee_name LIMIT 10,10 ";
+		$query = $this->muser->getAllUserDt($cond = NULL, $order_by = NULL);
+		// echo $query; exit;
+		$totalData = $query->num_rows();
+		$totalFiltered = $totalData;
+		// For Search value
+		if (! empty($requestData['search']['value'])) {
+			$cond = "AND ( full_name LIKE '%" . $requestData['search']['value'] . "%' ";
+			$cond .= "OR unit_kerja LIKE '%" . $requestData['search']['value'] . "%' ";
+			$cond .= " OR user_level LIKE '%" . $requestData['search']['value'] . "%' )";
+			// echo 'masuk';
+		} else {
+			$cond = NULL;
+		}
+		$query2 = $this->muser->getAllUserDt($cond);
+		$totalFiltered = $query2->num_rows();
+		$order_by3 = " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "  LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
+		$query3 = $this->muser->getAllUserDt($cond, $order_by3);
+		;
+		$data = array();
+		foreach ($query3->result_array() as $row ) {
+			$nestedData = array();
+			$nestedData[] = $row["user_id"];
+			$nestedData[] = $row["full_name"];
+			$nestedData[] = $row["nip"];
+			$nestedData[] = $row["jabatan_id"];
+			$nestedData[] = $row["username"];
+			$nestedData[] = $row["unit_kerja"];
+			$nestedData[] = $row["user_level"];
+			$data[] = $nestedData;
+		}
+		$json_data = array( "draw" => intval($requestData['draw']), "recordsTotal" => intval($totalData), "recordsFiltered" => intval($totalFiltered), "data" => $data );
+		echo json_encode($json_data);
+	}
 
 	/**
 	 * List All Product

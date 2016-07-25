@@ -23,7 +23,7 @@ header {
     top : 0;
 }
 .logo {
-    background-color: #2196F3;
+    /* background-color: #ffffff; */
     width: 259px;
     height: auto;
     float: left;
@@ -103,3 +103,20 @@ header {
   }
 }
 
+/*** FOOTER ***/
+
+
+.footer-logo img{
+    width: 100px;
+    float: left;
+}
+.footer-text {
+    font-size: 12px;
+    float: right;
+    padding: 10px;
+}
+.copy-right {
+    font-size: 12px;
+    float: left;
+    padding: 10px;
+}

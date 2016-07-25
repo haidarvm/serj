@@ -4204,6 +4204,7 @@ strong {
 .sidebar .sidebar-wrapper {
   position: relative;
   height: calc(100vh - 75px);
+  overflow: auto;
   z-index: 4;
   box-shadow: inset -1px 0px 0px 0px #cfcfca;
   width: 260px;
@@ -4255,9 +4256,10 @@ strong {
 }
 .sidebar .logo,
 .off-canvas-sidebar .logo {
-  padding: 18px 60px 0 0;
+  padding: 18px 0px;
   margin: 0;
-  height: 82px;
+  box-shadow: inset -1px 0px 0px 0px #cfcfca;
+  height: 75px;
   position: relative;
   z-index: 4;
 }
@@ -4282,11 +4284,11 @@ strong {
 .sidebar .logo:before,
 .off-canvas-sidebar .logo:before {
   content: "";
-  /* position: absolute;
+  position: absolute;
   bottom: 0px;
   right: 10%;
   width: 80%;
-  height: 1px; */
+  height: 1px;
 }
 .sidebar .sidebar-wrapper > .nav,
 .off-canvas-sidebar .sidebar-wrapper > .nav {
@@ -4358,7 +4360,7 @@ strong {
 .off-canvas-sidebar:before,
 .off-canvas-sidebar[data-background-color="white"]:after,
 .off-canvas-sidebar[data-background-color="white"]:before {
-  background-color: #66615b;
+  background-color: #FFFFFF;
 }
 .sidebar .user,
 .sidebar .mini-logo, .sidebar[data-background-color="white"] .user,
@@ -4397,10 +4399,7 @@ strong {
 .sidebar .nav li:not(.active) > a, .sidebar[data-background-color="white"] .nav li:not(.active) > a,
 .off-canvas-sidebar .nav li:not(.active) > a,
 .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {
-  color: #fff;
-  opacity: 0.7;
-  -webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
+  color: #66615B;
 }
 .sidebar .nav .divider, .sidebar[data-background-color="white"] .nav .divider,
 .off-canvas-sidebar .nav .divider,
@@ -4410,7 +4409,7 @@ strong {
 .sidebar .user, .sidebar[data-background-color="white"] .user,
 .off-canvas-sidebar .user,
 .off-canvas-sidebar[data-background-color="white"] .user {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 .sidebar .user .photo, .sidebar[data-background-color="white"] .user .photo,
 .off-canvas-sidebar .user .photo,
@@ -4474,7 +4473,7 @@ strong {
 }
 .sidebar[data-active-color="info"] .nav li.active > a,
 .off-canvas-sidebar[data-active-color="info"] .nav li.active > a {
-  color: #fff;
+  color: #68B3C8;
   opacity: 1;
 }
 .sidebar[data-active-color="success"] .nav li.active > a,
@@ -6738,7 +6737,6 @@ star {
 .card .description {
   font-size: 16px;
   color: #66615b;
-  height: 80px;
 }
 .card h6 {
   font-size: 12px;

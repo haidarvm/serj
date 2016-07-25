@@ -19,7 +19,7 @@ class Menusa extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "TLHP DASHBOARD";
+		$data['title'] = "TLHP Dashboard";
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/menusa', $data);
 	}

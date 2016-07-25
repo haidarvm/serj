@@ -11,7 +11,7 @@
 					</div>
 					<div class="content">
 						<div class="table-responsive">
-						  <table class="table table-striped">
+						  <table class="table table-striped table-custom-head">
 							<thead>
 								<tr class="info">
 									<td>KEL</td>
@@ -115,7 +115,7 @@
 					</div>
 					<div class="content">
 						<div class="table-responsive">
-						  <table class="table table-striped">
+						  <table class="table table-striped table-custom-head">
 							<thead>
 								<tr class="info">
 									<td>JENIS</td>
@@ -204,7 +204,7 @@
 					</div>
 					<div class="content">
 						<div class="table-responsive">
-						  <table class="table table-striped">
+						  <table class="table table-striped table-custom-head">
 							<thead>
 								<tr class="info">
 									<td>JENIS</td>
