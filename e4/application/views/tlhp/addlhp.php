@@ -92,7 +92,10 @@
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
-											<button id="add-tim" class="btn btn-info btn-fill btn-wd bottom-space">TAMBAH</button>
+											<button id="add-tim" class="btn btn-sm btn-fill">
+												<span class="btn-label"> <i class="ti-plus"></i>
+												</span>&nbsp; TAMBAH &nbsp;
+											</button>
 										</div>
 									</div>
 								</div>
@@ -127,6 +130,12 @@
 											<input type="text" name="nomor_lhp" class="form-control border-input" />
 										</div>
 									</div>
+									<div class="form-group">
+										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
+										<div class="col-sm-8">
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" />
+										</div>
+									</div>
 
 									<div class="form-group">
 										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label> <input type="file" id="exampleInputFile">
@@ -134,7 +143,11 @@
 
 									<div class="form-group">
 										<div class="col-md-12 t-center">
-											<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">BUAT LHP BARU</button>
+											<br /> <br />
+											<button type="button" class="btn btn-wd btn-success btn-fill btn-rotate">
+												<span class="btn-label"> <i class="ti-save"></i>
+												</span> SAVE
+											</button>
 										</div>
 									</div>
 								</div>
@@ -204,7 +217,10 @@
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
-											<button id="add-tim-perpanjangan" class="btn btn-info btn-fill btn-wd bottom-space">TAMBAH</button>
+											<button id="add-tim" class="btn btn-sm btn-fill">
+												<span class="btn-label"> <i class="ti-plus"></i>
+												</span>&nbsp; TAMBAH &nbsp;
+											</button>
 										</div>
 									</div>
 								</div>
