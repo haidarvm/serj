@@ -30,4 +30,15 @@ class Addlhp extends MY_Controller {
 	 * @param string Category slug
 	 */
 	
+	public function insert(){
+		
+		$post = $this->input->post();
+		
+		if ($post){
+			print_r($post);exit;
+		}
+	
+	}
+	
+	
 }
