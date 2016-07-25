@@ -131,7 +131,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-4 control-label t-left">TGL ST PERPANJANGAN</label>
+										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
 										<div class="col-sm-8">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" />
 										</div>
