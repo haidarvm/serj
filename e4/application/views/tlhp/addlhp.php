@@ -114,7 +114,7 @@
 											<select name="jenis_pengawasan_id" class="form-control">
 												<?php if ($getAllJenisPengawasan) {?>
 												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
-												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?php echo $pengawas->nama_jenis_penugasan;?></option>
+												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?php echo $pengawas->jenis_pengawasan;?></option>
 												<?php } ?>
 												<?php } ?>
 											</select>
@@ -142,11 +142,7 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
 										<div class="col-sm-8">
-<<<<<<< HEAD
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_lhp" class="form-control border-input date-input datepicker" />
-=======
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" />
->>>>>>> a52631d7c1f4bc5702dcd03983150caa5cadb712
 										</div>
 									</div>
 
