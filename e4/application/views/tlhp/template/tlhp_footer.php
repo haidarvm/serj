@@ -22,7 +22,7 @@
 					<div class="copyright pull-right col-md-12">
 						<!--&copy; <script>document.write(new Date().getFullYear())</script>,-->
 						<div class="footer-logo">
-							<img src="<?php echo base_url();?>assets/img/logo-black.png">
+							<img src="<?php echo base_url();?>assets/img/img-1.png">
 							<p class="copy-right">&copy; Copy Right 2016 E-FOUR KEMENPAN RB</p>
 						</div>
 						<p class="footer-text">DATABASE HASIL PENGAWASAN INSPEKTORAT KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
