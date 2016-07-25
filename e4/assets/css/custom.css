@@ -362,8 +362,9 @@ tbody td {
   padding: 3px 8px !important;
 }
 .bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::after,
-.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::before {
-  content: inherit !important;
+.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::before,
+.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour {
+  content: none !important;
 }
 .footer {
   z-index: -1;
