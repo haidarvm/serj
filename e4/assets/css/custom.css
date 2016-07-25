@@ -358,12 +358,13 @@ button.btn {
 .icn .fa.fa-calendar {
   color: #9a9a9a;
 }
+tbody td {
+  padding: 3px 8px !important;
+}
 .footer {
   z-index: -1;
 }
 .footer .footer-text {
-  float: none;
-  clear: both;
   display: block;
   margin: 0;
   padding-top: 0;
@@ -372,9 +373,6 @@ button.btn {
   width: 40px;
   position: relative;
   top: -10px;
-}
-.footer .copyright {
-  margin: 15px 3px 0;
 }
 .paginate_button.next,
 .paginate_button.previous {
