@@ -12,7 +12,8 @@ class MLhp extends CI_Model {
 	
 	function addAllLHP($param = NULL) {
 		if ($param != NULL) {
-			$this->db->insert_batch('{PRE}lhp', $data);
+			$table = 'lhp';
+			$this->db->insert_batch($table, $param);
 			return $this->db->insert_id();
 		}
 	}
