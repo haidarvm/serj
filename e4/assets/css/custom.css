@@ -355,6 +355,9 @@ button.btn {
   font-size: 18px;
   margin-top: 6px;
 }
+.icn .fa.fa-calendar {
+  color: #9a9a9a;
+}
 .footer {
   z-index: -1;
 }
