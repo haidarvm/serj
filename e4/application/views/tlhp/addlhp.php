@@ -23,7 +23,7 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL SURAT TUGAS</label>
 										<div class="col-sm-8">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" />
 										</div>
 									</div>
 									<div class="form-group">
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-4 box-margin-ur">
+								<div class="col-md-4 box-margin-ur bg-grey">
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JENIS PENGAWASAN</label>
 										<div class="col-sm-8">
@@ -129,9 +129,14 @@
 									</div>
 
 									<div class="form-group">
-										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label> <input type="file" id="exampleInputFile">
+										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label> 
+										<div class="col-sm-8">
+											<input type="file" id="exampleInputFile">
+										</div>
 									</div>
-
+									
+									<div class="top-space"><br /></div>
+									
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">BUAT LHP BARU</button>
@@ -139,7 +144,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-4 bg-grey box-margin-ur">
+								<div class="col-md-4 box-margin-ur">
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">ST PERPANJANGAN</label>
 										<div class="col-sm-8">
@@ -150,7 +155,7 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TGL ST PERPANJANGAN</label>
 										<div class="col-sm-8">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" />
 										</div>
 									</div>
 									<div class="form-group">

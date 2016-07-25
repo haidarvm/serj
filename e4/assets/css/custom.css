@@ -21,7 +21,7 @@
   margin-bottom: 20px !important;
 }
 .sidebar-mini {
-  background-color: #f4f3ef !important;
+  background-color: #2196f3 !important;
 }
 button.btn {
   font-size: 12px;
@@ -69,11 +69,6 @@ button.btn {
   top: 5px;
   left: -1px;
 }
-
-.navbar {
-  z-index: 1;
-}
-
 .navbar-brand.navbar-minimize {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
@@ -98,19 +93,11 @@ button.btn {
   margin-left: -20px;
   margin-top: 22px;
 }
-
-.modal.modal-wide .modal-dialog {
-  width: 90%;
-}
-.modal-wide .modal-body {
-  overflow-y: auto;
-}
-
 .modal-backdrop {
   display: none;
 }
 .modal-dialog {
-  /* margin-top: 10%; */
+  margin-top: 10%;
 }
 .clr {
   clear: both;
@@ -355,19 +342,9 @@ button.btn {
   float: right;
   width: 75%;
 }
-
-.bootstrap-datetimepicker-widget.dropdown-menu {
-    margin: 4px 0;
-    padding: 4px;
-    width: 19em;
-}
-
 .date-input-big {
   float: right;
   width: 89%;
-}
-.card {
-	z-index: 0;
 }
 .card label {
   font-size: 13px !important;
@@ -377,6 +354,36 @@ button.btn {
   float: left;
   font-size: 18px;
   margin-top: 6px;
+}
+.footer {
+  z-index: -1;
+}
+.paginate_button.next,
+.paginate_button.previous {
+  display: inline-block;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+#manus-grid_length select {
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50px;
+}
+#manus-grid_length > label,
+#manus-grid_filter > label {
+  color: #000000;
+}
+#manus-grid_filter input {
+  height: 30px;
+  margin-left: 10px;
+}
+.dataTables_info {
+  margin-top: 40px;
+}
+.dataTables_info,
+.dataTables_paginate.paging_simple_numbers {
+  text-align: center;
 }
 @media (max-width: 480px) {
   .modal-dialog {

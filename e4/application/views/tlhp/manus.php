@@ -141,7 +141,7 @@
 						
 						</table>
 						<!-- Data Table -->
-						<table id="manus-grid" class="table table-striped t-center table-custom-head" width="100%">
+						<table id="manus-grid" class="table table-striped t-center table-custom-head top-space" width="100%">
 							<thead>
 								<tr class="info">
 									<td class="tsort">ID</td>
