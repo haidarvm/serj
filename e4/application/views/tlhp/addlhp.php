@@ -10,7 +10,7 @@
 							<!-- <div class="header">
 								<h4 class="title must-center">Buat LHP Baru</h4>
 							</div> -->
-
+							
 							<div class="row">
 								<div class="col-md-4 box-margin-ur">
 									<div class="form-group">
@@ -22,7 +22,7 @@
 
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL SURAT TUGAS</label>
-										<div class="col-sm-8">
+										<div class="col-sm-8 form_datetime">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" />
 										</div>
 									</div>
@@ -134,7 +134,7 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
 										<div class="col-sm-8">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" />
 										</div>
 									</div>
 
