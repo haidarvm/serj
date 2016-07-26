@@ -46,13 +46,36 @@ $(document).ready(function() {
 	});
 
 	// Add new tr rekomendasi 
+	$("#add-temuan").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_temuan = $('.temuan-tr').last().clone();
+		$('.temuan-tr:last').after(add_more_temuan);	
+		$('.no-temuan:last').text(+($('.no-temuan:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	
+	// Add new tr rekomendasi 
 	$("#add-rekomen").click(function(event){
 		event.preventDefault();
 		console.log('add new rekomen');
 		var add_more_rekomen = $('.rekomen-tr').last().clone();
 		$('.rekomen-tr:last').after(add_more_rekomen);	
+		$('.no-rekomen:last').text(+($('.no-rekomen:last').text()) + 1);
 		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
 	});
+
+	
+	// Add new tr tindak lanjut 
+	$("#add-tl").click(function(event){
+		event.preventDefault();
+		console.log('add new tl');
+		var add_more_rekomen = $('.tl-tr').last().clone();
+		$('.tl-tr:last').after(add_more_rekomen);	
+		$('.no-tl:last').text(+($('.no-tl:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	
 	
 	// Save All KKLHP 
 	$('#kklhp').click(function() {

@@ -48,8 +48,8 @@
 											<td>JUMLAH</td>
 											<td>NILAI (Rp.)</td>
 										</tr>
-										<tr>
-											<td>1</td>
+										<tr class="temuan-tr">
+											<td class="no-temuan">1</td>
 											<td><select class="form-control" name="kode_sebab_id[]">
 													<option>1111</option>
 													<option>2</option>
@@ -112,7 +112,7 @@
 											<td></td>
 											<td></td>
 											<td></td>
-											<td>2</td>
+											<td class="no-rekomen">2</td>
 											<td><select class="form-control">
 													<option>444</option>
 													<option>2</option>
@@ -274,6 +274,10 @@
 
 						<div class="row">
 							<div class="col-md-12 t-center">
+								<button id="add-temuan" class="btn btn-sm btn-info btn-fill">
+									<span class="btn-label"> <i class="ti-plus"></i>
+									</span> Tambah Temuan
+								</button>
 								<button id="add-rekomen" class="btn btn-sm btn-info btn-fill">
 									<span class="btn-label"> <i class="ti-plus"></i>
 									</span> Tambah Rekomendasi
