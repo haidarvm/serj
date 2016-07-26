@@ -75,7 +75,7 @@ class Manus extends MY_Controller {
 
 	function update_user($id = NULL) {
 		$data['title'] = "username";
-		$data['user'] = '';
+		$data['user'] = $this->muser->getUser($id);
 		$this->load->view('tlhp/user', $data);
 	}
 
@@ -85,11 +85,17 @@ class Manus extends MY_Controller {
 	}
 	
 	
-	function add_user_prosess() {
+	function user_prosess() {
 		$post = $this->input->post();
 		if ($post){
-			$user_id = $this->muser->insertUser($post);
-			redirect('tlhp/manus');
+			if ($post['user_id'] != '') {
+				$id = $post['user_id'];
+				$this->muser->updateUser($id, $post);
+				redirect('tlhp/manus');
+			} else {
+				$user_id = $this->muser->insertUser($post);
+				redirect('tlhp/manus');
+			}
 		}
 	}
 

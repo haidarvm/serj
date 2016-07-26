@@ -76,6 +76,7 @@ class MUser extends CI_Model {
 	 * @param unknown $data        	
 	 */
 	function insertUser($data) {
+		unset($data['user_id']);
 		unset($data['description']);
 		$this->db->insert("user", $data);
 		return $this->db->insert_id();
@@ -90,6 +91,7 @@ class MUser extends CI_Model {
 	 */
 	function updateUser($id, $data) {
 		unset($data ['user_id']);
+		unset($data['description']);
 		$this->db->where('user_id', $id);
 		$this->db->update('user', $data);
 	}
