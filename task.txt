@@ -10,8 +10,9 @@ TLHP
 - data table 
 
 CSS
+- bug datetime picker no hover an active date
 - bug on footer garis sidebar
-- bug on datepicker klik field tanggal addlhp
+- bug on datepicker klik field tanggal addlhp ... done
 - css upload addlhp ... done
 - modal dialog remote edit / view user
 - datatables manus.php

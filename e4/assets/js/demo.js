@@ -129,7 +129,7 @@ demo = {
          });
 
          $('.datepicker').datetimepicker({
-            format: 'MM/DD/YYYY',    //use this format if you want the 12hours timpiecker with AM/PM toggle
+            format: 'DD-MM-YYYY',    //use this format if you want the 12hours timpiecker with AM/PM toggle
             icons: {
                 time: "fa fa-clock-o",
                 date: "fa fa-calendar",

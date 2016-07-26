@@ -9,7 +9,6 @@ class MLhp extends CI_Model {
 		parent::__construct();
 	}
 
-	
 	function addAllLHP($param = NULL) {
 		if ($param != NULL) {
 			$table = 'lhp';
@@ -17,10 +16,30 @@ class MLhp extends CI_Model {
 			return $this->db->insert_id();
 		}
 	}
-	
-	
-	
-	
+
+	/**
+	 *
+	 * @param
+	 *        	array post $data
+	 */
+	function insertLHP($data) {
+		// $remove = ['tim', 'st_perpanjangan', 'tgl_st_perpanjangan','nomor_lhp'];
+		$remove = ['tim'];
+		$clean = array_diff_key($data, array_flip($remove));
+		$clean['tanggal_surat_tugas'] = sqlDateFormat($data['tanggal_surat_tugas']);
+		$clean['hari_awal_penugasan'] = sqlDateFormat($data['hari_awal_penugasan']);
+		$clean['hari_akhir_penugasan'] = sqlDateFormat($data['hari_akhir_penugasan']);
+		$clean['skop_awal_penugasan'] = sqlDateFormat($data['skop_awal_penugasan']);
+		$clean['skop_akhir_penugasan'] = sqlDateFormat($data['skop_akhir_penugasan']);
+		$clean['tanggal_lhp'] = sqlDateFormat($data['tanggal_lhp']);
+		$clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
+		$clean['hari_awal_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_awal_perpanjangan_penugasan']) : null;
+		$clean['hari_akhir_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_akhir_perpanjangan_penugasan']) : null;
+		// debug($clean);exit;
+		$query = $this->db->insert('lhp', array_filter($clean));
+		return $this->db->insert_id();
+	}
+
 	/**
 	 * Get All User
 	 *
@@ -53,7 +72,7 @@ class MLhp extends CI_Model {
 		$query = $this->db->get("tim");
 		return checkRes($query);
 	}
-	
+
 	function getAllJenisPengawasan() {
 		$query = $this->db->get("jenis_pengawasan");
 		return checkRes($query);

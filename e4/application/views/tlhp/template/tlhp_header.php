@@ -19,15 +19,15 @@
 <!-- Animation library for notifications   -->
 <link href="<?php echo base_url();?>assets/css/animate.min.css" rel="stylesheet" />
 
-<!--  Paper Dashboard core CSS    -->
-<link href="<?php echo base_url();?>assets/css/paper-tlhp-dashboard.css" rel="stylesheet" />
+<!--  Paper Dashboard core CSS   -->
+<link href="<?php echo base_url();?>assets/css/paper-tlhp-dashboard.css" rel="stylesheet" /> 
 
 <!--  CSS for Demo Purpose, don't include it in your project     -->
 <link href="<?php echo base_url();?>assets/css/demo.css" rel="stylesheet" />
 
 <!--  Fonts and icons     -->
 <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+<!-- <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'> -->
 <link href="<?php echo base_url();?>assets/css/themify-icons.css" rel="stylesheet">
 
 <!-- #######################################

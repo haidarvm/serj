@@ -93,8 +93,7 @@
 												<?php } ?>
 											</select>
 										</div>
-									</div>
-									<!-- End Tim More -->
+									</div> <!-- End Tim More -->
 
 									<div class="form-group">
 										<div class="col-md-12 t-center">
@@ -107,7 +106,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-4 box-margin-ur bg-grey">
+								<div class="col-md-4 box-margin-ur">
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JENIS PENGAWASAN</label>
 										<div class="col-sm-8">
@@ -120,7 +119,6 @@
 											</select>
 										</div>
 									</div>
-
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">OBJEK PENGAWASAN</label>
 										<div class="col-sm-8">
@@ -142,10 +140,22 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL LHP</label>
 										<div class="col-sm-8">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_lhp" class="form-control border-input date-input-big datepicker" />
 										</div>
 									</div>
-
+									<div class="form-group">
+										<label for="inputEmail3" class="col-sm-4 control-label t-left">NAMA PPK</label>
+										<div class="col-sm-8">
+											<input type="text" name="nama_ppk" class="form-control border-input" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputEmail3" class="col-sm-4 control-label t-left">PJ KEGIATAN</label>
+										<div class="col-sm-8">
+											<input type="text" name="pj_kegiatan" class="form-control border-input" />
+										</div>
+									</div>
+									
 									<div class="form-group">
 										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label> 
 										<div class="col-sm-8">
@@ -154,7 +164,6 @@
 									</div>
 									
 									<div class="top-space"><br /></div>
-									
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<button type="submit" class="btn btn-wd btn-success btn-fill btn-rotate">
@@ -165,7 +174,8 @@
 									</div>
 								</div>
 
-								<div class="col-md-4 box-margin-ur">
+								<!-- Perpanjangan -->
+								<div class="col-md-4 box-margin-ur bg-grey">
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">ST PERPANJANGAN</label>
 										<div class="col-sm-8">
@@ -188,7 +198,7 @@
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input datepicker" />
 										</div>
 									</div>
-									<div class="form-group hide">
+									<!-- <div class="form-group hide">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">SKOP PEMERIKSAAN</label>
 										<div class="col-sm-4">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input datepicker" />
@@ -196,9 +206,7 @@
 										<div class="col-sm-4">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_pemeriksaan_penugasan" class="form-control border-input date-input datepicker" />
 										</div>
-									</div>
-
-
+									</div> -->
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-2 control-label t-left">TIM</label>
 										<div class="col-sm-5">
@@ -214,7 +222,6 @@
 											</select>
 										</div>
 									</div>
-
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-2 control-label t-left">&nbsp;</label>
 										<div class="col-sm-5">
@@ -230,7 +237,6 @@
 											</select>
 										</div>
 									</div>
-
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
@@ -240,7 +246,7 @@
 											</button>
 										</div>
 									</div>
-								</div>
+								</div><!-- Perpanjangan -->
 							</div>
 						</form>
 					</div>
