@@ -62,8 +62,8 @@ class Manus extends MY_Controller {
 			$nestedData = array();
 			$nestedData[] = $row["user_id"];
 			$nestedData[] = $row["full_name"];
-			$nestedData[] = @$row["nip"];
-			$nestedData[] = @$row["jabatan"];
+			$nestedData[] = $row["nip"];
+			$nestedData[] = $row["jabatan"];
 			$nestedData[] = $row["username"];
 			$nestedData[] = $row["unit_kerja"];
 			$nestedData[] = $row["user_level_id"];
