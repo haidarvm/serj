@@ -67,7 +67,7 @@
 											</select></td>
 											<td><input type="text" class="form-control border-input" disabled /></td>
 											<td><input type="text" class="form-control border-input" name="nilai[]" /></td>
-											<td>1</td>
+											<td>1 <button class="add-rekomen-1">+</button></td>
 											<td><select class="form-control" name="kode_rekomendasi_id[]">
 													<option>333</option>
 													<option>2</option>
@@ -105,14 +105,218 @@
 											<td></td>
 											<td></td>
 										</tr>
-										<tr class="rekomen-tr">
+										<tr class="rekomen-tr-1">
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
-											<td class="no-rekomen">2</td>
+											<td class="no-rekomen-1">2</td>
+											<td><select class="form-control">
+													<option>444</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_temuan" /></td>
+											<td><select class="form-control">
+													<option>Ada</option>
+													<option>Tidak</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_temuan" /></td>
+											<td><select class="form-control">
+													<option>DEPUTI I</option>
+													<option>DEPUTI II</option>
+													<option>DEPUTI III</option>
+													<option>DEPUTI IV</option>
+													<option>STAFF AHLI</option>
+													<option>INSPEKTORAT</option>
+													<option>BIRO SDMU</option>
+													<option>BIRO HUKIP</option>
+													<option>BIRO BMOK</option>
+													<option>BIRO KASN</option>
+											</select></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr class="temuan-tr">
+											<td class="no-temuan">2 <button  id="add-temuan">+</button></td>
+											<td><select class="form-control" name="kode_sebab_id[]">
+													<option>1111</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
+											<td><select class="form-control" name="kode_sebab_id[]">
+													<option>222</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" disabled /></td>
+											<td><input type="text" class="form-control border-input" name="nilai[]" /></td>
+											<td>1 <button class="add-rekomen-2">+</button></td>
+											<td><select class="form-control" name="kode_rekomendasi_id[]">
+													<option>333</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
+											<td><select class="form-control" name="kerugian_negara[]">
+													<option>Ada</option>
+													<option>Tidak</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
+											<td><select class="form-control">
+													<option>DEPUTI I</option>
+													<option>DEPUTI II</option>
+													<option>DEPUTI III</option>
+													<option>DEPUTI IV</option>
+													<option>STAFF AHLI</option>
+													<option>INSPEKTORAT</option>
+													<option>BIRO SDMU</option>
+													<option>BIRO HUKIP</option>
+													<option>BIRO BMOK</option>
+													<option>BIRO KASN</option>
+											</select></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr class="rekomen-tr-2">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="no-rekomen-2">2</td>
+											<td><select class="form-control">
+													<option>444</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_temuan" /></td>
+											<td><select class="form-control">
+													<option>Ada</option>
+													<option>Tidak</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_temuan" /></td>
+											<td><select class="form-control">
+													<option>DEPUTI I</option>
+													<option>DEPUTI II</option>
+													<option>DEPUTI III</option>
+													<option>DEPUTI IV</option>
+													<option>STAFF AHLI</option>
+													<option>INSPEKTORAT</option>
+													<option>BIRO SDMU</option>
+													<option>BIRO HUKIP</option>
+													<option>BIRO BMOK</option>
+													<option>BIRO KASN</option>
+											</select></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr class="temuan-tr">
+											<td class="no-temuan">3</td>
+											<td><select class="form-control" name="kode_sebab_id[]">
+													<option>1111</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
+											<td><select class="form-control" name="kode_sebab_id[]">
+													<option>222</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" disabled /></td>
+											<td><input type="text" class="form-control border-input" name="nilai[]" /></td>
+											<td>1  <button  class="add-rekomen-3">+</button></td>
+											<td><select class="form-control" name="kode_rekomendasi_id[]">
+													<option>333</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
+											<td><select class="form-control" name="kerugian_negara[]">
+													<option>Ada</option>
+													<option>Tidak</option>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
+											<td><select class="form-control">
+													<option>DEPUTI I</option>
+													<option>DEPUTI II</option>
+													<option>DEPUTI III</option>
+													<option>DEPUTI IV</option>
+													<option>STAFF AHLI</option>
+													<option>INSPEKTORAT</option>
+													<option>BIRO SDMU</option>
+													<option>BIRO HUKIP</option>
+													<option>BIRO BMOK</option>
+													<option>BIRO KASN</option>
+											</select></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr class="rekomen-tr-3">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="no-rekomen-3">2</td>
 											<td><select class="form-control">
 													<option>444</option>
 													<option>2</option>
@@ -152,7 +356,7 @@
 										</tr>
 										
 										<tr>
-											<td>2</td>
+											<td>1</td>
 											<td><select class="form-control">
 													<option>555</option>
 													<option>2</option>
@@ -209,7 +413,7 @@
 											<td></td>
 										</tr>
 										<tr>
-											<td>3</td>
+											<td>2</td>
 											<td><select class="form-control">
 													<option>888</option>
 													<option>2</option>
@@ -274,11 +478,11 @@
 
 						<div class="row">
 							<div class="col-md-12 t-center">
-								<button id="add-temuan" class="btn btn-sm btn-info btn-fill">
+								<button class="btn btn-sm btn-info btn-fill">
 									<span class="btn-label"> <i class="ti-plus"></i>
 									</span> Tambah Temuan
 								</button>
-								<button id="add-rekomen" class="btn btn-sm btn-success btn-fill">
+								<button  class="btn btn-sm btn-success btn-fill">
 									<span class="btn-label"> <i class="ti-plus"></i>
 									</span> Tambah Rekomendasi
 								</button>

@@ -48,23 +48,42 @@ $(document).ready(function() {
 	// Add new tr rekomendasi 
 	$("#add-temuan").click(function(event){
 		event.preventDefault();
-		console.log('add new rekomen');
+		console.log('add new temuan');
 		var add_more_temuan = $('.temuan-tr').last().clone();
 		$('.temuan-tr:last').after(add_more_temuan);	
 		$('.no-temuan:last').text(+($('.no-temuan:last').text()) + 1);
 		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
 	});
 	
-	// Add new tr rekomendasi 
-	$("#add-rekomen").click(function(event){
+	// Add new tr rekomendasi 1
+	$(".add-rekomen-1").click(function(event){
 		event.preventDefault();
 		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-tr').last().clone();
-		$('.rekomen-tr:last').after(add_more_rekomen);	
-		$('.no-rekomen:last').text(+($('.no-rekomen:last').text()) + 1);
+		var add_more_rekomen = $('.rekomen-tr-1').last().clone();
+		$('.rekomen-tr-1:last').after(add_more_rekomen);	
+		$('.no-rekomen-1:last').text(+($('.no-rekomen-1:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	
+	// Add new tr rekomendasi 2
+	$(".add-rekomen-2").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_rekomen = $('.rekomen-tr-2').last().clone();
+		$('.rekomen-tr-2:last').after(add_more_rekomen);	
+		$('.no-rekomen-2:last').text(+($('.no-rekomen-2:last').text()) + 1);
 		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
 	});
 
+	// Add new tr rekomendasi 2
+	$(".add-rekomen-3").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_rekomen = $('.rekomen-tr-3').last().clone();
+		$('.rekomen-tr-3:last').after(add_more_rekomen);	
+		$('.no-rekomen-3:last').text(+($('.no-rekomen-3:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
 	
 	// Add new tr tindak lanjut 
 	$("#add-tl").click(function(event){
