@@ -11,12 +11,13 @@
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
 							<form method="post" id="kklhp-form" action="<?php echo site_url()?>tlhp/kklhpbaru/insert">
-								<table class="table table-bordered table-custom">
+								<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
 											<td colspan="6" class="warning">JUDUL TEMUAN</td>
 											<td colspan="5" class="info">REKOMENDASI</td>
-											<td colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN</td>
+											<td colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
+											</td>
 											<td colspan="2">SESUAI DENGAN REKOMENDASI</td>
 											<td colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</td>
 											<td colspan="2">BELUM DITINDAK LANJUTI</td>
@@ -47,8 +48,8 @@
 											<td>JUMLAH</td>
 											<td>NILAI (Rp.)</td>
 										</tr>
-										<tr>
-											<td>1</td>
+										<tr class="temuan-tr">
+											<td class="no-temuan">1</td>
 											<td><select class="form-control" name="kode_sebab_id[]">
 													<option>1111</option>
 													<option>2</option>
@@ -104,14 +105,14 @@
 											<td></td>
 											<td></td>
 										</tr>
-										<tr>
+										<tr class="rekomen-tr">
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
-											<td>2</td>
+											<td class="no-rekomen">2</td>
 											<td><select class="form-control">
 													<option>444</option>
 													<option>2</option>
@@ -149,6 +150,7 @@
 											<td></td>
 											<td></td>
 										</tr>
+										
 										<tr>
 											<td>2</td>
 											<td><select class="form-control">
@@ -272,7 +274,20 @@
 
 						<div class="row">
 							<div class="col-md-12 t-center">
-								<button type="submit" id="kklhp" class="btn btn-wd btn-success btn-fill btn-rotate">
+								<button id="add-temuan" class="btn btn-sm btn-info btn-fill">
+									<span class="btn-label"> <i class="ti-plus"></i>
+									</span> Tambah Temuan
+								</button>
+								<button id="add-rekomen" class="btn btn-sm btn-success btn-fill">
+									<span class="btn-label"> <i class="ti-plus"></i>
+									</span> Tambah Rekomendasi
+								</button>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 t-center">
+								<button type="submit" id="kklhp" class="btn btn-wd btn-success btn-fill">
 									<span class="btn-label"> <i class="ti-save"></i>
 									</span> SAVE
 								</button>
@@ -284,3 +299,4 @@
 		</div>
 	</div>
 </div>
+

@@ -28,6 +28,15 @@ CONTENTS:
 .t-number {
     font-size: 23px;
 }
+.t-right {
+    text-align: left;
+}
+.l-float {
+    float: left;
+}
+.control-label {
+    padding: 0 0 10px 0;
+}
 /*** HEADER ***/
 header {
     margin: 10px 0 20px 0;
