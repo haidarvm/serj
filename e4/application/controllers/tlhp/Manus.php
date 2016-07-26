@@ -62,11 +62,11 @@ class Manus extends MY_Controller {
 			$nestedData = array();
 			$nestedData[] = $row["user_id"];
 			$nestedData[] = $row["full_name"];
-			$nestedData[] = $row["nip"];
-			$nestedData[] = $row["jabatan"];
+			$nestedData[] = @$row["nip"];
+			$nestedData[] = @$row["jabatan"];
 			$nestedData[] = $row["username"];
 			$nestedData[] = $row["unit_kerja"];
-			$nestedData[] = $row["user_level"];
+			$nestedData[] = $row["user_level_id"];
 			$data[] = $nestedData;
 		}
 		$json_data = array("draw" => intval($requestData['draw']), "recordsTotal" => intval($totalData), "recordsFiltered" => intval($totalFiltered), "data" => $data);
@@ -88,8 +88,8 @@ class Manus extends MY_Controller {
 	function add_user_prosess() {
 		$post = $this->input->post();
 		if ($post){
-			echo $user_id = $this->muser->insertUser($post);
-			//redirect('tlhp/kklhpbaru/add/'.$lhp_id);
+			$user_id = $this->muser->insertUser($post);
+			redirect('tlhp/manus');
 		}
 	}
 
