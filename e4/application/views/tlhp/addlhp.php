@@ -161,7 +161,7 @@
 									</div>
 									<div class="form-group">
                                         <div class="col-md-10">
-										<label for="inputEmail3" class="control-label t-left">TANGGAL LHP</label>
+										<label for="inputEmail3" class="control-label t-left">TANGGAL LHP<star>*</star></label>
 										<div class="input-group">
 											<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span><input type="text" name="tanggal_lhp" class="form-control border-input date-input-big datepicker" />
 										</div>
@@ -264,7 +264,7 @@
 											
 											<button id="add-tim-perpanjangan" class="btn btn-sm l-float btn-fill">
 												<span class="btn-label"><i class="ti-plus"></i>
-												</span>&nbsp; TAMBAH &nbsp;
+												</span>TAMBAH
 											</button>
 										</div>
 									</div>
@@ -272,19 +272,18 @@
 								</div>
 								<!-- Perpanjangan -->
                                 <div class="col-md-12">
-                                <div class="row">
-
-                                    <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn btn-wd btn-success btn-fill btn-rotate">
+                                                   <span class="btn-label">
+                                                       <i class="ti-save"></i>
+                                                   </span>SIMPAN
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <button type="button" class="btn btn-wd btn-success btn-fill btn-rotate">
-                                               <span class="btn-label">
-                                                   <i class="ti-save"></i>
-                                               </span>SIMPAN
-                                        </button>
-                                    </div>
-							    </div>
-                            </div>
+                                </div>
                             </div>
 						</form>
 					</div>
