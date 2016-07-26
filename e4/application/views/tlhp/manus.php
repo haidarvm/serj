@@ -26,7 +26,6 @@
 
 						<div class="table-action">
 							<a href="<?php echo site_url();?>tlhp/manus/add_user" class="btn btn-primary user-modal"><i class="fa fa-plus fa-lg"></i> Tambah User</a>
-							<a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a> <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> Batal</a>
 						</div>
 
 						<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">

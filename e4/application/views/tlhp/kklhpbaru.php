@@ -34,10 +34,10 @@
 											<td class="info">URAIAN REKOMENDASI</td>
 											<td class="info">KERUGIAN NEGARA</td>
 											<td class="info">NILAI (Rp.)</td>
-											<td>UNIT KERJA</td>
-											<td>PERIODE TINDAK LANJUT</td>
-											<td>TINDAK LANJUT</td>
-											<td>DOKUMEN PENDUKUNG</td>
+											<td class="success">UNIT KERJA</td>
+											<td class="success">PERIODE TINDAK LANJUT</td>
+											<td class="success">TINDAK LANJUT</td>
+											<td class="success">DOKUMEN PENDUKUNG</td>
 											<td>JUMLAH</td>
 											<td>NILAI (Rp.)</td>
 											<td>JUMLAH</td>
@@ -111,7 +111,7 @@
 											<td></td>
 											<td></td>
 											<td></td>
-											<td>1</td>
+											<td>2</td>
 											<td><select class="form-control">
 													<option>444</option>
 													<option>2</option>
