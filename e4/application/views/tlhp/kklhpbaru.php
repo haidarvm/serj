@@ -278,7 +278,7 @@
 									<span class="btn-label"> <i class="ti-plus"></i>
 									</span> Tambah Temuan
 								</button>
-								<button id="add-rekomen" class="btn btn-sm btn-info btn-fill">
+								<button id="add-rekomen" class="btn btn-sm btn-success btn-fill">
 									<span class="btn-label"> <i class="ti-plus"></i>
 									</span> Tambah Rekomendasi
 								</button>
