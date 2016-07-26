@@ -98,6 +98,13 @@ class Manus extends MY_Controller {
 			}
 		}
 	}
+	
+	function delete($id = NULL) {
+		if ($id != NULL){
+			$this->muser->delete($id);
+			redirect('tlhp/manus');
+		}
+	}
 
 /**
  * List All Product

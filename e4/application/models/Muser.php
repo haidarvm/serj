@@ -155,7 +155,7 @@ class MUser extends CI_Model {
 	}
 
 	function delete($id) {
-		unset($data ['id']);
+// 		unset($data ['id']);
 		$this->db->delete('user', array('user_id' => $id));
 	}
 }
