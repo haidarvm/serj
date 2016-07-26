@@ -366,6 +366,7 @@ button.btn {
 .card label {
   font-size: 13px !important;
   line-height: 35px;
+  color: #66615b;
 }
 .icn {
   float: left;
