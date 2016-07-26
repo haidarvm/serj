@@ -83,6 +83,15 @@ class Manus extends MY_Controller {
 		$data['title'] = "username";
 		$this->load->view('tlhp/user', $data);
 	}
+	
+	
+	function add_user_prosess() {
+		$post = $this->input->post();
+		if ($post){
+			echo $user_id = $this->muser->insertUser($post);
+			//redirect('tlhp/kklhpbaru/add/'.$lhp_id);
+		}
+	}
 
 /**
  * List All Product

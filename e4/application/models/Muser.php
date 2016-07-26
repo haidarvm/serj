@@ -76,9 +76,9 @@ class MUser extends CI_Model {
 	 * @param unknown $data        	
 	 */
 	function insertUser($data) {
-		// $data['level_id'] = '2';
-		unset($data ['user_id']);
-		// unset($data['q']);
+		unset($data ['nip']);
+		unset($data['jabatan']);
+		unset($data['description']);
 		$this->db->insert("user", $data);
 		return $this->db->insert_id();
 	}
