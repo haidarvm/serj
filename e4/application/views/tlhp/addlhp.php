@@ -9,38 +9,38 @@
 							<!-- <div class="header">
 								<h4 class="title must-center">Buat LHP Baru</h4>
 							</div> -->
-							
+
 							<div class="row">
 								<div class="col-md-4 box-margin-ur">
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">NOMOR SURAT TUGAS</label>
 										<div class="col-sm-8">
-											<input type="text" name="no_surat_tugas" class="form-control border-input" />
+											<input type="text" name="no_surat_tugas" class="form-control border-input" required="true"/>
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">TGL SURAT TUGAS</label>
 										<div class="col-sm-8 form_datetime">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">HARI PENUGASAN</label>
 										<div class="col-sm-4">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_penugasan" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_penugasan" class="form-control border-input date-input datepicker" required="true"/>
 										</div>
 										<div class="col-sm-4">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input datepicker" required="true"/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">SKOP PEMERIKSAAN</label>
 										<div class="col-sm-4">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" required="true"/>
 										</div>
 										<div class="col-sm-4">
-											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" />
+											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" required="true"/>
 										</div>
 									</div>
 
@@ -92,7 +92,8 @@
 												<?php } ?>
 											</select>
 										</div>
-									</div> <!-- End Tim More -->
+									</div>
+									<!-- End Tim More -->
 
 									<div class="form-group">
 										<div class="col-md-12 t-center">
@@ -121,19 +122,19 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">OBJEK PENGAWASAN</label>
 										<div class="col-sm-8">
-											<input type="text" name="objek_pengawasan" class="form-control border-input" required="true"/>
+											<input type="text" name="objek_pengawasan" class="form-control border-input" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JUDUL LHP</label>
 										<div class="col-sm-8">
-											<input type="text" name="judul_lhp" class="form-control border-input" required="true"/>
+											<input type="text" name="judul_lhp" class="form-control border-input" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">NOMOR LHP</label>
 										<div class="col-sm-8">
-											<input type="text" name="nomor_lhp" class="form-control border-input" required="true"/>
+											<input type="text" name="nomor_lhp" class="form-control border-input" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
@@ -154,15 +155,17 @@
 											<input type="text" name="pj_kegiatan" class="form-control border-input" />
 										</div>
 									</div>
-									
+
 									<div class="form-group">
-										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label> 
+										<label for="exampleInputFile" class="col-sm-4 control-label t-left">UPLOAD</label>
 										<div class="col-sm-8">
 											<input type="file" id="exampleInputFile">
 										</div>
 									</div>
-									
-									<div class="top-space"><br /></div>
+
+									<div class="top-space">
+										<br />
+									</div>
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<button type="submit" class="btn btn-wd btn-success btn-fill btn-rotate">
@@ -245,7 +248,8 @@
 											</button>
 										</div>
 									</div>
-								</div><!-- Perpanjangan -->
+								</div>
+								<!-- Perpanjangan -->
 							</div>
 						</form>
 					</div>

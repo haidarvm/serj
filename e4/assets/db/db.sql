@@ -61,7 +61,7 @@ CREATE TABLE `tlhp_kertas_kerja_temuan` (
   `nilai_tidak_tl_alasan` double DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`kertas_kerja_id`),
   KEY `fk_kk_user` (`user_id`),
   KEY `fk_kk_lhp` (`lhp_id`),
@@ -150,7 +150,7 @@ CREATE TABLE `tlhp_lhp` (
   `hari_akhir_perpanjangan_penugasan` date DEFAULT NULL,
   `user_id` int(10) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`lhp_id`),
   KEY `fk_lhp_user_id` (`user_id`),
   KEY `fk_lhp_jenis_pengawasan` (`jenis_pengawasan_id`),
@@ -162,10 +162,10 @@ CREATE TABLE `tlhp_lhp` (
 -- Records of tlhp_lhp
 -- ----------------------------
 INSERT INTO `tlhp_lhp` VALUES ('4', 'sdf', null, null, null, null, null, '1', 'sdf', 'sdf', 'sdf', null, null, null, 'sdf', null, null, null, '4', '2016-07-26 10:41:37', '2016-07-26 10:45:53');
-INSERT INTO `tlhp_lhp` VALUES ('5', 'asfas', '2016-07-07', '2016-07-07', '2016-07-07', '2016-07-07', '2016-07-07', '1', 'dfdasfsaf', 'asdf', 'asdfasdf', null, null, null, 'asf', '2016-07-07', '2016-07-07', '2016-07-07', '4', '2016-07-26 11:38:52', '2016-07-26 11:38:52');
+INSERT INTO `tlhp_lhp` VALUES ('5', 'asfas', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '1', 'dfdasfsaf', 'asdf', 'asdfasdf', null, null, null, 'asf', '0000-00-00', '0000-00-00', '0000-00-00', '4', '2016-07-26 11:38:52', '2016-07-26 11:38:52');
 INSERT INTO `tlhp_lhp` VALUES ('6', 'asdf', '2016-07-05', '2016-07-05', '2016-07-26', '2016-07-14', '2016-07-26', '1', null, 'sdfsdf', 'sdf', '2016-07-06', null, null, null, null, null, null, '4', '2016-07-26 12:08:40', '2016-07-26 12:08:40');
 INSERT INTO `tlhp_lhp` VALUES ('7', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', null, null, null, null, '4', '2016-07-26 12:12:15', '2016-07-26 12:12:15');
-INSERT INTO `tlhp_lhp` VALUES ('8', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '2016-07-07', '2016-07-07', '2016-07-07', '4', '2016-07-26 12:12:46', '2016-07-26 12:12:46');
+INSERT INTO `tlhp_lhp` VALUES ('8', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '0000-00-00', '0000-00-00', '0000-00-00', '4', '2016-07-26 12:12:46', '2016-07-26 12:12:46');
 INSERT INTO `tlhp_lhp` VALUES ('9', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '2016-07-05', '2016-07-05', '2016-07-12', '4', '2016-07-26 12:14:33', '2016-07-26 12:14:33');
 INSERT INTO `tlhp_lhp` VALUES ('10', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '1970-01-01', '1970-01-01', '1970-01-01', '4', '2016-07-26 12:14:53', '2016-07-26 12:14:53');
 
@@ -183,7 +183,7 @@ CREATE TABLE `tlhp_persetujuan_tl` (
   `komentar_inspektorat` text,
   `user_id` int(11) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`persetujuan_tl_id`),
   KEY `fk_persetujuan_tl` (`tindak_lanjut_id`),
   CONSTRAINT `fk_persetujuan_tl` FOREIGN KEY (`tindak_lanjut_id`) REFERENCES `tlhp_tindak_lanjut` (`tindak_lanjut_id`) ON DELETE SET NULL ON UPDATE CASCADE
@@ -229,7 +229,7 @@ CREATE TABLE `tlhp_template_laporan` (
   `daftar_isi` text,
   `user_id` int(11) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`template_laporan_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -266,7 +266,7 @@ CREATE TABLE `tlhp_tim_lhp` (
   `tim_id` int(11) NOT NULL,
   `nama_tim` varchar(500) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`tim_lhp_id`),
   KEY `fk_tim_id` (`tim_id`),
   KEY `fk_tim_lhp` (`lhp_id`),
@@ -292,7 +292,7 @@ CREATE TABLE `tlhp_tindak_lanjut` (
   `nama_ppk` varchar(500) DEFAULT NULL,
   `nama_pj_kegiatan` varchar(500) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`tindak_lanjut_id`),
   KEY `fk_tl_kk_idx` (`rekomendasi_id`),
   KEY `fk_tl_user` (`user_id`),
@@ -344,7 +344,7 @@ CREATE TABLE `tlhp_upload_lhp` (
   `url` varchar(2000) DEFAULT NULL,
   `path` varchar(2000) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`upload_laporan_id`),
   KEY `fk_upload_lhp` (`lhp_id`),
   CONSTRAINT `fk_upload_lhp` FOREIGN KEY (`lhp_id`) REFERENCES `tlhp_lhp` (`lhp_id`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -369,7 +369,7 @@ CREATE TABLE `tlhp_upload_template_laporan` (
   `url` varchar(2000) DEFAULT NULL,
   `path` varchar(2000) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`upload_template_id`),
   KEY `fk_upload_template` (`template_laporan_id`),
   CONSTRAINT `fk_upload_template` FOREIGN KEY (`template_laporan_id`) REFERENCES `tlhp_template_laporan` (`template_laporan_id`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -394,7 +394,7 @@ CREATE TABLE `tlhp_upload_tl` (
   `url` varchar(2000) DEFAULT NULL,
   `path` varchar(2000) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`upload_template_id`),
   KEY `fk_upload_tl` (`tindak_lanjut_id`),
   CONSTRAINT `fk_upload_tl` FOREIGN KEY (`tindak_lanjut_id`) REFERENCES `tlhp_tindak_lanjut` (`tindak_lanjut_id`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -433,25 +433,13 @@ CREATE TABLE `tlhp_user` (
   `last_visit` datetime DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
   KEY `fk_user_level` (`user_level_id`),
   KEY `fk_user_unit_kerja` (`unit_kerja_id`),
   CONSTRAINT `fk_user_level` FOREIGN KEY (`user_level_id`) REFERENCES `tlhp_user_level` (`user_level_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `fk_user_unit_kerja` FOREIGN KEY (`unit_kerja_id`) REFERENCES `tlhp_unit_kerja` (`unit_kerja_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for tlhp_test
--- ----------------------------
-DROP TABLE IF EXISTS `tlhp_test`;
-CREATE TABLE `tlhp_test` (
-  `user_level_id` tinyint(2) NOT NULL AUTO_INCREMENT,
-  `user_level` varchar(200) NOT NULL,
-  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_level_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tlhp_user
@@ -489,16 +477,16 @@ CREATE TABLE `tlhp_user_level` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for tlhp_test
+-- Table structure for tlhp_user_level
 -- ----------------------------
 DROP TABLE IF EXISTS `tlhp_test`;
-CREATE TABLE `tlhp_test` (
+CREATE TABLE `tlhp_user_level` (
   `user_level_id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `user_level` varchar(200) NOT NULL,
-  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_level_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
 
 -- ----------------------------
 -- Records of tlhp_user_level

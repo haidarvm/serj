@@ -24,7 +24,7 @@ class MLhp extends CI_Model {
 	 */
 	function insertLHP($data) {
 		// $remove = ['tim', 'st_perpanjangan', 'tgl_st_perpanjangan','nomor_lhp'];
-		$remove = ['tim'];
+		$remove = array('tim');
 		$clean = array_diff_key($data, array_flip($remove));
 		$clean['tanggal_surat_tugas'] = sqlDateFormat($data['tanggal_surat_tugas']);
 		$clean['hari_awal_penugasan'] = sqlDateFormat($data['hari_awal_penugasan']);
