@@ -41,7 +41,7 @@
 <body>
 	
 <div class="wrapper">
-    <div class="sidebar" data-background-color="blue" data-active-color="info">
+    <div class="sidebar" data-background-color="black" data-active-color="info">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -50,7 +50,7 @@
 		
 		<div class="sidebar-wrapper">
 				<div class="logo t-center">
-					<a href="#"><img src="<?php echo base_url();?>assets/img/logo-black.png"></a>
+					<a href="#"><img src="<?php echo base_url();?>assets/img/logo-white.png"></a>
 				</div>
 				<div class="clr"></div>
 	            <ul class="nav">

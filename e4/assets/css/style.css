@@ -8,6 +8,8 @@ version: 1.0
 /* -----------------------------------------------------------
 CONTENTS:
 =HEADER
+=TABLE
+=FOOTER
 
 ------------------------------------------------------------*/
 .clearfix {
@@ -16,6 +18,16 @@ CONTENTS:
 .inner{
     padding: 0 0 20px 0 ;
 }
+.tittle-row {
+    margin: 20px;
+}
+.t-card {
+    font-size: 12px;
+    font-weight: normal;
+}
+.t-number {
+    font-size: 23px;
+}
 /*** HEADER ***/
 header {
     margin: 10px 0 20px 0;
@@ -23,13 +35,16 @@ header {
     top : 0;
 }
 .logo {
-    /* background-color: #ffffff; */
+    background-color: transparent; 
     width: 259px;
     height: auto;
     float: left;
     padding: 22px;
 }
 .logo img{
+    width: 150px;
+}
+.logo-landing img{
     width: 150px;
 }
 #topnav {
@@ -107,7 +122,7 @@ header {
 
 
 .footer-logo img{
-    width: 100px;
+    width: 50px;
     float: left;
 }
 .footer-text {

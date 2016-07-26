@@ -40,7 +40,7 @@
     <div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-1 top-head logo">
-				<a href="index.php"><img src="assets/img/logo.png" alt=""/></a>
+				<a href="index.php"><img src="assets/img/logo-white.png" alt=""/></a>
 			</div>
 			
 			<div class="col-md-8 col-md-offset-2 desc-content">

@@ -23,7 +23,7 @@ header {
     top : 0;
 }
 .logo {
-    background-color: #ffffff;
+    background-color: transparent;
     width: 259px;
     height: auto;
     float: left;
@@ -107,7 +107,7 @@ header {
 
 
 .footer-logo img{
-    width: 100px;
+    width: 50px;
     float: left;
 }
 .footer-text {
