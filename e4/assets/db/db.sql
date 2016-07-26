@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50712
 File Encoding         : 65001
 
-Date: 2016-07-25 19:43:11
+Date: 2016-07-26 12:34:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -132,7 +132,7 @@ DROP TABLE IF EXISTS `tlhp_lhp`;
 CREATE TABLE `tlhp_lhp` (
   `lhp_id` int(11) NOT NULL AUTO_INCREMENT,
   `no_surat_tugas` varchar(1000) DEFAULT NULL,
-  `tanggal_surat_tugas` varchar(200) DEFAULT NULL,
+  `tanggal_surat_tugas` date DEFAULT NULL,
   `hari_awal_penugasan` date DEFAULT NULL,
   `hari_akhir_penugasan` date DEFAULT NULL,
   `skop_awal_penugasan` date DEFAULT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE `tlhp_lhp` (
   `nomor_lhp` varchar(200) DEFAULT NULL,
   `tanggal_lhp` date DEFAULT NULL,
   `nama_ppk` varchar(200) DEFAULT NULL,
-  `penanggung_jawab_keg` varchar(200) DEFAULT NULL,
+  `pj_kegiatan` varchar(200) DEFAULT NULL,
   `st_perpanjangan` varchar(200) DEFAULT NULL,
   `tgl_st_perpanjangan` date DEFAULT NULL,
   `hari_awal_perpanjangan_penugasan` date DEFAULT NULL,
@@ -156,11 +156,18 @@ CREATE TABLE `tlhp_lhp` (
   KEY `fk_lhp_jenis_pengawasan` (`jenis_pengawasan_id`),
   CONSTRAINT `fk_lhp_jenis_pengawasan` FOREIGN KEY (`jenis_pengawasan_id`) REFERENCES `tlhp_jenis_pengawasan` (`jenis_pengawasan_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `fk_lhp_user_id` FOREIGN KEY (`user_id`) REFERENCES `tlhp_user` (`user_id`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tlhp_lhp
 -- ----------------------------
+INSERT INTO `tlhp_lhp` VALUES ('4', 'sdf', null, null, null, null, null, '1', 'sdf', 'sdf', 'sdf', null, null, null, 'sdf', null, null, null, '4', '2016-07-26 10:41:37', '2016-07-26 10:45:53');
+INSERT INTO `tlhp_lhp` VALUES ('5', 'asfas', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '1', 'dfdasfsaf', 'asdf', 'asdfasdf', null, null, null, 'asf', '0000-00-00', '0000-00-00', '0000-00-00', '4', '2016-07-26 11:38:52', '2016-07-26 11:38:52');
+INSERT INTO `tlhp_lhp` VALUES ('6', 'asdf', '2016-07-05', '2016-07-05', '2016-07-26', '2016-07-14', '2016-07-26', '1', null, 'sdfsdf', 'sdf', '2016-07-06', null, null, null, null, null, null, '4', '2016-07-26 12:08:40', '2016-07-26 12:08:40');
+INSERT INTO `tlhp_lhp` VALUES ('7', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', null, null, null, null, '4', '2016-07-26 12:12:15', '2016-07-26 12:12:15');
+INSERT INTO `tlhp_lhp` VALUES ('8', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '0000-00-00', '0000-00-00', '0000-00-00', '4', '2016-07-26 12:12:46', '2016-07-26 12:12:46');
+INSERT INTO `tlhp_lhp` VALUES ('9', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '2016-07-05', '2016-07-05', '2016-07-12', '4', '2016-07-26 12:14:33', '2016-07-26 12:14:33');
+INSERT INTO `tlhp_lhp` VALUES ('10', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '1970-01-01', '1970-01-01', '1970-01-01', '4', '2016-07-26 12:14:53', '2016-07-26 12:14:53');
 
 -- ----------------------------
 -- Table structure for tlhp_persetujuan_tl
@@ -408,7 +415,7 @@ CREATE TABLE `tlhp_user` (
   `last_name` varchar(200) DEFAULT NULL,
   `full_name` varchar(200) DEFAULT NULL,
   `nip` varchar(255) DEFAULT NULL,
-  `jabatan_id` tinyint(3) DEFAULT NULL,
+  `jabatan` varchar(255) DEFAULT NULL,
   `user_level_id` tinyint(2) DEFAULT NULL,
   `unit_kerja_id` tinyint(3) DEFAULT NULL,
   `password` varchar(200) DEFAULT NULL,
