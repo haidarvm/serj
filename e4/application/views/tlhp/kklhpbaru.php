@@ -6,12 +6,10 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<h5 class="title">HASIL <?php echo $lhp->judul_lhp;?></h3>
-							<h5 class="title">
-								PADA
-								</h3>
-								<p class="category">KKLHPBARU</p>
-					
+						<h5 class="title">HASIL <?php echo $lhp->judul_lhp;?></h5>
+						<h5 class="title">PADA</h5>
+						<p class="category">KKLHPBARU</p>
+
 					</div>
 					<div class="content table-full-width custom-tab">
 
