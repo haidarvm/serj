@@ -45,6 +45,10 @@ $(document).ready(function() {
 		$('#tim-more').append(add_more);
 	});
 	
+	$('#kklhp').click(function() {
+		$("#kklhp-form").submit();
+	});
+	
 	// load user
 	$('.user-modal').on('click', function(e){
 		  e.preventDefault();
