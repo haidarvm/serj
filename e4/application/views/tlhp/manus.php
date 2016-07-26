@@ -41,7 +41,7 @@
 									<div class="modal-body modal-form"></div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Send message</button>
+										<button type="button" class="btn btn-primary">Submit</button>
 									</div>
 								</div>
 							</div>

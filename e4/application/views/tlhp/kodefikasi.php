@@ -105,8 +105,11 @@
 						</div>
 					</div>
 				</div>
-				
-				<div class="card col-md-7">
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+				<div class="card">
 					<div class="header">
 						<h4 class="title">
 							<b>KODE ATRIBUT REKOMENDASI</b>
@@ -192,10 +195,11 @@
 							</tbody>
 						  </table>
 						</div>
-					</div>
-				</div>
-				
-				<div class="card col-md-7">
+					   </div>
+				    </div>
+                </div>
+				<div class="col-md-6">
+                    <div class="card">
 					<div class="header">
 						<h4 class="title">
 							<b>KODE ATRIBUT SEBAB</b>
@@ -283,9 +287,7 @@
 						</div>
 					</div>
 				</div>
-				
-
-			</div>
-		</div>
+               </div>
+            </div>
    </div>
 </div>
