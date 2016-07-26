@@ -44,6 +44,20 @@ $(document).ready(function() {
 //			$('#noper-more').append($('.add-more-noper').show());
 		$('#tim-more').append(add_more);
 	});
+
+	// Add new tr rekomendasi 
+	$("#add-rekomen").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_rekomen = $('.rekomen-tr').last().clone();
+		$('.rekomen-tr:last').after(add_more_rekomen);	
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	
+	// Save All KKLHP 
+	$('#kklhp').click(function() {
+		$("#kklhp-form").submit();
+	});
 	
 	// load user
 	$('.user-modal').on('click', function(e){

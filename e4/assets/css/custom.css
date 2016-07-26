@@ -430,6 +430,9 @@ tbody td {
 .table.table-striped.t-center.table-custom-head select {
   height: 30px;
 }
+.form-control {
+	
+}
 @media (max-width: 480px) {
   .modal-dialog {
     margin-top: 30%;

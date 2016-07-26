@@ -39,6 +39,13 @@ class MLhp extends CI_Model {
 		$query = $this->db->insert('lhp', array_filter($clean));
 		return $this->db->insert_id();
 	}
+	
+	function insertKKLHP($data) {
+		$remove = array('tim');
+		$clean = array_diff_key($data, array_flip($remove));
+		$query = $this->db->insert('kertas_kerja_temuan', array_filter($clean));
+		return $this->db->insert_id();
+	}
 
 	function getLHP($lhp_id) {
 		$query = $this->db->get_where("lhp", array('lhp_id' => $lhp_id));

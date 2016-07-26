@@ -26,7 +26,6 @@
 
 						<div class="table-action">
 							<a href="<?php echo site_url();?>tlhp/manus/add_user" class="btn btn-primary user-modal"><i class="fa fa-plus fa-lg"></i> Tambah User</a>
-							<a class="btn btn-success" href="#"><i class="fa fa-save"></i> Simpan</a> <a class="btn btn-danger" href="#"><i class="fa fa-ban"></i> Batal</a>
 						</div>
 
 						<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">
@@ -36,12 +35,17 @@
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
-										<h4 class="modal-title" id="userModalLabel">Edit User</h4>
+										<h4 class="modal-title" id="userModalLabel">User</h4>
 									</div>
 									<div class="modal-body modal-form"></div>
 									<div class="modal-footer">
+<<<<<<< HEAD
 										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 										<button type="button" class="btn btn-primary">Submit</button>
+=======
+										<button type="button" class="btn btn-default" data-dismiss="modal">BATAL</button>
+										<button type="button" class="btn btn-primary">SIMPAN</button>
+>>>>>>> origin/master
 									</div>
 								</div>
 							</div>
