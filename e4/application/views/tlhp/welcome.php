@@ -46,6 +46,7 @@
 			
 			<div class="col-md-8 col-md-offset-2 desc-content">
 				<p>KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
+				<p class="text-uppercase">Electronic follow up recommendation</p>
 			</div>
 			
 			<div class="container">
