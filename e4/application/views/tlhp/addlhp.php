@@ -1,4 +1,3 @@
-
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
@@ -122,19 +121,19 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">OBJEK PENGAWASAN</label>
 										<div class="col-sm-8">
-											<input type="text" name="objek_pengawasan" class="form-control border-input" />
+											<input type="text" name="objek_pengawasan" class="form-control border-input" required="true"/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">JUDUL LHP</label>
 										<div class="col-sm-8">
-											<input type="text" name="judul_lhp" class="form-control border-input" />
+											<input type="text" name="judul_lhp" class="form-control border-input" required="true"/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-4 control-label t-left">NOMOR LHP</label>
 										<div class="col-sm-8">
-											<input type="text" name="nomor_lhp" class="form-control border-input" />
+											<input type="text" name="nomor_lhp" class="form-control border-input" required="true"/>
 										</div>
 									</div>
 									<div class="form-group">

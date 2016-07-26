@@ -13,6 +13,8 @@ class Kklhpbaru extends MY_Controller {
 		parent::__construct();
 		$this->load->model('muser');
 		$this->muser = new MUser();
+		$this->load->model('mlhp');
+		$this->mlhp = new MLhp();
 	}
 
 	/**
@@ -21,17 +23,12 @@ class Kklhpbaru extends MY_Controller {
 	public function index() {
 		$this->add();
 	}
-	
-	public function add(){
+
+	public function add($lhp_id) {
+		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-		//$data['getAll'] = $this->muser->getAllUser();
+		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/kklhpbaru', $data);
-		
 	}
-	/**
-	 * List All Product
-	 *
-	 * @param string Category slug
-	 */
-	
+
 }

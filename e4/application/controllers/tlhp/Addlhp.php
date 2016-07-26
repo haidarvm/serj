@@ -37,8 +37,8 @@ class Addlhp extends MY_Controller {
 		$post = $this->input->post();
 		if ($post){
 			$post['user_id'] = 4;
-			$this->mlhp->insertLHP($post);
-			redirect('tlhp/kklhpbaru/1');
+			$lhp_id = $this->mlhp->insertLHP($post);
+			redirect('tlhp/kklhpbaru/add/'.$lhp_id);
 		}
 	}
 	

@@ -40,8 +40,13 @@ class MLhp extends CI_Model {
 		return $this->db->insert_id();
 	}
 
+	function getLHP($lhp_id) {
+		$query = $this->db->get_where("lhp", array('lhp_id' => $lhp_id));
+		return checkRow($query);
+	}
+
 	/**
-	 * Get All User
+	 * Get All LHP
 	 *
 	 * @return boolean
 	 */
@@ -76,5 +81,12 @@ class MLhp extends CI_Model {
 	function getAllJenisPengawasan() {
 		$query = $this->db->get("jenis_pengawasan");
 		return checkRes($query);
+	}
+
+	function dateSQLFormat($all_date) {
+	}
+
+	function checkSQLDate($date) {
+		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
 }
