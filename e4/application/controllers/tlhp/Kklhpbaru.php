@@ -19,11 +19,15 @@ class Kklhpbaru extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
+		$this->add();
+	}
+	
+	public function add(){
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/kklhpbaru', $data);
+		
 	}
-
 	/**
 	 * List All Product
 	 *

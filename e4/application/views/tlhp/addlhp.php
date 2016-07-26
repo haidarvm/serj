@@ -21,7 +21,7 @@
 									</div>
 
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-4 control-label t-left">TANGGAL SURAT TUGAS</label>
+										<label for="inputEmail3" class="col-sm-4 control-label t-left">TGL SURAT TUGAS</label>
 										<div class="col-sm-8 form_datetime">
 											<span class="icn"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" />
 										</div>
