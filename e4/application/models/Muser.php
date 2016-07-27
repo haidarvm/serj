@@ -76,9 +76,8 @@ class MUser extends CI_Model {
 	 * @param unknown $data        	
 	 */
 	function insertUser($data) {
-		// $data['level_id'] = '2';
-		unset($data ['user_id']);
-		// unset($data['q']);
+		unset($data['user_id']);
+		unset($data['description']);
 		$this->db->insert("user", $data);
 		return $this->db->insert_id();
 	}
@@ -92,6 +91,7 @@ class MUser extends CI_Model {
 	 */
 	function updateUser($id, $data) {
 		unset($data ['user_id']);
+		unset($data['description']);
 		$this->db->where('user_id', $id);
 		$this->db->update('user', $data);
 	}
@@ -155,7 +155,7 @@ class MUser extends CI_Model {
 	}
 
 	function delete($id) {
-		unset($data ['id']);
+// 		unset($data ['id']);
 		$this->db->delete('user', array('user_id' => $id));
 	}
 }

@@ -66,7 +66,7 @@ class Manus extends MY_Controller {
 			$nestedData[] = $row["jabatan"];
 			$nestedData[] = $row["username"];
 			$nestedData[] = $row["unit_kerja"];
-			$nestedData[] = $row["user_level"];
+			$nestedData[] = $row["user_level_id"];
 			$data[] = $nestedData;
 		}
 		$json_data = array("draw" => intval($requestData['draw']), "recordsTotal" => intval($totalData), "recordsFiltered" => intval($totalFiltered), "data" => $data);
@@ -75,13 +75,35 @@ class Manus extends MY_Controller {
 
 	function update_user($id = NULL) {
 		$data['title'] = "username";
-		$data['user'] = '';
+		$data['user'] = $this->muser->getUser($id);
 		$this->load->view('tlhp/user', $data);
 	}
 
 	function add_user() {
 		$data['title'] = "username";
 		$this->load->view('tlhp/user', $data);
+	}
+	
+	
+	function user_prosess() {
+		$post = $this->input->post();
+		if ($post){
+			if ($post['user_id'] != '') {
+				$id = $post['user_id'];
+				$this->muser->updateUser($id, $post);
+				redirect('tlhp/manus');
+			} else {
+				$user_id = $this->muser->insertUser($post);
+				redirect('tlhp/manus');
+			}
+		}
+	}
+	
+	function delete($id = NULL) {
+		if ($id != NULL){
+			$this->muser->delete($id);
+			redirect('tlhp/manus');
+		}
 	}
 
 /**

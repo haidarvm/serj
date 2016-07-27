@@ -38,15 +38,6 @@
 										<h4 class="modal-title" id="userModalLabel">User</h4>
 									</div>
 									<div class="modal-body modal-form"></div>
-									<div class="modal-footer">
-<<<<<<< HEAD
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Submit</button>
-=======
-										<button type="button" class="btn btn-default" data-dismiss="modal">BATAL</button>
-										<button type="button" class="btn btn-primary">SIMPAN</button>
->>>>>>> origin/master
-									</div>
 								</div>
 							</div>
 						</div>
