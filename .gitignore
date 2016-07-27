@@ -4,6 +4,7 @@
 
 e4/.htaccess
 e4/application/config/database.php
+e4/pmin/*
 pmin/*
 awstats-icon
 awstatsicons
