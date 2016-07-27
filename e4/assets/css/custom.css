@@ -431,7 +431,7 @@ tbody td {
   height: 30px;
 }
 .form-control {
-	
+  height: 30px;	
 }
 @media (max-width: 480px) {
   .modal-dialog {

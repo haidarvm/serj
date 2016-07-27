@@ -4,7 +4,7 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-						<form class="form-horizontal" method="post" action="<?=base_url()?>tlhp/addlhp/insert">
+						<form class="form-horizontal" method="post" action="<?=site_url()?>tlhp/addlhp/insert">
 
 							<!-- <div class="header">
 								<h4 class="title must-center">Buat LHP Baru</h4>

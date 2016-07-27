@@ -33,7 +33,7 @@
 									<td>
 										<a class="btn btn-info circle-perfect" href="#"> 
 											<i aria-hidden="true" class="fa fa-cogs"></i>
-											<span class="sr-only">Delete</span>
+											<span class="sr-only">Edit</span>
 										</a>
 									</td>
 									<td>

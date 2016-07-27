@@ -12,8 +12,8 @@ class Kklhpbaru extends MY_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('muser');
-		$this->muser = new MUser();
 		$this->load->model('mlhp');
+		$this->muser = new MUser();
 		$this->mlhp = new MLhp();
 	}
 
@@ -28,7 +28,7 @@ class Kklhpbaru extends MY_Controller {
 		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
 		// $data['getAll'] = $this->muser->getAllUser();
-		$this->load->tlhp_template('tlhp/kklhpbaru', $data);
+		$this->load->tlhp_template('tlhp/kklhp', $data);
 	}
 
 	public function insert() {

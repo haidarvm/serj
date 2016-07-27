@@ -87,6 +87,54 @@ $(document).ready(function() {
 		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
 	});
 	
+	/**
+	 * ############ TEMUAN B
+	 * 
+	 */
+	// Add new tr rekomendasi 
+	$("#add-temuan-b").click(function(event){
+		event.preventDefault();
+		console.log('add new temuan');
+		var add_more_temuan = $('.temuan-b-tr').last().clone();
+		$('.temuan-b-tr:last').after(add_more_temuan);	
+		$('.no-temuan-b:last').text(+($('.no-temuan-b:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	
+	// Add new tr rekomendasi 1
+	$(".add-rekomen-b-1").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_rekomen = $('.rekomen-b-tr-1').last().clone();
+		$('.rekomen-b-tr-1:last').after(add_more_rekomen);	
+		$('.no-rekomen-b-1:last').text(+($('.no-rekomen-b-1:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	
+	// Add new tr rekomendasi 2
+	$(".add-rekomen-b-2").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_rekomen = $('.rekomen-b-tr-2').last().clone();
+		$('.rekomen-b-tr-2:last').after(add_more_rekomen);	
+		$('.no-rekomen-b-2:last').text(+($('.no-rekomen-b-2:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+
+	// Add new tr rekomendasi 2
+	$(".add-rekomen-b-3").click(function(event){
+		event.preventDefault();
+		console.log('add new rekomen');
+		var add_more_rekomen = $('.rekomen-tr-3').last().clone();
+		$('.rekomen-b-tr-3:last').after(add_more_rekomen);	
+		$('.no-rekomen-b-3:last').text(+($('.no-rekomen-b-3:last').text()) + 1);
+		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+	});
+	/**
+	 * ############ END TEMUAN B
+	 * 
+	 */
+	
 	// Add new tr tindak lanjut 
 	$("#add-tl").click(function(event){
 		event.preventDefault();

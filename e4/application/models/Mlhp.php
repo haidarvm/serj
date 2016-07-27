@@ -38,6 +38,7 @@ class MLhp extends CI_Model {
 		$query = $this->db->insert('kertas_kerja_temuan', array_filter($clean));
 		return $this->db->insert_id();
 	}
+	
 
 	function getLHP($lhp_id) {
 		$query = $this->db->get_where("lhp", array('lhp_id' => $lhp_id));
@@ -53,6 +54,12 @@ class MLhp extends CI_Model {
 		$query = $this->db->get("lhp");
 		return checkRes($query);
 	}
+	
+// 	function getAllLHP($atlet_id) {
+// 		$query = $this->db->get_where('lhp', array( 'tanggal_lhp' => $atlet_id ));
+// 		// echo $this->db->last_query(); exit;
+// 		return checkRes($query);
+// 	}
 
 	/**
 	 * For Datatable Only
