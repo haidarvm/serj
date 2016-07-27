@@ -106,9 +106,9 @@ button.btn {
 .top-head {
   background: transparent;
 }
-.navbar-header h3 {
+.navbar-header h4 {
   margin-left: -20px;
-  margin-top: 22px;
+  margin-top: 25px;
 }
 .modal-backdrop {
   display: none;
