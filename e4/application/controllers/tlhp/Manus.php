@@ -66,21 +66,25 @@ class Manus extends MY_Controller {
 			$nestedData[] = $row["jabatan"];
 			$nestedData[] = $row["username"];
 			$nestedData[] = $row["unit_kerja"];
-			$nestedData[] = $row["user_level_id"];
+			$nestedData[] = $row["user_level"];
 			$data[] = $nestedData;
 		}
 		$json_data = array("draw" => intval($requestData['draw']), "recordsTotal" => intval($totalData), "recordsFiltered" => intval($totalFiltered), "data" => $data);
 		echo json_encode($json_data);
 	}
 
-	function update_user($id = NULL) {
+	function update($id = NULL) {
 		$data['title'] = "username";
 		$data['user'] = $this->muser->getUser($id);
+		$data['getAllLevel'] = $this->muser->getAllLevel();
+		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
 		$this->load->view('tlhp/user', $data);
 	}
 
-	function add_user() {
+	function add() {
 		$data['title'] = "username";
+		$data['getAllLevel'] = $this->muser->getAllLevel();
+		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
 		$this->load->view('tlhp/user', $data);
 	}
 	

@@ -15,7 +15,7 @@ $(document).ready(function() {
             },
 
 			"fnRowCallback": function( nRow, aData, iDisplayIndex ) {
-			    $('td:eq(1)', nRow).html('<a href="'+ site_url + 'tlhp/manus/detail/' + aData[0] + '">' + aData[1] + '</a>');
+			    $('td:eq(1)', nRow).html('<a onclick="userEdit(' + aData[0] + ')" href="javascript:;">' + aData[1] + '</a>');
 			    return nRow;
 			  },
 
@@ -111,6 +111,15 @@ $(document).ready(function() {
 	
 });
 
+//add tim
+$('#add-tim').click(function(event){
+	event.preventDefault();
+	console.log('tambah tim');
+	var add_more = $('.add-more-tim').last().clone(true).show();
+//		$('#noper-more').append($('.add-more-noper').show());
+	$('#tim-more').append(add_more);
+});
+
 /**
  * User Edit and Render to Modal
  * 
@@ -118,6 +127,10 @@ $(document).ready(function() {
  * @returns
  */
 function userEdit(id) {
-	body = site_url + 'tlhp/manus/update_user/'+ id;
+	body = site_url + 'tlhp/manus/update/'+ id;
 	$('#userModal').modal('show').find('.modal-body').load(body);
+}
+
+function refreshManusTable() {
+	$('#manus-grid').DataTable().ajax.reload();
 }

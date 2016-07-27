@@ -48,6 +48,16 @@ class MUser extends CI_Model {
 		return checkRow($query);
 	}
 
+	function getAllLevel() {
+		$query = $this->db->get("user_level");
+		return checkRes($query);
+	}
+	
+	function getAllUnitKerja() {
+		$query = $this->db->get("unit_kerja");
+		return checkRes($query);
+	}
+
 	function getUsername($username) {
 		$query = $this->db->get_where("user", array('username' => $username));
 		return checkRow($query);
@@ -90,7 +100,7 @@ class MUser extends CI_Model {
 	 * @return unknown
 	 */
 	function updateUser($id, $data) {
-		unset($data ['user_id']);
+		unset($data['user_id']);
 		unset($data['description']);
 		$this->db->where('user_id', $id);
 		$this->db->update('user', $data);
@@ -128,15 +138,15 @@ class MUser extends CI_Model {
 	}
 
 	function user_login($user_id) {
-		$data ['user_id'] = $user_id;
-		$data ['login'] = date('Y-m-d H:i:s');
+		$data['user_id'] = $user_id;
+		$data['login'] = date('Y-m-d H:i:s');
 		$this->db->insert('user_log', $data);
 		return $this->db->insert_id();
 	}
 
 	function user_logout($user_id) {
 		$last = $this->check_last_login($user_id);
-		$data ['logout'] = date('Y-m-d H:i:s');
+		$data['logout'] = date('Y-m-d H:i:s');
 		$this->db->update('user_log', $data, array('user_id' => $user_id, 'login' => $last->login));
 	}
 
@@ -155,7 +165,7 @@ class MUser extends CI_Model {
 	}
 
 	function delete($id) {
-// 		unset($data ['id']);
+		// unset($data ['id']);
 		$this->db->delete('user', array('user_id' => $id));
 	}
 }

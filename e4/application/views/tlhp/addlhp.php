@@ -4,7 +4,7 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-						<form class="form-horizontal" method="post" action="<?php echo base_url()?>tlhp/addlhp/insert">
+						<form class="form-horizontal" method="post" action="<?=base_url()?>tlhp/addlhp/insert">
 
 							<!-- <div class="header">
 								<h4 class="title must-center">Buat LHP Baru</h4>
@@ -77,7 +77,7 @@
 											<select class="form-control">
 												<?php if ($getAllJenisTim) {?>
 												<?php  foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<option><?=$tim->jenis_tim;?></option>
 												<?php } ?> 
 												<?php }?>
 											</select>
@@ -92,7 +92,7 @@
 											<select class="form-control">
 												<?php if ($getAllJenisTim) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<option><?=$tim->jenis_tim;?></option>
 												<?php } ?>
 												<?php } ?>
 											</select>
@@ -108,7 +108,7 @@
 											<select class="form-control">
 												<?php if ($getAllJenisTim) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<option><?=$tim->jenis_tim;?></option>
 												<?php } ?>
 												<?php } ?>
 											</select>
@@ -135,7 +135,7 @@
 											<select name="jenis_pengawasan_id" class="form-control">
 												<?php if ($getAllJenisPengawasan) {?>
 												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
-												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?php echo $pengawas->jenis_pengawasan;?></option>
+												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?=$pengawas->jenis_pengawasan;?></option>
 												<?php } ?>
 												<?php } ?>
 											</select>
@@ -239,7 +239,7 @@
 											<select class="form-control">
 												<?php if ($getAllJenisTim ) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<option><?=$tim->jenis_tim;?></option>
 												<?php } ?>
 												<?php } ?>
 											</select>
@@ -253,7 +253,7 @@
 											<select class="form-control">
 												<?php if ($getAllJenisTim ) {?>
 												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?php echo $tim->jenis_tim;?></option>
+												<option><?=$tim->jenis_tim;?></option>
 												<?php } ?>
 												<?php } ?>
 											</select>
