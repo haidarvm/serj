@@ -434,6 +434,7 @@ tbody td {
   height: 30px;
 }
 .form-control {
+  padding: 3px 3px;
   height: 30px;	
 }
 @media (max-width: 480px) {

@@ -34,7 +34,6 @@ $(document).ready(function() {
 		event.preventDefault();
 		console.log('tambah tim');
 		var add_more = $('.add-more-tim').last().clone(true).show();
-//			$('#noper-more').append($('.add-more-noper').show());
 		$('#tim-more').append(add_more);
 	});
 	
@@ -48,6 +47,12 @@ $(document).ready(function() {
 	});
 
 	// Add new tr rekomendasi 
+
+	/**
+	 * ############ TEMUAN A
+	 * 
+	 */
+	
 	$("#add-temuan").click(function(event){
 		event.preventDefault();
 		console.log('add new temuan');

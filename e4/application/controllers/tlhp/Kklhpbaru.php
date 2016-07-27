@@ -34,7 +34,7 @@ class Kklhpbaru extends MY_Controller {
 	public function insert() {
 		$post = $this->input->post();
 		if ($post) {
-			debug($post);exit;
+// 			debug($post);exit;
 			$insert_id_kklhp = $this->mlhp->insertKKLHP($post);
 		}
 	}

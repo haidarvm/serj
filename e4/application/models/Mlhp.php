@@ -27,7 +27,7 @@ class MLhp extends CI_Model {
 		$clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 		$clean['hari_awal_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_awal_perpanjangan_penugasan']) : null;
 		$clean['hari_akhir_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_akhir_perpanjangan_penugasan']) : null;
-		// debug($clean);exit;
+// 		debug(array_filter($clean));exit;
 		$query = $this->db->insert('lhp', array_filter($clean));
 		return $this->db->insert_id();
 	}
@@ -35,6 +35,8 @@ class MLhp extends CI_Model {
 	function insertKKLHP($data) {
 		$remove = array('tim');
 		$clean = array_diff_key($data, array_flip($remove));
+// 		debug($data);exit;
+		debug($this->cleanArray($clean));exit;
 		$query = $this->db->insert('kertas_kerja_temuan', array_filter($clean));
 		return $this->db->insert_id();
 	}
@@ -53,6 +55,10 @@ class MLhp extends CI_Model {
 	function getAllLHP() {
 		$query = $this->db->get("lhp");
 		return checkRes($query);
+	}
+	
+	function cleanArray($array){
+		return  array_filter(array_map('array_filter', $array));
 	}
 	
 // 	function getAllLHP($atlet_id) {

@@ -21,12 +21,15 @@ class Addlhp extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
+		$this->add();
+	}
+
+	public function add(){
 		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
 		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
 		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();
-		$this->load->tlhp_template('tlhp/addlhp', $data);
+		$this->load->tlhp_template('tlhp/lhp', $data);
 	}
-
 	/**
 	 * List All Product
 	 * -
