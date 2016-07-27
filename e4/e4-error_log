@@ -1,0 +1,5 @@
+[Thu Jul 28 02:14:42.075278 2016] [authz_core:error] [pid 17702] [client 114.4.79.205:17190] AH01630: client denied by server configuration: /home/public_html/e4/
+[Thu Jul 28 02:16:23.376437 2016] [authz_core:error] [pid 17703] [client 114.4.79.205:23034] AH01630: client denied by server configuration: /home/public_html/e4/
+[Thu Jul 28 02:16:54.234302 2016] [authz_core:error] [pid 17704] [client 114.4.79.205:29018] AH01630: client denied by server configuration: /home/public_html/e4/
+[Thu Jul 28 02:16:58.544174 2016] [authz_core:error] [pid 17704] [client 114.4.79.205:29018] AH01630: client denied by server configuration: /home/public_html/e4/info.php
+[Thu Jul 28 02:18:36.692417 2016] [authz_core:error] [pid 17705] [client 114.4.79.205:5502] AH01630: client denied by server configuration: /home/public_html/e4/info.php
