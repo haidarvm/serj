@@ -29,6 +29,7 @@ button.btn {
 }
 .custom-form .form-horizontal .control-label {
   line-height: 20px;
+  padding-top: 4px !important;
 }
 .modal-title {		
     margin: 0;		
