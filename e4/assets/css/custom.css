@@ -28,8 +28,7 @@ button.btn {
   letter-spacing: 0.5px;
 }
 .custom-form .form-horizontal .control-label {
-  line-height: 17px;
-  padding-top: 4px !important;
+  line-height: 20px;
 }
 .modal-title {		
     margin: 0;		
@@ -49,7 +48,10 @@ button.btn {
     margin-bottom: 0;		
 }
 .custom-form .form-group {
-  margin-bottom: 15px !important;
+  margin-bottom: 7px !important;
+}
+.input-group {
+    margin-bottom: 0px;
 }
 .nopadding-right {
   padding-right: 0 !important;
