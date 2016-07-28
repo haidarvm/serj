@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url();?>assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title><?php echo (isset($title)) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></title>
+<title><?php echo (isset($title)) ? get_current_app()." ". $title : ' '; ?> | Kementrian Pendayagunaan Aparatur Negara.</title>
 
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
@@ -99,7 +99,7 @@ var site_url = '<?php echo base_url()?>';
 					<div class="collapse navbar-collapse .col-md-3">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url();?>assets/img/faces/face-2.jpg" alt="..." class="img-circle profile-pic">
-									<p>Welcome, Super admin</p> <b class="caret"></b>
+									<p>Welcome <?=get_current_app()?>, Super admin</p> <b class="caret"></b>
 							</a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Edit profile</a></li>
