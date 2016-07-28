@@ -153,8 +153,8 @@ header {
 .footer-logo {
     display: block;
     float: none;
-    margin: 15px 0 0;
-    text-align: left;
+    margin: 0;
+    text-align: right;
 }
 
 .footer-logo img{
@@ -167,10 +167,9 @@ header {
     padding: 10px;
 }
 .copy-right {
-    display: inline-block;
     font-size: 12px;
-    padding: 10px;
-    text-align: left;
+    padding: 0 0 10px;
+    text-align: right;
 	margin: 0;
 }
 .footer .copyright {
