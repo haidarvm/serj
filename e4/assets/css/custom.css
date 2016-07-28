@@ -496,6 +496,9 @@ button.btn {
 	width: 89%;
 }
 
+.card {
+	z-index: 0;
+}
 .card label {
 	font-size: 13px !important;
 	line-height: 35px;
