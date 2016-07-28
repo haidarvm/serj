@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" sizes="96x96" href="<?=base_url();?>assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title><?=(!empty($title)) ? get_current_app()." ". $title : ' '; ?> | Kementrian Pendayagunaan Aparatur Negara.</title>
+<title><?php echo !empty($title) ? get_current_app()." ". $title : ' '; ?> | Kementrian Pendayagunaan Aparatur Negara.</title>
 
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
@@ -93,7 +93,7 @@ var site_url = '<?=base_url()?>';
 						<button type="button" class="navbar-toggle">
 							<span class="sr-only">Toggle navigation</span> <span class="icon-bar bar1"></span> <span class="icon-bar bar2"></span> <span class="icon-bar bar3"></span>
 						</button>
-						<h4><?php echo (!empty($title)) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></h4>
+						<h4><?php echo !empty($title) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></h4>
 					</div>
 
 					<div class="collapse navbar-collapse .col-md-3">
