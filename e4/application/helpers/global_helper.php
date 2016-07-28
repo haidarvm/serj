@@ -1,5 +1,18 @@
 <?php
 
+function previous_url() {
+	echo $_SESSION['last_url'];
+	if ($_SESSION['last_url']) {
+		return header('Location: ' . $_SESSION['last_url']);
+	} elseif ($_SESSION['last_url'] == 'logout') {
+		$_SESSION['last_url'] = "";
+	} elseif ($_SESSION['last_url'] == 'logout') {
+		$_SESSION['last_url'] = "";
+	} else {
+		return redirect('home');
+	}
+}
+
 function checkRes($query) {
 	if ($query->num_rows() > 0) {
 		return $query->result();
@@ -58,9 +71,9 @@ function getAge($dob) {
 }
 
 function checkAdminUser() {
-	// echo $_SESSION['level_id'];
-	if (isset($_SESSION['level_id'])) {
-		if ($_SESSION['level_id'] == 1) {
+	// echo $_SESSION['user_level_id'];
+	if (isset($_SESSION['user_level_id'])) {
+		if ($_SESSION['user_level_id'] == 1) {
 			return true;
 		} else {
 			redirect('atlet/list');
@@ -113,7 +126,7 @@ function define_sess($username, $user_id, $full_name, $email, $level_id) {
 	// $_SESSION['jk_full_name'] = $full_name;
 	// $_SESSION['jk_level'] = $level;
 	$ci = & get_instance();
-	$newdata = array( 'username' => $username, 'user_id' => $user_id, 'full_name' => $full_name, 'email' => $email, 'level_id' => $level_id, 'last_url' => $_SERVER['HTTP_REFERER'], 'logged_in' => TRUE );
+	$newdata = array( 'username' => $username, 'user_id' => $user_id, 'full_name' => $full_name, 'email' => $email, 'user_level_id' => $level_id, 'last_url' => $_SERVER['HTTP_REFERER'], 'logged_in' => TRUE );
 	$ci->session->set_userdata($newdata);
 	// echo USERNAME;exit;
 	// print_r($_SESSION);exit;

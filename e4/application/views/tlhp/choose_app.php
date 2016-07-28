@@ -25,10 +25,9 @@
 
 	<!-- #######################################
 			StyleSheet And LESS Compailer and font
-		########################################-->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		########################################
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
 	<link href="<?php echo base_url();?>assets/css/custom.css" rel="stylesheet" />
-	<script type="text/javascript" src="js/less.min.js"></script>
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,28 +53,28 @@
 					<div class="inside">
 						<img src="<?php echo base_url();?>assets/img/img-1.png" alt="" width="128" height="168" border="0" />
 						<h3>INSPEKTORAT KEMENTERIAN PANRB</h3>
-						<a href="<?php echo site_url();?>tlhp/login.php">LOGIN</a>
+						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
 					</div>
 				</div>
 				<div class="col-md-3 picks">
 					<div class="inside">
 						<img src="<?php echo base_url();?>assets/img/img-2.png" alt="" width="162" height="168" border="0" />
 						<h3>BADAN PEMERIKSA KEUANGAN</h3>
-						<a href="<?php echo site_url();?>tlhp/login.php">LOGIN</a>
+						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
 					</div>
 				</div>
 				<div class="col-md-3 picks">
 					<div class="inside">
 						<img src="<?php echo base_url();?>assets/img/img-3.png" alt="" width="192" height="168" border="0" />
 						<h3>BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN</h3>
-						<a href="<?php echo site_url();?>tlhp/login.php">LOGIN</a>
+						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
 					</div>
 				</div>
 				<div class="col-md-3 picks">
 					<div class="inside">
 						<img src="<?php echo base_url();?>assets/img/img-4.png" alt="" width="206" height="168" border="0" />
 						<h3>OMBUDSMAN RI</h3>
-						<a href="<?php echo site_url();?>tlhp/login.php">LOGIN</a>
+						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
 					</div>
 				</div>
 				

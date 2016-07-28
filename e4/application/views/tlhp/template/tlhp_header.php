@@ -104,7 +104,7 @@ var site_url = '<?php echo base_url()?>';
 								<ul class="dropdown-menu">
 									<li><a href="#">Edit profile</a></li>
 									<li><a href="#">Setting</a></li>
-									<li><a href="#">Log out</a></li>
+									<li><a href="<?=site_url()?>auth/logout">Log out</a></li>
 								</ul></li>
 						</ul>
 

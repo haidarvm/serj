@@ -7,21 +7,23 @@ if (! defined('BASEPATH'))
  * @author Haidar Mar'ie
  *         email : haidarvm@gmail.com
  */
-class Welcome extends MY_Controller {
+class Home extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
 		$this->load->model('muser');
 		$this->muser = new MUser();
 	}
-	
+
 	/**
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "Welcome TLHP";
-		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->view('tlhp/welcome', $data);
+		$data['title'] = "Login ALL TLHP App";
+		// echo 'masuk';
+		$_SESSION['logged'] = "tlhp";
+		// echo $_SESSION['logged'];
+		// $data['getAll'] = $this->muser->getAllUser();
+		$this->load->view('tlhp/choose_app', $data);
 	}
-	
 }

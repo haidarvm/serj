@@ -3,7 +3,7 @@
 class MY_Loader extends CI_Loader {
 
 	public function tlhp_template($template_name, $vars = array(), $return = FALSE) {
-		//checkAdminUser();
+		checkAdminUser();
 		if ($return) :
 			$content = $this->view('tlhp/template/tlhp_header', $vars, $return);
 			// $content .= $this->view('user/user_template/sidebar', $vars, $return);

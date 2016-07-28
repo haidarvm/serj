@@ -108,9 +108,9 @@ class MUser extends CI_Model {
 	
 	// Will create for session
 	function login($username, $password) {
-		$this->db->select('username, user_id, full_name, level_id, email', 'image');
+		$this->db->select('username, user_id, full_name, user_level_id, email', 'image');
 		$query = $this->db->get_where('user', array('username' => $username, 'password' => md5($password)));
-		// echo $this->db->last_query();
+// 		echo $this->db->last_query();exit;
 		if ($query->num_rows() == 1) {
 			$row = $query->row();
 			$user_id = $row->user_id;
@@ -140,20 +140,20 @@ class MUser extends CI_Model {
 	function user_login($user_id) {
 		$data['user_id'] = $user_id;
 		$data['login'] = date('Y-m-d H:i:s');
-		$this->db->insert('user_log', $data);
+		$this->db->insert('user_history', $data);
 		return $this->db->insert_id();
 	}
 
 	function user_logout($user_id) {
 		$last = $this->check_last_login($user_id);
 		$data['logout'] = date('Y-m-d H:i:s');
-		$this->db->update('user_log', $data, array('user_id' => $user_id, 'login' => $last->login));
+		$this->db->update('user_history', $data, array('user_id' => $user_id, 'login' => $last->login));
 	}
 
 	function check_last_login($user_id) {
 		$this->db->order_by("log_id", "desc");
 		$this->db->limit(1);
-		$query = $this->db->get_where('user_log', array('user_id' => $user_id, 'logout' => NULL, 'DATE(login)' => date('Y-m-d')));
+		$query = $this->db->get_where('user_history', array('user_id' => $user_id, 'logout' => NULL, 'DATE(login)' => date('Y-m-d')));
 		$this->db->last_query();
 		return $query->row();
 	}

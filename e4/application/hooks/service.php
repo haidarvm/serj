@@ -12,7 +12,7 @@ class Service {
 	 */
 	public function service() {
 		$CI = & get_instance ();
-		echo "Tests hook";
+		//echo "Tests hook";
 	}
 	
 }
