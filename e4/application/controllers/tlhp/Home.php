@@ -21,7 +21,10 @@ class Home extends MY_Controller {
 	public function index() {
 		$data['title'] = "Login ALL TLHP App";
 		// echo 'masuk';
-		$_SESSION['logged'] = "tlhp";
+		if (isset($_SESSION['user_id'])) {
+			$_SESSION['logged'] = "tlhp";
+			redirect('tlhp/menusa');
+		}
 		// echo $_SESSION['logged'];
 		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->view('tlhp/choose_app', $data);

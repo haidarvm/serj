@@ -43,6 +43,9 @@ class Auth extends MY_Controller {
 		// $this->load->user_template('admin/login', $data);
 	}
 
+	/**
+	 * Still redirect to tlhp
+	 */
 	public function do_login() {
 		$post = $this->input->post();
 		if ($post) {
@@ -51,9 +54,10 @@ class Auth extends MY_Controller {
 				if ($login !== FALSE) {
 					// echo 'masuk benar';
 					define_sess($login->username, $login->user_id, $login->full_name, $login->email, $login->user_level_id);
-					// redirect('home');
+					
+					redirect('tlhp');
 					// echo 'tst';exit;
-					previous_url();
+					// previous_url();
 				} else {
 					// echo 'Username And Password are invalid';
 					// die();
@@ -64,6 +68,9 @@ class Auth extends MY_Controller {
 			} catch ( Exception $e ) {
 				echo $e->getMessage();
 			}
+		} else {
+			redirect('home');
+			// previous_url();
 		}
 	}
 

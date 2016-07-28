@@ -1,7 +1,9 @@
 <?php
 
-function previous_url() {
-	echo $_SESSION['last_url'];
+/* function previous_url() {
+// 	$ci = & get_instance();
+// 	echo $ci->session->last_url;s
+	echo  $_SESSION['last_url'];exit;
 	if ($_SESSION['last_url']) {
 		return header('Location: ' . $_SESSION['last_url']);
 	} elseif ($_SESSION['last_url'] == 'logout') {
@@ -11,7 +13,7 @@ function previous_url() {
 	} else {
 		return redirect('home');
 	}
-}
+} */
 
 function checkRes($query) {
 	if ($query->num_rows() > 0) {
@@ -84,7 +86,7 @@ function checkAdminUser() {
 }
 
 function sidebarCollapse($uri) {
-	$haystack = array( 'update', 'detail' );
+	$haystack = array('update', 'detail');
 	if (in_array($uri, $haystack)) {
 		return 'sidebar-collapse';
 	} else {
@@ -93,7 +95,7 @@ function sidebarCollapse($uri) {
 }
 
 function removeTopMenu($uri) {
-	$haystack = array( 'home' );
+	$haystack = array('home');
 	if (in_array($uri, $haystack)) {
 		return false;
 	} else {
@@ -102,7 +104,7 @@ function removeTopMenu($uri) {
 }
 
 function removeButtonMenu($uri) {
-	$haystack = array( 'compare', 'versus' );
+	$haystack = array('compare', 'versus');
 	if (in_array($uri, $haystack)) {
 		return false;
 	} else {
@@ -126,7 +128,7 @@ function define_sess($username, $user_id, $full_name, $email, $level_id) {
 	// $_SESSION['jk_full_name'] = $full_name;
 	// $_SESSION['jk_level'] = $level;
 	$ci = & get_instance();
-	$newdata = array( 'username' => $username, 'user_id' => $user_id, 'full_name' => $full_name, 'email' => $email, 'user_level_id' => $level_id, 'last_url' => $_SERVER['HTTP_REFERER'], 'logged_in' => TRUE );
+	$newdata = array('username' => $username, 'user_id' => $user_id, 'full_name' => $full_name, 'email' => $email, 'user_level_id' => $level_id, 'last_url' => $_SERVER['HTTP_REFERER'], 'logged_in' => TRUE);
 	$ci->session->set_userdata($newdata);
 	// echo USERNAME;exit;
 	// print_r($_SESSION);exit;
@@ -308,11 +310,13 @@ function sqlDateFormat($date) {
 
 /**
  * Limit Character
- * @param unknown $text
+ * 
+ * @param unknown $text        	
  */
-function limitChar($text,$limit) {
+function limitChar($text, $limit) {
 	return substr($text, 0, $limit);
 }
+
 /**
  * Delete Unused Character
  *
@@ -320,7 +324,7 @@ function limitChar($text,$limit) {
  * @return mixed
  */
 function delUn($text) {
-	$remove = array( 'copy', 'close' );
+	$remove = array('copy', 'close');
 	$string = str_replace($remove, '', $text);
 	return $string;
 }
@@ -332,7 +336,7 @@ function delUn($text) {
  * @return mixed
  */
 function repChar($text) {
-	$remove = array( '&' );
+	$remove = array('&');
 	$string = str_replace($remove, '-', $text);
 	return $string;
 }
@@ -370,7 +374,7 @@ function min_percent($before, $min) {
  */
 function deleteFiles($path) {
 	$files = glob($path . '*'); // get all file names
-	foreach ($files as $file ) { // iterate files
+	foreach ( $files as $file ) { // iterate files
 		if (is_file($file))
 			unlink($file); // delete file
 				               // echo $file.'file deleted';
@@ -423,6 +427,6 @@ function getMessage($uri) {
 	return $data['message'];
 }
 
-function dateReg(){
+function dateReg() {
 	return date('D, d-M-Y H:i:s');
 }
