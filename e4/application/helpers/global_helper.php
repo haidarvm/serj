@@ -15,6 +15,9 @@ function get_current_app() {
 		case 'tlhp_orix_' :
 			$current_app = 'ORIX';
 			break;
+		default :
+			$current_app = 'dll';
+			break;
 	}
 	return $current_app;
 }
@@ -114,11 +117,10 @@ function sidebarCollapse($uri) {
 	}
 }
 
-function textSmall($text){
-// 	$small = preg_replace("/<p\s(.+?)>(.+?)<\/p>/is", "<small>$2</small>", $text);
-// 	return $small;
-
-	echo "<small>".strip_tags($text)."</small>";
+function textSmall($text) {
+	// $small = preg_replace("/<p\s(.+?)>(.+?)<\/p>/is", "<small>$2</small>", $text);
+	// return $small;
+	echo "<small>" . strip_tags($text) . "</small>";
 }
 
 function removeTopMenu($uri) {
