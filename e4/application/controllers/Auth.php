@@ -111,9 +111,13 @@ class Auth extends MY_Controller {
 	}
 
 	public function logout() {
-		$this->muser->user_logout($_SESSION['user_id']);
-		session_destroy();
-		redirect('home');
+		if (! empty($_SESSION['user_id'])) {
+			$this->muser->user_logout($_SESSION['user_id']);
+			session_destroy();
+			redirect('home');
+		} else {
+			redirect('home');
+		}
 	}
 
 	public function info() {
