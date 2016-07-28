@@ -81,7 +81,7 @@ class Auth extends MY_Controller {
 							break;
 						default :
 							// write_file ( APPPATH . 'data/prefix.data', "tlhp_" );
-							$this->setTempUserType('_prefixdata', 'tlhp_');
+							$this->setTempUserType('_prefixdata', 'tlhp_ikp_');
 							break;
 					}
 					
