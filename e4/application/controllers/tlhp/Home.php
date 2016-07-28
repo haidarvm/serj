@@ -29,4 +29,14 @@ class Home extends MY_Controller {
 		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->view('tlhp/choose_app', $data);
 	}
+
+	public function error() {
+		$data['title'] = "Error";
+		$this->load->tlhp_template('tlhp/404', $data);
+	}
+
+	public function underconstruction() {
+		$data['title'] = "underconstruction";
+		$this->load->tlhp_template('tlhp/underconstruction', $data);
+	}
 }
