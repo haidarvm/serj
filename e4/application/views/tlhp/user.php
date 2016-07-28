@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-5">
 			<div class="form-group">
-				<label>Username</label> <input name="username" type="text" class="form-control border-input" value="<?=isset($user) ? $user->username : '';?>">
+				<label>Username</label> <input name="username" type="text" class="form-control border-input" value="<?=isset($user) ? $user->username : '';?>"  required="true">
 			</div>
 		</div>
 		<div class="col-md-3">
@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label>Full name</label> <input name="full_name" type="text" class="form-control border-input" value="<?=isset($user) ? $user->full_name : '';?>">
+				<label>Full name</label> <input name="full_name" type="text" class="form-control border-input" value="<?=isset($user) ? $user->full_name : '';?>"  required="true">
 			</div>
 		</div>
 	</div>
@@ -28,19 +28,19 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>Password</label> <input name="password" type="password" class="form-control border-input" value="">
+				<label>Password</label> <input name="password" type="password" class="form-control border-input" value="" <?php echo $action == 'add' ? 'required="true"' : ''?>>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>Ulangi Password</label> <input name="re_password" type="password" class="form-control border-input" value="">
+				<label>Ulangi Password</label> <input name="re_password" type="password" class="form-control border-input" value="" <?php echo $action == 'add' ? 'required="true"' : ''?>>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>Unit Kerja</label> <select class="form-control" name="unit_kerja_id">
+				<label>Unit Kerja</label> <select class="form-control" name="unit_kerja_id" required="true">
 					<?php if ($getAllUnitKerja) {?>
 					<?php  foreach($getAllUnitKerja as $unit) {?>
 					<option value="<?=$unit->unit_kerja_id;?>" <?php if(!empty($user->unit_kerja_id)) echo $user->unit_kerja_id ==  $unit->unit_kerja_id ? 'selected' : '' ?>><?=$unit->unit_kerja;?></option>
@@ -51,7 +51,7 @@
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>User Level</label> <select class="form-control" name="user_level_id">
+				<label>User Level</label> <select class="form-control" name="user_level_id" required="true">
 					<option>-</option>
 					<?php if ($getAllLevel) {?>
 					<?php  foreach($getAllLevel as $level) {?>

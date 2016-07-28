@@ -75,6 +75,7 @@ class Manus extends MY_Controller {
 
 	function update($id = NULL) {
 		$data['title'] = "username";
+		$data['action'] = 'update';
 		$data['user'] = $this->muser->getUser($id);
 		$data['getAllLevel'] = $this->muser->getAllLevel();
 		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
@@ -83,6 +84,7 @@ class Manus extends MY_Controller {
 
 	function add() {
 		$data['title'] = "username";
+		$data['action'] = 'add';
 		$data['getAllLevel'] = $this->muser->getAllLevel();
 		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
 		$this->load->view('tlhp/user', $data);
@@ -91,7 +93,7 @@ class Manus extends MY_Controller {
 	function user_prosess() {
 		$post = $this->input->post();
 		if ($post) {
-			# Update
+			// Update
 			if (! empty($post['user_id'])) {
 				if ($post['password'] == $post['re_password']) {
 					if (! empty($post['password'])) {
@@ -104,8 +106,18 @@ class Manus extends MY_Controller {
 				} else {
 					redirect('tlhp/manus');
 				}
-			# Insert
+				// Insert
 			} else {
+				if ($post) {
+					if (! empty($post['password'])) {
+						$post['password'] = md5($post['password']);
+					} else {
+						unset($post['password']);
+					}
+					unset($post['re_password'], $post['form']);
+					$insertUserId = $this->muser->insertUser($post);
+					redirect(site_url() . 'admin/user');
+				}
 				$user_id = $this->muser->insertUser($post);
 				redirect('tlhp/manus');
 			}
