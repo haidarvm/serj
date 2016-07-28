@@ -67,19 +67,24 @@ class Auth extends MY_Controller {
 				if (in_array ( $accountType, $accountList )) {
 					switch ($accountType) {
 						case '_IKP_' :
-							write_file ( APPPATH . 'data/prefix.data', "tlhp_ikp_" );
+							//write_file ( APPPATH . 'data/prefix.data', "tlhp_ikp_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_ikp_');
 							break;
 						case '_BPK_' :
-							write_file ( APPPATH . 'data/prefix.data', "tlhp_bpk_" );
+							//write_file ( APPPATH . 'data/prefix.data', "tlhp_bpk_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_bpk_');
 							break;
 						case '_BPKP_' :
-							write_file ( APPPATH . 'data/prefix.data', "tlhp_bpkp_" );
+							//write_file ( APPPATH . 'data/prefix.data', "tlhp_bpkp_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_bpkp_');
 							break;
 						case '_ORIX_' :
-							write_file ( APPPATH . 'data/prefix.data', "tlhp_orix_" );
+							//write_file ( APPPATH . 'data/prefix.data', "tlhp_orix_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_orix_');
 							break;
 						default :
-							write_file ( APPPATH . 'data/prefix.data', "tlhp_" );
+							//write_file ( APPPATH . 'data/prefix.data', "tlhp_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_');
 							break;
 					}
 					
@@ -112,6 +117,7 @@ class Auth extends MY_Controller {
 	public function logout() {
 		$this->muser->user_logout ( $_SESSION ['user_id'] );
 		session_destroy ();
+		setcookie("_prefixdata", "", time() - 3600);
 		redirect ( 'home' );
 	}
 	public function info() {
@@ -121,5 +127,11 @@ class Auth extends MY_Controller {
 	}
 	public function count_char() {
 		echo strlen ( "JL. BUKIT DAGO SELATAN NO. 1 " );
+	}
+	
+	private  function setTempUserType($cookieName, $cookieValue) {
+		$cookie_name = $cookieName;
+		$cookie_value = $cookieValue;
+		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 	}
 }
