@@ -532,7 +532,7 @@ tbody td {
 .footer .footer-text {
 	display: block;
 	margin: 0;
-	padding-top: 0;
+	padding-top: 7px;
 	padding-right: 0;
 	padding-bottom: 0;
 }
