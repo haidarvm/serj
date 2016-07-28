@@ -50,32 +50,44 @@
 			
 			<div class="container">
 				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="<?php echo base_url();?>assets/img/img-1.png" alt="" width="128" height="168" border="0" />
-						<h3>INSPEKTORAT KEMENTERIAN PANRB</h3>
-						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
-					</div>
+					<form id="IKP" action="<?=site_url();?>auth/login" method="post">
+						<div class="inside">
+							<img src="<?php echo base_url();?>assets/img/img-1.png" alt="" width="128" height="168" border="0" />
+							<h3>INSPEKTORAT KEMENTERIAN PANRB</h3>
+							<a href="javascript:;" onclick="document.getElementById('IKP').submit();">LOGIN</a>
+							<input type="hidden" name="account_type" value="_IKP_" />
+						</div>
+					</form>
 				</div>
 				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="<?php echo base_url();?>assets/img/img-2.png" alt="" width="162" height="168" border="0" />
-						<h3>BADAN PEMERIKSA KEUANGAN</h3>
-						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
-					</div>
+					<form id="BPK" action="<?=site_url();?>auth/login" method="post">
+						<div class="inside">
+							<img src="<?php echo base_url();?>assets/img/img-2.png" alt="" width="162" height="168" border="0" />
+							<h3>BADAN PEMERIKSA KEUANGAN</h3>
+							<a href="javascript:;" onclick="document.getElementById('BPK').submit();">LOGIN</a>
+							<input type="hidden" name="account_type" value="_BPK_" />
+						</div>
+					</form>
 				</div>
 				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="<?php echo base_url();?>assets/img/img-3.png" alt="" width="192" height="168" border="0" />
-						<h3>BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN</h3>
-						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
-					</div>
+					<form id="BPKP"  action="<?=site_url();?>auth/login" method="post">
+						<div class="inside">
+							<img src="<?php echo base_url();?>assets/img/img-3.png" alt="" width="192" height="168" border="0" />
+							<h3>BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN</h3>
+							<a href="javascript:;" onclick="document.getElementById('BPKP').submit();">LOGIN</a>
+							<input type="hidden" name="account_type" value="_BPKP_" />
+						</div>
+					</form>
 				</div>
 				<div class="col-md-3 picks">
-					<div class="inside">
-						<img src="<?php echo base_url();?>assets/img/img-4.png" alt="" width="206" height="168" border="0" />
-						<h3>ORIX</h3>
-						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
-					</div>
+					<form id="ORIX"  action="<?=site_url();?>auth/login" method="post">
+						<div class="inside">
+							<img src="<?php echo base_url();?>assets/img/img-4.png" alt="" width="206" height="168" border="0" />
+							<h3>ORIX</h3>
+							<a href="javascript:;" onclick="document.getElementById('ORIX').submit();">LOGIN</a>
+							<input type="hidden" name="account_type" value="_ORIX_" />
+						</div>
+					</form>
 				</div>
 				
 			</div>
