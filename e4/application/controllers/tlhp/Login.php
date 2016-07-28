@@ -25,6 +25,7 @@ class Login extends MY_Controller {
 	}
 	
 	public function do_login() {
+		
 		redirect("tlhp/menusa");
 	}
 
