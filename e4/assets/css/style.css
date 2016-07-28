@@ -37,6 +37,9 @@ CONTENTS:
 .control-label {
     padding: 0 0 0px 0;
 }
+.logo-under {
+	text-align: right;
+}
 .logo-under img {
     width: 250px;
     margin: 0 auto;
@@ -52,7 +55,9 @@ CONTENTS:
 .error-text {
     font-weight: bold;
     color: #e53719;
-    font-size: 43px;
+    font-size: 33px;
+	position: relative;
+    left: -3px;
 }
 /*** HEADER ***/
 header {
