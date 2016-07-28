@@ -162,10 +162,10 @@ CREATE TABLE `tlhp_lhp` (
 -- Records of tlhp_lhp
 -- ----------------------------
 INSERT INTO `tlhp_lhp` VALUES ('4', 'sdf', null, null, null, null, null, '1', 'sdf', 'sdf', 'sdf', null, null, null, 'sdf', null, null, null, '4', '2016-07-26 10:41:37', '2016-07-26 10:45:53');
-INSERT INTO `tlhp_lhp` VALUES ('5', 'asfas', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '1', 'dfdasfsaf', 'asdf', 'asdfasdf', null, null, null, 'asf', '0000-00-00', '0000-00-00', '0000-00-00', '4', '2016-07-26 11:38:52', '2016-07-26 11:38:52');
+INSERT INTO `tlhp_lhp` VALUES ('5', 'asfas', null, null, null, null, null, '1', 'dfdasfsaf', 'asdf', 'asdfasdf', null, null, null, 'asf', null, null, null, '4', '2016-07-26 11:38:52', '2016-07-26 11:38:52');
 INSERT INTO `tlhp_lhp` VALUES ('6', 'asdf', '2016-07-05', '2016-07-05', '2016-07-26', '2016-07-14', '2016-07-26', '1', null, 'sdfsdf', 'sdf', '2016-07-06', null, null, null, null, null, null, '4', '2016-07-26 12:08:40', '2016-07-26 12:08:40');
 INSERT INTO `tlhp_lhp` VALUES ('7', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', null, null, null, null, '4', '2016-07-26 12:12:15', '2016-07-26 12:12:15');
-INSERT INTO `tlhp_lhp` VALUES ('8', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '0000-00-00', '0000-00-00', '0000-00-00', '4', '2016-07-26 12:12:46', '2016-07-26 12:12:46');
+INSERT INTO `tlhp_lhp` VALUES ('8', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', null, null, null, '4', '2016-07-26 12:12:46', '2016-07-26 12:12:46');
 INSERT INTO `tlhp_lhp` VALUES ('9', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '2016-07-05', '2016-07-05', '2016-07-12', '4', '2016-07-26 12:14:33', '2016-07-26 12:14:33');
 INSERT INTO `tlhp_lhp` VALUES ('10', 'TUGAS', '2016-07-07', '2016-07-12', '2016-07-12', '2016-07-12', '2016-07-25', '3', 'sdfPENGAWASAN', 'JUDUL', 'NOMOR', '2016-06-29', 'PPK', 'KEGIATAN', 'PERPANJANGAN', '1970-01-01', '1970-01-01', '1970-01-01', '4', '2016-07-26 12:14:53', '2016-07-26 12:14:53');
 

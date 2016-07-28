@@ -3,7 +3,8 @@
 #ignore this configuration if not working add this "git rm -r  --cached ." "git add ." "git commit -m 'fixed ignore'"
 
 e4/.htaccess
-e4/config/database.php
+e4/application/config/database.php
+e4/pmin/*
 pmin/*
 awstats-icon
 awstatsicons

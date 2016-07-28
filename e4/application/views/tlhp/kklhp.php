@@ -153,7 +153,7 @@
 											<td></td>
 											<td></td>
 											<td class="no-rekomen-1">2</td>
-											<td><select class="form-control">
+											<td><select class="form-control" name="kode_rekomendasi_id[1][]">
 													<option></option>
 													<option>444</option>
 													<option>2</option>
@@ -162,7 +162,7 @@
 													<option>5</option>
 											</select></td>
 											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[1][]" /></td>
-											<td><select class="form-control">
+											<td><select class="form-control" name="kerugian_negara[1][]">
 													<option></option>
 													<option>Ada</option>
 													<option>Tidak</option>
