@@ -36,7 +36,7 @@ class Home extends MY_Controller {
 	}
 
 	public function underconstruction() {
-		$data['title'] = "underconstruction";
+		$data['title'] = "Under Construction";
 		$this->load->tlhp_template('tlhp/underconstruction', $data);
 	}
 }
