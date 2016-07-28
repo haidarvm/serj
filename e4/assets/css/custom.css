@@ -1,3 +1,47 @@
+@font-face {
+  font-family: 'Muli-SemiBold';
+  src: url('../fonts/Muli-SemiBold.eot');
+  src: url('../fonts/Muli-SemiBold.woff2') format('woff2'),
+       url('../fonts/Muli-SemiBold.woff') format('woff'),
+       url('../fonts/Muli-SemiBold.ttf') format('truetype'),
+       url('../fonts/Muli-SemiBold.svg#Muli-SemiBold') format('svg'),
+       url('../fonts/Muli-SemiBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli-Bold';
+  src: url('../fonts/Muli-Bold.eot');
+  src: url('../fonts/Muli-Bold.woff2') format('woff2'),
+       url('../fonts/Muli-Bold.woff') format('woff'),
+       url('../fonts/Muli-Bold.ttf') format('truetype'),
+       url('../fonts/Muli-Bold.svg#Muli-Bold') format('svg'),
+       url('../fonts/Muli-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/Muli.eot');
+  src: url('../fonts/Muli.woff2') format('woff2'),
+       url('../fonts/Muli.woff') format('woff'),
+       url('../fonts/Muli.ttf') format('truetype'),
+       url('../fonts/Muli.svg#Muli') format('svg'),
+       url('../fonts/Muli.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+	font-family: 'Muli';
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Muli-Bold';
+}
+
+
 .table-custom td {
 	font-size: 11px;
 	padding: 5px !important;
