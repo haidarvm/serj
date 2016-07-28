@@ -533,12 +533,13 @@ tbody td {
 	display: block;
 	margin: 0;
 	padding-top: 0;
+	padding-right: 0;
 }
 
 .footer .right-img-footer {
 	width: 40px;
 	position: relative;
-	top: -10px;
+	top: -5px;
 }
 
 .paginate_button.next, .paginate_button.previous {
