@@ -8,11 +8,10 @@
 class Service {
 
 	/**
-	 * Service function 
+	 * Service function
 	 */
 	public function service() {
-		$CI = & get_instance ();
-		//echo "Tests hook";
+		// $CI = & get_instance ();
+		// echo "Tests hook";
 	}
-	
 }
