@@ -13,20 +13,19 @@ info.php
 pmin/*
 stats/*
 
-web/wp-config.php
-application/config/database.php
-application/cache/*
-!application/cache/index.html
-!application/cache/.htaccess
+mbs/web/wp-config.php
+e4/application/cache/*
+!e4/application/cache/index.html
+!e4/application/cache/.htaccess
 
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
+e4/application/logs/*
+!e4/application/logs/index.html
+!e4/application/logs/.htaccess
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+e4/user_guide_src/build/*
+e4/user_guide_src/cilexer/build/*
+e4/user_guide_src/cilexer/dist/*
+e4/user_guide_src/cilexer/pycilexer.egg-info/*
 
 # IDE Files
 #-------------------------

@@ -22,9 +22,13 @@ class Home extends MY_Controller {
 		echo 'test';
 		redirect('dashboard');
 	}
+	
+	public function error(){
+		$this->load->tlhp_template('tlhp/404', $data);
+	}
 
-	public function under_construction() {
-		$this->load->tlhp_template('tlhp/lhp', $data);
+	public function underconstruction() {
+		$this->load->tlhp_template('tlhp/underconstruction', $data);
 	}
 }
 ?>
