@@ -3,3 +3,5 @@
 [Thu Jul 28 02:16:54.234302 2016] [authz_core:error] [pid 17704] [client 114.4.79.205:29018] AH01630: client denied by server configuration: /home/public_html/e4/
 [Thu Jul 28 02:16:58.544174 2016] [authz_core:error] [pid 17704] [client 114.4.79.205:29018] AH01630: client denied by server configuration: /home/public_html/e4/info.php
 [Thu Jul 28 02:18:36.692417 2016] [authz_core:error] [pid 17705] [client 114.4.79.205:5502] AH01630: client denied by server configuration: /home/public_html/e4/info.php
+[Fri Jul 29 00:16:14.768424 2016] [core:error] [pid 11384] [client 127.0.0.1:45594] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Fri Jul 29 00:16:14.929411 2016] [core:error] [pid 11385] [client 127.0.0.1:45596] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace., referer: http://e4.dev/dashboard.php

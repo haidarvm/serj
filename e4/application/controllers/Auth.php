@@ -64,19 +64,24 @@ class Auth extends MY_Controller {
 				if (in_array($accountType, $accountList)) {
 					switch ($accountType) {
 						case '_IKP_' :
-							write_file(APPPATH . 'data/prefix.data', "tlhp_ikp_");
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_ikp_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_ikp_');
 							break;
 						case '_BPK_' :
-							write_file(APPPATH . 'data/prefix.data', "tlhp_bpk_");
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_bpk_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_bpk_');
 							break;
 						case '_BPKP_' :
-							write_file(APPPATH . 'data/prefix.data', "tlhp_bpkp_");
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_bpkp_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_bpkp_');
 							break;
 						case '_ORIX_' :
-							write_file(APPPATH . 'data/prefix.data', "tlhp_orix_");
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_orix_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_orix_');
 							break;
 						default :
-							write_file(APPPATH . 'data/prefix.data', "tlhp_");
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_" );
+							$this->setTempUserType('_prefixdata', 'tlhp_');
 							break;
 					}
 					
@@ -88,14 +93,12 @@ class Auth extends MY_Controller {
 						// echo 'tst';exit;
 						// previous_url();
 					} else {
-						// echo 'Username And Password are invalid';
-						// die();
 						// throw new Exception("Username Or Password is invalid");
 						$msg = "Username Or Password is invalid";
 						$this->login($msg);
 					}
 				} else {
-					$msg = "Ilegal Login!!";
+					$msg = "Username Or Password is invalid";
 					$this->login($msg);
 				}
 			} catch ( Exception $e ) {
@@ -121,5 +124,11 @@ class Auth extends MY_Controller {
 
 	public function count_char() {
 		echo strlen("JL. BUKIT DAGO SELATAN NO. 1 ");
+	}
+
+	private function setTempUserType($cookieName, $cookieValue) {
+		$cookie_name = $cookieName;
+		$cookie_value = $cookieValue;
+		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 	}
 }
