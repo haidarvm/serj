@@ -2,129 +2,111 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="blue">
+				<div class="card " data-background="color" data-color="green">
 					<div class="header text-center">
-						<!-- 						<h5 class="title">Dashboard</h5> -->
-						<button class="btn btn-lg btn-fill">
-							&nbsp; <span class="btn-label"> <i class="ti-video-camera"></i>
-							</span> CCTV &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">CCTV</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-video-camera fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="green">
+				<div class="card " data-background="color" data-color="blue">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-settings"></i>
-							</span> PERJANJIAN KINERJA &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">PERJANJIAN KINERJA</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-balance-scale fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="orange">
+				<div class="card " data-background="color" data-color="orange">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-briefcase"></i>
-							</span> DISPOSISI SURAT &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">DISPOSISI SURAT</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-envelope fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="brown">
+				<div class="card " data-background="color" data-color="brown">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-announcement"></i>
-							</span> PENUGASAN &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">PENUGASAN</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-bullhorn fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="blue">
+				<div class="card " data-background="color" data-color="green">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-bag"></i>
-							</span> POS &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">POS</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-shopping-cart fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="green">
+				<div class="card " data-background="color" data-color="blue">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-settings"></i>
-							</span> JADWAL PEGAWAI &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">JADWAL PEGAWAI</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-calendar fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="orange">
+				<div class="card " data-background="color" data-color="orange">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-agenda"></i>
-							</span> LAPORAN LAPORAN &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">LAPORAN LAPORAN</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-book fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="brown">
+				<div class="card " data-background="color" data-color="blue">
 					<div class="header text-center">
-						<a href="<?php echo site_url();?>tlhp" class="btn btn-lg btn-fill">&nbsp;<span class="btn-label"> <i class="ti-pencil-alt"></i>
-						</span> MONITORING TLHP &nbsp;
-						</a>
+						<h3 class="title">
+							<a href="<?php echo site_url();?>tlhp">MONITORING TLHP</a>
+						</h3>
+						<a class="btn btn-rotate" href="<?php echo site_url();?>tlhp"><i class="fa fa-tv fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-sm-6">
-				<div class="card card-circle-chart" data-background="color" data-color="blue">
+				<div class="card " data-background="color" data-color="brown">
 					<div class="header text-center">
-						<button class="btn btn-lg btn-fill">
-							&nbsp;<span class="btn-label"> <i class="ti-bookmark-alt"></i>
-							</span> LAPORAN GRATIFIKASI &nbsp;
-						</button>
+						<h3 class="title">
+							<a href="#">LAPORAN GRATIFIKASI</a>
+						</h3>
+						<a class="btn btn-rotate" href="#"><i class="fa fa-newspaper-o fa-5x"></i></a>
 					</div>
-					<div class="content">
-						<p class="description"></p>
-					</div>
+					<div class="content"></div>
 				</div>
 			</div>
 		</div>

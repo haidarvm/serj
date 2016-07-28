@@ -75,7 +75,7 @@ var site_url = '<?php echo base_url()?>';
 					<li <?php echo $this->uri->segment(2)  == 'loghistory' ? 'class="active"' : '' ?>><a href="<?php echo site_url();?>tlhp/loghistory.php"> <i class="ti-archive"></i>
 							<p title="Log History">Log History</p>
 					</a></li>
-					<li><a href="<?php echo site_url();?>tlhp/welcome.php"> <i class="ti-power-off"></i>
+					<li><a href="<?=site_url();?>auth/logout"> <i class="ti-power-off"></i>
 							<p title="Logout">Logout</p>
 					</a></li>
 				</ul>

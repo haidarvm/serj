@@ -60,13 +60,13 @@
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'pengumuman.php' ? 'class="active"' : '' ?>><a href="<?php echo site_url();?>dashboard/pengumuman.php"> <i class="ti-announcement"></i>
 							<p title="Managment User">Buat Pengumuman</p>
 					</a></li>
-					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>><a href="addlhp.php"> <i class="ti-pencil-alt"></i>
+					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>><a href="#"> <i class="ti-pencil-alt"></i>
 							<p title="Buat LHP Baru">Ganti Password</p>
 					</a></li>
-					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'loghistory.php' ? 'class="active"' : '' ?>><a href="loghistory.php"> <i class="ti-archive"></i>
+					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'loghistory.php' ? 'class="active"' : '' ?>><a href="#"> <i class="ti-archive"></i>
 							<p title="Log History">Log History</p>
 					</a></li>
-					<li><a href="index.php"> <i class="ti-power-off"></i>
+					<li><a href="<?=site_url()?>auth/logout"> <i class="ti-power-off"></i>
 							<p title="Logout">Logout</p>
 					</a></li>
 				</ul>
