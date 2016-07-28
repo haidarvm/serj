@@ -164,7 +164,7 @@ button.btn {
 }
 
 .navbar {
-	z-index :1;
+	z-index: 2;
 }
 
 .navbar-brand.navbar-minimize {
@@ -609,6 +609,15 @@ div#manus-grid_filter {
 }
 .min-top-margin {
 	margin: -12px !important;
+}
+.btn-margin {
+	margin: 10px 3px !important;
+}
+
+@media (min-width: 768px){
+	.modal-dialog {
+		margin: 100px auto 100px 37%;
+	}
 }
 
 

@@ -73,8 +73,8 @@
 	<div class="clearfix"></div>
 
 	<div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">BATAL</button>
-		<button type="submit" id="save-manus" class="btn btn-primary">SIMPAN</button>
+		<button type="button" class="btn btn-default btn-margin" data-dismiss="modal">BATAL</button>
+		<button type="submit" id="save-manus" class="btn btn-primary btn-margin">SIMPAN</button>
 		<input name="user_id" type="hidden" value="<?=isset($user) ? $user->user_id : '';?>">
 	</div>
 
