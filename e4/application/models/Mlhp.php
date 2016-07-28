@@ -36,7 +36,9 @@ class MLhp extends CI_Model {
 		$remove = array('tim');
 		$clean = array_diff_key($data, array_flip($remove));
 // 		debug($data);exit;
-		debug($this->cleanArray($clean));exit;
+		debug($this->cleanArray($clean));
+		
+		exit;
 		$query = $this->db->insert('kertas_kerja_temuan', array_filter($clean));
 		return $this->db->insert_id();
 	}
