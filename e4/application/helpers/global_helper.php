@@ -114,6 +114,13 @@ function sidebarCollapse($uri) {
 	}
 }
 
+function textSmall($text){
+// 	$small = preg_replace("/<p\s(.+?)>(.+?)<\/p>/is", "<small>$2</small>", $text);
+// 	return $small;
+
+	echo "<small>".strip_tags($text)."</small>";
+}
+
 function removeTopMenu($uri) {
 	$haystack = array('home');
 	if (in_array($uri, $haystack)) {
