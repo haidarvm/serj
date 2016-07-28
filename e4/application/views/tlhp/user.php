@@ -28,9 +28,16 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>Password</label> <input name="password" type="password" class="form-control border-input" value="<?=isset($user) ? $user->password : '';?>">
+				<label>Password</label> <input name="password" type="password" class="form-control border-input" value="">
 			</div>
 		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Ulangi Password</label> <input name="re_password" type="password" class="form-control border-input" value="">
+			</div>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
 				<label>Unit Kerja</label> <select class="form-control" name="unit_kerja_id">
@@ -59,16 +66,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label>Address</label> <input name="address" type="text" class="form-control border-input" value="<?=isset($user) ? $user->address : '';?>">
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="form-group">
-				<label>Deskripsi</label>
-				<textarea name="description" rows="5" class="form-control border-input">Oh so, your weak rhyme </textarea>
+				<label>Address</label> <textarea name="address" rows="3" class="form-control border-input"><?=isset($user) ? $user->address : '';?></textarea>
 			</div>
 		</div>
 	</div>
