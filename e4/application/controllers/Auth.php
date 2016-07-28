@@ -63,8 +63,8 @@ class Auth extends MY_Controller {
 			$accountType = $post ['accountType'];
 			try {
 				
+				// Setting Prefix Data with multi account and then write into file config
 				if (in_array ( $accountType, $accountList )) {
-					
 					switch ($accountType) {
 						case '_IKP_' :
 							write_file ( APPPATH . 'data/prefix.data', "tlhp_ikp_" );
