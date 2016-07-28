@@ -31,6 +31,10 @@ button.btn {
   line-height: 20px;
   padding-top: 4px !important;
 }
+
+.modal-dialog {
+  margin-top: 10%;
+}
 .modal-title {		
     margin: 0;		
     line-height: 10px;		
@@ -115,9 +119,6 @@ button.btn {
 }
 .modal-backdrop {
   display: none;
-}
-.modal-dialog {
-  margin-top: 10%;
 }
 .clr {
   clear: both;

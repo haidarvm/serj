@@ -73,7 +73,7 @@
 				<div class="col-md-3 picks">
 					<div class="inside">
 						<img src="<?php echo base_url();?>assets/img/img-4.png" alt="" width="206" height="168" border="0" />
-						<h3>OMBUDSMAN RI</h3>
+						<h3>ORIX</h3>
 						<a href="<?php echo site_url();?>auth/login.php">LOGIN</a>
 					</div>
 				</div>
