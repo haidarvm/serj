@@ -38,8 +38,21 @@ CONTENTS:
     padding: 0 0 0px 0;
 }
 .logo-under img {
-    width: 300px;
+    width: 250px;
     margin: 0 auto;
+}
+.under-con {
+    margin-top: 100px;
+}
+.under-text {
+    font-weight: bold;
+    color: #E09B58;
+    font-size: 43px;
+}
+.error-text {
+    font-weight: bold;
+    color: #e53719;
+    font-size: 43px;
 }
 /*** HEADER ***/
 header {

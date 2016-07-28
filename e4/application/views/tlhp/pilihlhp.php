@@ -11,7 +11,7 @@
 							<div class="col-md-7 col-md-offset-2 top-space">
 								<form class="form-horizontal" action="<?=site_url()?>tlhp/pilihlhp/updatelhp" method="POST">
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-3 control-label t-left">TAHUN</label>
+										<label for="inputEmail3" class="col-sm-3 control-label t-left nopadding min-top-margin">TAHUN</label>
 										<div class="col-sm-9">
 											<select class="form-control" name="tanngal_lhp">
 												<option>2016</option>
@@ -19,7 +19,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-3 control-label t-left">JUDUL LHP</label>
+										<label for="inputEmail3" class="col-sm-3 control-label t-left nopadding min-top-margin">JUDUL LHP</label>
 										<div class="col-sm-9">
 											<select class="form-control" name="lhp_id">
 													<?php if ($getAllLHP) {?>

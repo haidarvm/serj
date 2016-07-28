@@ -1,3 +1,47 @@
+@font-face {
+  font-family: 'Muli-SemiBold';
+  src: url('../fonts/Muli-SemiBold.eot');
+  src: url('../fonts/Muli-SemiBold.woff2') format('woff2'),
+       url('../fonts/Muli-SemiBold.woff') format('woff'),
+       url('../fonts/Muli-SemiBold.ttf') format('truetype'),
+       url('../fonts/Muli-SemiBold.svg#Muli-SemiBold') format('svg'),
+       url('../fonts/Muli-SemiBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli-Bold';
+  src: url('../fonts/Muli-Bold.eot');
+  src: url('../fonts/Muli-Bold.woff2') format('woff2'),
+       url('../fonts/Muli-Bold.woff') format('woff'),
+       url('../fonts/Muli-Bold.ttf') format('truetype'),
+       url('../fonts/Muli-Bold.svg#Muli-Bold') format('svg'),
+       url('../fonts/Muli-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/Muli.eot');
+  src: url('../fonts/Muli.woff2') format('woff2'),
+       url('../fonts/Muli.woff') format('woff'),
+       url('../fonts/Muli.ttf') format('truetype'),
+       url('../fonts/Muli.svg#Muli') format('svg'),
+       url('../fonts/Muli.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+	font-family: 'Muli';
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Muli-Bold';
+}
+
+
 .table-custom td {
 	font-size: 11px;
 	padding: 5px !important;
@@ -508,6 +552,12 @@ tbody td {
 	margin-left: 10px;
 	margin-right: 10px;
 	width: 50px;
+	background-color: #F3F2EE;
+    border: 1px solid #e8e7e3;
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 13px;
+	padding: 0 5px;
 }
 
 #manus-grid_length>label, #manus-grid_filter>label {
@@ -517,6 +567,12 @@ tbody td {
 #manus-grid_filter input {
 	height: 30px;
 	margin-left: 10px;
+	background-color: #F3F2EE;
+    border: 1px solid #e8e7e3;
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 13px;
+	padding: 0 5px;
 }
 /* .dataTables_info, .dataTables_length {
 	margin-top: 40px;
@@ -537,6 +593,24 @@ tbody td {
 	padding: 3px 3px;
 	height: 30px;
 }
+
+.clr, #manus-grid {
+	clear: both;
+}
+div#manus-grid_length {
+    float: left;
+    width: 200px;
+	margin-bottom: 10px;
+}
+div#manus-grid_filter {
+    float: right;
+    width: 230px;
+	margin-bottom: 10px;
+}
+.min-top-margin {
+	margin: -12px !important;
+}
+
 
 /* @media ( max-width : 480px) {
 	.modal-dialog {
