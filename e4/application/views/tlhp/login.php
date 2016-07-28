@@ -66,6 +66,7 @@
 						</div>
 
 						<button type="submit" class="btn btn-default btn-blue">LOGIN</button>
+						<input type="hidden" name="accountType" value="<?=$accountType?>" />
 					</form>
 				</div>
 			</div>
