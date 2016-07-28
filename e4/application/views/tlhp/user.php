@@ -66,7 +66,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label>Address</label> <textarea name="address" rows="3" class="form-control border-input"><?=isset($user) ? $user->address : '';?></textarea>
+				<label>Address</label> <textarea name="address" rows="2" class="form-control border-input"><?=isset($user) ? $user->address : '';?></textarea>
 			</div>
 		</div>
 	</div>
