@@ -21,10 +21,14 @@
                 </nav> -->
 					<div class="copyright pull-right col-md-12">
 						<!--&copy; <script>document.write(new Date().getFullYear())</script>,-->
-						<p class="footer-text">DATABASE HASIL PENGAWASAN INSPEKTORAT KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
-						<div class="footer-logo">
+						<div class="col-md-11 nopadding">
+							<p class="footer-text">DATABASE HASIL PENGAWASAN INSPEKTORAT KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
 							<p class="copy-right">&copy; Copy Right 2016 E-FOUR KEMENPAN RB</p>
-                            <img src="<?php echo base_url();?>assets/img/img-1.png" class="right-img-footer"/>
+						</div>
+						<div class="col-md-1">
+							<div class="footer-logo">
+								<img src="<?php echo base_url();?>assets/img/img-1.png" class="right-img-footer"/>
+							</div>
 						</div>
 					</div>
 				</div>
