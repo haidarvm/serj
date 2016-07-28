@@ -52,7 +52,7 @@ class MUser extends CI_Model {
 		$query = $this->db->get("user_level");
 		return checkRes($query);
 	}
-	
+
 	function getAllUnitKerja() {
 		$query = $this->db->get("unit_kerja");
 		return checkRes($query);
@@ -102,15 +102,15 @@ class MUser extends CI_Model {
 	function updateUser($id, $data) {
 		unset($data['user_id']);
 		unset($data['description']);
-		$this->db->where('user_id', $id);
-		$this->db->update('user', $data);
+		unset($data['re_password']);
+		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
 	}
 	
 	// Will create for session
 	function login($username, $password) {
 		$this->db->select('username, user_id, full_name, user_level_id, email', 'image');
 		$query = $this->db->get_where('user', array('username' => $username, 'password' => md5($password)));
-// 		echo $this->db->last_query();exit;
+		// echo $this->db->last_query();exit;
 		if ($query->num_rows() == 1) {
 			$row = $query->row();
 			$user_id = $row->user_id;

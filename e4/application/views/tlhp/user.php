@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-5">
 			<div class="form-group">
-				<label>Username</label> <input name="username" type="text" class="form-control border-input" value="<?=isset($user) ? $user->username : '';?>">
+				<label>Username</label> <input name="username" type="text" class="form-control border-input" value="<?=isset($user) ? $user->username : '';?>"  required="true">
 			</div>
 		</div>
 		<div class="col-md-3">
@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label>Full name</label> <input name="full_name" type="text" class="form-control border-input" value="<?=isset($user) ? $user->full_name : '';?>">
+				<label>Full name</label> <input name="full_name" type="text" class="form-control border-input" value="<?=isset($user) ? $user->full_name : '';?>"  required="true">
 			</div>
 		</div>
 	</div>
@@ -28,12 +28,19 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>Password</label> <input name="password" type="password" class="form-control border-input" value="<?=isset($user) ? $user->password : '';?>">
+				<label>Password</label> <input name="password" type="password" class="form-control border-input" value="" <?php echo $action == 'add' ? 'required="true"' : ''?>>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>Unit Kerja</label> <select class="form-control" name="unit_kerja_id">
+				<label>Ulangi Password</label> <input name="re_password" type="password" class="form-control border-input" value="" <?php echo $action == 'add' ? 'required="true"' : ''?>>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Unit Kerja</label> <select class="form-control" name="unit_kerja_id" required="true">
 					<?php if ($getAllUnitKerja) {?>
 					<?php  foreach($getAllUnitKerja as $unit) {?>
 					<option value="<?=$unit->unit_kerja_id;?>" <?php if(!empty($user->unit_kerja_id)) echo $user->unit_kerja_id ==  $unit->unit_kerja_id ? 'selected' : '' ?>><?=$unit->unit_kerja;?></option>
@@ -44,7 +51,7 @@
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label>User Level</label> <select class="form-control" name="user_level_id">
+				<label>User Level</label> <select class="form-control" name="user_level_id" required="true">
 					<option>-</option>
 					<?php if ($getAllLevel) {?>
 					<?php  foreach($getAllLevel as $level) {?>
@@ -59,24 +66,15 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label>Address</label> <input name="address" type="text" class="form-control border-input" value="<?=isset($user) ? $user->address : '';?>">
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="form-group">
-				<label>Deskripsi</label>
-				<textarea name="description" rows="5" class="form-control border-input">Oh so, your weak rhyme </textarea>
+				<label>Address</label> <textarea name="address" rows="3" class="form-control border-input"><?=isset($user) ? $user->address : '';?></textarea>
 			</div>
 		</div>
 	</div>
 	<div class="clearfix"></div>
 
 	<div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">BATAL</button>
-		<button type="submit" id="save-manus" class="btn btn-primary">SIMPAN</button>
+		<button type="button" class="btn btn-default btn-margin" data-dismiss="modal">BATAL</button>
+		<button type="submit" id="save-manus" class="btn btn-primary btn-margin">SIMPAN</button>
 		<input name="user_id" type="hidden" value="<?=isset($user) ? $user->user_id : '';?>">
 	</div>
 

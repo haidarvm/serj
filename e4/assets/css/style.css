@@ -37,9 +37,27 @@ CONTENTS:
 .control-label {
     padding: 0 0 0px 0;
 }
+.logo-under {
+	text-align: center;
+}
 .logo-under img {
-    width: 300px;
+    width: 250px;
     margin: 0 auto;
+}
+.under-con {
+    margin-top: 100px;
+}
+.under-text {
+    font-weight: bold;
+    color: #E09B58;
+    font-size: 43px;
+}
+.error-text {
+    font-weight: bold;
+    color: #e53719;
+    font-size: 33px;
+	position: relative;
+    left: -3px;
 }
 /*** HEADER ***/
 header {
@@ -132,19 +150,28 @@ header {
 }
 
 /*** FOOTER ***/
-
+.footer-logo {
+    display: block;
+    float: none;
+    margin: 0;
+    text-align: right;
+}
 
 .footer-logo img{
     width: 50px;
-    float: left;
+    /* float: left; */
 }
 .footer-text {
     font-size: 12px;
-    float: right;
+    text-align: right;
     padding: 10px;
 }
 .copy-right {
     font-size: 12px;
-    float: left;
-    padding: 10px;
+    padding: 0 0 10px;
+    text-align: right;
+	margin: 0;
+}
+.footer .copyright {
+	padding-top: 5px !important;
 }

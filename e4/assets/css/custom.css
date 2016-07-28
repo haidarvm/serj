@@ -1,3 +1,47 @@
+@font-face {
+  font-family: 'Muli-SemiBold';
+  src: url('../fonts/Muli-SemiBold.eot');
+  src: url('../fonts/Muli-SemiBold.woff2') format('woff2'),
+       url('../fonts/Muli-SemiBold.woff') format('woff'),
+       url('../fonts/Muli-SemiBold.ttf') format('truetype'),
+       url('../fonts/Muli-SemiBold.svg#Muli-SemiBold') format('svg'),
+       url('../fonts/Muli-SemiBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli-Bold';
+  src: url('../fonts/Muli-Bold.eot');
+  src: url('../fonts/Muli-Bold.woff2') format('woff2'),
+       url('../fonts/Muli-Bold.woff') format('woff'),
+       url('../fonts/Muli-Bold.ttf') format('truetype'),
+       url('../fonts/Muli-Bold.svg#Muli-Bold') format('svg'),
+       url('../fonts/Muli-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/Muli.eot');
+  src: url('../fonts/Muli.woff2') format('woff2'),
+       url('../fonts/Muli.woff') format('woff'),
+       url('../fonts/Muli.ttf') format('truetype'),
+       url('../fonts/Muli.svg#Muli') format('svg'),
+       url('../fonts/Muli.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+	font-family: 'Muli';
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Muli-Bold';
+}
+
+
 .table-custom td {
 	font-size: 11px;
 	padding: 5px !important;
@@ -120,7 +164,7 @@ button.btn {
 }
 
 .navbar {
-	z-index :1;
+	z-index: 2;
 }
 
 .navbar-brand.navbar-minimize {
@@ -452,6 +496,9 @@ button.btn {
 	width: 89%;
 }
 
+.card {
+	z-index: 0;
+}
 .card label {
 	font-size: 13px !important;
 	line-height: 35px;
@@ -485,13 +532,15 @@ tbody td {
 .footer .footer-text {
 	display: block;
 	margin: 0;
-	padding-top: 0;
+	padding-top: 7px;
+	padding-right: 0;
+	padding-bottom: 0;
 }
 
 .footer .right-img-footer {
 	width: 40px;
 	position: relative;
-	top: -10px;
+	top: -5px;
 }
 
 .paginate_button.next, .paginate_button.previous {
@@ -505,6 +554,12 @@ tbody td {
 	margin-left: 10px;
 	margin-right: 10px;
 	width: 50px;
+	background-color: #F3F2EE;
+    border: 1px solid #e8e7e3;
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 13px;
+	padding: 0 5px;
 }
 
 #manus-grid_length>label, #manus-grid_filter>label {
@@ -514,6 +569,12 @@ tbody td {
 #manus-grid_filter input {
 	height: 30px;
 	margin-left: 10px;
+	background-color: #F3F2EE;
+    border: 1px solid #e8e7e3;
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 13px;
+	padding: 0 5px;
 }
 /* .dataTables_info, .dataTables_length {
 	margin-top: 40px;
@@ -534,6 +595,33 @@ tbody td {
 	padding: 3px 3px;
 	height: 30px;
 }
+
+.clr, #manus-grid {
+	clear: both;
+}
+div#manus-grid_length {
+    float: left;
+    width: 200px;
+	margin-bottom: 10px;
+}
+div#manus-grid_filter {
+    float: right;
+    width: 230px;
+	margin-bottom: 10px;
+}
+.min-top-margin {
+	margin: -12px !important;
+}
+.btn-margin {
+	margin: 10px 3px !important;
+}
+
+@media (min-width: 768px){
+	.modal-dialog {
+		margin: 100px auto 100px 37%;
+	}
+}
+
 
 /* @media ( max-width : 480px) {
 	.modal-dialog {
