@@ -93,7 +93,7 @@ var site_url = '<?=base_url()?>';
 						<button type="button" class="navbar-toggle">
 							<span class="sr-only">Toggle navigation</span> <span class="icon-bar bar1"></span> <span class="icon-bar bar2"></span> <span class="icon-bar bar3"></span>
 						</button>
-						<h4><?=(~empty($title)) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></h4>
+						<h4><?php echo (!empty($title)) ? $title : 'Kementrian Pendayagunaan Aparatur Negara.'; ?></h4>
 					</div>
 
 					<div class="collapse navbar-collapse .col-md-3">
