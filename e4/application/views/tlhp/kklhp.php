@@ -82,7 +82,7 @@
 										<!--  ##### A Sistem Pengendalian #####-->
 										
 							<?php
-							$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "NAMA BELUM DITENTUKAN");
+							$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "LAPORAN KEUANGAN");
 							foreach ( $arrayjenistemuan as $index => $jenistemuan ) :
 								?>
 							

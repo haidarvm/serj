@@ -38,7 +38,7 @@ class Kklhpbaru extends MY_Controller {
 	public function insert() {
 		// entry Jumlah Temuan A
 		// print_r($_POST); exit();
-		$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "NAMA BELUM DITENTUKAN");
+		$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "LAPORAN KEUANGAN");
 		$lhp_id = $this->input->post("lhp_id");
 		
 		$post = $this->input->post();
