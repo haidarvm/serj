@@ -54,7 +54,7 @@ class MLhp extends CI_Model {
 		// echo $this->db->last_query(); exit;
 		return checkRow($query);
 	}
-	
+
 	function getLHPKK($lhp_id) {
 		$this->db->select('*, lhp.lhp_id as lhp_id');
 		$this->db->join('kertas_kerja_temuan', 'lhp.lhp_id= kertas_kerja_temuan.lhp_id', 'left');
@@ -163,7 +163,7 @@ class MLhp extends CI_Model {
 		$this->db->update('kertas_kerja_temuan', $data, array('kertas_kerja_id' => $kertas_kerja_id));
 	}
 
-	function updateRekomendasi($rekomendasi_id,$data) {
+	function updateRekomendasi($rekomendasi_id, $data) {
 		$this->db->update('rekomendasi', $data, array('rekomendasi_id' => $rekomendasi_id));
 	}
 
@@ -172,7 +172,7 @@ class MLhp extends CI_Model {
 		// echo $this->db->last_query();exit;
 		return checkRow($query);
 	}
-	
+
 	function deleteKKKLHP($kertas_kerja_id) {
 		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
 	}
@@ -180,20 +180,28 @@ class MLhp extends CI_Model {
 	function deleteKKKLHPId($lhp_id) {
 		$this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
 	}
-	
 
 	function deleteRekomendasi($kertas_kerja_id) {
 		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
 	}
-	
+
 	function deleteRekomendasiLHPId($lhp_id) {
 		$sql = "delete from {PRE}rekomendasi where kertas_kerja_id in(select kertas_kerja_id from {PRE}kertas_kerja_temuan where lhp_id='" . $lhp_id . "')";
 		return $this->db->query($sql);
-		/* DELETE posts
-		FROM posts
-		INNER JOIN projects ON projects.project_id = posts.project_id
-		WHERE projects.client_id = $lhp_id */
-// 		$this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
+		/*
+		 * DELETE posts
+		 * FROM posts
+		 * INNER JOIN projects ON projects.project_id = posts.project_id
+		 * WHERE projects.client_id = $lhp_id
+		 */
+		// $this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
+	}
+	
+
+	// insert template laporan
+	public function insert_templateLaporan($insert) {
+		unset($insert['files']);
+		$this->db->insert('template_laporan', $insert);
 	}
 	
 	// function updateTemuan($lhp_id, $jenis_temuan) {
@@ -226,4 +234,29 @@ class MLhp extends CI_Model {
 	
 	// return $sql = $this->db->get("tlhp_rekomendasi");
 	// }
+	// function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
+	
+	// }
+	
+	// function data_lhp() {
+	// $this->db->select("*");
+	// $this->db->from('tlhp_lhp');
+	// $this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
+	
+	// $this->db->order_by("judul_lhp", "asc");
+	// return $sql = $this->db->get();
+	// }
+	
+	// function data_temuan_update($lhp_id, $jenis_temuan) {
+	// $this->db->where("lhp_id", $lhp_id);
+	// $this->db->where("jenis_temuan", $jenis_temuan);
+	// return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+	// }
+	
+	// function data_rekomen_update($kertas_kerja, $jenis_temuan) {
+	// $this->db->where("kertas_kerja_id", $kertas_kerja);
+	
+	// return $sql = $this->db->get("tlhp_rekomendasi");
+	// }
+	
 }

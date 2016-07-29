@@ -38,6 +38,10 @@
 			DataTables
 		########################################-->		
 <link href="<?=base_url();?>assets/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<!-- #######################################
+			Summernote
+		########################################-->		
+<link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
 
 </head>
 <script type="text/javascript">
