@@ -1,8 +1,4 @@
-<?php
-$ci = & get_instance();
-$ci->load->view('tlhp/template/tlhp_header');
-defined('BASEPATH') or exit('No direct script access allowed');
-?>
+
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
@@ -13,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<img src="<?php echo base_url();?>assets/img/traffic-cone.png">
 						<h3 class="under-text">UNDER CONSTRUCTION</h3>
 						<p class="h6">
-							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a>
+							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a> PHP
 						</p>
 						<small class="text-muted">error_php</small>
 						<small class="text-muted"><?php echo $severity; ?></small> 
@@ -45,6 +41,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
-<?php $ci->load->view('tlhp/template/tlhp_footer');?>
 
 

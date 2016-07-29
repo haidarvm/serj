@@ -27,25 +27,23 @@ class MLhp extends CI_Model {
 		$clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 		$clean['hari_awal_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_awal_perpanjangan_penugasan']) : null;
 		$clean['hari_akhir_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_akhir_perpanjangan_penugasan']) : null;
-// 		debug(array_filter($clean));exit;
+		// debug(array_filter($clean));exit;
 		$query = $this->db->insert('lhp', array_filter($clean));
 		return $this->db->insert_id();
 	}
-	
+
 	function insertKKLHP($data) {
 		$remove = array('tim');
 		$clean = array_diff_key($data, array_flip($remove));
-// 		debug($data);exit;
-		debug($this->cleanArray($clean));
-		
-		exit;
+		// debug($data);exit;
+		// debug($this->cleanArray($clean)); exit;
 		$query = $this->db->insert('kertas_kerja_temuan', array_filter($clean));
 		return $this->db->insert_id();
 	}
-	
 
 	function getLHP($lhp_id) {
-		$query = $this->db->get_where("lhp", array('lhp_id' => $lhp_id));
+		$this->db->join('kertas_kerja_temuan', 'lhp.lhp_id= kertas_kerja_temuan.lhp_id', 'left');
+		$query = $this->db->get_where("lhp", array('lhp.lhp_id' => $lhp_id));
 		return checkRow($query);
 	}
 
@@ -59,16 +57,26 @@ class MLhp extends CI_Model {
 		return checkRes($query);
 	}
 	
-	function cleanArray($array){
-		return  array_filter(array_map('array_filter', $array));
+	function getKKLHP($lhp_id,$jenis_temuan) {
+		$query  = $this->db->get_where("kertas_kerja_temuan", array("lhp_id" => $lhp_id, 'jenis_temuan' => $jenis_temuan));
+		return checkRes($query);
 	}
 	
-// 	function getAllLHP($atlet_id) {
-// 		$query = $this->db->get_where('lhp', array( 'tanggal_lhp' => $atlet_id ));
-// 		// echo $this->db->last_query(); exit;
-// 		return checkRes($query);
-// 	}
+	function getRekomendasi($kertas_kerja_id) {
+		$query = $this->db->get_where("rekomendasi", array("kertas_kerja_id" => $kertas_kerja_id));
+		return checkRes($query);
+	}
 
+	function cleanArray($array) {
+		return array_filter(array_map('array_filter', $array));
+	}
+	
+	// function getAllLHP($atlet_id) {
+	// $query = $this->db->get_where('lhp', array( 'tanggal_lhp' => $atlet_id ));
+	// // echo $this->db->last_query(); exit;
+	// return checkRes($query);
+	// }
+	
 	/**
 	 * For Datatable Only
 	 *
@@ -103,4 +111,35 @@ class MLhp extends CI_Model {
 	function checkSQLDate($date) {
 		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
+	
+// 	function updateTemuan($lhp_id, $jenis_temuan) {
+// 		$this->db->where("lhp_id", $lhp_id);
+// 		$this->db->where("jenis_temuan", $jenis_temuan);
+// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+// 	}
+	
+// 	function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
+		
+// 	}
+
+// 	function data_lhp() {
+// 		$this->db->select("*");
+// 		$this->db->from('tlhp_lhp');
+// 		$this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
+		
+// 		$this->db->order_by("judul_lhp", "asc");
+// 		return $sql = $this->db->get();
+// 	}
+
+// 	function data_temuan_update($lhp_id, $jenis_temuan) {
+// 		$this->db->where("lhp_id", $lhp_id);
+// 		$this->db->where("jenis_temuan", $jenis_temuan);
+// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+// 	}
+
+// 	function data_rekomen_update($kertas_kerja, $jenis_temuan) {
+// 		$this->db->where("kertas_kerja_id", $kertas_kerja);
+		
+// 		return $sql = $this->db->get("tlhp_rekomendasi");
+// 	}
 }

@@ -48,6 +48,9 @@ class Pilihlhp extends MY_Controller {
 			// redirect pilih
 		}
 	}
+	
+// 	$data['data_lhp'] = $this->mlhp->data_lhp()->result();
+// 	$this->load->tlhp_template('tlhp/data_lhp', $data);
 
 /**
  * List All Product

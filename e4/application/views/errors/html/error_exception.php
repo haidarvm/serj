@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<img src="<?php echo base_url();?>assets/img/traffic-cone.png">
 						<h3 class="under-text">UNDER CONSTRUCTION</h3>
 						<p class="h6">
-							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a>
+							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a> Exception
 						</p>
 						<small class="text-muted"></small>
 						<p>Type: <?php echo get_class($exception); ?></p>

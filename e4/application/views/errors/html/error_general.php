@@ -11,9 +11,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="col-md-12 under-con nopadding">
 					<div class="logo-under">
 						<img src="<?php echo base_url();?>assets/img/traffic-cone.png">
-						<h3 class="under-text">UNDER CONSTRUCTION</h3>
+						<h3 class="under-text">UNDER CONSTRUCTION </h3>
 						<p class="h6">
-							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a>
+							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home </a> General
 						</p>
 						<small class="text-muted"><?php echo textSmall($message); ?></small>
 					</div>
