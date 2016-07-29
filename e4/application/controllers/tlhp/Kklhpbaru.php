@@ -27,6 +27,7 @@ class Kklhpbaru extends MY_Controller {
 	public function add($lhp_id) {
 		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+		$data['action'] = "add";
 		$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
 		$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
 		$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
@@ -39,10 +40,16 @@ class Kklhpbaru extends MY_Controller {
 		// print_r($_POST); exit();
 		$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "NAMA BELUM DITENTUKAN");
 		$lhp_id = $this->input->post("lhp_id");
-		$this->db->query("delete from  tlhp_rekomendasi where kertas_kerja_id in(select kertas_kerja_id from tlhp_kertas_kerja_temuan where lhp_id='" . $lhp_id . "')");
-		$this->db->query("delete from  tlhp_kertas_kerja_temuan where lhp_id='" . $lhp_id . "'");
 		
-		foreach ( $arrayjenistemuan as $index => $jenistemuan ) :
+		$post = $this->input->post();
+		
+		// Karna ini berat klo di edit satu per satu
+		// $this->mlhp->deleteRekomendasiLHPId($lhp_id);
+		// $this->mlhp->deleteKKKLHPId($lhp_id);
+		$this->db->query("delete from {PRE}rekomendasi where kertas_kerja_id in(select kertas_kerja_id from {PRE}kertas_kerja_temuan where lhp_id='" . $lhp_id . "')");
+		$this->db->query("delete from {PRE}kertas_kerja_temuan where lhp_id='" . $lhp_id . "'");
+		
+		foreach ( $arrayjenistemuan as $index => $jenistemuan ) {
 			$jumlahtemuan = $this->input->post("jumlah_temuan_" . $index . "");
 			
 			for($a = 1; $a <= $jumlahtemuan; $a ++) {
@@ -54,16 +61,17 @@ class Kklhpbaru extends MY_Controller {
 				$kode_sebab = $this->input->post("kode_sebab_id-" . $index . $a . "", true);
 				$uraian_sebab = $this->input->post("uraian_sebab-" . $index . $a . "", true);
 				$nilai_temuan = $this->input->post("nilai_temuan-" . $index . $a . "", true);
-				$user_id = $this->db->get("tlhp_user", 1)->row();
+				$user_id = $_SESSION['user_id'];
 				
-				if (! empty($kode_temuan) && ! empty($kode_sebab)) :
+				if (! empty($kode_temuan) && ! empty($kode_sebab)) {
+					// echo 'masuk';exit;
+					$data_temuan = array("lhp_id" => $lhp_id, "jenis_temuan" => strtolower($index), "kode_temuan_id" => $kode_temuan, "uraian_temuan" => $uraian_temuan, "kode_sebab_id" => $kode_sebab, "uraian_sebab" => $uraian_sebab, "user_id" => $user_id, "nilai_temuan" => $nilai_temuan);
 					
-					$datatemuan = array("lhp_id" => $lhp_id, "jenis_temuan" => strtoupper($index), "kode_temuan_id" => $kode_temuan, "uraian_temuan" => $uraian_temuan, "kode_sebab_id" => $kode_sebab, "uraian_sebab" => $uraian_sebab, "user_id" => $user_id->user_id, "nilai_temuan" => $nilai_temuan);
-					
-					$this->db->insert("tlhp_kertas_kerja_temuan", $datatemuan);
-			endif;
+					$insertKK = $this->mlhp->insertKKLHP($data_temuan);
+				}
+				// $this->db->insert("kertas_kerja_temuan", $datatemuan);
 				
-				$row_kertas_kerja = $this->db->query("select max(kertas_kerja_id) as kertas_kerja_id from tlhp_kertas_kerja_temuan")->row();
+				$row_kertas_kerja = $this->mlhp->getMaxKK();
 				$kertas_kerja_id = $row_kertas_kerja->kertas_kerja_id;
 				
 				// echo $jumlahrekomen; exit();
@@ -74,19 +82,13 @@ class Kklhpbaru extends MY_Controller {
 					$kerugian_negara = $this->input->post("kerugian_negara-" . $index . $a . $b . "", true);
 					$nilai_rekomendasi = $this->input->post("nilai_rekomendasi-" . $index . $a . $b . "", true);
 					
-					if (! empty($kode_rekomendasi)) :
-						$datarekomendasi = array("kertas_kerja_id" => $kertas_kerja_id, "kode_rekomendasi_id" => $kode_rekomendasi, "uraian_rekomendasi" => $uraian_rekomendasi, "kerugian_negara" => $kerugian_negara, "nilai_rekomendasi" => $nilai_rekomendasi);
-						
-						$this->db->insert("tlhp_rekomendasi", $datarekomendasi);
-					
-	
-	
-				endif;
+					if (! empty($kode_rekomendasi)) {
+						$data_rekomendasi = array("kertas_kerja_id" => $insertKK, "kode_rekomendasi_id" => $kode_rekomendasi, "uraian_rekomendasi" => $uraian_rekomendasi, "kerugian_negara" => $kerugian_negara, "nilai_rekomendasi" => $nilai_rekomendasi);
+						$insertRekomen = $this->mlhp->insertRekomen($data_rekomendasi);
+					}
 				}
 			}
-		endforeach;
-		redirect(base_url() . "tlhp/dataklhp.php");
+		}
+		redirect(base_url() . "tlhp/pilihlhp");
 	}
-	
-	
 }

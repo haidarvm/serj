@@ -10,7 +10,6 @@
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
-							<?php if(!empty($update)) {?>
 							<table id="judul-lhp" class="table table-bordered">
 								<tr class="success">
 									<td>Tahun</td>
@@ -38,16 +37,15 @@
 									</a></td>
 								</tr>
 							</table>
-							<?php } ?>
-							
-							
+
+
 							<form method="post" id="kklhp-form" action="<?=site_url()?>tlhp/kklhpbaru/insert">
-								<input type="hidden" value="<?php echo isset($lhp->lhp_id) ? $lhp->lhp_id:"";?>" id="lhp_id" name="lhp_id">
-									
+								<input type="hidden" value="<?=$lhp->lhp_id?>" id="lhp_id" name="lhp_id">
+
 								<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
-											<td colspan="6" class="warning">JUDUL TEMUAN </td>
+											<td colspan="6" class="warning">JUDUL TEMUAN</td>
 											<td colspan="5" class="info">REKOMENDASI</td>
 											<td colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
 											</td>
@@ -83,75 +81,81 @@
 										</tr>
 										<!--  ##### A Sistem Pengendalian #####-->
 										
-							<?php 
-								$arrayjenistemuan = array("a"=>"SISTEM PENGENDALIAN INTERNAL","b"=>"KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN","c"=>"NAMA BELUM DITENTUKAN");
-									foreach($arrayjenistemuan as $index=>$jenistemuan):
-									
-									
-											
-							?>
+							<?php
+							$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "NAMA BELUM DITENTUKAN");
+							foreach ( $arrayjenistemuan as $index => $jenistemuan ) :
+								?>
 							
 							 
 										<tr>
 											<td colspan="23"><span class="pull-left"><b><?php echo strtoupper($index); ?> . <?php echo strtoupper($jenistemuan); ?></b></span></td>
 										</tr>
-							<?php  if(empty($update)) { ?>
+							<?php
+								// jika buat kklhp baru
+								if ($action == "add") {
+									// echo 'masuk loh';exit;
+									// print_r($kode_temuan);exit;
+									
+									?>
 							
 										<input type="hidden" value="1" id="nomor_temuan_<?php echo $index; ?>" name="nomor_temuan_<?php echo $index; ?>">
 										<input type="hidden" value="1" id="jumlah_temuan_<?php echo $index; ?>" name="jumlah_temuan_<?php echo $index; ?>">
-										<tr class="temuan-tr-1 append<?php echo $index; ?>1"><!-- tr 1 -->
+										<tr class="temuan-tr-1 append<?php echo $index; ?>1">
+											<!-- tr 1 -->
 											<td class="no-temuan">1
 												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button>
-											
+
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required  name="kode_temuan_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													
-													 <?php 
-													 if(!empty($kode_temuan)):
-														  if(count($kode_temuan) >0):
-														    foreach($kode_temuan as $kode_temuan_data): ?>
+													 <?php
+									if (! empty($kode_temuan)) :
+										foreach ( $kode_temuan as $kode_temuan_data ) :
+											?>
 														    <option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan_id; ?> </option>
 														    <?php
-															endforeach;
-														  endif;
+										endforeach ;
+									
+									
 													  endif;
-													  ?>
+									?>
 													 
 											</select></td>
 											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
 											<td><select class="form-control kode_sebab_id-<?php echo $index; ?>" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
-													 <?php 
-													  if(count($kode_sebab) >0):
-													    foreach($kode_sebab as $kode_sebab_data):
-														
-														 ?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
-														
-														endforeach;
+													 <?php
+									if (! empty($kode_sebab) > 0) :
+										foreach ( $kode_sebab as $kode_sebab_data ) :
+											
+											?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+										endforeach ;
+									
+									
 													  endif;
-													  ?>
+									?>
 											</select></td>
 											<td><input type="text" class="form-control border-input" name="uraian_sebab-<?php echo $index; ?>1" /></td>
 											<td><input type="text" class="form-control border-input" name="nilai_temuan-<?php echo $index; ?>1" /></td>
-											
+
 											<!-- Rekomendasi -->
-											<td>1
-											   <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1">
-											   <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
+											<td>1 <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1"> <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button">+</button>
 											</td>
 											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
 													<option value=""></option>
-													 <?php 
-													  if(count($kode_rekomendasi) >0):
-													    foreach($kode_rekomendasi as $kode_rekomendasi_data):
-														
-														 ?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
-														
-														endforeach;
+													 <?php
+									if (count($kode_rekomendasi) > 0) :
+										foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
+											
+											?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+										endforeach
+										;
+									
+									
 													  endif;
-													  ?>
+									?>
 											</select></td>
 											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index; ?>11" /></td>
 											<td><select class="form-control kerugian_negara-<?php echo $index; ?>" id="kerugian_negara-<?php echo $index; ?>" name="kerugian_negara-<?php echo $index; ?>11">
@@ -185,90 +189,92 @@
 											<td></td>
 											<td></td>
 										</tr>
-									<!-- Bagian Update -->
-									 <?php 
-									 }else{
+										<!-- Bagian Update -->
+									 <?php
+								} else {
+									
+									$data_temuan = $this->mlhp->getAllKKLHP($lhp->lhp_id, strtolower($index));
+									// debug($data_temuan);exit;
+									if (! empty($data_temuan)) :
+										$no = 0;
+										$jumlah = count($data_temuan);
+// 										echo 'jumlah'. $jumlah;exit();
+										foreach ( $data_temuan as $valdatatemuan ) :
+											$data_rekomen = $this->mlhp->getAllRekomendasi($valdatatemuan->kertas_kerja_id);
+											$jumlahrekomen = count($data_rekomen);
+											$no ++?>
 										
-										 $data_temuan = $this->mlhp->getKKLHP($lhp->lhp_id,strtoupper($index));
-										  if(count($data_temuan) >0):
-										    $no =0;
-											$jumlah =count($data_temuan);
-										    foreach($data_temuan as $valdatatemuan):
-											  $data_rekomen   = $this->mlhp->getRekomendasi($valdatatemuan->kertas_kerja_id);
-											  $jumlahrekomen = count($data_rekomen);
-											  $no++
-										?>
-										
-										
-										
-										
+										<input type="hidden" value="update" name="update">
 										<input type="hidden" value="<?php echo count($data_temuan); ?>" id="nomor_temuan_<?php echo $index; ?>" name="nomor_temuan_<?php echo $index; ?>">
 										<input type="hidden" value="<?php echo count($data_temuan); ?>" id="jumlah_temuan_<?php echo $index; ?>" name="jumlah_temuan_<?php echo $index; ?>">
-										<tr class="temuan-<?php echo $index.$no; ?> append<?php echo $index.$no; ?>"><!-- tr 1 -->
+										<tr class="temuan-<?php echo $index.$no; ?> append<?php echo $index.$no; ?>">
+											<!-- tr 1 -->
 											<td class="no-temuan">
 											    <?php echo $no; ?>
-												<?php 
-												 if($no==1){
-													 
-												 ?><button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button><?php	 
-												 }else{
-													 
+												<?php
+											if ($no == 1) {
+												
+												?><button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button><?php
+											} else {
+												
 												?><button class='batal' type='button' nomor='nomor_temuan_<?php echo $index; ?>' tr='temuan-<?php echo $index.$no; ?>'>x</button>
-											   <?php	 
-												 
-												 }
-												?>
+											   <?php
+											}
+											?>
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required  name="kode_temuan_id-<?php echo $index.$no; ?>">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													
-													 <?php 
-													  if(count($kode_temuan) >0):
-													    foreach($kode_temuan as $kode_temuan_data):
-														
-														 ?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
-														
-														endforeach;
+													 <?php
+											if (count($kode_temuan) > 0) :
+												foreach ( $kode_temuan as $kode_temuan_data ) :
+													
+													?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
+												endforeach
+												;
+											
+											
 													  endif;
-													  ?>
+											?>
 													 
 											</select></td>
-											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->uraian_temuan) ? $valdatatemuan->uraian_temuan:""; ?>"/></td>
+											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->uraian_temuan) ? $valdatatemuan->uraian_temuan:""; ?>" /></td>
 											<td><select class="form-control kode_sebab_id-<?php echo $index; ?>" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
-													 <?php 
-													  if(count($kode_sebab) >0):
-													    foreach($kode_sebab as $kode_sebab_data):
-														
-														 ?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
-														
-														endforeach;
-													  endif;
-													  ?>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_sebab-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->uraian_sebab) ? $valdatatemuan->uraian_sebab:""; ?>"/></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->nilai_temuan) ? $valdatatemuan->nilai_temuan:""; ?>"/></td>
+													 <?php
+											if (count($kode_sebab) > 0) :
+												foreach ( $kode_sebab as $kode_sebab_data ) :
+													
+													?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+												endforeach
+												;
 											
+											
+													  endif;
+											?>
+											</select></td>
+											<td><input type="text" class="form-control border-input" name="uraian_sebab-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->uraian_sebab) ? $valdatatemuan->uraian_sebab:""; ?>" /></td>
+											<td><input type="text" class="form-control border-input" name="nilai_temuan-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->nilai_temuan) ? $valdatatemuan->nilai_temuan:""; ?>" /></td>
+
 											<!-- Rekomendasi -->
-											<td>
-											   <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="nomor_rekomen_<?php echo $index.$no; ?>" name="nomor_rekomen_<?php echo $index.$no; ?>">
-											   <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="jumlah_rekomen_<?php echo $index.$no; ?>" name="jumlah_rekomen-<?php echo $index.$no; ?>">
-												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button">+</button>
-											</td>
+											<td><input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="nomor_rekomen_<?php echo $index.$no; ?>" name="nomor_rekomen_<?php echo $index.$no; ?>"> <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="jumlah_rekomen_<?php echo $index.$no; ?>" name="jumlah_rekomen-<?php echo $index.$no; ?>">
+												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button">+</button></td>
 											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
-													 <?php 
-													  if(count($kode_rekomendasi) >0):
-													    foreach($kode_rekomendasi as $kode_rekomendasi_data):
-														
-														 ?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
-														
-														endforeach;
+													 <?php
+											if (count($kode_rekomendasi) > 0) :
+												foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
+													
+													?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+												endforeach
+												;
+											
+											
 													  endif;
-													  ?>
+											?>
 											</select></td>
 											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index.$no; ?>" /></td>
-											<td><select class="form-control kerugian_negara-<?php echo $index; ?>" id="kerugian_negara-<?php echo $index; ?>"  name="kerugian_negara-<?php echo $index.$no; ?>">
+											<td><select class="form-control kerugian_negara-<?php echo $index; ?>" id="kerugian_negara-<?php echo $index; ?>" name="kerugian_negara-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													<option value="1">Ada</option>
 													<option value="2">Tidak</option>
@@ -303,41 +309,41 @@
 										
 										
 										
-									<?php 
-									
-									           $nomorrekomen =0;
-												foreach($data_rekomen as $valeditrekomen):
-												$nomorrekomen++;
+									<?php
+											
+											$nomorrekomen = 0;
+											foreach ( $data_rekomen as $valeditrekomen ) :
+												$nomorrekomen ++;
 												?>
 												
-									<tr class="temuan-<?php echo $index.$no; ?> append<?php echo $index.$no; ?> rekomen<?php echo $index.$nomorrekomen.$no; ?>"><!-- tr 1 -->
-											<td colspan="6">
-											  		
-											</td>
-										
+									<tr class="temuan-<?php echo $index.$no; ?> append<?php echo $index.$no; ?> rekomen<?php echo $index.$nomorrekomen.$no; ?>">
+											<!-- tr 1 -->
+											<td colspan="6"></td>
+
 											<!-- Rekomendasi -->
 											<td><?php echo $nomorrekomen; ?>
-											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>">x</button>
-											</td>
+											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>">x</button></td>
 											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
 													<option value=""></option>
-													 <?php 
-													  if(count($kode_rekomendasi) >0):
-													    foreach($kode_rekomendasi as $kode_rekomendasi_data):
+													 <?php
+												if (count($kode_rekomendasi) > 0) :
+													foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 														
-														 ?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
-														
-														endforeach;
+														?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+													endforeach
+													;
+												
+												
 													  endif;
-													  ?>
+												?>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index.$nomorrekomen.$no; ?>" value="<?php echo isset($valeditrekomen->uraian_rekomendasi) ? $valeditrekomen->uraian_rekomendasi:""; ?>"/></td>
-											<td><select class="form-control kerugian_negara-<?php echo $index; ?>"  name="kerugian_negara-<?php echo $index.$nomorrekomen.$no; ?>">
+											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index.$nomorrekomen.$no; ?>" value="<?php echo !empty($valeditrekomen->uraian_rekomendasi) ? $valeditrekomen->uraian_rekomendasi:""; ?>" /></td>
+											<td><select class="form-control kerugian_negara-<?php echo $index; ?>" name="kerugian_negara-<?php echo $index.$nomorrekomen.$no; ?>">
 													<option value=""></option>
 													<option value="1" <?php echo (1==$valeditrekomen->kerugian_negara) ? "selected":""; ?>>Ada</option>
 													<option value="2" <?php echo (2==$valeditrekomen->kerugian_negara) ? "selected":""; ?>>Tidak</option>
 											</select></td>
-											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index.$nomorrekomen.$no; ?>" value="<?php echo isset($valeditrekomen->nilai_rekomendasi) ? $valeditrekomen->nilai_rekomendasi:""; ?>""/></td>
+											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index.$nomorrekomen.$no; ?>" value="<?php echo isset($valeditrekomen->nilai_rekomendasi) ? $valeditrekomen->nilai_rekomendasi:""; ?>" "/></td>
 											<td><select class="form-control uker-<?php echo $index; ?>" id="nama_ppk-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
 													<option></option>
 													<option>DEPUTI I</option>
@@ -364,11 +370,15 @@
 											<td></td>
 										</tr>
 												
-												<?php 
-												endforeach;
-										endforeach;
+												<?php
+											endforeach
+											;
+										endforeach
+										;
+									
+									
 									 endif;
-									 ?>
+									?>
 										
 										
 										
@@ -386,7 +396,7 @@
 							</form>
 						</div>
 
-						
+
 
 						<div class="row">
 							<div class="col-md-12 t-center">

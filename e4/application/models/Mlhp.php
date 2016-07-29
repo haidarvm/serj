@@ -33,18 +33,34 @@ class MLhp extends CI_Model {
 	}
 
 	function insertKKLHP($data) {
-		$remove = array('tim');
-		$clean = array_diff_key($data, array_flip($remove));
+		// debug($clean); exit;
+		$query = $this->db->insert('kertas_kerja_temuan', $data);
+		return $this->db->insert_id();
+	}
+
+	function insertRekomen($data) {
+		// $remove = array('kode_rekomendasi_id','uraian_rekomendasi','kerugian_negara','nilai_rekomendasi');
+		// $clean = array_diff_key($data, array_flip($remove));
 		// debug($data);exit;
 		// debug($this->cleanArray($clean)); exit;
-		$query = $this->db->insert('kertas_kerja_temuan', array_filter($clean));
+		$query = $this->db->insert('rekomendasi', $data);
 		return $this->db->insert_id();
 	}
 
 	function getLHP($lhp_id) {
+		$this->db->select('*, lhp.lhp_id as lhp_id');
 		$this->db->join('kertas_kerja_temuan', 'lhp.lhp_id= kertas_kerja_temuan.lhp_id', 'left');
 		$query = $this->db->get_where("lhp", array('lhp.lhp_id' => $lhp_id));
+		// echo $this->db->last_query(); exit;
 		return checkRow($query);
+	}
+	
+	function getLHPKK($lhp_id) {
+		$this->db->select('*, lhp.lhp_id as lhp_id');
+		$this->db->join('kertas_kerja_temuan', 'lhp.lhp_id= kertas_kerja_temuan.lhp_id', 'left');
+		$query = $this->db->get_where("lhp", array('lhp.lhp_id' => $lhp_id));
+		// echo $this->db->last_query(); exit;
+		return checkRes($query);
 	}
 
 	/**
@@ -53,16 +69,31 @@ class MLhp extends CI_Model {
 	 * @return boolean
 	 */
 	function getAllLHP() {
+		$this->db->order_by('lhp.lhp_id', 'desc');
 		$query = $this->db->get("lhp");
 		return checkRes($query);
 	}
-	
-	function getKKLHP($lhp_id,$jenis_temuan) {
-		$query  = $this->db->get_where("kertas_kerja_temuan", array("lhp_id" => $lhp_id, 'jenis_temuan' => $jenis_temuan));
+
+	/**
+	 * Get All LHP with klhp
+	 *
+	 * @return boolean
+	 */
+	function getAllLHPKK() {
+		$this->db->select('*, lhp.lhp_id as lhp_id');
+		$this->db->join('kertas_kerja_temuan', 'lhp.lhp_id= kertas_kerja_temuan.lhp_id', 'inner');
+		$this->db->order_by('lhp.lhp_id', 'desc');
+		$query = $this->db->get("lhp");
 		return checkRes($query);
 	}
-	
-	function getRekomendasi($kertas_kerja_id) {
+
+	function getAllKKLHP($lhp_id, $jenis_temuan) {
+		$query = $this->db->get_where("kertas_kerja_temuan", array("lhp_id" => $lhp_id, 'jenis_temuan' => $jenis_temuan));
+		// echo $this->db->last_query(); exit;
+		return checkRes($query);
+	}
+
+	function getAllRekomendasi($kertas_kerja_id) {
 		$query = $this->db->get_where("rekomendasi", array("kertas_kerja_id" => $kertas_kerja_id));
 		return checkRes($query);
 	}
@@ -104,7 +135,6 @@ class MLhp extends CI_Model {
 		$query = $this->db->get("jenis_pengawasan");
 		return checkRes($query);
 	}
-	
 
 	function dateSQLFormat($all_date) {
 	}
@@ -112,51 +142,88 @@ class MLhp extends CI_Model {
 	function checkSQLDate($date) {
 		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
-
-	//----------rudi----------
-	function getAllKodeSebab(){
-		$query=$this->db->get("kode_sebab");
-		return checkRes($query);
-	}
-
-	function getAllKodeRekomendasi(){
-		$query=$this->db->get("kode_rekomendasi");
-		return checkRes($query);
-	}
 	
+	// ----------rudi----------
+	function getAllKodeSebab() {
+		$query = $this->db->get("kode_sebab");
+		return checkRes($query);
+	}
+
+	function getAllKodeRekomendasi() {
+		$query = $this->db->get("kode_rekomendasi");
+		return checkRes($query);
+	}
+
 	function getAllKodeTemuan() {
-		$query=$this->db->get("kode_rekomendasi");
+		$query = $this->db->get("kode_temuan");
 		return checkRes($query);
 	}
+
+	function updateKKLHP($kertas_kerja_id, $data) {
+		$this->db->update('kertas_kerja_temuan', $data, array('kertas_kerja_id' => $kertas_kerja_id));
+	}
+
+	function updateRekomendasi($rekomendasi_id,$data) {
+		$this->db->update('rekomendasi', $data, array('rekomendasi_id' => $rekomendasi_id));
+	}
+
+	function getMaxKK() {
+		$query = $this->db->query("select max(kertas_kerja_id) as kertas_kerja_id from {PRE}kertas_kerja_temuan");
+		// echo $this->db->last_query();exit;
+		return checkRow($query);
+	}
 	
-// 	function updateTemuan($lhp_id, $jenis_temuan) {
-// 		$this->db->where("lhp_id", $lhp_id);
-// 		$this->db->where("jenis_temuan", $jenis_temuan);
-// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-// 	}
+	function deleteKKKLHP($kertas_kerja_id) {
+		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
+	}
+
+	function deleteKKKLHPId($lhp_id) {
+		$this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
+	}
 	
-// 	function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
-		
-// 	}
 
-// 	function data_lhp() {
-// 		$this->db->select("*");
-// 		$this->db->from('tlhp_lhp');
-// 		$this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
-		
-// 		$this->db->order_by("judul_lhp", "asc");
-// 		return $sql = $this->db->get();
-// 	}
-
-// 	function data_temuan_update($lhp_id, $jenis_temuan) {
-// 		$this->db->where("lhp_id", $lhp_id);
-// 		$this->db->where("jenis_temuan", $jenis_temuan);
-// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-// 	}
-
-// 	function data_rekomen_update($kertas_kerja, $jenis_temuan) {
-// 		$this->db->where("kertas_kerja_id", $kertas_kerja);
-		
-// 		return $sql = $this->db->get("tlhp_rekomendasi");
-// 	}
+	function deleteRekomendasi($kertas_kerja_id) {
+		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
+	}
+	
+	function deleteRekomendasiLHPId($lhp_id) {
+		$sql = "delete from {PRE}rekomendasi where kertas_kerja_id in(select kertas_kerja_id from {PRE}kertas_kerja_temuan where lhp_id='" . $lhp_id . "')";
+		return $this->db->query($sql);
+		/* DELETE posts
+		FROM posts
+		INNER JOIN projects ON projects.project_id = posts.project_id
+		WHERE projects.client_id = $lhp_id */
+// 		$this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
+	}
+	
+	// function updateTemuan($lhp_id, $jenis_temuan) {
+	// $this->db->where("lhp_id", $lhp_id);
+	// $this->db->where("jenis_temuan", $jenis_temuan);
+	// return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+	// }
+	
+	// function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
+	
+	// }
+	
+	// function data_lhp() {
+	// $this->db->select("*");
+	// $this->db->from('tlhp_lhp');
+	// $this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
+	
+	// $this->db->order_by("judul_lhp", "asc");
+	// return $sql = $this->db->get();
+	// }
+	
+	// function data_temuan_update($lhp_id, $jenis_temuan) {
+	// $this->db->where("lhp_id", $lhp_id);
+	// $this->db->where("jenis_temuan", $jenis_temuan);
+	// return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+	// }
+	
+	// function data_rekomen_update($kertas_kerja, $jenis_temuan) {
+	// $this->db->where("kertas_kerja_id", $kertas_kerja);
+	
+	// return $sql = $this->db->get("tlhp_rekomendasi");
+	// }
 }
