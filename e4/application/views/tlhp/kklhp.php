@@ -109,10 +109,9 @@
 													
 													 <?php 
 													  if(count($kode_temuan) >0):
-													    foreach($kode_temuan as $kode_temuan_data):
-														
-														 ?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
-														
+													    foreach($kode_temuan as $kode_temuan_data): ?>
+													    <option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan_id; ?> </option>
+													    <?php
 														endforeach;
 													  endif;
 													  ?>
