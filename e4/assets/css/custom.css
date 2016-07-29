@@ -566,7 +566,7 @@ tbody td {
 	color: #000000;
 }
 
-#manus-grid_filter input {
+#manus-grid_filter input, #kode_rekomendasi_filter input, #kode_sebab_filter input {
 	height: 30px;
 	margin-left: 10px;
 	background-color: #F3F2EE;
@@ -575,6 +575,20 @@ tbody td {
     color: #66615b;
     font-size: 13px;
 	padding: 0 5px;
+}
+#kertas-kerja select {
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+#kertas-kerja select:focus {
+	width: 100px
+}
+#kertas-kerja input {
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+#kertas-kerja input:focus {
+	width: 200px;
 }
 /* .dataTables_info, .dataTables_length {
 	margin-top: 40px;
@@ -620,6 +634,13 @@ div#manus-grid_filter {
 	.modal-dialog {
 		margin: 100px auto 100px 37%;
 	}
+}
+
+table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after {
+	top: 16px !important;
+}
+.info td:first-child{
+	padding-right: 30px;
 }
 
 

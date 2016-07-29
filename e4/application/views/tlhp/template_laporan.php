@@ -81,7 +81,7 @@
 							  </div>
 							  <div class="col-md-2"><!--.col-md-4--></div>
 							</div>
-							<center><input type="submit" value="simpan" class="btn btn-primary"><input type="reset" value="Reset" class="btn btn-warning"></center>
+							<center><input type="submit" value="simpan" class="btn btn-primary btn-margin"><input type="reset" value="Reset" class="btn btn-warning btn-margin"></center>
 						</form>
 					</div>
 				</div>
