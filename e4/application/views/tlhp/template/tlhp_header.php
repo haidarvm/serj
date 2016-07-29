@@ -20,7 +20,7 @@
 <link href="<?=base_url();?>assets/css/animate.min.css" rel="stylesheet" />
 
 <!--  Paper Dashboard core CSS   -->
-<link href="<?=base_url();?>assets/css/paper-tlhp-dashboard.css" rel="stylesheet" /> 
+<link href="<?=base_url();?>assets/css/paper-tlhp-dashboard.css" rel="stylesheet" />
 
 <!--  CSS for Demo Purpose, don't include it in your project     -->
 <link href="<?=base_url();?>assets/css/demo.css" rel="stylesheet" />
@@ -66,7 +66,7 @@ var site_url = '<?=base_url()?>';
 					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp.php"> <i class="ti-new-window"></i>
 							<p title="Update LHP">Update LHP</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'daftarlap' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/daftarlap.php"> <i class="ti-agenda"></i>
+					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template.php"> <i class="ti-agenda"></i>
 							<p title="Template Laporan">Template Laporan</p>
 					</a></li>
 					<li <?=$this->uri->segment(2)  == 'kodefikasi' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/kodefikasi.php"> <i class="ti-menu-alt"></i>

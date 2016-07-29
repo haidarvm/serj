@@ -19,15 +19,20 @@ class Template extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-		$data['title'] = "PILIH Template";
+		$this->laporan();
+	}
+	
+	public function daftarlap(){
+		$data['title'] = "Daftar Laporan";
 		//$data['getAll'] = $this->muser->getAllUser();
-		$this->load->tlhp_template('tlhp/template', $data);
+		$this->load->tlhp_template('tlhp/daftarlap', $data);
+		
+	}
+	
+	public function laporan() {
+		$data['title'] = "PILIH Template";
+		$this->load->tlhp_template('tlhp/template_laporan', $data);
 	}
 
-	/**
-	 * List All Product
-	 *
-	 * @param string Category slug
-	 */
 	
 }
