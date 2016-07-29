@@ -34,6 +34,11 @@
 			StyleSheet And LESS Compailer
 		########################################-->
 <link href="<?=base_url();?>assets/css/custom.css" rel="stylesheet" />
+<!-- #######################################
+			DataTables
+		########################################-->		
+<link href="<?=base_url();?>assets/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+
 </head>
 <script type="text/javascript">
 var site_url = '<?=base_url()?>';
