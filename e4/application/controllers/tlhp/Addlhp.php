@@ -46,10 +46,15 @@ class Addlhp extends MY_Controller {
 	}
 	
 	public function update(){
-		$post = $this->input->post();
-		if ($post){
-			print_r($post);exit;
-		}
+
+		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
+		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
+		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();
+		$this->load->tlhp_template('tlhp/lhp', $data);
+// 		$post = $this->input->post();
+// 		if ($post){
+// // 			print_r($post);exit;
+// 		}
 	}
 	
 	public function test(){
