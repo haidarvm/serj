@@ -27,6 +27,11 @@ class Kklhpbaru extends MY_Controller {
 	public function add($lhp_id) {
 		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+		$data['kode_temuan'] = $this->mlhp->getKodeTemuan();
+		$data['kode_sebab'] = $this->mlhp->getKodeSebab();
+		$data['kode_rekomendasi'] = $this->mlhp->getKodeRekomendasi();
+		$data['kode_sebab']  		=  $this->db->get("tlhp_kode_sebab")->result();
+		$data['kode_rekomendasi']   =  $this->db->get("tlhp_kode_rekomendasi")->result();
 		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/kklhp', $data);
 	}

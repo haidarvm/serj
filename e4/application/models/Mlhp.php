@@ -104,6 +104,7 @@ class MLhp extends CI_Model {
 		$query = $this->db->get("jenis_pengawasan");
 		return checkRes($query);
 	}
+	
 
 	function dateSQLFormat($all_date) {
 	}
