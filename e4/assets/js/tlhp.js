@@ -49,106 +49,114 @@ $(document).ready(function() {
 	// Add new tr rekomendasi 
 
 	/**
-	 * ############ TEMUAN A
+	 * ############ KKLHP
 	 * 
 	 */
-	
-	$("#add-temuan").click(function(event){
+	$(document).on("click",".add-temuan",function(event){
 		event.preventDefault();
-		console.log('add new temuan');
-		var add_more_temuan = $('.temuan-tr').last().clone();
-		$('.temuan-tr:last').after(add_more_temuan);	
-		$('.no-temuan:last').text(+($('.no-temuan:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+		console.log('Tambah Temuan');
+		var jenis 				 = $(this).attr("jenis");
+		var kode_temuan  	 	 = $('#kode_temuan-'+jenis+' > option').clone();
+		var kode_sebab_id	  	 = $('#kode_sebab_id-'+jenis+' > option').clone();
+		var kerugian_negara   	 = $('#kerugian_negara-'+jenis+' > option').clone();
+		var kode_rekomendasi_id  = $('#kode_rekomendasi_id-'+jenis+' > option').clone();
+		var uker			  	 = $('#uker-'+jenis+' > option').clone();
+		var nomor 			  	 = parseInt($("#nomor_temuan_"+jenis+"").val())+1;
+        var html 			  = "<tr class='append"+jenis+nomor+" temuan-"+jenis+nomor+"'>";
+		html 				 +="<td>"+nomor+"<button class='batal' type='button' nomor='nomor_temuan_"+jenis+"' tr='temuan-"+jenis+nomor+"'> x</button></td>";
+		html 				 +="<td><select  class='form-control' id='kode_temuan-"+jenis+nomor+"'  name='kode_temuan_id-"+jenis+nomor+"'></select></td>";
+		html 				 +='<td><input type="text" class="form-control border-input uraian_temuan" name="uraian_temuan-'+jenis+nomor+'" /></td>';
+	    html 				 +="<td><select  class='form-control kode_sebab_id' id='kode_sebab_id-"+jenis+nomor+"'  name='kode_sebab_id-"+jenis+nomor+"'></select></td>";
+	    html 				 +='<td><input type="text" class="form-control border-input" name="uraian_sebab-'+jenis+nomor+'" /></td>';
+	    html 				 +='<td><input type="text" class="form-control border-input" name="nilai_temuan-'+jenis+nomor+'" /></td>';
+	    html 				 +='<td> 1 <input type="hidden" value="1" id="jumlah_rekomen_'+jenis+nomor+'" name="jumlah_rekomen-'+jenis+nomor+'">  <input type="hidden" value="1" id="nomor_rekomen_'+jenis+nomor+'" name="nomor_rekomen-'+jenis+nomor+'"><button class="add-rekomen" jenis="'+jenis+'" type="button" nomor="'+nomor+'">+</button></td>';
+	    html 				 +="<td><select  class='form-control kode_rekomendasi_id' id='kode_rekomendasi_id-"+jenis+nomor+"'  name='kode_rekomendasi_id-"+jenis+nomor+"1'></select></td>";
+	    html 				 +='<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-'+jenis+nomor+'1" /></td>';
+	    html 				 +="<td><select  class='form-control ' id='kerugian_negara-"+jenis+nomor+"'  name='kerugian_negara-"+jenis+nomor+"1'></select></td>";
+	    html 				 +='<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-'+jenis+nomor+'1" /></td>';
+	    html 				 +="<td><select  class='form-control ' id='nama_ppk-"+jenis+nomor+"'  name='nama_ppk-"+jenis+nomor+"1'></select></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 			     += "</tr>";
+	    nomor   = nomor-1;
+	   
+	   $('.append'+jenis+nomor+':last').after(html);
+	   nomor   = nomor+1;
+	   $('#kode_temuan-'+jenis+nomor).append(kode_temuan);
+	   $('#kode_sebab_id-'+jenis+nomor).append(kode_sebab_id);
+	   $('#kode_rekomendasi_id-'+jenis+nomor).append(kode_rekomendasi_id);
+	   $('#kerugian_negara-'+jenis+nomor).append(kerugian_negara);
+	   $('#nama_ppk-'+jenis+nomor).append(uker);
+	  $("#nomor_temuan_"+jenis+"").val(nomor)
+	  $("#jumlah_temuan_"+jenis+"").val(nomor)
 	});
 	
-	// Add new tr rekomendasi 1
-	$(".add-rekomen-1").click(function(event){
+	
+	
+	// Add Rekomen A
+	 $(document).on("click",".add-rekomen",function(event){
 		event.preventDefault();
-		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-tr-1').last().clone();
-		$('.rekomen-tr-1:last').after(add_more_rekomen);	
-		$('.no-rekomen-1:last').text(+($('.no-rekomen-1:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+		console.log('Tambah Rekomen');
+		var jenis 				 = $(this).attr("jenis");
+		var nomortemuan				 = $(this).attr("nomor");
+		var kode_temuan  	 	 = $('#kode_temuan-'+jenis+' > option').clone();
+		var kode_sebab_id	  	 = $('#kode_sebab_id-'+jenis+' > option').clone();
+		var kerugian_negara   	 = $('#kerugian_negara-'+jenis+' > option').clone();
+		var kode_rekomendasi_id  = $('#kode_rekomendasi_id-'+jenis+' > option').clone();
+		var uker			  	 = $('#uker-'+jenis+' > option').clone();
+		var nomor  	  		  	 = parseInt($("#nomor_rekomen_"+jenis+nomortemuan+"").val())+1;
+        var html 			  	 = "<tr class='append"+jenis+nomortemuan+" temuan-"+jenis+nomortemuan+" rekomen"+jenis+nomor+nomortemuan+"' >";
+		html 				 +="<td colspan='6'></td>";
+		html 				 +='<td>'+nomor+'<button class="batal" type="button" nomor="nomor_rekomen_'+jenis+nomortemuan+'" tr="rekomen'+jenis+nomor+nomortemuan+'">x</button></td>';
+	    html 				 +="<td><select  class='form-control ' id='kode_rekomendasi_id-"+jenis+nomortemuan+nomor+"'  name='kode_rekomendasi_id-"+jenis+nomortemuan+nomor+"'></select></td>";
+	    html 				 +='<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-'+jenis+nomortemuan+nomor+'" /></td>';
+	    html 				 +="<td><select  class='form-control ' id='kerugian_negara-"+jenis+nomortemuan+nomor+"'  name='kerugian_negara-"+jenis+nomortemuan+nomor+"'></select></td>";
+	    html 				 +='<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-'+jenis+nomortemuan+nomor+'" /></td>';
+	    html 				 +="<td><select  class='form-control ' id='nama_ppk-"+jenis+nomortemuan+nomor+"'  name='nama_ppk-"+jenis+nomortemuan+nomor+"'></select></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 				 +="<td></td>";
+		html 			     += "</tr>";
+		
+	    $('.append'+jenis+nomortemuan+':last').after(html);
+	   $('#kode_rekomendasi_id-'+jenis+nomortemuan+nomor).append(kode_rekomendasi_id);
+	   $('#kerugian_negara-'+jenis+nomortemuan+nomor).append(kerugian_negara);
+	   $('#nama_ppk-'+jenis+nomortemuan+nomor).append(uker);
+	  $("#nomor_rekomen_"+jenis+nomortemuan+"").val(nomor)
+	  $("#jumlah_rekomen_"+jenis+nomortemuan+"").val(nomor)
 	});
 	
-	// Add new tr rekomendasi 2
-	$(".add-rekomen-2").click(function(event){
+	// Batal kan Temuan dan rekomen
+	$(document).on("click",".batal",function(event){
 		event.preventDefault();
-		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-tr-2').last().clone();
-		$('.rekomen-tr-2:last').after(add_more_rekomen);	
-		$('.no-rekomen-2:last').text(+($('.no-rekomen-2:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
-	});
-
-	// Add new tr rekomendasi 2
-	$(".add-rekomen-3").click(function(event){
-		event.preventDefault();
-		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-tr-3').last().clone();
-		$('.rekomen-tr-3:last').after(add_more_rekomen);	
-		$('.no-rekomen-3:last').text(+($('.no-rekomen-3:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
+		console.log('Batal Jenis');
+		var tr    = $(this).attr("tr");
+		var nomor = $(this).attr("nomor");
+		
+		$("#"+nomor).val(parseInt($("#"+nomor).val())-1);
+		$("."+tr).remove();
+		
 	});
 	
 	/**
-	 * ############ TEMUAN B
+	 * ############ END KKLHP
 	 * 
 	 */
-	// Add new tr rekomendasi 
-	$("#add-temuan-b").click(function(event){
-		event.preventDefault();
-		console.log('add new temuan');
-		var add_more_temuan = $('.temuan-b-tr').last().clone();
-		$('.temuan-b-tr:last').after(add_more_temuan);	
-		$('.no-temuan-b:last').text(+($('.no-temuan-b:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
-	});
-	
-	// Add new tr rekomendasi 1
-	$(".add-rekomen-b-1").click(function(event){
-		event.preventDefault();
-		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-b-tr-1').last().clone();
-		$('.rekomen-b-tr-1:last').after(add_more_rekomen);	
-		$('.no-rekomen-b-1:last').text(+($('.no-rekomen-b-1:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
-	});
-	
-	// Add new tr rekomendasi 2
-	$(".add-rekomen-b-2").click(function(event){
-		event.preventDefault();
-		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-b-tr-2').last().clone();
-		$('.rekomen-b-tr-2:last').after(add_more_rekomen);	
-		$('.no-rekomen-b-2:last').text(+($('.no-rekomen-b-2:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
-	});
-
-	// Add new tr rekomendasi 2
-	$(".add-rekomen-b-3").click(function(event){
-		event.preventDefault();
-		console.log('add new rekomen');
-		var add_more_rekomen = $('.rekomen-tr-3').last().clone();
-		$('.rekomen-b-tr-3:last').after(add_more_rekomen);	
-		$('.no-rekomen-b-3:last').text(+($('.no-rekomen-b-3:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
-	});
-	/**
-	 * ############ END TEMUAN B
-	 * 
-	 */
-	
-	// Add new tr tindak lanjut 
-	$("#add-tl").click(function(event){
-		event.preventDefault();
-		console.log('add new tl');
-		var add_more_rekomen = $('.tl-tr').last().clone();
-		$('.tl-tr:last').after(add_more_rekomen);	
-		$('.no-tl:last').text(+($('.no-tl:last').text()) + 1);
-		//$('tr.rekomen-tr').last().after($(".hiddensit")).clone(true);
-	});
 	
 	
 	// Save All KKLHP 

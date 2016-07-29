@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">HASIL <?=$lhp->judul_lhp;?></p>
-						<p class="category">PADA <?=$lhp->objek_pengawasan;?></p>
+						<p class="category">HASIL <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
+						<p class="category">PADA <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
@@ -25,9 +25,9 @@
 									<td>Edit</td>
 								</tr>
 								<tr>
-									<td><?=$lhp->tanggal_lhp?></td>
-									<td><?=$lhp->nomor_lhp?></td>
-									<td><?=$lhp->judul_lhp?></td>
+									<td> <?php echo isset($lhp->tanggal_lhp) ? $lhp->tanggal_lhp:"";?></td>
+									<td> <?php echo isset($lhp->nomor_lhp) ? $lhp->nomor_lhp:"";?></td>
+									<td> <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></td>
 									<td>3</td>
 									<td>4</td>
 									<td>5</td>
@@ -39,11 +39,15 @@
 								</tr>
 							</table>
 							<?php } ?>
+							
+							
 							<form method="post" id="kklhp-form" action="<?=site_url()?>tlhp/kklhpbaru/insert">
+								<input type="hidden" value="<?php echo isset($lhp->lhp_id) ? $lhp->lhp_id:"";?>" id="lhp_id" name="lhp_id">
+									
 								<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
-											<td colspan="6" class="warning">JUDUL TEMUAN</td>
+											<td colspan="6" class="warning">JUDUL TEMUAN </td>
 											<td colspan="5" class="info">REKOMENDASI</td>
 											<td colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
 											</td>
@@ -78,97 +82,84 @@
 											<td>NILAI (Rp.)</td>
 										</tr>
 										<!--  ##### A Sistem Pengendalian #####-->
+										
+							<?php 
+								$arrayjenistemuan = array("a"=>"SISTEM PENGENDALIAN INTERNAL","b"=>"KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN","c"=>"NAMA BELUM DITENTUKAN");
+									foreach($arrayjenistemuan as $index=>$jenistemuan):
+									
+									
+											
+							?>
+							
+							 
 										<tr>
-											<td colspan="23"><span class="pull-left"><b>A. SISTEM PENGENDALIAN INTERNAL </b></span></td>
+											<td colspan="23"><span class="pull-left"><b><?php echo strtoupper($index); ?> . <?php echo strtoupper($jenistemuan); ?></b></span></td>
 										</tr>
-										<tr class="temuan-tr"><!-- tr 1 -->
-											<td class="no-temuan">1</td>
-											<td><select class="form-control" name="kode_temuan_id[]">
-													<option></option>
-													<option>1111</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+							<?php  if(empty($update)) { ?>
+							
+										<input type="hidden" value="1" id="nomor_temuan_<?php echo $index; ?>" name="nomor_temuan_<?php echo $index; ?>">
+										<input type="hidden" value="1" id="jumlah_temuan_<?php echo $index; ?>" name="jumlah_temuan_<?php echo $index; ?>">
+										<tr class="temuan-tr-1 append<?php echo $index; ?>1"><!-- tr 1 -->
+											<td class="no-temuan">1
+												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button>
+											
+											</td>
+											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required  name="kode_temuan_id-<?php echo $index; ?>1">
+													<option value=""></option>
+													
+													 <?php 
+													  if(count($kode_temuan) >0):
+													    foreach($kode_temuan as $kode_temuan_data):
+														
+														 ?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
+													 
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
-											<td><select class="form-control" name="kode_sebab_id[]">
-													<option></option>
-													<option>222</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
+											<td><select class="form-control kode_sebab_id-<?php echo $index; ?>" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
+													<option value=""></option>
+													 <?php 
+													  if(count($kode_sebab) >0):
+													    foreach($kode_sebab as $kode_sebab_data):
+														
+														 ?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
 											</select></td>
-											<td><input type="text" class="form-control border-input" disabled /></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan[]" /></td>
+											<td><input type="text" class="form-control border-input" name="uraian_sebab-<?php echo $index; ?>1" /></td>
+											<td><input type="text" class="form-control border-input" name="nilai_temuan-<?php echo $index; ?>1" /></td>
+											
+											<!-- Rekomendasi -->
 											<td>1
-												<button class="add-rekomen-1">+</button>
+											   <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1">
+											   <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
+												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button">+</button>
 											</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[1][]">
-													<option></option>
-													<option>333</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
+													<option value=""></option>
+													 <?php 
+													  if(count($kode_rekomendasi) >0):
+													    foreach($kode_rekomendasi as $kode_rekomendasi_data):
+														
+														 ?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[1][]" /></td>
-											<td><select class="form-control" name="kerugian_negara[1][]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
+											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index; ?>11" /></td>
+											<td><select class="form-control kerugian_negara-<?php echo $index; ?>" id="kerugian_negara-<?php echo $index; ?>" name="kerugian_negara-<?php echo $index; ?>11">
+													<option value=""></option>
+													<option value="1">Ada</option>
+													<option value="2">Tidak</option>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[1][]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="rekomen-tr-1"><!-- tr 2 -->
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="no-rekomen-1">2</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[1][]">
-													<option></option>
-													<option>444</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[1][]" /></td>
-											<td><select class="form-control" name="kerugian_negara[1][]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[1][]" /></td>
-											<td><select class="form-control">
+											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index; ?>11" /></td>
+											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
 													<option></option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
@@ -193,95 +184,96 @@
 											<td></td>
 											<td></td>
 										</tr>
-										<tr class="temuan-tr"><!-- tr 3 -->
-											<td class="no-temuan">2 <!-- <button id="add-temuan">+</button> -->
+									<!-- Bagian Update -->
+									 <?php 
+									 }else{
+										
+										 $data_temuan = $this->mlhp->getKKLHP($lhp->lhp_id,strtoupper($index));
+										  if(count($data_temuan) >0):
+										    $no =0;
+											$jumlah =count($data_temuan);
+										    foreach($data_temuan as $valdatatemuan):
+											  $data_rekomen   = $this->mlhp->getRekomendasi($valdatatemuan->kertas_kerja_id);
+											  $jumlahrekomen = count($data_rekomen);
+											  $no++
+										?>
+										
+										
+										
+										
+										<input type="hidden" value="<?php echo count($data_temuan); ?>" id="nomor_temuan_<?php echo $index; ?>" name="nomor_temuan_<?php echo $index; ?>">
+										<input type="hidden" value="<?php echo count($data_temuan); ?>" id="jumlah_temuan_<?php echo $index; ?>" name="jumlah_temuan_<?php echo $index; ?>">
+										<tr class="temuan-<?php echo $index.$no; ?> append<?php echo $index.$no; ?>"><!-- tr 1 -->
+											<td class="no-temuan">
+											    <?php echo $no; ?>
+												<?php 
+												 if($no==1){
+													 
+												 ?><button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button><?php	 
+												 }else{
+													 
+												?><button class='batal' type='button' nomor='nomor_temuan_<?php echo $index; ?>' tr='temuan-<?php echo $index.$no; ?>'>x</button>
+											   <?php	 
+												 
+												 }
+												?>
 											</td>
-											<td><select class="form-control" name="kode_temuan_id[]">
-													<option></option>
-													<option>1111</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required  name="kode_temuan_id-<?php echo $index.$no; ?>">
+													<option value=""></option>
+													
+													 <?php 
+													  if(count($kode_temuan) >0):
+													    foreach($kode_temuan as $kode_temuan_data):
+														
+														 ?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
+													 
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
-											<td><select class="form-control" name="kode_sebab_id[]">
-													<option></option>
-													<option>222</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->uraian_temuan) ? $valdatatemuan->uraian_temuan:""; ?>"/></td>
+											<td><select class="form-control kode_sebab_id-<?php echo $index; ?>" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index.$no; ?>">
+													<option value=""></option>
+													 <?php 
+													  if(count($kode_sebab) >0):
+													    foreach($kode_sebab as $kode_sebab_data):
+														
+														 ?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
 											</select></td>
-											<td><input type="text" class="form-control border-input" disabled /></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan[]" /></td>
-											<td>1
-												<button class="add-rekomen-2">+</button>
+											<td><input type="text" class="form-control border-input" name="uraian_sebab-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->uraian_sebab) ? $valdatatemuan->uraian_sebab:""; ?>"/></td>
+											<td><input type="text" class="form-control border-input" name="nilai_temuan-<?php echo $index.$no; ?>" value="<?php echo isset($valdatatemuan->nilai_temuan) ? $valdatatemuan->nilai_temuan:""; ?>"/></td>
+											
+											<!-- Rekomendasi -->
+											<td>
+											   <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="nomor_rekomen_<?php echo $index.$no; ?>" name="nomor_rekomen_<?php echo $index.$no; ?>">
+											   <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="jumlah_rekomen_<?php echo $index.$no; ?>" name="jumlah_rekomen-<?php echo $index.$no; ?>">
+												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button">+</button>
 											</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[2][]">
-													<option></option>
-													<option>333</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
+													<option value=""></option>
+													 <?php 
+													  if(count($kode_rekomendasi) >0):
+													    foreach($kode_rekomendasi as $kode_rekomendasi_data):
+														
+														 ?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[2][]" /></td>
-											<td><select class="form-control" name="kerugian_negara[2][]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
+											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index.$no; ?>" /></td>
+											<td><select class="form-control kerugian_negara-<?php echo $index; ?>" id="kerugian_negara-<?php echo $index; ?>"  name="kerugian_negara-<?php echo $index.$no; ?>">
+													<option value=""></option>
+													<option value="1">Ada</option>
+													<option value="2">Tidak</option>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[2][]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="rekomen-tr-2"><!-- tr 4 -->
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="no-rekomen-2">2</td>
-											<td><select class="form-control">
-													<option></option>
-													<option>444</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[2][]" /></td>
-											<td><select class="form-control" name="kerugian_negara[2][]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[2][]" /></td>
-											<td><select class="form-control">
+											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index.$no; ?>" /></td>
+											<td><select class="form-control uker-<?php echo $index; ?>" id="nama_ppk-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
 													<option></option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
@@ -306,94 +298,46 @@
 											<td></td>
 											<td></td>
 										</tr>
-										<tr class="temuan-tr"><!-- tr 5 -->
-											<td class="no-temuan">3</td>
-											<td><select class="form-control" name="kode_temuan_id[]">
-													<option></option>
-													<option>1111</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
-											<td><select class="form-control" name="kode_sebab_id[]">
-													<option></option>
-													<option>222</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" disabled /></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan[]" /></td>
-											<td>1
-												<button class="add-rekomen-3">+</button>
+										
+										
+										
+										
+									<?php 
+									
+									           $nomorrekomen =0;
+												foreach($data_rekomen as $valeditrekomen):
+												$nomorrekomen++;
+												?>
+												
+									<tr class="temuan-<?php echo $index.$no; ?> append<?php echo $index.$no; ?> rekomen<?php echo $index.$nomorrekomen.$no; ?>"><!-- tr 1 -->
+											<td colspan="6">
+											  		
 											</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[]">
-													<option></option>
-													<option>333</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
+										
+											<!-- Rekomendasi -->
+											<td><?php echo $nomorrekomen; ?>
+											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>">x</button>
+											</td>
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
+													<option value=""></option>
+													 <?php 
+													  if(count($kode_rekomendasi) >0):
+													    foreach($kode_rekomendasi as $kode_rekomendasi_data):
+														
+														 ?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+														
+														endforeach;
+													  endif;
+													  ?>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[3][]" /></td>
-											<td><select class="form-control" name="kerugian_negara[3][]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
+											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi-<?php echo $index.$nomorrekomen.$no; ?>" value="<?php echo isset($valeditrekomen->uraian_rekomendasi) ? $valeditrekomen->uraian_rekomendasi:""; ?>"/></td>
+											<td><select class="form-control kerugian_negara-<?php echo $index; ?>"  name="kerugian_negara-<?php echo $index.$nomorrekomen.$no; ?>">
+													<option value=""></option>
+													<option value="1" <?php echo (1==$valeditrekomen->kerugian_negara) ? "selected":""; ?>>Ada</option>
+													<option value="2" <?php echo (2==$valeditrekomen->kerugian_negara) ? "selected":""; ?>>Tidak</option>
 											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[3][]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="rekomen-tr-3"><!-- tr 6 -->
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="no-rekomen-3">2</td>
-											<td><select class="form-control">
-													<option></option>
-													<option>444</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[3][]" /></td>
-											<td><select class="form-control" name="kerugian_negara[3][]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[3][]" /></td>
-											<td><select class="form-control">
+											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index.$nomorrekomen.$no; ?>" value="<?php echo isset($valeditrekomen->nilai_rekomendasi) ? $valeditrekomen->nilai_rekomendasi:""; ?>""/></td>
+											<td><select class="form-control uker-<?php echo $index; ?>" id="nama_ppk-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
 													<option></option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
@@ -418,349 +362,22 @@
 											<td></td>
 											<td></td>
 										</tr>
+												
+												<?php 
+												endforeach;
+										endforeach;
+									 endif;
+									 ?>
+										
+										
+										
+										
+										<?php }  ?>
+							  
+						<?php endforeach; ?>		
+										
 
-										<!--  ##### B Kepatuhan Terhadap Aturan #####-->
-
-										<tr>
-											<td colspan="23"><span class="pull-left"><b>B. KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN </b></span></td>
-										</tr>
-										<tr class="temuan-b-tr">
-											<td class="no-temuan-b">1</td>
-											<td><select class="form-control" name="kode_temuan_id[]">
-													<option></option>
-													<option>1111</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
-											<td><select class="form-control" name="kode_sebab_id[]">
-													<option></option>
-													<option>222</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" disabled /></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan[]" /></td>
-											<td>1
-												<button class="add-rekomen-b-1">+</button>
-											</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[]">
-													<option></option>
-													<option>333</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
-											<td><select class="form-control" name="kerugian_negara[]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="rekomen-b-tr-1">
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="no-rekomen-b-1">2</td>
-											<td><select class="form-control">
-													<option></option>
-													<option>444</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="temuan-b-tr">
-											<td class="no-temuan-b">2 <!-- <button id="add-temuan-b">+</button> -->
-											</td>
-											<td><select class="form-control" name="kode_temuan_id[]">
-													<option></option>
-													<option>1111</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
-											<td><select class="form-control" name="kode_sebab_id[]">
-													<option></option>
-													<option>222</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" disabled /></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan[]" /></td>
-											<td>1
-												<button class="add-rekomen-b-2">+</button>
-											</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[]">
-													<option></option>
-													<option>333</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
-											<td><select class="form-control" name="kerugian_negara[]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="rekomen-b-tr-2">
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="no-rekomen-b-2">2</td>
-											<td><select class="form-control">
-													<option></option>
-													<option>8</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="temuan-b-tr">
-											<td class="no-temuan-b">3</td>
-											<td><select class="form-control" name="kode_temuan_id[]">
-													<option></option>
-													<option>9</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_temuan[]" /></td>
-											<td><select class="form-control" name="kode_sebab_id[]">
-													<option></option>
-													<option>3</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" disabled /></td>
-											<td><input type="text" class="form-control border-input" name="nilai_temuan[]" /></td>
-											<td>1
-												<button class="add-rekomen-b-3">+</button>
-											</td>
-											<td><select class="form-control" name="kode_rekomendasi_id[]">
-													<option></option>
-													<option>333</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
-											<td><select class="form-control" name="kerugian_negara[]">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="rekomen-b-tr-3">
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td class="no-rekomen-b-3">2</td>
-											<td><select class="form-control">
-													<option></option>
-													<option>444</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="uraian_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>Ada</option>
-													<option>Tidak</option>
-											</select></td>
-											<td><input type="text" class="form-control border-input" name="nilai_rekomendasi[]" /></td>
-											<td><select class="form-control">
-													<option></option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
-											</select></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
+										
 									</thead>
 									<tbody>
 									</tbody>
@@ -768,18 +385,7 @@
 							</form>
 						</div>
 
-						<div class="row">
-							<div class="col-md-12 t-center">
-								<button class="btn btn-sm btn-info btn-fill">
-									<span class="btn-label"> <i class="ti-plus"></i>
-									</span> Tambah Temuan A
-								</button>
-								<button class="btn btn-sm btn-success btn-fill">
-									<span class="btn-label"> <i class="ti-plus"></i>
-									</span> Tambah Temuan B
-								</button>
-							</div>
-						</div> 
+						
 
 						<div class="row">
 							<div class="col-md-12 t-center">
