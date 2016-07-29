@@ -112,21 +112,7 @@ class MLhp extends CI_Model {
 	function checkSQLDate($date) {
 		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
-<<<<<<< HEAD
 
-	//----------rudi----------
-	function getAllSebab()
-	{
-		$query=$this->db->get("kode_sebab");
-		return checkRes($query);
-	}
-
-	function getAllRekomendasi()
-	{
-		$query=$this->db->get("kode_rekomendasi");
-		return checkRes($query);
-	}
-=======
 	
 // 	function updateTemuan($lhp_id, $jenis_temuan) {
 // 		$this->db->where("lhp_id", $lhp_id);
@@ -158,5 +144,13 @@ class MLhp extends CI_Model {
 		
 // 		return $sql = $this->db->get("tlhp_rekomendasi");
 // 	}
->>>>>>> 15a4b997d713984ec3973c28ed4104766a0aac7b
+
+//insert template laporan
+	public function insert_templateLaporan($insert)
+	{
+		unset($insert['files']);
+		$this->db->insert('template_laporan', $insert);
+	}
+
+
 }

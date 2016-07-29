@@ -75,6 +75,21 @@ Select input  -->
 <script src="<?php echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script>
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url();?>assets/js/demo.js"></script>
+
+<!-- Summernote! -->
+<script src="<?php echo base_url();?>assets/js/summernote.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+        $('#summernote2').summernote();
+    });
+  </script>
+
 <script type="text/javascript">
 $().ready(function(){
 	$(function () {

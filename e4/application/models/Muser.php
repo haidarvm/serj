@@ -110,7 +110,7 @@ class MUser extends CI_Model {
 	function login($username, $password) {
 		$this->db->select('username, user_id, full_name, user_level_id, email', 'image');
 		$query = $this->db->get_where('user', array('username' => $username, 'password' => md5($password)));
-		// echo $this->db->last_query();exit;
+		//echo $this->db->last_query();exit;
 		if ($query->num_rows() == 1) {
 			$row = $query->row();
 			$user_id = $row->user_id;
