@@ -1,13 +1,13 @@
 <div class="content">
-	<div class="container">
-        
-                <div class="col-lg-4 col-sm-6">
-	                        <div class="card">
-	                            <div class="content">
+	<div class="container col-md-12">
+        <div class="row">
+        <div class="col-lg-4 col-sm-6">
+	       <div class="card">
+	           <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-info text-center">
-                                                <i class="ti-video-camera"></i>
+                                                <i class="ti-video-camera fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -23,19 +23,19 @@
 	                                        </div>
 	                                    </div>
 	                                </div>
-	                            </div>
-								<div class="card-footer">
+	               </div>
+               <div class="card-footer">
 								        
-								</div>
-	                        </div>
-	                </div>
-                    <div class="col-lg-4 col-sm-6">
+               </div>
+	       </div>
+	    </div>
+        <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-danger text-center">
-                                                <i class="ti-marker-alt"></i>
+                                                <i class="ti-marker-alt fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -56,14 +56,14 @@
 								        
 								</div>
 	                        </div>
-	                   </div>
-                  <div class="col-lg-4 col-sm-6">
+	   </div>
+        <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-warning text-center">
-                                                <i class="ti-envelope"></i>
+                                                <i class="ti-envelope fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -84,15 +84,16 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-        
+	       </div>
+        </div>
+        <div class="row">
            <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-danger text-center">
-                                                <i class="ti-announcement"></i>
+                                                <i class="ti-announcement fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -113,15 +114,14 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-        
+	       </div>
            <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-success text-center">
-                                                <i class="ti-shopping-cart"></i>
+                                                <i class="ti-shopping-cart fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -142,7 +142,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	       </div>
         
            <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
@@ -150,7 +150,7 @@
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-info text-center">
-                                                <i class="fa fa-calendar fa-1x"></i>
+                                                <i class="ti-calendar fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -171,15 +171,16 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-        
+	      </div>
+          </div>
+        <div class="row">
           <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-warning text-center">
-                                                <i class="ti-files"></i>
+                                                <i class="ti-files fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -200,14 +201,14 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	      </div>
           <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-danger text-center">
-                                                <i class="ti-desktop"></i>
+                                                <i class="ti-desktop fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -230,14 +231,14 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	      </div>
           <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
 	                                    <div class="col-xs-5">
 	                                        <div class="icon-big icon-warning text-center">
-                                                <i class="ti-briefcase"></i>
+                                                <i class="ti-briefcase fa-2x"></i>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-xs-7">
@@ -258,6 +259,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	       </div>
+        </div>
 	</div>
 </div>
