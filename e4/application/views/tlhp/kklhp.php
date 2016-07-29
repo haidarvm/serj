@@ -103,7 +103,7 @@
 										<tr class="temuan-tr-1 append<?php echo $index; ?>1">
 											<!-- tr 1 -->
 											<td class="no-temuan">1
-												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button>
+												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 
 											</td>
 											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
@@ -141,7 +141,7 @@
 
 											<!-- Rekomendasi -->
 											<td>1 <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1"> <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
-												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button">+</button>
+												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 											</td>
 											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
 													<option value=""></option>
@@ -214,10 +214,10 @@
 												<?php
 											if ($no == 1) {
 												
-												?><button class="add-temuan" jenis="<?php echo $index; ?>" type="button">+</button><?php
+												?><button class="add-temuan" jenis="<?php echo $index; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button><?php
 											} else {
 												
-												?><button class='batal' type='button' nomor='nomor_temuan_<?php echo $index; ?>' tr='temuan-<?php echo $index.$no; ?>'>x</button>
+												?><button class="batal" type='button' nomor='nomor_temuan_<?php echo $index; ?>' tr='temuan-<?php echo $index.$no; ?>'><i aria-hidden="true" class="fa fa-times"></i></button>
 											   <?php
 											}
 											?>
@@ -258,7 +258,7 @@
 
 											<!-- Rekomendasi -->
 											<td><input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="nomor_rekomen_<?php echo $index.$no; ?>" name="nomor_rekomen_<?php echo $index.$no; ?>"> <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="jumlah_rekomen_<?php echo $index.$no; ?>" name="jumlah_rekomen-<?php echo $index.$no; ?>">
-												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button">+</button></td>
+												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button></td>
 											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													 <?php
@@ -322,7 +322,7 @@
 
 											<!-- Rekomendasi -->
 											<td><?php echo $nomorrekomen; ?>
-											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>">x</button></td>
+											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>"><i aria-hidden="true" class="fa fa-times"></i></button></td>
 											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
 													<option value=""></option>
 													 <?php

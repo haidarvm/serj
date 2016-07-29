@@ -31,7 +31,7 @@
 										</div>
 									</div>
 									<div class="col-md-12 top-space must-center">
-										<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space">UPDATE LHP</button>
+										<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space"><i aria-hidden="true" class="fa fa-pencil-square-o"></i> UPDATE LHP</button>
 									</div>
 								</form>
 							</div>
