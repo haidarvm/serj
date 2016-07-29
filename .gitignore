@@ -2,6 +2,7 @@
 
 #ignore this configuration if not working add this "git rm -r  --cached ." "git add ." "git commit -m 'fixed ignore'"
 
+ab/*
 mbs/*
 e4/.htaccess
 e4/application/config/database.php

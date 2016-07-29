@@ -48,9 +48,11 @@
 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
 
+<!--  Select input  -->
 <script src="<?php echo base_url();?>assets/js/moment.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
+<!--  <script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
+Select input  -->
 
 
 <!--  Checkbox, Radio & Switch Plugins -->
