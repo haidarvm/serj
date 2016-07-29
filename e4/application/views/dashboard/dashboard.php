@@ -1,7 +1,6 @@
 <div class="content">
 	<div class="container">
-        
-                <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
@@ -28,8 +27,8 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-                    <div class="col-lg-4 col-sm-6">
+	    </div>
+        <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
@@ -56,8 +55,8 @@
 								        
 								</div>
 	                        </div>
-	                   </div>
-                  <div class="col-lg-4 col-sm-6">
+	   </div>
+        <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
 	                                <div class="row">
@@ -84,8 +83,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-        
+	       </div>
            <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
@@ -113,8 +111,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-        
+	       </div>
            <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
@@ -171,8 +168,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
-        
+	       </div>
           <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
@@ -200,7 +196,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	      </div>
           <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
@@ -230,7 +226,7 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	      </div>
           <div class="col-lg-4 col-sm-6">
 	                        <div class="card">
 	                            <div class="content">
@@ -258,6 +254,6 @@
 								        
 								</div>
 	                        </div>
-	                </div>
+	       </div>
 	</div>
 </div>
