@@ -170,6 +170,33 @@ $(document).ready(function() {
 		  $('#userModal').modal('show').find('.modal-body').load($(this).attr('href'));
 	});
 	
+	
+	$(function () {
+	    $('#kode_sebab').DataTable({
+	      "paging": true,
+	      "lengthChange": false,
+	      "searching": true,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false
+	    });
+	});
+
+	$(function () {
+	    $('#kode_rekomendasi').DataTable({
+	      "paging": true,
+	      "lengthChange": false,
+	      "searching": true,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false
+	    });
+	});
+	
+
+    $('#summernote').summernote();
+    $('#summernote2').summernote();
+	// end document ready
 });
 
 //add tim
@@ -195,3 +222,5 @@ function userEdit(id) {
 function refreshManusTable() {
 	$('#manus-grid').DataTable().ajax.reload();
 }
+
+
