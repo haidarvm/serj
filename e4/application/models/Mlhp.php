@@ -103,4 +103,17 @@ class MLhp extends CI_Model {
 	function checkSQLDate($date) {
 		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
+
+	//----------rudi----------
+	function getAllSebab()
+	{
+		$query=$this->db->get("kode_sebab");
+		return checkRes($query);
+	}
+
+	function getAllRekomendasi()
+	{
+		$query=$this->db->get("kode_rekomendasi");
+		return checkRes($query);
+	}
 }

@@ -13,6 +13,7 @@ class Kodefikasi extends MY_Controller {
 		parent::__construct();
 		$this->load->model('muser');
 		$this->muser = new MUser();
+		$this->load->model('mlhp');
 	}
 
 	/**
@@ -24,6 +25,19 @@ class Kodefikasi extends MY_Controller {
 		$this->load->tlhp_template('tlhp/kodefikasi', $data);
 	}
 
+	public function kode_sebab()
+	{
+		$data['sebab']=$this->mlhp->getAllSebab();
+		//print_r($data['sebab']);exit;
+		$this->load->tlhp_template('tlhp/kode_sebab', $data);
+	}
+
+	public function kode_rekomendasi()
+	{
+		$data['rekomend']=$this->mlhp->getAllRekomendasi();
+		//print_r($data['sebab']);exit;
+		$this->load->tlhp_template('tlhp/kode_rekomendasi', $data);
+	}
 	/**
 	 * List All Product
 	 *

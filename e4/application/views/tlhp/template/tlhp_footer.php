@@ -87,4 +87,21 @@ $().ready(function(){
         });
 		
     </script> 
+
+
+
+<script>
+      $(function () {
+        $('#kode_sebab').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
+
+
 </html>
