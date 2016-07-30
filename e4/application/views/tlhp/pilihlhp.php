@@ -21,7 +21,7 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-3 control-label t-left nopadding min-top-margin">JUDUL LHP</label>
 										<div class="col-sm-9">
-											<select class="form-control" name="lhp_id">
+											<select id="js-example-data-array" class="form-control" name="lhp_id">
 													<?php if ($getAllLHP) {?>
 														<?php foreach($getAllLHP as $lhp) {?>
 														<option value="<?=$lhp->lhp_id;?>"><?=$lhp->judul_lhp;?></option>
@@ -30,6 +30,14 @@
 											</select>
 										</div>
 									</div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-3 control-label t-left nopadding min-top-margin">JUDUL LHP</label>
+                                                                            <div class="col-sm-9">
+                                                                                <select class="js-example-data-array">
+                                                                                    
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
 									<div class="col-md-12 top-space must-center">
 										<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space"><i aria-hidden="true" class="fa fa-pencil-square-o"></i> UPDATE LHP</button>
 									</div>
@@ -42,3 +50,14 @@
 		</div>
 	</div>
 </div>
+<script>
+    requirejs.config({
+        "paths": {
+            "jspath": "<?php echo base_url(); ?>/assets/js/",
+            "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min",
+            "select2": "//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min"
+        }
+    });
+    requirejs(["jspath/pilihlhp"]);
+    
+</script>

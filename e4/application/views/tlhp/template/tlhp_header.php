@@ -42,7 +42,8 @@
 			Summernote
 		########################################-->		
 <link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="<?php echo base_url();?>assets/js/require.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
 var site_url = '<?=base_url()?>';
