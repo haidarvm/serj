@@ -38,7 +38,9 @@
 										</button>
 										<h4 class="modal-title" id="userModalLabel">User</h4>
 									</div>
-									<div class="modal-body modal-form"></div>
+                                                                    <div class="modal-body modal-form">
+                                                                        <?php $this->load->view('tlhp/user') ?>
+                                                                    </div>
 								</div>
 							</div>
 						</div>
@@ -50,9 +52,13 @@
 </div>
 <script>
     requirejs.config({
+        "shim": {
+            "bootstrap": {"deps": ["jquery"]}
+        },
         "paths": {
             "jspath": "<?php echo base_url(); ?>/assets/js/",
             "jquery": "../../assets/js/jquery-2.1.4.min",
+            "bootstrap": "../../assets/js/bootstrap.min",
             "data-table": "../../assets/js/jquery.dataTables.min" 
         }
     });

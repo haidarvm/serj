@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	// Management User 
+        /** uda dipindahin ke manus.js
 	var dataTable = $('#manus-grid').DataTable( {
             "processing": true,
             "serverSide": true,
@@ -27,7 +28,7 @@ $(document).ready(function() {
 					
 				}
 			}]
-      });
+      }); **/
  	 
  	// add tim
 	$('#add-tim').click(function(event){

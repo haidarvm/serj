@@ -19,6 +19,10 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
+                $data['title'] = "username";
+		$data['action'] = 'add';
+		$data['getAllLevel'] = $this->muser->getAllLevel();
+		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
 		$data['title'] = "Management User";
 		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/manus', $data);

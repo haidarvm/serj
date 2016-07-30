@@ -1,5 +1,6 @@
-define(["jquery", "data-table"], function($){
+define(["jquery", "bootstrap", "data-table"], function($){
     $(function(){
+        
         $('#manus-grid').DataTable( {
             "processing": true,
             "serverSide": true,
@@ -26,5 +27,10 @@ define(["jquery", "data-table"], function($){
                     }
             }]
         });
+    });
+    
+    $('.user-modal').on('click', function(e){
+        $('#userModal').modal('show');
+        return false;
     });
  });
