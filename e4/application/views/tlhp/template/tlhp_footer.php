@@ -67,9 +67,10 @@ Select input  -->
 -->
 
 <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'menusa.php'){?>
-<!--  Charts Plugin -->
-<script src="<?php echo base_url();?>assets/js/Chart.js"></script>
-<script src="<?php echo base_url();?>assets/js/graphic.js"></script>
+<!--  
+<script src="<?php // echo base_url();?>assets/js/Chart.js"></script>
+<script src="<?php // echo base_url();?>assets/js/graphic.js"></script>
+-->
 <?php }?>
 <!--  Notifications Plugin   nanti dibuka lagi
 <script src="<?php // echo base_url();?>assets/js/bootstrap-notify.js"></script>
@@ -89,23 +90,4 @@ Select input  -->
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <!-- nanti dibuka lagi
 <script src="<?php // echo base_url();?>assets/js/demo.js"></script> -->
-
-<!-- select2 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
--->
-<!-- Summernote! -->
-<script type="text/javascript">
-    /**
-$().ready(function(){
-	$(function () {
-	    $('#datetimepicker1').datetimepicker();
-	});
-});
-        $().ready(function(){
-            // Init DatetimePicker
-            demo.initFormExtendedDatetimepickers();
-        });
- **/
-    
-</script>
 </html>

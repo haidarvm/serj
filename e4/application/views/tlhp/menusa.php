@@ -314,3 +314,18 @@
 		</div>
 	</div>
 </div>
+<script>
+    requirejs.config({
+        "shim": {
+            "chart": {"deps": ["jquery"]},
+           // "graphic" : {deps: ["jquery"]}
+        },
+        "paths": {
+            "jspath": "../../assets/js/",
+            "jquery": "../../assets/js/jquery-2.1.4.min",
+            "chart": "../../assets/js/Chart",
+            //"graphic": "../../assets/js/graphic",
+        }
+    });
+    requirejs(["jspath/menusa"]);
+</script>
