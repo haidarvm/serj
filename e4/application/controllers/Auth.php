@@ -57,7 +57,8 @@ class Auth extends MY_Controller {
 		
 		$post = $this->input->post();
 		if ($post) {
-			$accountType = $post['accountType'];
+			//$accountType = $post['accountType'];
+                        $accountType = '_BPK_';
 			try {
 				
 				// Setting Prefix Data with multi account and then write into file config
