@@ -27,10 +27,11 @@ header {
     width: 259px;
     height: auto;
     float: left;
-    padding: 22px;
+    padding: 0px;
 }
 .logo img{
-    width: 150px;
+    width: 200px;
+    margin: 0 0 0 20px;
 }
 #topnav {
     margin: 0;
