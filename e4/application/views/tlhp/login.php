@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -62,7 +62,7 @@
 							<input type="text" class="form-control" name="username" placeholder="USERNAME" value="admin">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" name="password" placeholder="PASSWORD" value="admin">
+							<input type="password" class="form-control" name="password" placeholder="PASSWORD" value="haidar">
 						</div>
 
 						<button type="submit" class="btn btn-default btn-blue">LOGIN</button>

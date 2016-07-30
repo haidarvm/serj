@@ -10,7 +10,7 @@
                         <div class="logo-under">
 							<img src="<?php echo base_url();?>assets/img/browser.png">
                             <h3 class="error-text">ERROR 404: PAGE NOT FOUND</h3>
-                            <p class="h6">Uh Oh! Please try one of the following pages <a href="<?php echo site_url();?>dashboard/">back to home</a></p>
+                            <p class="h6">Uh Oh! Please try one of the following pages <a href="<?php echo site_url();?>tlhp/">back to home</a></p>
 				        </div>
 					</div>
                

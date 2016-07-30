@@ -32,5 +32,15 @@ class Home extends MY_Controller {
 		$data['title'] = "underconstruction";
 		$this->load->tlhp_template('tlhp/underconstruction', $data);
 	}
+	
+	public function get_error(){
+		$test = 'test';
+		echo $te;
+	}
+	
+	public function tag(){
+		$link = '<a title="title" href="http://example.com">Text</a>';
+		echo "<b>".strip_tags($links)."</b>";
+	}
 }
 ?>

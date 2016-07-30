@@ -34,20 +34,57 @@ class Pilihlhp extends MY_Controller {
 		$this->load->tlhp_template('tlhp/pilihlhp', $data);
 	}
 
+	public function list_lhp() {
+		$data['data_lhp'] = $this->mlhp->getAllLHPKK();
+		$this->load->tlhp_template('tlhp/data_lhp', $data);
+	}
+
+	public function get_lhp($lhp_id) {
+		$data['title'] = "UPDATE LHP";
+		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
+		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+		$data['action'] = "update";
+		// $data['getAll'] = $this->muser->getAllUser();
+		$this->load->tlhp_template('tlhp/kklhp', $data);
+		// redirect pilih
+	}
+
 	public function updatelhp() {
 		$post = $this->input->post();
 		if ($post) {
+			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
+			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
+			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
 			$data['title'] = "UPDATE LHP";
+			$data['action'] = "update";
 			$lhp_id = $post['lhp_id'];
 			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
 			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-			$data['update'] = "update";
+			// $data['update'] = "update";
 			// $data['getAll'] = $this->muser->getAllUser();
 			$this->load->tlhp_template('tlhp/kklhp', $data);
 		} else {
 			// redirect pilih
 		}
 	}
+	
+	public function updatekklhp() {
+			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
+			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
+			$data['action'] = "update";
+			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
+			$data['title'] = "UPDATE LHP";
+			$lhp_id = $post['lhp_id'];
+			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
+			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+			// $data['update'] = "update";
+			// $data['getAll'] = $this->muser->getAllUser();
+			$this->load->tlhp_template('tlhp/kklhp', $data);
+		
+	}
+	
+	// $data['data_lhp'] = $this->mlhp->data_lhp()->result();
+	// $this->load->tlhp_template('tlhp/data_lhp', $data);
 
 /**
  * List All Product

@@ -83,8 +83,7 @@ class Auth extends MY_Controller {
 							$this->setTempUserType ( '_prefixdata', 'tlhp_orix_' );
 							break;
 						default :
-							// write_file ( APPPATH . 'data/prefix.data', "tlhp_" );
-							$this->setTempUserType ( '_prefixdata', 'tlhp_' );
+							$this->setTempUserType('_prefixdata', 'tlhp_ikp_');
 							break;
 					}
 					
@@ -113,10 +112,15 @@ class Auth extends MY_Controller {
 		}
 	}
 	public function logout() {
-		$this->muser->user_logout ( $_SESSION ['user_id'] );
-		session_destroy ();
-		redirect ( 'home' );
+		if (! empty($_SESSION['user_id'])) {
+			$this->muser->user_logout($_SESSION['user_id']);
+			session_destroy();
+			redirect('home');
+		} else {
+			redirect('home');
+		}
 	}
+	
 	public function info() {
 		// echo date('D, d-M-Y H:i:s');
 		echo floor ( '107.84764739189254' );

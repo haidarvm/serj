@@ -1,33 +1,44 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-<h4>A PHP Error was encountered</h4>
-
-<p>Severity: <?php echo $severity; ?></p>
-<p>Message:  <?php echo $message; ?></p>
-<p>Filename: <?php echo $filepath; ?></p>
-<p>Line Number: <?php echo $line; ?></p>
-
-<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
-
-	<p>Backtrace:</p>
-	<?php foreach (debug_backtrace() as $error): ?>
-
-		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
-
-			<p style="margin-left:10px">
-			File: <?php echo $error['file'] ?><br />
-			Line: <?php echo $error['line'] ?><br />
-			Function: <?php echo $error['function'] ?>
-			</p>
-
-		<?php endif ?>
-
-	<?php endforeach ?>
-
-<?php endif ?>
-
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-xs-6 col-md-4 col-md-offset-5"></div>
+				<div class="col-md-12 under-con nopadding">
+					<div class="logo-under">
+						<img src="<?php echo base_url();?>assets/img/traffic-cone.png">
+						<h3 class="under-text">UNDER CONSTRUCTION</h3>
+						<p class="h6">
+							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a> PHP
+						</p>
+						<small class="text-muted">error_php</small>
+						<small class="text-muted"><?php echo $severity; ?></small> 
+						<small class="text-muted"><?php echo $message; ?></small> 
+						<small class="text-muted"><?php echo $filepath; ?></small> 
+						<small class="text-muted"><?php echo $line; ?></small>
+								<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
+									<small class="text-muted">Backtrace:</small>
+									<?php foreach (debug_backtrace() as $error): ?>
+								
+										<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
+								
+											<small class="text-muted"style="margin-left: 10px">
+											File: <?php echo $error['file'] ?><br />
+											Line: <?php echo $error['line'] ?><br />
+											Function: <?php echo $error['function']?>
+											</small>
+								
+										<?php endif ?>
+								
+									<?php endforeach ?>
+								
+								<?php endif ?>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+

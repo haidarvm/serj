@@ -1,20 +1,43 @@
 <?php
 
-/* function previous_url() {
-// 	$ci = & get_instance();
-// 	echo $ci->session->last_url;s
-	echo  $_SESSION['last_url'];exit;
-	if ($_SESSION['last_url']) {
-		return header('Location: ' . $_SESSION['last_url']);
-	} elseif ($_SESSION['last_url'] == 'logout') {
-		$_SESSION['last_url'] = "";
-	} elseif ($_SESSION['last_url'] == 'logout') {
-		$_SESSION['last_url'] = "";
-	} else {
-		return redirect('home');
+function get_current_app() {
+	$prefixData = @$_COOKIE['_prefixdata'];
+	switch ($prefixData) {
+		case 'tlhp_ikp_' :
+			$current_app = 'IKP';
+			break;
+		case 'tlhp_bpk_' :
+			$current_app = 'BPK';
+			break;
+		case 'tlhp_bpkp_' :
+			$current_app = 'BPKP';
+			break;
+		case 'tlhp_orix_' :
+			$current_app = 'ORIX';
+			break;
+		default :
+			$current_app = 'dll';
+			break;
 	}
-} */
+	return $current_app;
+}
 
+/*
+ * function previous_url() {
+ * // $ci = & get_instance();
+ * // echo $ci->session->last_url;s
+ * echo $_SESSION['last_url'];exit;
+ * if ($_SESSION['last_url']) {
+ * return header('Location: ' . $_SESSION['last_url']);
+ * } elseif ($_SESSION['last_url'] == 'logout') {
+ * $_SESSION['last_url'] = "";
+ * } elseif ($_SESSION['last_url'] == 'logout') {
+ * $_SESSION['last_url'] = "";
+ * } else {
+ * return redirect('home');
+ * }
+ * }
+ */
 function checkRes($query) {
 	if ($query->num_rows() > 0) {
 		return $query->result();
@@ -92,6 +115,12 @@ function sidebarCollapse($uri) {
 	} else {
 		return '';
 	}
+}
+
+function textSmall($text) {
+	// $small = preg_replace("/<p\s(.+?)>(.+?)<\/p>/is", "<small>$2</small>", $text);
+	// return $small;
+	echo "<small>" . strip_tags($text) . "</small>";
 }
 
 function removeTopMenu($uri) {
@@ -310,7 +339,7 @@ function sqlDateFormat($date) {
 
 /**
  * Limit Character
- * 
+ *
  * @param unknown $text        	
  */
 function limitChar($text, $limit) {
