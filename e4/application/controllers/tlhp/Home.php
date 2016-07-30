@@ -20,6 +20,10 @@ class Home extends MY_Controller {
 	 */
 	public function index() {
 		$data['title'] = "Login ALL TLHP App";
+		
+		// Remove Account_type
+		$this->session->unset_userdata('account_type');
+		
 		// echo 'masuk';
 		if (isset($_SESSION['user_id'])) {
 			$_SESSION['logged'] = "tlhp";

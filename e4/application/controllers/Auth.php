@@ -21,12 +21,27 @@ class Auth extends MY_Controller {
 		$this->login ();
 	}
 	public function login($msg = NULL) {
+		
 		// Get Account Type
 		$accountType = $this->input->post ( 'account_type' );
+		
+		// Save Account Type
+		if ($accountType != "") {
+			$this->session->set_userdata('account_type', $accountType);
+			$accountType = $this->session->userdata('account_type');
+		} else {
+			$accountType = $this->session->userdata('account_type');
+		}
+		
+		// Check if accountType really null
+		if ($accountType == "") {
+				redirect('tlhp');
+		}
 		
 		$data ['msg'] = $msg;
 		$data ['accountType'] = $accountType;
 		$data ['pageTitle'] = "Login";
+		
 		if (isset ( $_SESSION ['user_id'] )) {
 			if (isset ( $_SESSION ['logged'] )) {
 				if ($_SESSION ['logged'] == "tlhp") {
@@ -60,12 +75,7 @@ class Auth extends MY_Controller {
 		
 		$post = $this->input->post ();
 		if ($post) {
-<<<<<<< HEAD
-			//$accountType = $post['accountType'];
-                        $accountType = '_BPK_';
-=======
 			$accountType = $post ['accountType'];
->>>>>>> be92910d1d54acde309835550a18b74f3bbb5c97
 			try {
 				
 				// Setting Prefix Data with multi account and then write into file config
