@@ -21,12 +21,27 @@ class Auth extends MY_Controller {
 		$this->login ();
 	}
 	public function login($msg = NULL) {
+		
 		// Get Account Type
 		$accountType = $this->input->post ( 'account_type' );
+		
+		// Save Account Type
+		if ($accountType != "") {
+			$this->session->set_userdata('account_type', $accountType);
+			$accountType = $this->session->userdata('account_type');
+		} else {
+			$accountType = $this->session->userdata('account_type');
+		}
+		
+		// Check if accountType really null
+		if ($accountType == "") {
+				redirect('tlhp');
+		}
 		
 		$data ['msg'] = $msg;
 		$data ['accountType'] = $accountType;
 		$data ['pageTitle'] = "Login";
+		
 		if (isset ( $_SESSION ['user_id'] )) {
 			if (isset ( $_SESSION ['logged'] )) {
 				if ($_SESSION ['logged'] == "tlhp") {
