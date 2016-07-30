@@ -45,7 +45,7 @@
 <script>
     requirejs.config({
         "paths": {
-            "jspath": "<?php echo base_url(); ?>/assets/js/",
+            "jspath": "../../assets/js/",
             "jquery": "../../assets/js/jquery-2.1.4.min",
             "select2": "//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min"
         }
