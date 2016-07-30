@@ -48,3 +48,13 @@
 		</div>
 	</div>
 </div>
+<script>
+    requirejs.config({
+        "paths": {
+            "jspath": "<?php echo base_url(); ?>/assets/js/",
+            "jquery": "../../assets/js/jquery-2.1.4.min",
+            "data-table": "../../assets/js/jquery.dataTables.min" 
+        }
+    });
+    requirejs(["jspath/manus"]);
+</script>
