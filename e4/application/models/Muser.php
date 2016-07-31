@@ -168,4 +168,22 @@ class MUser extends CI_Model {
 		// unset($data ['id']);
 		$this->db->delete('user', array('user_id' => $id));
 	}
+	
+	function findOneByUserName($username) {
+		$this->db->select('first_name, last_name, full_name, nip, jabatan');
+		$this->db->where('username', $username);
+		return $this->db->get("user")->row();
+	}
+	
+	function add($data) {
+//		$this->db->set('username', $data['username']);
+//		$this->db->set('nip', $data['nip']);
+//		$this->db->set('full_name', $data['full_name']);
+//		$this->db->set('jabatan', $data['jabatan']);
+//		$this->db->set('password', $data['password']);
+//		$this->db->set('unit_kerja_id', $data['unit_kerja_id']);
+//		$this->db->set('user_level_id', $data['user_level_id']);
+		$this->db->insert_batch("user", $data);
+		return $this->db->insert_id();
+	}
 }
