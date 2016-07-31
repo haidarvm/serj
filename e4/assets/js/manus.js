@@ -5,7 +5,7 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
     	$('#userModal').modal('show').find('.modal-body').load(body);
     }
 	
-	function refreshManusTable() {
+	window.refreshTable = function refreshManusTable() {
 		$('#manus-grid').DataTable().ajax.reload();
 	}
 	
@@ -28,7 +28,24 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
     	}
     	
     	self.doInsert = function() {
-    		console.debug(self.data);
+    		var reqData = ko.toJSON(self.data);
+    		console.debug(reqData);
+    		$.ajax({
+				type: "POST",
+				data: reqData,
+				url: site_url + "tlhp/restmanus",
+				beforeSend: function(){
+					console.info('attempting to insert new user');
+				},
+				success: function(data) {
+					self.userNotif("data berhasil disimpan");
+					refreshTable();
+					$('#userModal').modal('hide');
+				},
+				error: function(xhr, msg) {
+					alert("Sory, there is something wrong in our system");
+				}
+			});
     	}
     	
     	self.userNotif = ko.observable("example message");
