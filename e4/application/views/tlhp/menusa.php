@@ -13,12 +13,7 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
+				     
 	               </div>
 	           </div>
 	           <div class="col-lg-2 col-sm-6">
@@ -33,12 +28,7 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
+				     
 	               </div>
 	           </div>
               <div class="col-lg-2 col-sm-6">
@@ -53,16 +43,10 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
 	               </div>
 	           </div>
 	           <div class="col-lg-2 col-sm-6">
-                <div class="card">
+                    <div class="card">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
@@ -73,13 +57,7 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
-	               </div>
+	                </div>
 	           </div>
 	           <div class="col-lg-2 col-sm-6">
                 <div class="card">
@@ -93,12 +71,6 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-                           <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
 	               </div>
 	           </div>
 	           <div class="col-lg-2 col-sm-6">
@@ -113,12 +85,6 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
 	               </div>
 	           </div>
 	   </div>
@@ -137,12 +103,6 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
 	               </div>
 	           </div>
 	           <div class="col-lg-3 col-sm-6">
@@ -157,12 +117,6 @@
 	                           </div>
 	                       </div>
 	                   </div>
-				       <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
 	               </div>
 	           </div>
                <div class="col-lg-3 col-sm-6">
@@ -177,16 +131,9 @@
 	                           </div>
 	                       </div>
 	                   </div>
-                    <div class="card-footer">
-				            <hr>
-						  <div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						  </div>
-				       </div>
 	               </div>
 	           </div>
             <div class="col-lg-3 col-sm-6">
-                
 	                   <div class="card" data-color="magenta">
 	                       <div class="content">
 	                           <div class="row">
@@ -282,12 +229,7 @@
 				<div class="content">
 					<canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
 
-					<div class="footer">
-						<hr>
-						<div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
@@ -302,15 +244,23 @@
 				<div class="content">
 					<canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
 
-					<div class="footer">
-
-						<hr>
-						<div class="stats">
-							<i class="ti-timer"></i> Update 2 days ago
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+    requirejs.config({
+        "shim": {
+            "chart": {"deps": ["jquery"]},
+           // "graphic" : {deps: ["jquery"]}
+        },
+        "paths": {
+            "jspath": "../../assets/js/",
+            "jquery": "../../assets/js/jquery-2.1.4.min",
+            "chart": "../../assets/js/Chart",
+            //"graphic": "../../assets/js/graphic",
+        }
+    });
+    requirejs(["jspath/menusa"]);
+</script>

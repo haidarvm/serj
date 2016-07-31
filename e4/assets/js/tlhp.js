@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	// Management User 
+        /** uda dipindahin ke manus.js
 	var dataTable = $('#manus-grid').DataTable( {
             "processing": true,
             "serverSide": true,
@@ -27,7 +28,7 @@ $(document).ready(function() {
 					
 				}
 			}]
-      });
+      }); **/
  	 
  	// add tim
 	$('#add-tim').click(function(event){
@@ -170,6 +171,33 @@ $(document).ready(function() {
 		  $('#userModal').modal('show').find('.modal-body').load($(this).attr('href'));
 	});
 	
+	
+	$(function () {
+	    $('#kode_sebab').DataTable({
+	      "paging": true,
+	      "lengthChange": false,
+	      "searching": true,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false
+	    });
+	});
+
+	$(function () {
+	    $('#kode_rekomendasi').DataTable({
+	      "paging": true,
+	      "lengthChange": false,
+	      "searching": true,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false
+	    });
+	});
+	
+
+    $('#summernote').summernote();
+    $('#summernote2').summernote();
+	// end document ready
 });
 
 //add tim
@@ -187,11 +215,10 @@ $('#add-tim').click(function(event){
  * @param id
  * @returns
  */
+/**
 function userEdit(id) {
 	body = site_url + 'tlhp/manus/update/'+ id;
 	$('#userModal').modal('show').find('.modal-body').load(body);
-}
+} **/
 
-function refreshManusTable() {
-	$('#manus-grid').DataTable().ajax.reload();
-}
+

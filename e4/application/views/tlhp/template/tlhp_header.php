@@ -42,7 +42,8 @@
 			Summernote
 		########################################-->		
 <link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="<?php echo base_url();?>assets/js/require.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
 var site_url = '<?=base_url()?>';
@@ -108,7 +109,7 @@ var site_url = '<?=base_url()?>';
 					<div class="collapse navbar-collapse .col-md-3">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?=base_url();?>assets/img/faces/face-2.jpg" alt="..." class="img-circle profile-pic">
-									<p>Welcome <?=get_current_app()?>, Super admin</p> <b class="caret"></b>
+									<p>Welcome <?=get_current_app()?>, Super admin <?=$_SESSION['full_name']?></p> <b class="caret"></b>
 							</a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Edit profile</a></li>

@@ -117,8 +117,7 @@
 										<div class="col-md-12 t-center">
 											<br />
 											<button id="add-tim" class="btn l-float btn-sm btn-fill">
-												<span class="btn-label"> <i class="ti-plus"></i>
-												</span>&nbsp; TAMBAH &nbsp;
+												<span class="btn-label"> <i class="fa fa-plus-circle"></i></span> TAMBAH
 											</button>
 										</div>
 									</div>
@@ -247,9 +246,9 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<div class="col-md-12 t-center">
+										<div class="col-md-12 t-center"><br />
 											<button id="add-tim-perpanjangan" class="btn btn-sm l-float btn-fill">
-												<span class="btn-label"><i class="ti-plus"></i> </span>TAMBAH
+												<span class="btn-label"><i class="fa fa-plus-circle"></i> </span>TAMBAH
 											</button>
 										</div>
 									</div>
@@ -275,3 +274,19 @@
 		</div>
 	</div>
 </div>
+<script>
+    requirejs.config({
+        "shim": {
+            "bootstrap": {"deps": ["jquery"]},
+            "datetimepicker" : {deps: ["jquery", "moment"]}
+        },
+        "paths": {
+            "jspath": "../../assets/js/",
+            "jquery": "../../assets/js/jquery-2.1.4.min",
+            "datetimepicker": "../../assets/js/bootstrap-datetimepicker.min",
+            "moment" : "../../assets/js/moment.min",
+            "bootstrap": "../../assets/js/bootstrap.min",
+        }
+    });
+    requirejs(["jspath/lhp"]);
+</script>

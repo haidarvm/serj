@@ -4,7 +4,7 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-						<form method="post" action="http://localhost/serj/e4/tlhp/kodefikasi/insert_template_laporan" class="form form-horizontal">
+						<form method="post" action="<?=site_url()?>tlhp/template/insert_template_laporan" class="form form-horizontal">
 							<div class="row">
 								<div class="col-md-6">
 									<fieldset>
@@ -40,7 +40,9 @@
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Tanggal Laporan</label>
 											<div class="col-sm-10">
+												<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 												<input type="text" name="tanggal_laporan" id="datetimepicker1" class="form-control">
+
 											</div>
 										</div>
 									</fieldset>
@@ -81,7 +83,7 @@
 							  </div>
 							  <div class="col-md-2"><!--.col-md-4--></div>
 							</div>
-							<center><input type="submit" value="simpan" class="btn btn-primary"><input type="reset" value="Reset" class="btn btn-warning"></center>
+							<center><input type="submit" value="simpan" class="btn btn-primary btn-margin"><input type="reset" value="Reset" class="btn btn-warning btn-margin"></center>
 						</form>
 					</div>
 				</div>
