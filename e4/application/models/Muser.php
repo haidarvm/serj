@@ -187,4 +187,14 @@ class MUser extends CI_Model {
 //		VALUES ('ali khanafi','manager','344555','pass123','1','1','ali')";
 		$this->db->insert_batch("user", $data);
 	}
+	
+	function getAllLogUser($cond = NULL, $order_by = NULL) {
+		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
+		$sql = "SELECT * , TIMEDIFF(uh.logout, uh.login) as lama_penggunaan FROM {PRE}user u
+				left JOIN {PRE}user_history uh ON uh.user_id = u.user_id
+    			left JOIN {PRE}user_level l ON l.user_level_id = u.user_level_id
+    			left JOIN {PRE}unit_kerja uk ON uk.unit_kerja_id = u.unit_kerja_id
+    			" . $cond . " " . $order_by;
+		return $this->db->query($sql);
+	}
 }
