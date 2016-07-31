@@ -170,9 +170,12 @@ class MUser extends CI_Model {
 	}
 	
 	function findOneByUserName($username) {
-		$this->db->select('first_name, last_name, full_name, nip, jabatan');
+		$this->db->select('username, first_name, last_name, full_name, nip, jabatan, 
+			user.unit_kerja_id, unit_kerja.unit_kerja, user.user_level_id, user_level.user_level');
+		$this->db->join('unit_kerja', 'user.unit_kerja_id = unit_kerja.unit_kerja_id', 'inner');
+		$this->db->join('user_level', 'user.user_level_id = user_level.user_level_id', 'inner');
 		$this->db->where('username', $username);
-		return $this->db->get("user")->row();
+		return $this->db->get('user')->row();
 	}
 	
 	function add($data) {

@@ -13,9 +13,8 @@ class Restmanus extends REST_Controller {
 	
 	public function index_get() {
 		$this->load->model('muser');
-		$reqUsername = $this->get('userName');
+		$reqUsername = $this->get('username');
 		$data = $this->muser->findOneByUserName($reqUsername);
-		
 		$dataResponse = array();
 		if (isset($data)) {
 			$dataResponse['data'] = $data;
