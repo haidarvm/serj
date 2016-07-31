@@ -20,8 +20,26 @@ class Loghistory extends MY_Controller {
 	 */
 	public function index() {
 		$data['title'] = "LOG HISTORY USER";
+		
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/loghistory', $data);
+	}
+	
+	public function get_user_history_list() {
+		$col = array (
+				'log_id' => 'log_id',
+				'user_id' => 'user_id',
+				'login' => 'login',
+				'logout' => 'logout',
+		);
+		
+		// Get Db Prefix 
+		$this->load->database();
+		$dbPrefix = $this->db->dbprefix;
+		
+		$table = $dbPrefix . "user_history";
+		header ( 'Content-Type: application/json' );
+		exit(datatable_connect ( $col, $table, 'log_id', 1));
 	}
 
 	/**
