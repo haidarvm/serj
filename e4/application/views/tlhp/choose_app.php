@@ -82,7 +82,7 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_orix?>"  action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<h1 class="o-tlhp">TLHP</h1>
+							<img src="<?php echo base_url();?>assets/img/tlhp.png" alt="" width="192" height="77 border="0" />
 							<h3 class="t-other">TLHP LAINNYA</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_orix?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_orix?>" />
