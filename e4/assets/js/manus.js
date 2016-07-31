@@ -5,8 +5,12 @@ define(["jquery", "bootstrap", "data-table"], function($){
     	$('#userModal').modal('show').find('.modal-body').load(body);
     }
 	
+	function refreshManusTable() {
+		$('#manus-grid').DataTable().ajax.reload();
+	}
+	
     $(function(){
-        $('#manus-grid').DataTable( {
+        $('#manus-grid').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [[ 0, "desc" ]],

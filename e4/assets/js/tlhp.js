@@ -215,13 +215,10 @@ $('#add-tim').click(function(event){
  * @param id
  * @returns
  */
+/**
 function userEdit(id) {
 	body = site_url + 'tlhp/manus/update/'+ id;
 	$('#userModal').modal('show').find('.modal-body').load(body);
-}
-
-function refreshManusTable() {
-	$('#manus-grid').DataTable().ajax.reload();
-}
+} **/
 
 
