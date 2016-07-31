@@ -82,11 +82,11 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_orix?>"  action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<img src="<?php echo base_url();?>assets/img/img-4.png" alt="" width="206" height="168" border="0" />c
-							<h3>ORIX</h3>
+							<h1 class="o-tlhp">TLHP</h1>
+							<h3 class="t-other">TLHP LAINNYA</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_orix?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_orix?>" />
-						</div>c
+						</div>
 					</form>
 				</div>
 				
@@ -96,7 +96,7 @@
 	
 	<div class="container-fluid footer-black nopadding">
 		<p>&copy;2016, DATABASE HASIL PENGAWASAN INSPEKTORAT
-                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI.</p>
+                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI.  </p>
 	</div>
 
    <!--   Core JS Files   -->

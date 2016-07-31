@@ -1,4 +1,4 @@
-define(["jquery", "bootstrap", "data-table"], function($){
+define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
 	
 	window.userEdit = function userEdit(id) {
     	var body = site_url + 'tlhp/manus/update/'+ id;
@@ -9,7 +9,36 @@ define(["jquery", "bootstrap", "data-table"], function($){
 		$('#manus-grid').DataTable().ajax.reload();
 	}
 	
+	function UserViewModel() {
+    	var self = this;
+    	
+    	self.data = {
+			userName: ko.observable(),
+	    	accountNumber: ko.observable(),
+	    	accountPosition:  ko.observable(),
+	    	
+	    	departement: ko.observable(),
+	    	fullName: ko.observable(),
+	    	password: ko.observable(),
+	    	rePassword: ko.observable(),
+	    	
+	    	role: ko.observable(),
+	    	address: ko.observable()
+	    	
+    	}
+    	
+    	self.doInsert = function() {
+    		console.debug(self.data);
+    	}
+    	
+    	self.userNotif = ko.observable("example message");
+    }
+	
+	var userView = new UserViewModel();
+	
     $(function(){
+    	ko.applyBindings(userView);
+    	
         $('#manus-grid').DataTable({
             "processing": true,
             "serverSide": true,

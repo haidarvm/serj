@@ -120,15 +120,20 @@ class Auth extends MY_Controller {
 							break;
 					}
 					
-					$login = $this->muser->login ( $post ['username'], $post ['password'] );
+					//TODO: dibuka lagi ya, for dev
+					//$login = $this->muser->login ( $post ['username'], $post ['password'] );
+					$login = TRUE;
 					if ($login !== FALSE) {
-						// echo 'masuk benar';
-						define_sess ( $login->username, $login->user_id, $login->full_name, $login->email, $login->user_level_id );
+						//echo 'masuk benar';
+						//TODO: dibuka lagi ya, for dev
+						//define_sess ( $login->username, $login->user_id, $login->full_name, $login->email, $login->user_level_id );
+						define_sess("atang", "atang_id", "atang sutisna", "atang@tang.com", "1");
+						
 						redirect ( 'tlhp' );
 						// echo 'tst';exit;
 						// previous_url();
 					} else {
-						// throw new Exception("Username Or Password is invalid");
+						throw new Exception("Username Or Password is invalid");
 						$msg = "Username Or Password is invalid";
 						$this->login ( $msg );
 					}
@@ -137,7 +142,8 @@ class Auth extends MY_Controller {
 					$this->login ( $msg );
 				}
 			} catch ( Exception $e ) {
-				echo $e->getMessage ();
+				//echo $e->getMessage ();
+				echo "exception";
 			}
 		} else {
 			redirect ( 'home' );
