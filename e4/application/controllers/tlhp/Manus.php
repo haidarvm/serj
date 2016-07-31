@@ -120,7 +120,7 @@ class Manus extends MY_Controller {
 					}
 					unset($post['re_password'], $post['form']);
 					$insertUserId = $this->muser->insertUser($post);
-					redirect(site_url() . 'admin/user');
+//					redirect(site_url() . 'admin/user');
 				}
 				$user_id = $this->muser->insertUser($post);
 				redirect('tlhp/manus');
