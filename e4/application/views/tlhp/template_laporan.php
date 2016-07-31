@@ -40,7 +40,7 @@
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Tanggal Laporan</label>
 											<div class="col-sm-10">
-												<input type="text" name="tanggal_laporan" class="form-control">
+												<input type="text" name="tanggal_laporan" id="datetimepicker1" class="form-control">
 											</div>
 										</div>
 									</fieldset>
