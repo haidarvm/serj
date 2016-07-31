@@ -27,8 +27,13 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
 	    	
     	}
     	
+    	self.data.userName.subscribe(function(ev){
+    		console.info("data sekarang "+ ev);
+    	});
+    	
     	self.doInsert = function() {
     		var reqData = ko.toJSON(self.data);
+    		//var type = 
     		console.debug(reqData);
     		$.ajax({
 				type: "POST",
