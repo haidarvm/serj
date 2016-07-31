@@ -37,8 +37,8 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">BELUM SESUAI REKOMENDASI</p>
-                                       <span class="t-number">50</span>
+	                                   <p class="t-card">SELESAI DITINDAKLANJUTI</p>
+                                       <span class="t-number">40</span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -51,8 +51,8 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">BELUM DITINDAKLANJUTI</p>
-                                       <span class="t-number">50</span>
+	                                   <p class="t-card">BELUM SESUAI REKOMENDASI	</p>
+                                       <span class="t-number">15</span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -65,7 +65,7 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">TIDAK DAPAT DITINDAKLANJUTI</p>
+	                                   <p class="t-card">BELUM DITINDAKLANJUTI</p>
                                        <span class="t-number">30</span>
 	                               </div>
 	                           </div>
@@ -79,8 +79,8 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">TOTAL TEMUAN SEJAK TAHUN 2013</p>
-                                       <span class="t-number">10</span>
+	                                   <p class="t-card">TIDAK DAPAT DITINDAKLANJUTI</p>
+                                       <span class="t-number">2</span>
 	                               </div>
 	                           </div>
 	                       </div>
