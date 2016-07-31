@@ -64,25 +64,25 @@ var site_url = "<?php echo base_url()?>";
 				</div>
 				<div class="clr"></div>
 				<ul class="nav">
-					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa.php"> <i class="ti-dashboard"></i>
+					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa"> <i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'manus' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/manus.php"> <i class="ti-user"></i>
+					<li <?=$this->uri->segment(2)  == 'manus' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/manus"> <i class="ti-user"></i>
 							<p title="Managment User">Managment User</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/addlhp.php"> <i class="ti-pencil-alt"></i>
+					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/addlhp"> <i class="ti-pencil-alt"></i>
 							<p title="Buat LHP Baru">Buat LHP Baru</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp.php"> <i class="ti-new-window"></i>
+					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp"> <i class="ti-new-window"></i>
 							<p title="Update LHP">Update LHP</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template.php"> <i class="ti-agenda"></i>
+					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template"> <i class="ti-agenda"></i>
 							<p title="Template Laporan">Template Laporan</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'kodefikasi' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/kodefikasi.php"> <i class="ti-menu-alt"></i>
+					<li <?=$this->uri->segment(2)  == 'kodefikasi' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/kodefikasi"> <i class="ti-menu-alt"></i>
 							<p title="Kodefikasi">Kodefikasi</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'loghistory' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/loghistory.php"> <i class="ti-archive"></i>
+					<li <?=$this->uri->segment(2)  == 'loghistory' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/loghistory"> <i class="ti-archive"></i>
 							<p title="Log History">Log History</p>
 					</a></li>
 					<li><a href="<?=site_url();?>auth/logout"> <i class="ti-power-off"></i>
