@@ -49,7 +49,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .table-custom .warning {
-	font-weight: bold;
+	font-family: "Muli-Bold";
+}
+tr td.success {
+	font-family: "Muli-Bold";
+	font-size: 12px;
 }
 
 .table-custom-head .info {
@@ -677,6 +681,12 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	background-color: #f0a810;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+}
+#kertas-kerja th{
+	font-size: 12px;
+	text-align: center;
+	border: 1px solid #eee;
+	font-family: "Muli-Bold";
 }
 
 

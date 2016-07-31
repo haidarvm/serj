@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">HASIL <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
-						<p class="category">PADA <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
@@ -24,15 +24,15 @@
 									<td>Edit</td>
 								</tr>
 								<tr>
-									<td> <?php echo isset($lhp->tanggal_lhp) ? $lhp->tanggal_lhp:"";?></td>
+									<td> <?php echo isset($lhp->tanggal_lhp) ? year_only($lhp->tanggal_lhp):"";?></td>
 									<td> <?php echo isset($lhp->nomor_lhp) ? $lhp->nomor_lhp:"";?></td>
 									<td> <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></td>
-									<td>3</td>
-									<td>4</td>
-									<td>5</td>
-									<td>6</td>
-									<td>3</td>
-									<td>3</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
 									<td><a class="btn btn-info circle-perfect" href="<?=site_url()?>tlhp/addlhp/update/<?=$lhp->lhp_id?>"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 									</a></td>
 								</tr>
@@ -45,39 +45,39 @@
 								<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
-											<td colspan="6" class="warning">JUDUL TEMUAN</td>
-											<td colspan="5" class="info">REKOMENDASI</td>
-											<td colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
-											</td>
-											<td colspan="2">SESUAI DENGAN REKOMENDASI</td>
-											<td colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</td>
-											<td colspan="2">BELUM DITINDAK LANJUTI</td>
-											<td colspan="2">TIDAK DAPAT DI TINDAK LANJUTI KARENA ALASAN YANG SAH</td>
+											<th colspan="6" class="warning">JUDUL TEMUAN</th>
+											<th colspan="5" class="info">REKOMENDASI</th>
+											<th colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
+											</th>
+											<th colspan="2">SESUAI DENGAN REKOMENDASI</th>
+											<th colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</th>
+											<th colspan="2">BELUM DITINDAK LANJUTI</th>
+											<th colspan="2">TIDAK DAPAT DI TINDAK LANJUTI KARENA ALASAN YANG SAH</th>
 										</tr>
 										<tr>
-											<td class="warning">NO</td>
-											<td class="warning">KODE TEMUAN</td>
-											<td class="warning">URAIAN TEMUAN</td>
-											<td class="warning">KODE SEBAB</td>
-											<td class="warning">URAIAN SEBAB</td>
-											<td class="warning">NILAI (Rp.)</td>
-											<td class="info">NO</td>
-											<td class="info">KODE REKOMENDASI</td>
-											<td class="info">URAIAN REKOMENDASI</td>
-											<td class="info">KERUGIAN NEGARA</td>
-											<td class="info">NILAI (Rp.)</td>
-											<td class="success">UNIT KERJA</td>
-											<td class="success">PERIODE TINDAK LANJUT</td>
-											<td class="success">TINDAK LANJUT</td>
-											<td class="success">DOKUMEN PENDUKUNG</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
+											<th class="warning">NO</th>
+											<th class="warning">KODE TEMUAN</th>
+											<th class="warning">URAIAN TEMUAN</th>
+											<th class="warning">KODE SEBAB</th>
+											<th class="warning">URAIAN SEBAB</th>
+											<th class="warning">NILAI (Rp.)</th>
+											<th class="info">NO</th>
+											<th class="info">KODE REKOMENDASI</th>
+											<th class="info">URAIAN REKOMENDASI</th>
+											<th class="info">KERUGIAN NEGARA</th>
+											<th class="info">NILAI (Rp.)</th>
+											<th class="success">UNIT KERJA</th>
+											<th class="success">PERIODE TINDAK LANJUT</th>
+											<th class="success">TINDAK LANJUT</th>
+											<th class="success">DOKUMEN PENDUKUNG</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
 										</tr>
 										<!--  ##### A Sistem Pengendalian #####-->
 										
@@ -399,12 +399,30 @@
 
 
 						<div class="row">
-							<div class="col-md-12 t-center">
-								<button type="submit" id="kklhp" class="btn btn-wd btn-danger btn-fill">
+							<div class="col-md-7 t-center top-space">
+								<button type="submit" id="kklhp" class="btn btn-wd btn-info btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-excel-o"></i>
+									</span> EXPORT TO EXCEL
+								</button>
+								
+								<button type="submit" id="kklhp" class="btn btn-wd btn-warning btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>
+									</span> EXPORT TO PDF
+								</button>
+
+								<button type="submit" id="kklhp" class="btn btn-wd btn-success btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-print"></i>
+									</span> PRINT
+								</button>
+							</div>
+
+							<div class="col-md-5 t-ce ter top-space">
+								<button type="submit" id="kklhp" class="btn btn-wd btn-danger btn-fill btn-margin">
 									<span class="btn-label"> <i class="ti-save"></i>
 									</span> SAVE
 								</button>
 							</div>
+							<div class="col-md-12 top-space">&nbsp;</div>
 						</div>
 					</div>
 				</div>
