@@ -20,6 +20,7 @@ class Loghistory extends MY_Controller {
 	 */
 	public function index() {
 		$data['title'] = "LOG HISTORY USER";
+		
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/loghistory', $data);
 	}
