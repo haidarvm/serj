@@ -145,8 +145,7 @@
 	                                   <div class="col-xs-9">
 	                                   <div class="numbers">
 	                                   <p>CETAK DOKUMEN</p>
-                                          <button class="btn btn-danger btn-fill btn-wd"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</button>
-                                          <button class="btn btn-info btn-fill btn-wd"><i class="fa fa-file-word-o" aria-hidden="true"></i> MS WORD</button>
+                                          <button class="btn btn-danger btn-fill btn-wd"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
 	                                   </div>
 	                                   </div>
 	                                </div>
