@@ -134,14 +134,6 @@ class Manus extends MY_Controller {
 			redirect('tlhp/manus');
 		}
 	}
-	
-	function post_user() {
-		$data = (array) json_decode(file_get_contents('php://input'));
-		
-		$response = array(
-			''
-		);
-	}
 
 /**
  * List All Product

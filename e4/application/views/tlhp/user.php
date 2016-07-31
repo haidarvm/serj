@@ -92,7 +92,7 @@
 	<div class="modal-footer">
 		<button type="button" class="btn btn-default btn-margin" data-dismiss="modal">BATAL</button>
 		<button type="submit" id="save-manus" class="btn btn-primary btn-margin" data-bind="event: {click: doInsert}">SIMPAN</button>
-		<input name="user_id" type="hidden" value="<?=isset($user) ? $user->user_id : '';?>">
+		<input name="user_id" type="hidden" value="<?=isset($user) ? $user->user_id : '';?>" data-bind="value: data.userId">
 	</div>
 
 </form>
