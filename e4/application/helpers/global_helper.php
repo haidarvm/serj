@@ -471,7 +471,7 @@ function dateReg() {
  * @param unknown $anyWhere
  * @return string
  */
-function datatable_excute($aCol, $sTable, $sGroupBy = NULL, $sIndexTable = NULL, $anyWhere = NULL) {
+function datatable_connect($aCol, $sTable, $sGroupBy = NULL, $sIndexTable = NULL, $anyWhere = NULL) {
 	$CI =& get_instance();
 
 	$sGroupBy = ($sGroupBy != NULL) ? $sGroupBy : '';
