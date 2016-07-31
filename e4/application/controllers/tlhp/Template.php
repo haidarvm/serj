@@ -38,10 +38,13 @@ class Template extends MY_Controller {
 	public function insert_template_laporan() {
 		$insert = $this->input->post();
 		if ($insert) {
+			// print_r($insert);exit;
 			// $insert['waktu']=date('Y-m-d H:i:s');
-			$this->mlhp->insert_templateLaporan($insert);
+			$insert['user_id'] = $_SESSION['user_id'];
+			$insert_id = $this->mlhp->insert_templateLaporan($insert);
+			echo $insert_id;
 			// redirect('ctrl/tampil');
 		}
-		$this->load->tlhp_template('tlhp/template_laporan');
+		// $this->load->tlhp_template('tlhp/template_laporan');
 	}
 }
