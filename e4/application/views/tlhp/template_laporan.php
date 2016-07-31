@@ -40,8 +40,10 @@
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Tanggal Laporan</label>
 											<div class="col-sm-10">
-												<input type="text" name="tanggal_laporan" id="datetimepicker1" class="form-control">
-
+											<div class="input-group">
+													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
+												<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" required="true">
+											</div>
 											</div>
 										</div>
 									</fieldset>
@@ -89,4 +91,20 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div><script>
+	console.debug(site_url);
+    requirejs.config({
+        "shim": {
+            "bootstrap": {"deps": ["jquery"]},
+            "datetimepicker" : {deps: ["jquery", "moment"]}
+        },
+        "paths": {
+            "jspath": site_url+ "assets/js/",
+            "jquery": site_url+ "assets/js/jquery-2.1.4.min",
+            "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
+            "moment" : site_url+ "assets/js/moment.min",
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+        }
+    });
+    requirejs(["jspath/lhp"]);
+</script>
