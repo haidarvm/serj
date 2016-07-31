@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -46,7 +46,7 @@
 <script src="<?php echo base_url();?>assets/js/require.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
-var site_url = '<?=base_url()?>';
+var site_url = "<?php echo base_url()?>";
 </script>
 <body>
 
@@ -60,7 +60,7 @@ var site_url = '<?=base_url()?>';
 
 			<div class="sidebar-wrapper">
 				<div class="logo t-center">
-					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo-white.png"></a>
+					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo.png"></a>
 				</div>
 				<div class="clr"></div>
 				<ul class="nav">

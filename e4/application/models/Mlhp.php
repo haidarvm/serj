@@ -142,6 +142,11 @@ class MLhp extends CI_Model {
 	function checkSQLDate($date) {
 		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
+
+
+
+	//----------rudi----------
+	
 	
 	// ----------rudi----------
 	function getAllKodeSebab() {
@@ -159,6 +164,42 @@ class MLhp extends CI_Model {
 		return checkRes($query);
 	}
 
+
+	
+// 	function updateTemuan($lhp_id, $jenis_temuan) {
+// 		$this->db->where("lhp_id", $lhp_id);
+// 		$this->db->where("jenis_temuan", $jenis_temuan);
+// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+// 	}
+	
+// 	function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
+		
+// 	}
+
+// 	function data_lhp() {
+// 		$this->db->select("*");
+// 		$this->db->from('tlhp_lhp');
+// 		$this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
+		
+// 		$this->db->order_by("judul_lhp", "asc");
+// 		return $sql = $this->db->get();
+// 	}
+
+// 	function data_temuan_update($lhp_id, $jenis_temuan) {
+// 		$this->db->where("lhp_id", $lhp_id);
+// 		$this->db->where("jenis_temuan", $jenis_temuan);
+// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
+// 	}
+
+// 	function data_rekomen_update($kertas_kerja, $jenis_temuan) {
+// 		$this->db->where("kertas_kerja_id", $kertas_kerja);
+		
+// 		return $sql = $this->db->get("tlhp_rekomendasi");
+// 	}
+
+
+//insert template laporan
+	
 	function updateKKLHP($kertas_kerja_id, $data) {
 		$this->db->update('kertas_kerja_temuan', $data, array('kertas_kerja_id' => $kertas_kerja_id));
 	}
@@ -175,11 +216,15 @@ class MLhp extends CI_Model {
 
 	function deleteKKKLHP($kertas_kerja_id) {
 		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
+
 	}
 
 	function deleteKKKLHPId($lhp_id) {
 		$this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
 	}
+
+
+
 
 	function deleteRekomendasi($kertas_kerja_id) {
 		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
@@ -264,4 +309,5 @@ class MLhp extends CI_Model {
 		return $this->db->query($query)->result();
 	}
 	
+
 }

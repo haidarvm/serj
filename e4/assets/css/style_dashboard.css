@@ -30,7 +30,7 @@ header {
     padding: 0px;
 }
 .logo img{
-    width: 200px;
+    width: 170px;
     margin: 0 0 0 20px;
 }
 #topnav {
@@ -54,6 +54,7 @@ header {
     font-size: 15px;
     font-weight: bold;
 }
+
 /*** TABLE STYLE ***/
 
 .table {

@@ -29,6 +29,13 @@ class Home extends MY_Controller {
 			$_SESSION['logged'] = "tlhp";
 			redirect('tlhp/menusa');
 		}
+		
+		// AccountType
+		$data['_ikp'] = "_BPK_";
+		$data['_bpk'] = "_BPK_";
+		$data['_bpkp'] = "_BPK_";
+		$data['_orix'] = "_BPK_";
+		
 		// echo $_SESSION['logged'];
 		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->view('tlhp/choose_app', $data);

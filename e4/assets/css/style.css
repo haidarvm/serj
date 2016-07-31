@@ -60,6 +60,13 @@ CONTENTS:
 	position: relative;
     left: -3px;
 }
+.o-tlhp {
+    font-size: 50px;
+    color: #2e79b5;
+}
+.t-other {
+    margin: 100px 0 0 0;
+}
 /*** HEADER ***/
 header {
     margin: 10px 0 20px 0;
@@ -74,7 +81,7 @@ header {
     padding: 22px;
 }
 .logo img{
-    width: 150px;
+    width: 200px;
 }
 .logo-landing img{
     width: 150px;

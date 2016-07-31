@@ -40,7 +40,10 @@
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Tanggal Laporan</label>
 											<div class="col-sm-10">
-												<input type="text" name="tanggal_laporan" class="form-control">
+											<div class="input-group">
+													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
+												<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" required="true">
+											</div>
 											</div>
 										</div>
 									</fieldset>
@@ -89,3 +92,39 @@
 		</div>
 	</div>
 </div>
+<div class="row">
+  <div class="col-md-10"><!--.col-md-8--></div>
+  <div class="col-md-2"><a href="#" onclick="window.print()" class="btn btn-warning"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a></div>
+</div>
+
+<script>
+	console.debug(site_url);
+    requirejs.config({
+        "shim": {
+            "bootstrap": {"deps": ["jquery"]},
+            "datetimepicker" : {deps: ["jquery", "moment"]},
+            "summernote": {"deps": ["jquery"]}
+        },
+        "paths": {
+            "jspath": site_url+ "assets/js/",
+            "jquery": site_url+ "assets/js/jquery-2.1.4.min",
+            "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
+            "moment" : site_url+ "assets/js/moment.min",
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "summernote": site_url+ "assets/js/summernote",
+        }
+    });
+    requirejs(["jspath/lhp", "jspath/template_laporan"]);
+</script>
+
+<script type="text/javascript">
+     
+     function printDiv(elementId) {
+    var a = document.getElementById('print-area-2').value;
+    var b = document.getElementById(elementId).innerHTML;
+    window.frames["print_frame"].document.title = document.title;
+    window.frames["print_frame"].document.body.innerHTML = '<style>' + a + '</style>' + b;
+    window.frames["print_frame"].window.focus();
+    window.frames["print_frame"].window.print();
+}
+</script>
