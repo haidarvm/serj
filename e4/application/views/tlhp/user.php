@@ -52,7 +52,6 @@
 		<div class="col-md-4">
 			<div class="form-group">
 				<label>User Level</label> <select class="form-control" name="user_level_id" required="true">
-					<option>-</option>
 					<?php if ($getAllLevel) {?>
 					<?php  foreach($getAllLevel as $level) {?>
 					<option value="<?=$level->user_level_id;?>" <?php if(!empty($user->user_level_id)) echo $user->user_level_id ==  $level->user_level_id ? 'selected' : '' ?>><?=$level->user_level;?></option>
