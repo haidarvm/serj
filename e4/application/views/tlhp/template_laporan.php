@@ -40,7 +40,6 @@
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Tanggal Laporan</label>
 											<div class="col-sm-10">
-												<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 												<input type="text" name="tanggal_laporan" id="datetimepicker1" class="form-control">
 
 											</div>
