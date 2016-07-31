@@ -53,7 +53,7 @@
 			<div class="col-md-4 col-md-offset-4 box-login">
 				<div class="grid-box">
 					<p>
-						<img src="<?php echo base_url();?>assets/img/icon_logo.png" alt="" width="86" height="111" border="0" />
+						<img src="<?php echo base_url() . $logo ;?>" alt="" width="86" height="111" border="0" />
 					</p>
 
 					<p class="category text-warning"><?php echo $msg?> </p>

@@ -27,20 +27,38 @@ class Auth extends MY_Controller {
 		
 		// Save Account Type
 		if ($accountType != "") {
-			$this->session->set_userdata('account_type', $accountType);
-			$accountType = $this->session->userdata('account_type');
+			$this->session->set_userdata ( 'account_type', $accountType );
+			$accountType = $this->session->userdata ( 'account_type' );
 		} else {
-			$accountType = $this->session->userdata('account_type');
+			$accountType = $this->session->userdata ( 'account_type' );
 		}
 		
 		// Check if accountType really null
 		if ($accountType == "") {
-				redirect('tlhp');
+			redirect ( 'tlhp' );
+		}
+		
+		// Logo Switch
+		$getLogo = "";
+		switch ($accountType) {
+			case "_IKP_" :
+				$getLogo = "assets/img/img-1.png";
+				break;
+			case "_BPK_" :
+				$getLogo = "assets/img/img-2.png";
+				break;
+			case "_BPKP_" :
+				$getLogo = "assets/img/img-3.png";
+				break;
+			case "_ORIX_" :
+				$getLogo = "assets/img/img-4.png";
+				break;
 		}
 		
 		$data ['msg'] = $msg;
 		$data ['accountType'] = $accountType;
 		$data ['pageTitle'] = "Login";
+		$data ['logo'] = $getLogo;
 		
 		if (isset ( $_SESSION ['user_id'] )) {
 			if (isset ( $_SESSION ['logged'] )) {
@@ -98,7 +116,7 @@ class Auth extends MY_Controller {
 							$this->setTempUserType ( '_prefixdata', 'tlhp_orix_' );
 							break;
 						default :
-							$this->setTempUserType('_prefixdata', 'tlhp_ikp_');
+							$this->setTempUserType ( '_prefixdata', 'tlhp_ikp_' );
 							break;
 					}
 					
@@ -127,15 +145,14 @@ class Auth extends MY_Controller {
 		}
 	}
 	public function logout() {
-		if (! empty($_SESSION['user_id'])) {
-			$this->muser->user_logout($_SESSION['user_id']);
-			session_destroy();
-			redirect('home');
+		if (! empty ( $_SESSION ['user_id'] )) {
+			$this->muser->user_logout ( $_SESSION ['user_id'] );
+			session_destroy ();
+			redirect ( 'home' );
 		} else {
-			redirect('home');
+			redirect ( 'home' );
 		}
 	}
-	
 	public function info() {
 		// echo date('D, d-M-Y H:i:s');
 		echo floor ( '107.84764739189254' );
@@ -153,16 +170,16 @@ class Auth extends MY_Controller {
 		$prefixData = @$_COOKIE ['_prefixdata'];
 		switch ($prefixData) {
 			case 'tlhp_ikp_' :
-				//----//
+				// ----//
 				break;
 			case 'tlhp_bpk_' :
-				//----//
+				// ----//
 				break;
 			case 'tlhp_bpkp_' :
-				//----//
+				// ----//
 				break;
 			case 'tlhp_orix_' :
-				//----//
+				// ----//
 				break;
 		}
 	}
