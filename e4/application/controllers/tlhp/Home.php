@@ -31,10 +31,10 @@ class Home extends MY_Controller {
 		}
 		
 		// AccountType
-		$data['_ikp'] = "_IKP_";
+		$data['_ikp'] = "_BPK_";
 		$data['_bpk'] = "_BPK_";
-		$data['_bpkp'] = "_BPKP_";
-		$data['_orix'] = "_ORIX_";
+		$data['_bpkp'] = "_BPK_";
+		$data['_orix'] = "_BPK_";
 		
 		// echo $_SESSION['logged'];
 		// $data['getAll'] = $this->muser->getAllUser();
