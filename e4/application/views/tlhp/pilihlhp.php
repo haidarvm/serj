@@ -28,7 +28,7 @@
 											<select  class="form-control" 
 												data-bind="enable: tlhpListEnable, options: tlhpList, optionsCaption: 'Choose', optionsText: 'lhp_title', value: choosenTlhpTitle">
 											</select>
-											<input type="text" id="lhp_id" name="lhp_id">
+											<input type="hidden" id="lhp_id" name="lhp_id">
 										</div>
 									</div>
 									<div class="col-md-12 top-space must-center">
