@@ -60,7 +60,7 @@ var site_url = "<?php echo base_url()?>";
 
 			<div class="sidebar-wrapper">
 				<div class="logo t-center">
-					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo-white.png"></a>
+					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo.png"></a>
 				</div>
 				<div class="clr"></div>
 				<ul class="nav">
