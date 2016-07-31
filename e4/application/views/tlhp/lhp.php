@@ -275,17 +275,18 @@
 	</div>
 </div>
 <script>
+	console.debug(site_url);
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
             "datetimepicker" : {deps: ["jquery", "moment"]}
         },
         "paths": {
-            "jspath": "../../assets/js/",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
-            "datetimepicker": "../../assets/js/bootstrap-datetimepicker.min",
-            "moment" : "../../assets/js/moment.min",
-            "bootstrap": "../../assets/js/bootstrap.min",
+            "jspath": site_url+ "assets/js/",
+            "jquery": site_url+ "assets/js/jquery-2.1.4.min",
+            "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
+            "moment" : site_url+ "assets/js/moment.min",
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
         }
     });
     requirejs(["jspath/lhp"]);
