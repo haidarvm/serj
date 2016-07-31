@@ -120,15 +120,10 @@ class Auth extends MY_Controller {
 							break;
 					}
 					
-					//TODO: dibuka lagi ya, for dev
-					//$login = $this->muser->login ( $post ['username'], $post ['password'] );
-					$login = TRUE;
+					$login = $this->muser->login ( $post ['username'], $post ['password'] );
 					if ($login !== FALSE) {
 						//echo 'masuk benar';
-						//TODO: dibuka lagi ya, for dev
-						//define_sess ( $login->username, $login->user_id, $login->full_name, $login->email, $login->user_level_id );
-						define_sess("atang", "atang_id", "atang sutisna", "atang@tang.com", "1");
-						
+						define_sess ( $login->username, $login->user_id, $login->full_name, $login->email, $login->user_level_id );
 						redirect ( 'tlhp' );
 						// echo 'tst';exit;
 						// previous_url();

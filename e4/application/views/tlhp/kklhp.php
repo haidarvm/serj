@@ -412,4 +412,8 @@
 		</div>
 	</div>
 </div>
+<script src="<?php  echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/summernote.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script> 
 

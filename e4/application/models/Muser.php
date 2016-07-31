@@ -183,7 +183,8 @@ class MUser extends CI_Model {
 //		$this->db->set('password', $data['password']);
 //		$this->db->set('unit_kerja_id', $data['unit_kerja_id']);
 //		$this->db->set('user_level_id', $data['user_level_id']);
+//		$query = "INSERT INTO {PRE}user (full_name, jabatan, nip, password, unit_kerja_id, user_level_id, username) 
+//		VALUES ('ali khanafi','manager','344555','pass123','1','1','ali')";
 		$this->db->insert_batch("user", $data);
-		return $this->db->insert_id();
 	}
 }
