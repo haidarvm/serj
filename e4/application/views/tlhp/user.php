@@ -86,16 +86,7 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<div class="form-group">
-				<label>Address</label> 
-				<textarea name="address" rows="2" class="form-control border-input" data-bind="value: data.address">
-					<?=isset($user) ? $user->address : '';?>
-				</textarea>
-			</div>
-		</div>
-	</div>
+	<br>
 	<div class="clearfix"></div>
 
 	<div class="modal-footer">
