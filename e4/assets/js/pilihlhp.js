@@ -30,8 +30,8 @@ define(["jquery", "knockout"], function($, ko){
 		}
 		self.choosenTlhpTitle = ko.observable();
 		self.choosenTlhpTitle.subscribe(function(val){
-			console.info("jalan");
-			$("#lhp_id").attr("value", val.id);
+//			console.info("jalan");
+			$("#lhp_id").attr("value", val.lhp_id);
 		});
 		
 		self.choosenYear.subscribe(function(val){
