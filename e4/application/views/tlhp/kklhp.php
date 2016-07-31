@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">HASIL <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
-						<p class="category">PADA <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
@@ -24,15 +24,15 @@
 									<td>Edit</td>
 								</tr>
 								<tr>
-									<td> <?php echo isset($lhp->tanggal_lhp) ? $lhp->tanggal_lhp:"";?></td>
+									<td> <?php echo isset($lhp->tanggal_lhp) ? year_only($lhp->tanggal_lhp):"";?></td>
 									<td> <?php echo isset($lhp->nomor_lhp) ? $lhp->nomor_lhp:"";?></td>
 									<td> <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></td>
-									<td>3</td>
-									<td>4</td>
-									<td>5</td>
-									<td>6</td>
-									<td>3</td>
-									<td>3</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
 									<td><a class="btn btn-info circle-perfect" href="<?=site_url()?>tlhp/addlhp/update/<?=$lhp->lhp_id?>"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 									</a></td>
 								</tr>
