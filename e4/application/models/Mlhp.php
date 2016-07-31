@@ -259,4 +259,9 @@ class MLhp extends CI_Model {
 	// return $sql = $this->db->get("tlhp_rekomendasi");
 	// }
 	
+	public function findAllByYear($year) {
+		$query = "SELECT lhp_id, judul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '".$year."'";
+		return $this->db->query($query)->result();
+	}
+	
 }
