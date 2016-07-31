@@ -109,7 +109,7 @@ var site_url = '<?=base_url()?>';
 					<div class="collapse navbar-collapse .col-md-3">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?=base_url();?>assets/img/faces/face-2.jpg" alt="..." class="img-circle profile-pic">
-									<p>Welcome <?=get_current_app()?>, Super admin</p> <b class="caret"></b>
+									<p>Welcome <?=get_current_app()?>, Super admin <?=$_SESSION['full_name']?></p> <b class="caret"></b>
 							</a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Edit profile</a></li>
