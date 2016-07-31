@@ -30,7 +30,7 @@ class Restmanus extends REST_Controller {
 	public function index_post() {
 		$username = $this->post('userName');
 		$data = array(array(
-			'username' => $this->post('userName'),
+			'usernamee' => $this->post('userName'),
 			'nip' => $this->post('accountNumber'),
 			'full_name' => $this->post('fullName'),
 			'jabatan' => $this->post('accountPosition'),

@@ -1,5 +1,49 @@
-define(["jquery", "bootstrap", "datetimepicker", "moment"], function($){
+define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function($, ko){
+	
+	function TeamViewModel() {
+		var selfD = this;
+		selfD.teamId = ko.observable();
+		selfD.name = ko.observable();
+		selfD.role = ko.observable();
+	}
+	
+	function LhpViewModel() {
+		var self = this;
+		
+		self.data = {
+			noSuratTugas: ko.observable(),
+			jenisPengawasan: ko.observable(),
+			tglSuratTugas: ko.observable(),
+			objectPengawasan: ko.observable(),
+			
+			startHariPengawasan: ko.observable(),
+			endHariPengawasan: ko.observable(),
+			judulLhp: ko.observable(),
+			
+			startSkorPemeriksaan: ko.observable(),
+			endSkorPemeriksaan: ko.observable(),
+			nomorLhp: ko.observable(),
+			
+			team: ko.observableArray([]),
+			teamPerpanjangan: ko.observableArray([])
+		}
+		
+		self.addTeam = function() {
+			console.info('create new team');
+			self.data.team.push(new TeamViewModel());
+		}
+		
+		self.removeTeam = function(vMember){
+			console.info('remove item');
+			self.data.team.remove(vMember);
+		}
+	}
+	
+	var lhpView = new LhpViewModel();
+	
     $(function(){
+    	ko.applyBindings(lhpView);
+    	
         $('.datepicker').datetimepicker({
             format: 'DD-MM-YYYY',    //use this format if you want the 12hours timpiecker with AM/PM toggle
             icons: {

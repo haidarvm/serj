@@ -4,8 +4,8 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-						<form class="form-horizontal" method="post" action="<?=site_url()?>tlhp/addlhp/insert">
-
+						<!--  <form class="form-horizontal" method="post" action="<?//=site_url()?>tlhp/addlhp/insert"> -->
+						<form class="form-horizontal">
 							<!-- <div class="header">
 								<h4 class="title must-center">Buat LHP Baru</h4>
 							</div> -->
@@ -66,7 +66,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-12 control-label t-left">TIM<star>*</star></label>
+										<label for="inputEmail3" class="col-sm-12 control-label t-left">TIMMM<star>*</star></label>
 										<div class="col-sm-5">
 											<input type="text" name="tim[]" class="form-control border-input" />
 										</div>
@@ -80,19 +80,23 @@
 											</select>
 										</div>
 									</div>
-
-									<div class="form-group">
-										<div class="col-sm-5">
-											<input type="text" name="tim[]" class="form-control border-input" />
-										</div>
-										<div class="col-sm-5">
-											<select class="form-control">
-												<?php if ($getAllJenisTim) {?>
-												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?=$tim->jenis_tim;?></option>
-												<?php } ?>
-												<?php } ?>
-											</select>
+									<div data-bind="template: {foreach: data.team}">
+										<div class="form-group">
+											<div class="col-sm-5">
+												<input type="text" name="tim[]" class="form-control border-input" data-bind="value: name"/>
+											</div>
+											<div class="col-sm-5">
+												<select class="form-control">
+													<?php if ($getAllJenisTim) {?>
+													<?php foreach($getAllJenisTim as $tim) {?>
+													<option><?=$tim->jenis_tim;?></option>
+													<?php } ?>
+													<?php } ?>
+												</select>
+											</div>
+											<div class="col-sm-5">
+												<a href="#" data-bind="event: {click: $parent.removeTeam}">remove</a>
+											</div>
 										</div>
 									</div>
 									<!-- Tim More -->
@@ -116,7 +120,7 @@
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
-											<button id="add-tim" class="btn l-float btn-sm btn-fill">
+											<button id="add-tim" class="btn l-float btn-sm btn-fill" data-bind="event: {click: addTeam}">
 												<span class="btn-label"> <i class="fa fa-plus-circle"></i></span> TAMBAH
 											</button>
 										</div>
@@ -284,6 +288,7 @@
         "paths": {
             "jspath": site_url+ "assets/js/",
             "jquery": site_url+ "assets/js/jquery-2.1.4.min",
+            "knockout": site_url+ "assets/js/knockout-3.2.0",
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
