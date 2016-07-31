@@ -96,7 +96,8 @@
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
-            "datetimepicker" : {deps: ["jquery", "moment"]}
+            "datetimepicker" : {deps: ["jquery", "moment"]},
+            "summernote": {"deps": ["jquery"]}
         },
         "paths": {
             "jspath": site_url+ "assets/js/",
@@ -104,7 +105,8 @@
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "summernote": site_url+ "assets/js/summernote",
         }
     });
-    requirejs(["jspath/lhp"]);
+    requirejs(["jspath/lhp", "jspath/template_laporan"]);
 </script>
