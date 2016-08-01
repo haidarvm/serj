@@ -47,6 +47,9 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 5px !important;
 	text-align: center;
 }
+.input-group-addon + .form-control {
+    padding-left: 6px !important;
+}
 
 .table-custom .warning {
 	font-family: "Muli-Bold";
@@ -55,7 +58,9 @@ tr td.success {
 	font-family: "Muli-Bold";
 	font-size: 12px;
 }
-
+.sidebar .sidebar-wrapper {
+	box-shadow: none !important;
+}
 .table-custom-head .info {
 	font-weight: bold;
 }

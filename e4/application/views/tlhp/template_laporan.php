@@ -5,12 +5,12 @@
 				<div class="card">
 					<div class="content">
 						<form method="post" action="<?=site_url()?>tlhp/template/insert_template_laporan" class="form form-horizontal">
-							<div class="row">
+							<div class="row top-space">
 								<div class="col-md-6">
 									<fieldset>
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Judul Laporan</label>
-											<div class="col-sm-10">
+											<label class="col-sm-3 control-label">Judul Laporan</label>
+											<div class="col-sm-9">
 												<input type="text" name="judul_laporan" class="form-control">
 											</div>
 										</div>
@@ -18,16 +18,16 @@
 
 									<fieldset>
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Nomor Laporan</label>
-											<div class="col-sm-10">
+											<label class="col-sm-3 control-label">Nomor Laporan</label>
+											<div class="col-sm-9">
 												<input type="text" name="nomor_laporan" class="form-control">
 											</div>
 										</div>
 									</fieldset>
 									<fieldset>
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Periode Laporan</label>
-											<div class="col-sm-10">
+											<label class="col-sm-3 control-label">Periode Laporan</label>
+											<div class="col-sm-9">
 												<input type="text" name="periode_laporan" class="form-control">
 											</div>
 										</div>
@@ -38,20 +38,20 @@
 
 									<fieldset>
 										<div class="form-group">
-											<label class="col-sm-2 control-label">Tanggal Laporan</label>
-											<div class="col-sm-10">
-											<div class="input-group">
+											<label class="col-sm-3 control-label">Tanggal Laporan</label>
+											<div class="col-sm-9">
+												<div class="input-group">
 													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-												<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" required="true">
-											</div>
+													<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" required="true">
+												</div>
 											</div>
 										</div>
 									</fieldset>
 									<fieldset>
 										<div class="form-group">
-											<label for="exampleInputFile" class="col-sm-12 control-label t-left">UPLOAD COVER<star>*</star></label>
-											<div class="col-sm-10">
-												<!--<input type="file" name="file" id="exampleInputFile">-->
+											<label for="exampleInputFile" class="col-sm-3 control-label">Upload Cover<star>*</star></label>
+											<div class="col-sm-9">
+												<input type="file" name="file" id="exampleInputFile">
 											</div>
 										</div>
 									</fieldset>
@@ -59,32 +59,29 @@
 									</div>
 									
 							</div>
-							<div class="row">
-							  <div class="col-md-1"><!--.col-md-4--></div>
-							  <div class="col-md-10">
+							
+							
+							<div class="row top-space">
+							  <div class="col-md-6">
 							  		<fieldset>
 							  			<center><b>KATA PENGANTAR</b></center>
-										
-											<textarea name="kata_pengantar" id="summernote" height="500px"></textarea>
-										
+										<textarea name="kata_pengantar" id="summernote" height="500px"></textarea>
 									</fieldset>
 							  </div>
-							  <div class="col-md-2"><!--.col-md-4--></div>
-							</div>
-
-							<div class="row">
-							  <div class="col-md-1"><!--.col-md-4--></div>
-							  <div class="col-md-10">
-							  		
+							  <div class="col-md-6">
+									<fieldset>
 							  			<center><b>KATA PENGANTAR</b></center>
-										
-											<textarea name="daftar_isi" id="summernote2" height="500px"></textarea>
-										
-									
+										<textarea name="daftar_isi" id="summernote2" height="500px"></textarea>
+									</fieldset>
 							  </div>
-							  <div class="col-md-2"><!--.col-md-4--></div>
 							</div>
-							<center><input type="submit" value="simpan" class="btn btn-primary btn-margin"><input type="reset" value="Reset" class="btn btn-warning btn-margin"></center>
+							
+							<div class="row">
+								<div class="col-md-12 t-center">
+									<input type="submit" value="simpan" class="btn btn-wd btn-primary btn-fill btn-margin">
+									<input type="reset" value="Reset" class="btn btn-wd btn-warning btn-margin">
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -94,7 +91,7 @@
 </div>
 <div class="row">
   <div class="col-md-10"><!--.col-md-8--></div>
-  <div class="col-md-2"><a href="#" onclick="window.print()" class="btn btn-warning"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a></div>
+  <div class="col-md-2"><a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a></div>
 </div>
 
 <script>
@@ -115,6 +112,25 @@
         }
     });
     requirejs(["jspath/lhp", "jspath/template_laporan"]);
+</script>
+
+<script>
+	console.debug(site_url);
+    requirejs.config({
+        "shim": {
+            "bootstrap": {"deps": ["jquery"]},
+            "datetimepicker" : {deps: ["jquery", "moment"]}
+        },
+        "paths": {
+            "jspath": site_url+ "assets/js/",
+            "jquery": site_url+ "assets/js/jquery-2.1.4.min",
+            "knockout": site_url+ "assets/js/knockout-3.2.0",
+            "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
+            "moment" : site_url+ "assets/js/moment.min",
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+        }
+    });
+    requirejs(["jspath/lhp"]);
 </script>
 
 <script type="text/javascript">
