@@ -66,7 +66,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-12 control-label t-left">TIMMM<star>*</star></label>
+										<label for="inputEmail3" class="col-sm-12 control-label t-left">TIM<star>*</star></label>
 										<div class="col-sm-5">
 											<input type="text" name="tim[]" class="form-control border-input" />
 										</div>
@@ -95,28 +95,10 @@
 												</select>
 											</div>
 											<div class="col-sm-5">
-												<a href="#" data-bind="event: {click: $parent.removeTeam}">remove</a>
+												<a href="#" data-bind="event: {click: $parent.removeTeam}">Hapus</a>
 											</div>
 										</div>
 									</div>
-									<!-- Tim More -->
-									<div id="tim-more"></div>
-									<div class="form-group add-more-tim" style="display: none;">
-										<div class="col-sm-5">
-											<input type="text" name="tim[]" class="form-control border-input">
-										</div>
-										<div class="col-sm-5">
-											<select class="form-control">
-												<?php if ($getAllJenisTim) {?>
-												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?=$tim->jenis_tim;?></option>
-												<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
-									<!-- End Tim More -->
-
 									<div class="form-group">
 										<div class="col-md-12 t-center">
 											<br />
@@ -235,23 +217,28 @@
 											</select>
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="col-sm-5">
-											<input type="text" class="form-control border-input" />
-										</div>
-										<div class="col-sm-5">
-											<select class="form-control">
-												<?php if ($getAllJenisTim ) {?>
-												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?=$tim->jenis_tim;?></option>
-												<?php } ?>
-												<?php } ?>
-											</select>
+									<div data-bind="template: {foreach: data.teamPerpanjangan}">
+										<div class="form-group">
+											<div class="col-sm-5">
+												<input type="text" class="form-control border-input" data-bind="value: name"/>
+											</div>
+											<div class="col-sm-5">
+												<select class="form-control" data-bind="value: roleId">
+													<?php if ($getAllJenisTim ) {?>
+													<?php foreach($getAllJenisTim as $tim) {?>
+													<option><?=$tim->jenis_tim;?></option>
+													<?php } ?>
+													<?php } ?>
+												</select>
+											</div>
+											<div class="col-sm-5">
+												<a href="#" data-bind="event: {click: $parent.removeTeamPerpanjangan}">Hapus</a>
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12 t-center"><br />
-											<button id="add-tim-perpanjangan" class="btn btn-sm l-float btn-fill">
+											<button class="btn btn-sm l-float btn-fill" data-bind="event: {click: addTeamPerpanjangan}">
 												<span class="btn-label"><i class="fa fa-plus-circle"></i> </span>TAMBAH
 											</button>
 										</div>

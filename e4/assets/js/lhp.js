@@ -4,7 +4,7 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 		var selfD = this;
 		selfD.teamId = ko.observable();
 		selfD.name = ko.observable();
-		selfD.role = ko.observable();
+		selfD.roleId = ko.observable();
 	}
 	
 	function LhpViewModel() {
@@ -36,6 +36,16 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 		self.removeTeam = function(vMember){
 			console.info('remove item');
 			self.data.team.remove(vMember);
+		}
+		
+		self.addTeamPerpanjangan = function() {
+			console.info('create new team perpanjangan');
+			self.data.teamPerpanjangan.push(new TeamViewModel());
+		}
+		
+		self.removeTeamPerpanjangan = function(vMember){
+			console.info('remove item perpanjangan');
+			self.data.teamPerpanjangan.remove(vMember);
 		}
 	}
 	
