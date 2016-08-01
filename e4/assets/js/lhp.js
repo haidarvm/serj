@@ -2,9 +2,13 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 	
 	function TeamViewModel() {
 		var selfD = this;
-		selfD.teamId = ko.observable();
-		selfD.name = ko.observable();
-		selfD.roleId = ko.observable();
+		
+		selfD.data = {
+			teamId: ko.observable(),
+			namaTim: ko.observable(),
+			kategoryTim: ko.observable()  
+		}
+		
 	}
 	
 	function LhpViewModel() {
@@ -12,19 +16,30 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 		
 		self.data = {
 			noSuratTugas: ko.observable(),
-			jenisPengawasan: ko.observable(),
 			tglSuratTugas: ko.observable(),
+			jenisPengawasanId: ko.observable(),
 			objectPengawasan: ko.observable(),
+			
+			startHariPenugasan: ko.observable(),
+			endHariPenugasan: ko.observable(),
 			
 			startHariPengawasan: ko.observable(),
 			endHariPengawasan: ko.observable(),
-			judulLhp: ko.observable(),
 			
 			startSkorPemeriksaan: ko.observable(),
 			endSkorPemeriksaan: ko.observable(),
-			nomorLhp: ko.observable(),
 			
+			nomorLhp: ko.observable(),
+			judulLhp: ko.observable(),
+			
+			tglLhp: ko.observable(),
 			team: ko.observableArray([]),
+			
+			stPerpanjangan: ko.observable(),
+			tglStPerpanjangan: ko.observable(),
+			startPerpanjanganPenugasan: ko.observable(),
+			endPerpanjanganPenugasan: ko.observable(),
+			
 			teamPerpanjangan: ko.observableArray([])
 		}
 		
@@ -47,6 +62,10 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 			console.info('remove item perpanjangan');
 			self.data.teamPerpanjangan.remove(vMember);
 		}
+		
+		self.doInsert = function() {
+			console.info('attempting to insert new lhp');
+		}
 	}
 	
 	var lhpView = new LhpViewModel();
@@ -54,8 +73,8 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
     $(function(){
     	ko.applyBindings(lhpView);
     	
-        $('.datepicker').datetimepicker({
-            format: 'DD-MM-YYYY',    //use this format if you want the 12hours timpiecker with AM/PM toggle
+    	var datepickerCfg = {
+			format: 'DD-MM-YYYY',    //use this format if you want the 12hours timpiecker with AM/PM toggle
             icons: {
                 time: "fa fa-clock-o",
                 date: "fa fa-calendar",
@@ -66,8 +85,11 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
                 today: 'fa fa-screenshot',
                 clear: 'fa fa-trash',
                 close: 'fa fa-remove'
-            }
-        });
+            }	
+    	}
+    	
+        $('.datepicker').datetimepicker(datepickerCfg); 
+    	
     });
  });
 

@@ -13,7 +13,8 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<div class="col-sm-10">
-											<label for="inputEmail3" class="control-label t-left">NOMOR SURAT TUGAS<star>*</star></label> <input type="text" name="no_surat_tugas" class="form-control border-input" required="true" />
+											<label for="inputEmail3" class="control-label t-left">NOMOR SURAT TUGAS<star>*</star></label> 
+											<input type="text" name="no_surat_tugas" class="form-control border-input" required="true" data-bind="value: data.noSuratTugas"/>
 										</div>
 									</div>
 
@@ -22,7 +23,9 @@
 											<div class="form_datetime">
 												<label for="inputEmail3" class="control-label t-left">TANGGAL SURAT TUGAS<star>*</star></label>
 												<div class="input-group">
-													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" required="true" />
+													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+													<input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" 
+													required="true" data-bind="value: data.tglSuratTugas"/>
 												</div>
 											</div>
 										</div>
@@ -30,16 +33,19 @@
 									<div class="form-group">
 										<div class="col-sm-10">
 											<label for="inputEmail3" class="control-label t-left">HARI PENUGASAN<star>*</star></label>
-											<div class="row">
-
+											<div class="row input-daterange">
 												<div class="col-md-6">
 													<div class=" l-float input-group">
-														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_penugasan" class="form-control border-input date-input datepicker" required="true" />
+														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+														<input type="text" name="hari_awal_penugasan" class="form-control border-input date-input datepicker" 
+														data-bind="value: data.startHariPenugasan" required="true" />
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class=" l-float input-group">
-														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input datepicker" required="true" />
+														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+														<input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input datepicker" 
+														data-bind="value: data.endHariPenugasan" required="true" />
 													</div>
 												</div>
 
@@ -53,12 +59,16 @@
 
 												<div class="col-md-6">
 													<div class="l-float input-group">
-														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" required="true" />
+														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+														<input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" 
+														data-bind="value: data.startSkorPemeriksaan" required="true" />
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="l-float input-group">
-														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" required="true" />
+														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+														<input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" 
+														data-bind="value: data.endSkorPemeriksaan" required="true" />
 													</div>
 												</div>
 
@@ -66,27 +76,15 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-12 control-label t-left">TIM<star>*</star></label>
-										<div class="col-sm-5">
-											<input type="text" name="tim[]" class="form-control border-input" />
-										</div>
-										<div class="col-sm-5">
-											<select class="form-control">
-												<?php if ($getAllJenisTim) {?>
-												<?php  foreach($getAllJenisTim as $tim) {?>
-												<option><?=$tim->jenis_tim;?></option>
-												<?php } ?> 
-												<?php }?>
-											</select>
-										</div>
+										<label for="inputEmail3" class="col-sm-12 control-label t-left">TIM PENGAWASAN<star>*</star></label>
 									</div>
 									<div data-bind="template: {foreach: data.team}">
 										<div class="form-group">
 											<div class="col-sm-5">
-												<input type="text" name="tim[]" class="form-control border-input" data-bind="value: name"/>
+												<input type="text" class="form-control border-input" data-bind="value: data.namaTim"/>
 											</div>
 											<div class="col-sm-5">
-												<select class="form-control">
+												<select class="form-control" data-bind="value: data.timId">
 													<?php if ($getAllJenisTim) {?>
 													<?php foreach($getAllJenisTim as $tim) {?>
 													<option><?=$tim->jenis_tim;?></option>
@@ -112,7 +110,8 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<div class="col-sm-10">
-											<label for="inputEmail3" class="control-label t-left">JENIS PENGAWASAN<star>*</star></label> <select name="jenis_pengawasan_id" class="form-control">
+											<label for="inputEmail3" class="control-label t-left">JENIS PENGAWASAN<star>*</star></label> 
+											<select name="jenis_pengawasan_id" class="form-control" data-bind="value: data.jenisPengawasanId">
 												<?php if ($getAllJenisPengawasan) {?>
 												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
 												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?=$pengawas->jenis_pengawasan;?></option>
@@ -124,26 +123,31 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-12 control-label t-left">OBJEK PENGAWASAN<star>*</star></label>
 										<div class="col-sm-10">
-											<input type="text" name="objek_pengawasan" class="form-control border-input" required="true" />
+											<input type="text" name="objek_pengawasan" class="form-control border-input" 
+											data-bind="value: data.objectPengawasan" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-12 control-label t-left">JUDUL LHP<star>*</star></label>
 										<div class="col-sm-10">
-											<input type="text" name="judul_lhp" class="form-control border-input" required="true" />
+											<input type="text" name="judul_lhp" class="form-control border-input" 
+											data-bind="value: data.judulLhp" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-12 control-label t-left">NOMOR LHP<star>*</star></label>
 										<div class="col-sm-10">
-											<input type="text" name="nomor_lhp" class="form-control border-input" required="true" />
+											<input type="text" name="nomor_lhp" class="form-control border-input" 
+											data-bind="value: data.nomorLhp" required="true" />
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-10">
 											<label for="inputEmail3" class="control-label t-left">TANGGAL LHP<star>*</star></label>
 											<div class="input-group">
-												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span><input type="text" name="tanggal_lhp" class="form-control border-input date-input-big datepicker" />
+												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
+												<input type="text" name="tanggal_lhp" class="form-control border-input date-input-big datepicker" 
+												data-bind="value: data.startLhp"/>
 											</div>
 										</div>
 									</div>
@@ -161,7 +165,8 @@
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-10 control-label t-left">ST PERPANJANGAN</label>
 										<div class="col-sm-10">
-											<input type="text" name="st_perpanjangan" class="form-control border-input" />
+											<input type="text" name="st_perpanjangan" class="form-control border-input" 
+											data-bind="value: data.stPerpanjangan"/>
 										</div>
 									</div>
 
@@ -169,7 +174,9 @@
 										<label for="inputEmail3" class="col-sm-10 control-label t-left">TANGGAL ST PERPANJANGAN</label>
 										<div class="col-sm-10">
 											<div class="input-group">
-												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" />
+												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+												<input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" 
+												data-bind="value: data.tglStPerpanjangan"/>
 											</div>
 										</div>
 									</div>
@@ -181,12 +188,16 @@
 
 												<div class="col-md-6">
 													<div class=" l-float input-group">
-														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_awal_perpanjangan_penugasan" class="form-control border-input date-input datepicker" />
+														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+														<input type="text" name="hari_awal_perpanjangan_penugasan" class="form-control border-input date-input datepicker" 
+														data-bind="value: data.startPerpanjanganPenugasan"/>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class=" l-float input-group">
-														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input datepicker" />
+														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
+														<input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input datepicker" 
+														data-bind="value: data.endPerpanjanganPenugasan"/>
 													</div>
 												</div>
 
@@ -203,27 +214,15 @@
 										</div>
 									</div> -->
 									<div class="form-group">
-										<label for="inputEmail3" class="col-sm-10 control-label t-left">TIM</label>
-										<div class="col-sm-5">
-											<input type="text" class="form-control border-input" />
-										</div>
-										<div class="col-sm-5">
-											<select class="form-control">
-												<?php if ($getAllJenisTim ) {?>
-												<?php foreach($getAllJenisTim as $tim) {?>
-												<option><?=$tim->jenis_tim;?></option>
-												<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
+										<label for="inputEmail3" class="col-sm-10 control-label t-left">TIM PERPANJANGAN</label>
 									</div>
 									<div data-bind="template: {foreach: data.teamPerpanjangan}">
 										<div class="form-group">
 											<div class="col-sm-5">
-												<input type="text" class="form-control border-input" data-bind="value: name"/>
+												<input type="text" class="form-control border-input" data-bind="value: data.namaTim"/>
 											</div>
 											<div class="col-sm-5">
-												<select class="form-control" data-bind="value: roleId">
+												<select class="form-control" data-bind="value: data.timId">
 													<?php if ($getAllJenisTim ) {?>
 													<?php foreach($getAllJenisTim as $tim) {?>
 													<option><?=$tim->jenis_tim;?></option>
@@ -250,7 +249,7 @@
 									<div class="row">
 										<div class="col-md-10"></div>
 										<div class="col-md-2">
-											<button type="submit" class="btn btn-wd btn-success btn-fill btn-rotate">
+											<button class="btn btn-wd btn-success btn-fill btn-rotate" data-bind="event: {click: doInsert}">
 												<span class="btn-label"> <i class="ti-save"></i>
 												</span>BUAT LHP BARU
 											</button>
