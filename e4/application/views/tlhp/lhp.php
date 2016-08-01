@@ -279,6 +279,7 @@
         },
         "paths": {
             "jspath": site_url+ "assets/js/",
+            "jquery": site_url+"assets/js/jquery-2.1.4.min",
             "knockout": site_url+ "assets/js/knockout-3.2.0",
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
