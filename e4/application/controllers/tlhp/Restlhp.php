@@ -14,20 +14,11 @@ class Restlhp extends REST_Controller {
 		$team = array_merge($this->post('team'), 
 			$this->post('teamPerpanjangan'));
 		
-		$teamLhp = array();
-		foreach($team as $member) {
-			array_push($teamLhp, array(
-				'kategory_tim' => $member['kategoryTim'],
-				'tim_id' => $member['teamId'],
-				'nama_tim' => $member['namaTim']
-			));
-		}
-		
 		$lhpData = array(
 			'no_surat_tugas' => $this->post('noSuratTugas'),
 			'tanggal_surat_tugas' => $this->post('tglSuratTugas'),
 			'jenis_pengawasan_id' => $this->post('jenisPengawasanId'),
-			'object_pengawasan' => $this->post('objectPengawasan'),
+			'objek_pengawasan' => $this->post('objectPengawasan'),
 			'hari_awal_penugasan' => $this->post('startHariPenugasan'),
 			'hari_akhir_penugasan' => $this->post('endHariPenugasan'),
 			'skop_awal_penugasan' => $this->post('startSkopPenugasan'),
@@ -46,10 +37,29 @@ class Restlhp extends REST_Controller {
 			'user_id' => $this->post('userId')
 		);
 		
+		$teamLhp = array();
+		//workaround for transction
+		$this->load->model('mlhp');
+		$lhpId = $this->mlhp->insertLHP($lhpData);
+		if (isset($lhpId)) {
+			$this->load->model('timlhp');
+			
+			foreach($team as $member) {
+				array_push($teamLhp, array(
+					'lhp_id' => $lhpId,
+					'kategory_tim' => $member['kategoryTim'],
+					'tim_id' => $member['teamId'],
+					'nama_tim' => $member['namaTim']
+				));
+			}
+			
+			$this->timlhp->insert_batch($teamLhp);
+		}
+		
+		$lhpData['team'] = $teamLhp;
 		$dataResponse = array(
 			'newLhp' => $lhpData,
-			'team' => $teamLhp,
-			'totalTim' => count($teamLhp)
+			'totalTeamMember' => count($teamLhp)
 		);
 		
 		$this->response($dataResponse, 200);
