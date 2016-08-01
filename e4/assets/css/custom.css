@@ -600,6 +600,19 @@ div.dataTables_info {
 	padding-top: 20px !important;
 	margin-bottom: 5px;
 }
+.scrolling-table {
+	overflow-y: scroll;
+	height: 500px;
+}
+.lead-table th{
+	font-size: 13px !important;
+	font-family: 'Muli-Bold';
+}
+#kode_rekomendasi th, #kode_sebab th{
+	font-size: 13px;
+	font-family: 'Muli-Bold';
+	text-align: center;
+}
 
 #manus-grid_length select {
 	height: 30px;
