@@ -10,8 +10,8 @@
 						<!-- <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-						<div class="table-responsive scrolling-table">
-							<table class="table table-striped table-custom-head">
+						<div class="table-responsive">
+							<table id="kode_temuan" class="table table-striped table-custom-head lead-table">
 								<thead>
 									<tr class="info">
 										<th>KEL</th>
@@ -122,3 +122,20 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+requirejs.config({
+    "shim": {
+        "bootstrap": {"deps": ["jquery"]}
+    },
+    "paths": {
+        "jspath": site_url+"assets/js/",
+        "jquery": site_url+"assets/js/jquery-2.1.4.min",
+        "knockout": site_url+"assets/js/knockout-3.2.0",
+        "bootstrap": site_url+"assets/js/bootstrap.min",
+        "data-table": site_url+"assets/js/jquery.dataTables.min" 
+    }
+});
+requirejs(["jspath/kodefikasi"]);
+</script>
