@@ -1,7 +1,7 @@
 <!--  <form action="<?//=site_url();?>tlhp/manus/user_prosess" method="post"> -->
 <form>
 	<div class="row">
-		<div id="notify">
+		<div id="notify" class="alert">
 		</div>
 	</div>
 	<div class="row">

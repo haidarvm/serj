@@ -91,7 +91,6 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
 			success: function(data) {
 				userView.data.userId(data.data.user_id);
 				userView.data.userName(data.data.username);
-				userView.data.fullName(data.data.nip);
 				userView.data.accountPosition(data.data.jabatan);
 				userView.data.accountNumber(data.data.nip);
 				userView.data.fullName(data.data.full_name);
@@ -110,7 +109,7 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
     	ko.applyBindings(userView);
     	$.notify.defaults({
     		clickToHide: true,
-    		autoHide: false
+    		autoHide: false,
     	});
     	$("#notify").notify("Hello world");
     	
