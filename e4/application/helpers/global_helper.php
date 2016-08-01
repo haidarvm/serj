@@ -13,7 +13,7 @@ function get_current_app() {
 			$current_app = 'BPKP';
 			break;
 		case 'tlhp_orix_' :
-			$current_app = 'ORIX';
+			$current_app = 'TLHP';
 			break;
 		default :
 			$current_app = 'dll';
