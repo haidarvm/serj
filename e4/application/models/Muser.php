@@ -108,9 +108,10 @@ class MUser extends CI_Model {
 	
 	// Will create for session
 	function login($username, $password) {
-		$this->db->select('username, user_id, full_name, user_level_id, email', 'image');
+		$this->db->select('username, user_id, full_name, {PRE}user.user_level_id as user_level_id, user_level,  email', 'image', FALSE);
+		$this->db->join('user_level', 'user_level.user_level_id = user.user_level_id', 'left');
 		$query = $this->db->get_where('user', array('username' => $username, 'password' => md5($password)));
-		//echo $this->db->last_query();exit;
+// 		echo $this->db->last_query();exit;
 		if ($query->num_rows() == 1) {
 			$row = $query->row();
 			$user_id = $row->user_id;
