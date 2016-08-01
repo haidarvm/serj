@@ -35,7 +35,6 @@
 								</div>
 							</div>
 							
-							<!--  
 							<div class="t-center">
 								<ul class="pagination"> 
 									<li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li> 
@@ -47,7 +46,6 @@
 									<li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li> 
 								</ul>
 							</div>
-							 -->
                               
 							<div class="both-space t-right">
 								<a class="btn btn-info" href="#"><i class="fa fa-print"></i> Print</a>
