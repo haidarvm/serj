@@ -1,7 +1,7 @@
 <!--  <form action="<?//=site_url();?>tlhp/manus/user_prosess" method="post"> -->
 <form>
 	<div class="row">
-		<span data-bind="text: userNotif"></span>
+		<p data-bind="text: userNotif" class="text-center"></p>
 	</div>
 	<div class="row">
 		<div class="col-md-5">

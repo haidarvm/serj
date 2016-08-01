@@ -26,7 +26,9 @@
 						</table>
 
 						<div class="table-action">
-							<a href="<?php echo site_url();?>tlhp/manus/add" class="btn btn-primary user-modal"><i class="fa fa-plus fa-lg"></i> Tambah User</a>
+							<button class="btn btn-primary user-modal" data-bind="event: {click: newUser}">
+								<i class="fa fa-plus fa-lg"></i> Tambah User
+							</button>
 						</div>
 						<!-- Modal Add / Edit User -->
 						<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">

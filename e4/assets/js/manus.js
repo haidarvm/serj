@@ -27,21 +27,22 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
     		console.info("data sekarang "+ ev);
     	});
     	
+    	self.userNotif = ko.observable("example message");
     	self.doInsert = function() {
     		var reqData = ko.toJSON(self.data);
     		
     		var actionType = "POST";
-    		if (reqData.userId == undefined || reqData.userId == null) {
+    		console.debug(self.data.userId());
+    		if (self.data.userId() != null) {
     			delete reqData.userId;
-    		} else {
     			actionType = "PUT";
-    		}
+    		} 
     		
-    		//var type = 
     		console.debug(reqData);
+    		console.debug('actionType: '+ actionType);
     		$.ajax({
-				type: "POST",
-				data: actionType,
+				type: actionType,
+				data: reqData,
 				url: site_url + "tlhp/restmanus",
 				beforeSend: function(){
 					console.info('attempting to insert new user');
@@ -49,23 +50,34 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
 				success: function(data) {
 					self.userNotif("data berhasil disimpan");
 					refreshTable();
-					$('#userModal').modal('hide');
+//					$('#userModal').modal('hide');
 				},
 				error: function(xhr, msg) {
-					alert("Sory, there is something wrong in our system");
+					self.userNotif("Edit user masih belum dapat digunakan");
 				}
 			});
     	}
     	
-    	self.userNotif = ko.observable("example message");
+    	self.newUser = function() {
+			self.data.userId(null);
+			self.data.userName(null);
+			self.data.accountNumber(null);
+	    	self.data.accountPosition(null);
+	    	
+	    	self.data.departement(null);
+	    	self.data.fullName(null);
+	    	self.data.password(null);
+	    	self.data.rePassword(null);
+	    	
+	    	self.data.role(null);
+	    	self.data.address(null);
+		}
+    	
     }
 	
 	var userView = new UserViewModel();
 	
 	window.userEdit = function userEdit(id) {
-//    	var body = site_url + 'tlhp/manus/update/'+ id;
-//    	$('#userModal').modal('show').find('.modal-body').load(body);
-		console.debug(id);
 		var reqData = {
 			username: id
 		}

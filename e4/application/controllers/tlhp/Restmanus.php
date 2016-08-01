@@ -12,6 +12,7 @@ require_once(APPPATH.'libraries/REST_Controller.php');
 class Restmanus extends REST_Controller {
 	
 	public function index_get() {
+		//TODO: use exception if username is null
 		$this->load->model('muser');
 		$reqUsername = $this->get('username');
 		$data = $this->muser->findOneByUserName($reqUsername);
@@ -27,6 +28,7 @@ class Restmanus extends REST_Controller {
 	}
 	
 	public function index_post() {
+		//TODO: use exception
 //		$username = $this->post('userName');
 //		$data = array(array(
 //			'username' => $this->post('userName'),
@@ -59,5 +61,30 @@ class Restmanus extends REST_Controller {
 //			
 //		}
 		$this->response($dataResponse, 200);
+	}
+	
+	public function index_put() {
+		//TODO: use exception
+		$input_data = json_decode(trim(file_get_contents('php://input')),true);
+//		var_dump($input_data);
+//		$data = array(array(
+//			'username' => $input_data,
+//			'nip' => $this->put('accountNumber'),
+//			'full_name' => $this->put('fullName'),
+//			'jabatan' => $this->put('accountPosition'),
+//			'password' => $this->put('password'),
+//			'unit_kerja_id' => $this->put('departement'),
+//			'user_level_id' => $this->put('role'))
+//		);
+//		$this->load->model('muser');
+//		$this->muser->updateUser($input_data['userId'], $data);
+		$dataResponse = array();
+//		$dataResponse['data'] = $this->put('username');
+//		$dataResponse['message'] = "User telah berhasil diubahhh";
+		$this->response($dataResponse, 503);
+	}
+	
+	public function index_delete() {
+		$this->response(array('id' => $this->get('id')), 200);
 	}
 }
