@@ -16,9 +16,9 @@ class Test extends MY_Controller {
 	}
 
 	public function userlog() {
-		$data['pageTitle'] = 'Employee Report';
-		$data['headers'] = array('log_id', 'full_name', 'username', 'jabatan', 'unit_kerja', 'last_login', 'lama_penggunaan');
-		$userLog = $this->muser->getAllLogUser()->result();
+		$data['pageTitle'] = 'Log History '.get_current_app();
+		$data['headers'] = array('NO', 'NAMA', 'USERNAME', 'JABATAN', 'UNIT KERJA', 'LAST LOGIN', 'LAMA PENGGUNAAN');
+		$userLog = $this->muser->getAllLogUser($cond = NULL, $order_by = ' ORDER BY log_id DESC')->result();
 		$x = 1;
 		$userLogs = array();
 		// print_r($userLog);exit;
@@ -28,7 +28,7 @@ class Test extends MY_Controller {
 			else
 				$class = "ganjil";
 			$x ++;
-			array_push($userLogs, '<tr class="' . $class . '">', add_td($row->log_id), add_td($row->full_name), add_td($row->username), add_td($row->jabatan), add_td($row->unit_kerja), add_td($row->lama_penggunaan) . '</tr>');
+			array_push($userLogs, '<tr class="' . $class . '">', add_td($row->log_id), add_td($row->full_name), add_td($row->username), add_td($row->jabatan), add_td($row->unit_kerja), add_td($row->login), add_td($row->lama_penggunaan) . '</tr>');
 		}
 		$data['report'] = $userLogs;
 		$this->pdf($data);
@@ -41,7 +41,8 @@ class Test extends MY_Controller {
 		$html = $this->load->view("report/" . $report_type, $data, true); // render the view into HTML
 		$this->load->library('pdf');
 		$pdf = $this->pdf->load();
-		$pdf->SetFooter($_SESSION['gps_full_name'] . '|{PAGENO}|' . date(DATE_RFC822)); // Add a footer for good measure <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
+		$full_name = !empty($_SESSION['full_name']) ? $_SESSION['full_name'] : '';
+		$pdf->SetFooter( $full_name. '|{PAGENO}|' . date(DATE_RFC822)); // Add a footer for good measure <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
 		$pdf->WriteHTML($html); // write the HTML into the PDF
 		$pdf->Output(); // save to file because we can
 		exit();
