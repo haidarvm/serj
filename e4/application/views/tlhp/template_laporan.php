@@ -42,7 +42,8 @@
 											<div class="col-sm-9">
 												<div class="input-group">
 													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-													<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" required="true">
+													<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" 
+													data-bind="datepicker: true, selectedDate: data.startTanggalLaporan" required="true">
 												</div>
 											</div>
 										</div>
@@ -115,7 +116,7 @@
 </script>
 
 <script>
-	console.debug(site_url);
+	console.debug(site_url);s
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},

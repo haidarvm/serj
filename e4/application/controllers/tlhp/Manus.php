@@ -19,7 +19,7 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-                $data['title'] = "username";
+		$data['title'] = "Management User";
 		$data['action'] = 'add';
 		$data['getAllLevel'] = $this->muser->getAllLevel();
 		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();

@@ -244,12 +244,25 @@ class MLhp extends CI_Model {
 	
 
 	// insert template laporan
-	public function insert_templateLaporan($insert) {
-		unset($insert['files']);
-		$insert['tanggal_laporan'] = sqlDateFormat($insert['tanggal_laporan']);
-		$query = $this->db->insert('template_laporan', $insert);
+	public function insert_templateLaporan($data) {
+		unset($data['files']);
+		unset($data['file']);
+		$data['tanggal_laporan'] = sqlDateFormat($data['tanggal_laporan']);
+		$query = $this->db->insert('template_laporan', $data);
 		return $this->db->insert_id();
 // 		echo $this->db->last_query();exit;
+	}
+	
+	public function getAllTemplate($cond = NULL, $order_by = NULL){
+		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
+		$sql = "SELECT *
+				FROM {PRE}template_laporan tl
+    			LEFT JOIN {PRE}upload_template_laporan utl ON utl.template_laporan_id = tl.template_laporan_id
+    			" . $cond . " " . $order_by;
+		$query = $this->db->query($sql);
+// 		echo $this->db->last_query();exit;
+		return $query;
+		
 	}
 	
 	// function updateTemuan($lhp_id, $jenis_temuan) {
