@@ -3,12 +3,9 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 	function TeamViewModel() {
 		var selfD = this;
 		
-		selfD.data = {
-			teamId: ko.observable(),
-			namaTim: ko.observable(),
-			kategoryTim: ko.observable()  
-		}
-		
+		selfD.teamId = ko.observable();
+		selfD.namaTim = ko.observable();
+		selfD.kategoryTim = ko.observable();
 	}
 	
 	function LhpViewModel() {
@@ -45,27 +42,48 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 		}
 		
 		self.addTeam = function() {
-			console.info('create new team');
-			self.data.team.push(new TeamViewModel());
+			var mView = new TeamViewModel();
+			mView.kategoryTim('biasa');
+			
+			self.data.team.push(mView);
 		}
 		
 		self.removeTeam = function(vMember){
-			console.info('remove item');
 			self.data.team.remove(vMember);
 		}
 		
 		self.addTeamPerpanjangan = function() {
-			console.info('create new team perpanjangan');
-			self.data.teamPerpanjangan.push(new TeamViewModel());
+			var mView = new TeamViewModel();
+			mView.kategoryTim('perpanjangan');
+			
+			self.data.teamPerpanjangan.push(mView);
 		}
 		
 		self.removeTeamPerpanjangan = function(vMember){
-			console.info('remove item perpanjangan');
 			self.data.teamPerpanjangan.remove(vMember);
 		}
 		
 		self.doInsert = function() {
-			console.info('attempting to insert new lhp');
+			var reqData = ko.toJSON(self.data);
+			
+			$.ajax({
+				type: 'POST',
+				data: reqData,
+				contentType: 'application/json',
+				url: site_url + "tlhp/restlhp",
+				beforeSend: function() {
+					$('#btnSave').attr('disabled', 'disabled');
+				},
+				success: function(data) {
+					console.info(data.message);
+//					$("#notify").notify("Data telah disimpan", "alert alert-info");
+				},
+				error: function(xhr, msg) {
+//					$("#notify").notify("Internal Server Error", "alert alert-error");
+				}
+			}).always(function(){
+				$('#btnSave').removeAttr('disabled');
+			});
 		}
 	}
 	

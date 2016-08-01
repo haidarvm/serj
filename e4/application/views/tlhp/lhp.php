@@ -81,15 +81,17 @@
 									<div data-bind="template: {foreach: data.team}">
 										<div class="form-group">
 											<div class="col-sm-5">
-												<input type="text" class="form-control border-input" data-bind="value: data.namaTim"/>
+												<input type="text" class="form-control border-input" data-bind="value: namaTim"/>
 											</div>
 											<div class="col-sm-5">
-												<select class="form-control" data-bind="value: data.timId">
-													<?php if ($getAllJenisTim) {?>
-													<?php foreach($getAllJenisTim as $tim) {?>
-													<option><?=$tim->jenis_tim;?></option>
-													<?php } ?>
-													<?php } ?>
+												<select class="form-control" data-bind="value: teamId">
+													<?php if ($getAllJenisTim) : ?>
+														<?php foreach($getAllJenisTim as $tim) : ?>
+														<option value="<?php echo $tim->tim_id ?>">
+															<?php echo $tim->jenis_tim;?>
+														</option>
+														<?php endforeach; ?>
+													<?php endif; ?>
 												</select>
 											</div>
 											<div class="col-sm-5">
@@ -112,11 +114,13 @@
 										<div class="col-sm-10">
 											<label for="inputEmail3" class="control-label t-left">JENIS PENGAWASAN<star>*</star></label> 
 											<select name="jenis_pengawasan_id" class="form-control" data-bind="value: data.jenisPengawasanId">
-												<?php if ($getAllJenisPengawasan) {?>
-												<?php foreach($getAllJenisPengawasan as $pengawas) {?>
-												<option value="<?=$pengawas->jenis_pengawasan_id;?>"><?=$pengawas->jenis_pengawasan;?></option>
-												<?php } ?>
-												<?php } ?>
+												<?php if ($getAllJenisPengawasan) :?>
+													<?php foreach($getAllJenisPengawasan as $pengawas) : ?>
+														<option value="<?php echo $pengawas->jenis_pengawasan_id;?>">
+															<?php echo $pengawas->jenis_pengawasan;?>
+														</option>
+													<?php endforeach; ?>
+												<?php endif; ?>
 											</select>
 										</div>
 									</div>
@@ -219,15 +223,17 @@
 									<div data-bind="template: {foreach: data.teamPerpanjangan}">
 										<div class="form-group">
 											<div class="col-sm-5">
-												<input type="text" class="form-control border-input" data-bind="value: data.namaTim"/>
+												<input type="text" class="form-control border-input" data-bind="value: namaTim"/>
 											</div>
 											<div class="col-sm-5">
-												<select class="form-control" data-bind="value: data.timId">
-													<?php if ($getAllJenisTim ) {?>
-													<?php foreach($getAllJenisTim as $tim) {?>
-													<option><?=$tim->jenis_tim;?></option>
-													<?php } ?>
-													<?php } ?>
+												<select class="form-control" data-bind="value: teamId">
+													<?php if ($getAllJenisTim ) : ?>
+														<?php foreach($getAllJenisTim as $tim) : ?>
+															<option value="<?php echo $tim->tim_id?>">
+																<?php echo $tim->jenis_tim;?>
+															</option>
+														<?php endforeach;?>
+													<?php endif; ?>
 												</select>
 											</div>
 											<div class="col-sm-5">
@@ -249,7 +255,8 @@
 									<div class="row">
 										<div class="col-md-10"></div>
 										<div class="col-md-2">
-											<button class="btn btn-wd btn-success btn-fill btn-rotate" data-bind="event: {click: doInsert}">
+											<button class="btn btn-wd btn-success btn-fill btn-rotate" 
+											data-bind="event: {click: doInsert}" id="btnSave">
 												<span class="btn-label"> <i class="ti-save"></i>
 												</span>BUAT LHP BARU
 											</button>

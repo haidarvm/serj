@@ -11,60 +11,72 @@ if (! defined('BASEPATH'))
 class Restlhp extends REST_Controller {
 	
 	public function index_post() {
-		//TODO: Add exception handling, various response code
-		$team = array_merge($this->post('team'), 
-			$this->post('teamPerpanjangan'));
-		
-		$lhpData = array(
-			'no_surat_tugas' => $this->post('noSuratTugas'),
-			'tanggal_surat_tugas' => $this->post('tglSuratTugas'),
-			'jenis_pengawasan_id' => $this->post('jenisPengawasanId'),
-			'objek_pengawasan' => $this->post('objekPengawasan'),
-			'hari_awal_penugasan' => $this->post('startHariPenugasan'),
-			'hari_akhir_penugasan' => $this->post('endHariPenugasan'),
-			'skop_awal_penugasan' => $this->post('startSkopPenugasan'),
-			'skop_akhir_penugasan' => $this->post('endSkopPenugasan'),
-			
-			'nomor_lhp' => $this->post('nomorLhp'),
-			'judul_lhp' => $this->post('judulLhp'),
-			'tanggal_lhp' => $this->post('tglLhp'),
-		
-//			'nama_ppk' => $this->post('namaPpk'),
-//			'pj_kegiatan' => $this->post('pjKegiatan'),
-			'st_perpanjangan' => $this->post('stPerpanjangan'),
-			'tgl_st_perpanjangan' => $this->post('tglStPerpanjangan'),
-			'hari_awal_perpanjangan_penugasan' => $this->post('startPerpanjanganPenugasan'),
-			'hari_akhir_perpanjangan_penugasan' => $this->post('endPerpanjanganPenugasan'),
-			'user_id' => $this->post('userId')
-		);
-		
-		$teamLhp = array();
-		//workaround for transction
-		$this->load->model('mlhp');
-		$lhpId = $this->mlhp->insertLHP($lhpData);
-		if (isset($lhpId)) {
-			$this->load->model('timlhp');
-			
-			foreach($team as $member) {
-				array_push($teamLhp, array(
-					'lhp_id' => $lhpId,
-					'kategory_tim' => $member['kategoryTim'],
-					'tim_id' => $member['teamId'],
-					'nama_tim' => $member['namaTim']
-				));
+		$this->load->library('session');
+		try {
+			if (!$this->session->has_userdata('user_id')) {
+				throw new Exception('Access Denied');
 			}
 			
-			$this->timlhp->insert_batch($teamLhp);
+			$team = array_merge($this->post('team'), 
+			$this->post('teamPerpanjangan'));
+		
+			$lhpData = array(
+				'no_surat_tugas' => $this->post('noSuratTugas'),
+				'tanggal_surat_tugas' => $this->post('tglSuratTugas'),
+				'jenis_pengawasan_id' => $this->post('jenisPengawasanId'),
+				'objek_pengawasan' => $this->post('objekPengawasan'),
+				'hari_awal_penugasan' => $this->post('startHariPenugasan'),
+				'hari_akhir_penugasan' => $this->post('endHariPenugasan'),
+				'skop_awal_penugasan' => $this->post('startSkopPenugasan'),
+				'skop_akhir_penugasan' => $this->post('endSkopPenugasan'),
+				
+				'nomor_lhp' => $this->post('nomorLhp'),
+				'judul_lhp' => $this->post('judulLhp'),
+				'tanggal_lhp' => $this->post('tglLhp'),
+			
+	//			'nama_ppk' => $this->post('namaPpk'),
+	//			'pj_kegiatan' => $this->post('pjKegiatan'),
+				'st_perpanjangan' => $this->post('stPerpanjangan'),
+				'tgl_st_perpanjangan' => $this->post('tglStPerpanjangan'),
+				'hari_awal_perpanjangan_penugasan' => $this->post('startPerpanjanganPenugasan'),
+				'hari_akhir_perpanjangan_penugasan' => $this->post('endPerpanjanganPenugasan'),
+				'user_id' => $this->session->userdata('user_id')
+			);
+			
+			$teamLhp = array();
+			//workaround for transction
+			$this->load->model('mlhp');
+			$lhpId = $this->mlhp->insertLHP($lhpData);
+			if (isset($lhpId)) {
+				$this->load->model('timlhp');
+				
+				foreach($team as $member) {
+					array_push($teamLhp, array(
+						'lhp_id' => $lhpId,
+						'kategory_tim' => $member['kategoryTim'],
+						'tim_id' => $member['teamId'],
+						'nama_tim' => $member['namaTim']
+					));
+				}
+				
+				if (count($teamLhp) > 0) {
+					$this->timlhp->insert_batch($teamLhp);
+				}
+			}
+			
+			$lhpData['team'] = $teamLhp;
+			$dataResponse = array(
+				'newLhp' => $lhpData,
+				'totalTeamMember' => count($teamLhp),
+				'message' => 'Data berhasil disimpan'
+			);
+			
+			$this->response($dataResponse, 200);			
+		} catch (Exception $ex) {
+			$this->response(array(
+				'message' => $ex->getMessage()
+			), 400);
 		}
-		
-		$lhpData['team'] = $teamLhp;
-		$dataResponse = array(
-			'newLhp' => $lhpData,
-			'totalTeamMember' => count($teamLhp),
-			'message' => 'Data berhasil disimpan'
-		);
-		
-		$this->response($dataResponse, 200);
 	}
 	
 //	public function test_post() {
