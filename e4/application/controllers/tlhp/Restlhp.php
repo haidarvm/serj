@@ -11,26 +11,48 @@ if (! defined('BASEPATH'))
 class Restlhp extends REST_Controller {
 	
 	public function index_post() {
-		$data = array(
+		$team = array_merge($this->post('team'), 
+			$this->post('teamPerpanjangan'));
+		
+		$teamLhp = array();
+		foreach($team as $member) {
+			array_push($teamLhp, array(
+				'kategory_tim' => $member['kategoryTim'],
+				'tim_id' => $member['teamId'],
+				'nama_tim' => $member['namaTim']
+			));
+		}
+		
+		$lhpData = array(
 			'no_surat_tugas' => $this->post('noSuratTugas'),
 			'tanggal_surat_tugas' => $this->post('tglSuratTugas'),
-			'hari_awal_penugasan' => $this->post('hariAwalPenugasan'),
-			'hari_akhir_penugasan' => $this->post('hariAkhirPenugasan'),
-			'skop_awal_penugasan' => $this->post('skopAwalPenugasan'),
-			'skop_akhir_penugasan' => $this->post('skopAkhirPenugasan'),
 			'jenis_pengawasan_id' => $this->post('jenisPengawasanId'),
 			'object_pengawasan' => $this->post('objectPengawasan'),
-			'judul_lhp' => $this->post('judulLhp'),
+			'hari_awal_penugasan' => $this->post('startHariPenugasan'),
+			'hari_akhir_penugasan' => $this->post('endHariPenugasan'),
+			'skop_awal_penugasan' => $this->post('startSkopPenugasan'),
+			'skop_akhir_penugasan' => $this->post('endSkopPenugasan'),
+			
 			'nomor_lhp' => $this->post('nomorLhp'),
+			'judul_lhp' => $this->post('judulLhp'),
 			'tanggal_lhp' => $this->post('tglLhp'),
-			'nama_ppk' => $this->post('namaPpk'),
-			'pj_kegiatan' => $this->post('pjKegiatan'),
+		
+//			'nama_ppk' => $this->post('namaPpk'),
+//			'pj_kegiatan' => $this->post('pjKegiatan'),
 			'st_perpanjangan' => $this->post('stPerpanjangan'),
 			'tgl_st_perpanjangan' => $this->post('tglStPerpanjangan'),
-			'hari_awal_perpanjangan_penugasan' => $this->post('hariAwalPerpanjanganPenugasan'),
-			'hari_akhir_perpanjangan_penugasan' => $this->post('hariAkhirPerpanjanganPenugasan'),
+			'hari_awal_perpanjangan_penugasan' => $this->post('startPerpanjanganPenugasan'),
+			'hari_akhir_perpanjangan_penugasan' => $this->post('endPerpanjanganPenugasan'),
 			'user_id' => $this->post('userId')
 		);
+		
+		$dataResponse = array(
+			'newLhp' => $lhpData,
+			'team' => $teamLhp,
+			'totalTim' => count($teamLhp)
+		);
+		
+		$this->response($dataResponse, 200);
 	}
 	
 //	public function test_post() {

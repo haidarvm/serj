@@ -15,6 +15,7 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 		var self = this;
 		
 		self.data = {
+			userId: ko.observable(),
 			noSuratTugas: ko.observable(),
 			tglSuratTugas: ko.observable(),
 			jenisPengawasanId: ko.observable(),
@@ -26,8 +27,8 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 			startHariPengawasan: ko.observable(),
 			endHariPengawasan: ko.observable(),
 			
-			startSkorPemeriksaan: ko.observable(),
-			endSkorPemeriksaan: ko.observable(),
+			startSkopPenugasan: ko.observable(),
+			endSkopPenugasan: ko.observable(),
 			
 			nomorLhp: ko.observable(),
 			judulLhp: ko.observable(),
