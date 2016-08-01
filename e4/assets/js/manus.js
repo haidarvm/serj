@@ -34,7 +34,6 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
     		var actionType = "POST";
     		console.debug(self.data.userId());
     		if (self.data.userId() != null) {
-    			delete reqData.userId;
     			actionType = "PUT";
     		} 
     		
@@ -43,6 +42,7 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
     		$.ajax({
 				type: actionType,
 				data: reqData,
+				contentType: 'application/json',
 				url: site_url + "tlhp/restmanus",
 				beforeSend: function(){
 					console.info('attempting to insert new user');
