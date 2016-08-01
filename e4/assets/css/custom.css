@@ -50,6 +50,11 @@ h1, h2, h3, h4, h5, h6 {
 .input-group-addon + .form-control {
     padding-left: 6px !important;
 }
+.pagination > li > a, .pagination > li > span, .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+	line-height: 19px !important;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
 
 .table-custom .warning {
 	font-family: "Muli-Bold";
@@ -556,6 +561,57 @@ tbody td {
 	display: inline-block;
 	margin: 5px 10px;
 	cursor: pointer;
+	background-color: #68B3C8;
+    color: #fff;
+    padding: 2px 15px 3px;
+    border-radius: 20px;
+	outline: none;
+	width: inherit !important;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	font-family: 'Muli';
+}
+a.paginate_button:hover, .paginate_button.next:hover, .paginate_button.previous:hover {
+	background-color: #006c8a;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+a.paginate_button.current {
+	font-family: 'Muli-SemiBold';
+	background-color: #006c8a;
+	text-shadow: 0 0 3px #fff;
+}
+a.paginate_button {
+    padding: 3px;
+    margin: 0 3px;
+    background: #68B3C8;
+	cursor: pointer;
+    border-radius: 99px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 22px;
+    display: inline-block;
+	font-family: 'Muli';
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+div.dataTables_info {
+	padding-top: 20px !important;
+	margin-bottom: 5px;
+}
+.scrolling-table {
+	overflow-y: scroll;
+	height: 500px;
+}
+.lead-table th{
+	font-size: 13px !important;
+	font-family: 'Muli-Bold';
+}
+#kode_rekomendasi th, #kode_sebab th{
+	font-size: 13px;
+	font-family: 'Muli-Bold';
+	text-align: center;
 }
 
 #manus-grid_length select {

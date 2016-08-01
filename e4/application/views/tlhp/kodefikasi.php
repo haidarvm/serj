@@ -11,16 +11,16 @@
 					</div>
 					<div class="content">
 						<div class="table-responsive">
-							<table class="table table-striped table-custom-head">
+							<table class="table table-striped table-custom-head lead-table">
 								<thead>
 									<tr class="info">
-										<td>KEL</td>
-										<td>SUB KEL</td>
-										<td>JENIS</td>
-										<td>DESKRIPSI</td>
-										<td>ALT REKOM</td>
-										<td>EDIT</td>
-										<td>HAPUS</td>
+										<th>KEL</th>
+										<th>SUB KEL</th>
+										<th>JENIS</th>
+										<th>DESKRIPSI</th>
+										<th>ALT REKOM</th>
+										<th>EDIT</th>
+										<th>HAPUS</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -85,14 +85,14 @@
 						<!-- <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-						<div class="table-responsive">
+						<div class="table-responsive scrolling-table">
 							<table id="kode_rekomendasi" class="table table-striped table-custom-head">
 								<thead>
 									<tr class="info">
-										<td>KODE REKOMENDASI</td>
-										<td>URAIAN REKOMENDASI</td>
-										<td>EDIT</td>
-										<td>HAPUS</td>
+										<th>KODE REKOMENDASI</th>
+										<th>URAIAN REKOMENDASI</th>
+										<th>EDIT</th>
+										<th>HAPUS</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -121,15 +121,15 @@
 						<!-- <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-						<div class="table-responsive">
+						<div class="table-responsive scrolling-table">
 							<table id="kode_sebab" class="table table-striped table-custom-head">
 								<thead>
 									<tr class="info">
-										<td>KODE SEBEB GRUP</td>
-										<td>KODE SEBAB</td>
-										<td>URAIAN SEBAB</td>
-										<td>EDIT</td>
-										<td>HAPUS</td>
+										<th>KODE SEBEB GRUP</th>
+										<th>KODE SEBAB</th>
+										<th>URAIAN SEBAB</th>
+										<th>EDIT</th>
+										<th>HAPUS</th>
 									</tr>
 								</thead>
 								<tbody>

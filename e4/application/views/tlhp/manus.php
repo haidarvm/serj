@@ -16,10 +16,10 @@
 									<td class="tsort">ID</td>
 									<td class="tsort">Nama</td>
 									<td class="tsort">NIP</td>
-									<td class="tsort">Jabatan</td>
-									<td class="tsort">Username</td>
-									<td class="tsort">Unit Kerja</td>
-									<td class="tsort">Status</td>
+									<td class="tsort" width="100">Jabatan</td>
+									<td class="tsort" width="120">Username</td>
+									<td class="tsort" width="120">Unit Kerja</td>
+									<td class="tsort" width="100">Status</td>
 									<td class="tsort">Action</td>
 								</tr>
 							</thead>
