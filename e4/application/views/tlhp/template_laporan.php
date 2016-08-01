@@ -41,9 +41,7 @@
 											<label class="col-sm-3 control-label">Tanggal Laporan</label>
 											<div class="col-sm-9">
 												<div class="input-group">
-													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-													<input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" 
-													data-bind="datepicker: true, selectedDate: data.startTanggalLaporan" required="true">
+													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" data-bind="datepicker: true, selectedDate: data.startTanggalLaporan" required="true">
 												</div>
 											</div>
 										</div>
@@ -56,43 +54,62 @@
 											</div>
 										</div>
 									</fieldset>
-										
-									</div>
-									
+
+								</div>
+
 							</div>
-							
-							
+
+
 							<div class="row top-space">
-							  <div class="col-md-6">
-							  		<fieldset>
-							  			<center><b>KATA PENGANTAR</b></center>
+								<div class="col-md-6">
+									<fieldset>
+										<center>
+											<b>KATA PENGANTAR</b>
+										</center>
 										<textarea name="kata_pengantar" id="summernote" height="500px"></textarea>
 									</fieldset>
-							  </div>
-							  <div class="col-md-6">
+								</div>
+								<div class="col-md-6">
 									<fieldset>
-							  			<center><b>KATA PENGANTAR</b></center>
+										<center>
+											<b>KATA PENGANTAR</b>
+										</center>
 										<textarea name="daftar_isi" id="summernote2" height="500px"></textarea>
 									</fieldset>
-							  </div>
+								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12 t-center">
 									<input type="submit" value="simpan" class="btn btn-wd btn-primary btn-fill btn-margin">
-									<input type="reset" value="Reset" class="btn btn-wd btn-warning btn-margin">
+									<!-- <input type="reset" value="Reset" class="btn btn-wd btn-warning btn-margin"> -->
 								</div>
 							</div>
 						</form>
+
+						<div class="row">
+							<div class="col-md-8">
+								<!--.col-md-8-->
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-wd btn-warning btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>
+									</span> EXPORT TO PDF
+								</button>
+
+								<button type="button" class="btn btn-wd btn-success btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-print"></i>
+									</span> PRINT
+								</button>
+								<!-- <a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a>
+								<a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> PDF </a> -->
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="row">
-  <div class="col-md-10"><!--.col-md-8--></div>
-  <div class="col-md-2"><a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a></div>
 </div>
 
 <script>
@@ -116,7 +133,7 @@
 </script>
 
 <script>
-	console.debug(site_url);s
+	console.debug(site_url);
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},

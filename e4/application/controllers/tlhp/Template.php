@@ -23,30 +23,22 @@ class Template extends MY_Controller {
 	public function index() {
 		$data['title'] = "Daftar Laporan";
 		// $data['getAll'] = $this->muser->getAllUser();
-// 		$data["getAll"] = $this->muser->getAllTemplate();
-		$this->load->tlhp_template('tlhp/template', $data);
-// 		$this->laporan();
+		// $data["getAll"] = $this->muser->getAllTemplate();
+		// $this->load->tlhp_template('tlhp/template', $data);
+		$this->daftarlap();
 	}
-
-// 	public function daftarlap() {
-// 	}
 	
-	
+	// public function daftarlap() {
+	// }
 	public function get_daftarlap_list() {
-	
 		$requestData = $this->input->get();
-	
-		$columns = array(
-				0 => 'nomor_laporan',
-				1 => 'periode_laporan',
-				2 => 'create_date',
-				3 => 'tanggal_laporan',
-				4 => 'judul_laporan');
-	
+		
+		$columns = array(0 => 'nomor_laporan', 1 => 'periode_laporan', 2 => 'create_date', 3 => 'tanggal_laporan', 4 => 'judul_laporan');
+		
 		$query = $this->mlhp->getAllTemplate($cond = NULL, $order_by = NULL);
 		$totalData = $query->num_rows();
 		$totalFiltered = $totalData;
-	
+		
 		// For Search value
 		if (! empty($requestData['search']['value'])) {
 			$cond = "AND ( judul_laporan LIKE '%" . $requestData['search']['value'] . "%' ";
@@ -63,7 +55,7 @@ class Template extends MY_Controller {
 		$data = array();
 		$x = 1;
 		foreach ( $query3->result_array() as $row ) {
-			$y = $x++;
+			$y = $x ++;
 			$nestedData['no'] = $y;
 			$nestedData['nomor_laporan'] = $row["nomor_laporan"];
 			$nestedData["periode_laporan"] = $row["periode_laporan"];
@@ -72,10 +64,15 @@ class Template extends MY_Controller {
 			$nestedData["judul_laporan"] = $row["judul_laporan"];
 			$data[] = $nestedData;
 		}
-	
+		
 		$json_data = array("draw" => intval($requestData['draw']), "recordsTotal" => intval($totalData), "recordsFiltered" => intval($totalFiltered), "data" => $data);
 		echo json_encode($json_data);
-	
+	}
+
+	public function daftarlap() {
+		$data['title'] = "Daftar Laporan";
+		$data['getAllTemplate'] = $this->mlhp->getAllTemplate($cond = NULL, $order_by = NULL);
+		$this->load->tlhp_template('tlhp/daftarlap', $data);
 	}
 
 	public function laporan() {

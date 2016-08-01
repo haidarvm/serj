@@ -28,13 +28,13 @@ class Restmanus extends REST_Controller {
 	}
 	
 	public function index_post() {
-		//TODO: use exception
+		//TODO: use exception, validation requried , repassword
 		$data = array(array(
 			'username' => $this->post('userName'),
 			'nip' => $this->post('accountNumber'),
 			'full_name' => $this->post('fullName'),
 			'jabatan' => $this->post('accountPosition'),
-			'password' => $this->post('password'),
+			'password' => md5($this->post('password')),
 			'unit_kerja_id' => $this->post('departement'),
 			'user_level_id' => $this->post('role'))
 		);
