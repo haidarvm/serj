@@ -55,11 +55,13 @@
 <script>
     requirejs.config({
         "shim": {
-            "bootstrap": {"deps": ["jquery"]}
+            "bootstrap": {"deps": ["jquery"]},
+    		"notify": {"deps": ["jquery"]}
         },
         "paths": {
             "jspath": "<?php echo base_url(); ?>/assets/js/",
             "jquery": "../../assets/js/jquery-2.1.4.min",
+            "notify": "../../assets/js/notify.min",
             "knockout": "../../assets/js/knockout-3.2.0",
             "bootstrap": "../../assets/js/bootstrap.min",
             "data-table": "../../assets/js/jquery.dataTables.min" 

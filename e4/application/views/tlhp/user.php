@@ -1,7 +1,8 @@
 <!--  <form action="<?//=site_url();?>tlhp/manus/user_prosess" method="post"> -->
 <form>
 	<div class="row">
-		<p data-bind="text: userNotif" class="text-center"></p>
+		<div id="notify">
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-5">

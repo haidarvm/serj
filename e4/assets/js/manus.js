@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
+define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, ko){
 	
 	window.refreshTable = function refreshManusTable() {
 		$('#manus-grid').DataTable().ajax.reload();
@@ -93,6 +93,7 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
 				userView.data.userName(data.data.username);
 				userView.data.fullName(data.data.nip);
 				userView.data.accountPosition(data.data.jabatan);
+				userView.data.accountNumber(data.data.nip);
 				userView.data.fullName(data.data.full_name);
 				userView.data.departement(data.data.user_level_id);
 				userView.data.role(data.data.unit_kerja_id);
@@ -107,7 +108,12 @@ define(["jquery", "knockout", "bootstrap", "data-table"], function($, ko){
 	
     $(function(){
     	ko.applyBindings(userView);
-       
+    	$.notify.defaults({
+    		clickToHide: true,
+    		autoHide: false
+    	});
+    	$("#notify").notify("Hello world");
+    	
     	$('#manus-grid').DataTable({
             "processing": true,
             "serverSide": true,
