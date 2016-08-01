@@ -25,7 +25,7 @@
 												<div class="input-group">
 													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 													<input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" 
-													required="true" data-bind="value: data.tglSuratTugas"/>
+													required="true" data-bind="datepicker: true, selectedDate: data.tglSuratTugas"/>
 												</div>
 											</div>
 										</div>
@@ -38,14 +38,14 @@
 													<div class=" l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="hari_awal_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="value: data.startHariPenugasan" required="true" />
+														data-bind="datepicker: true, selectedDate: data.startHariPenugasan" required="true" />
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class=" l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="hari_akhir_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="value: data.endHariPenugasan" required="true" />
+														data-bind="datepicker: true, selectedDate: data.endHariPenugasan" required="true" />
 													</div>
 												</div>
 
@@ -56,19 +56,18 @@
 										<div class="col-sm-10">
 											<label for="inputEmail3" class="control-label t-left">SKOP PEMERIKSAAN<star>*</star></label>
 											<div class="row">
-
 												<div class="col-md-6">
 													<div class="l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="value: data.startSkorPemeriksaan" required="true" />
+														data-bind="datepicker: true, selectedDate: data.startSkorPemeriksaan" required="true" />
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="value: data.endSkorPemeriksaan" required="true" />
+														data-bind="datepicker: true, selectedDate: data.endSkorPemeriksaan" required="true" />
 													</div>
 												</div>
 
@@ -151,7 +150,7 @@
 											<div class="input-group">
 												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
 												<input type="text" name="tanggal_lhp" class="form-control border-input date-input-big datepicker" 
-												data-bind="value: data.startLhp"/>
+												data-bind="datepicker: true, selectedDate: data.startLhp"/>
 											</div>
 										</div>
 									</div>
@@ -180,7 +179,7 @@
 											<div class="input-group">
 												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 												<input type="text" name="tgl_st_perpanjangan" class="form-control border-input date-input-big datepicker" 
-												data-bind="value: data.tglStPerpanjangan"/>
+												data-bind="datepicker: true, selectedDate: data.tglStPerpanjangan"/>
 											</div>
 										</div>
 									</div>
@@ -194,14 +193,14 @@
 													<div class=" l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="hari_awal_perpanjangan_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="value: data.startPerpanjanganPenugasan"/>
+														data-bind="datepicker: true, selectedDate: data.startPerpanjanganPenugasan"/>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class=" l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="hari_akhir_perpanjangan_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="value: data.endPerpanjanganPenugasan"/>
+														data-bind="datepicker: true, selectedDate: data.endPerpanjanganPenugasan"/>
 													</div>
 												</div>
 
@@ -272,7 +271,7 @@
 	</div>
 </div>
 <script>
-	console.debug(site_url);
+//	console.debug(site_url);
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
