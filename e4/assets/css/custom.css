@@ -755,6 +755,10 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	font-family: "Muli-Bold";
 }
 
+.last-one-img {
+	margin: 50px 0 0;
+}
+
 
 /* @media ( max-width : 480px) {
 	.modal-dialog {
