@@ -19,7 +19,7 @@ class Restlhp extends REST_Controller {
 			'no_surat_tugas' => $this->post('noSuratTugas'),
 			'tanggal_surat_tugas' => $this->post('tglSuratTugas'),
 			'jenis_pengawasan_id' => $this->post('jenisPengawasanId'),
-			'objek_pengawasan' => $this->post('objectPengawasan'),
+			'objek_pengawasan' => $this->post('objekPengawasan'),
 			'hari_awal_penugasan' => $this->post('startHariPenugasan'),
 			'hari_akhir_penugasan' => $this->post('endHariPenugasan'),
 			'skop_awal_penugasan' => $this->post('startSkopPenugasan'),

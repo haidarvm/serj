@@ -124,7 +124,7 @@
 										<label for="inputEmail3" class="col-sm-12 control-label t-left">OBJEK PENGAWASAN<star>*</star></label>
 										<div class="col-sm-10">
 											<input type="text" name="objek_pengawasan" class="form-control border-input" 
-											data-bind="value: data.objectPengawasan" required="true" />
+											data-bind="value: data.objekPengawasan" required="true" />
 										</div>
 									</div>
 									<div class="form-group">

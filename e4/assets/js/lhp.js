@@ -19,7 +19,7 @@ define(["jquery", "knockout", "bootstrap", "datetimepicker", "moment"], function
 			noSuratTugas: ko.observable(),
 			tglSuratTugas: ko.observable(),
 			jenisPengawasanId: ko.observable(),
-			objectPengawasan: ko.observable(),
+			objekPengawasan: ko.observable(),
 			
 			startHariPenugasan: ko.observable(),
 			endHariPenugasan: ko.observable(),
