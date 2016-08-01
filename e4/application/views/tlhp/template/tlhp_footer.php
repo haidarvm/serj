@@ -1,25 +1,6 @@
 
 <footer class="footer">
 	<div class="container-fluid">
-		<!-- <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                KEMENPAN
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav> -->
 		<div class="copyright pull-right col-md-12">
 			<!--&copy; <script>document.write(new Date().getFullYear())</script>,-->
 			<div class="col-md-11 nopadding">
@@ -28,7 +9,7 @@
 			</div>
 			<div class="col-md-1">
 				<div class="footer-logo">
-					<img src="<?php echo base_url();?>assets/img/img-1.png" class="right-img-footer" />
+					<img src="<?php echo base_url();?>assets/img/ikp-logo.png" class="right-img-footer" />
 				</div>
 			</div>
 		</div>
