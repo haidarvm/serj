@@ -9,8 +9,8 @@
 						
                         <div class="logo-under">
 							<img src="<?php echo base_url();?>assets/img/browser.png">
-                            <h3 class="error-text">ERROR 404: PAGE NOT FOUND</h3>
-                            <p class="h6">Uh Oh! Please try one of the following pages <a href="<?php echo site_url();?>tlhp/">back to home</a></p>
+                            <h3 class="error-text">404: PAGE NOT FOUND</h3>
+                            <p class="h6">Uh Oh! Please try one of the following pages <a href="<?php echo site_url();?>tlhp/">back to dashboard</a></p>
 				        </div>
 					</div>
                

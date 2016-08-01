@@ -71,7 +71,7 @@ class Loghistory extends MY_Controller {
 		}
 		
 		$json_data = array("draw" => intval($requestData['draw']), "recordsTotal" => intval($totalData), "recordsFiltered" => intval($totalFiltered), "data" => $data);
-		exit(json_encode($json_data));
+		echo json_encode($json_data);
 		
 	}
 

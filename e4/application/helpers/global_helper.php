@@ -431,6 +431,11 @@ function dump($params) {
 	echo '</pre>';
 }
 
+// add td for report
+function add_td($row) {
+	return '<td>' . $row . '</td>';
+}
+
 /**
  * Default config for upload
  *
