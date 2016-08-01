@@ -60,14 +60,14 @@
 													<div class="l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="skop_awal_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="datepicker: true, selectedDate: data.startSkorPemeriksaan" required="true" />
+														data-bind="datepicker: true, selectedDate: data.startSkopPenugasan" required="true" />
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="l-float input-group">
 														<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 														<input type="text" name="skop_akhir_penugasan" class="form-control border-input date-input datepicker" 
-														data-bind="datepicker: true, selectedDate: data.endSkorPemeriksaan" required="true" />
+														data-bind="datepicker: true, selectedDate: data.endSkopPenugasan" required="true" />
 													</div>
 												</div>
 
@@ -150,7 +150,7 @@
 											<div class="input-group">
 												<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
 												<input type="text" name="tanggal_lhp" class="form-control border-input date-input-big datepicker" 
-												data-bind="datepicker: true, selectedDate: data.startLhp"/>
+												data-bind="datepicker: true, selectedDate: data.tglLhp"/>
 											</div>
 										</div>
 									</div>
