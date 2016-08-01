@@ -11,6 +11,7 @@ if (! defined('BASEPATH'))
 class Restlhp extends REST_Controller {
 	
 	public function index_post() {
+		//TODO: Add exception handling, various response code
 		$team = array_merge($this->post('team'), 
 			$this->post('teamPerpanjangan'));
 		
