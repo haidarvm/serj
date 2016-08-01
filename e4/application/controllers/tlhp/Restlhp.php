@@ -60,7 +60,8 @@ class Restlhp extends REST_Controller {
 		$lhpData['team'] = $teamLhp;
 		$dataResponse = array(
 			'newLhp' => $lhpData,
-			'totalTeamMember' => count($teamLhp)
+			'totalTeamMember' => count($teamLhp),
+			'message' => 'Data berhasil disimpan'
 		);
 		
 		$this->response($dataResponse, 200);
