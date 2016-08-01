@@ -1,10 +1,10 @@
 <!--  <form action="<?//=site_url();?>tlhp/manus/user_prosess" method="post"> -->
 <form>
 	<div class="row">
-		<div id="notify" class="alert">
-		</div>
+		
 	</div>
 	<div class="row">
+		<div id="notify"></div>
 		<div class="col-md-5">
 			<div class="form-group">
 				<label>Username</label> 

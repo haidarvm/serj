@@ -48,12 +48,14 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
 					console.info('attempting to insert new user');
 				},
 				success: function(data) {
-					self.userNotif("data berhasil disimpan");
+//					self.userNotif("data berhasil disimpan");
 					refreshTable();
+					$("#notify").notify("Data telah disimpan", "alert alert-info");
 //					$('#userModal').modal('hide');
 				},
 				error: function(xhr, msg) {
-					self.userNotif("Edit user masih belum dapat digunakan");
+//					self.userNotif("Internal Server Error");
+					$("#notify").notify("Internal Server Error", "alert alert-error");
 				}
 			});
     	}
@@ -110,8 +112,11 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
     	$.notify.defaults({
     		clickToHide: true,
     		autoHide: false,
+    		position: 'top-center'
     	});
-    	$("#notify").notify("Hello world");
+//    	$.notify.addStyle('alert', {
+//    		html: "<div>data-notify-text</div>"
+//    	});
     	
     	$('#manus-grid').DataTable({
             "processing": true,
