@@ -58,8 +58,8 @@
 							</div>
 							<div class="col-xs-7">
 								<div class="numbers">
-									<p>DISPOSISI SURAT</p>
-									<button type="button" class="btn btn-wd btn-warning btn-move-right">
+									<p>E-OFFICE</p>
+									<button  onclick="window.location.href='http://eoffice.wiradipa.com/users/sign_in'"  type="button" class="btn btn-wd btn-warning btn-move-right">
 										MASUK <span class="btn-label"> <i class="ti-angle-right"></i>
 										</span>
 									</button>

@@ -16,7 +16,7 @@ function get_current_app() {
 			$current_app = 'TLHP';
 			break;
 		default :
-			$current_app = 'dll';
+			$current_app = 'IKP';
 			break;
 	}
 	return $current_app;
@@ -429,6 +429,11 @@ function dump($params) {
 	echo '<pre>';
 	var_dump($params);
 	echo '</pre>';
+}
+
+// add td for report
+function add_td($row) {
+	return '<td>' . $row . '</td>';
 }
 
 /**
