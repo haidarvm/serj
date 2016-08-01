@@ -15,8 +15,8 @@
 								<tr class="info">
 									<td class="tsort">ID</td>
 									<td class="tsort">Nama</td>
-									<td class="tsort">NIP</td>
-									<td class="tsort" width="100">Jabatan</td>
+									<td class="tsort" width="80">NIP</td>
+									<td class="tsort" width="120">Jabatan</td>
 									<td class="tsort" width="120">Username</td>
 									<td class="tsort" width="120">Unit Kerja</td>
 									<td class="tsort" width="100">Status</td>

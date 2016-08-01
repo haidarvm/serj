@@ -571,7 +571,7 @@ tbody td {
 	transition: all 0.5s ease-out;
 	font-family: 'Muli';
 }
-a.paginate_button:hover, .paginate_button.next:hover, .paginate_button.previous:hover {
+a.paginate_button:hover, .paginate_button.next:hover, .paginate_button.previous:hover, .ellipsis:hover {
 	background-color: #006c8a;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
@@ -581,7 +581,13 @@ a.paginate_button.current {
 	background-color: #006c8a;
 	text-shadow: 0 0 3px #fff;
 }
-a.paginate_button {
+.ellipsis {
+	letter-spacing: 1px;
+    font-size: 18px;
+    padding-top: 1px !important;
+    padding-bottom: 2px !important;
+}
+a.paginate_button, .ellipsis {
     padding: 3px;
     margin: 0 3px;
     background: #68B3C8;
@@ -608,17 +614,16 @@ div.dataTables_info {
 	font-size: 13px !important;
 	font-family: 'Muli-Bold';
 }
-#kode_rekomendasi th, #kode_sebab th{
+#kode_rekomendasi th, #kode_sebab th, #tlhp_log_history_table th{
 	font-size: 13px;
 	font-family: 'Muli-Bold';
-	text-align: center;
 }
 
-#manus-grid_length select {
+#manus-grid_length select, div.dataTables_length select  {
 	height: 30px;
 	margin-left: 10px;
 	margin-right: 10px;
-	width: 50px;
+	width: 50px !important;
 	background-color: #F3F2EE;
     border: 1px solid #e8e7e3;
     border-radius: 4px;
@@ -627,11 +632,11 @@ div.dataTables_info {
 	padding: 0 5px;
 }
 
-#manus-grid_length>label, #manus-grid_filter>label {
-	color: #000000;
+#manus-grid_length>label, #manus-grid_filter>label, div.dataTables_length label, div.dataTables_filter label {
+	color: #9A9A9A;
 }
 
-#manus-grid_filter input, #kode_rekomendasi_filter input, #kode_sebab_filter input {
+#manus-grid_filter input, #kode_rekomendasi_filter input, #kode_sebab_filter input, div.dataTables_filter input {
 	height: 30px;
 	margin-left: 10px;
 	background-color: #F3F2EE;
@@ -641,11 +646,11 @@ div.dataTables_info {
     font-size: 13px;
 	padding: 0 5px;
 }
-#kertas-kerja select {
+#kertas-kerja select{
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-#kertas-kerja select:focus {
+#kertas-kerja select:focus, div.dataTables_length select:focus {
 	width: 100px
 }
 #kertas-kerja input {
@@ -678,12 +683,12 @@ div.dataTables_info {
 .clr, #manus-grid {
 	clear: both;
 }
-div#manus-grid_length {
+div#manus-grid_length, #tlhp_log_history_table_length {
     float: left;
     width: 200px;
 	margin-bottom: 10px;
 }
-div#manus-grid_filter {
+div#manus-grid_filter, #tlhp_log_history_table_filter {
     float: right;
     width: 230px;
 	margin-bottom: 10px;
