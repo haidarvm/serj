@@ -159,7 +159,7 @@ function removeButtonMenu($uri) {
  * @param unknown $level        	
  * @param unknown $company_id        	
  * @param unknown $company_name        	
- * add new unit kerja
+ * add new unit kerja perlu dengan id nya jga
  */
 function define_sess($username, $user_id, $full_name, $user_level_id, $user_level, $email) {
 	// $_SESSION['jk_username'] = $username;
