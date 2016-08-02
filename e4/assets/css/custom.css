@@ -709,8 +709,21 @@ div#manus-grid_filter, #tlhp_log_history_table_filter {
 	}
 }
 
+#kode_rekomendasi_wrapper div.dataTables_filter, #kode_sebab_wrapper div.dataTables_filter {
+    text-align: left;
+}
+#kode_sebab_wrapper div.dataTables_info, #kode_rekomendasi_wrapper div.dataTables_info{
+	margin-bottom: 35px;
+}
+#kode_temuan_wrapper #kode_temuan_paginate {
+	margin-bottom: 20px;
+}
 #kode_temuan thead .sorting::after, #kode_temuan thead .sorting_asc::after, #kode_temuan thead .sorting_desc::after {
 	top: 26px !important;
+}
+#kode_rekomendasi th, #kode_temuan th, #kode_sebab th {
+	text-align: center;
+	font-family: 'Muli-SemiBold';
 }
 #kode_rekomendasi thead .sorting::after, #kode_rekomendasi thead .sorting_asc::after, #kode_rekomendasi thead .sorting_desc::after {
 	top: 26px !important;
