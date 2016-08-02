@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url();?>assets/img/favicon.png">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Login Super User</title>
+<title>Login <?php echo $accountType;?> User</title>
 
 <!-- Bootstrap -->
 <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" />
@@ -45,7 +45,33 @@
 
 			<div class="col-md-8 col-md-offset-2 desc-content">
 				<p>
-					DATABASE HASIL PENGAWASAN INSPEKTORAT <br /> KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI
+					DATABASE HASIL PENGAWASAN INSPEKTORAT <br /> 
+					<?php
+					
+					switch ($accountType) {
+						case '_IKP_' :
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_ikp_" );
+							$text = "KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI";
+							break;
+						case '_BPK_' :
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_bpk_" );
+							$text = "BADAN PEMERIKSA KEUANGAN";
+							break;
+						case '_BPKP_' :
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_bpkp_" );
+							$text = "BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN";
+							break;
+						case '_ORIX_' :
+							// write_file ( APPPATH . 'data/prefix.data', "tlhp_orix_" );
+							$text = "TLHP LAINNYA";
+							break;
+						default :
+							$text = "KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI";
+							break;
+					}
+					echo $text;
+					?>
+					
 				</p>
 
 			</div>
