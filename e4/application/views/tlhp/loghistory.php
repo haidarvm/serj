@@ -36,8 +36,8 @@
 							</div>
                               
 							<div class="both-space t-right">
-								<a class="btn btn-info" href="#"><i class="fa fa-print"></i> Print</a>
-								<a class="btn btn-success" href="#"><i class="fa fa-file-pdf-o"></i> PDF</a>
+								<a class="btn btn-info" href="<?=site_url()?>test/userlog"><i class="fa fa-print"></i> Print</a>
+								<a class="btn btn-success" href="<?=site_url()?>test/userlog"><i class="fa fa-file-pdf-o"></i> PDF</a>
 								<a class="btn btn-danger" href="<?=site_url()?>tlhp/menusa"><i class="fa fa-undo"></i> Kembali</a>
 							</div>
 
