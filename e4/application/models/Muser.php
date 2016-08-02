@@ -27,13 +27,13 @@ class MUser extends CI_Model {
 	 * @return unknown
 	 */
 	function getAllUserDt($cond = NULL, $order_by = NULL) {
-		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
+		$cond = ! empty($cond) ? " AND 1=1  " . $cond : null;
 		$sql = "SELECT * FROM {PRE}user u
     			left JOIN {PRE}user_level l ON l.user_level_id = u.user_level_id
     			left JOIN {PRE}unit_kerja uk ON uk.unit_kerja_id = u.unit_kerja_id
-    			" . $cond . " " . $order_by;
+    			 WHERE active =1 " . $cond . " " . $order_by;
 		$query = $this->db->query($sql);
-		// echo $this->db->last_query();
+// 		echo $this->db->last_query();
 		return $query;
 	}
 
@@ -167,7 +167,9 @@ class MUser extends CI_Model {
 
 	function delete($id) {
 		// unset($data ['id']);
-		$this->db->delete('user', array('user_id' => $id));
+		$data['active'] = 0;
+		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
+		//$this->db->delete('user', array('user_id' => $id));
 	}
 	
 	function findOneByUserName($username) {
