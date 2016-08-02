@@ -251,13 +251,17 @@
 <script>
     requirejs.config({
         "shim": {
+            "bootstrap": {"deps": ["jquery"]},
             "chart": {"deps": ["jquery"]},
+    		"notify": {"deps": ["jquery"]}
            // "graphic" : {deps: ["jquery"]}
         },
         "paths": {
-            "jspath": "../../assets/js/",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
-            "chart": "../../assets/js/Chart",
+            "jspath": site_url + "assets/js/",
+            "jquery": site_url + "assets/js/jquery-2.1.4.min",
+            "notify": site_url+"assets/js/notify.min",
+            "bootstrap": site_url + "assets/js/bootstrap.min",
+            "chart": site_url + "assets/js/Chart",
             //"graphic": "../../assets/js/graphic",
         }
     });
