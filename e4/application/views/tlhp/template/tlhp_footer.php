@@ -1,4 +1,3 @@
-
 <footer class="footer">
 	<div class="container-fluid">
 		<div class="copyright pull-right col-md-12">
