@@ -47,7 +47,7 @@
 										<tr>
 											<th colspan="6" class="warning">JUDUL TEMUAN</th>
 											<th colspan="5" class="info">REKOMENDASI</th>
-											<th colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
+											<th colspan="7" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
 											</th>
 											<th colspan="2">SESUAI DENGAN REKOMENDASI</th>
 											<th colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</th>
@@ -67,6 +67,9 @@
 											<th class="info">KERUGIAN NEGARA</th>
 											<th class="info">NILAI (Rp.)</th>
 											<th class="success">UNIT KERJA</th>
+											<th class="success">UNIT KERJA</th>
+											<th class="success">NAMA PPK</th>
+											<th class="success">NAMA PJ</th>
 											<th class="success">PERIODE TINDAK LANJUT</th>
 											<th class="success">TINDAK LANJUT</th>
 											<th class="success">DOKUMEN PENDUKUNG</th>
@@ -177,6 +180,8 @@
 													<option>BIRO BMOK</option>
 													<option>BIRO KASN</option>
 											</select></td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -304,6 +309,8 @@
 											<td></td>
 											<td></td>
 											<td></td>
+											<td></td>
+											<td></td>
 										</tr>
 										
 										
@@ -357,6 +364,8 @@
 													<option>BIRO BMOK</option>
 													<option>BIRO KASN</option>
 											</select></td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
