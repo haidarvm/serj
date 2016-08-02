@@ -25,7 +25,7 @@
 /* 	font-family: 'Calibri'; */
 }
 </style>
-<div id="header" align="center">
+<div id="header">
 	<h1><?php echo $pageTitle;?></h1>
 </div>
 <table width="100%" class="t-print">
