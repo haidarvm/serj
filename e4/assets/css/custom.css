@@ -708,7 +708,10 @@ div#manus-grid_filter, #tlhp_log_history_table_filter {
 		margin: 100px auto 100px 37%;
 	}
 }
-
+#daftarlap_table th {
+    font-family: "Muli-SemiBold";
+    font-size: 13px;
+}
 #kode_rekomendasi_wrapper div.dataTables_filter, #kode_sebab_wrapper div.dataTables_filter {
     text-align: left;
 }
