@@ -37,7 +37,7 @@
 										<td><?=$template->tanggal_laporan;?></td>
 										<td><?=$template->judul_laporan;?></td>
 										<td><?php //$template->judul_laporan;?></td>
-										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
+										<td><a class="btn btn-info circle-perfect" href="<?=site_url()?>tlhp/template/update_laporan/<?=$template->template_laporan_id?>"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 										</a></td>
 										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
 										</a></td>

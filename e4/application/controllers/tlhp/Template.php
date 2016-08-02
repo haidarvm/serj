@@ -76,19 +76,37 @@ class Template extends MY_Controller {
 	}
 
 	public function laporan() {
-		$data['title'] = "PILIH Template";
+		$data['title'] = "Tambah Template";
+		$data['action'] = "add";
 		$this->load->tlhp_template('tlhp/template_laporan', $data);
+	}
+
+	public function update_laporan($id) {
+		$data['title'] = "UPDATE Template";
+		$data['action'] = "update";
+		
+		$post = $this->input->post();
+		if ($post) {
+// 			echo 'masuk';exit();
+			$this->mlhp->updateTemplateLaporan($post,$id);
+			redirect('tlhp/template/daftarlap');
+		} else {
+			$data['template'] = $this->mlhp->getTemplate($id);
+			$this->load->tlhp_template('tlhp/template_laporan', $data);
+		}
+	}
+
+	public function update_proccess() {
+		// test
 	}
 
 	public function insert_template_laporan() {
 		$post = $this->input->post();
 		if ($post) {
-			// print_r($insert);exit;
 			// $insert['waktu']=date('Y-m-d H:i:s');
 			$post['user_id'] = $_SESSION['user_id'];
 			$template_laporan_id = $this->mlhp->insert_templateLaporan($post);
-			// $insert_id;
-			// redirect('ctrl/tampil');
+			redirect('tlhp/template/daftarlap');
 		}
 		// $this->load->tlhp_template('tlhp/template_laporan');
 	}

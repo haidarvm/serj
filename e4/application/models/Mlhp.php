@@ -255,14 +255,26 @@ class MLhp extends CI_Model {
 	
 	public function getAllTemplate($cond = NULL, $order_by = NULL){
 		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
-		$sql = "SELECT *
+		$sql = "SELECT *, tl.template_laporan_id as template_laporan_id
 				FROM {PRE}template_laporan tl
     			LEFT JOIN {PRE}upload_template_laporan utl ON utl.template_laporan_id = tl.template_laporan_id
     			" . $cond . " " . $order_by;
 		$query = $this->db->query($sql);
 // 		echo $this->db->last_query();exit;
 		return $query;
-		
+	}
+	
+	public function getTemplate($id) {
+		$query = $this->db->get_where('template_laporan', array('template_laporan_id' => $id));
+// 		echo $this->db->last_query();exit;
+		return checkRow($query);
+	}
+	
+
+	public function updateTemplateLaporan($data,$template_laporan_id) {
+		unset($data['file']);
+		unset($data['files']);
+		return $this->db->update('template_laporan', $data, array('template_laporan_id' => $template_laporan_id));
 	}
 	
 	// function updateTemuan($lhp_id, $jenis_temuan) {
