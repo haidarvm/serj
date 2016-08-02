@@ -26,6 +26,7 @@
 
 <!--  CSS for Demo Purpose, don't include it in your project     -->
 <link href="<?php echo base_url();?>assets/css/demo.css" rel="stylesheet" />
+<link href="<?=base_url();?>assets/css/custom.css" rel="stylesheet" />
 
 
 <!--  Fonts and icons     -->

@@ -89,6 +89,6 @@ class Kklhpbaru extends MY_Controller {
 				}
 			}
 		}
-		redirect(base_url() . "tlhp/pilihlhp");
+		redirect(base_url() . "tlhp/menusa");
 	}
 }
