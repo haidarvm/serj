@@ -85,6 +85,25 @@ class Manus extends MY_Controller {
 		$this->load->view('tlhp/user', $data);
 	}
 
+	function profile() {
+		$data['title'] = "My Profile ". $_SESSION['full_name'];
+		$data['action'] = 'update';
+		$id = $_SESSION['user_id'];
+		$post = $this->input->post();
+		if ($post) {
+			// $this->mlhp->updateTemplateLaporan($post,$id);
+			$post['password'] = md5($post['password']);
+			$this->muser->updateUser($id, $post);
+// 			echo 'masuk';exit;
+			redirect('tlhp/manus');
+		} else {
+			$data['user'] = $this->muser->getUser($id);
+			$data['getAllLevel'] = $this->muser->getAllLevel();
+			$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
+			$this->load->tlhp_template('tlhp/profile', $data);
+		}
+	}
+
 	function add() {
 		$data['title'] = "username";
 		$data['action'] = 'add';
@@ -92,42 +111,7 @@ class Manus extends MY_Controller {
 		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
 		$this->load->view('tlhp/user', $data);
 	}
-
-	# No Use
-/* 	function user_prosess() {
-		$post = $this->input->post();
-		if ($post) {
-			// Update
-			if (! empty($post['user_id'])) {
-				if ($post['password'] == $post['re_password']) {
-					if (! empty($post['password'])) {
-						$post['password'] = md5($post['password']);
-					} else {
-						unset($post['password']);
-					}
-					$this->muser->updateUser($post['user_id'], $post);
-					redirect('tlhp/manus');
-				} else {
-					redirect('tlhp/manus');
-				}
-				// Insert
-			} else {
-				if ($post) {
-					if (! empty($post['password'])) {
-						$post['password'] = md5($post['password']);
-					} else {
-						unset($post['password']);
-					}
-					unset($post['re_password'], $post['form']);
-					$insertUserId = $this->muser->insertUser($post);
-					redirect('tlhp/manus');
-				}
-				$user_id = $this->muser->insertUser($post);
-				redirect('tlhp/manus');
-			}
-		}
-	} */
-
+	
 	function delete($id = NULL) {
 		if ($id != NULL) {
 			$this->muser->delete($id);

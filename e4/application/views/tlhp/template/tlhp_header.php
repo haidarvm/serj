@@ -112,7 +112,7 @@ var site_url = "<?php echo base_url()?>";
 									<p>Welcome <?=get_current_app()?>, <?=$_SESSION['full_name']?>, <?=$_SESSION['user_level']?></p> <b class="caret"></b>
 							</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Edit profile</a></li>
+									<li><a href="<?=site_url()?>tlhp/manus/profile">Edit profile</a></li>
 									<li><a href="#">Setting</a></li>
 									<li><a href="<?=site_url()?>auth/logout">Log out</a></li>
 								</ul></li>
