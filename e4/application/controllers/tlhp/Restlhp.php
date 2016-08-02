@@ -65,6 +65,7 @@ class Restlhp extends REST_Controller {
 			}
 			
 			$lhpData['team'] = $teamLhp;
+			$lhpData['lhpId'] = $lhpId;
 			$dataResponse = array(
 				'newLhp' => $lhpData,
 				'totalTeamMember' => count($teamLhp),

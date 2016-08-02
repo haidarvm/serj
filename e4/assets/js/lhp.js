@@ -76,9 +76,11 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 				},
 				success: function(data) {
 					console.info(data.message);
+					window.location = site_url+ "tlhp/kklhpbaru/add/" + data.newLhp.lhpId;
 //					$("#notify").notify("Data telah disimpan", "alert alert-info");
 				},
 				error: function(xhr, msg) {
+					alert('Ups, Internal Server Error');
 //					$("#notify").notify("Internal Server Error", "alert alert-error");
 				}
 			}).always(function(){
