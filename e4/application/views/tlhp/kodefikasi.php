@@ -93,7 +93,7 @@
 						<div class="table-responsive scrolling-table">
 							<table id="kode_sebab" class="table table-striped table-custom-head">
 								<thead>
-									<tr class="info">
+									<tr id="header-row" class="info">
 										<th>KODE SEBEB GRUP</th>
 										<th>KODE SEBAB</th>
 										<th>URAIAN SEBAB</th>

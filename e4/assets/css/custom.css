@@ -614,6 +614,9 @@ div.dataTables_info {
 	font-size: 13px !important;
 	font-family: 'Muli-Bold';
 }
+/* sample freeze pan like Excel
+#header-row { position:fixed; top:0; left:0; } */
+
 #kode_rekomendasi th, #kode_sebab th, #tlhp_log_history_table th{
 	font-size: 13px;
 	font-family: 'Muli-Bold';
