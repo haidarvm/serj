@@ -10,14 +10,14 @@
 	font-weight: bold;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	font-size: 14px;
+	font-size: 13px !imporant;
 	background-color: lightblue;
 	line-height: 25px;
 }
 .t-print td{
 	line-height: 25px;
-	padding: 3px 10px;
-	font-size: 13px;
+	padding: 1px 10px !imporant;
+	font-size: 12px !imporant;
 	border: 1px solid lightblue;
 	
 }

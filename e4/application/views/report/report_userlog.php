@@ -10,16 +10,16 @@
 	font-weight: bold;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	font-size: 14px;
+	font-size: 12px !imporant;
 	background-color: #a1a1a1;
-	line-height: 25px;
+	line-height: 20px;
 	border-spacing: 0;
 }
 .t-print td{
-	line-height: 25px;
+	line-height: 20px;
 	border-spacing: 0;
-	padding: 3px 10px;
-	font-size: 13px;
+	padding: 1px 10px !imporant;
+	font-size: 12px !imporant;
 	border: 1px solid #a1a1a1;
 	
 }
