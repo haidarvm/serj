@@ -709,6 +709,12 @@ div#manus-grid_filter, #tlhp_log_history_table_filter {
 	}
 }
 
+#kode_rekomendasi thead .sorting::after, #kode_rekomendasi thead .sorting_asc::after, #kode_rekomendasi thead .sorting_desc::after {
+	top: 26px !important;
+}
+#kode_sebab thead .sorting::after, #kode_sebab thead .sorting_asc::after, #kode_sebab thead .sorting_desc::after {
+	top: 34px !important;
+}
 table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after {
 	top: 16px !important;
 }
