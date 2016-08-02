@@ -56,7 +56,7 @@ class Restmanus extends REST_Controller {
 			'nip' => $this->put('accountNumber'),
 			'full_name' => $this->put('fullName'),
 			'jabatan' => $this->put('accountPosition'),
-			'password' => $this->put('password'),
+			'password' => md5($this->put('password')),
 			'unit_kerja_id' => $this->put('departement'),
 			'user_level_id' => $this->put('role')
 		);
