@@ -145,7 +145,7 @@
 	                                   <div class="col-xs-9">
 	                                   <div class="numbers">
 	                                   <p>CETAK DOKUMEN</p>
-                                          <button class="btn btn-danger btn-fill btn-wd"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                                          <a href="<?=site_url()?>test/userlog" class="btn btn-danger btn-fill btn-wd"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
 	                                   </div>
 	                                   </div>
 	                                </div>
