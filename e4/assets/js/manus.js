@@ -46,10 +46,14 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
 				url: site_url + "tlhp/restmanus",
 				beforeSend: function(){
 					console.info('attempting to insert new user');
+					$('#btnSave').attr('disabled', 'disabled');
 				},
 				success: function(data) {
-//					self.userNotif("data berhasil disimpan");
+					console.info('new user was added');
 					refreshTable();
+					if (actionType == "POST") {
+						self.resetData();
+					}
 					$("#notify").notify("Data telah disimpan", "alert alert-info");
 //					$('#userModal').modal('hide');
 				},
@@ -57,11 +61,17 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
 //					self.userNotif("Internal Server Error");
 					$("#notify").notify("Internal Server Error", "alert alert-error");
 				}
-			});
+			}).always(function(){
+				$('#btnSave').removeAttr('disabled');
+			});;
     	}
     	
     	self.newUser = function() {
-			self.data.userId(null);
+			self.resetData();
+		}
+    	
+    	self.resetData = function() {
+    		self.data.userId(null);
 			self.data.userName(null);
 			self.data.accountNumber(null);
 	    	self.data.accountPosition(null);
@@ -73,7 +83,7 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
 	    	
 	    	self.data.role(null);
 	    	self.data.address(null);
-		}
+    	}
     	
     }
 	
