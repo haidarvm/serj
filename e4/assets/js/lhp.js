@@ -66,7 +66,6 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 		self.doInsert = function() {
 			var reqData = ko.toJSON(self.data);
 			console.debug(reqData);
-			/**
 			$.ajax({
 				type: 'POST',
 				data: reqData,
@@ -84,7 +83,7 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 				}
 			}).always(function(){
 				$('#btnSave').removeAttr('disabled');
-			}); **/
+			}); 
 		}
 	}
 	

@@ -68,7 +68,7 @@ var site_url = "<?php echo base_url()?>";
 							<p title="Dashboard">Dashboard</p>
 					</a></li>
 					<li <?=$this->uri->segment(2)  == 'manus' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/manus"> <i class="ti-user"></i>
-							<p title="Managment User">Managment User</p>
+							<p title="Management User">Management User</p>
 					</a></li>
 					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/addlhp"> <i class="ti-pencil-alt"></i>
 							<p title="Buat LHP Baru">Buat LHP Baru</p>

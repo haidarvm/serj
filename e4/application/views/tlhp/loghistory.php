@@ -13,13 +13,13 @@
 								  <table id="tlhp_log_history_table" class="table table-striped table-custom-head">
 									<thead>
 										<tr class="info">
-											<td>NO</td>
-											<td>NAMA</td>
-											<td>USERNAME</td>
-											<td>JABATAN</td>
-											<td>UNIT KERJA</td>
-											<td>LAST LOGIN</td>
-											<td>LAMA PENGGUNAAN</td>
+											<th>NO</th>
+											<th>NAMA</th>
+											<th>USERNAME</th>
+											<th>JABATAN</th>
+											<th>UNIT KERJA</th>
+											<th>LAST LOGIN</th>
+											<th>LAMA PENGGUNAAN</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -34,23 +34,11 @@
 								  </table>
 								</div>
 							</div>
-							
-							<div class="t-center">
-								<ul class="pagination"> 
-									<li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li> 
-									<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li> 
-									<li><a href="#">2</a></li> 
-									<li><a href="#">3</a></li> 
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li> 
-									<li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li> 
-								</ul>
-							</div>
                               
 							<div class="both-space t-right">
-								<a class="btn btn-info" href="#"><i class="fa fa-print"></i> Print</a>
-								<a class="btn btn-success" href="#"><i class="fa fa-file-pdf-o"></i> PDF</a>
-								<a class="btn btn-danger" href="#"><i class="fa fa-undo"></i> Kembali</a>
+								<a class="btn btn-info" href="<?=site_url()?>test/userlog"><i class="fa fa-print"></i> Print</a>
+								<a class="btn btn-success" href="<?=site_url()?>test/userlog"><i class="fa fa-file-pdf-o"></i> PDF</a>
+								<a class="btn btn-danger" href="<?=site_url()?>tlhp/menusa"><i class="fa fa-undo"></i> Kembali</a>
 							</div>
 
                         </div>

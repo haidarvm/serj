@@ -19,11 +19,10 @@ class Manus extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
-                $data['title'] = "username";
+		$data['title'] = "Management User";
 		$data['action'] = 'add';
 		$data['getAllLevel'] = $this->muser->getAllLevel();
 		$data['getAllUnitKerja'] = $this->muser->getAllUnitKerja();
-		$data['title'] = "Management User";
 		// $data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/manus', $data);
 	}
@@ -35,7 +34,7 @@ class Manus extends MY_Controller {
 	}
 
 	/**
-	 * For All User
+	 * For All User Data tables
 	 */
 	function get_all_user() {
 		$requestData = $this->input->post();
@@ -94,7 +93,8 @@ class Manus extends MY_Controller {
 		$this->load->view('tlhp/user', $data);
 	}
 
-	function user_prosess() {
+	# No Use
+/* 	function user_prosess() {
 		$post = $this->input->post();
 		if ($post) {
 			// Update
@@ -126,7 +126,7 @@ class Manus extends MY_Controller {
 				redirect('tlhp/manus');
 			}
 		}
-	}
+	} */
 
 	function delete($id = NULL) {
 		if ($id != NULL) {
