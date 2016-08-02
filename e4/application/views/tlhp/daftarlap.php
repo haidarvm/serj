@@ -48,6 +48,9 @@
 						</div>
 					</div>
 
+					<div class="both-space t-left">
+						<a class="btn btn-success" href="<?=site_url()?>tlhp/template/laporan"><i class="fa fa-plus"></i> Tambah Laporan</a>
+					</div>
 					<div class="both-space t-right">
 						<a class="btn btn-danger" href="<?=site_url()?>tlhp/template/laporan"><i class="fa fa-undo"></i> Kembali</a>
 					</div>

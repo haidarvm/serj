@@ -4,6 +4,10 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
+					
+					<div class="both-space t-right">
+						<a class="btn btn-danger" href="<?=site_url()?>tlhp/template/daftarlap"><i class="fa fa-undo"></i> Kembali Daftar Laporan</a>
+					</div>
 						<form method="post" action="<?=site_url()?>tlhp/template/insert_template_laporan" class="form form-horizontal">
 							<div class="row top-space">
 								<div class="col-md-6">
