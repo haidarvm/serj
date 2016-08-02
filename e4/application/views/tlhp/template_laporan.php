@@ -4,10 +4,10 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-					
-					<div class="both-space t-right">
-						<a class="btn btn-danger" href="<?=site_url()?>tlhp/template/daftarlap"><i class="fa fa-undo"></i> Kembali Daftar Laporan</a>
-					</div>
+
+						<div class="both-space t-right">
+							<a class="btn btn-danger" href="<?=site_url()?>tlhp/template/daftarlap"><i class="fa fa-undo"></i> Kembali Daftar Laporan</a>
+						</div>
 						<form method="post" action="<?=site_url()?>tlhp/template/insert_template_laporan" class="form form-horizontal">
 							<div class="row top-space">
 								<div class="col-md-6">
@@ -39,7 +39,6 @@
 								</div>
 
 								<div class="col-md-6">
-
 									<fieldset>
 										<div class="form-group">
 											<label class="col-sm-3 control-label">Tanggal Laporan</label>
@@ -58,7 +57,6 @@
 											</div>
 										</div>
 									</fieldset>
-
 								</div>
 
 							</div>
@@ -70,17 +68,17 @@
 										<center>
 											<b>KATA PENGANTAR</b>
 										</center>
-										<textarea name="kata_pengantar" id="summernote" height="500px"></textarea>
+										<textarea name="kata_pengantar" id="summernote" height="700px"></textarea>
 									</fieldset>
 								</div>
-								<div class="col-md-12 top-space">
+								<!-- <div class="col-md-12 top-space">
 									<fieldset>
 										<center>
 											<b>KATA PENGANTAR</b>
 										</center>
 										<textarea name="daftar_isi" id="summernote2" height="500px"></textarea>
 									</fieldset>
-								</div>
+								</div> -->
 							</div>
 
 							<div class="row">
