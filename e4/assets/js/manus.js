@@ -53,9 +53,10 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
 					refreshTable();
 					if (actionType == "POST") {
 						self.resetData();
+						$("#notify").notify("Data telah disimpan", "alert alert-info");
+					} else {
+						$('#userModal').modal('hide');
 					}
-					$("#notify").notify("Data telah disimpan", "alert alert-info");
-//					$('#userModal').modal('hide');
 				},
 				error: function(xhr, msg) {
 //					self.userNotif("Internal Server Error");
