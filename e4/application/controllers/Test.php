@@ -38,8 +38,8 @@ class Test extends MY_Controller {
 	public function pdf($data, $report) {
 		// $pdfFilePath = FCPATH . "assets/downloads/reports/$report.pdf";
 		ini_set('memory_limit', '512M'); // boost the memory limit if it's low <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
-		$report_type = $report == NULL ? 'report' : $report;
-		$html = $this->load->view("report/report_" . $report_type, $data, true); // render the view into HTML
+// 		$report_type = $report == NULL ? 'report' : $report;
+		$html = $this->load->view("report/report_" . $report, $data, true); // render the view into HTML
 		$pdf = $this->pdf->load();
 		$full_name = ! empty($_SESSION['full_name']) ? $_SESSION['full_name'] : '';
 		$pdf->SetFooter($full_name . '|{PAGENO}|' . date(DATE_RFC822)); // Add a footer for good measure <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
