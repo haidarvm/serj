@@ -33,7 +33,7 @@ class Template extends MY_Controller {
 	public function get_daftarlap_list() {
 		$requestData = $this->input->get();
 		
-		$columns = array(0 => 'nomor_laporan', 1 => 'periode_laporan', 2 => 'create_date', 3 => 'tanggal_laporan', 4 => 'judul_laporan');
+		$columns = array(0 => 'template_laporan_id', 1 => 'nomor_laporan', 2 => 'periode_laporan', 3 => 'create_date', 4 => 'tanggal_laporan', 5 => 'judul_laporan');
 		
 		$query = $this->mlhp->getAllTemplate($cond = NULL, $order_by = NULL);
 		$totalData = $query->num_rows();
