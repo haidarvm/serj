@@ -65,7 +65,7 @@
 
 
 							<div class="row top-space">
-								<div class="col-md-6">
+								<div class="col-md-12 top-space">
 									<fieldset>
 										<center>
 											<b>KATA PENGANTAR</b>
@@ -73,7 +73,7 @@
 										<textarea name="kata_pengantar" id="summernote" height="500px"></textarea>
 									</fieldset>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12 top-space">
 									<fieldset>
 										<center>
 											<b>KATA PENGANTAR</b>
