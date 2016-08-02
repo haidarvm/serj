@@ -709,6 +709,9 @@ div#manus-grid_filter, #tlhp_log_history_table_filter {
 	}
 }
 
+#kode_temuan thead .sorting::after, #kode_temuan thead .sorting_asc::after, #kode_temuan thead .sorting_desc::after {
+	top: 26px !important;
+}
 #kode_rekomendasi thead .sorting::after, #kode_rekomendasi thead .sorting_asc::after, #kode_rekomendasi thead .sorting_desc::after {
 	top: 26px !important;
 }
