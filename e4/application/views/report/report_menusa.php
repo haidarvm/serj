@@ -13,10 +13,8 @@
 	font-size: 14px;
 	background-color: lightblue;
 	line-height: 25px;
-	font-family: 'Calibri';
 }
 .t-print td{
-	font-family: 'Calibri';
 	line-height: 25px;
 	padding: 3px 10px;
 	font-size: 13px;
@@ -24,7 +22,7 @@
 	
 }
 #header h1 {
-	font-family: 'Calibri';
+/* 	font-family: 'Calibri'; */
 }
 </style>
 <div id="header" align="center">
