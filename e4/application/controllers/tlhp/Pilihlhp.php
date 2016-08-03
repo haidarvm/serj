@@ -48,6 +48,10 @@ class Pilihlhp extends MY_Controller {
 		$this->load->tlhp_template('tlhp/kklhp', $data);
 		// redirect pilih
 	}
+	
+	public function updatelhponly(){
+		redirect('tlhp/addlhp/update');
+	}
 
 	public function updatelhp() {
 		$post = $this->input->post();

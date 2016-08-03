@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">HASIL <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
-						<p class="category">PADA <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
@@ -24,15 +24,15 @@
 									<td>Edit</td>
 								</tr>
 								<tr>
-									<td> <?php echo isset($lhp->tanggal_lhp) ? $lhp->tanggal_lhp:"";?></td>
+									<td> <?php echo isset($lhp->tanggal_lhp) ? year_only($lhp->tanggal_lhp):"";?></td>
 									<td> <?php echo isset($lhp->nomor_lhp) ? $lhp->nomor_lhp:"";?></td>
 									<td> <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></td>
-									<td>3</td>
-									<td>4</td>
-									<td>5</td>
-									<td>6</td>
-									<td>3</td>
-									<td>3</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
 									<td><a class="btn btn-info circle-perfect" href="<?=site_url()?>tlhp/addlhp/update/<?=$lhp->lhp_id?>"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 									</a></td>
 								</tr>
@@ -45,39 +45,42 @@
 								<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
-											<td colspan="6" class="warning">JUDUL TEMUAN</td>
-											<td colspan="5" class="info">REKOMENDASI</td>
-											<td colspan="4" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
-											</td>
-											<td colspan="2">SESUAI DENGAN REKOMENDASI</td>
-											<td colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</td>
-											<td colspan="2">BELUM DITINDAK LANJUTI</td>
-											<td colspan="2">TIDAK DAPAT DI TINDAK LANJUTI KARENA ALASAN YANG SAH</td>
+											<th colspan="6" class="warning">JUDUL TEMUAN</th>
+											<th colspan="5" class="info">REKOMENDASI</th>
+											<th colspan="7" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
+											</th>
+											<th colspan="2">SESUAI DENGAN REKOMENDASI</th>
+											<th colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</th>
+											<th colspan="2">BELUM DITINDAK LANJUTI</th>
+											<th colspan="2">TIDAK DAPAT DI TINDAK LANJUTI KARENA ALASAN YANG SAH</th>
 										</tr>
 										<tr>
-											<td class="warning">NO</td>
-											<td class="warning">KODE TEMUAN</td>
-											<td class="warning">URAIAN TEMUAN</td>
-											<td class="warning">KODE SEBAB</td>
-											<td class="warning">URAIAN SEBAB</td>
-											<td class="warning">NILAI (Rp.)</td>
-											<td class="info">NO</td>
-											<td class="info">KODE REKOMENDASI</td>
-											<td class="info">URAIAN REKOMENDASI</td>
-											<td class="info">KERUGIAN NEGARA</td>
-											<td class="info">NILAI (Rp.)</td>
-											<td class="success">UNIT KERJA</td>
-											<td class="success">PERIODE TINDAK LANJUT</td>
-											<td class="success">TINDAK LANJUT</td>
-											<td class="success">DOKUMEN PENDUKUNG</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
-											<td>JUMLAH</td>
-											<td>NILAI (Rp.)</td>
+											<th class="warning">NO</th>
+											<th class="warning">KODE TEMUAN</th>
+											<th class="warning">URAIAN TEMUAN</th>
+											<th class="warning">KODE SEBAB</th>
+											<th class="warning">URAIAN SEBAB</th>
+											<th class="warning">NILAI (Rp.)</th>
+											<th class="info">NO</th>
+											<th class="info">KODE REKOMENDASI</th>
+											<th class="info">URAIAN REKOMENDASI</th>
+											<th class="info">KERUGIAN NEGARA</th>
+											<th class="info">NILAI (Rp.)</th>
+											<th class="success">UNIT KERJA</th>
+											<th class="success">UNIT KERJA</th>
+											<th class="success">NAMA PPK</th>
+											<th class="success">NAMA PJ</th>
+											<th class="success">PERIODE TINDAK LANJUT</th>
+											<th class="success">TINDAK LANJUT</th>
+											<th class="success">DOKUMEN PENDUKUNG</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
 										</tr>
 										<!--  ##### A Sistem Pengendalian #####-->
 										
@@ -106,14 +109,14 @@
 												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>"  style="width: 300px" required name="kode_temuan_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													
 													 <?php
 									if (! empty($kode_temuan)) :
 										foreach ( $kode_temuan as $kode_temuan_data ) :
 											?>
-														    <option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan_id; ?> </option>
+														    <option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan; ?> </option>
 														    <?php
 										endforeach ;
 									
@@ -123,13 +126,13 @@
 													 
 											</select></td>
 											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
-											<td><select class="form-control kode_sebab_id-<?php echo $index; ?>" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>"  style="width: 300px" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													 <?php
 									if (! empty($kode_sebab) > 0) :
 										foreach ( $kode_sebab as $kode_sebab_data ) :
 											
-											?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+											?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->uraian_sebab; ?> </option><?php
 										endforeach ;
 									
 									
@@ -143,13 +146,13 @@
 											<td>1 <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1"> <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 											</td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" style="width: 300px" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
 													<option value=""></option>
 													 <?php
 									if (count($kode_rekomendasi) > 0) :
 										foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 											
-											?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+											?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->uraian_rekomendasi; ?> </option><?php
 										endforeach
 										;
 									
@@ -164,7 +167,7 @@
 													<option value="2">Tidak</option>
 											</select></td>
 											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index; ?>11" /></td>
-											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
+											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1" >
 													<option></option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
@@ -177,6 +180,8 @@
 													<option>BIRO BMOK</option>
 													<option>BIRO KASN</option>
 											</select></td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -222,14 +227,14 @@
 											}
 											?>
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index.$no; ?>">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													
 													 <?php
 											if (count($kode_temuan) > 0) :
 												foreach ( $kode_temuan as $kode_temuan_data ) :
 													
-													?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
+													?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan; ?> </option><?php
 												endforeach
 												;
 											
@@ -245,7 +250,7 @@
 											if (count($kode_sebab) > 0) :
 												foreach ( $kode_sebab as $kode_sebab_data ) :
 													
-													?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+													?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->uraian_sebab; ?> </option><?php
 												endforeach
 												;
 											
@@ -259,13 +264,13 @@
 											<!-- Rekomendasi -->
 											<td><input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="nomor_rekomen_<?php echo $index.$no; ?>" name="nomor_rekomen_<?php echo $index.$no; ?>"> <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="jumlah_rekomen_<?php echo $index.$no; ?>" name="jumlah_rekomen-<?php echo $index.$no; ?>">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button></td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													 <?php
 											if (count($kode_rekomendasi) > 0) :
 												foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 													
-													?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+													?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->uraian_rekomendasi; ?> </option><?php
 												endforeach
 												;
 											
@@ -304,6 +309,8 @@
 											<td></td>
 											<td></td>
 											<td></td>
+											<td></td>
+											<td></td>
 										</tr>
 										
 										
@@ -323,13 +330,13 @@
 											<!-- Rekomendasi -->
 											<td><?php echo $nomorrekomen; ?>
 											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>"><i aria-hidden="true" class="fa fa-times"></i></button></td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
 													<option value=""></option>
 													 <?php
 												if (count($kode_rekomendasi) > 0) :
 													foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 														
-														?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+														?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->uraian_rekomendasi; ?> </option><?php
 													endforeach
 													;
 												
@@ -357,6 +364,8 @@
 													<option>BIRO BMOK</option>
 													<option>BIRO KASN</option>
 											</select></td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -399,12 +408,30 @@
 
 
 						<div class="row">
-							<div class="col-md-12 t-center">
-								<button type="submit" id="kklhp" class="btn btn-wd btn-danger btn-fill">
+							<div class="col-md-7 t-center top-space">
+								<button type="submit" id="kklhp" class="btn btn-wd btn-info btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-excel-o"></i>
+									</span> EXPORT TO EXCEL
+								</button>
+								
+								<button type="submit" id="kklhp" class="btn btn-wd btn-warning btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>
+									</span> EXPORT TO PDF
+								</button>
+
+								<button type="submit" id="kklhp" class="btn btn-wd btn-success btn-fill btn-margin">
+									<span class="btn-label"> <i aria-hidden="true" class="fa fa-print"></i>
+									</span> PRINT
+								</button>
+							</div>
+
+							<div class="col-md-5 t-ce ter top-space">
+								<button type="submit" id="kklhp" class="btn btn-wd btn-danger btn-fill btn-margin">
 									<span class="btn-label"> <i class="ti-save"></i>
 									</span> SAVE
 								</button>
 							</div>
+							<div class="col-md-12 top-space">&nbsp;</div>
 						</div>
 					</div>
 				</div>
@@ -412,4 +439,26 @@
 		</div>
 	</div>
 </div>
+<!--  
+<script src="<?php // echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="<?php //echo base_url();?>assets/js/summernote.js"></script>
+<script src="<?php //echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php //echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script>-->
+<script type="text/javascript">
+	require.config({
+		"shim": {
+			"tlhp" : {"deps": ["jquery"]},
+            "bootstrap" : {deps: ["jquery"]},
+            "select2" : {deps: ["jquery"]}
+		},
+		"paths": {
+			"jspath": site_url+"assets/js/",
+        	"jquery": site_url+"assets/js/jquery-2.1.4.min",
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "select2": site_url+ "assets/js/select2.min",
+//         	"tlhp": site_url+"assets/js/tlhp",
+		}
+	});
+	requirejs(["jspath/kklhp"]);
+</script> 
 

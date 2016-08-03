@@ -26,6 +26,7 @@
 
 <!--  CSS for Demo Purpose, don't include it in your project     -->
 <link href="<?php echo base_url();?>assets/css/demo.css" rel="stylesheet" />
+<link href="<?=base_url();?>assets/css/custom.css" rel="stylesheet" />
 
 
 <!--  Fonts and icons     -->
@@ -57,7 +58,7 @@
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'dashboard.php' ? 'class="active"' : '' ?>><a href="<?php echo site_url();?>dashboard/"> <i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard</p>
 					</a></li>
-					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'pengumuman.php' ? 'class="active"' : '' ?>><a href="<?php echo site_url();?>dashboard/pengumuman.php"> <i class="ti-announcement"></i>
+					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'pengumuman.php' ? 'class="active"' : '' ?>><a href="<?php echo site_url();?>dashboard/pengumuman"> <i class="ti-announcement"></i>
 							<p title="Managment User">Buat Pengumuman</p>
 					</a></li>
 					<li <?php echo basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])  == 'form.php' ? 'class="active"' : '' ?>><a href="#"> <i class="ti-pencil-alt"></i>
@@ -90,7 +91,7 @@
 					<div class="collapse navbar-collapse .col-md-3">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url();?>assets/img/faces/face-2.jpg" alt="..." class="img-circle profile-pic">
-									<p>Welcome, Super admin</p> <b class="caret"></b>
+									<p>Welcome, Guest User</p> <b class="caret"></b>
 							</a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Edit profile</a></li>

@@ -52,7 +52,7 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_ikp?>" action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<img src="<?php echo base_url();?>assets/img/img-1.png" alt="" width="128" height="168" border="0" />
+							<img src="<?php echo base_url();?>assets/img/ikp-logo.png" alt="" width="128" height="168" border="0" />
 							<h3>INSPEKTORAT KEMENTERIAN PANRB</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_ikp?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_ikp?>" />
@@ -62,7 +62,7 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_bpk?>" action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<img src="<?php echo base_url();?>assets/img/img-2.png" alt="" width="162" height="168" border="0" />
+							<img src="<?php echo base_url();?>assets/img/bpk-logo.png" alt="" width="162" height="168" border="0" />
 							<h3>BADAN PEMERIKSA KEUANGAN</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_bpk?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_bpk?>" />
@@ -72,8 +72,8 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_bpkp?>"  action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<img src="<?php echo base_url();?>assets/img/img-3.png" alt="" width="192" height="168" border="0" />
-							<h3>BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN</h3>
+							<img src="<?php echo base_url();?>assets/img/bpkp-logo.png" alt="" width="192" height="168" border="0" />
+							<h3>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_bpkp?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_bpkp?>" />
 						</div>
@@ -82,11 +82,11 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_orix?>"  action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<img src="<?php echo base_url();?>assets/img/img-4.png" alt="" width="206" height="168" border="0" />c
-							<h3>ORIX</h3>
+							<img src="<?php echo base_url();?>assets/img/tlhp-logo.png" alt="" width="192" height="77 border="0" class="last-one-img" />
+							<h3 class="t-other">TLHP LAINNYA</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_orix?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_orix?>" />
-						</div>c
+						</div>
 					</form>
 				</div>
 				
@@ -96,7 +96,7 @@
 	
 	<div class="container-fluid footer-black nopadding">
 		<p>&copy;2016, DATABASE HASIL PENGAWASAN INSPEKTORAT
-                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI.</p>
+                    KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI.  </p>
 	</div>
 
    <!--   Core JS Files   -->

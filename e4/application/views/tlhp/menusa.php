@@ -145,8 +145,7 @@
 	                                   <div class="col-xs-9">
 	                                   <div class="numbers">
 	                                   <p>CETAK DOKUMEN</p>
-                                          <button class="btn btn-danger btn-fill btn-wd"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</button>
-                                          <button class="btn btn-info btn-fill btn-wd"><i class="fa fa-file-word-o" aria-hidden="true"></i> MS WORD</button>
+                                          <a href="<?=site_url()?>test/menusa" class="btn btn-danger btn-fill btn-wd"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
 	                                   </div>
 	                                   </div>
 	                                </div>
@@ -252,13 +251,17 @@
 <script>
     requirejs.config({
         "shim": {
+            "bootstrap": {"deps": ["jquery"]},
             "chart": {"deps": ["jquery"]},
+    		"notify": {"deps": ["jquery"]}
            // "graphic" : {deps: ["jquery"]}
         },
         "paths": {
-            "jspath": "../../assets/js/",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
-            "chart": "../../assets/js/Chart",
+            "jspath": site_url + "assets/js/",
+            "jquery": site_url + "assets/js/jquery-2.1.4.min",
+            "notify": site_url+"assets/js/notify.min",
+            "bootstrap": site_url + "assets/js/bootstrap.min",
+            "chart": site_url + "assets/js/Chart",
             //"graphic": "../../assets/js/graphic",
         }
     });

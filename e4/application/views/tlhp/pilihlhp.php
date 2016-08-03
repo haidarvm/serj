@@ -9,7 +9,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-7 col-md-offset-2 top-space">
-								<form class="form-horizontal" action="<?=site_url()?>tlhp/pilihlhp/updatelhp" method="POST">
+								<form class="form-horizontal" action="<?php echo site_url() ?>tlhp/pilihlhp/updatelhp" method="POST" id="formLhp"> 
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-3 control-label t-left nopadding min-top-margin">TAHUN</label>
 										<div class="col-sm-9">
@@ -32,7 +32,9 @@
 										</div>
 									</div>
 									<div class="col-md-12 top-space must-center">
-										<button type="submit" class="btn btn-info btn-fill btn-wd bottom-space"><i aria-hidden="true" class="fa fa-pencil-square-o"></i> UPDATE LHP</button>
+										<button class="btn btn-info btn-fill btn-wd bottom-space" data-bind="event: {click: doEdit}">
+											<i aria-hidden="true" class="fa fa-pencil-square-o"></i> UPDATE LHP
+										</button>
 									</div>
 								</form>
 							</div>
@@ -46,9 +48,9 @@
 <script>
     requirejs.config({
         "paths": {
-            "jspath": "../../assets/js/",
-            "knockout": "../../assets/js/knockout-3.2.0",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
+            "jspath": site_url+ "assets/js/",
+            "knockout": site_url+ "assets/js/knockout-3.2.0",
+            "jquery": site_url+ "assets/js/jquery-2.1.4.min",
         }
     });
     requirejs(["jspath/pilihlhp"]);

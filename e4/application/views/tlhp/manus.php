@@ -15,18 +15,20 @@
 								<tr class="info">
 									<td class="tsort">ID</td>
 									<td class="tsort">Nama</td>
-									<td class="tsort">NIP</td>
-									<td class="tsort">Jabatan</td>
-									<td class="tsort">Username</td>
-									<td class="tsort">Unit Kerja</td>
-									<td class="tsort">Status</td>
+									<td class="tsort" width="80">NIP</td>
+									<td class="tsort" width="120">Jabatan</td>
+									<td class="tsort" width="120">Username</td>
+									<td class="tsort" width="120">Unit Kerja</td>
+									<td class="tsort" width="100">Status</td>
 									<td class="tsort">Action</td>
 								</tr>
 							</thead>
 						</table>
 
 						<div class="table-action">
-							<a href="<?php echo site_url();?>tlhp/manus/add" class="btn btn-primary user-modal"><i class="fa fa-plus fa-lg"></i> Tambah User</a>
+							<button class="btn btn-primary user-modal" data-bind="event: {click: newUser}">
+								<i class="fa fa-plus fa-lg"></i> Tambah User
+							</button>
 						</div>
 						<!-- Modal Add / Edit User -->
 						<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">
@@ -53,13 +55,16 @@
 <script>
     requirejs.config({
         "shim": {
-            "bootstrap": {"deps": ["jquery"]}
+            "bootstrap": {"deps": ["jquery"]},
+    		"notify": {"deps": ["jquery"]}
         },
         "paths": {
-            "jspath": "<?php echo base_url(); ?>/assets/js/",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
-            "bootstrap": "../../assets/js/bootstrap.min",
-            "data-table": "../../assets/js/jquery.dataTables.min" 
+            "jspath": site_url+"assets/js/",
+            "jquery": site_url+"assets/js/jquery-2.1.4.min",
+            "notify": site_url+"assets/js/notify.min",
+            "knockout": site_url+"assets/js/knockout-3.2.0",
+            "bootstrap": site_url+"assets/js/bootstrap.min",
+            "data-table": site_url+"assets/js/jquery.dataTables.min" 
         }
     });
     requirejs(["jspath/manus"]);

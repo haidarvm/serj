@@ -27,13 +27,13 @@ class MUser extends CI_Model {
 	 * @return unknown
 	 */
 	function getAllUserDt($cond = NULL, $order_by = NULL) {
-		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
+		$cond = ! empty($cond) ? " AND 1=1  " . $cond : null;
 		$sql = "SELECT * FROM {PRE}user u
     			left JOIN {PRE}user_level l ON l.user_level_id = u.user_level_id
     			left JOIN {PRE}unit_kerja uk ON uk.unit_kerja_id = u.unit_kerja_id
-    			" . $cond . " " . $order_by;
+    			 WHERE active =1 " . $cond . " " . $order_by;
 		$query = $this->db->query($sql);
-		// echo $this->db->last_query();
+// 		echo $this->db->last_query();
 		return $query;
 	}
 
@@ -101,16 +101,16 @@ class MUser extends CI_Model {
 	 */
 	function updateUser($id, $data) {
 		unset($data['user_id']);
-		unset($data['description']);
 		unset($data['re_password']);
 		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
 	}
 	
 	// Will create for session
 	function login($username, $password) {
-		$this->db->select('username, user_id, full_name, user_level_id, email', 'image');
+		$this->db->select('username, user_id, full_name, {PRE}user.user_level_id as user_level_id, user_level,  email', 'image', FALSE);
+		$this->db->join('user_level', 'user_level.user_level_id = user.user_level_id', 'left');
 		$query = $this->db->get_where('user', array('username' => $username, 'password' => md5($password)));
-		//echo $this->db->last_query();exit;
+// 		echo $this->db->last_query();exit;
 		if ($query->num_rows() == 1) {
 			$row = $query->row();
 			$user_id = $row->user_id;
@@ -166,6 +166,40 @@ class MUser extends CI_Model {
 
 	function delete($id) {
 		// unset($data ['id']);
-		$this->db->delete('user', array('user_id' => $id));
+		$data['active'] = 0;
+		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
+		//$this->db->delete('user', array('user_id' => $id));
+	}
+	
+	function findOneByUserName($username) {
+		$this->db->select('user_id, username, first_name, last_name, full_name, nip, jabatan, 
+			user.unit_kerja_id, unit_kerja.unit_kerja, user.user_level_id, user_level.user_level');
+		$this->db->join('unit_kerja', 'user.unit_kerja_id = unit_kerja.unit_kerja_id', 'inner');
+		$this->db->join('user_level', 'user.user_level_id = user_level.user_level_id', 'inner');
+		$this->db->where('username', $username);
+		return $this->db->get('user')->row();
+	}
+	
+	function add($data) {
+//		$this->db->set('username', $data['username']);
+//		$this->db->set('nip', $data['nip']);
+//		$this->db->set('full_name', $data['full_name']);
+//		$this->db->set('jabatan', $data['jabatan']);
+//		$this->db->set('password', $data['password']);
+//		$this->db->set('unit_kerja_id', $data['unit_kerja_id']);
+//		$this->db->set('user_level_id', $data['user_level_id']);
+//		$query = "INSERT INTO {PRE}user (full_name, jabatan, nip, password, unit_kerja_id, user_level_id, username) 
+//		VALUES ('ali khanafi','manager','344555','pass123','1','1','ali')";
+		$this->db->insert_batch("user", $data);
+	}
+	
+	function getAllLogUser($cond = NULL, $order_by = NULL) {
+		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
+		$sql = "SELECT * , TIMEDIFF(uh.logout, uh.login) as lama_penggunaan FROM {PRE}user u
+				left JOIN {PRE}user_history uh ON uh.user_id = u.user_id
+    			left JOIN {PRE}user_level l ON l.user_level_id = u.user_level_id
+    			left JOIN {PRE}unit_kerja uk ON uk.unit_kerja_id = u.unit_kerja_id
+    			" . $cond . " " . $order_by;
+		return $this->db->query($sql);
 	}
 }

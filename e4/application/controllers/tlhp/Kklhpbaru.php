@@ -25,14 +25,24 @@ class Kklhpbaru extends MY_Controller {
 	}
 
 	public function add($lhp_id) {
-		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
-		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-		$data['action'] = "add";
-		$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
-		$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
-		$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
-		// $data['getAll'] = $this->muser->getAllUser();
-		$this->load->tlhp_template('tlhp/kklhp', $data);
+		$lhp = $this->mlhp->getLHP($lhp_id);
+		try {
+			if (!$lhp) {
+				throw new Exception("LHP not found");
+			}
+			
+			$data['lhp'] = $lhp; 
+			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+			$data['action'] = "add";
+			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
+			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
+			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
+			// $data['getAll'] = $this->muser->getAllUser();
+			$this->load->tlhp_template('tlhp/kklhp2', $data);	
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+		
 	}
 
 	public function insert() {
@@ -89,6 +99,6 @@ class Kklhpbaru extends MY_Controller {
 				}
 			}
 		}
-		redirect(base_url() . "tlhp/pilihlhp");
+		redirect(base_url() . "tlhp/menusa");
 	}
 }

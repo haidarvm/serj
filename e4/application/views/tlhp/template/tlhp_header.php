@@ -30,19 +30,12 @@
 <!-- <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'> -->
 <link href="<?=base_url();?>assets/css/themify-icons.css" rel="stylesheet">
 
-<!-- #######################################
-			StyleSheet And LESS Compailer
-		########################################-->
+<!--  Custom CSS     -->
 <link href="<?=base_url();?>assets/css/custom.css" rel="stylesheet" />
-<!-- #######################################
-			DataTables
-		########################################-->		
 <link href="<?=base_url();?>assets/datatables/dataTables.bootstrap.css" rel="stylesheet" />
-<!-- #######################################
-			Summernote
-		########################################-->		
+<!--  Summernote     -->
 <link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<link href="<?=base_url();?>assets/css/select2.min.css" rel="stylesheet" />
 <script src="<?php echo base_url();?>assets/js/require.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
@@ -60,29 +53,29 @@ var site_url = "<?php echo base_url()?>";
 
 			<div class="sidebar-wrapper">
 				<div class="logo t-center">
-					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo.png"></a>
+					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo-e4.png"></a>
 				</div>
 				<div class="clr"></div>
 				<ul class="nav">
-					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa.php"> <i class="ti-dashboard"></i>
+					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa"> <i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'manus' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/manus.php"> <i class="ti-user"></i>
-							<p title="Managment User">Managment User</p>
+					<li <?=$this->uri->segment(2)  == 'manus' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/manus"> <i class="ti-user"></i>
+							<p title="Management User">Management User</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/addlhp.php"> <i class="ti-pencil-alt"></i>
+					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/addlhp"> <i class="ti-pencil-alt"></i>
 							<p title="Buat LHP Baru">Buat LHP Baru</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp.php"> <i class="ti-new-window"></i>
+					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp"> <i class="ti-new-window"></i>
 							<p title="Update LHP">Update LHP</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template.php"> <i class="ti-agenda"></i>
+					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template"> <i class="ti-agenda"></i>
 							<p title="Template Laporan">Template Laporan</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'kodefikasi' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/kodefikasi.php"> <i class="ti-menu-alt"></i>
+					<li <?=$this->uri->segment(2)  == 'kodefikasi' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/kodefikasi"> <i class="ti-menu-alt"></i>
 							<p title="Kodefikasi">Kodefikasi</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'loghistory' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/loghistory.php"> <i class="ti-archive"></i>
+					<li <?=$this->uri->segment(2)  == 'loghistory' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/loghistory"> <i class="ti-archive"></i>
 							<p title="Log History">Log History</p>
 					</a></li>
 					<li><a href="<?=site_url();?>auth/logout"> <i class="ti-power-off"></i>
@@ -109,11 +102,10 @@ var site_url = "<?php echo base_url()?>";
 					<div class="collapse navbar-collapse .col-md-3">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?=base_url();?>assets/img/faces/face-2.jpg" alt="..." class="img-circle profile-pic">
-									<p>Welcome <?=get_current_app()?>, Super admin <?=$_SESSION['full_name']?></p> <b class="caret"></b>
+									<p>Welcome <?=get_current_app()?>, <?=$_SESSION['full_name']?>, <?=$_SESSION['user_level']?></p> <b class="caret"></b>
 							</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Edit profile</a></li>
-									<li><a href="#">Setting</a></li>
+									<li><a href="<?=site_url()?>tlhp/manus/profile">Edit profile</a></li>
 									<li><a href="<?=site_url()?>auth/logout">Log out</a></li>
 								</ul></li>
 						</ul>
@@ -121,49 +113,3 @@ var site_url = "<?php echo base_url()?>";
 					</div>
 				</div>
 			</nav>
-
-			<!--nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar bar1"></span>
-                        <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Kementrian Pendayagunaan Aparatur Negara</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-								<p>Stats</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <p class="notification">5</p>
-									<p>Notifications</p>
-									<b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
-						<li>
-                            <a href="#">
-								<i class="ti-settings"></i>
-								<p>Settings</p>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-            </nav-->

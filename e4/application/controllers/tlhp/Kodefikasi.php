@@ -19,8 +19,9 @@ class Kodefikasi extends MY_Controller {
 
 	public function index() {
 		$data['title'] = "Kodefikasi";
-		$data['sebab'] = $this->mlhp->getAllKodeSebab();
-		$data['rekomend'] = $this->mlhp->getAllKodeRekomendasi();
+		$data['getAllTemuan'] = $this->mlhp->getAllKodeTemuan();
+		$data['getAllSebab'] = $this->mlhp->getAllKodeSebab();
+		$data['getAllRekomen'] = $this->mlhp->getAllKodeRekomendasi();
 		$this->load->tlhp_template('tlhp/kodefikasi', $data);
 	}
 

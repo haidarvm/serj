@@ -11,63 +11,32 @@
 					</div>
 					<div class="content">
 						<div class="table-responsive">
-							<table class="table table-striped table-custom-head">
+							<table id="kode_temuan" class="table table-striped table-custom-head lead-table">
 								<thead>
 									<tr class="info">
-										<td>KEL</td>
-										<td>SUB KEL</td>
-										<td>JENIS</td>
-										<td>DESKRIPSI</td>
-										<td>ALT REKOM</td>
-										<td>EDIT</td>
-										<td>HAPUS</td>
+										<th>KEL</th>
+										<th>SUB KEL</th>
+										<th>JENIS</th>
+										<th>DESKRIPSI</th>
+										<th>ALT REKOM</th>
+										<th>EDIT</th>
+										<th>HAPUS</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>00</td>
-										<td>00</td>
-										<td>Lorem ipsum</td>
-										<td>Lorem ipsum</td>
+									<?php foreach ( $getAllTemuan as $temuan ) { ?>
+								<tr>
+										<td><?=$temuan->kelompok;?></td>
+										<td><?=$temuan->sub_kelompok;?></td>
+										<td><?=$temuan->jenis;?></td>
+										<td><?=$temuan->kode_temuan;?></td>
+										<td><?=$temuan->alt_rekom;?></td>
 										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 										</a></td>
 										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
 										</a></td>
 									</tr>
-									<tr>
-										<td>1</td>
-										<td>00</td>
-										<td>00</td>
-										<td>Lorem ipsum</td>
-										<td>Lorem ipsum</td>
-										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Delete</span>
-										</a></td>
-										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
-										</a></td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>00</td>
-										<td>00</td>
-										<td>Lorem ipsum</td>
-										<td>Lorem ipsum</td>
-										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Delete</span>
-										</a></td>
-										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
-										</a></td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>00</td>
-										<td>00</td>
-										<td>Lorem ipsum</td>
-										<td>Lorem ipsum</td>
-										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Delete</span>
-										</a></td>
-										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
-										</a></td>
-									</tr>
+								<?php } ?>
 								</tbody>
 							</table>
 						</div>
@@ -85,21 +54,21 @@
 						<!-- <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-						<div class="table-responsive">
+						<div class="table-responsive scrolling-table">
 							<table id="kode_rekomendasi" class="table table-striped table-custom-head">
 								<thead>
 									<tr class="info">
-										<td>KODE REKOMENDASI</td>
-										<td>URAIAN REKOMENDASI</td>
-										<td>EDIT</td>
-										<td>HAPUS</td>
+										<th>KODE REKOMENDASI</th>
+										<th>URAIAN REKOMENDASI</th>
+										<th>EDIT</th>
+										<th>HAPUS</th>
 									</tr>
 								</thead>
 								<tbody>
-								<?php foreach ( $rekomend as $value ) { ?>
+								<?php foreach ( $getAllRekomen as $rekomen ) { ?>
 								<tr>
-										<td><?=$value->kode_rekomendasi;?></td>
-										<td><?=$value->uraian_rekomendasi;?></td>
+										<td><?=$rekomen->kode_rekomendasi;?></td>
+										<td><?=$rekomen->uraian_rekomendasi;?></td>
 										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 										</a></td>
 										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
@@ -121,23 +90,23 @@
 						<!-- <p class="category">Last Campaign Performance</p> -->
 					</div>
 					<div class="content">
-						<div class="table-responsive">
+						<div class="table-responsive scrolling-table">
 							<table id="kode_sebab" class="table table-striped table-custom-head">
 								<thead>
-									<tr class="info">
-										<td>KODE SEBEB GRUP</td>
-										<td>KODE SEBAB</td>
-										<td>URAIAN SEBAB</td>
-										<td>EDIT</td>
-										<td>HAPUS</td>
+									<tr id="header-row" class="info">
+										<th>KODE SEBEB GRUP</th>
+										<th>KODE SEBAB</th>
+										<th>URAIAN SEBAB</th>
+										<th>EDIT</th>
+										<th>HAPUS</th>
 									</tr>
 								</thead>
 								<tbody>
-							<?php foreach ($sebab as $value) {?>
+							<?php foreach ($getAllSebab as $sebab) {?>
 								<tr>
-										<td><?=$value->kode_sebab_group;?></td>
-										<td><?=$value->kode_sebab;?></td>
-										<td><?=$value->uraian_sebab;?></td>
+										<td><?=$sebab->kode_sebab_group;?></td>
+										<td><?=$sebab->kode_sebab;?></td>
+										<td><?=$sebab->uraian_sebab;?></td>
 										<td><a class="btn btn-info circle-perfect" href="#"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 										</a></td>
 										<td><a class="btn btn-danger circle-perfect" href="#"> <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i> <span class="sr-only">Delete</span>
@@ -153,3 +122,20 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+requirejs.config({
+    "shim": {
+        "bootstrap": {"deps": ["jquery"]}
+    },
+    "paths": {
+        "jspath": site_url+"assets/js/",
+        "jquery": site_url+"assets/js/jquery-2.1.4.min",
+        "knockout": site_url+"assets/js/knockout-3.2.0",
+        "bootstrap": site_url+"assets/js/bootstrap.min",
+        "data-table": site_url+"assets/js/jquery.dataTables.min" 
+    }
+});
+requirejs(["jspath/kodefikasi"]);
+</script>

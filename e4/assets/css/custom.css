@@ -47,11 +47,25 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 5px !important;
 	text-align: center;
 }
-
-.table-custom .warning {
-	font-weight: bold;
+.input-group-addon + .form-control {
+    padding-left: 6px !important;
+}
+.pagination > li > a, .pagination > li > span, .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+	line-height: 19px !important;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }
 
+.table-custom .warning {
+	font-family: "Muli-Bold";
+}
+tr td.success {
+	font-family: "Muli-Bold";
+	font-size: 12px;
+}
+.sidebar .sidebar-wrapper {
+	box-shadow: none !important;
+}
 .table-custom-head .info {
 	font-weight: bold;
 }
@@ -547,40 +561,99 @@ tbody td {
 	display: inline-block;
 	margin: 5px 10px;
 	cursor: pointer;
+	background-color: #68B3C8;
+    color: #fff;
+    padding: 2px 15px 3px;
+    border-radius: 20px;
+	outline: none;
+	width: inherit !important;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	font-family: 'Muli';
 }
-
-#manus-grid_length select {
-	height: 30px;
-	margin-left: 10px;
-	margin-right: 10px;
-	width: 50px;
-	background-color: #F3F2EE;
-    border: 1px solid #e8e7e3;
-    border-radius: 4px;
-    color: #66615b;
-    font-size: 13px;
-	padding: 0 5px;
-}
-
-#manus-grid_length>label, #manus-grid_filter>label {
-	color: #000000;
-}
-
-#manus-grid_filter input, #kode_rekomendasi_filter input, #kode_sebab_filter input {
-	height: 30px;
-	margin-left: 10px;
-	background-color: #F3F2EE;
-    border: 1px solid #e8e7e3;
-    border-radius: 4px;
-    color: #66615b;
-    font-size: 13px;
-	padding: 0 5px;
-}
-#kertas-kerja select {
+a.paginate_button:hover, .paginate_button.next:hover, .paginate_button.previous:hover, .ellipsis:hover {
+	background-color: #006c8a;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-#kertas-kerja select:focus {
+a.paginate_button.current {
+	font-family: 'Muli-SemiBold';
+	background-color: #006c8a;
+	text-shadow: 0 0 3px #fff;
+}
+.ellipsis {
+	letter-spacing: 1px;
+    font-size: 18px;
+    padding-top: 1px !important;
+    padding-bottom: 2px !important;
+}
+a.paginate_button, .ellipsis {
+    padding: 3px;
+    margin: 0 3px;
+    background: #68B3C8;
+	cursor: pointer;
+    border-radius: 99px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 22px;
+    display: inline-block;
+	font-family: 'Muli';
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+div.dataTables_info {
+	padding-top: 20px !important;
+	margin-bottom: 5px;
+}
+.scrolling-table {
+	overflow-y: scroll;
+	height: 500px;
+}
+.lead-table th{
+	font-size: 13px !important;
+	font-family: 'Muli-Bold';
+}
+/* sample freeze pan like Excel
+#header-row { position:fixed; top:0; left:0; } */
+
+#kode_rekomendasi th, #kode_sebab th, #tlhp_log_history_table th{
+	font-size: 13px;
+	font-family: 'Muli-Bold';
+}
+
+#manus-grid_length select, div.dataTables_length select  {
+	height: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 50px !important;
+	background-color: #F3F2EE;
+    border: 1px solid #e8e7e3;
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 13px;
+	padding: 0 5px;
+}
+
+#manus-grid_length>label, #manus-grid_filter>label, div.dataTables_length label, div.dataTables_filter label {
+	color: #9A9A9A;
+}
+
+#manus-grid_filter input, #kode_rekomendasi_filter input, #kode_sebab_filter input, div.dataTables_filter input {
+	height: 30px;
+	margin-left: 10px;
+	background-color: #F3F2EE;
+    border: 1px solid #e8e7e3;
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 13px;
+	padding: 0 5px;
+}
+#kertas-kerja select{
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+#kertas-kerja select:focus, div.dataTables_length select:focus {
 	width: 100px
 }
 #kertas-kerja input {
@@ -613,12 +686,12 @@ tbody td {
 .clr, #manus-grid {
 	clear: both;
 }
-div#manus-grid_length {
+div#manus-grid_length, #tlhp_log_history_table_length {
     float: left;
     width: 200px;
 	margin-bottom: 10px;
 }
-div#manus-grid_filter {
+div#manus-grid_filter, #tlhp_log_history_table_filter {
     float: right;
     width: 230px;
 	margin-bottom: 10px;
@@ -635,7 +708,32 @@ div#manus-grid_filter {
 		margin: 100px auto 100px 37%;
 	}
 }
-
+#daftarlap_table th {
+    font-family: "Muli-SemiBold";
+    font-size: 13px;
+}
+#kode_rekomendasi_wrapper div.dataTables_filter, #kode_sebab_wrapper div.dataTables_filter {
+    text-align: left;
+}
+#kode_sebab_wrapper div.dataTables_info, #kode_rekomendasi_wrapper div.dataTables_info{
+	margin-bottom: 35px;
+}
+#kode_temuan_wrapper #kode_temuan_paginate {
+	margin-bottom: 20px;
+}
+#kode_temuan thead .sorting::after, #kode_temuan thead .sorting_asc::after, #kode_temuan thead .sorting_desc::after {
+	top: 26px !important;
+}
+#kode_rekomendasi th, #kode_temuan th, #kode_sebab th {
+	text-align: center;
+	font-family: 'Muli-SemiBold';
+}
+#kode_rekomendasi thead .sorting::after, #kode_rekomendasi thead .sorting_asc::after, #kode_rekomendasi thead .sorting_desc::after {
+	top: 26px !important;
+}
+#kode_sebab thead .sorting::after, #kode_sebab thead .sorting_asc::after, #kode_sebab thead .sorting_desc::after {
+	top: 34px !important;
+}
 table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after {
 	top: 16px !important;
 }
@@ -677,6 +775,16 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	background-color: #f0a810;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+}
+#kertas-kerja th{
+	font-size: 12px;
+	text-align: center;
+	border: 1px solid #eee;
+	font-family: "Muli-Bold";
+}
+
+.last-one-img {
+	margin: 50px 0 0;
 }
 
 

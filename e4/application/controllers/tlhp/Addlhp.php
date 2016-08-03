@@ -46,8 +46,8 @@ class Addlhp extends MY_Controller {
 	}
 	
 	public function update(){
-
 		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
+		$data['action'] = "update";
 		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
 		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();
 		$this->load->tlhp_template('tlhp/lhp', $data);
