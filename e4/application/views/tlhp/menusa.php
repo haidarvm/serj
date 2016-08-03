@@ -259,9 +259,10 @@
         },
         "paths": {
             "jspath": site_url + "assets/js/",
-            "jquery": site_url + "assets/js/jquery-3.1.0.min",
+            "jquery": site_url + "assets/js/jquery-2.1.4.min",
             "notify": site_url+"assets/js/notify.min",
             "bootstrap": site_url + "assets/js/bootstrap.min",
+            "canvasjs": site_url + "assets/js/jquery.canvasjs.min",
         }
     });
     requirejs(["jspath/menusa"]);
