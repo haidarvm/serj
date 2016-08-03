@@ -125,9 +125,7 @@
 									?>
 													 
 											</select></td>
-											<td>
-											<<textarea name=""></textarea>
-											<input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
+											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
 											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>"  style="width: 300px" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													 <?php
