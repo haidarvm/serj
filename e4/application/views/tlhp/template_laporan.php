@@ -4,7 +4,7 @@
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-						<form method="post" action="<?=site_url()?>tlhp/template/insert_template_laporan" class="form form-horizontal">
+						<form method="post" action="<?=base_url()?>tlhp/template/insert_template_laporan" class="form form-horizontal">
 							<div class="row">
 								<div class="col-md-6">
 									<fieldset>
