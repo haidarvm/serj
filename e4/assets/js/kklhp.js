@@ -73,9 +73,6 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		selfJ.removeRow = function(vModel) {
 			selfJ.data.kertasKerjaTemuan.remove(vModel);
 		}
-		
-		selfJ.kodeTemuan = ko.observableArray([]);
-		selfJ.kodeSebab = ko.observableArray();
 	}
 	
 	function MainViewModel() {
@@ -87,39 +84,22 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
-			//loadKodeTemuan();
-		}
-		
-		var loadKodeTemuan = function() {
-			$.ajax({
-				url: site_url+ "tlhp/restlhp/content",
-				dateType: 'json',
-				success: function(msg) {
-					console.debug(msg.data);
-				}, 
-				error: function(e) {
-					alert("Internal Server Error");
-				}
-			});
 		}
 	}
 	
 	var vm = new MainViewModel();
 	
-	ko.bindingHandlers.select2 = {
+	ko.bindingHandlers.kodeTemuan = {
 		init: function(element, valueAccessor, allBindings) {
-//			var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, 
-//			              { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
 			$(element).select2({
 				ajax: {
 					action: 'GET',
 					dataType: 'json',
-					url: site_url + "tlhp/restlhp/content",
+					url: site_url + "tlhp/restlhp/codtemuan",
 					success: function() {
 						console.info('success');
 					}, 
 					processResults: function(data, params) {
-//						console.debug(data);
 						var rData = [];
 						for (var i=0; i<data.data.length; i++) {
 							var item = {
@@ -143,11 +123,45 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 				},
 				minimumInputLength:1,
 			});
-		},
-		update: function(element, valueAccessor, allBindings) {
-			
 		}
 	}
+	
+	ko.bindingHandlers.kodeSebab = {
+		init: function(element, valueAccessor, allBindings) {
+			$(element).select2({
+				ajax: {
+					action: 'GET',
+					dataType: 'json',
+					url: site_url + "tlhp/restlhp/codsebab",
+					success: function() {
+						console.info('success');
+					}, 
+					processResults: function(data, params) {
+						var rData = [];
+						for (var i=0; i<data.data.length; i++) {
+							var item = {
+								id: data.data[i].kode_sebab_id,
+								text: data.data[i].uraian_sebab
+							}
+							rData.push(item);
+						}
+						
+//							console.debug(rData);
+						return {
+						    results: rData,
+						    pagination: {
+						      more: data.more
+						    }
+						};
+					},
+					error: function(e) {
+						console.info('error');
+					}
+				},
+				minimumInputLength:1,
+			});
+		}
+		}
 	
 	$(function(){
 		ko.applyBindings(vm);

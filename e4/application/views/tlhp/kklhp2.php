@@ -108,15 +108,15 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="select2: true">
+												data-bind="kodeTemuan: true, value: data.kodeTemuanId">
 												</select>
 											</td>
 											<td>
 												<input type="text" class="form-control border-input"/>
 											</td>
 											<td>
-												<select class="form-control select-simple">
-													<option value="">-- kode sebab --</option>
+												<select class="form-control select-simple border-input"
+												data-bind="kodeSebab: true, value: data.kodeSebabId">
 												</select>
 											</td>
 											<td>
