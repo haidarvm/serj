@@ -13,14 +13,14 @@
 						<table id="manus-grid" class="table table-striped t-center table-custom-head t-grid" width="100%">
 							<thead>
 								<tr class="info">
-									<td class="tsort">ID</td>
-									<td class="tsort">Nama</td>
-									<td class="tsort" width="80">NIP</td>
-									<td class="tsort" width="120">Jabatan</td>
-									<td class="tsort" width="120">Username</td>
-									<td class="tsort" width="120">Unit Kerja</td>
-									<td class="tsort" width="100">Status</td>
-									<td class="tsort">Action</td>
+									<th class="tsort">ID</th>
+									<th class="tsort">Nama</th>
+									<th class="tsort" width="80">NIP</th>
+									<th class="tsort" width="120">Jabatan</th>
+									<th class="tsort" width="120">Username</th>
+									<th class="tsort" width="120">Unit Kerja</th>
+									<th class="tsort" width="100">Status</th>
+									<th class="tsort">Action</th>
 								</tr>
 							</thead>
 						</table>
