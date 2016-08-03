@@ -15,12 +15,12 @@
 								<tr class="info">
 									<th class="tsort">ID</th>
 									<th class="tsort">Nama</th>
-									<th class="tsort" width="80">NIP</th>
-									<th class="tsort" width="120">Jabatan</th>
-									<th class="tsort" width="120">Username</th>
-									<th class="tsort" width="120">Unit Kerja</th>
-									<th class="tsort" width="100">Status</th>
-									<th class="tsort" width="200">Action</th>
+									<th class="tsort" width="10%">NIP</th>
+									<th class="tsort" width="15%">Jabatan</th>
+									<th class="tsort" width="15%">Username</th>
+									<th class="tsort" width="15%">Unit Kerja</th>
+									<th class="tsort" width="15%">Status</th>
+									<th class="tsort" width="25%">Action</th>
 								</tr>
 							</thead>
 						</table>

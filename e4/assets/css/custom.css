@@ -727,6 +727,7 @@ div#manus-grid_filter, #tlhp_log_history_table_filter {
 #manus-grid th {
 	font-family: 'Muli-SemiBold';
 	font-size: 14px;
+	text-align: center;
 }
 #kode_rekomendasi th, #kode_temuan th, #kode_sebab th, #tlhp_log_history_table th {
 	text-align: center;
