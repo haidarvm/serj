@@ -109,7 +109,7 @@
 												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>"  style="width: 300px" required name="kode_temuan_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													
 													 <?php
@@ -126,7 +126,7 @@
 													 
 											</select></td>
 											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
-											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>"  style="width: 300px" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													 <?php
 									if (! empty($kode_sebab) > 0) :
@@ -146,7 +146,7 @@
 											<td>1 <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1"> <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 											</td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" style="width: 300px" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
 													<option value=""></option>
 													 <?php
 									if (count($kode_rekomendasi) > 0) :
@@ -167,7 +167,7 @@
 													<option value="2">Tidak</option>
 											</select></td>
 											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index; ?>11" /></td>
-											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
+											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1" >
 													<option></option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
