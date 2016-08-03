@@ -1,4 +1,4 @@
-define(["jquery"], function($){
+define(["jquery", "bootstrap","select2"], function($){
 	
 	(function(){
 		
@@ -100,6 +100,10 @@ define(["jquery"], function($){
 			$("."+tr).remove();
 			
 		});
+		
+		  $(document).ready(function() {
+			  $(".select-simple").select2();
+			});
 		
 		$(document).on('click', '#kklhp', function(event) {
 			$("#kklhp-form").submit();

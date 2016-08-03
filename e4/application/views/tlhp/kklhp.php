@@ -109,14 +109,14 @@
 												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													
 													 <?php
 									if (! empty($kode_temuan)) :
 										foreach ( $kode_temuan as $kode_temuan_data ) :
 											?>
-														    <option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan_id; ?> </option>
+														    <option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>"><?php echo $kode_temuan_data->kode_temuan; ?> </option>
 														    <?php
 										endforeach ;
 									
@@ -126,13 +126,13 @@
 													 
 											</select></td>
 											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
-											<td><select class="form-control kode_sebab_id-<?php echo $index; ?>" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													 <?php
 									if (! empty($kode_sebab) > 0) :
 										foreach ( $kode_sebab as $kode_sebab_data ) :
 											
-											?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+											?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>"><?php echo $kode_sebab_data->uraian_sebab; ?> </option><?php
 										endforeach ;
 									
 									
@@ -146,13 +146,13 @@
 											<td>1 <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1"> <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 											</td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
 													<option value=""></option>
 													 <?php
 									if (count($kode_rekomendasi) > 0) :
 										foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 											
-											?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+											?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->uraian_rekomendasi; ?> </option><?php
 										endforeach
 										;
 									
@@ -227,14 +227,14 @@
 											}
 											?>
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?>" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index.$no; ?>">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													
 													 <?php
 											if (count($kode_temuan) > 0) :
 												foreach ( $kode_temuan as $kode_temuan_data ) :
 													
-													?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan_id; ?> </option><?php
+													?><option value="<?php echo $kode_temuan_data->kode_temuan_id; ?>" <?php echo ($kode_temuan_data->kode_temuan_id==$valdatatemuan->kode_temuan_id) ? "selected":""; ?>><?php echo $kode_temuan_data->kode_temuan; ?> </option><?php
 												endforeach
 												;
 											
@@ -250,7 +250,7 @@
 											if (count($kode_sebab) > 0) :
 												foreach ( $kode_sebab as $kode_sebab_data ) :
 													
-													?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->kode_sebab_id; ?> </option><?php
+													?><option value="<?php echo $kode_sebab_data->kode_sebab_id; ?>" <?php echo ($kode_sebab_data->kode_sebab_id==$valdatatemuan->kode_sebab_id) ? "selected":""; ?>><?php echo $kode_sebab_data->uraian_sebab; ?> </option><?php
 												endforeach
 												;
 											
@@ -264,13 +264,13 @@
 											<!-- Rekomendasi -->
 											<td><input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="nomor_rekomen_<?php echo $index.$no; ?>" name="nomor_rekomen_<?php echo $index.$no; ?>"> <input type="hidden" value="<?php echo $jumlahrekomen; ?>" id="jumlah_rekomen_<?php echo $index.$no; ?>" name="jumlah_rekomen-<?php echo $index.$no; ?>">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="<?php echo $no; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button></td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$no; ?>">
 													<option value=""></option>
 													 <?php
 											if (count($kode_rekomendasi) > 0) :
 												foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 													
-													?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+													?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>"><?php echo $kode_rekomendasi_data->uraian_rekomendasi; ?> </option><?php
 												endforeach
 												;
 											
@@ -330,13 +330,13 @@
 											<!-- Rekomendasi -->
 											<td><?php echo $nomorrekomen; ?>
 											 		<button class="batal" type="button" nomor="nomor_rekomen_<?php echo $index.$no; ?>" tr="rekomen<?php echo $index.$nomorrekomen.$no; ?>"><i aria-hidden="true" class="fa fa-times"></i></button></td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" required name="kode_rekomendasi_id-<?php echo $index.$nomorrekomen.$no; ?>">
 													<option value=""></option>
 													 <?php
 												if (count($kode_rekomendasi) > 0) :
 													foreach ( $kode_rekomendasi as $kode_rekomendasi_data ) :
 														
-														?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->kode_rekomendasi_id; ?> </option><?php
+														?><option value="<?php echo $kode_rekomendasi_data->kode_rekomendasi_id	; ?>" <?php echo ($kode_rekomendasi_data->kode_rekomendasi_id==$valeditrekomen->kode_rekomendasi_id) ? "selected":""; ?>><?php echo $kode_rekomendasi_data->uraian_rekomendasi; ?> </option><?php
 													endforeach
 													;
 												
@@ -447,12 +447,16 @@
 <script type="text/javascript">
 	require.config({
 		"shim": {
-			"tlhp" : {"deps": "jquery"}
+			"tlhp" : {"deps": ["jquery"]},
+            "bootstrap" : {deps: ["jquery"]},
+            "select2" : {deps: ["jquery"]}
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
         	"jquery": site_url+"assets/js/jquery-2.1.4.min",
-        	"tlhp": site_url+"assets/js/tlhp",
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "select2": site_url+ "assets/js/select2.min",
+//         	"tlhp": site_url+"assets/js/tlhp",
 		}
 	});
 	requirejs(["jspath/kklhp"]);

@@ -1,4 +1,4 @@
-define(["jquery", "chart"], function($){
+define(["jquery", "chart","bootstrap"], function($){
     $(function(){
         
         function addCommas(nStr) {

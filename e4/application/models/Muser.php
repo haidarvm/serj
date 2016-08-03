@@ -101,7 +101,6 @@ class MUser extends CI_Model {
 	 */
 	function updateUser($id, $data) {
 		unset($data['user_id']);
-		unset($data['description']);
 		unset($data['re_password']);
 		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
 	}

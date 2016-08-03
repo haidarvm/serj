@@ -33,7 +33,7 @@ class Template extends MY_Controller {
 	public function get_daftarlap_list() {
 		$requestData = $this->input->get();
 		
-		$columns = array(0 => 'nomor_laporan', 1 => 'periode_laporan', 2 => 'create_date', 3 => 'tanggal_laporan', 4 => 'judul_laporan');
+		$columns = array(0 => 'template_laporan_id', 1 => 'nomor_laporan', 2 => 'periode_laporan', 3 => 'create_date', 4 => 'tanggal_laporan', 5 => 'judul_laporan');
 		
 		$query = $this->mlhp->getAllTemplate($cond = NULL, $order_by = NULL);
 		$totalData = $query->num_rows();
@@ -76,19 +76,37 @@ class Template extends MY_Controller {
 	}
 
 	public function laporan() {
-		$data['title'] = "PILIH Template";
+		$data['title'] = "Tambah Template";
+		$data['action'] = "add";
 		$this->load->tlhp_template('tlhp/template_laporan', $data);
+	}
+
+	public function update_laporan($id) {
+		$data['title'] = "UPDATE Template";
+		$data['action'] = "update";
+		
+		$post = $this->input->post();
+		if ($post) {
+// 			echo 'masuk';exit();
+			$this->mlhp->updateTemplateLaporan($post,$id);
+			redirect('tlhp/template/daftarlap');
+		} else {
+			$data['template'] = $this->mlhp->getTemplate($id);
+			$this->load->tlhp_template('tlhp/template_laporan', $data);
+		}
+	}
+
+	public function update_proccess() {
+		// test
 	}
 
 	public function insert_template_laporan() {
 		$post = $this->input->post();
 		if ($post) {
-			// print_r($insert);exit;
 			// $insert['waktu']=date('Y-m-d H:i:s');
 			$post['user_id'] = $_SESSION['user_id'];
 			$template_laporan_id = $this->mlhp->insert_templateLaporan($post);
-			// $insert_id;
-			// redirect('ctrl/tampil');
+			redirect('tlhp/template/daftarlap');
 		}
 		// $this->load->tlhp_template('tlhp/template_laporan');
 	}
