@@ -34,7 +34,7 @@
 									<td>0</td>
 									<td>0</td>
 									<td>
-										<a class="btn btn-info circle-perfect" href="<?php echo site_url() ?>tlhp/addlhp/update/<?php echo $lhp->lhp_id?>"> 
+										<a class="btn btn-info circle-perfect" href="<?php echo site_url() ?>tlhp/addlhp/edit/<?php echo $lhp->lhp_id?>"> 
 										<i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
 										</a>
 									</td>
