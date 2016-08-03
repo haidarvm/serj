@@ -8,6 +8,7 @@ define(["jquery", "knockout"], function($, ko){
 		self.tlhpListEnable = ko.observable(false);
 		
 		self.choosenYear = ko.observable();
+		self.choosenLhpId = ko.observable();
 		
 		self.getLhp = function() {
 			var reqYear = self.choosenYear();
@@ -30,13 +31,22 @@ define(["jquery", "knockout"], function($, ko){
 		}
 		self.choosenTlhpTitle = ko.observable();
 		self.choosenTlhpTitle.subscribe(function(val){
-//			console.info("jalan");
+			console.debug(val);
 			$("#lhp_id").attr("value", val.lhp_id);
 		});
 		
 		self.choosenYear.subscribe(function(val){
 			self.tlhpListEnable(true);
 		});
+		
+		self.doEdit = function() {
+			var selectedLhp = self.choosenTlhpTitle();
+			if (selectedLhp == undefined) {
+				alert("Lhp tidak boleh kosong");
+			} else {
+				$("#formLhp").submit();
+			}
+		}
 	}
 	
 	var vm = new ViewModel();
