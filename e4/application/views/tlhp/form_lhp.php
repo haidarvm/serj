@@ -6,7 +6,7 @@
 					<label for="inputEmail3" class="control-label t-left">NOMOR SURAT TUGAS<star>*</star></label> 
 					<input type="text" name="no_surat_tugas" class="form-control border-input" required="true" 
 					data-bind="value: data.noSuratTugas"
-					value="<?php echo $lhp->no_surat_tugas ?>"/>
+					value="<?php echo isset($lhp->no_surat_tugas) ? $lhp->no_surat_tugas : '' ?>"/>
 				</div>
 			</div>
 
