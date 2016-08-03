@@ -46,9 +46,9 @@
 <script>
     requirejs.config({
         "paths": {
-            "jspath": "../../assets/js/",
-            "knockout": "../../assets/js/knockout-3.2.0",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
+            "jspath": site_url+ "assets/js/",
+            "knockout": site_url+ "assets/js/knockout-3.2.0",
+            "jquery": site_url+ "assets/js/jquery-2.1.4.min",
         }
     });
     requirejs(["jspath/pilihlhp"]);
