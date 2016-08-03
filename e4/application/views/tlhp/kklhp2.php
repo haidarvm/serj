@@ -40,8 +40,8 @@
 									</td>
 								</tr>
 							</table>
-						
-							<!-- table kklhp -->
+							
+							<!-- table kklhp baru -->
 							<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
@@ -84,16 +84,103 @@
 										</tr>
 									</thead>
 									<tbody>
+										<!-- ko template: {foreach: jenisTemuan} -->
 										<tr>
 											<td colspan="23">
 												<span class="pull-left">
 													<b>
-														<span data-bind="text: kodeTemuan">[kode temuan]</span>.
-														<span data-bind="text: jenisTemuan">[kode temuan]</span>
+														<span data-bind="text: data.kodeTemuan">[kode temuan]</span>.
+														<span data-bind="text: data.jenisTemuan">[kode temuan]</span>
 													</b>
 												</span>
 											</td>
 										</tr>
+										<!-- ko template: {foreach: data.kertasKerjaTemuan} -->
+										<tr>
+											<td class="no-temuan">1
+												<!-- ko if: isFirstRow() -->
+												<button class="add-temuan" type="button" data-bind="event: {click: $parent.addRow}">
+													<i aria-hidden="true" class="fa fa-plus"></i>
+												</button>
+												<!-- /ko -->
+												
+												<!-- ko if: !isFirstRow() -->
+												<button class="remove-temuan" type="button">
+													<i aria-hidden="true" class="fa fa-minus"></i>
+												</button>
+												<!-- /ko -->
+											</td>
+											<td>
+												<select class="form-control select-simple">
+													<option value="">--kode temuan--</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<td>
+												<select class="form-control select-simple">
+													<option value="">-- kode sebab --</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<!-- Rekomendasi -->
+											<td>
+												<button class="add-rekomen" type="button">
+													<i aria-hidden="true" class="fa fa-plus"></i>
+												</button>
+											</td>
+											<td>
+												<select class="form-control select-simple">
+													<option value="">-- kode rekomendasi --</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<td>
+												<input type="checkbox"/>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<td>
+												<select class="form-control">
+													<option>-- departement --</option>
+													<option>DEPUTI I</option>
+													<option>DEPUTI II</option>
+													<option>DEPUTI III</option>
+													<option>DEPUTI IV</option>
+													<option>STAFF AHLI</option>
+													<option>INSPEKTORAT</option>
+													<option>BIRO SDMU</option>
+													<option>BIRO HUKIP</option>
+													<option>BIRO BMOK</option>
+													<option>BIRO KASN</option>
+												</select>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<!-- /ko -->
+										<!-- /ko -->
+										<!-- Bagian Update -->
 									</tbody>
 								</table>
 							<!-- end table kklhp -->
@@ -501,14 +588,14 @@
 		"shim": {
 			"tlhp" : {"deps": ["jquery"]},
             "bootstrap" : {deps: ["jquery"]},
-            "select2" : {deps: ["jquery"]}
+            "select2" : {deps: ["jquery"]},
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
         	"jquery": site_url+"assets/js/jquery-2.1.4.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
             "select2": site_url+ "assets/js/select2.min",
-//         	"tlhp": site_url+"assets/js/tlhp",
+         	"knockout": site_url+"assets/js/knockout-3.2.0",
 		}
 	});
 	requirejs(["jspath/kklhp"]);

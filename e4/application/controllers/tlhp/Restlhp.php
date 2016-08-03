@@ -72,10 +72,24 @@ class Restlhp extends REST_Controller {
 				'message' => 'Data berhasil disimpan'
 			);
 			
-			$this->response($dataResponse, 200);			
+			$this->response($dataResponse, 201);			
 		} catch (Exception $ex) {
 			$this->response(array(
 				'message' => $ex->getMessage()
+			), 400);
+		}
+	}
+	
+	public function index_get() {
+		$lhp_id = $this->get('lhp_id');
+		
+		$this->load->model('Mlhp');
+		$lhp = $this->mlhp->getLHP($lhpId);
+		if ($lhp) {
+			
+		} else {
+			$this->response(array(
+				'message' => 'Undefined lhp id'
 			), 400);
 		}
 	}

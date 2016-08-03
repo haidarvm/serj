@@ -1,12 +1,84 @@
-define(["jquery", "bootstrap","select2"], function($){
-	
-	function KklhpViewModel() {
-		var self = this;
+define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
+	function RekomendasiViewModel() {
+		var selfR = this;
+		
+		selfR.data = {
+			rekomendasiId: ko.observable(),
+			kertasKerjaId: ko.observable(),
+			kodeRekomendasiId: ko.observable(),
+			uraianRekomendasi: ko.observable(),
+			kerugianNegara: ko.observable(),
+			nilaiRekomendasi: ko.observable(),
+		}
 	}
 	
-	var vm = new KklhpViewModel();
+	function KertasKerjaTemuanViewModel(isFirstRow) {
+		var selfK = this;
+		
+		selfK.isFirstRow = ko.observable(isFirstRow);
+		console.debug(selfK.isFirstRow());
+		selfK.data = {
+			lhpId: ko.observable(),
+			jenisTemuan: ko.observable(),
+			noTemuan: ko.observable(),
+			kodeTemuanId: ko.observable(),
+			uraianTemuan: ko.observable(),
+			kodeSebabId: ko.observable(),
+			uraianSebab: ko.observable(),
+			nilaiTemuan: ko.observable(),
+			namaPpk: ko.observable(),
+			namaPjKegiatan: ko.observable(),
+			jumlahSesuai: ko.observable(),
+			nilaiSesuai: ko.observable(),
+			jumlahBelumSesuai: ko.observable(),
+			nilaiBelumSesuai: ko.observable(),
+			jumlahBelumTl: ko.observable(),
+			nilaiBelumTl: ko.observable(),
+			jumlahTidakTlAlasan: ko.observable(),
+			nilaiTidakTlAlasan: ko.observable(),
+			userId: ko.observable(),
+		}
+		
+		selfK.removeRekomendasi = function() {
+			console.info('remove rekomendasi');
+		}
+	}
+	
+	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
+		var selfJ = this;
+		
+		selfJ.data = {
+			kodeTemuan: ko.observable(kodeTemuan),
+			jenisTemuan: ko.observable(jenisTemuan),
+			kertasKerjaTemuan: ko.observableArray([new KertasKerjaTemuanViewModel(true)])
+		}
+		
+		selfJ.addRow = function() {
+			var kkt = new KertasKerjaTemuanViewModel();
+			kkt.data.jenisTemuan(selfJ.data.kodeTemuan());
+			
+			selfJ.data.kertasKerjaTemuan.push(kkt);
+		}
+	}
+	
+	function MainViewModel() {
+		var self = this;
+		
+		self.jenisTemuan = ko.observableArray([]);
+		
+		self.init = function() {
+			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
+			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
+			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
+		}
+		
+	}
+	
+	var vm = new MainViewModel();
 	
 	(function(){
+		ko.applyBindings(vm);
+		vm.init();
 		
 		$(document).on("click",".add-temuan",function(event){
 			event.preventDefault();
@@ -114,6 +186,11 @@ define(["jquery", "bootstrap","select2"], function($){
 		$(document).on('click', '#kklhp', function(event) {
 			$("#kklhp-form").submit();
 		});
+		
+		$('.user-modal').on('click', function(e){
+	        $('#lhpModal').modal('show');
+	        return false;
+	    });
 		
 	})();
 });
