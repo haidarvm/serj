@@ -10,6 +10,7 @@
 
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
+<meta name="author" content="PT CAF, haidarvm@gmail.com">
 
 <!-- Bootstrap core CSS     -->
 <link href="<?=base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" />
