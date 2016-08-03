@@ -226,7 +226,7 @@
 					<p class="category">Pie Chart</p>
 				</div>
 				<div class="content">
-					<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+					<div id="tindak_lanjut" style="height: 300px; width: 100%;"></div>
 					<!--  <canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
 
 
@@ -242,6 +242,7 @@
 					<p class="category">Pie Chart</p>
 				</div>
 				<div class="content">
+					<div id="kerugian" style="height: 300px; width: 100%;"></div>
 					<!--  <canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
 
 				</div>
