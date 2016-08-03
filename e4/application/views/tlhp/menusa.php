@@ -223,7 +223,7 @@
 					<h4 class="title">
 						<b>TINDAK LANJUT HASIL PENGAWASAN</b>
 					</h4>
-					<p class="category">Pie Chart</p>
+<!-- 					<p class="category">Pie Chart</p> -->
 				</div>
 				<div class="content">
 					<div id="tindak_lanjut" style="height: 300px; width: 100%;"></div>
@@ -239,7 +239,7 @@
 					<h4 class="title">
 						<b>KERUGIAN KEUANGAN NEGARA</b>
 					</h4>
-					<p class="category">Pie Chart</p>
+<!-- 					<p class="category">Pie Chart</p> -->
 				</div>
 				<div class="content">
 					<div id="kerugian" style="height: 300px; width: 100%;"></div>
