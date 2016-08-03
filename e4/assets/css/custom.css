@@ -724,7 +724,12 @@ div#manus-grid_filter, #tlhp_log_history_table_filter {
 #kode_temuan thead .sorting::after, #kode_temuan thead .sorting_asc::after, #kode_temuan thead .sorting_desc::after {
 	top: 26px !important;
 }
-#kode_rekomendasi th, #kode_temuan th, #kode_sebab th, #manus-grid th, #tlhp_log_history_table th {
+#manus-grid th {
+	font-family: 'Muli-SemiBold';
+	font-size: 14px;
+	text-align: center;
+}
+#kode_rekomendasi th, #kode_temuan th, #kode_sebab th, #tlhp_log_history_table th {
 	text-align: center;
 	font-family: 'Muli-SemiBold';
 	font-size: 14px;

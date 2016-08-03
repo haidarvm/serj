@@ -10,17 +10,17 @@
 					<div class="content table-responsive">
 						<!-- Data Table -->
 						<div class="clr"></div>
-						<table id="manus-grid" class="table table-striped t-center table-custom-head t-grid" width="100%">
+						<table id="manus-grid" class="table table-striped table-custom-head t-grid" width="100%">
 							<thead>
 								<tr class="info">
-									<th class="tsort">ID</th>
-									<th class="tsort">Nama</th>
-									<th class="tsort" width="80">NIP</th>
-									<th class="tsort" width="120">Jabatan</th>
-									<th class="tsort" width="120">Username</th>
-									<th class="tsort" width="120">Unit Kerja</th>
-									<th class="tsort" width="100">Status</th>
-									<th class="tsort">Action</th>
+									<th class="tsort" width="5%">ID</th>
+									<th class="tsort" width="15%">Nama</th>
+									<th class="tsort" width="15%">NIP</th>
+									<th class="tsort" width="10%">Jabatan</th>
+									<th class="tsort" width="10%">Username</th>
+									<th class="tsort" width="15%">Unit Kerja</th>
+									<th class="tsort" width="10%">Status</th>
+									<th class="tsort" width="20%">Action</th>
 								</tr>
 							</thead>
 						</table>
