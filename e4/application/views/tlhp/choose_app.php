@@ -73,7 +73,7 @@
 					<form id="<?=$_bpkp?>"  action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
 							<img src="<?php echo base_url();?>assets/img/bpkp-logo.png" alt="" width="192" height="168" border="0" />
-							<h3>BADAN PENGAWAS KEUANGAN DAN PEMBANGUNAN</h3>
+							<h3>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_bpkp?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_bpkp?>" />
 						</div>

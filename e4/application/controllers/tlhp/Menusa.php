@@ -23,6 +23,11 @@ class Menusa extends MY_Controller {
 		//$data['getAll'] = $this->muser->getAllUser();
 		$this->load->tlhp_template('tlhp/menusa', $data);
 	}
+	
+	public function pie(){
+		$data['title'] = "PIE";
+		$this->load->view('report/pie', $data);
+	}
 
 	/**
 	 * List All Product

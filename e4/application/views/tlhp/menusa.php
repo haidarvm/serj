@@ -226,7 +226,8 @@
 					<p class="category">Pie Chart</p>
 				</div>
 				<div class="content">
-					<canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
+					<div id="tindak_lanjut" style="height: 300px; width: 100%;"></div>
+					<!--  <canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
 
 
 				</div>
@@ -241,7 +242,8 @@
 					<p class="category">Pie Chart</p>
 				</div>
 				<div class="content">
-					<canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>
+					<div id="kerugian" style="height: 300px; width: 100%;"></div>
+					<!--  <canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
 
 				</div>
 			</div>
@@ -251,14 +253,17 @@
 <script>
     requirejs.config({
         "shim": {
-            "chart": {"deps": ["jquery"]},
-           // "graphic" : {deps: ["jquery"]}
+            "bootstrap": {"deps": ["jquery"]},
+//             "chart": {"deps": ["jquery"]},
+    		"notify": {"deps": ["jquery"]},
+    		"canvasjs" : {"deps": ["jquery"]}
         },
         "paths": {
-            "jspath": "../../assets/js/",
-            "jquery": "../../assets/js/jquery-2.1.4.min",
-            "chart": "../../assets/js/Chart",
-            //"graphic": "../../assets/js/graphic",
+            "jspath": site_url + "assets/js/",
+            "jquery": site_url + "assets/js/jquery-2.1.4.min",
+            "notify": site_url+"assets/js/notify.min",
+            "bootstrap": site_url + "assets/js/bootstrap.min",
+            "canvasjs": site_url + "assets/js/jquery.canvasjs.min",
         }
     });
     requirejs(["jspath/menusa"]);

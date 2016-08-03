@@ -8,7 +8,7 @@
 						<img src="<?php echo base_url();?>assets/img/traffic-cone.png">
 						<h3 class="under-text">UNDER CONSTRUCTION</h3>
 						<p class="h6">
-							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a> PHP
+							This page is coming soon <a href="<?php echo site_url();?>tlhp/">back to home</a> 
 						</p>
 						<small class="text-muted">error_php</small>
 						<small class="text-muted"><?php echo $severity; ?></small> 

@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
-						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp : "undefined"; ?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan: "undefined"; ?></p>
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
@@ -33,15 +33,72 @@
 									<td>0</td>
 									<td>0</td>
 									<td>0</td>
-									<td><a class="btn btn-info circle-perfect" href="<?=site_url()?>tlhp/addlhp/update/<?=$lhp->lhp_id?>"> <i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
-									</a></td>
+									<td>
+										<a class="btn btn-info circle-perfect" href="<?php echo site_url() ?>tlhp/addlhp/update/<?php echo $lhp->lhp_id?>"> 
+										<i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
+										</a>
+									</td>
 								</tr>
 							</table>
-
-
-							<form method="post" id="kklhp-form" action="<?=site_url()?>tlhp/kklhpbaru/insert">
-								<input type="hidden" value="<?=$lhp->lhp_id?>" id="lhp_id" name="lhp_id">
-
+						
+							<!-- table kklhp -->
+							<table id="kertas-kerja" class="table table-bordered table-custom">
+									<thead>
+										<tr>
+											<th colspan="6" class="warning">JUDUL TEMUAN</th>
+											<th colspan="5" class="info">REKOMENDASI</th>
+											<th colspan="7" class="success">TINDAK LANJUT ENTITAS<br />YANG TELAH DILAKUKAN
+											</th>
+											<th colspan="2">SESUAI DENGAN REKOMENDASI</th>
+											<th colspan="2" width="200">BELUM SESUAI REKOMENDASI DAN DALAM PROSES DI TINDAK LANJUTI</th>
+											<th colspan="2">BELUM DITINDAK LANJUTI</th>
+											<th colspan="2">TIDAK DAPAT DI TINDAK LANJUTI KARENA ALASAN YANG SAH</th>
+										</tr>
+										<tr>
+											<th class="warning">NO</th>
+											<th class="warning">KODE TEMUAN</th>
+											<th class="warning">URAIAN TEMUAN</th>
+											<th class="warning">KODE SEBAB</th>
+											<th class="warning">URAIAN SEBAB</th>
+											<th class="warning">NILAI (Rp.)</th>
+											<th class="info">NO</th>
+											<th class="info">KODE REKOMENDASI</th>
+											<th class="info">URAIAN REKOMENDASI</th>
+											<th class="info">KERUGIAN NEGARA</th>
+											<th class="info">NILAI (Rp.)</th>
+											<th class="success">UNIT KERJA</th>
+											<th class="success">UNIT KERJA</th>
+											<th class="success">NAMA PPK</th>
+											<th class="success">NAMA PJ</th>
+											<th class="success">PERIODE TINDAK LANJUT</th>
+											<th class="success">TINDAK LANJUT</th>
+											<th class="success">DOKUMEN PENDUKUNG</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+											<th>JUMLAH</th>
+											<th>NILAI (Rp.)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="23">
+												<span class="pull-left">
+													<b>
+														<span data-bind="text: kodeTemuan">[kode temuan]</span>.
+														<span data-bind="text: jenisTemuan">[kode temuan]</span>
+													</b>
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							<!-- end table kklhp -->
+							<form method="post" id="kklhp-form" action="<?php echo site_url()?>tlhp/kklhpbaru/insert">
+								<input type="hidden" value="<?php echo $lhp->lhp_id?>" id="lhp_id" name="lhp_id">
 								<table id="kertas-kerja" class="table table-bordered table-custom">
 									<thead>
 										<tr>
@@ -82,8 +139,8 @@
 											<th>JUMLAH</th>
 											<th>NILAI (Rp.)</th>
 										</tr>
-										<!--  ##### A Sistem Pengendalian #####-->
-										
+									</thead>
+																			
 							<?php
 							$arrayjenistemuan = array("a" => "SISTEM PENGENDALIAN INTERNAL", "b" => "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN", "c" => "LAPORAN KEUANGAN");
 							foreach ( $arrayjenistemuan as $index => $jenistemuan ) :
@@ -109,7 +166,7 @@
 												<button class="add-temuan" jenis="<?php echo $index; ?>" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 
 											</td>
-											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>"  style="width: 300px" required name="kode_temuan_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_temuan-<?php echo $index; ?> select-simple" id="kode_temuan-<?php echo $index; ?>" required name="kode_temuan_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													
 													 <?php
@@ -126,7 +183,7 @@
 													 
 											</select></td>
 											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
-											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>"  style="width: 300px" required name="kode_sebab_id-<?php echo $index; ?>1">
+											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													 <?php
 									if (! empty($kode_sebab) > 0) :
@@ -146,7 +203,7 @@
 											<td>1 <input type="hidden" value="1" id="nomor_rekomen_<?php echo $index; ?>1" name="nomor_rekomen_<?php echo $index; ?>1"> <input type="hidden" value="1" id="jumlah_rekomen_<?php echo $index; ?>1" name="jumlah_rekomen-<?php echo $index; ?>1">
 												<button class="add-rekomen" jenis="<?php echo $index; ?>" id="add-rekomen-<?php echo $index; ?>" nomor="1" type="button"><i aria-hidden="true" class="fa fa-plus"></i></button>
 											</td>
-											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" style="width: 300px" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
+											<td><select class="form-control kode_rekomendasi_id-<?php echo $index; ?> select-simple" id="kode_rekomendasi_id-<?php echo $index; ?>" required name="kode_rekomendasi_id-<?php echo $index; ?>11">
 													<option value=""></option>
 													 <?php
 									if (count($kode_rekomendasi) > 0) :
@@ -167,7 +224,7 @@
 													<option value="2">Tidak</option>
 											</select></td>
 											<td><input type="text" class="form-control border-input " name="nilai_rekomendasi-<?php echo $index; ?>11" /></td>
-											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1" >
+											<td><select class="form-control uker-<?php echo $index; ?>" id="uker-<?php echo $index; ?>" name="nama_ppk-<?php echo $index; ?>1">
 													<option></option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
@@ -439,11 +496,6 @@
 		</div>
 	</div>
 </div>
-<!--  
-<script src="<?php // echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script src="<?php //echo base_url();?>assets/js/summernote.js"></script>
-<script src="<?php //echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
-<script src="<?php //echo base_url();?>assets/js/tlhp.js" type="text/javascript"></script>-->
 <script type="text/javascript">
 	require.config({
 		"shim": {
