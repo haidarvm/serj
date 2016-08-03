@@ -132,8 +132,8 @@
 												</button>
 											</td>
 											<td>
-												<select class="form-control select-simple">
-													<option value="">-- kode rekomendasi --</option>
+												<select class="form-control select-simple border-input"
+												data-bind="kodeRekomendasi: true">
 												</select>
 											</td>
 											<td>

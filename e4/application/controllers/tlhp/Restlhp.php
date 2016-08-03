@@ -100,6 +100,16 @@ class Restlhp extends REST_Controller {
 		$this->response($dataResponse, 201);
 	}
 	
+	public function codrekomendasi_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$listKodeRekomendasi = $this->mlhp->getAllKodeRekomendasi();
+		$dataResponse = array(
+			'data' => $listKodeRekomendasi,
+			'size' => count($listKodeRekomendasi)
+		);
+		$this->response($dataResponse, 201);
+	}
+	
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		
