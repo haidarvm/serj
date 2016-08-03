@@ -98,17 +98,13 @@
 										<!-- ko template: {foreach: data.kertasKerjaTemuan} -->
 										<tr>
 											<td class="no-temuan">1
-												<!-- ko if: isFirstRow() -->
-												<button class="add-temuan" type="button" data-bind="event: {click: $parent.addRow}">
+												<button class="add-temuan" type="button" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
-												<!-- /ko -->
 												
-												<!-- ko if: !isFirstRow() -->
-												<button class="remove-temuan" type="button">
+												<button class="remove-temuan" type="button" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
-												<!-- /ko -->
 											</td>
 											<td>
 												<select class="form-control select-simple">

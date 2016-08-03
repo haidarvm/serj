@@ -1,7 +1,8 @@
 define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
-	function RekomendasiViewModel() {
+	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
+		selfK.isFirstRow = ko.observable(isFirstRow);
 		selfR.data = {
 			rekomendasiId: ko.observable(),
 			kertasKerjaId: ko.observable(),
@@ -37,6 +38,8 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 			jumlahTidakTlAlasan: ko.observable(),
 			nilaiTidakTlAlasan: ko.observable(),
 			userId: ko.observable(),
+			
+			rekomendasi: ko.observableArray([])
 		}
 		
 		selfK.removeRekomendasi = function() {
@@ -54,10 +57,14 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		}
 		
 		selfJ.addRow = function() {
-			var kkt = new KertasKerjaTemuanViewModel();
+			var kkt = new KertasKerjaTemuanViewModel(false);
 			kkt.data.jenisTemuan(selfJ.data.kodeTemuan());
 			
 			selfJ.data.kertasKerjaTemuan.push(kkt);
+		}
+		
+		selfJ.removeRow = function(vModel) {
+			selfJ.data.kertasKerjaTemuan.remove(vModel);
 		}
 	}
 	
