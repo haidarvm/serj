@@ -82,8 +82,12 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
+			loadKodeTemuan();
 		}
 		
+		var loadKodeTemuan = function() {
+			
+		}
 	}
 	
 	var vm = new MainViewModel();

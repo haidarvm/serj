@@ -107,7 +107,7 @@
 												</button>
 											</td>
 											<td>
-												<select class="form-control select-simple">
+												<select class="form-control select-simple border-input">
 													<option value="">--kode temuan--</option>
 												</select>
 											</td>

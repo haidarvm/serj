@@ -80,18 +80,14 @@ class Restlhp extends REST_Controller {
 		}
 	}
 	
-	public function index_get() {
-		$lhp_id = $this->get('lhp_id');
-		
-		$this->load->model('Mlhp');
-		$lhp = $this->mlhp->getLHP($lhpId);
-		if ($lhp) {
-			
-		} else {
-			$this->response(array(
-				'message' => 'Undefined lhp id'
-			), 400);
-		}
+	public function content_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$listLhp = $this->mlhp->getAllLHP();
+		$dataResponse = array(
+			'data' => $listLhp,
+			'size' => count($lhp)
+		);
+		$this->response($dataResponse, 201);
 	}
 	
 //	public function test_post() {
