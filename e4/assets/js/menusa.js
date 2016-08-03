@@ -5,7 +5,7 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
     			{
     				title:{
-    					text: "Haidar Ganteng"
+    					text: "TLHP"
     				},
     		                animationEnabled: true,
     				legend:{
@@ -23,10 +23,10 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     					showInLegend: true,
     					toolTipContent: "{y} - <strong>#percent%</strong>",
     					dataPoints: [
-    						{  y: 38, legendText:"belum tl", indexLabel: "BELUM TL" },
-    						{  y: 45, legendText:"selesai tl", indexLabel: "SELESAI TL" },
-    						{  y: 17, legendText:"belum sesuai",exploded: true, indexLabel: "BELUM SESUAI" },
-    						{  y: 1, legendText:"tidak dapat tl" , indexLabel: "TIDAK DAPAT TL"},
+    						{  y: 38, legendText:"belum tl", indexLabel: "BELUM TL : 38" },
+    						{  y: 45, legendText:"selesai tl", indexLabel: "SELESAI TL : 45" },
+    						{  y: 17, legendText:"belum sesuai",exploded: true, indexLabel: "BELUM SESUAI : 17" },
+    						{  y: 1, legendText:"tidak dapat tl" , indexLabel: "TIDAK DAPAT TL : 1"},
     					]
     				}
     				]
@@ -40,7 +40,7 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     	var kerugian = new CanvasJS.Chart("kerugian",
     			{
     				title:{
-    					text: "KERUGIAN KEUANGAN"
+    					text: "KERUGIAN KEUANGAN NEGARA"
     				},
     		                animationEnabled: true,
     				legend:{
@@ -58,8 +58,8 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     					showInLegend: true,
     					toolTipContent: "{y} - <strong>#percent%</strong>",
     					dataPoints: [
-    						{  y: 62, legendText:"telah disetor", indexLabel: "TELAH DISETOR" },
-    						{  y: 38, legendText:"belum disetor", indexLabel: "BELUM DISETOR" }
+    						{  y: 62, legendText:"telah disetor", indexLabel: "TELAH DISETOR : 62%" },
+    						{  y: 38, legendText:"belum disetor", indexLabel: "BELUM DISETOR : 38%" }
     					]
     				}
     				]

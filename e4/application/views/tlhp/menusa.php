@@ -216,7 +216,7 @@
 
 
 	<div class="row">
-        <h4 class="tittle-row">PIE CHART</h4>
+        <h4 class="tittle-row"></h4>
 		<div class="col-md-6">
 			<div class="card">
 				<div class="header">
