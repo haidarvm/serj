@@ -4,10 +4,9 @@
 </head>
 <body>
 	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script type="text/javascript" src="<?=site_url()?>assets/js/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="<?=site_url()?>assets/js/jquery.canvasjs.min.js"></script>
-<script type="text/javascript">
-window.onload = function () {
+	<script type="text/javascript" src="<?=site_url()?>assets/js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="<?=site_url()?>assets/js/jquery.canvasjs.min.js"></script>
+	<script type="text/javascript">
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
 		title:{
@@ -41,7 +40,6 @@ window.onload = function () {
 		]
 	});
 	chart.render();
-}
 </script>
 </body>
 </html>
