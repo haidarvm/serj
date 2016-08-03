@@ -87,6 +87,10 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
 		}
+		
+		self.doInsert = function() {
+			
+		}
 	}
 	
 	var vm = new MainViewModel();
