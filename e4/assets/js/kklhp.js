@@ -14,11 +14,12 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		}
 	}
 	
-	function KertasKerjaTemuanViewModel(isFirstRow) {
+	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
 		var selfK = this;
 		
 		selfK.isFirstRow = ko.observable(isFirstRow);
-//		console.debug(selfK.isFirstRow());
+		selfK.urutan = ko.observable(urutan);
+		
 		selfK.data = {
 			lhpId: ko.observable(),
 			jenisTemuan: ko.observable(),
@@ -45,7 +46,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		
 		selfK.addRow = function() {
 			console.info('add rekomendasi')
-			selfK.data.rekomendasi.push(new RekomendasiViewModel(false));
+			selfK.data.rekomendasi.push(new RekomendasiViewModel(1, false));
 		}
 		
 		selfK.removeRow = function(vModel) {
@@ -60,11 +61,12 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		selfJ.data = {
 			kodeTemuan: ko.observable(kodeTemuan),
 			jenisTemuan: ko.observable(jenisTemuan),
-			kertasKerjaTemuan: ko.observableArray([new KertasKerjaTemuanViewModel(true)])
+			kertasKerjaTemuan: ko.observableArray([new KertasKerjaTemuanViewModel(1, true)])
 		}
 		
 		selfJ.addRow = function() {
-			var kkt = new KertasKerjaTemuanViewModel(false);
+			var urutan = selfJ.data.kertasKerjaTemuan().length + 1;
+			var kkt = new KertasKerjaTemuanViewModel(urutan, false);
 			kkt.data.jenisTemuan(selfJ.data.kodeTemuan());
 			
 			selfJ.data.kertasKerjaTemuan.push(kkt);

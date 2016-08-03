@@ -97,7 +97,8 @@
 										</tr>
 										<!-- ko template: {foreach: data.kertasKerjaTemuan} -->
 										<tr>
-											<td class="no-temuan">1
+											<td class="no-temuan">
+												<span data-bind="text: urutan"></span>
 												<button type="button" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
