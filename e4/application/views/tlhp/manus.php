@@ -10,7 +10,7 @@
 					<div class="content table-responsive">
 						<!-- Data Table -->
 						<div class="clr"></div>
-						<table id="manus-grid" class="table table-striped t-center table-custom-head t-grid" width="100%">
+						<table id="manus-grid" class="table table-striped table-custom-head t-grid" width="100%">
 							<thead>
 								<tr class="info">
 									<th class="tsort">ID</th>
@@ -20,7 +20,7 @@
 									<th class="tsort" width="120">Username</th>
 									<th class="tsort" width="120">Unit Kerja</th>
 									<th class="tsort" width="100">Status</th>
-									<th class="tsort">Action</th>
+									<th class="tsort" width="200">Action</th>
 								</tr>
 							</thead>
 						</table>
