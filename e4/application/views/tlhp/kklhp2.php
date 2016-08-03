@@ -179,7 +179,7 @@
 										<tr>
 											<td colspan="6"></td>
 											<td>
-												<button class="add-rekomen" type="button">
+												<button type="button" data-bind="event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
