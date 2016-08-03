@@ -4,7 +4,7 @@ function get_current_app() {
 	$prefixData = @$_COOKIE['_prefixdata'];
 	switch ($prefixData) {
 		case 'tlhp_ikp_' :
-			$current_app = 'IKP';
+			$current_app = 'insp.';
 			break;
 		case 'tlhp_bpk_' :
 			$current_app = 'BPK';
@@ -16,7 +16,7 @@ function get_current_app() {
 			$current_app = 'TLHP';
 			break;
 		default :
-			$current_app = 'IKP';
+			$current_app = 'insp.';
 			break;
 	}
 	return $current_app;
