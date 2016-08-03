@@ -2,7 +2,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
-		selfK.isFirstRow = ko.observable(isFirstRow);
+		selfR.isFirstRow = ko.observable(isFirstRow);
 		selfR.data = {
 			rekomendasiId: ko.observable(),
 			kertasKerjaId: ko.observable(),
@@ -17,7 +17,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		var selfK = this;
 		
 		selfK.isFirstRow = ko.observable(isFirstRow);
-		console.debug(selfK.isFirstRow());
+//		console.debug(selfK.isFirstRow());
 		selfK.data = {
 			lhpId: ko.observable(),
 			jenisTemuan: ko.observable(),
@@ -42,8 +42,13 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 			rekomendasi: ko.observableArray([])
 		}
 		
-		selfK.removeRekomendasi = function() {
-			console.info('remove rekomendasi');
+		selfK.addRow = function() {
+			console.info('add rekomendasi')
+			selfK.data.rekomendasi.push(new RekomendasiViewModel(false));
+		}
+		
+		selfK.removeRow = function(vModel) {
+			selfK.data.rekomendasi.remove(vModel);
 		}
 	}
 	

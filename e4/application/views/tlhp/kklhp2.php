@@ -98,11 +98,11 @@
 										<!-- ko template: {foreach: data.kertasKerjaTemuan} -->
 										<tr>
 											<td class="no-temuan">1
-												<button class="add-temuan" type="button" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
+												<button type="button" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
 												
-												<button class="remove-temuan" type="button" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
+												<button type="button" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
@@ -127,7 +127,7 @@
 											</td>
 											<!-- Rekomendasi -->
 											<td>
-												<button class="add-rekomen" type="button">
+												<button type="button" data-bind="event: {click: addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
 											</td>
@@ -174,6 +174,61 @@
 											<td></td>
 											<td></td>
 										</tr>
+										<!-- rekomendasi -->
+										<!-- ko template: {foreach: data.rekomendasi} -->
+										<tr>
+											<td colspan="6"></td>
+											<td>
+												<button class="add-rekomen" type="button">
+													<i aria-hidden="true" class="fa fa-minus"></i>
+												</button>
+											</td>
+											<td>
+												<select class="form-control select-simple">
+													<option value="">-- kode rekomendasi --</option>
+												</select>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<td>
+												<input type="checkbox"/>
+											</td>
+											<td>
+												<input type="text" class="form-control border-input"/>
+											</td>
+											<td>
+												<select class="form-control">
+													<option>-- departement --</option>
+													<option>DEPUTI I</option>
+													<option>DEPUTI II</option>
+													<option>DEPUTI III</option>
+													<option>DEPUTI IV</option>
+													<option>STAFF AHLI</option>
+													<option>INSPEKTORAT</option>
+													<option>BIRO SDMU</option>
+													<option>BIRO HUKIP</option>
+													<option>BIRO BMOK</option>
+													<option>BIRO KASN</option>
+												</select>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<!-- /ko -->
+										<!-- /rekomendasi -->
+										
 										<!-- /ko -->
 										<!-- /ko -->
 										<!-- Bagian Update -->
