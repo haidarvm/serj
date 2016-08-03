@@ -1,5 +1,11 @@
 define(["jquery", "bootstrap","select2"], function($){
 	
+	function KklhpViewModel() {
+		var self = this;
+	}
+	
+	var vm = new KklhpViewModel();
+	
 	(function(){
 		
 		$(document).on("click",".add-temuan",function(event){

@@ -14,7 +14,7 @@ define(["jquery", "knockout"], function($, ko){
 			var reqYear = self.choosenYear();
 			$.ajax({
 				type: "GET",
-				url: site_url+"tlhp/addlhp/get_all/"+ reqYear,
+				url: "http://www.e4.dev/tlhp/addlhp/get_all/"+ reqYear,
 				beforeSend: function(){
 					self.tlhpList.removeAll();
 				},
