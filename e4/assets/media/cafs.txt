@@ -1,0 +1,11 @@
+You have successfully created a MySQL user named u6710841_wp.
+u6710841
+@nt4r3ja
+
+Jl. Ciliwung III no.39, Adiarsa Barat, 41313, Karawang, Jawa Barat
+Telp. +62-813-221-41500
+E-Mail. info@cafs.technology
+Web. cafs.technology
+
+Cafs BRI
+"u6710841_bri" now has privileges on the database "u6710841_bri".
