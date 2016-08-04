@@ -99,11 +99,11 @@
 										<tr>
 											<td class="no-temuan">
 												<span data-bind="text: urutan"></span>
-												<button type="button" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
+												<button type="button" class="tambah" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
 												
-												<button type="button" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
+												<button type="button" class="ngurang" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
