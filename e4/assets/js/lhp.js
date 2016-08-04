@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "papertlhp"], function($, ko, moment){
+define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function($, ko, moment){
 	
 	function TeamViewModel() {
 		var selfD = this;

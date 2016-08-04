@@ -18,8 +18,7 @@
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
-            "datetimepicker" : {deps: ["jquery", "moment"]},
-            "papertlhp" : {"deps": ["jquery","bootstrap"]},
+            "datetimepicker" : {deps: ["jquery", "moment"]}
         },
         "paths": {
             "jspath": site_url+ "assets/js/",
@@ -27,8 +26,7 @@
             "knockout": site_url+ "assets/js/knockout-3.2.0",
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
-            "bootstrap": site_url+ "assets/js/bootstrap.min",
-            "papertlhp": site_url + "assets/js/paper-dashboard"
+            "bootstrap": site_url+ "assets/js/bootstrap.min"
         }
     });
     requirejs(["jspath/lhp"]);
