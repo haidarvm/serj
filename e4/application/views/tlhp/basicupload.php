@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/jquery.fileupload.css">
+<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?=base_url()?>assets/css/jquery.fileupload.css">
 <div class="container" style="padding:10px;">
     <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
@@ -13,10 +13,10 @@
     <div id="files" class="files"></div>
     <br>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../assets/js/vendor/jquery.ui.widget.js"></script>
-<script src="../assets/js/jquery.iframe-transport.js"></script>
-<script src="../assets/js/jquery.fileupload.js"></script>
+<script src="<?=base_url()?>assets/jquery/jquery.min.js"></script>
+<script src="<?=base_url()?>assets/jquery.ui.widget.js"></script>
+<script src="<?=base_url()?>assets/js/jquery.iframe-transport.js"></script>
+<script src="<?=base_url()?>assets/js/jquery.fileupload.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
 $(function () {
