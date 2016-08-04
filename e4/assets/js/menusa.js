@@ -1,4 +1,4 @@
-define(["jquery", "canvasjs", "bootstrap", 'papertlhp', 'demo'], function($, window){
+define(["jquery", "canvasjs", "bootstrap"], function($, window){
     $(function(){
     	console.debug(CanvasJS.Chart.version);
     	
