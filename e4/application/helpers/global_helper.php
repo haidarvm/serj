@@ -634,7 +634,7 @@ function datatable_connect($aCol, $sTable, $sGroupBy = NULL, $sIndexTable = NULL
  * @param string $resize
  * @return string|mixed
  */
-function multi_do_upload($files,$path) {
+function multi_do_upload($files, $path) {
 	$format_gambar = array(	'image/jpg',
 			'image/jpeg',
 			'image/pjpeg',
