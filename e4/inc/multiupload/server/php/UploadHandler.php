@@ -12,8 +12,10 @@
 
 class UploadHandler
 {
+	
 
     protected $options;
+    private $site_url;
 
     // PHP File Upload error message codes:
     // http://php.net/manual/en/features.file-upload.errors.php
@@ -41,11 +43,16 @@ class UploadHandler
     protected $image_objects = array();
 
     public function __construct($options = null, $initialize = true, $error_messages = null) {
+    	
+    	// Add Site Url (agusprasetyo)
+    	$this->site_url = "http://".$_SERVER['HTTP_HOST'];
+		//$this->site_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+		
         $this->response = array();
         $this->options = array(
             'script_url' => $this->get_full_url().'/'.$this->basename($this->get_server_var('SCRIPT_NAME')),
-        	'upload_dir' => 'assets/media/',
-        	'upload_url' => '../assets/media/',
+        	'upload_dir' => $_SERVER['DOCUMENT_ROOT'].'/assets/media/',
+        	'upload_url' => $this->site_url.'/assets/media/',
             /*
         	'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/files/',
             'upload_url' => $this->get_full_url().'/files/',
