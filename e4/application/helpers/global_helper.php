@@ -625,3 +625,57 @@ function datatable_connect($aCol, $sTable, $sGroupBy = NULL, $sIndexTable = NULL
 	return json_encode($output);
 }
 
+/**
+ * Multi Upload
+ * Author : Agus Prasetyo / agusprasetyo811@gmail.com
+ * 
+ * @param unknown $files
+ * @param unknown $path
+ * @param string $resize
+ * @return string|mixed
+ */
+function multi_do_upload($files,$path) {
+	$format_gambar = array(	'image/jpg',
+			'image/jpeg',
+			'image/pjpeg',
+			'image/png',
+			'image/x-png',
+			'image/gif',
+			'application/x-zip',
+			'application/zip',
+			'application/x-zip-compressed',
+			'application/octet-stream'
+	);
+
+	$oldmask = umask(0);
+	@mkdir($path, 0777, TRUE);
+	@umask($oldmask);
+
+	for($i = 0; $i < count($files['name']); $i++) {
+		@$pic_name = $files['name'][$i];
+		@$pic_type = $files['type'][$i];
+		@$pic_size = $files['size'][$i] . " kb";
+		@$pic_temp_name = $files['tmp_name'][$i];
+
+		// Melakukan pengkondisian
+		if ($files['error'][$i] > 0) {
+			return FALSE;
+			break;
+		} else if(!in_array((@$pic_type),$format_gambar)) {
+			return FALSE;
+			break;
+		} else if(($pic_size =! 0) && ($pic_size > 80000000)) {
+			return FALSE;
+			break;
+		} else {
+			$picture = $path.'/'. str_replace(' ', '__', $pic_name);
+			
+			@copy($pic_temp_name, $picture);
+			@unlink($pic_temp_name);
+			$pic_names[] = str_replace(' ', '__', $pic_name);
+		}
+	}
+	return $pic_names;
+
+}
+
