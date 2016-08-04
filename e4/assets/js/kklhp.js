@@ -74,6 +74,11 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		
 		selfJ.removeRow = function(vModel) {
 			selfJ.data.kertasKerjaTemuan.remove(vModel);
+			for (var i=0; i< selfJ.data.kertasKerjaTemuan().length; i++) {
+				var urutan = i+1;
+				var kertasKerjaTemuan = selfJ.data.kertasKerjaTemuan()[i];
+				kertasKerjaTemuan.urutan(urutan);
+			}
 		}
 	}
 	
