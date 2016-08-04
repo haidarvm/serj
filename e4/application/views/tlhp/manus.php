@@ -40,9 +40,9 @@
 										</button>
 										<h4 class="modal-title" id="userModalLabel">User</h4>
 									</div>
-                                                                    <div class="modal-body modal-form">
-                                                                        <?php $this->load->view('tlhp/user') ?>
-                                                                    </div>
+                                    <div class="modal-body modal-form">
+                                        <?php $this->load->view('tlhp/user') ?>
+                                    </div>
 								</div>
 							</div>
 						</div>

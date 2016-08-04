@@ -45,16 +45,13 @@ class Addlhp extends MY_Controller {
 		}
 	}
 	
-	public function update(){
-		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
-		$data['action'] = "update";
+	public function edit($lhp_id){
+		//TODO: error handling when lhp_id not found
+		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
+		$data['title'] = "Edit Laporan Hasil Pengawasan";
 		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
 		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();
 		$this->load->tlhp_template('tlhp/lhp', $data);
-// 		$post = $this->input->post();
-// 		if ($post){
-// // 			print_r($post);exit;
-// 		}
 	}
 	
 	public function test(){

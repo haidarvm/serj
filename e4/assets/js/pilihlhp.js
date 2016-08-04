@@ -47,11 +47,33 @@ define(["jquery", "knockout"], function($, ko){
 				$("#formLhp").submit();
 			}
 		}
+		
+		self.init = function() {
+			if (self.choosenYear() != undefined) {
+				var reqYear = self.choosenYear();
+				$.ajax({
+					type: "GET",
+					url: site_url+"tlhp/addlhp/get_all/"+ reqYear,
+					beforeSend: function(){
+						self.tlhpList.removeAll();
+					},
+					success: function(data) {
+						for (var i=0; i< data.length; i++) {
+							self.tlhpList.push(data[i]);
+						}
+					},
+					error: function(xhr, msg) {
+						alert("Sory, there is something wrong in our system");
+					}
+				});
+			}
+		}
 	}
 	
 	var vm = new ViewModel();
 	
     $(function(){
+    	vm.init();
     	ko.applyBindings(vm);
     	//$("#js-example-data-array").select2();
     	/**

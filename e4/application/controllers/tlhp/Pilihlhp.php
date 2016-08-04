@@ -66,7 +66,7 @@ class Pilihlhp extends MY_Controller {
 			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
 			// $data['update'] = "update";
 			// $data['getAll'] = $this->muser->getAllUser();
-			$this->load->tlhp_template('tlhp/kklhp', $data);
+			$this->load->tlhp_template('tlhp/kklhp2', $data);
 		} else {
 			// redirect pilih
 		}

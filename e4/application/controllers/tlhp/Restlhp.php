@@ -72,13 +72,44 @@ class Restlhp extends REST_Controller {
 				'message' => 'Data berhasil disimpan'
 			);
 			
-			$this->response($dataResponse, 200);			
+			$this->response($dataResponse, 201);			
 		} catch (Exception $ex) {
 			$this->response(array(
 				'message' => $ex->getMessage()
 			), 400);
 		}
 	}
+	
+	public function codtemuan_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$listKodeTemuan = $this->mlhp->getAllKodeTemuan();
+		$dataResponse = array(
+			'data' => $listKodeTemuan,
+			'size' => count($listKodeTemuan)
+		);
+		$this->response($dataResponse, 201);
+	}
+	
+	public function codsebab_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$listKodeSebab = $this->mlhp->getAllKodeSebab();
+		$dataResponse = array(
+			'data' => $listKodeSebab,
+			'size' => count($listKodeSebab)
+		);
+		$this->response($dataResponse, 201);
+	}
+	
+	public function codrekomendasi_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$listKodeRekomendasi = $this->mlhp->getAllKodeRekomendasi();
+		$dataResponse = array(
+			'data' => $listKodeRekomendasi,
+			'size' => count($listKodeRekomendasi)
+		);
+		$this->response($dataResponse, 201);
+	}
+	
 	
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
