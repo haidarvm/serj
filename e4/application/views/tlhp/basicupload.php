@@ -13,11 +13,11 @@
     <div id="files" class="files"></div>
     <br>
 </div>
-<script src="<?=base_url()?>assets/jquery/jquery.min.js"></script>
-<script src="<?=base_url()?>assets/jquery.ui.widget.js"></script>
+<script src="<?=base_url()?>assets/js/jquery-2.1.4.min.js"></script>
+<script src="<?=base_url()?>assets/js/jquery.ui.widget.js"></script>
 <script src="<?=base_url()?>assets/js/jquery.iframe-transport.js"></script>
 <script src="<?=base_url()?>assets/js/jquery.fileupload.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 <script>
 $(function () {
     'use strict';
