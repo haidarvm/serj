@@ -1,11 +1,11 @@
-<script type="text/javascript">
-var $table = $('#kode_sebab');
-$table.floatThead({
-    scrollContainer: function($table){
-        return $table.closest('.scrolling-table');
-    }
-});
-</script>
+<!--  <script type="text/javascript">
+//var $table = $('#kode_sebab');
+//$table.floatThead({
+//    scrollContainer: function($table){
+//        return $table.closest('.scrolling-table');
+//    }
+//});
+<!--</script>-->
 
 <div class="content">
 	<div class="container-fluid">
