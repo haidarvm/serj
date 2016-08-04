@@ -112,7 +112,7 @@ button.btn {
     width: 300px;
     resize: vertical;
 }
-.no-temuan > button.tambah {
+button.tambah {
     background: #7ac29a none repeat scroll 0 0;
     border: 0 none;
     color: #ffffff;
@@ -122,12 +122,27 @@ button.btn {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-.no-temuan > button.tambah:hover {
+button.tambah:hover {
     background: #54b07d;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-.no-temuan > button.ngurang {
+button.tambah {
+    background: #7ac29a none repeat scroll 0 0;
+    border: 0 none;
+    color: #ffffff;
+    display: block;
+    padding: 4px 3px 5px;
+    width: 100%;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+button.tambah:hover {
+    background: #54b07d;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+button.ngurang {
     background: #eb5e28 none repeat scroll 0 0;
     border: 0 none;
     color: #ffffff;

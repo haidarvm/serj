@@ -131,7 +131,7 @@
 											</td>
 											<!-- Rekomendasi -->
 											<td>
-												<button type="button" data-bind="event: {click: addRow}">
+												<button type="button" class="tambah" data-bind="event: {click: addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
 											</td>
@@ -186,7 +186,7 @@
 										<tr>
 											<td colspan="6"></td>
 											<td>
-												<button type="button" data-bind="event: {click: $parent.removeRow}">
+												<button class="ngurang" type="button" data-bind="event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
