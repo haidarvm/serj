@@ -282,16 +282,14 @@
 		"shim": {
 			"tlhp" : {"deps": ["jquery"]},
             "bootstrap" : {deps: ["jquery"]},
-            "select2" : {deps: ["jquery"]},
-            "papertlhp" : {"deps": ["jquery","bootstrap"]},
+            "select2" : {deps: ["jquery"]}
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
         	"jquery": site_url+"assets/js/jquery-2.1.4.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
             "select2": site_url+ "assets/js/select2.min",
-         	"knockout": site_url+"assets/js/knockout-3.2.0",
-         	"papertlhp": site_url + "assets/js/paper-dashboard"
+         	"knockout": site_url+"assets/js/knockout-3.2.0"
 		}
 	});
 	requirejs(["jspath/kklhp"]);

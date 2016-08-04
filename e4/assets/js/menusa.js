@@ -1,4 +1,4 @@
-define(["jquery", "canvasjs", "bootstrap", 'papertlhp'], function($, window){
+define(["jquery", "canvasjs", "bootstrap"], function($, window){
     $(function(){
     	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
     			{
