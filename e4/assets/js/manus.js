@@ -1,5 +1,5 @@
 define(["jquery", "knockout", "bootstrap", 
-        "data-table", "notify", "papertlhp"], function($, ko){
+        "data-table", "notify"], function($, ko){
 	
 	function refreshManusTable() {
 		$('#manus-grid').DataTable().ajax.reload();
@@ -86,6 +86,10 @@ define(["jquery", "knockout", "bootstrap",
 	    	
 	    	self.data.role(null);
 	    	self.data.address(null);
+    	},
+    	
+    	self.test = function() {
+    		console.info('testing');
     	}
     	
     } // end userViewModel
@@ -141,7 +145,7 @@ define(["jquery", "knockout", "bootstrap",
             "aoColumnDefs": [{
                     "aTargets": [7],
                     mRender: function ( data, type, row ) {
-                            //return '<div class="btn-group"><a onclick="userEdit()"  href="'+ site_url + 'tlhp/manus/update_user/'+ row[0]+'" class="user-modal-edit  btn btn-primary btn-xs"><i class="fa fa-eye"></i> Edit</a> &nbsp; <a href="#" data-toggle="modal" data-target="#confirm-delete-modal" data-href="'+ site_url + 'tlhp/manus/delete/'+ row[0]+'" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></div>';
+//                            return '<div class="btn-group"><a data-bind="event: {click: test}" class="user-modal-edit  btn btn-primary btn-xs"><i class="fa fa-eye"></i> Edit</a> &nbsp; <a href="#" data-toggle="modal" data-target="#confirm-delete-modal" data-href="'+ site_url + 'tlhp/manus/delete/'+ row[0]+'" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></div>';
                             return '<div class="btn-group"><a onClick="userEdit(\''+row[4]+'\')" href="javascript:;" class="user-modal-edit  btn btn-primary btn-xs"><i class="fa fa-eye"></i> Edit</a> &nbsp; <a onclick="return confirm('+"'Anda yakin ingin Non Aktif data ini ...?'"+')"  href="'+ site_url + 'tlhp/manus/delete/'+ row[0]+'" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Non Aktif</a></div>';
 
                     }
