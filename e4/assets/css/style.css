@@ -1,15 +1,185 @@
-@charset "UTF-8";
-/*
- * jQuery File Upload Plugin CSS Example
- * https://github.com/blueimp/jQuery-File-Upload
- *
- * Copyright 2013, Sebastian Tschan
- * https://blueimp.net
- *
- * Licensed under the MIT license:
- * http://www.opensource.org/licenses/MIT
- */
+/* --------------------------------------------------------
+Style Sheet for Website's E4
 
-body {
-  padding-top: 60px;
+version: 1.0
+
+----------------------------------------------------------*/
+
+/* -----------------------------------------------------------
+CONTENTS:
+=HEADER
+=TABLE
+=FOOTER
+
+------------------------------------------------------------*/
+.clearfix {
+    clear: both;
+}
+.inner{
+    padding: 0 0 20px 0 ;
+}
+.tittle-row {
+    margin: 20px;
+}
+.t-card {
+    font-size: 12px;
+    font-weight: normal;
+}
+.t-number {
+    font-size: 23px;
+}
+.t-right {
+    text-align: left;
+}
+.l-float {
+    float: left;
+}
+.control-label {
+    padding: 0 0 0px 0;
+}
+.logo-under {
+	text-align: center;
+}
+.logo-under img {
+    width: 250px;
+    margin: 0 auto;
+}
+.under-con {
+    margin-top: 100px;
+}
+.under-text {
+    font-weight: bold;
+    color: #E09B58;
+    font-size: 43px;
+}
+
+.error-text {
+    font-weight: bold;
+    color: #e53719;
+    font-size: 33px;
+	position: relative;
+    left: -3px;
+}
+.o-tlhp {
+    font-size: 50px;
+    color: #2e79b5;
+}
+.t-other {
+    margin: 100px 0 0 0;
+}
+/*** HEADER ***/
+header {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    top : 0;
+}
+.logo {
+    background-color: transparent; 
+    width: 259px;
+    height: auto;
+    float: left;
+
+}
+.logo img{
+    width: 170px;
+}
+.logo-landing img{
+    width: 150px;
+}
+#topnav {
+    margin: 0;
+    border: none;
+}
+.navbar-fixed-up {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed !important;
+    z-index: 1200;
+    
+}
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+}
+
+/*** TABLE STYLE ***/
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.table-action {
+    margin: 10px 0 10px 0;
+}
+.rows {
+  display: table-row;
+  background: #f6f6f6;
+}
+.rows:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.rows.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #2196F3;
+}
+.rows.green {
+  background: #27ae60;
+}
+.rows.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .rows {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cells {
+  padding: 10px 20px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cells {
+    padding: 2px 12px;
+    display: block;
+  }
+}
+
+/*** FOOTER ***/
+.footer-logo {
+    display: block;
+    float: none;
+    margin: 0;
+    text-align: right;
+}
+
+.footer-logo img{
+    width: 50px;
+    /* float: left; */
+}
+.footer-text {
+    font-size: 12px;
+    text-align: right;
+    padding: 10px;
+}
+.copy-right {
+    font-size: 12px;
+    padding: 0 0 10px;
+    text-align: right;
+	margin: 0;
+}
+.footer .copyright {
+	padding-top: 5px !important;
 }
