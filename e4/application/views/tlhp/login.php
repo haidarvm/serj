@@ -27,7 +27,6 @@
 			StyleSheet And LESS Compailer
 		########################################-->
 <link href="<?php echo base_url();?>assets/css/custom.css" rel="stylesheet" />
-<script type="text/javascript" src="js/less.min.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -107,7 +106,7 @@
 	<script src="<?php echo base_url();?>assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-	<!--  Checkbox, Radio & Switch Plugins -->
+	<!--  Checkbox, Radio & Switch Plugins 
 	<script src="<?php echo base_url();?>assets/js/bootstrap-checkbox-radio.js"></script>
 
 	<!--  Charts Plugin
@@ -115,15 +114,15 @@
 	<script src="<?php echo base_url();?>assets/js/graphic.js"></script> -->
 
 	<!--  Notifications Plugin    -->
-	<script src="<?php echo base_url();?>assets/js/bootstrap-notify.js"></script>
+	<!--  <script src="<?php echo base_url();?>assets/js/bootstrap-notify.js"></script> -->
 
 	<!--  Google Maps Plugin    
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>-->
 
-	<!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="<?php echo base_url();?>assets/js/paper-dashboard.js"></script>
+	<!-- Paper Dashboard Core javascript and methods for Demo purpose 
+	<script src="<?php echo base_url();?>assets/js/paper-dashboard.js"></script>-->
 
-	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="<?php echo base_url();?>assets/js/demo.js"></script>
+	<!-- Paper Dashboard DEMO methods, don't include it in your project! 
+	<script src="<?php echo base_url();?>assets/js/demo.js"></script>-->
 </body>
 </html>
