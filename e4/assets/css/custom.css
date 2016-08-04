@@ -105,6 +105,14 @@ button.btn {
   /* padding-top: 15%; */
 }
 
+#kertas-kerja textarea.form-control {
+    height: 30px;
+    max-width: 100%;
+    padding: 4px;
+    width: 300px;
+    resize: vertical;
+}
+
 
 
 .modal-form .form-group {
