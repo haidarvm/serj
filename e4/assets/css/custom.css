@@ -105,6 +105,14 @@ button.btn {
   /* padding-top: 15%; */
 }
 
+#kertas-kerja textarea.form-control {
+    height: 30px;
+    max-width: 100%;
+    padding: 4px;
+    width: 300px;
+    resize: vertical;
+}
+
 
 
 .modal-form .form-group {
@@ -660,9 +668,9 @@ div.dataTables_info {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-#kertas-kerja input:focus {
+/* #kertas-kerja input:focus {
 	width: 200px;
-}
+} */
 /* .dataTables_info, .dataTables_length {
 	margin-top: 40px;
 } */

@@ -86,7 +86,7 @@
 									<tbody>
 										<!-- ko template: {foreach: jenisTemuan} -->
 										<tr>
-											<td colspan="23">
+											<td colspan="26">
 												<span class="pull-left">
 													<b>
 														<span data-bind="text: data.kodeTemuan">[kode temuan]</span>.
@@ -113,7 +113,8 @@
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian temuan -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
@@ -121,10 +122,12 @@
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian sebab -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- nilai -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<!-- Rekomendasi -->
 											<td>
@@ -138,13 +141,15 @@
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian rekomendasi -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
 												<input type="checkbox"/>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- nilai -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
 												<select class="form-control">
@@ -161,6 +166,7 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -213,6 +219,8 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>

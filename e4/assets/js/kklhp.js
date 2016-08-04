@@ -171,6 +171,11 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		}
 	}
 	
+
+	$(document).ready(function() {
+	  $(".select-kode").select2();
+	});
+	
 	ko.bindingHandlers.kodeRekomendasi = {
 			init: function(element, valueAccessor, allBindings) {
 				$(element).select2({
