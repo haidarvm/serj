@@ -131,8 +131,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 					error: function(e) {
 						console.info('error');
 					}
-				},
-				minimumInputLength:1,
+				}
 			});
 		}
 	}
@@ -167,8 +166,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 					error: function(e) {
 						console.info('error');
 					}
-				},
-				minimumInputLength:1,
+				}
 			});
 		}
 	}
@@ -203,8 +201,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 						error: function(e) {
 							console.info('error');
 						}
-					},
-					minimumInputLength:1,
+					}
 				});
 			}
 		}
