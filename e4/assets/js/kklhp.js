@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
+define(["jquery", "knockout", "bootstrap","select2", "papertlhp"], function($, ko){
 	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
