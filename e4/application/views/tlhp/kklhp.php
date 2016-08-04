@@ -4,7 +4,7 @@
 			<div class="col-lg-12 col-md-7">
 				<div class="card">
 					<div class="header">
-						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
+						<h4 class="title">MATRIKS anosel PEMANTAUAN TINDAK LANJUT</h4>
 						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
 						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
 					</div>
@@ -125,7 +125,10 @@
 									?>
 													 
 											</select></td>
-											<td><input type="text" class="form-control border-input uraian_temuan-<?php echo $index; ?>" name="uraian_temuan-<?php echo $index; ?>1" /></td>
+											<td>
+												INI INPUT URAIAN TEMUAN
+											
+											</td>
 											<td><select class="form-control kode_sebab_id-<?php echo $index; ?> select-simple" id="kode_sebab_id-<?php echo $index; ?>"  style="width: 300px" required name="kode_sebab_id-<?php echo $index; ?>1">
 													<option value=""></option>
 													 <?php
