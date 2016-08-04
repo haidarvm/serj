@@ -695,19 +695,10 @@ div.dataTables_info {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-#kertas-kerja select:focus, div.dataTables_length select:focus {
-	width: 100px
-}
 #kertas-kerja input {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-/* #kertas-kerja input:focus {
-	width: 200px;
-} */
-/* .dataTables_info, .dataTables_length {
-	margin-top: 40px;
-} */
 .t-grid {
 	margin-top: 15px;
 }
