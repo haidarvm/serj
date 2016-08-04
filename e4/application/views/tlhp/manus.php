@@ -53,6 +53,10 @@
 	</div>
 </div>
 <script>
+//	function doEdit(id) {
+//		var insert = {
+//		}
+//	}
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
