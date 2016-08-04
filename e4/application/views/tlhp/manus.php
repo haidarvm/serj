@@ -56,7 +56,8 @@
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
-    		"notify": {"deps": ["jquery"]}
+    		"notify": {"deps": ["jquery"]},
+    		"papertlhp" : {"deps": ["jquery","bootstrap"]},
         },
         "paths": {
             "jspath": site_url+"assets/js/",
@@ -64,7 +65,8 @@
             "notify": site_url+"assets/js/notify.min",
             "knockout": site_url+"assets/js/knockout-3.2.0",
             "bootstrap": site_url+"assets/js/bootstrap.min",
-            "data-table": site_url+"assets/js/jquery.dataTables.min" 
+            "data-table": site_url+"assets/js/jquery.dataTables.min" ,
+            "papertlhp": site_url + "assets/js/paper-dashboard"
         }
     });
     requirejs(["jspath/manus"]);
