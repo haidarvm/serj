@@ -105,6 +105,48 @@ button.btn {
   /* padding-top: 15%; */
 }
 
+#kertas-kerja textarea.form-control {
+    height: 30px;
+    max-width: 100%;
+    padding: 4px;
+    width: 300px;
+    resize: vertical;
+}
+.no-temuan > button.tambah {
+    background: #7ac29a none repeat scroll 0 0;
+    border: 0 none;
+    color: #ffffff;
+    display: block;
+    padding: 4px 3px 5px;
+    width: 100%;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.no-temuan > button.tambah:hover {
+    background: #54b07d;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.no-temuan > button.ngurang {
+    background: #eb5e28 none repeat scroll 0 0;
+    border: 0 none;
+    color: #ffffff;
+    display: block;
+    padding: 4px 3px 5px;
+    width: 100%;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.no-temuan > button.ngurang:hover {
+    background: #c84513;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.select2-container--default .select2-selection--single {
+	background-color: #f3f2ee !important;
+	border: 1px solid #e8e7e3 !important;
+}
+
 
 
 .modal-form .form-group {
@@ -653,19 +695,10 @@ div.dataTables_info {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-#kertas-kerja select:focus, div.dataTables_length select:focus {
-	width: 100px
-}
 #kertas-kerja input {
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
-#kertas-kerja input:focus {
-	width: 200px;
-}
-/* .dataTables_info, .dataTables_length {
-	margin-top: 40px;
-} */
 .t-grid {
 	margin-top: 15px;
 }

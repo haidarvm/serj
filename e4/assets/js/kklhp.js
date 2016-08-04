@@ -74,6 +74,11 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		
 		selfJ.removeRow = function(vModel) {
 			selfJ.data.kertasKerjaTemuan.remove(vModel);
+			for (var i=0; i< selfJ.data.kertasKerjaTemuan().length; i++) {
+				var urutan = i+1;
+				var kertasKerjaTemuan = selfJ.data.kertasKerjaTemuan()[i];
+				kertasKerjaTemuan.urutan(urutan);
+			}
 		}
 	}
 	
@@ -131,8 +136,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 					error: function(e) {
 						console.info('error');
 					}
-				},
-				minimumInputLength:1,
+				}
 			});
 		}
 	}
@@ -167,11 +171,15 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 					error: function(e) {
 						console.info('error');
 					}
-				},
-				minimumInputLength:1,
+				}
 			});
 		}
 	}
+	
+
+	$(document).ready(function() {
+	  $(".select-kode").select2();
+	});
 	
 	ko.bindingHandlers.kodeRekomendasi = {
 			init: function(element, valueAccessor, allBindings) {
@@ -203,8 +211,7 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 						error: function(e) {
 							console.info('error');
 						}
-					},
-					minimumInputLength:1,
+					}
 				});
 			}
 		}

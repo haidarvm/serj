@@ -251,12 +251,14 @@
 	</div>
 </div>
 <script>
+//	console.debug(site_url+ "assets/js/paper-dashboard");
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
-//             "chart": {"deps": ["jquery"]},
     		"notify": {"deps": ["jquery"]},
-    		"canvasjs" : {"deps": ["jquery"]}
+    		"canvasjs" : {"deps": ["jquery"]},
+    		"papertlhp" : {"deps": ["jquery","bootstrap"]},
+//    		"demo" : {"deps": ["jquery","bootstrap","paper-dashboard"]},
         },
         "paths": {
             "jspath": site_url + "assets/js/",
@@ -264,6 +266,8 @@
             "notify": site_url+"assets/js/notify.min",
             "bootstrap": site_url + "assets/js/bootstrap.min",
             "canvasjs": site_url + "assets/js/jquery.canvasjs.min",
+//            "demo": site_url + "assets/js/demo",
+            "papertlhp": site_url + "assets/js/paper-dashboard"
         }
     });
     requirejs(["jspath/menusa"]);

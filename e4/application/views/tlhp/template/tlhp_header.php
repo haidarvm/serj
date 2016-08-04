@@ -37,12 +37,11 @@
 <!--  Summernote     -->
 <link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
 <link href="<?=base_url();?>assets/css/select2.min.css" rel="stylesheet" />
-<script src="<?php echo base_url();?>assets/js/require.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>assets/js/jquery.floatThead.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>assets/js/jquery.floatThead-slim.min.js" type="text/javascript"></script>
+
+<script src="<?=base_url();?>assets/js/require.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
-var site_url = "<?php echo base_url()?>";
+var site_url = "<?=base_url()?>";
 </script>
 <body>
 
@@ -53,7 +52,6 @@ var site_url = "<?php echo base_url()?>";
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
 		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 	-->
-
 			<div class="sidebar-wrapper">
 				<div class="logo t-center">
 					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo-e4.png"></a>
@@ -87,7 +85,6 @@ var site_url = "<?php echo base_url()?>";
 				</ul>
 			</div>
 		</div>
-
 		<div class="main-panel">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">

@@ -86,7 +86,7 @@
 									<tbody>
 										<!-- ko template: {foreach: jenisTemuan} -->
 										<tr>
-											<td colspan="23">
+											<td colspan="26">
 												<span class="pull-left">
 													<b>
 														<span data-bind="text: data.kodeTemuan">[kode temuan]</span>.
@@ -99,32 +99,35 @@
 										<tr>
 											<td class="no-temuan">
 												<span data-bind="text: urutan"></span>
-												<button type="button" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
+												<button type="button" class="tambah" data-bind="visible: isFirstRow(), event: {click: $parent.addRow}">
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
 												
-												<button type="button" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
+												<button type="button" class="ngurang" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeTemuan: true, value: data.kodeTemuanId">
+												data-bind="kodeTemuan: true, value: data.kodeTemuanId" style="width: 300px">
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian temuan -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeSebab: true, value: data.kodeSebabId">
+												data-bind="kodeSebab: true, value: data.kodeSebabId"  style="width: 300px">
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian sebab -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- nilai -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<!-- Rekomendasi -->
 											<td>
@@ -134,17 +137,19 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeRekomendasi: true">
+												data-bind="kodeRekomendasi: true"  style="width: 300px">
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian rekomendasi -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
 												<input type="checkbox"/>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- nilai -->
+												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
 												<select class="form-control">
@@ -161,6 +166,7 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -185,8 +191,8 @@
 												</button>
 											</td>
 											<td>
-												<select class="form-control select-simple">
-													<option value="">-- kode rekomendasi --</option>
+												<select class="form-control select-simple border-input"
+												data-bind="kodeRekomendasi: true"  style="width: 300px">
 												</select>
 											</td>
 											<td>
@@ -213,6 +219,8 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>

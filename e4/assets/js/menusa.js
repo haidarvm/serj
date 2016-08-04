@@ -1,7 +1,5 @@
-define(["jquery", "canvasjs", "bootstrap"], function($, window){
+define(["jquery", "canvasjs", "bootstrap", 'papertlhp'], function($, window){
     $(function(){
-    	console.debug(CanvasJS.Chart.version);
-    	
     	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
     			{
     				title:{
@@ -35,8 +33,6 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     });
     
     $(function(){
-    	console.debug(CanvasJS.Chart.version);
-    	
     	var kerugian = new CanvasJS.Chart("kerugian",
     			{
     				title:{

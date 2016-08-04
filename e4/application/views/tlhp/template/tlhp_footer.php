@@ -4,7 +4,7 @@
 			<!--&copy; <script>document.write(new Date().getFullYear())</script>,-->
 			<div class="col-md-11 nopadding">
 				<p class="footer-text">DATABASE HASIL PENGAWASAN INSPEKTORAT KEMENTERIAN PENDAYAGUNAAN APARATUR NEGARA DAN REFORMASI BIROKRASI</p>
-				<p class="copy-right">&copy; Copy Right 2016 E-FOUR KEMENPAN RB</p>
+				<p class="copy-right">&copy; Copyright 2016 CAFS.TECHNOLOGY</p>
 			</div>
 			<div class="col-md-1">
 				<div class="footer-logo">
