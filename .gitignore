@@ -2,6 +2,7 @@
 
 #ignore this configuration if not working add this "git rm -r  --cached ." "git add ." "git commit -m 'fixed ignore'"
 
+e4/e4-error_log
 assets/media/*
 ab/*
 mbs/*
