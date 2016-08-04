@@ -6,7 +6,7 @@ class Upload extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('tlhp/upload');
-		$this->load->view('tlhp/multiupload');
+		$this->load->view('tlhp/basicupload');
 	}
 
 }
