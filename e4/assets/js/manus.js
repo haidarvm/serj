@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, ko){
+define(["jquery", "knockout", "bootstrap", "data-table", "notify", "papertlhp"], function($, ko){
 	
 	window.refreshTable = function refreshManusTable() {
 		$('#manus-grid').DataTable().ajax.reload();
@@ -24,10 +24,11 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
     	}
     	
     	self.data.userName.subscribe(function(ev){
-    		console.info("data sekarang "+ ev);
+    		//TODO; check existing username
+//    		console.info("data sekarang "+ ev);
     	});
     	
-    	self.userNotif = ko.observable("example message");
+    	self.userNotif = ko.observable();
     	self.doInsert = function() {
     		var reqData = ko.toJSON(self.data);
     		
@@ -38,7 +39,7 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
     		} 
     		
     		console.debug(reqData);
-    		console.debug('actionType: '+ actionType);
+//    		console.debug('actionType: '+ actionType);
     		$.ajax({
 				type: actionType,
 				data: reqData,
@@ -149,7 +150,7 @@ define(["jquery", "knockout", "bootstrap", "data-table", "notify"], function($, 
             "aoColumnDefs": [{
                     "aTargets": [7],
                     mRender: function ( data, type, row ) {
-            				console.debug(row[4]);
+//            				console.debug(row[4]);
                             //return '<div class="btn-group"><a onclick="userEdit()"  href="'+ site_url + 'tlhp/manus/update_user/'+ row[0]+'" class="user-modal-edit  btn btn-primary btn-xs"><i class="fa fa-eye"></i> Edit</a> &nbsp; <a href="#" data-toggle="modal" data-target="#confirm-delete-modal" data-href="'+ site_url + 'tlhp/manus/delete/'+ row[0]+'" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></div>';
                             return '<div class="btn-group"><a onClick="userEdit(\''+row[4]+'\')" href="javascript:;" class="user-modal-edit  btn btn-primary btn-xs"><i class="fa fa-eye"></i> Edit</a> &nbsp; <a onclick="return confirm('+"'Anda yakin ingin Non Aktif data ini ...?'"+')"  href="'+ site_url + 'tlhp/manus/delete/'+ row[0]+'" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Non Aktif</a></div>';
 
