@@ -110,6 +110,7 @@ class Restlhp extends REST_Controller {
 		$this->response($dataResponse, 201);
 	}
 	
+	
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		

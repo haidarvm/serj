@@ -89,7 +89,11 @@ define(["jquery", "knockout", "bootstrap","select2"], function($, ko){
 		}
 		
 		self.doInsert = function() {
-			
+			var insertToServer = {};
+			for (var i=0; i<self.jenisTemuan().length; i++) {
+				var jenisTemuan = self.jenisTemuan()[i].data;
+				console.debug(jenisTemuan);
+			}
 		}
 	}
 	
