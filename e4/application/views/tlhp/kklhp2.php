@@ -283,6 +283,7 @@
 			"tlhp" : {"deps": ["jquery"]},
             "bootstrap" : {deps: ["jquery"]},
             "select2" : {deps: ["jquery"]},
+            "papertlhp" : {"deps": ["jquery","bootstrap"]},
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -290,6 +291,7 @@
             "bootstrap": site_url+ "assets/js/bootstrap.min",
             "select2": site_url+ "assets/js/select2.min",
          	"knockout": site_url+"assets/js/knockout-3.2.0",
+         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
 	requirejs(["jspath/kklhp"]);
