@@ -196,7 +196,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						for (var i=0; i<data.data.length; i++) {
 							var item = {
 								id: data.data[i].kode_temuan_id,
-								text: data.data[i].kode_temuan
+								text: data.data[i].kode_temuan_id+'. '+data.data[i].kode_temuan
 							}
 							rData.push(item);
 						}
@@ -231,7 +231,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						for (var i=0; i<data.data.length; i++) {
 							var item = {
 								id: data.data[i].kode_sebab_id,
-								text: data.data[i].uraian_sebab
+								text: data.data[i].kode_sebab_id+'. '+data.data[i].uraian_sebab
 							}
 							rData.push(item);
 						}
@@ -271,7 +271,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
 									id: data.data[i].kode_rekomendasi_id,
-									text: data.data[i].uraian_rekomendasi
+									text: data.data[i].kode_rekomendasi_id+'. '+data.data[i].uraian_rekomendasi
 								}
 								rData.push(item);
 							}
