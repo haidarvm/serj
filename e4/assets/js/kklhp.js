@@ -17,9 +17,9 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		
 		selfR.data.kerugianNegaraCbk.subscribe(function(newVal){
 			if (newVal == true) {
-				selfR.data.kerugianNegaraCbk(true);
+				selfR.data.kerugianNegara(true);
 			} else {
-				selfR.data.kerugianNegaraCbk(false);
+				selfR.data.kerugianNegara(false);
 			}
 			
 		});
