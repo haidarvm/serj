@@ -135,8 +135,20 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				}
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
-					delete kertasKerjaTemuan.data.rekomendasi;
+					var rekomendasi = _.map(kertaskerjaTemuan.data.rekomendasi(), function(item){
+						var itemRekomendasi = {
+							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
+							uraian_rekomendasi: item.data.uraianRekomendasi(),
+							kerugian_negara: item.data.kerugianNegara(),
+							nilai_rekomendasi: item.data.nilai_rekomendasi()
+						}
+						return itemRekomendasi;
+					});
+					console.debug("rekomendasi ");
+					console.debug(itemRekomendasi);
+					
 					var itemKkt = {
+						lhp_id: kertasKerjaTemuan.data.lhpId(),
 						jenis_temuan: jenisTemuan,
 						no_temuan: '',
 						kode_temuan_id: kertasKerjaTemuan.data.kodeTemuanId(),
