@@ -59,7 +59,7 @@
 										<div class="form-group">
 											<label for="exampleInputFile" class="col-sm-3 control-label">Upload Cover<star>*</star></label>
 											<div class="col-sm-9">
-												<input type="file" name="file" id="exampleInputFile">
+												<!-- <input type="file" name="file" id="exampleInputFile"> -->
 											</div>
 										</div>
 									</fieldset>

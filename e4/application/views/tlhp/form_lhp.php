@@ -150,7 +150,7 @@
 			<div class="form-group">
 				<label for="exampleInputFile" class="col-sm-12 control-label t-left">UPLOAD COVER<star>*</star></label>
 				<div class="col-sm-10">
-					<input type="file" id="exampleInputFile">
+					<!-- <input type="file" id="exampleInputFile"> -->
 				</div>
 			</div>
 		</div>
