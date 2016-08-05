@@ -2,9 +2,9 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     $(function(){
     	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
     			{
-    				title:{
-    					text: "TLHP"
-    				},
+//    				title:{
+//    					text: "TLHP"
+//    				},
     		                animationEnabled: true,
     				legend:{
     					verticalAlign: "bottom",
@@ -35,9 +35,9 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     $(function(){
     	var kerugian = new CanvasJS.Chart("kerugian",
     			{
-    				title:{
-    					text: "KERUGIAN KEUANGAN NEGARA"
-    				},
+//    				title:{
+//    					text: "KERUGIAN KEUANGAN NEGARA"
+//    				},
     		                animationEnabled: true,
     				legend:{
     					verticalAlign: "bottom",
