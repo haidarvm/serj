@@ -337,9 +337,8 @@ class MLhp extends CI_Model {
 		return $this->db->query($query)->result();
 	}
 	
-	public function insert() {
-//		$this->db->trans_start();
-//		$this->db->trans_complete();
+	public function insertBatchRekomendasi($arrRekomendasi) {
+		$this->db->insert_batch("rekomendasi", $arrRekomendasi);
 	}
 
 }
