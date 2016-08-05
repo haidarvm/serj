@@ -133,7 +133,7 @@ class Restlhp extends REST_Controller {
 					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
 					'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
 					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
-					'user_id' => 5
+					'user_id' => $this->session->userdata('user_id')
 				));
 				
 				if (isset($kktId)) {
