@@ -215,7 +215,8 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<input type="number" class="form-control border-input" value="value: data.nilaiRekomendasi"/>
+												<input type="number" class="form-control border-input" 
+												data-bind="value: data.nilaiRekomendasi"/>
 											</td>
 											<td>
 												<select class="form-control">

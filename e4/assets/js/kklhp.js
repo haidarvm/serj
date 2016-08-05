@@ -136,6 +136,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
 					var rekomendasi = _.map(kertasKerjaTemuan.data.rekomendasi(), function(item){
+						console.debug(ko.toJSON(item.data));
 						var itemRekomendasi = {
 							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
 							uraian_rekomendasi: item.data.uraianRekomendasi(),
