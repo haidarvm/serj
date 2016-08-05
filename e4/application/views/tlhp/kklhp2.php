@@ -295,26 +295,19 @@
 		"shim": {
 			"tlhp" : {"deps": ["jquery"]},
             "bootstrap" : {deps: ["jquery"]},
-<<<<<<< HEAD
             "select2" : {deps: ["jquery"]},
             //masih suka bermasalah
 //            "papertlhp" : {"deps": ["jquery","bootstrap"]},
-=======
             "select2" : {deps: ["jquery"]}
->>>>>>> 7676b8e8d4d6c2378ff8c050e788ce4190507a7c
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
         	"jquery": site_url+"assets/js/jquery-2.1.4.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
             "select2": site_url+ "assets/js/select2.min",
-<<<<<<< HEAD
          	"knockout": site_url+"assets/js/knockout-3.2.0",
          	"underscore": site_url+"assets/js/underscore",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
-=======
-         	"knockout": site_url+"assets/js/knockout-3.2.0"
->>>>>>> 7676b8e8d4d6c2378ff8c050e788ce4190507a7c
 		}
 	});
 	requirejs(["jspath/kklhp"]);
