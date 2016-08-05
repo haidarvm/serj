@@ -111,46 +111,57 @@ class Restlhp extends REST_Controller {
 	}
 	
 	public function kklhp_post() {
-		$postLhp = $this->post('lhp');
-		
-		$this->load->model('Mlhp', 'mlhp');
-		$dataKertasKejaTemuan = array();
-		
-		$postKertasKerjaTemuan = $this->post('kertasKerjaTemuan');
-		//TODO: seharusnya ini dalam satu transaksi
-		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
-			$kktId = $this->mlhp->insertKKLHP(array(
-				'lhp_id' => $postLhp['lhp_id'],
-				'jenis_temuan' => $kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan'],
-				'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
-				'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
-				'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
-				'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
-				'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
-				'user_id' => 5
-			));
-			
-			if (isset($kktId)) {
-				$dataRekomendasi = array();
-				$postRekomendasi = $kertasKerjaTemuan['rekomendasi'];
-				foreach ($postRekomendasi as $rekomendasi) {
-					array_push($dataRekomendasi, array(
-						"kertas_kerja_id" => $kktId,
-						"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
-						"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
-						"kerugian_negara" => $rekomendasi["kerugian_negara"],
-						"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
-					));
-				}
-				$this->mlhp->insertBatchRekomendasi($dataRekomendasi);				
+		$this->load->library("session");
+		try {
+			if (!$this->session->has_userdata('user_id')) {
+				throw new Exception('Access Denied');
 			}
 			
-		}
+			$postLhp = $this->post('lhp');
 		
-		$dataResponse = array(
-			'message' => 'data telah disimpan'
-		);
-		$this->response($dataResponse, 201);
+			$this->load->model('Mlhp', 'mlhp');
+			$dataKertasKejaTemuan = array();
+			
+			$postKertasKerjaTemuan = $this->post('kertasKerjaTemuan');
+			//TODO: seharusnya ini dalam satu transaksi
+			foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
+				$kktId = $this->mlhp->insertKKLHP(array(
+					'lhp_id' => $postLhp['lhp_id'],
+					'jenis_temuan' => $kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan'],
+					'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
+					'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
+					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
+					'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
+					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
+					'user_id' => 5
+				));
+				
+				if (isset($kktId)) {
+					$dataRekomendasi = array();
+					$postRekomendasi = $kertasKerjaTemuan['rekomendasi'];
+					foreach ($postRekomendasi as $rekomendasi) {
+						array_push($dataRekomendasi, array(
+							"kertas_kerja_id" => $kktId,
+							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
+							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+							"kerugian_negara" => $rekomendasi["kerugian_negara"],
+							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
+						));
+					}
+					$this->mlhp->insertBatchRekomendasi($dataRekomendasi);				
+				}
+				
+			}
+			
+			$dataResponse = array(
+				'message' => 'data telah disimpan'
+			);
+			$this->response($dataResponse, 201);
+		} catch (Exception $ex) {
+			$this->response(array(
+				'message' => $ex->getMessage()
+			), 400);
+		}
 	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
