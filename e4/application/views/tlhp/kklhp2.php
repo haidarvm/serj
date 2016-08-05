@@ -114,7 +114,8 @@
 											</td>
 											<td>
 												<!-- uraian temuan -->
-												<textarea class="form-control border-input"></textarea>
+												<textarea class="form-control border-input" data-bind="value: data.uraianTemuan">
+												</textarea>
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
@@ -123,11 +124,15 @@
 											</td>
 											<td>
 												<!-- uraian sebab -->
-												<textarea class="form-control border-input"></textarea>
+												<textarea class="form-control border-input" data-bind="value: data.uraianSebab">
+												</textarea>
 											</td>
 											<td>
 												<!-- nilai -->
-												<textarea class="form-control border-input"></textarea>
+<!--												<textarea class="form-control border-input" data-bind="value: data.nilaiTemuan">-->
+<!--												</textarea>-->
+												<input type="number" class="form-control border-input" 
+												data-bind="value: data.nilaiTemuan" style="width: 200px"/>
 											</td>
 											<!-- Rekomendasi -->
 											<td>
@@ -137,19 +142,23 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeRekomendasi: true"  style="width: 300px">
+												data-bind="kodeRekomendasi: true, value: data.firstKodeRekomendasiId"  style="width: 300px">
 												</select>
 											</td>
 											<td>
 												<!-- uraian rekomendasi -->
-												<textarea class="form-control border-input"></textarea>
+												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
+												</textarea>
 											</td>
 											<td>
-												<input type="checkbox"/>
+												<input type="checkbox" data-bind="checked: data.firstKerugianNegaraCbk"/>
 											</td>
 											<td>
 												<!-- nilai -->
-												<textarea class="form-control border-input"></textarea>
+<!--												<textarea class="form-control border-input" value="value: data.firstNilaiRekomendasi">-->
+<!--												</textarea>-->
+												<input type="number" class="form-control border-input" 
+												data-bind="value: data.firstNilaiRekomendasi" style="width: 200px"/>
 											</td>
 											<td>
 												<select class="form-control">
@@ -192,17 +201,21 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeRekomendasi: true"  style="width: 300px">
+												data-bind="kodeRekomendasi: true, value: data.kodeRekomendasiId"  style="width: 300px">
 												</select>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- uraian rekomendasi -->
+												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
+												</textarea>
 											</td>
 											<td>
-												<input type="checkbox"/>
+												<!-- kerugian negara -->
+												<input type="checkbox" data-bind="checked: data.kerugianNegaraCbk"/>
 											</td>
 											<td>
-												<input type="text" class="form-control border-input"/>
+												<!-- nilai -->
+												<textarea class="form-control border-input" value="value: data.nilaiRekomendasi"></textarea>
 											</td>
 											<td>
 												<select class="form-control">
@@ -283,7 +296,8 @@
 			"tlhp" : {"deps": ["jquery"]},
             "bootstrap" : {deps: ["jquery"]},
             "select2" : {deps: ["jquery"]},
-            "papertlhp" : {"deps": ["jquery","bootstrap"]},
+            //masih suka bermasalah
+//            "papertlhp" : {"deps": ["jquery","bootstrap"]},
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -291,7 +305,8 @@
             "bootstrap": site_url+ "assets/js/bootstrap.min",
             "select2": site_url+ "assets/js/select2.min",
          	"knockout": site_url+"assets/js/knockout-3.2.0",
-         	"papertlhp": site_url + "assets/js/paper-dashboard"
+         	"underscore": site_url+"assets/js/underscore",
+//         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
 	requirejs(["jspath/kklhp"]);

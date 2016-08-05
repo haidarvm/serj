@@ -1,4 +1,5 @@
-define(["jquery", "knockout", "bootstrap","select2", "papertlhp"], function($, ko){
+define(["jquery", "knockout","underscore",  "bootstrap","select2", 
+        ], function($, ko, _){
 	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
@@ -10,8 +11,18 @@ define(["jquery", "knockout", "bootstrap","select2", "papertlhp"], function($, k
 			kodeRekomendasiId: ko.observable(),
 			uraianRekomendasi: ko.observable(),
 			kerugianNegara: ko.observable(),
+			kerugianNegaraCbk: ko.observable(false),
 			nilaiRekomendasi: ko.observable(),
 		}
+		
+		selfR.data.kerugianNegaraCbk.subscribe(function(newVal){
+			if (newVal == true) {
+				selfR.data.kerugianNegaraCbk(true);
+			} else {
+				selfR.data.kerugianNegaraCbk(false);
+			}
+			
+		});
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -41,8 +52,27 @@ define(["jquery", "knockout", "bootstrap","select2", "papertlhp"], function($, k
 			nilaiTidakTlAlasan: ko.observable(),
 			userId: ko.observable(),
 			
-			rekomendasi: ko.observableArray([])
+			
+			rekomendasi: ko.observableArray([]),
+			
+			firstKodeRekomendasiId: ko.observable(),
+			firstUraianRekomendasi: ko.observable(),
+			firstKerugianNegara: ko.observable(false),
+			firstKerugianNegaraCbk: ko.observable(false),
+			firstNilaiRekomendasi: ko.observable(),
 		}
+		
+		selfK.data.firstKerugianNegaraCbk.subscribe(function(newVal){
+			console.debug('kerugian negara '+ newVal)
+			if (newVal == true) {
+				selfK.data.firstKerugianNegara(true);
+			} else {
+				selfK.data.firstKerugianNegara(false);
+			}  
+			
+				
+				
+		});
 		
 		selfK.addRow = function() {
 			console.info('add rekomendasi')
@@ -86,7 +116,9 @@ define(["jquery", "knockout", "bootstrap","select2", "papertlhp"], function($, k
 		var self = this;
 		
 		self.jenisTemuan = ko.observableArray([]);
-		
+		self.data = {
+				
+		}
 		self.init = function() {
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
@@ -94,11 +126,42 @@ define(["jquery", "knockout", "bootstrap","select2", "papertlhp"], function($, k
 		}
 		
 		self.doInsert = function() {
-			var insertToServer = {};
+			var insertToServer = [];
+			var errorList = [];
 			for (var i=0; i<self.jenisTemuan().length; i++) {
-				var jenisTemuan = self.jenisTemuan()[i].data;
-				console.debug(jenisTemuan);
+				var jenisTemuan = {
+					kodeTemuan: self.jenisTemuan()[i].data.kodeTemuan(),
+					jenisTemuan: self.jenisTemuan()[i].data.jenisTemuan(),
+				}
+				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
+				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
+					delete kertasKerjaTemuan.data.rekomendasi;
+					var itemKkt = {
+						jenis_temuan: jenisTemuan,
+						no_temuan: '',
+						kode_temuan_id: kertasKerjaTemuan.data.kodeTemuanId(),
+						uraian_temuan: kertasKerjaTemuan.data.uraianTemuan(),
+						kode_sebab_id: kertasKerjaTemuan.data.kodeSebabId(),
+						uraian_sebab: kertasKerjaTemuan.data.uraianSebab(),
+						nilai_temuan: kertasKerjaTemuan.data.nilaiTemuan(),
+						rekomendasi: [{
+							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
+							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
+							kerugian_negara: kertasKerjaTemuan.data.firstFirstKergianNegara(),
+							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
+						}]
+					}
+					if (itemKkt.kode_temuan_id !== undefined &&
+						itemKkt.uraian_temuan !== undefined &&
+						itemKkt.kode_sebab_id !== undefined &&
+						itemKkt.uraian_sebab !== undefined &&
+						itemKkt.nilai_temuan !== undefined) {
+						insertToServer.push(itemKkt);
+					}
+				});
 			}
+			
+			console.debug(insertToServer);
 		}
 	}
 	
