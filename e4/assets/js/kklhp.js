@@ -10,7 +10,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			kertasKerjaId: ko.observable(),
 			kodeRekomendasiId: ko.observable(),
 			uraianRekomendasi: ko.observable(),
-			kerugianNegara: ko.observable(),
+			kerugianNegara: ko.observable(false),
 			kerugianNegaraCbk: ko.observable(false),
 			nilaiRekomendasi: ko.observable(),
 		}
