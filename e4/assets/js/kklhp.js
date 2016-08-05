@@ -135,7 +135,14 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				}
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
-					var rekomendasi = _.map(kertasKerjaTemuan.data.rekomendasi(), function(item){
+					var listRekomendasi = [{
+							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
+							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
+							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
+							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
+					}];
+					
+					_.each(kertasKerjaTemuan.data.rekomendasi(), function(item){
 						console.debug(ko.toJSON(item.data));
 						var itemRekomendasi = {
 							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
@@ -143,10 +150,9 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 							kerugian_negara: item.data.kerugianNegara(),
 							nilai_rekomendasi: item.data.nilaiRekomendasi()
 						}
-						return itemRekomendasi;
+						listRekomendasi.push(itemRekomendasi);
 					});
-					console.debug("rekomendasi ");
-					console.debug(rekomendasi);
+					
 					
 					var itemKkt = {
 						lhp_id: kertasKerjaTemuan.data.lhpId(),
@@ -157,13 +163,11 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						kode_sebab_id: kertasKerjaTemuan.data.kodeSebabId(),
 						uraian_sebab: kertasKerjaTemuan.data.uraianSebab(),
 						nilai_temuan: kertasKerjaTemuan.data.nilaiTemuan(),
-						rekomendasi: [{
-							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
-							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
-							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
-							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
-						}]
+						rekomendasi: listRekomendasi
 					}
+					
+//					console.info(itemKkt.listRekomendasi);
+					
 					if (itemKkt.kode_temuan_id !== undefined &&
 						itemKkt.uraian_temuan !== undefined &&
 						itemKkt.kode_sebab_id !== undefined &&
@@ -174,6 +178,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				});
 			}
 			
+			console.info("insert to server");
 			console.debug(insertToServer);
 		}
 	}
