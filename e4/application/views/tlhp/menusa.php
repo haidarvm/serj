@@ -256,8 +256,8 @@
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
     		"notify": {"deps": ["jquery"]},
-    		"canvasjs" : {"deps": ["jquery"]},
-    		"papertlhp" : {"deps": ["jquery","bootstrap"]},
+    		"canvasjs" : {"deps": ["jquery"]}
+//     		"papertlhp" : {"deps": ["jquery","bootstrap"]},
 //    		"demo" : {"deps": ["jquery","bootstrap","paper-dashboard"]},
         },
         "paths": {
@@ -267,7 +267,7 @@
             "bootstrap": site_url + "assets/js/bootstrap.min",
             "canvasjs": site_url + "assets/js/jquery.canvasjs.min",
 //            "demo": site_url + "assets/js/demo",
-            "papertlhp": site_url + "assets/js/paper-dashboard"
+//             "papertlhp": site_url + "assets/js/paper-dashboard"
         }
     });
     requirejs(["jspath/menusa"]);

@@ -56,5 +56,3 @@ $route['dashboard'] = "dashboard/dashboard";
 $route['404_override'] = 'home/error';
 $route['translate_uri_dashes'] = FALSE;
 
-// REST API
-$route['api/lhp']['GET'] = 'tlhp/Addlhp/get_all_lhp';

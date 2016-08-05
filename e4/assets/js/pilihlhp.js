@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "papertlhp"], function($, ko){
+define(["jquery", "knockout"], function($, ko){
 	var getUri = window.location;
 	var baseUri = getUri.protocol+"//"+ getUri.host + "/";
 	
