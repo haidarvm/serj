@@ -152,7 +152,7 @@
 												<textarea class="form-control border-input"></textarea>
 											</td>
 											<td>
-												<select class="form-control">
+												<select class="form-control" style="width: 300px">
 													<option>-- departement --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
@@ -205,7 +205,7 @@
 												<input type="text" class="form-control border-input"/>
 											</td>
 											<td>
-												<select class="form-control">
+												<select class="form-control" style="width: 100px">
 													<option>-- departement --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
