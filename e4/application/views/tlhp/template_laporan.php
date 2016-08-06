@@ -20,7 +20,7 @@
 									<fieldset>
 										<div class="form-group">
 											<label class="col-sm-3 control-label">Judul Laporan</label>
-											<div class="col-sm-9">
+											<div class="col-sm-8">
 												<input type="text" name="judul_laporan" class="form-control" value="<?php echo !empty($template) ? $template->judul_laporan : "" ?>">
 											</div>
 										</div>
@@ -29,7 +29,7 @@
 									<fieldset>
 										<div class="form-group">
 											<label class="col-sm-3 control-label">Nomor Laporan</label>
-											<div class="col-sm-9">
+											<div class="col-sm-8">
 												<input type="text" name="nomor_laporan" class="form-control" value="<?php echo !empty($template) ? $template->nomor_laporan : "" ?>">
 											</div>
 										</div>
@@ -37,7 +37,7 @@
 									<fieldset>
 										<div class="form-group">
 											<label class="col-sm-3 control-label">Periode Laporan</label>
-											<div class="col-sm-9">
+											<div class="col-sm-8">
 												<input type="text" name="periode_laporan" class="form-control" value="<?php echo !empty($template) ? $template->periode_laporan : "" ?>">
 											</div>
 										</div>
@@ -48,7 +48,7 @@
 									<fieldset>
 										<div class="form-group">
 											<label class="col-sm-3 control-label">Tanggal Laporan</label>
-											<div class="col-sm-9">
+											<div class="col-sm-8">
 												<div class="input-group">
 													<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" name="tanggal_laporan" class="form-control border-input date-input-big datepicker" data-bind="datepicker: true, selectedDate: data.startTanggalLaporan" value="<?php echo !empty($template) ? indoDateFormat($template->tanggal_laporan) : "" ?>" required="true">
 												</div>
@@ -58,7 +58,7 @@
 									<fieldset>
 										<div class="form-group">
 											<label for="exampleInputFile" class="col-sm-3 control-label">Upload Cover<star>*</star></label>
-											<div class="col-sm-9">
+											<div class="col-sm-8">
 												<input type="file" name="file" id="exampleInputFile">
 											</div>
 										</div>
@@ -70,12 +70,14 @@
 
 							<div class="row top-space">
 								<div class="col-md-12 top-space">
-									<fieldset>
-										<center>
-											<b>KATA PENGANTAR</b>
-										</center>
-										<textarea name="kata_pengantar" id="summernote" height="700px"><?php echo !empty($template) ? $template->kata_pengantar : "" ?></textarea>
-									</fieldset>
+									<div class="col-md-12">
+										<fieldset>
+											<center>
+												<b>KATA PENGANTAR</b>
+											</center>
+											<textarea name="kata_pengantar" id="summernote" height="700px"><?php echo !empty($template) ? $template->kata_pengantar : "" ?></textarea>
+										</fieldset>
+									</div>
 								</div>
 								<!-- <div class="col-md-12 top-space">
 									<fieldset>
