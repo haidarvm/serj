@@ -180,7 +180,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			
 			var kklhpData = {
 					'lhp': {
-						'lhp_id': 19
+						'lhp_id': 18
 					}, 
 					'kertasKerjaTemuan': kktList
 				}
@@ -201,9 +201,10 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				},
 				success: function(data) {
 					console.info('kklhp saved');
+					alert('Data sudah disimpan');
 //					refreshManusTable();
 					if (actionType == "POST") {
-						alert('Data sudah disimpan');
+						
 //						self.resetData();
 //						$("#notify").notify("Data telah disimpan", "alert alert-info");
 					} else {

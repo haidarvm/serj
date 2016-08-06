@@ -163,6 +163,22 @@ class Restlhp extends REST_Controller {
 			), 400);
 		}
 	}
+	
+	public function lhp_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$lhp_id = $this->get("lhp_id");
+		$lhp = $this->mlhp->getbyid($lhp_id);
+		$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);
+		
+		$dataResponse = array(
+			'lhp' => $lhp,
+			'kertasKerjaTemuan' => $kkt,
+			'count' => count($kkt)
+		);
+		$this->response(array(
+			'data' => $dataResponse
+		), 200);
+	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		
