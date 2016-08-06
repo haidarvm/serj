@@ -170,10 +170,27 @@ class Restlhp extends REST_Controller {
 		$lhp = $this->mlhp->getbyid($lhp_id);
 		$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);
 		
+		$kktIds = array();
+		foreach ($kkt as $kktRow) {
+			array_push($kktIds, $kktRow->kertas_kerja_id);
+		}
+		$kktUniqueIds = array_unique($kktIds);
+		$rekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktUniqueIds);
+		
+		foreach ($kkt as $kktRow){
+			$kktRekomendasi = array();
+			foreach ($rekomendasi as $rekRow) {
+				if ($rekRow->kertas_kerja_id == $kktRow->kertas_kerja_id) {
+					array_push($kktRekomendasi, $rekRow);
+				}
+			}
+			$kktRow->rekomendasi = $kktRekomendasi;
+		}
+		
 		$dataResponse = array(
 			'lhp' => $lhp,
 			'kertasKerjaTemuan' => $kkt,
-			'count' => count($kkt)
+			'totalKertasKerjaTemuan' => count($kkt),
 		);
 		$this->response(array(
 			'data' => $dataResponse
