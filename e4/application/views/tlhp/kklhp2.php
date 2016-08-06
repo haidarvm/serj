@@ -120,13 +120,14 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeSebab: true, value: data.kodeSebabId, options: kodeSebab, optionsText: 'text'">
+												data-bind="kodeSebab: true, value: data.kodeSebabId, uraianSebab: data.uraianSebab, 
+												listKodeSebab: kodeSebab,
+												options: kodeSebab, optionsText: 'text'">
 												</select>
 											</td>
 											<td>
 												<!-- uraian sebab -->
-												<textarea class="form-control border-input" data-bind="value: data.uraianSebab">
-												</textarea>
+												<textarea class="form-control border-input" data-bind="value: data.uraianSebab"></textarea>
 											</td>
 											<td>
 												<!-- nilai -->
@@ -202,7 +203,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeRekomendasi: true, value: data.kodeRekomendasiId">
+												data-bind="kodeRekomendasi: true, value: data.kodeRekomendasiId, options: kodeSebab, optionsText: 'text'">
 												</select>
 											</td>
 											<td>
