@@ -8,6 +8,7 @@
 						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp : "undefined"; ?></p>
 						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan: "undefined"; ?></p>
 					</div>
+					<input type="text" id="lhp_id" value="<?php echo isset($lhp->lhp_id) ? $lhp->lhp_id : null; ?>"/>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
 							<table id="judul-lhp" class="table table-bordered">
@@ -109,7 +110,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeTemuan: true, value: data.kodeTemuanId" style="width: 300px">
+												data-bind="kodeTemuan: true, value: data.kodeTemuanId, options: kodeTemuan, optionsText: 'text'" style="width: 300px">
 												</select>
 											</td>
 											<td>
@@ -119,7 +120,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeSebab: true, value: data.kodeSebabId"  style="width: 300px">
+												data-bind="kodeSebab: true, value: data.kodeSebabId, options: kodeSebab, optionsText: 'text'"  style="width: 300px">
 												</select>
 											</td>
 											<td>
@@ -292,6 +293,9 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div id="form_edit">
+	<h1>Form Edit</h1>
 </div>
 <script type="text/javascript">
 	require.config({
