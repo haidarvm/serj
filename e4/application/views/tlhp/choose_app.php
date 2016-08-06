@@ -52,7 +52,7 @@
 				<div class="col-md-3 picks">
 					<form id="<?=$_ikp?>" action="<?=site_url();?>auth/login" method="post">
 						<div class="inside">
-							<img src="<?php echo base_url();?>assets/img/ikp-logo.png" alt="" width="128" height="168" border="0" />
+							<img src="<?php echo base_url();?>assets/img/insp-logo.png" alt="" width="128" height="168" border="0" />
 							<h3>INSPEKTORAT KEMENTERIAN PANRB</h3>
 							<a href="javascript:;" onclick="document.getElementById('<?=$_ikp?>').submit();">LOGIN</a>
 							<input type="hidden" name="account_type" value="<?=$_ikp?>" />

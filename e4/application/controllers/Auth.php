@@ -44,7 +44,7 @@ class Auth extends MY_Controller {
 		$getLogo = "";
 		switch ($accountType) {
 			case "_IKP_" :
-				$getLogo = "assets/img/ikp-logo.png";
+				$getLogo = "assets/img/insp-logo.png";
 				break;
 			case "_BPK_" :
 				$getLogo = "assets/img/bpk-logo.png";
