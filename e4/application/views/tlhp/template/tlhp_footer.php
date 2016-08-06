@@ -33,7 +33,7 @@
             "sidebar-collapse": site_url+"assets/js/sidebar-collapse" 
         }
     });
-    requirejs(["jspath/sidebar-collapse"]);
+    requirejs(["jspath/sidebar-collapses"]);
 </script>
 
 </body>
