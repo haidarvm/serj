@@ -110,7 +110,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeTemuan: true, value: data.kodeTemuanId, options: kodeTemuan, optionsText: 'text'" style="width: 300px">
+												data-bind="kodeTemuan: true, value: data.kodeTemuanId, options: kodeTemuan, optionsText: 'text'">
 												</select>
 											</td>
 											<td>
@@ -120,7 +120,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeSebab: true, value: data.kodeSebabId, options: kodeSebab, optionsText: 'text'"  style="width: 300px">
+												data-bind="kodeSebab: true, value: data.kodeSebabId, options: kodeSebab, optionsText: 'text'">
 												</select>
 											</td>
 											<td>
@@ -162,8 +162,8 @@
 												data-bind="value: data.firstNilaiRekomendasi" style="width: 200px"/>
 											</td>
 											<td>
-												<select class="form-control">
-													<option>-- departement --</option>
+												<select class="form-control select-simple border-input">
+													<option>-- Departement --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
 													<option>DEPUTI III</option>

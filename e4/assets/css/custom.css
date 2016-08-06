@@ -132,7 +132,8 @@ button.tambah {
     border: 0 none;
     color: #ffffff;
     display: block;
-    padding: 4px 3px 5px;
+    padding: 4px 3px 4px;
+	height: 25px;
     width: 100%;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
@@ -147,7 +148,8 @@ button.ngurang {
     border: 0 none;
     color: #ffffff;
     display: block;
-    padding: 4px 3px 5px;
+    padding: 4px 3px 4px;
+	height: 25px;
     width: 100%;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
@@ -160,6 +162,9 @@ button.ngurang {
 .select2-container--default .select2-selection--single {
 	background-color: #f3f2ee !important;
 	border: 1px solid #e8e7e3 !important;
+}
+.select-simple {
+	width: 150px;
 }
 
 
@@ -841,6 +846,9 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	margin: 50px 0 0;
 }
 
+.main-panel.sidebar-hidden {
+	width: calc(100% - 70px) !important;
+}
 
 /* @media ( max-width : 480px) {
 	.modal-dialog {
