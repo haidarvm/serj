@@ -198,6 +198,19 @@ class Restlhp extends REST_Controller {
 			'data' => $dataResponse
 		), 200);
 	}
+	
+	public function kklhp_put() {
+		$postLhp = $this->post('lhp');
+		
+		$this->load->model('Mlhp', 'mlhp');
+		$dataKertasKejaTemuan = array();
+		
+		$postKertasKerjaTemuan = $this->post('kertasKerjaTemuan');
+		$updatedData = array();
+		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
+			
+		}
+	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		

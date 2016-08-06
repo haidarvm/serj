@@ -47,6 +47,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		selfK.urutan = ko.observable(urutan);
 		
 		selfK.data = {
+			kertasKerjaId: ko.observable(),
 			lhpId: ko.observable(),
 			jenisTemuan: ko.observable(),
 			noTemuan: ko.observable(),
@@ -95,10 +96,11 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			selfK.data.rekomendasi.remove(vModel);
 		}
 		
-		selfK.initData = function(lhpId, jenisTemuan, noTemuan, kodeTemuanId, 
+		selfK.initData = function(kertasKerjaId, lhpId, jenisTemuan, noTemuan, kodeTemuanId, 
 				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, 
 				firstKodeRekomendasiId, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi) {
+			selfK.data.kertasKerjaId();
 			selfK.data.lhpId(lhpId);
 			selfK.data.jenisTemuan(jenisTemuan);
 			selfK.data.noTemuan(noTemuan);
@@ -288,7 +290,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 									newKkt = new KertasKerjaTemuanViewModel(urutan, false)
 								}
 								
-								newKkt.initData(a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
+								newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
 										a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
 										a.uraian_sebab, a.nilai_temuan, 
 										a.rekomendasi[0].kode_rekomendasi_id,
