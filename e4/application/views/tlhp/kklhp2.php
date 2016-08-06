@@ -143,8 +143,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeRekomendasi: true, value: data.firstKodeRekomendasiId, options: firstKodeRekomendasi, optionsText: 'text'"  
-												style="width: 300px">
+												data-bind="kodeRekomendasi: true, value: data.firstKodeRekomendasiId, options: firstKodeRekomendasi, optionsText: 'text'">  
 												</select>
 											</td>
 											<td>
@@ -203,7 +202,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input"
-												data-bind="kodeRekomendasi: true, value: data.kodeRekomendasiId"  style="width: 300px">
+												data-bind="kodeRekomendasi: true, value: data.kodeRekomendasiId">
 												</select>
 											</td>
 											<td>

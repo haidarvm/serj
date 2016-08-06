@@ -20,5 +20,21 @@
 </div>
 <!-- wrapper -->
 
+<script type="text/javascript">
+	 requirejs.config({
+        "shim": {
+            "bootstrap": {"deps": ["jquery"]}
+        },
+        "paths": {
+            "jspath": site_url+"assets/js/",
+            "jquery": site_url+"assets/js/jquery-2.1.4.min",
+            "knockout": site_url+"assets/js/knockout-3.2.0",
+            "bootstrap": site_url+"assets/js/bootstrap.min",
+            "sidebar-collapse": site_url+"assets/js/sidebar-collapse" 
+        }
+    });
+    requirejs(["jspath/sidebar-collapse"]);
+</script>
+
 </body>
 </html>
