@@ -85,11 +85,11 @@ var site_url = "<?=base_url()?>";
 				</ul>
 			</div>
 		</div>
-		<div class="main-panel">
+		<div class="main-panel" id="wrapper">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-minimize">
-						<a class="navbar-brand navbar-minimize" href="#" id="minimizeSidebar"> <i class="ti-menu"></i>
+						<a id="menu-toggle" href="#" class="btn-menu toggle"> <i class="ti-menu"></i>
 						</a>
 					</div>
 					<div class="navbar-header">
