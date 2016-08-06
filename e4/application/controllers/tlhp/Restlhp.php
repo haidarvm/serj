@@ -154,7 +154,7 @@ class Restlhp extends REST_Controller {
 			}
 			
 			$dataResponse = array(
-				'message' => 'data telah disimpan'
+				'message' => 'data suda disimpan'
 			);
 			$this->response($dataResponse, 201);
 		} catch (Exception $ex) {

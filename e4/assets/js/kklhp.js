@@ -190,19 +190,20 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		
 		self.postKklhp = function(actionType, postData) {
 			$.ajax({
-				type: actionType,
-				data: postData,
+				type: 'POST',
+				data: JSON.stringify(postData),
 				contentType: 'application/json',
 				url: site_url + "tlhp/restlhp/kklhp",
-				dataType: 'json',
+//				dataType: 'json',
 				beforeSend: function(){
 					console.info('attempting to contact server to save data kklhp');
 					$('#btnSave').attr('disabled', 'disabled');
 				},
 				success: function(data) {
 					console.info('kklhp saved');
-					refreshManusTable();
+//					refreshManusTable();
 					if (actionType == "POST") {
+						alert('Data sudah disimpan');
 //						self.resetData();
 //						$("#notify").notify("Data telah disimpan", "alert alert-info");
 					} else {
@@ -211,7 +212,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				},
 				error: function(xhr, msg) {
 //					self.userNotif("Internal Server Error");
-					$("#notify").notify("Internal Server Error", "alert alert-error");
+//					$("#notify").notify("Internal Server Error", "alert alert-error");
+					alert("Internal Server Error..");
 				}
 			}).always(function(){
 				$('#btnSave').removeAttr('disabled');

@@ -155,6 +155,7 @@ class MLhp extends CI_Model {
 	}
 
 	function getAllKodeRekomendasi() {
+		$this->db->select("kode_rekomendasi_id, kode_rekomendasi, uraian_rekomendasi");
 		$query = $this->db->get("kode_rekomendasi");
 		return checkRes($query);
 	}

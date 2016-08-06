@@ -66,7 +66,7 @@ define(["jquery", "knockout", "bootstrap",
 				}
 			}).always(function(){
 				$('#btnSave').removeAttr('disabled');
-			});;
+			});
     	}
     	
     	self.newUser = function() {
