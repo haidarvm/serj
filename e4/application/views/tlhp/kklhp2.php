@@ -295,9 +295,9 @@
 		</div>
 	</div>
 </div>
-<div id="form_edit">
-	<h1>Form Edit</h1>
-</div>
+<!--<div id="form_edit">-->
+<!--	<h1>Form Edit</h1>-->
+<!--</div>-->
 <script type="text/javascript">
 	require.config({
 		"shim": {
