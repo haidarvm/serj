@@ -23,6 +23,11 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			}
 			
 		});
+		
+		selfR.initData = function(rekomendasiId, kertasKerjaId, kodeRekomendasiId, 
+				uraianRekomendasi, kerugianNegara, nilaiRekomendasi) {
+			//selfR.data.rekomendasiId(rekomendasiId);
+		}
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -69,9 +74,6 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			} else {
 				selfK.data.firstKerugianNegara(false);
 			}  
-			
-				
-				
 		});
 		
 		selfK.addRow = function() {
@@ -82,6 +84,36 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		selfK.removeRow = function(vModel) {
 			selfK.data.rekomendasi.remove(vModel);
 		}
+		
+		selfK.initData = function(lhpId, jenisTemuan, noTemuan, kodeTemuanId, 
+				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, 
+				firstKodeRekomendasiId, firstOriUraianRekomendasi, firstUraianRekomendasi, 
+				firstKerugianNegara, firstNilaiRekomendasi) {
+			selfK.data.lhpId(lhpId);
+			selfK.data.jenisTemuan(jenisTemuan);
+			selfK.data.noTemuan(noTemuan);
+			selfK.data.kodeTemuanId(kodeTemuanId);
+			selfK.data.uraianTemuan(uraianTemuan);
+			selfK.data.kodeSebabId(kodeSebabId);
+			selfK.data.uraianSebab(uraianSebab);
+			selfK.data.nilaiTemuan(nilaiTemuan);
+			
+			selfK.data.firstKodeRekomendasiId(firstKodeRekomendasiId);
+			selfK.data.firstUraianRekomendasi(firstUraianRekomendasi);
+			selfK.data.firstKerugianNegara(firstKerugianNegara);
+			if (firstKerugianNegara == 1) {
+				selfK.data.firstKerugianNegaraCbk(true);
+			}
+			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
+			
+			selfK.kodeTemuan.push({id: kodeTemuanId, text: kodeTemuanId+'. '+deskripsi_temuan});
+			selfK.kodeSebab.push({id: kodeSebabId, text: kodeSebabId+'. '+uraianSebab});
+			selfK.firstKodeRekomendasi.push({id: firstKodeRekomendasiId, text: firstKodeRekomendasiId+'. '+firstOriUraianRekomendasi});
+		}
+		
+		selfK.kodeTemuan = ko.observableArray([]);
+		selfK.kodeSebab = ko.observableArray([]);
+		selfK.firstKodeRekomendasi = ko.observableArray([]);
 		
 	}
 	
@@ -123,6 +155,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
+			self.loadLhp();
 		}
 		
 		self.doInsert = function() {
@@ -220,7 +253,62 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				$('#btnSave').removeAttr('disabled');
 			});
 		}
-	}
+		
+		self.loadLhp = function() {
+			var lhp_id = $('#lhp_id').val();
+//			console.debug('lhp_id '+ lhp_id);
+			$.ajax({
+				type: 'GET',
+				data: {'lhp_id': lhp_id},
+				contentType: 'application/json',
+				dataType: 'json',
+				url: site_url + "tlhp/restlhp/lhp",
+				beforeSend: function(){
+					console.info('attempting to load lhp data');
+				},
+				success: function(msg) {
+					console.debug(msg);
+					_.each(self.jenisTemuan(), function(item){
+						var kodeTemuan = item.data.kodeTemuan().toLowerCase();
+						console.info("---- kertas kerja temuan---");
+//						console.debug(msg.data.kertasKerjaTemuan);
+						var kkt = _.filter(msg.data.kertasKerjaTemuan, function(kktItem){
+							return kktItem.jenis_temuan == kodeTemuan; 
+						});
+						item.data.kertasKerjaTemuan.removeAll();
+						var urutan = 1;
+						_.each(kkt, function(a){
+							var newKkt;
+							if (urutan == 1) {
+								newKkt = new KertasKerjaTemuanViewModel(urutan, true)
+							} else {
+								newKkt = new KertasKerjaTemuanViewModel(urutan, false)
+							}
+							
+//							firstKodeRekomendasiId, firstUraianRekomendasi, firstKerugianNegara, firstNilaiRekomendasi
+							newKkt.initData(a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
+									a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
+									a.uraian_sebab, a.nilai_temuan, 
+									a.rekomendasi[0].kode_rekomendasi_id,
+									a.rekomendasi[0].ori_uraian_rekomendasi, 
+									a.rekomendasi[0].uraian_rekomendasi, 
+									a.rekomendasi[0].kerugian_negara, 
+									a.rekomendasi[0].nilai_rekomendasi);
+							item.data.kertasKerjaTemuan.push(newKkt);
+							
+							urutan++;
+						});
+//						console.debug(kkt);
+					});
+				},
+				error: function(xhr, msg) {
+					alert("Internal Server Error");
+				}
+			}).always(function(){
+				
+			});
+		}
+	} // end mainViewModel
 	
 	var vm = new MainViewModel();
 	
@@ -256,9 +344,14 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					error: function(e) {
 						console.info('error');
 					}
-				}
+				},
+//				placeholder: 'select one'
 			});
-		}
+			$.fn.select2.defaults.set("2", "default some text");
+		},
+//		update: function(element, valueAccessor, allBindings) {
+//			
+//		}
 	}
 	
 	ko.bindingHandlers.kodeSebab = {

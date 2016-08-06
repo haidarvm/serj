@@ -341,5 +341,34 @@ class MLhp extends CI_Model {
 	public function insertBatchRekomendasi($arrRekomendasi) {
 		$this->db->insert_batch("rekomendasi", $arrRekomendasi);
 	}
+	
+	public function getbyid($lhp_id) {
+		$this->db->where('lhp_id', $lhp_id);
+		return $this->db->get('lhp')->row();
+	}
+	
+	public function getAllKertasKerjaTemuan($lhp_id) {
+		$query = "SELECT kkt.kertas_kerja_id, kkt.lhp_id, kkt.jenis_temuan, 
+		kkt.kode_temuan_id, kt.kode_temuan AS deskripsi_temuan, kkt.uraian_temuan, 
+		kkt.kode_sebab_id, ks.uraian_sebab, 
+		kkt.nilai_temuan FROM {PRE}kertas_kerja_temuan AS kkt
+		INNER JOIN {PRE}kode_temuan AS kt ON kkt.kode_temuan_id = kt.kode_temuan_id
+		INNER JOIN {PRE}kode_sebab AS ks ON kkt.kode_sebab_id = ks.kode_sebab_id
+		WHERE kkt.lhp_id = ".$lhp_id;
+		return $this->db->query($query)->result();
+	}
+	
+	public function getAllRekomendasiByKktIds($kktids){
+		$reqIds = implode(", ", $kktids);
+		$query = "SELECT rek.rekomendasi_id, rek.kertas_kerja_id, rek.kode_rekomendasi_id, 
+		kode_rek.uraian_rekomendasi AS ori_uraian_rekomendasi, rek.uraian_rekomendasi, 
+		rek.kerugian_negara, rek.nilai_rekomendasi 
+		FROM {PRE}rekomendasi AS rek
+		INNER JOIN {PRE}kode_rekomendasi AS kode_rek 
+		ON rek.kode_rekomendasi_id = kode_rek.kode_rekomendasi_id 
+		WHERE kertas_kerja_id IN (".$reqIds.")";
+		return $this->db->query($query)->result();
+	} 
+	
 
 }
