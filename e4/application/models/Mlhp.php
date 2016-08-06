@@ -370,5 +370,7 @@ class MLhp extends CI_Model {
 		return $this->db->query($query)->result();
 	} 
 	
-
+	public function updateBatchKkt($arrKkt) {
+		$this->db->update_batch("kertas_kerja_temuan", $arrKkt, "kertas_kerja_id");
+	}
 }

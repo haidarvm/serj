@@ -242,13 +242,16 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		} // end do insert
 		
 		self.postKklhp = function(actionType, postData) {
-			$.ajax({
-				type: actionType,
-				data: JSON.stringify(postData),
-				contentType: 'application/json',
-				url: site_url + "tlhp/restlhp/kklhp",
+			if (actionType == "update") {
+				alert("Fungsi ini belum dapat digunakan");
+			} else {
+				$.ajax({
+					type: actionType,
+					data: JSON.stringify(postData),
+					contentType: 'application/json',
+					url: site_url + "tlhp/restlhp/kklhp",
 //				dataType: 'json',
-				beforeSend: function(){
+					beforeSend: function(){
 					console.info('attempting to contact server to save data kklhp');
 					$('#btnSave').attr('disabled', 'disabled');
 				},
@@ -256,14 +259,15 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					console.info('kklhp saved');
 					alert('Data sudah disimpan');
 					window.location = site_url+ "tlhp/menusa";
-					console.debug(window.location);
+//					console.debug(window.location);
 				},
 				error: function(xhr, msg) {
 					alert("Internal Server Error..");
 				}
-			}).always(function(){
-				$('#btnSave').removeAttr('disabled');
-			});
+				}).always(function(){
+					$('#btnSave').removeAttr('disabled');
+				});
+			}
 		}
 		
 		self.loadLhp = function() {

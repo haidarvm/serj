@@ -200,16 +200,34 @@ class Restlhp extends REST_Controller {
 	}
 	
 	public function kklhp_put() {
-		$postLhp = $this->post('lhp');
+		$postLhp = $this->put('lhp');
 		
 		$this->load->model('Mlhp', 'mlhp');
-		$dataKertasKejaTemuan = array();
-		
-		$postKertasKerjaTemuan = $this->post('kertasKerjaTemuan');
+		//TODO: harusnya dalam 1 transaksi
+		$postKertasKerjaTemuan = $this->put('kertasKerjaTemuan');
 		$updatedData = array();
+		$updatedRekomendasiData = array();
 		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
-			
+			if (isset($kertasKerjaTemuan["kertas_kerja_id"])) {
+				array_push($updatedData, array(
+					'kertas_kerja_id' => $kertasKerjaTemuan["kertas_kerja_id"],
+					'lhp_id' => $postLhp['lhp_id'],
+					'jenis_temuan' => $kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan'],
+					'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
+					'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
+					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
+					'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
+					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
+					'user_id' => $this->session->userdata('user_id')
+				));
+			} 
 		}
+//		$this->mlhp->updateBatchKkt($updatedData);
+		$this->response(array(
+			'data' => $postKertasKerjaTemuan,
+			'message' => 'Data berhasil diperbaharui',
+			'updateDateCount' => count($updatedData)
+		), 200);
 	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
