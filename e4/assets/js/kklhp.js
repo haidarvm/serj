@@ -245,18 +245,10 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				success: function(data) {
 					console.info('kklhp saved');
 					alert('Data sudah disimpan');
-//					refreshManusTable();
-					if (actionType == "POST") {
-						
-//						self.resetData();
-//						$("#notify").notify("Data telah disimpan", "alert alert-info");
-					} else {
-//						$('#userModal').modal('hide');
-					}
+					window.location = site_url+ "tlhp/menusa";
+					console.debug(window.location);
 				},
 				error: function(xhr, msg) {
-//					self.userNotif("Internal Server Error");
-//					$("#notify").notify("Internal Server Error", "alert alert-error");
 					alert("Internal Server Error..");
 				}
 			}).always(function(){
