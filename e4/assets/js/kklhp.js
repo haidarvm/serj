@@ -100,7 +100,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, 
 				firstKodeRekomendasiId, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi) {
-			selfK.data.kertasKerjaId();
+			selfK.data.kertasKerjaId(kertasKerjaId);
 			selfK.data.lhpId(lhpId);
 			selfK.data.jenisTemuan(jenisTemuan);
 			selfK.data.noTemuan(noTemuan);
@@ -200,6 +200,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					
 					
 					var itemKkt = {
+						kertas_kerja_id: kertasKerjaTemuan.data.kertasKerjaId(),
 						lhp_id: kertasKerjaTemuan.data.lhpId(),
 						jenis_temuan: jenisTemuan,
 						no_temuan: '',
@@ -230,12 +231,19 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					'kertasKerjaTemuan': kktList
 				}
 			console.debug(kklhpData);
-			self.postKklhp('POST', kklhpData);
+			var action = $('#action').val();
+			if (action == "update") {
+				action = "PUT";
+			} else {
+				action = "POST";
+			}
+			console.debug('action '+ action);
+			self.postKklhp(action, kklhpData);
 		} // end do insert
 		
 		self.postKklhp = function(actionType, postData) {
 			$.ajax({
-				type: 'POST',
+				type: actionType,
 				data: JSON.stringify(postData),
 				contentType: 'application/json',
 				url: site_url + "tlhp/restlhp/kklhp",

@@ -8,6 +8,8 @@
 						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp : "undefined"; ?></p>
 						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan: "undefined"; ?></p>
 					</div>
+					<!-- these are very importan, be carefull dont rename them -->
+					<input type="hidden" id="action" value="<?php echo isset($action) ? $action : null; ?>"/>
 					<input type="hidden" id="lhp_id" value="<?php echo isset($lhp->lhp_id) ? $lhp->lhp_id : null; ?>"/>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">
