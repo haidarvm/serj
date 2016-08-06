@@ -280,12 +280,12 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					console.debug(msg);
 					console.info('return from server lhpId '+ lhp_id);
 					console.debug(msg.data.kertasKerjaTemuan.length);
-					if (msg.data.kertasKerjaTemuan.length > 0) {
-						_.each(self.jenisTemuan(), function(item){
-							var kodeTemuan = item.data.kodeTemuan().toLowerCase();
-							var kkt = _.filter(msg.data.kertasKerjaTemuan, function(kktItem){
-								return kktItem.jenis_temuan == kodeTemuan; 
-							});
+					_.each(self.jenisTemuan(), function(item){
+						var kodeTemuan = item.data.kodeTemuan().toLowerCase();
+						var kkt = _.filter(msg.data.kertasKerjaTemuan, function(kktItem){
+							return kktItem.jenis_temuan == kodeTemuan; 
+						});
+						if (kkt.length > 0) {
 							item.data.kertasKerjaTemuan.removeAll();
 							var urutan = 1;
 							_.each(kkt, function(a){
@@ -321,8 +321,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 								item.data.kertasKerjaTemuan.push(newKkt);
 								urutan++;
 							});
-						}); // end each jenis temuan
-					}
+						}
+					}); // end each jenis temuan
 				},
 				error: function(xhr, msg) {
 					alert("Internal Server Error");
