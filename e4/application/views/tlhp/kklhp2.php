@@ -162,7 +162,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input">
-													<option>-- departement --</option>
+													<option>-- Departement --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
 													<option>DEPUTI III</option>
