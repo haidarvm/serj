@@ -392,7 +392,7 @@ function delExt($filename) {
 
 // delect char
 function delNonChar($text) {
-	return preg_replace('/[^\da-z]/i', '', strtolower($string));
+	return preg_replace('/[^\da-z]/i', '', strtolower($text));
 }
 
 function clearName($filename) {
