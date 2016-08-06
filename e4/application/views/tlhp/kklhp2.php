@@ -278,7 +278,9 @@
 							</div>
 
 							<div class="col-md-5 t-ce ter top-space">
-								<button type="submit" class="btn btn-wd btn-danger btn-fill btn-margin" data-bind="event: {click: doInsert}">
+								<button type="submit" class="btn btn-wd btn-danger btn-fill btn-margin"
+								id="btnSave" 
+								data-bind="event: {click: doInsert}">
 									<span class="btn-label"> <i class="ti-save"></i>
 									</span> SAVE
 								</button>

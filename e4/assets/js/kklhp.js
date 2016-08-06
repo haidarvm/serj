@@ -126,12 +126,12 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		}
 		
 		self.doInsert = function() {
-			var insertToServer = [];
+			var kktList = [];
 			var errorList = [];
 			for (var i=0; i<self.jenisTemuan().length; i++) {
 				var jenisTemuan = {
-					kodeTemuan: self.jenisTemuan()[i].data.kodeTemuan(),
-					jenisTemuan: self.jenisTemuan()[i].data.jenisTemuan(),
+					kode_jenis_temuan: self.jenisTemuan()[i].data.kodeTemuan(),
+					jenis_temuan: self.jenisTemuan()[i].data.jenisTemuan(),
 				}
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
@@ -173,13 +173,49 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						itemKkt.kode_sebab_id !== undefined &&
 						itemKkt.uraian_sebab !== undefined &&
 						itemKkt.nilai_temuan !== undefined) {
-						insertToServer.push(itemKkt);
+						kktList.push(itemKkt);
 					}
 				});
 			}
 			
-			console.info("insert to server");
-			console.debug(insertToServer);
+			var kklhpData = {
+					'lhp': {
+						'lhp_id': 19
+					}, 
+					'kertasKerjaTemuan': kktList
+				}
+			console.debug(kklhpData);
+			self.postKklhp('POST', kklhpData);
+		} // end do insert
+		
+		self.postKklhp = function(actionType, postData) {
+			$.ajax({
+				type: actionType,
+				data: postData,
+				contentType: 'application/json',
+				url: site_url + "tlhp/restlhp/kklhp",
+				dataType: 'json',
+				beforeSend: function(){
+					console.info('attempting to contact server to save data kklhp');
+					$('#btnSave').attr('disabled', 'disabled');
+				},
+				success: function(data) {
+					console.info('kklhp saved');
+					refreshManusTable();
+					if (actionType == "POST") {
+//						self.resetData();
+//						$("#notify").notify("Data telah disimpan", "alert alert-info");
+					} else {
+//						$('#userModal').modal('hide');
+					}
+				},
+				error: function(xhr, msg) {
+//					self.userNotif("Internal Server Error");
+					$("#notify").notify("Internal Server Error", "alert alert-error");
+				}
+			}).always(function(){
+				$('#btnSave').removeAttr('disabled');
+			});
 		}
 	}
 	
@@ -237,7 +273,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						for (var i=0; i<data.data.length; i++) {
 							var item = {
 								id: data.data[i].kode_sebab_id,
-								text: data.data[i].kode_sebab_id+'. '+data.data[i].uraian_sebab
+								text: data.data[i].kode_sebab+'. '+data.data[i].uraian_sebab
 							}
 							rData.push(item);
 						}
@@ -277,7 +313,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
 									id: data.data[i].kode_rekomendasi_id,
-									text: data.data[i].kode_rekomendasi_id+'. '+data.data[i].uraian_rekomendasi
+									text: data.data[i].kode_rekomendasi+'. '+data.data[i].uraian_rekomendasi
 								}
 								rData.push(item);
 							}
