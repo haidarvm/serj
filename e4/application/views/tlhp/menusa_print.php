@@ -24,14 +24,15 @@
     <![endif]-->
 </head>
 <body class="bg-print">
+<!--  <button class="btn btn-danger btn-fill btn-wd print-this" onclick="printDiv('printable')">Print</button> -->
+			
 	<div class="container box-print">
-		<button class="btn btn-danger btn-fill btn-wd print-this" onclick="printDiv('printable')">Print</button>
 		<!-- <a class="btn btn-danger btn-fill btn-wd print-this"><i aria-hidden="true" class="fa fa-print"></i> Print</a> -->
 
 		<div class="row" id="printable">
 			<div class="col-md-12">
 				<div id="header">
-					<h1><?php echo $pageTitle;?></h1>
+					<h3><?php echo $pageTitle;?></h3>
 				</div>
 
 				<table width="100%" class="t-print">
@@ -88,7 +89,7 @@
 								<!-- 					<p class="category">Pie Chart</p> -->
 							</div>
 							<div class="content">
-								<div id="tindak_lanjut" style="height: 300px; width: 100%;"></div>
+								<div id="tindak_lanjut" style="height: 250px; width: 100%;"></div>
 								<!--  <canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
 
 
@@ -104,7 +105,7 @@
 								<!-- 					<p class="category">Pie Chart</p> -->
 							</div>
 							<div class="content">
-								<div id="kerugian" style="height: 300px; width: 100%;"></div>
+								<div id="kerugian" style="height: 250px; width: 100%;"></div>
 								<!--  <canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
 
 							</div>
@@ -119,7 +120,17 @@
 	<script src="<?php echo base_url()?>assets/js/canvasjs.min.js"></script>
 	<script>
 
-	function printDiv(divName) {
+	function printDiv(selector) {
+	    $('body .site-container').css({display:'none'});
+	    var content = $(selector).clone();
+	    $('body .site-container').before(content);
+	    window.print();
+	    $(selector).first().remove();
+	    $('body .site-container').css({display:''});
+	}
+		
+
+	/* function printDiv(divName) {
 	     var printContents = document.getElementById(divName).innerHTML;
 	     var originalContents = document.body.innerHTML;
 
@@ -128,7 +139,7 @@
 	     window.print();
 
 	     document.body.innerHTML = originalContents;
-	}
+	} */
 	
 $(function(){
 	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
