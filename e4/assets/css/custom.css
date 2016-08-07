@@ -850,6 +850,32 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	margin: 50px 0 0;
 }
 
-.main-panel.sidebar-hidden {
-	width: calc(100% - 70px) !important;
+#header {
+	position: relative;
+}
+.print-this {
+	position: absolute;
+	right: 15px;
+	top: 0;
+	display: inline-block;
+}
+
+.t-print{ 
+	border: 1px solid lightblue;
+	border-spacing: 0;
+}
+.t-print th{
+	font-weight: bold;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 13px !imporant;
+	background-color: lightblue;
+	line-height: 25px;
+}
+.t-print td{
+	line-height: 25px;
+	padding: 1px 10px !imporant;
+	font-size: 12px !imporant;
+	border: 1px solid lightblue;
+	
 }
