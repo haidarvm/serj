@@ -263,7 +263,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				success: function(data) {
 					console.info('kklhp saved');
 					alert('Data sudah disimpan');
-//					window.location = site_url+ "tlhp/menusa";
+					window.location = site_url+ "tlhp/menusa";
 //					console.debug(window.location);
 				},
 				error: function(xhr, msg) {
