@@ -75,7 +75,7 @@
 											<th class="success">PERIODE TINDAK LANJUT</th>
 											<th class="success">TINDAK LANJUT</th>
 											<th class="success">DOKUMEN PENDUKUNG</th>
-											<th>JUMLAH</th>
+											<th class="success">JUMLAH</th>
 											<th>NILAI (Rp.)</th>
 											<th>JUMLAH</th>
 											<th>NILAI (Rp.)</th>
