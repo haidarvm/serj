@@ -852,6 +852,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 
 #header {
 	position: relative;
+	margin-bottom: 15px;
 }
 .print-this {
 	position: absolute;
@@ -863,6 +864,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 .t-print{ 
 	border: 1px solid lightblue;
 	border-spacing: 0;
+	margin-bottom: 30px;
 }
 .t-print th{
 	font-weight: bold;
