@@ -291,7 +291,7 @@ class Restlhp extends REST_Controller {
 		), 200);
 	}
 	
-	public function codesebab_get() {
+	public function getcodesebab_get() {
 		$kodeSebabId = $this->get("kode_sebab_id");
 		$this->load->model('Mlhp', 'mlhp');
 		$kodeSebab = $this->mlhp->getKodeSebab($kodeSebabId);

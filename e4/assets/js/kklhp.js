@@ -138,6 +138,30 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		selfK.kodeSebab = ko.observableArray([]);
 		selfK.firstKodeRekomendasi = ko.observableArray([]);
 		
+		selfK.data.kodeSebabId.subscribe(function(newVal){
+			var id;
+			if (typeof(newVal) === "object") {
+				id = newVal.id;
+			} else {
+				id = newVal
+			}
+			console.debug(id);
+			$.ajax({
+				action: 'GET',
+				data: {'kode_sebab_id': id},
+				dataType: 'json',
+				url: site_url + "tlhp/restlhp/getcodesebab",
+				beforeSend: function() {
+					selfK.data.uraianSebab('please wait...');
+				},
+				success: function(data) {
+					selfK.data.uraianSebab(data.data.uraian_sebab);
+				}, 
+				error: function(e) {
+					console.info('error');
+				}
+			});
+		})
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
@@ -403,7 +427,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				},
 //				placeholder: 'select one'
 			});
-			$.fn.select2.defaults.set("2", "default some text");
+//			$.fn.select2.defaults.set("2", "default some text");
 		},
 //		update: function(element, valueAccessor, allBindings) {
 //			
@@ -412,7 +436,6 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 	
 	ko.bindingHandlers.kodeSebab = {
 		init: function(element, valueAccessor, allBindings) {
-//			allBindings().listKodeSebab.removeAll();
 			$(element).select2({
 				ajax: {
 					action: 'GET',
@@ -443,19 +466,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						console.info('error');
 					}
 				}
-			}).on('change', function(evt){
-				console.debug("total list kode sebab "+ allBindings().listKodeSebab().length);
-//				for(var i=0; i<allBindings().listKodeSebab().length; i++) {
-//					var rowKodeSebab = allBindings().listKodeSebab()[i];
-//					var kodeSebabId = allBindings().value();
-//					console.debug("rowKodeSebab: "+ rowKodeSebab.id + ", kodeSebabId: "+kodeSebabId.id);
-//					if (rowKodeSebab.id == kodeSebabId) {
-//						allBindings().uraianSebab(rowKodeSebab.text);
-//					}
-//				}
-			});
-		} 
-		
+			}); 
+		}
 	}
 	
 
