@@ -22,7 +22,7 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">TOTAL REKOMENDASI SEJAK TAHUN 2013</p>
+	                                   <p class="t-card">TOTAL REKOMENDASI <br/>SEJAK TAHUN 2013</p>
                                        <span class="t-number">70</span>
 	                               </div>
 	                           </div>
