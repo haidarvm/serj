@@ -251,7 +251,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						rekomendasi: listRekomendasi
 					}
 					
-					console.debug(itemKkt);
+//					console.debug(itemKkt);
 //					console.info(itemKkt.listRekomendasi);
 					
 					if (itemKkt.kode_temuan_id !== undefined &&
@@ -270,7 +270,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					}, 
 					'kertasKerjaTemuan': kktList
 				}
-			console.debug(kklhpData);
+//			console.debug(kklhpData);
 			var action = $('#action').val();
 			if (action == "update") {
 				action = "PUT";
@@ -278,6 +278,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				action = "POST";
 			}
 			console.debug('action '+ action);
+//			console.debug(kklhpData);
 			self.postKklhp(action, kklhpData);
 		} // end do insert
 		
@@ -379,6 +380,11 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 								}
 								item.data.kertasKerjaTemuan.push(newKkt);
 								urutan++;
+							});
+						} else {
+							_.each(item.data.kertasKerjaTemuan(), function(item){
+								console.debug('setup lhp id '+ msg.data.lhp.lhp_id);
+								item.data.lhpId(msg.data.lhp.lhp_id);
 							});
 						}
 					}); // end each jenis temuan
