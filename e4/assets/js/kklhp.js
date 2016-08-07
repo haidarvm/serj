@@ -45,6 +45,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		
 		selfK.isFirstRow = ko.observable(isFirstRow);
 		selfK.urutan = ko.observable(urutan);
+		selfK.enableRemoveBtn = ko.observable(false);
 		
 		selfK.data = {
 			kertasKerjaId: ko.observable(),
@@ -258,7 +259,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				success: function(data) {
 					console.info('kklhp saved');
 					alert('Data sudah disimpan');
-					window.location = site_url+ "tlhp/menusa";
+//					window.location = site_url+ "tlhp/menusa";
 //					console.debug(window.location);
 				},
 				error: function(xhr, msg) {
@@ -302,14 +303,25 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 									newKkt = new KertasKerjaTemuanViewModel(urutan, false)
 								}
 								
-								newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
-										a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
-										a.uraian_sebab, a.nilai_temuan, 
-										a.rekomendasi[0].kode_rekomendasi_id,
-										a.rekomendasi[0].ori_uraian_rekomendasi, 
-										a.rekomendasi[0].uraian_rekomendasi, 
-										a.rekomendasi[0].kerugian_negara, 
-										a.rekomendasi[0].nilai_rekomendasi);
+								if (a.rekomendasi.length > 0) {
+									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
+											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
+											a.uraian_sebab, a.nilai_temuan, 
+											a.rekomendasi[0].kode_rekomendasi_id,
+											a.rekomendasi[0].ori_uraian_rekomendasi, 
+											a.rekomendasi[0].uraian_rekomendasi, 
+											a.rekomendasi[0].kerugian_negara, 
+											a.rekomendasi[0].nilai_rekomendasi);
+								} else {
+									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
+											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
+											a.uraian_sebab, a.nilai_temuan, 
+											null,
+											null, 
+											null, 
+											null, 
+											null);
+								}
 								
 								for (var i=0; i< a.rekomendasi.length; i++) {
 									if (i != 0) {

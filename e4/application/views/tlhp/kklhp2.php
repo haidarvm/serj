@@ -106,7 +106,8 @@
 													<i aria-hidden="true" class="fa fa-plus"></i>
 												</button>
 												
-												<button type="button" class="ngurang" data-bind="visible: !isFirstRow(), event: {click: $parent.removeRow}">
+												<button type="button" class="ngurang" data-bind="visible: !isFirstRow(), 
+												event: {click: $parent.removeRow}">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>

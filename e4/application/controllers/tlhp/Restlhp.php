@@ -206,13 +206,25 @@ class Restlhp extends REST_Controller {
 		//TODO: harusnya dalam 1 transaksi
 		$postKertasKerjaTemuan = $this->put('kertasKerjaTemuan');
 		$updatedData = array();
+		$addedData = array();
 		$updatedRekomendasiData = array();
 		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
 			if (isset($kertasKerjaTemuan["kertas_kerja_id"])) {
 				array_push($updatedData, array(
 					'kertas_kerja_id' => $kertasKerjaTemuan["kertas_kerja_id"],
 					'lhp_id' => $postLhp['lhp_id'],
-					'jenis_temuan' => $kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan'],
+					'jenis_temuan' => strtolower($kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan']),
+					'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id']['id'],
+					'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
+					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id']['id'],
+					'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
+					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
+					'user_id' => $this->session->userdata('user_id')
+				));
+			} else {
+				array_push($addedData, array(
+					'lhp_id' => $postLhp['lhp_id'],
+					'jenis_temuan' => strtolower($kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan']),
 					'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
 					'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
 					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
@@ -220,13 +232,20 @@ class Restlhp extends REST_Controller {
 					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
 					'user_id' => $this->session->userdata('user_id')
 				));
-			} 
+			}
 		}
-//		$this->mlhp->updateBatchKkt($updatedData);
+		
+		$this->mlhp->updateBatchKkt($updatedData);
+		if (count($addedData) > 0) {
+			$this->mlhp->insertBatchKkt($addedData);
+		}
+		
 		$this->response(array(
 			'data' => $postKertasKerjaTemuan,
 			'message' => 'Data berhasil diperbaharui',
-			'updateDateCount' => count($updatedData)
+			'updateDateCount' => count($updatedData),
+			'updatedData' => $updatedData,
+			'addedData' => $addedData
 		), 200);
 	}
 //	public function test_post() {
