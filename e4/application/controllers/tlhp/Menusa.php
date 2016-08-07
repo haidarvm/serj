@@ -24,6 +24,7 @@ class Menusa extends MY_Controller {
 		$this->load->tlhp_template('tlhp/menusa', $data);
 	}
 	
+	
 	public function pie(){
 		$data['title'] = "PIE";
 		$this->load->view('report/pie', $data);

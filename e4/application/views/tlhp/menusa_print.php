@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.png" />
+
+	<title>Login - KONI JABAR</title>
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/responsive-msite.css">
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/idangerous.swiper.css" />
+		
+	<script type="text/javascript" src="js/less.min.js"></script>
+	   
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 <div class="content">
 	<div id="header">
 		<h1><?php echo $pageTitle;?></h1> 
@@ -81,9 +107,13 @@
 		</div>
 	</div>
 </div>
+<script src="<?php echo base_url()?>assets/js/jquery-2.1.3.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery-2.1.3.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 <script>
+
 //	console.debug(site_url+ "assets/js/paper-dashboard");
-    requirejs.config({
+    /*requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
     		"notify": {"deps": ["jquery"]},
@@ -101,5 +131,7 @@
 //             "papertlhp": site_url + "assets/js/paper-dashboard"
         }
     });
-    requirejs(["jspath/menusa"]);
+    requirejs(["jspath/menusa"]);*/
 </script>
+  </body>
+</html>
