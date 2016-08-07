@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp : "undefined"; ?></p>
-						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan: "undefined"; ?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? ucfirst($lhp->judul_lhp) : "undefined"; ?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? ucfirst($lhp->objek_pengawasan) : "undefined"; ?></p>
 					</div>
 					<!-- these are very importan, be carefull dont rename them -->
 					<input type="hidden" id="action" value="<?php echo isset($action) ? $action : null; ?>"/>
@@ -167,7 +167,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input">
-													<option>-- Departement --</option>
+													<option>-- Unit Kerja --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
 													<option>DEPUTI III</option>
@@ -225,7 +225,7 @@
 											</td>
 											<td>
 												<select class="form-control">
-													<option>-- departement --</option>
+													<option>--  Unit Kerja --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
 													<option>DEPUTI III</option>
