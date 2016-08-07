@@ -213,13 +213,17 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				}
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
-					var listRekomendasi = [{
+					var listRekomendasi = [];
+					if (kertasKerjaTemuan.data.firstKodeRekomendasiId() != undefined &&
+						kertasKerjaTemuan.data.firstUraianRekomendasi() != undefined) {
+						listRekomendasi.push({
 							rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
 							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
 							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
 							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
 							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
-					}];
+						});
+					}
 					
 					_.each(kertasKerjaTemuan.data.rekomendasi(), function(item){
 						console.debug(ko.toJSON(item.data));
@@ -247,6 +251,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						rekomendasi: listRekomendasi
 					}
 					
+					console.debug(itemKkt);
 //					console.info(itemKkt.listRekomendasi);
 					
 					if (itemKkt.kode_temuan_id !== undefined &&
