@@ -124,7 +124,7 @@
 											<td>
 												<select class="form-control select-simple border-input"
 												data-bind="kodeSebab: true, value: data.kodeSebabId, 
-												uiKodeSebab: uiKodeSebab">
+												uiKodeSebab: uiKodeSebab, uraianSebab: data.uraianSebab">
 												</select>
 											</td>
 											<td>

@@ -139,17 +139,10 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		selfK.uiKodeTemuan = ko.observable();
 		selfK.uiKodeSebab = ko.observable();
 		selfK.uiFirstKodeRekomendasi = ko.observable();
+		
 		//ini pas diload dipanggil juga/
 		selfK.data.kodeSebabId.subscribe(function(newVal){
 			var id = newVal;
-//			console.info('---- subscribe---');
-//			console.debug(newVal);
-//			if (typeof(newVal) === "object") {
-//				id = newVal.id;
-//			} else {
-//				id = newVal
-//			}
-//			console.debug(id);
 //			$.ajax({
 //				action: 'GET',
 //				data: {'kode_sebab_id': id},
@@ -167,10 +160,6 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 //			});
 		})
 		
-//		selfK.data.findUraianSebab = function() {
-//			var kodeSebabId = selfK.data.kodeSebabId();
-//			console.info(kodeSebabId);
-//		}
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
@@ -483,12 +472,38 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			var kodeSebabId = allBindings().value();
 			console.debug('uiKodeSebab: '+ uiKodeSebab);
 			console.debug('kodeSebabId: '+ kodeSebabId);
+			
+			var autoCompleteUraian = function(kodeSebabId) {
+				console.debug('autocomplete with id '+ kodeSebabId);
+				
+			}
+			
+			var $select2;
 			if (kodeSebabId != undefined) {
 				options.data = [{id: kodeSebabId, text: uiKodeSebab}];
-				$(element).select2(options).val(kodeSebabId); 
+				$select2 = $(element).select2(options).val(kodeSebabId);
 			} else {
-				$(element).select2(options);
+				$select2 = $(element).select2(options);
 			}
+			
+			$select2.on('select2:select', function(evt){
+				var id = $(element).val();
+				$.ajax({
+					action: 'GET',
+					data: {'kode_sebab_id': id},
+					dataType: 'json',
+					url: site_url + "tlhp/restlhp/getcodesebab",
+					beforeSend: function() {
+						allBindings().uraianSebab('Please wait..');
+					},
+					success: function(data) {
+						allBindings().uraianSebab(data.data.uraian_sebab);
+					}, 
+					error: function(e) {
+						console.info('error');
+					}
+				})
+			});
 			
 		}
 	}
