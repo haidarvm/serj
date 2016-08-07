@@ -873,14 +873,14 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-	font-size: 13px !important;
+	font-size: 14px !important;
 	background-color: lightblue;
 	line-height: 25px;
 }
 .t-print tbody td{
 	line-height: 25px;
 	padding: 4px 10px !important;
-	font-size: 12px !imporant;
+	font-size: 13px !important;
 	border: 1px solid lightblue;
 	
 }
