@@ -229,9 +229,9 @@ class Restlhp extends REST_Controller {
 					'kertas_kerja_id' => $kertasKerjaTemuan["kertas_kerja_id"],
 					'lhp_id' => $postLhp['lhp_id'],
 					'jenis_temuan' => strtolower($kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan']),
-					'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id']['id'],
+					'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
 					'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
-					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id']['id'],
+					'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
 					'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
 					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
 					'user_id' => $this->session->userdata('user_id')
@@ -241,7 +241,7 @@ class Restlhp extends REST_Controller {
 					if (isset($rekomendasi["rekomendasi_id"])) {
 						array_push($updatedRekomendasiData, array(
 							"rekomendasi_id" => $rekomendasi["rekomendasi_id"],
-							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"]['id'],
+							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
 							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rekomendasi["kerugian_negara"],
 							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0
