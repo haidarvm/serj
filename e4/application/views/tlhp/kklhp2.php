@@ -192,7 +192,6 @@
 											<td></td>
 											<td></td>
 											<td></td>
-											<td></td>
 										</tr>
 										<!-- rekomendasi -->
 										<!-- ko template: {foreach: data.rekomendasi} -->
@@ -237,8 +236,6 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
-											<td></td>
-											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
