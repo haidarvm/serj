@@ -27,8 +27,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			
 		});
 		
-		selfR.initData = function(rekomendasiId, kertasKerjaId, kodeRekomendasiId, oriUraianRekomendasi,
-				uraianRekomendasi, kerugianNegara, nilaiRekomendasi) {
+		selfR.initData = function(rekomendasiId, kertasKerjaId, kodeRekomendasiId, kodeRekomendasi, 
+				oriUraianRekomendasi, uraianRekomendasi, kerugianNegara, nilaiRekomendasi) {
 			selfR.data.rekomendasiId(rekomendasiId);
 			selfR.data.kertasKerjaId(kertasKerjaId);
 			selfR.data.kodeRekomendasiId(kodeRekomendasiId);
@@ -37,11 +37,11 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				selfR.data.kerugianNegaraCbk(true);
 			}
 			selfR.data.nilaiRekomendasi(nilaiRekomendasi);
-			selfR.kodeSebab.push({id: kodeRekomendasiId, text: kodeRekomendasiId+"."+oriUraianRekomendasi});
+			selfR.uiKodeRekomendasi(kodeRekomendasi);
 		}
 		
-		selfR.kodeSebab = ko.observableArray([]);
 		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
+		selfR.uiKodeRekomendasi = ko.observable();
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -78,6 +78,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			
 			firstRekomendasiId: ko.observable(),
 			firstKodeRekomendasiId: ko.observable(),
+			firstKodeRekomendasi: ko.observable(),
 			firstUraianRekomendasi: ko.observable(),
 			firstKerugianNegara: ko.observable(false),
 			firstKerugianNegaraCbk: ko.observable(false),
@@ -106,9 +107,9 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		}
 		
 		selfK.initData = function(kertasKerjaId, lhpId, jenisTemuan, noTemuan, 
-				kodeTemuanId, kelompok_temuan, sub_kelompok_temuan, jenis_kelompok_temuan,
-				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, firstRekomendasiId,
-				firstKodeRekomendasiId, firstOriUraianRekomendasi, firstUraianRekomendasi, 
+				kodeTemuanId, kelompokTemuan, subKelompokTemuan, jenisKelompokTemuan,
+				deskripsi_temuan, uraianTemuan, kodeSebabId, kodeSebab, uraianSebab, nilaiTemuan, firstRekomendasiId,
+				firstKodeRekomendasiId, firstKodeRekomendasi, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi) {
 			selfK.data.kertasKerjaId(kertasKerjaId);
 			selfK.data.lhpId(lhpId);
@@ -122,6 +123,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			
 			selfK.data.firstRekomendasiId(firstRekomendasiId);
 			selfK.data.firstKodeRekomendasiId(firstKodeRekomendasiId);
+			selfK.data.firstKodeRekomendasi(firstKodeRekomendasi);
 			selfK.data.firstUraianRekomendasi(firstUraianRekomendasi);
 			selfK.data.firstKerugianNegara(firstKerugianNegara);
 			if (firstKerugianNegara == 1) {
@@ -129,39 +131,40 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			}
 			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
 			
-			selfK.kodeTemuan.push({id: kodeTemuanId, text: kelompok_temuan+'.'+sub_kelompok_temuan+"."+jenis_kelompok_temuan});
-			selfK.kodeSebab.push({id: kodeSebabId, text: kodeSebabId+'. '+uraianSebab});
-			selfK.firstKodeRekomendasi.push({id: firstKodeRekomendasiId, text: firstKodeRekomendasiId+'. '+firstOriUraianRekomendasi});
+			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan);
+			selfK.uiKodeSebab(kodeSebab);
+			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi);
 		}
 		
-		selfK.kodeTemuan = ko.observableArray([]);
-		selfK.kodeSebab = ko.observableArray([]);
-		selfK.firstKodeRekomendasi = ko.observableArray([]);
-		
+		selfK.uiKodeTemuan = ko.observable();
+		selfK.uiKodeSebab = ko.observable();
+		selfK.uiFirstKodeRekomendasi = ko.observable();
 		//ini pas diload dipanggil juga/
 		selfK.data.kodeSebabId.subscribe(function(newVal){
-			var id;
-			if (typeof(newVal) === "object") {
-				id = newVal.id;
-			} else {
-				id = newVal
-			}
-			console.debug(id);
-			$.ajax({
-				action: 'GET',
-				data: {'kode_sebab_id': id},
-				dataType: 'json',
-				url: site_url + "tlhp/restlhp/getcodesebab",
-				beforeSend: function() {
-					selfK.data.uraianSebab('please wait...');
-				},
-				success: function(data) {
-					selfK.data.uraianSebab(data.data.uraian_sebab);
-				}, 
-				error: function(e) {
-					console.info('error');
-				}
-			});
+			var id = newVal;
+//			console.info('---- subscribe---');
+//			console.debug(newVal);
+//			if (typeof(newVal) === "object") {
+//				id = newVal.id;
+//			} else {
+//				id = newVal
+//			}
+//			console.debug(id);
+//			$.ajax({
+//				action: 'GET',
+//				data: {'kode_sebab_id': id},
+//				dataType: 'json',
+//				url: site_url + "tlhp/restlhp/getcodesebab",
+//				beforeSend: function() {
+//					selfK.data.uraianSebab('please wait...');
+//				},
+//				success: function(data) {
+//					selfK.data.uraianSebab(data.data.uraian_sebab);
+//				}, 
+//				error: function(e) {
+//					console.info('error');
+//				}
+//			});
 		})
 		
 //		selfK.data.findUraianSebab = function() {
@@ -285,32 +288,27 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		} // end do insert
 		
 		self.postKklhp = function(actionType, postData) {
-			if (actionType == "update") {
-				alert("Fungsi ini belum dapat digunakan");
-			} else {
-				$.ajax({
-					type: actionType,
-					data: JSON.stringify(postData),
-					contentType: 'application/json',
-					url: site_url + "tlhp/restlhp/kklhp",
-//				dataType: 'json',
-					beforeSend: function(){
-					console.info('attempting to contact server to save data kklhp');
-					$('#btnSave').attr('disabled', 'disabled');
-				},
-				success: function(data) {
-					console.info('kklhp saved');
-					alert('Data sudah disimpan');
-					window.location = site_url+ "tlhp/menusa";
-//					console.debug(window.location);
-				},
-				error: function(xhr, msg) {
-					alert("Internal Server Error..");
-				}
-				}).always(function(){
-					$('#btnSave').removeAttr('disabled');
-				});
+			$.ajax({
+				type: actionType,
+				data: JSON.stringify(postData),
+				contentType: 'application/json',
+				url: site_url + "tlhp/restlhp/kklhp",
+				beforeSend: function(){
+				console.info('attempting to contact server to save data kklhp');
+				$('#btnSave').attr('disabled', 'disabled');
+			},
+			success: function(data) {
+				console.info('kklhp saved');
+				alert('Data sudah disimpan');
+//				window.location = site_url+ "tlhp/menusa";
+//				console.debug(window.location);
+			},
+			error: function(xhr, msg) {
+				alert("Internal Server Error..");
 			}
+			}).always(function(){
+				$('#btnSave').removeAttr('disabled');
+			});
 		}
 		
 		self.loadLhp = function() {
@@ -350,17 +348,20 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
 											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
-											a.uraian_sebab, a.nilai_temuan,
+											a.kode_sebab, a.uraian_sebab, a.nilai_temuan,
 											a.rekomendasi[0].rekomendasi_id,
 											a.rekomendasi[0].kode_rekomendasi_id,
+											a.rekomendasi[0].kode_rekomendasi,
 											a.rekomendasi[0].ori_uraian_rekomendasi, 
 											a.rekomendasi[0].uraian_rekomendasi, 
 											a.rekomendasi[0].kerugian_negara, 
 											a.rekomendasi[0].nilai_rekomendasi);
 								} else {
-									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
+									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
+											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
 											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
-											a.uraian_sebab, a.nilai_temuan, 
+											a.kode_sebab, a.uraian_sebab, a.nilai_temuan, 
+											null,
 											null,
 											null, 
 											null, 
@@ -374,6 +375,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 										rekView.initData(a.rekomendasi[i].rekomendasi_id, 
 												a.rekomendasi[i].kertas_kerja_id, 
 												a.rekomendasi[i].kode_rekomendasi_id,
+												a.rekomendasi[i].kode_rekomendasi,
 												a.rekomendasi[i].ori_uraian_rekomendasi, 
 												a.rekomendasi[i].uraian_rekomendasi, 
 												a.rekomendasi[i].kerugian_negara, 
@@ -401,93 +403,12 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 	//TODO: kode dibawah masih banyak yang duplicate,
 	// sederhanakan lagi ya
 	ko.bindingHandlers.kodeTemuan = {
-		init: function(element, valueAccessor, allBindings) {
-			$(element).select2({
-				ajax: {
-					action: 'GET',
-					dataType: 'json',
-					url: site_url + "tlhp/restlhp/codtemuan",
-					success: function() {
-						console.info('success');
-					}, 
-					processResults: function(data, params) {
-						var rData = [];
-						for (var i=0; i<data.data.length; i++) {
-							var item = {
-								id: data.data[i].kode_temuan_id,
-								text: data.data[i].kelompok+'.'+data.data[i].sub_kelompok +"."+data.data[i].jenis
-							}
-							rData.push(item);
-						}
-						
-						return {
-						    results: rData,
-						    pagination: {
-						      more: data.more
-						    }
-						};
-					},
-					error: function(e) {
-						console.info('error');
-					}
-				},
-//				placeholder: 'select one'
-			});
-//			$.fn.select2.defaults.set("2", "default some text");
-		},
-//		update: function(element, valueAccessor, allBindings) {
-//			
-//		}
-	}
-	
-	ko.bindingHandlers.kodeSebab = {
-		init: function(element, valueAccessor, allBindings) {
-			$(element).select2({
-				ajax: {
-					action: 'GET',
-					dataType: 'json',
-					url: site_url + "tlhp/restlhp/codsebab",
-					success: function() {
-						console.info('success');
-					}, 
-					processResults: function(data, params) {
-						var rData = [];
-						for (var i=0; i<data.data.length; i++) {
-							var item = {
-								id: data.data[i].kode_sebab_id,
-								text: data.data[i].kode_sebab+'. '+data.data[i].uraian_sebab
-							}
-//							allBindings().listKodeSebab.push(item);
-							rData.push(item);
-						}
-						
-						return {
-						    results: rData,
-						    pagination: {
-						      more: data.more
-						    }
-						};
-					},
-					error: function(e) {
-						console.info('error');
-					}
-				}
-			}); 
-		}
-	}
-	
-
-	$(document).ready(function() {
-	  $(".select-kode").select2();
-	});
-	
-	ko.bindingHandlers.kodeRekomendasi = {
-			init: function(element, valueAccessor, allBindings) {
-				$(element).select2({
+		init: function(element, valueAccessor, allBindings, s, te) {
+			var options = {
 					ajax: {
 						action: 'GET',
 						dataType: 'json',
-						url: site_url + "tlhp/restlhp/codrekomendasi",
+						url: site_url + "tlhp/restlhp/codtemuan",
 						success: function() {
 							console.info('success');
 						}, 
@@ -495,8 +416,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 							var rData = [];
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
-									id: data.data[i].kode_rekomendasi_id,
-									text: data.data[i].kode_rekomendasi+'. '+data.data[i].uraian_rekomendasi
+									id: data.data[i].kode_temuan_id,
+									text: data.data[i].kelompok+'.'+data.data[i].sub_kelompok +"."+data.data[i].jenis
 								}
 								rData.push(item);
 							}
@@ -511,10 +432,116 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						error: function(e) {
 							console.info('error');
 						}
-					}
-				});
+					}	
 			}
+			
+			var kodeTemuanId = allBindings().value();
+			var uiKodeTemuan = allBindings().uiKodeTemuan();
+			if (kodeTemuanId != undefined && uiKodeTemuan != undefined) {
+				options.data = [{id: kodeTemuanId, text: uiKodeTemuan}];
+				$(element).select2(options).val(1);
+			} else {
+				$(element).select2(options);
+			}
+		},
+	}
+	
+	ko.bindingHandlers.kodeSebab = {
+		init: function(element, valueAccessor, allBindings) {
+			var options = {
+					ajax: {
+						action: 'GET',
+						dataType: 'json',
+						url: site_url + "tlhp/restlhp/codsebab",
+						success: function() {
+							console.info('success');
+						}, 
+						processResults: function(data, params) {
+							var rData = [];
+							for (var i=0; i<data.data.length; i++) {
+								var item = {
+									id: data.data[i].kode_sebab_id,
+									text: data.data[i].kode_sebab
+								}
+								rData.push(item);
+							}
+							
+							return {
+							    results: rData,
+							    pagination: {
+							      more: data.more
+							    }
+							};
+						},
+						error: function(e) {
+							console.info('error');
+						}
+					}	
+			}
+			
+			var uiKodeSebab = allBindings().uiKodeSebab();
+			var kodeSebabId = allBindings().value();
+			console.debug('uiKodeSebab: '+ uiKodeSebab);
+			console.debug('kodeSebabId: '+ kodeSebabId);
+			if (kodeSebabId != undefined) {
+				options.data = [{id: kodeSebabId, text: uiKodeSebab}];
+				$(element).select2(options).val(kodeSebabId); 
+			} else {
+				$(element).select2(options);
+			}
+			
 		}
+	}
+	
+
+	$(document).ready(function() {
+	  $(".select-kode").select2();
+	});
+	
+	ko.bindingHandlers.kodeRekomendasi = {
+			init: function(element, valueAccessor, allBindings) {
+				var options = {
+						ajax: {
+						action: 'GET',
+						dataType: 'json',
+						url: site_url + "tlhp/restlhp/codrekomendasi",
+						success: function(msg) {
+							console.info('success');
+							console.debug(msg.data);
+						}, 
+						processResults: function(data, params) {
+							var rData = [];
+							for (var i=0; i<data.data.length; i++) {
+								var item = {
+									id: data.data[i].kode_rekomendasi_id,
+									text: data.data[i].kode_rekomendasi
+								}
+								rData.push(item);
+							}
+							
+							return {
+							    results: rData,
+							    pagination: {
+							      more: data.more
+							    }
+							};
+						},
+						error: function(e) {
+							console.info('error');
+						}
+					}	
+				}
+				
+				var rowRekomendasiId = allBindings().value();
+				var kodeRekomendasi = allBindings().uiKodeRekomendasi();
+				if (rowRekomendasiId != undefined) {
+					options.data = [{id: rowRekomendasiId, text: kodeRekomendasi}];
+					$(element).select2(options);
+				} else {
+					$(element).select2(options);
+				}
+			}
+	}
 	
 	$(function(){
 		ko.applyBindings(vm);

@@ -93,10 +93,21 @@ class Restlhp extends REST_Controller {
 	public function codsebab_get() {
 		$this->load->model('Mlhp', 'mlhp');
 		$listKodeSebab = $this->mlhp->getAllKodeSebab();
+		
+		$returnVal = array();
+		foreach ($listKodeSebab as $row) {
+			array_push($returnVal, array(
+				'kode_sebab_id' => $row->kode_sebab_id,
+				'kode_sebab' => $row->kode_sebab,
+				'uraian_sebab' => $row->uraian_sebab
+			));
+		}
+		
 		$dataResponse = array(
-			'data' => $listKodeSebab,
-			'size' => count($listKodeSebab)
+			'data' => $returnVal,
+			'size' => count($returnVal)
 		);
+		
 		$this->response($dataResponse, 200);
 	}
 	
@@ -209,6 +220,7 @@ class Restlhp extends REST_Controller {
 
 		$updatedData = array();
 		$updatedRekomendasiData = array();
+		$newRowRekomendasi = array();
 		
 		$addedData = array();
 		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
@@ -232,7 +244,16 @@ class Restlhp extends REST_Controller {
 							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"]['id'],
 							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rekomendasi["kerugian_negara"],
-							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
+							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0
+						));
+					} else {
+						//new row kkt
+						array_push($newRowRekomendasi, array(
+							"kertas_kerja_id" => $kertasKerjaTemuan["kertas_kerja_id"],
+							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
+							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+							"kerugian_negara" => $rekomendasi["kerugian_negara"],
+							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0
 						));
 					}
 				}
@@ -252,6 +273,9 @@ class Restlhp extends REST_Controller {
 		//TODO: should be in one transaction
 		$this->mlhp->updateBatchKkt($updatedData);
 		$this->mlhp->updateBatchRekomendasi($updatedRekomendasiData);
+		if (count($newRowRekomendasi) > 0) {
+			$this->mlhp->insertBatchRekomendasi($newRowRekomendasi);
+		}
 		
 		if (count($addedData) > 0) {
 //			$this->mlhp->insertBatchKkt($addedData);
@@ -266,18 +290,19 @@ class Restlhp extends REST_Controller {
 					'nilai_temuan' => $addedRow['nilai_temuan'],
 					'user_id' => $this->session->userdata('user_id')
 				));
-//				if (isset($kktId)) {
-//					foreach ($postRekomendasi as $rekomendasi) {
-//						array_push($dataRekomendasi, array(
-//							"kertas_kerja_id" => $kktId,
-//							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
-//							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
-//							"kerugian_negara" => $rekomendasi["kerugian_negara"],
-//							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
-//						));
-//					}
-//					$this->mlhp->insertBatchRekomendasi($dataRekomendasi);
-//				}
+				$rekomendasi = $addedRow['rekomendasi'];
+				if (isset($kktId)) {
+					foreach ($postRekomendasi as $rekomendasi) {
+						array_push($dataRekomendasi, array(
+							"kertas_kerja_id" => $kktId,
+							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
+							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+							"kerugian_negara" => $rekomendasi["kerugian_negara"],
+							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
+						));
+					}
+					$this->mlhp->insertBatchRekomendasi($dataRekomendasi);
+				}
 			}
 		}
 		
