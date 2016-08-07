@@ -41,6 +41,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Muli-Bold';
 }
 
+/* urgent css kklhp2 */
+.sidebar, .main-panel {
+	overflow-x: hidden;
+}
 
 .table-custom td {
 	font-size: 11px;
