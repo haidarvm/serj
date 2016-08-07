@@ -25,12 +25,13 @@
     <![endif]-->
   </head>
   <body class="bg-print">
-<div class="container">
+<div class="container box-print">
+	<a class="btn btn-danger btn-fill btn-wd print-this"><i aria-hidden="true" class="fa fa-print"></i> Print</a>
+
 	<div class="row">
 		<div class="col-md-12">
 			<div id="header">
 				<h1><?php echo $pageTitle;?></h1> 
-				<a class="btn btn-danger btn-fill btn-wd print-this"><i aria-hidden="true" class="fa fa-print"></i> Print</a>
 			</div>
 			
 			<table width="100%" class="t-print">

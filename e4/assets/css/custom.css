@@ -858,7 +858,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 .print-this {
 	position: absolute;
 	right: 15px;
-	top: 0;
+	top: 15px;
 	display: inline-block;
 }
 
@@ -884,6 +884,9 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	font-size: 13px !important;
 	border: 1px solid lightblue;
 	
+}
+.box-print {
+	position: relative;
 }
 .bottom-space {
 	margin-bottom: 60px;
