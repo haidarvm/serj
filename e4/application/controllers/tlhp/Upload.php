@@ -1,15 +1,30 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+if (! defined('BASEPATH'))
+	exit('No direct script access allowed');
 
-class Upload extends CI_Controller {
+/**
+ *
+ * @author Haidar Mar'ie
+ *         email : haidarvm@gmail.com
+ */
+class Upload extends MY_Controller {
 
-	public function index()
-	{
-		//$this->load->view('tlhp/upload');
-		$this->load->view('tlhp/basicupload');
+	function __construct() {
+		parent::__construct();
+		$this->load->model('muser');
+		$this->muser = new MUser();
 	}
 
-}
+	/**
+	 * Redirect to product_list
+	 */
+	public function index() {
+		$this->do_upload();
+	}
 
-/* End of file uploade.php */
-/* Location: ./application/controllers/uploade.php */
+	public function do_upload() {
+		$data['title'] = 'test';
+		$this->load->viwe('basicupload',$data);
+	}
+	
+}
