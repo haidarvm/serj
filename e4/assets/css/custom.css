@@ -852,6 +852,8 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 
 #header {
 	position: relative;
+	margin-bottom: 15px;
+	font-family: "Muli-SemiBold" !important;
 }
 .print-this {
 	position: absolute;
@@ -863,19 +865,32 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 .t-print{ 
 	border: 1px solid lightblue;
 	border-spacing: 0;
+	margin-bottom: 30px;
 }
 .t-print th{
 	font-weight: bold;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	font-size: 13px !imporant;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 14px !important;
 	background-color: lightblue;
 	line-height: 25px;
 }
-.t-print td{
+.t-print tbody td{
 	line-height: 25px;
-	padding: 1px 10px !imporant;
-	font-size: 12px !imporant;
+	background: #fff;
+	padding: 4px 10px !important;
+	font-size: 13px !important;
 	border: 1px solid lightblue;
 	
+}
+.bottom-space {
+	margin-bottom: 60px;
+}
+.bottom-space .canvasjs-chart-canvas {
+	border-radius: 7px;
+}
+.bg-print {
+	background: #f9f9f9;
 }

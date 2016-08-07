@@ -47,6 +47,11 @@ class Test extends MY_Controller {
 		$pdf->Output(); // save to file because we can
 		exit();
 	}
+	
+	public function menusa_print() {
+		$data['pageTitle'] = "Menusa Print";
+		$this->load->view('tlhp/menusa_print',$data);
+	}
 
 	public function menusa() {
 		$data['pageTitle'] = 'Report Dashboard TLHP ' . get_current_app();
