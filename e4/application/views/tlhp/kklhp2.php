@@ -70,7 +70,6 @@
 											<th class="info">KERUGIAN NEGARA</th>
 											<th class="info">NILAI (Rp.)</th>
 											<th class="success">UNIT KERJA</th>
-											<th class="success">UNIT KERJA</th>
 											<th class="success">NAMA PPK</th>
 											<th class="success">NAMA PJ</th>
 											<th class="success">PERIODE TINDAK LANJUT</th>
@@ -180,8 +179,8 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
-											<td></td>
-											<td></td>
+											<td><textarea class="form-control border-input"></textarea></td>
+											<td><textarea class="form-control border-input"></textarea></td>
 											<td></td>
 											<td></td>
 											<td></td>
