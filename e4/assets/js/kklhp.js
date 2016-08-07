@@ -72,6 +72,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			
 			rekomendasi: ko.observableArray([]),
 			
+			firstRekomendasiId: ko.observable(),
 			firstKodeRekomendasiId: ko.observable(),
 			firstUraianRekomendasi: ko.observable(),
 			firstKerugianNegara: ko.observable(false),
@@ -98,7 +99,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		}
 		
 		selfK.initData = function(kertasKerjaId, lhpId, jenisTemuan, noTemuan, kodeTemuanId, 
-				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, 
+				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, firstRekomendasiId,
 				firstKodeRekomendasiId, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi) {
 			selfK.data.kertasKerjaId(kertasKerjaId);
@@ -111,6 +112,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			selfK.data.uraianSebab(uraianSebab);
 			selfK.data.nilaiTemuan(nilaiTemuan);
 			
+			selfK.data.firstRekomendasiId(firstRekomendasiId);
 			selfK.data.firstKodeRekomendasiId(firstKodeRekomendasiId);
 			selfK.data.firstUraianRekomendasi(firstUraianRekomendasi);
 			selfK.data.firstKerugianNegara(firstKerugianNegara);
@@ -182,6 +184,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
 					var listRekomendasi = [{
+							rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
 							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
 							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
 							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
@@ -191,6 +194,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 					_.each(kertasKerjaTemuan.data.rekomendasi(), function(item){
 						console.debug(ko.toJSON(item.data));
 						var itemRekomendasi = {
+							rekomendasi_id: item.data.rekomendasiId(),
 							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
 							uraian_rekomendasi: item.data.uraianRekomendasi(),
 							kerugian_negara: item.data.kerugianNegara(),
@@ -306,7 +310,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 								if (a.rekomendasi.length > 0) {
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
 											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
-											a.uraian_sebab, a.nilai_temuan, 
+											a.uraian_sebab, a.nilai_temuan,
+											a.rekomendasi[0].rekomendasi_id,
 											a.rekomendasi[0].kode_rekomendasi_id,
 											a.rekomendasi[0].ori_uraian_rekomendasi, 
 											a.rekomendasi[0].uraian_rekomendasi, 

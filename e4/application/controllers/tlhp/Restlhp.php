@@ -205,9 +205,11 @@ class Restlhp extends REST_Controller {
 		$this->load->model('Mlhp', 'mlhp');
 		//TODO: harusnya dalam 1 transaksi
 		$postKertasKerjaTemuan = $this->put('kertasKerjaTemuan');
+
 		$updatedData = array();
-		$addedData = array();
 		$updatedRekomendasiData = array();
+		
+		$addedData = array();
 		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
 			if (isset($kertasKerjaTemuan["kertas_kerja_id"])) {
 				array_push($updatedData, array(
@@ -221,6 +223,18 @@ class Restlhp extends REST_Controller {
 					'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
 					'user_id' => $this->session->userdata('user_id')
 				));
+				$listRekomendasi = $kertasKerjaTemuan['rekomendasi'];
+				foreach ($listRekomendasi as $rekomendasi) {
+					if (isset($rekomendasi["rekomendasi_id"])) {
+						array_push($updatedRekomendasiData, array(
+							"rekomendasi_id" => $rekomendasi["rekomendasi_id"],
+							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"]['id'],
+							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+							"kerugian_negara" => $rekomendasi["kerugian_negara"],
+							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
+						));
+					}
+				}
 			} else {
 				array_push($addedData, array(
 					'lhp_id' => $postLhp['lhp_id'],
@@ -234,11 +248,38 @@ class Restlhp extends REST_Controller {
 				));
 			}
 		}
-		
+		//TODO: should be in one transaction
 		$this->mlhp->updateBatchKkt($updatedData);
+		$this->mlhp->updateBatchRekomendasi($updatedRekomendasiData);
+		
 		if (count($addedData) > 0) {
-			$this->mlhp->insertBatchKkt($addedData);
+//			$this->mlhp->insertBatchKkt($addedData);
+			foreach ($addedData as $addedRow) {
+				$kktId = $this->mlhp->insertKKLHP(array(
+					'lhp_id' => $postLhp['lhp_id'],
+					'jenis_temuan' => $addedRow['jenis_temuan']['kode_jenis_temuan'],
+					'kode_temuan_id' => $addedRow['kode_temuan_id'],
+					'uraian_temuan' => $addedRow['uraian_temuan'],
+					'kode_sebab_id' => $addedRow['kode_sebab_id'],
+					'uraian_sebab' => $addedRow['uraian_sebab'],
+					'nilai_temuan' => $addedRow['nilai_temuan'],
+					'user_id' => $this->session->userdata('user_id')
+				));
+//				if (isset($kktId)) {
+//					foreach ($postRekomendasi as $rekomendasi) {
+//						array_push($dataRekomendasi, array(
+//							"kertas_kerja_id" => $kktId,
+//							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
+//							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+//							"kerugian_negara" => $rekomendasi["kerugian_negara"],
+//							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
+//						));
+//					}
+//					$this->mlhp->insertBatchRekomendasi($dataRekomendasi);
+//				}
+			}
 		}
+		
 		
 		$this->response(array(
 			'data' => $postKertasKerjaTemuan,
