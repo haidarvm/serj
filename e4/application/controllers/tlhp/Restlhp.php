@@ -290,6 +290,24 @@ class Restlhp extends REST_Controller {
 			'addedData' => $addedData
 		), 200);
 	}
+	
+	public function codesebab_get() {
+		$kodeSebabId = $this->get("kode_sebab_id");
+		$this->load->model('Mlhp', 'mlhp');
+		$kodeSebab = $this->mlhp->getKodeSebab($kodeSebabId);
+		try {
+			if (!isset($kodeSebab)) {
+				throw new Exception('Data not found');
+			}
+			$this->response(array(
+				'data' => $kodeSebab,
+			), 200);	
+		} catch (Exception $ex) {
+			$this->response(array(
+				'message' => $ex->getMessage()
+			), 404);
+		}
+	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		

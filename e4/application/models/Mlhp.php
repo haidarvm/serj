@@ -387,4 +387,9 @@ class MLhp extends CI_Model {
 	public function updateBatchRekomendasi($arrRekomendasi) {
 		$this->db->update_batch("rekomendasi", $arrRekomendasi, "rekomendasi_id");
 	}
+	
+	public function getKodeSebab($kodeSebabId) {
+		$this->db->where("kode_sebab_id", $kodeSebabId);
+		return $this->db->get("kode_sebab")->row();
+	}
 }
