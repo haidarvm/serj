@@ -28,7 +28,7 @@
 <div class="container box-print">
 	<a class="btn btn-danger btn-fill btn-wd print-this"><i aria-hidden="true" class="fa fa-print"></i> Print</a>
 
-	<div class="row">
+	<div class="row" id="print-start-here">
 		<div class="col-md-12">
 			<div id="header">
 				<h1><?php echo $pageTitle;?></h1> 
