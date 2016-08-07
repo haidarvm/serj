@@ -870,13 +870,15 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	font-weight: bold;
 	padding-bottom: 10px;
 	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 13px !imporant;
 	background-color: lightblue;
 	line-height: 25px;
 }
-.t-print td{
+.t-print tbody td{
 	line-height: 25px;
-	padding: 1px 10px !imporant;
+	padding: 4px 10px !important;
 	font-size: 12px !imporant;
 	border: 1px solid lightblue;
 	
