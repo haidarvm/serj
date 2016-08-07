@@ -853,6 +853,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 #header {
 	position: relative;
 	margin-bottom: 15px;
+	font-family: "Muli-SemiBold" !important;
 }
 .print-this {
 	position: absolute;
@@ -872,7 +873,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-	font-size: 13px !imporant;
+	font-size: 13px !important;
 	background-color: lightblue;
 	line-height: 25px;
 }
