@@ -138,6 +138,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		selfK.kodeSebab = ko.observableArray([]);
 		selfK.firstKodeRekomendasi = ko.observableArray([]);
 		
+		//ini pas diload dipanggil juga/
 		selfK.data.kodeSebabId.subscribe(function(newVal){
 			var id;
 			if (typeof(newVal) === "object") {
@@ -162,6 +163,11 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 				}
 			});
 		})
+		
+//		selfK.data.findUraianSebab = function() {
+//			var kodeSebabId = selfK.data.kodeSebabId();
+//			console.info(kodeSebabId);
+//		}
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
