@@ -349,7 +349,12 @@ class MLhp extends CI_Model {
 	
 	public function getAllKertasKerjaTemuan($lhp_id) {
 		$query = "SELECT kkt.kertas_kerja_id, kkt.lhp_id, kkt.jenis_temuan, 
-		kkt.kode_temuan_id, kt.kode_temuan AS deskripsi_temuan, kkt.uraian_temuan, 
+		kkt.kode_temuan_id, 
+		kt.kode_temuan AS deskripsi_temuan,
+		kt.kelompok AS kelompok_temuan,
+		kt.sub_kelompok AS sub_kelompok_temuan,
+		kt.jenis AS jenis_kelompok_temuan,
+		kkt.uraian_temuan, 
 		kkt.kode_sebab_id, ks.uraian_sebab, 
 		kkt.nilai_temuan FROM {PRE}kertas_kerja_temuan AS kkt
 		INNER JOIN {PRE}kode_temuan AS kt ON kkt.kode_temuan_id = kt.kode_temuan_id
@@ -361,7 +366,8 @@ class MLhp extends CI_Model {
 	public function getAllRekomendasiByKktIds($kktids){
 		$reqIds = implode(", ", $kktids);
 		$query = "SELECT rek.rekomendasi_id, rek.kertas_kerja_id, rek.kode_rekomendasi_id, 
-		kode_rek.uraian_rekomendasi AS ori_uraian_rekomendasi, rek.uraian_rekomendasi, 
+		kode_rek.uraian_rekomendasi AS ori_uraian_rekomendasi,
+		rek.uraian_rekomendasi, 
 		rek.kerugian_negara, rek.nilai_rekomendasi 
 		FROM {PRE}rekomendasi AS rek
 		INNER JOIN {PRE}kode_rekomendasi AS kode_rek 

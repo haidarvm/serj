@@ -105,7 +105,8 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			selfK.data.rekomendasi.remove(vModel);
 		}
 		
-		selfK.initData = function(kertasKerjaId, lhpId, jenisTemuan, noTemuan, kodeTemuanId, 
+		selfK.initData = function(kertasKerjaId, lhpId, jenisTemuan, noTemuan, 
+				kodeTemuanId, kelompok_temuan, sub_kelompok_temuan, jenis_kelompok_temuan,
 				deskripsi_temuan, uraianTemuan, kodeSebabId, uraianSebab, nilaiTemuan, firstRekomendasiId,
 				firstKodeRekomendasiId, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi) {
@@ -128,7 +129,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			}
 			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
 			
-			selfK.kodeTemuan.push({id: kodeTemuanId, text: kodeTemuanId+'. '+deskripsi_temuan});
+			selfK.kodeTemuan.push({id: kodeTemuanId, text: kelompok_temuan+'.'+sub_kelompok_temuan+"."+jenis_kelompok_temuan});
 			selfK.kodeSebab.push({id: kodeSebabId, text: kodeSebabId+'. '+uraianSebab});
 			selfK.firstKodeRekomendasi.push({id: firstKodeRekomendasiId, text: firstKodeRekomendasiId+'. '+firstOriUraianRekomendasi});
 		}
@@ -315,7 +316,9 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 								}
 								
 								if (a.rekomendasi.length > 0) {
-									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, a.kode_temuan_id, 
+//									kodeTemuanId, kelompok_temuan, sub_kelompok_temuan, jenis_kelompok_temuan,
+									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
+											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
 											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
 											a.uraian_sebab, a.nilai_temuan,
 											a.rekomendasi[0].rekomendasi_id,
@@ -382,7 +385,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 						for (var i=0; i<data.data.length; i++) {
 							var item = {
 								id: data.data[i].kode_temuan_id,
-								text: data.data[i].kode_temuan_id+'. '+data.data[i].kode_temuan
+								text: data.data[i].kelompok+'.'+data.data[i].sub_kelompok +"."+data.data[i].jenis
 							}
 							rData.push(item);
 						}

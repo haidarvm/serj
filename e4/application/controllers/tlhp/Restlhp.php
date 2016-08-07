@@ -175,6 +175,7 @@ class Restlhp extends REST_Controller {
 			array_push($kktIds, $kktRow->kertas_kerja_id);
 		}
 		$kktUniqueIds = array_unique($kktIds);
+		
 		if (count($kktUniqueIds) > 0) {
 			$rekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktUniqueIds);
 			
