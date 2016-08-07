@@ -55,7 +55,8 @@ define(["jquery", "knockout", "bootstrap",
 					refreshManusTable();
 					if (actionType == "POST") {
 						self.resetData();
-						$("#notify").notify("Data telah disimpan", "alert alert-info");
+//						$("#notify").notify("Data telah disimpan", "alert alert-info");
+						$('#userModal').modal('hide');
 					} else {
 						$('#userModal').modal('hide');
 					}
