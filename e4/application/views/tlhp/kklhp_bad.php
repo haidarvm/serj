@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></p>
-						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan:"";?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? ucfirst($lhp->judul_lhp) :"";?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? ucfirst($lhp->objek_pengawasan):"";?></p>
 					</div>
 					<div class="content table-full-width custom-tab">
 						<div class="table-responsive tab-res-lg">

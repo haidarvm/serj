@@ -5,8 +5,8 @@
 				<div class="card">
 					<div class="header">
 						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp : "undefined"; ?></p>
-						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? $lhp->objek_pengawasan: "undefined"; ?></p>
+						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? ucfirst($lhp->judul_lhp) : "undefined"; ?></p>
+						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? ucfirst($lhp->objek_pengawasan) : "undefined"; ?></p>
 					</div>
 					<!-- these are very importan, be carefull dont rename them -->
 					<input type="hidden" id="action" value="<?php echo isset($action) ? $action : null; ?>"/>
@@ -70,13 +70,12 @@
 											<th class="info">KERUGIAN NEGARA</th>
 											<th class="info">NILAI (Rp.)</th>
 											<th class="success">UNIT KERJA</th>
-											<th class="success">UNIT KERJA</th>
 											<th class="success">NAMA PPK</th>
 											<th class="success">NAMA PJ</th>
 											<th class="success">PERIODE TINDAK LANJUT</th>
 											<th class="success">TINDAK LANJUT</th>
 											<th class="success">DOKUMEN PENDUKUNG</th>
-											<th>JUMLAH</th>
+											<th class="success">JUMLAH</th>
 											<th>NILAI (Rp.)</th>
 											<th>JUMLAH</th>
 											<th>NILAI (Rp.)</th>
@@ -167,7 +166,7 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input">
-													<option>-- Departement --</option>
+													<option>-- Unit Kerja --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
 													<option>DEPUTI III</option>
@@ -180,9 +179,8 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td><textarea class="form-control border-input"></textarea></td>
+											<td><textarea class="form-control border-input"></textarea></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -225,7 +223,7 @@
 											</td>
 											<td>
 												<select class="form-control">
-													<option>-- departement --</option>
+													<option>--  Unit Kerja --</option>
 													<option>DEPUTI I</option>
 													<option>DEPUTI II</option>
 													<option>DEPUTI III</option>
@@ -238,8 +236,6 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
-											<td></td>
-											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>

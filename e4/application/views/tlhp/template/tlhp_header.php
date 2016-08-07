@@ -108,7 +108,8 @@ var site_url = "<?=base_url()?>";
 								<ul class="dropdown-menu">
 									<li><a href="<?=site_url()?>tlhp/manus/profile">Edit profile</a></li>
 									<li><a href="<?=site_url()?>auth/logout">Log out</a></li>
-								</ul></li>
+								</ul>
+							</li>
 						</ul>
 
 					</div>
