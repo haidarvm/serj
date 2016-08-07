@@ -24,7 +24,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="bg-print">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -32,6 +32,7 @@
 				<h1><?php echo $pageTitle;?></h1> 
 				<a class="btn btn-danger btn-fill btn-wd print-this"><i aria-hidden="true" class="fa fa-print"></i> Print</a>
 			</div>
+			
 			<table width="100%" class="t-print">
 				<tr>
 					<th colspan='2' align="center" style="font-weight: bold;">TINDAK LANJUT HASIL PENGAWASAN</th>
@@ -77,7 +78,7 @@
 
 			<div class="row">
 				<h4 class="tittle-row"></h4>
-				<div class="col-md-6">
+				<div class="col-md-6 bottom-space">
 					<div class="card">
 						<div class="header">
 							<h4 class="title">
@@ -93,7 +94,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 bottom-space">
 					<div class="card">
 						<div class="header">
 							<h4 class="title">
@@ -108,9 +109,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
-	
 </div>
 <script src="<?php echo base_url()?>assets/js/jquery-3.1.0.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>

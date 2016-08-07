@@ -884,3 +884,12 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	border: 1px solid lightblue;
 	
 }
+.bottom-space {
+	margin-bottom: 60px;
+}
+.bottom-space .canvasjs-chart-canvas {
+	border-radius: 7px;
+}
+.bg-print {
+	background: #f9f9f9;
+}
