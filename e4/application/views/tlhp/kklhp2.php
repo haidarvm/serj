@@ -163,7 +163,7 @@
 <!--												<textarea class="form-control border-input" value="value: data.firstNilaiRekomendasi">-->
 <!--												</textarea>-->
 												<input type="number" class="form-control border-input" 
-												data-bind="value: data.firstNilaiRekomendasi" style="width: 200px"/>
+												data-bind="value: data.firstNilaiRekomendasi, enable: data.firtsNilaiRekomendasiEnable" style="width: 200px"/>
 											</td>
 											<td>
 												<select class="form-control select-simple border-input">
@@ -221,7 +221,7 @@
 											<td>
 												<!-- nilai -->
 												<input type="number" class="form-control border-input" 
-												data-bind="value: data.nilaiRekomendasi"/>
+												data-bind="value: data.nilaiRekomendasi, enable: data.nilaiRekomendasiEnable"/>
 											</td>
 											<td>
 												<select class="form-control">

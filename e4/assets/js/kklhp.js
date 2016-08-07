@@ -13,13 +13,16 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			kerugianNegara: ko.observable(false),
 			kerugianNegaraCbk: ko.observable(false),
 			nilaiRekomendasi: ko.observable(),
+			nilaiRekomendasiEnable: ko.observable(false)
 		}
 		
 		selfR.data.kerugianNegaraCbk.subscribe(function(newVal){
 			if (newVal == true) {
 				selfR.data.kerugianNegara(true);
+				selfR.data.nilaiRekomendasiEnable(true);
 			} else {
 				selfR.data.kerugianNegara(false);
+				selfR.data.nilaiRekomendasiEnable(false);
 			}
 			
 		});
@@ -38,6 +41,7 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		}
 		
 		selfR.kodeSebab = ko.observableArray([]);
+		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -78,14 +82,17 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			firstKerugianNegara: ko.observable(false),
 			firstKerugianNegaraCbk: ko.observable(false),
 			firstNilaiRekomendasi: ko.observable(),
+			firtsNilaiRekomendasiEnable: ko.observable(false),
 		}
 		
 		selfK.data.firstKerugianNegaraCbk.subscribe(function(newVal){
 			console.debug('kerugian negara '+ newVal)
 			if (newVal == true) {
 				selfK.data.firstKerugianNegara(true);
+				selfK.data.firtsNilaiRekomendasiEnable(true);
 			} else {
 				selfK.data.firstKerugianNegara(false);
+				selfK.data.firtsNilaiRekomendasiEnable(false);
 			}  
 		});
 		
