@@ -114,6 +114,12 @@ button.btn {
 .caret {
 	margin-top: -32px;
 }
+.navbar .navbar-nav > li > a {
+	padding: 10px 15px 0px;
+}
+.navbar {
+    min-height: 60px;
+}
 
 #kertas-kerja textarea.form-control {
     height: 30px;
@@ -277,10 +283,15 @@ button.ngurang {
 .top-head {
 	background: transparent;
 }
-
+.navbar .navbar-brand {
+	padding: 10px 15px 0;
+}
 .navbar-header h4 {
 	margin-left: -20px;
-	margin-top: 25px;
+	margin-top: 15px;
+}
+.navbar-brand {
+	margin: 7px 0 0 -10px !important;
 }
 
 .modal-backdrop {
