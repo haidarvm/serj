@@ -1,5 +1,5 @@
-define(["jquery", "knockout","underscore",  "bootstrap","select2", 
-        ], function($, ko, _){
+define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
+        ], function($, ko, _, accounting){
 	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
@@ -140,26 +140,17 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 		selfK.uiKodeSebab = ko.observable();
 		selfK.uiFirstKodeRekomendasi = ko.observable();
 		
-		//ini pas diload dipanggil juga/
-		selfK.data.kodeSebabId.subscribe(function(newVal){
-			var id = newVal;
-//			$.ajax({
-//				action: 'GET',
-//				data: {'kode_sebab_id': id},
-//				dataType: 'json',
-//				url: site_url + "tlhp/restlhp/getcodesebab",
-//				beforeSend: function() {
-//					selfK.data.uraianSebab('please wait...');
-//				},
-//				success: function(data) {
-//					selfK.data.uraianSebab(data.data.uraian_sebab);
-//				}, 
-//				error: function(e) {
-//					console.info('error');
-//				}
-//			});
-		})
+//		selfK.uiNilaiTemuan = ko.observable();
+//		selfk.data.uiNilaiTemuan.subscribe(function(newVal){
+//			self.data.nilaiTemuan(newVal);
+//		});
 		
+		selfK.toMoneyFormat = function() {
+			console.info('calling money format');
+			var newVal = accounting.formatNumber(selfK.data.nilaiTemuan());
+			console.debug(newVal);
+			selfK.data.nilaiTemuan('kenapa ya');
+		}
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
@@ -175,7 +166,9 @@ define(["jquery", "knockout","underscore",  "bootstrap","select2",
 			var urutan = selfJ.data.kertasKerjaTemuan().length + 1;
 			var kkt = new KertasKerjaTemuanViewModel(urutan, false);
 			kkt.data.jenisTemuan(selfJ.data.kodeTemuan());
+			kkt.data.lhpId($('#lhp_id').val());
 			
+			console.debug(kkt.data.lhpId());
 			selfJ.data.kertasKerjaTemuan.push(kkt);
 		}
 		
