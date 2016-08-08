@@ -98,10 +98,16 @@ header {
     z-index: 1200;
     
 }
+.dropdown-toggle > p {
+    line-height: 17px;
+}
 .profile-pic {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
+    height: 40px;
+    margin-right: 5px;
+    position: relative;
+    top: -10px;
+    width: 40px;
 }
 
 /*** TABLE STYLE ***/

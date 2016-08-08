@@ -312,6 +312,9 @@ button.ngurang {
 .nopadding {
 	padding: 0 !important;
 }
+.nopadding-left {
+	padding-left: 0 !important;
+}
 
 .effect {
 	-webkit-transition: all 0.5s ease-out;

@@ -1,8 +1,9 @@
 <div class="content">
     <div class="row">
             <h4 class="tittle-row">TINDAK LANJUT HASIL PENGAWASAN</h4>
-            <div class="col-lg-2 col-sm-6">
-                <div class="card">
+            <div class="col-md-12">
+				<div class="col-lg-4 col-sm-6">
+					<div class="card">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
@@ -15,14 +16,14 @@
 	                   </div>
 				     
 	               </div>
-	           </div>
-	           <div class="col-lg-2 col-sm-6">
-                <div class="card">
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="card">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">TOTAL REKOMENDASI <br/>SEJAK TAHUN 2013</p>
+	                                   <p class="t-card">TOTAL REKOMENDASI SEJAK TAHUN 2013</p>
                                        <span class="t-number">70</span>
 	                               </div>
 	                           </div>
@@ -30,9 +31,9 @@
 	                   </div>
 				     
 	               </div>
-	           </div>
-              <div class="col-lg-2 col-sm-6">
-                <div class="card">
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="card">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
@@ -44,8 +45,11 @@
 	                       </div>
 	                   </div>
 	               </div>
-	           </div>
-	           <div class="col-lg-2 col-sm-6">
+				</div>
+			</div>
+				
+			<div class="col-md-12">
+	           <div class="col-lg-4 col-sm-6">
                     <div class="card">
 	                   <div class="content">
 	                       <div class="row">
@@ -59,7 +63,7 @@
 	                   </div>
 	                </div>
 	           </div>
-	           <div class="col-lg-2 col-sm-6">
+	           <div class="col-lg-4 col-sm-6">
                 <div class="card">
 	                   <div class="content">
 	                       <div class="row">
@@ -73,7 +77,7 @@
 	                   </div>
 	               </div>
 	           </div>
-	           <div class="col-lg-2 col-sm-6">
+	           <div class="col-lg-4 col-sm-6">
                 <div class="card">
 	                   <div class="content">
 	                       <div class="row">
@@ -87,11 +91,12 @@
 	                   </div>
 	               </div>
 	           </div>
+			</div>
 	   </div>
     
         <div class="row">
             <h4 class="tittle-row">KERUGIAN KEUANGAN NEGARA</h4>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="card">
 	                   <div class="content">
 	                       <div class="row">
@@ -105,7 +110,7 @@
 	                   </div>
 	               </div>
 	           </div>
-	           <div class="col-lg-3 col-sm-6">
+	           <div class="col-lg-4 col-sm-6">
                 <div class="card">
 	                   <div class="content">
 	                       <div class="row">
@@ -119,7 +124,7 @@
 	                   </div>
 	               </div>
 	           </div>
-               <div class="col-lg-3 col-sm-6">
+               <div class="col-lg-4 col-sm-6">
                 <div class="card">
 	                   <div class="content">
 	                       <div class="row">
@@ -133,7 +138,7 @@
 	                   </div>
 	               </div>
 	           </div>
-            <div class="col-lg-3 col-sm-6">
+				<div class="col-lg-3 col-sm-6 f-right">
 	                   <div class="card" data-color="magenta">
 	                       <div class="content">
 	                           <div class="row">
@@ -152,7 +157,7 @@
 	                            </div>
 	                   </div>
                     
-	       </div>
+				</div>
     </div>
  <!--div class="row">
 		<div class="col-md-6">
