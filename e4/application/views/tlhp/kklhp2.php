@@ -134,8 +134,6 @@
 											</td>
 											<td>
 												<!-- nilai -->
-<!--												<textarea class="form-control border-input" data-bind="value: data.nilaiTemuan">-->
-<!--												</textarea>-->
 												<input type="number" class="form-control border-input" 
 												data-bind="value: data.nilaiTemuan" style="width: 200px"/>
 											</td>
@@ -239,6 +237,8 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
+											<td><textarea class="form-control border-input"></textarea></td>
+											<td><textarea class="form-control border-input"></textarea></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -317,6 +317,7 @@
             "select2": site_url+ "assets/js/select2.min",
          	"knockout": site_url+"assets/js/knockout-3.2.0",
          	"underscore": site_url+"assets/js/underscore",
+         	"accounting": site_url+"assets/js/accounting.min",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
