@@ -111,6 +111,9 @@ button.btn {
 .same-height {
 	min-height: 100px;
 }
+.caret {
+	margin-top: -32px;
+}
 
 #kertas-kerja textarea.form-control {
     height: 30px;
