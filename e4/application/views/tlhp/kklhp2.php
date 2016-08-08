@@ -1,4 +1,41 @@
 <div class="content">
+	<!-- form tindak lajut -->
+	<div id="formTindakLanjut" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="userModalLabel">Tambah Tindak Lanjut</h4>
+				</div>
+	            <div class="modal-body modal-form" role="form">
+	                <form class="form-horizontal">
+	                	<label for="rekomendasi">Rekomendasi</label>
+	                	<textarea name="rekomendasi" class="form-control" 
+	                	data-bind="value: dataTindakLanjut.uraianRekomendasi"></textarea>
+	                	
+                		<label for="tindakLanjut">Tindak Lanjut</label>
+    					<textarea name="tindakLanjut" class="form-control" 
+    					data-bind="value: dataTindakLanjut.tindakLanjut"></textarea>
+    					
+                		<label for="rekomendasi">Nilai</label>
+    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.nilai"/>
+	                		
+                		<label for="dokumen">Dokumen</label>
+    					<input type="file"/>
+	                	
+                		<label for="rekomendasi">Tanggal</label>
+    					<input type="text" class="form-control" data-bind="value: dataTindakLanjut.tanggal"/>
+	                </form>
+	            </div>
+	            <div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        	<button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+			</div>
+		</div>
+	</div><!-- end form tindak lanjut -->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12 col-md-7">
@@ -153,6 +190,9 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
 												</textarea>
+												<a href="#" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
+													Tambah Tindak Lanjut
+												</a>
 											</td>
 											<td>
 												<input type="checkbox" data-bind="checked: data.firstKerugianNegaraCbk"/>
@@ -212,6 +252,9 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
 												</textarea>
+												<a href="#" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
+													Tambah Tindak Lanjut
+												</a>
 											</td>
 											<td>
 												<!-- kerugian negara -->

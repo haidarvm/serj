@@ -1,6 +1,18 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
         ], function($, ko, _, accounting){
 	
+	function FormTindakLanjutView(uraianRekomendasi) {
+		selfTl = self;
+		
+		selfTL.dataRekomendasi = {
+			uraianRekomendasi: ko.observable(uraianRekomendasi),
+			tindakLanjut: ko.observable(),
+			nilai: ko.observable(),
+			dokument : ko.observableArray([]),
+			tanggal: ko.observable()
+		}
+	}
+	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
@@ -389,6 +401,34 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				
 			});
 		}
+		
+		
+		self.dataTindakLanjut = {
+			kertasKerjaId: ko.observable(),
+			rekomendasiId: ko.observable(),
+			uraianRekomendasi: ko.observable(),
+			tindakLanjut: ko.observable(),
+			nilai: ko.observable(),
+			dokument : ko.observableArray([]),
+			tanggal: ko.observable()
+		}
+		
+		self.addTindakLanjutFirstLine = function(data){
+			console.debug(data);
+			self.dataTindakLanjut.uraianRekomendasi(data.data.firstUraianRekomendasi());
+			$('#formTindakLanjut').modal('show');
+		}
+		
+		self.addTindakLanjut = function(data){
+			console.debug(data);
+			self.dataTindakLanjut.uraianRekomendasi(data.data.uraianRekomendasi());
+			$('#formTindakLanjut').modal('show');
+		}
+		
+		self.insertTindakLanjut = function() {
+			
+		}
+		
 	} // end mainViewModel
 	
 	var vm = new MainViewModel();
