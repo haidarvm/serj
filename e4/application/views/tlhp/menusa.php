@@ -97,7 +97,7 @@
         <div class="row">
             <h4 class="tittle-row">KERUGIAN KEUANGAN NEGARA</h4>
             <div class="col-lg-3 col-sm-6">
-                <div class="card">
+                <div class="card same-height">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
@@ -111,7 +111,7 @@
 	               </div>
 	           </div>
 	           <div class="col-lg-3 col-sm-6">
-                <div class="card">
+                <div class="card same-height">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
@@ -125,7 +125,7 @@
 	               </div>
 	           </div>
                <div class="col-lg-3 col-sm-6">
-                <div class="card">
+                <div class="card same-height">
 	                   <div class="content">
 	                       <div class="row">
 	                           <div class="col-xs-12">
@@ -138,8 +138,8 @@
 	                   </div>
 	               </div>
 	           </div>
-				<div class="col-lg-3 col-sm-6 f-right">
-	                   <div class="card" data-color="magenta">
+				<div class="col-lg-3 col-sm-6">
+	                   <div class="card same-height" data-color="magenta">
 	                       <div class="content">
 	                           <div class="row">
 	                               <div class="col-xs-3">

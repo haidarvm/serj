@@ -108,6 +108,9 @@ button.btn {
 .modal-dialog {
   /* padding-top: 15%; */
 }
+.same-height {
+	min-height: 100px;
+}
 
 #kertas-kerja textarea.form-control {
     height: 30px;
