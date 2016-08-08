@@ -100,6 +100,7 @@ header {
 }
 .dropdown-toggle > p {
     line-height: 17px;
+	font-size: 15px;
 }
 .profile-pic {
     border: 1px solid #dddddd;
