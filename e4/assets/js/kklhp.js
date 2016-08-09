@@ -25,7 +25,15 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			kerugianNegara: ko.observable(false),
 			kerugianNegaraCbk: ko.observable(false),
 			nilaiRekomendasi: ko.observable(),
-			nilaiRekomendasiEnable: ko.observable(false)
+			nilaiRekomendasiEnable: ko.observable(false),
+			
+			NamaPpk : ko.observable(),
+			NamaPj : ko.observable(),
+			periodeTindakLanjut : ko.observable(),
+			uraianTindakLanjut : ko.observable(),
+			dokumentPendukungTl : ko.observable(),
+			tanggalTl: ko.observable(),
+			jumlahTl : ko.observable(),
 		}
 		
 		selfR.data.kerugianNegaraCbk.subscribe(function(newVal){
@@ -96,6 +104,14 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			firstKerugianNegaraCbk: ko.observable(false),
 			firstNilaiRekomendasi: ko.observable(),
 			firtsNilaiRekomendasiEnable: ko.observable(false),
+			
+			firstNamaPpk : ko.observable(),
+			firstNamaPj : ko.observable(),
+			firstPeriodeTindakLanjut : ko.observable(),
+			firstUraianTindakLanjut : ko.observable(),
+			firstDokumentPendukungTl : ko.observable(),
+			firstTanggalTl: ko.observable(),
+			firstJumlahTl : ko.observable(),
 		}
 		
 		selfK.data.firstKerugianNegaraCbk.subscribe(function(newVal){
@@ -407,26 +423,39 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			kertasKerjaId: ko.observable(),
 			rekomendasiId: ko.observable(),
 			uraianRekomendasi: ko.observable(),
-			tindakLanjut: ko.observable(),
-			nilai: ko.observable(),
+			uraianTindakLanjut: ko.observable(),
+			jumlahTl: ko.observable(),
 			dokument : ko.observableArray([]),
-			tanggal: ko.observable()
+			tanggalTl: ko.observable()
 		}
 		
+		self.firstViewTindakTindakLanjut;
+		self.viewTindakLanjut;
+		self.isFirstLineTindakLanjut = false;
+		
 		self.addTindakLanjutFirstLine = function(data){
-			console.debug(data);
+			self.isFirstLineTindakLanjut = true;
+			self.firstViewTindakLanjut = data;
 			self.dataTindakLanjut.uraianRekomendasi(data.data.firstUraianRekomendasi());
 			$('#formTindakLanjut').modal('show');
 		}
 		
 		self.addTindakLanjut = function(data){
 			console.debug(data);
+			self.viewTindaLanjut = data;
 			self.dataTindakLanjut.uraianRekomendasi(data.data.uraianRekomendasi());
 			$('#formTindakLanjut').modal('show');
 		}
 		
 		self.insertTindakLanjut = function() {
-			
+			console.info('insert tindak lanjut was clicked');
+			if (self.isFirstLineTindakLanjut == true) {
+				self.firstViewTindakLanjut.data.firstUraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
+				self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
+			}
+			console.debug(self.firstViewTindakLanjut.data.firstUraianTindakLanjut());
+			$('#formTindakLanjut').modal('hide');
+//			console.debug(viewTindakLanjut.data);
 		}
 		
 	} // end mainViewModel

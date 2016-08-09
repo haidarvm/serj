@@ -17,21 +17,21 @@
 	                	
                 		<label for="tindakLanjut">Tindak Lanjut</label>
     					<textarea name="tindakLanjut" class="form-control" 
-    					data-bind="value: dataTindakLanjut.tindakLanjut"></textarea>
+    					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
     					
                 		<label for="rekomendasi">Nilai</label>
-    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.nilai"/>
+    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.nilaiTl"/>
 	                		
                 		<label for="dokumen">Dokumen</label>
     					<input type="file"/>
 	                	
                 		<label for="rekomendasi">Tanggal</label>
-    					<input type="text" class="form-control" data-bind="value: dataTindakLanjut.tanggal"/>
+    					<input type="text" class="form-control" data-bind="value: dataTindakLanjut.tanggalTl"/>
 	                </form>
 	            </div>
 	            <div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        	<button type="button" class="btn btn-primary">Save changes</button>
+		        	<button type="button" class="btn btn-primary" data-bind="event: {click: insertTindakLanjut}">Save changes</button>
 		      </div>
 			</div>
 		</div>
@@ -219,12 +219,28 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
-											<td><textarea class="form-control border-input"></textarea></td>
-											<td><textarea class="form-control border-input"></textarea></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- nama ppk -->
+												<textarea class="form-control border-input"></textarea>
+											</td>
+											<td>
+												<!-- nama pj -->
+												<textarea class="form-control border-input"></textarea>
+											</td>
+											<td>
+												<!-- periode tindak lanjut -->
+												<span></span>
+											</td>
+											<td>
+												<!-- uraian tindak lanjut -->
+												<span data-bind="text: data.firstUraianTindakLanjut">[uraian tindak lanjut]</span>
+											</td>
+											<td>
+												<!-- dokument pendukung -->
+											</td>
+											<td>
+												<!-- nilai -->
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>
