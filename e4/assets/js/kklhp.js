@@ -434,6 +434,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		self.isFirstLineTindakLanjut = false;
 		
 		self.addTindakLanjutFirstLine = function(data){
+			self.resetDataTindakLanjut();
 			self.isFirstLineTindakLanjut = true;
 			self.firstViewTindakLanjut = data;
 			self.dataTindakLanjut.uraianRekomendasi(data.data.firstUraianRekomendasi());
@@ -441,6 +442,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		}
 		
 		self.addTindakLanjut = function(data){
+			self.resetDataTindakLanjut();
 			console.debug(data);
 			self.viewTindaLanjut = data;
 			self.dataTindakLanjut.uraianRekomendasi(data.data.uraianRekomendasi());
@@ -452,10 +454,23 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			if (self.isFirstLineTindakLanjut == true) {
 				self.firstViewTindakLanjut.data.firstUraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
 				self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
+				self.firstViewTindakLanjut.data.firstTanggalTl(self.dataTindakLanjut.tanggalTl());
+			} else {
+				self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
+				self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
+				self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
 			}
-			console.debug(self.firstViewTindakLanjut.data.firstUraianTindakLanjut());
+			
 			$('#formTindakLanjut').modal('hide');
 //			console.debug(viewTindakLanjut.data);
+		}
+		
+		self.resetDataTindakLanjut = function() {
+			self.dataTindakLanjut.uraianRekomendasi(null);
+			self.dataTindakLanjut.uraianTindakLanjut(null);
+			self.dataTindakLanjut.jumlahTl(null);
+			self.dataTindakLanjut.dokument([]);
+			self.dataTindakLanjut.tanggalTl(null);
 		}
 		
 	} // end mainViewModel
