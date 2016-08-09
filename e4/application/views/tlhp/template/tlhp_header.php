@@ -37,7 +37,11 @@
 <!--  Summernote     -->
 <link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
 <link href="<?=base_url();?>assets/css/select2.min.css" rel="stylesheet" />
-
+<style type="text/css">
+body.modal-open .datepicker {
+    z-index: 1200 !important;
+}
+</style>
 <script src="<?=base_url();?>assets/js/require.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">

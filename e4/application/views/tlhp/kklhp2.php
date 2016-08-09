@@ -26,7 +26,9 @@
     					<input type="file"/>
 	                	
                 		<label for="rekomendasi">Tanggal</label>
-    					<input type="text" class="form-control" data-bind="value: dataTindakLanjut.tanggalTl"/>
+    					<input type="text" class="form-control"
+    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
+    					class="datepicker"/>
 	                </form>
 	            </div>
 	            <div class="modal-footer">
@@ -367,7 +369,9 @@
             "select2" : {deps: ["jquery"]},
             //masih suka bermasalah
 //            "papertlhp" : {"deps": ["jquery","bootstrap"]},
-            "select2" : {deps: ["jquery"]}
+            "select2" : {deps: ["jquery"]},
+            "datetimepicker" : {deps: ["jquery", "moment"]},
+            "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]}
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -377,9 +381,12 @@
          	"knockout": site_url+"assets/js/knockout-3.2.0",
          	"underscore": site_url+"assets/js/underscore",
          	"accounting": site_url+"assets/js/accounting.min",
+         	"datebindinghandler": site_url+"assets/js/datebindinghandler",
+         	"datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
+            "moment" : site_url+ "assets/js/moment.min",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
-	requirejs(["jspath/kklhp"]);
+	requirejs(["jspath/kklhp", "jspath/datebindinghandler"]);
 </script> 
 

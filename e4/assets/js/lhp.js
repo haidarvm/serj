@@ -114,6 +114,7 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 	        });
 		}
 	}
+	
     $(function(){
     	ko.applyBindings(lhpView);
     	
