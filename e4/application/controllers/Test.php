@@ -6,7 +6,6 @@ class Test extends MY_Controller {
 		parent::__construct();
 		$this->load->model('muser');
 		$this->muser = new MUser();
-		$this->load->library('pdf');
 	}
 
 	public function index() {
@@ -17,6 +16,7 @@ class Test extends MY_Controller {
 	}
 
 	public function userlog() {
+		$this->load->library('pdf');
 		$data['pageTitle'] = 'Log History ' . get_current_app();
 		$data['headers'] = array('NO', 'NAMA', 'USERNAME', 'JABATAN', 'UNIT KERJA', 'LAST LOGIN', 'LAMA PENGGUNAAN');
 		$userLog = $this->muser->getAllLogUser($cond = NULL, $order_by = ' ORDER BY log_id DESC')->result();
@@ -49,7 +49,7 @@ class Test extends MY_Controller {
 	}
 	
 	public function menusa_print() {
-		$data['pageTitle'] = "Menusa Print";
+		$data['pageTitle'] = "Rekapitulasi hasil pengawasan inspektorat";
 		$this->load->view('tlhp/menusa_print',$data);
 	}
 
