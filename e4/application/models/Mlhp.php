@@ -258,7 +258,8 @@ class MLhp extends CI_Model {
 		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
 		$sql = "SELECT *, tl.template_laporan_id as template_laporan_id, tl.create_date as create_date
 				FROM {PRE}template_laporan tl
-    			LEFT JOIN {PRE}upload_template_laporan utl ON utl.template_laporan_id = tl.template_laporan_id
+    			LEFT JOIN {PRE}template_laporan_media tlm ON tlm.template_laporan_id = tl.template_laporan_id
+    			LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id
     			" . $cond . " " . $order_by;
 		$query = $this->db->query($sql);
 // 		echo $this->db->last_query();exit;
