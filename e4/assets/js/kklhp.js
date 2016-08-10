@@ -736,6 +736,25 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 	
 	
 	$(function(){
+	
+		/**
+		 * Save To Excel
+		 * agusprasetyo811@gmail.com
+		 */
+		$('#save-to-excel').on('click', function() {
+			$.ajax({
+				action: 'GET',
+				url: site_url + "tlhp/pilihlhp/save_to_excel",
+				success: function(data) {
+					alert('Data berhasil disimpan dalam File Excel, Lokasi, `assets/data/lhp.xls`');
+				}, 
+				error: function(e) {
+					console.info('error');
+				}
+			});
+		});
+		
+		
 		ko.applyBindings(vm);
 		vm.init();
 	});
