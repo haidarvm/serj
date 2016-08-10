@@ -1,18 +1,6 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
         ], function($, ko, _, accounting){
 	
-	function FormTindakLanjutView(uraianRekomendasi) {
-		selfTl = self;
-		
-		selfTL.dataRekomendasi = {
-			uraianRekomendasi: ko.observable(uraianRekomendasi),
-			tindakLanjut: ko.observable(),
-			nilai: ko.observable(),
-			dokument : ko.observableArray([]),
-			tanggal: ko.observable()
-		}
-	}
-	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
@@ -62,6 +50,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
 		selfR.uiKodeRekomendasi = ko.observable();
+		selfR.uiJumlahTl = ko.computed(function(){
+			return "testing jumlah tl";
+		});
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -179,6 +170,15 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			console.debug(newVal);
 			selfK.data.nilaiTemuan('kenapa ya');
 		}
+		
+		selfK.uiFirstJumlahTl = ko.computed(function(){
+			if (selfK.data.firstJumlahTl() != undefined) {
+				return accounting.formatNumber(selfK.data.firstJumlahTl(), 2, ".", ",");
+			} else {
+				return null;
+			}
+			
+		});
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {

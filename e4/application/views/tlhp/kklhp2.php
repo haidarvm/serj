@@ -20,7 +20,7 @@
     					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
     					
                 		<label for="rekomendasi">Nilai</label>
-    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.nilaiTl"/>
+    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.jumlahTl"/>
 	                		
                 		<label for="dokumen">Dokumen</label>
     					<input type="file"/>
@@ -242,6 +242,7 @@
 											</td>
 											<td>
 												<!-- nilai -->
+												<span data-bind="text: uiFirstJumlahTl">[nilai dari tindak lanjut]</span>
 											</td>
 											<td></td>
 											<td></td>
