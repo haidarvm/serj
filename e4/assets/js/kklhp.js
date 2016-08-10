@@ -1,6 +1,7 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
         "jquerypriceformat"], function($, ko, _, accounting){
 	
+	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
@@ -151,13 +152,13 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				selfK.data.firstKerugianNegaraCbk(true);
 			}
 			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
-			selfK.uiFirstNilaiRekomendasi(accounting.formatMoney(firstNilaiRekomendasi, "Rp", ",", "."));
+			selfK.uiFirstNilaiRekomendasi(accounting.formatMoney(firstNilaiRekomendasi, "Rp", 0, ".", ","));
 			
 			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan+': '+deskripsi_temuan);
 			selfK.uiKodeSebab(kodeSebab+": "+uraianSebab);
 			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi+': '+firstOriUraianRekomendasi);
 			
-			selfK.uiNilaiTemuan(accounting.formatMoney(nilaiTemuan, "Rp", ",", "."));
+			selfK.uiNilaiTemuan(accounting.formatMoney(nilaiTemuan, "Rp", 0, ".", ","));
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -168,7 +169,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 
 		selfK.uiFirstJumlahTl = ko.computed(function(){
 			if (selfK.data.firstJumlahTl() != undefined) {
-				return accounting.formatNumber(selfK.data.firstJumlahTl(), "Rp", 2, ".", ",");
+				console.debug('uiFirstJumlahTl was formated');
+				console.debug(selfK.data.firstJumlahTl());
+				return accounting.formatMoney(selfK.data.firstJumlahTl(), "Rp", 0, ".", ",");
 			} else {
 				return null;
 			}
