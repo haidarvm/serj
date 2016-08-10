@@ -90,7 +90,14 @@ tr td.success {
 .sidebar-mini {
 	background-color: #f4f3ef !important;
 }
-
+.add-case {
+	display: inline-block;
+    margin: 5px 0 0px;
+    background: #337ab7;
+    color: #fff;
+    padding: 1px 10px 2px;
+    border-radius: 4px;
+}
 button.btn {
 	font-size: 12px;
 	letter-spacing: 0.5px;
@@ -128,6 +135,9 @@ button.btn {
     width: 300px;
     resize: vertical;
 }
+/* .select2-container {
+	margin: 10px 0 0px !important;
+} */
 button.tambah {
     background: #7ac29a none repeat scroll 0 0;
     border: 0 none;
@@ -623,6 +633,7 @@ tbody td {
 	.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::before,
 	.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour {
 	content: none !important;
+	z-index: 9999;
 }
 
 .footer {
