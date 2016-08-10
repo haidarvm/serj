@@ -173,8 +173,8 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<input type="number" class="form-control border-input" 
-												data-bind="value: data.nilaiTemuan" style="width: 200px"/>
+												<input type="text" class="form-control border-input" 
+												data-bind="priceformat: true, value: uiNilaiTemuan, originalNumber: data.nilaiTemuan" style="width: 200px"/>
 											</td>
 											<!-- Rekomendasi -->
 											<td>
@@ -203,8 +203,10 @@
 												<!-- nilai -->
 <!--												<textarea class="form-control border-input" value="value: data.firstNilaiRekomendasi">-->
 <!--												</textarea>-->
-												<input type="number" class="form-control border-input" 
-												data-bind="value: data.firstNilaiRekomendasi, enable: data.firtsNilaiRekomendasiEnable" style="width: 200px"/>
+												<input type="text" class="form-control border-input" 
+												data-bind="priceformat: true, value: uiFirstNilaiRekomendasi, originalNumber: data.firstNilaiRekomendasi, 
+												enable: data.firtsNilaiRekomendasiEnable" 
+												style="width: 200px"/>
 											</td>
 											<td>
 												<select class="form-control select-simple border-input">
@@ -281,8 +283,9 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<input type="number" class="form-control border-input" 
-												data-bind="value: data.nilaiRekomendasi, enable: data.nilaiRekomendasiEnable"/>
+												<input type="text" class="form-control border-input" 
+												data-bind="priceformat: true, value: uiNilaiRekomendasi, originalNumber: data.nilaiRekomendasi, 
+												enable: data.nilaiRekomendasiEnable"/>
 											</td>
 											<td>
 												<select class="form-control">
@@ -372,7 +375,8 @@
 //            "papertlhp" : {"deps": ["jquery","bootstrap"]},
             "select2" : {deps: ["jquery"]},
             "datetimepicker" : {deps: ["jquery", "moment"]},
-            "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]}
+            "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]},
+            "jquerypriceformat": {deps: ["jquery"]}
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -385,6 +389,7 @@
          	"datebindinghandler": site_url+"assets/js/datebindinghandler",
          	"datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
+            "jquerypriceformat" : site_url+ "assets/js/jquery.price_format.2.0.min",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
