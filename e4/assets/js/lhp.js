@@ -136,5 +136,6 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 //        $('.datepicker').datetimepicker(datepickerCfg); 
     	
     });
+	
  });
 
