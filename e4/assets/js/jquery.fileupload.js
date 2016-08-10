@@ -18,13 +18,13 @@
         // Register as an anonymous AMD module:
         define([
             'jquery',
-            'jquery.ui.widget'
+            site_url + 'assets/js/vendor/jquery.ui.widget.js'
         ], factory);
     } else if (typeof exports === 'object') {
         // Node/CommonJS:
         factory(
             require('jquery'),
-            require('./vendor/jquery.ui.widget')
+            require('jquery.ui.widget')
         );
     } else {
         // Browser globals:

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?=base_url()?>assets/css/jquery.fileupload.css">
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
@@ -59,7 +60,20 @@
 										<div class="form-group">
 											<label for="exampleInputFile" class="col-sm-3 control-label">Upload Cover<star>*</star></label>
 											<div class="col-sm-8">
-												<input type="file" name="file" id="exampleInputFile">
+												<!-- <input type="file" name="file" id="exampleInputFile"> -->
+												<div style="padding:10px;">
+												    <span class="btn btn-success fileinput-button">
+												        <i class="glyphicon glyphicon-plus"></i>
+												        <span>Select files...</span>
+												        <input id="fileupload" type="file" name="files[]" multiple>
+												    </span>
+												    <br>
+												    <div id="progress" class="progress" style="margin-top: 10px;">
+												        <div class="progress-bar progress-bar-success"></div>
+												    </div>
+												    <div id="files" class="files"></div>
+												    <br>
+												</div>
 											</div>
 										</div>
 									</fieldset>
@@ -102,6 +116,7 @@
 							<div class="col-md-8">
 								<!--.col-md-8-->
 							</div>
+							<?php if(!empty($template)) {?>
 							<div class="col-md-4">
 								<button type="button" class="btn btn-wd btn-warning btn-fill btn-margin">
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>
@@ -112,9 +127,8 @@
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-print"></i>
 									</span> PRINT
 								</button>
-								<!-- <a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a>
-								<a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> PDF </a> -->
 							</div>
+							<?php }?>
 						</div>
 					</div>
 				</div>
@@ -137,7 +151,7 @@
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
-            "summernote": site_url+ "assets/js/summernote",
+            "summernote": site_url+ "assets/js/summernote"
         }
     });
     requirejs(["jspath/lhp", "jspath/template_laporan"]);
@@ -157,19 +171,10 @@
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
             "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "ui.widget": site_url+ "assets/js/jquery.ui.widget",
+            "iframe.transport": site_url+ "assets/js/jquery.iframe-transport",
+            "fileupload": site_url+ "assets/js/jquery.fileupload",
         }
     });
     requirejs(["jspath/lhp"]);
-</script>
-
-<script type="text/javascript">
-     
-     function printDiv(elementId) {
-    var a = document.getElementById('print-area-2').value;
-    var b = document.getElementById(elementId).innerHTML;
-    window.frames["print_frame"].document.title = document.title;
-    window.frames["print_frame"].document.body.innerHTML = '<style>' + a + '</style>' + b;
-    window.frames["print_frame"].window.focus();
-    window.frames["print_frame"].window.print();
-}
 </script>

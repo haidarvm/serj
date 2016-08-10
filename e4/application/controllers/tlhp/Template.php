@@ -12,9 +12,9 @@ class Template extends MY_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('muser');
-		$this->load->model('mlhp');
+		$this->load->model('mtemplate');
 		$this->muser = new MUser();
-		$this->mlhp = new MLhp();
+		$this->mtemplate = new mtemplate();
 	}
 
 	/**
@@ -35,7 +35,7 @@ class Template extends MY_Controller {
 		
 		$columns = array(0 => 'template_laporan_id', 1 => 'nomor_laporan', 2 => 'periode_laporan', 3 => 'create_date', 4 => 'tanggal_laporan', 5 => 'judul_laporan');
 		
-		$query = $this->mlhp->getAllTemplate($cond = NULL, $order_by = NULL);
+		$query = $this->mtemplate->getAllTemplate($cond = NULL, $order_by = NULL);
 		$totalData = $query->num_rows();
 		$totalFiltered = $totalData;
 		
@@ -47,10 +47,10 @@ class Template extends MY_Controller {
 		} else {
 			$cond = NULL;
 		}
-		$query2 = $this->mlhp->getAllTemplate($cond);
+		$query2 = $this->mtemplate->getAllTemplate($cond);
 		$totalFiltered = $query2->num_rows();
 		$order_by3 = " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "  LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
-		$query3 = $this->mlhp->getAllTemplate($cond, $order_by3);
+		$query3 = $this->mtemplate->getAllTemplate($cond, $order_by3);
 		;
 		$data = array();
 		$x = 1;
@@ -71,7 +71,7 @@ class Template extends MY_Controller {
 
 	public function daftarlap() {
 		$data['title'] = "Daftar Laporan";
-		$data['getAllTemplate'] = $this->mlhp->getAllTemplate($cond = NULL, $order_by = NULL);
+		$data['getAllTemplate'] = $this->mtemplate->getAllTemplate($cond = NULL, $order_by = NULL);
 		$this->load->tlhp_template('tlhp/daftarlap', $data);
 	}
 
@@ -88,10 +88,10 @@ class Template extends MY_Controller {
 		$post = $this->input->post();
 		if ($post) {
 // 			echo 'masuk';exit();
-			$this->mlhp->updateTemplateLaporan($post,$id);
+			$this->mtemplate->updateTemplateLaporan($post,$id);
 			redirect('tlhp/template/daftarlap');
 		} else {
-			$data['template'] = $this->mlhp->getTemplate($id);
+			$data['template'] = $this->mtemplate->getTemplate($id);
 			$this->load->tlhp_template('tlhp/template_laporan', $data);
 		}
 	}
@@ -99,13 +99,49 @@ class Template extends MY_Controller {
 	public function update_proccess() {
 		// test
 	}
+	
+	public function upload_media_proccess() {
+		$get = $this->input->get();
+		$data = array (array(
+				'file_name' => @$get['file_name'],
+				'ext' => @$get['ext'],
+				'size' => @$get['size'],
+				'url' => @$get['url'],
+				'path' => @$get['path']
+		));
+		
+		echo $this->mtemplate->insertMedia($data);
+		exit();
+		
+	}
+	
+	
 
 	public function insert_template_laporan() {
 		$post = $this->input->post();
+		
+		// Insert Img ID
+		$imgId = $post['img_id'];
+		
 		if ($post) {
 			// $insert['waktu']=date('Y-m-d H:i:s');
 			$post['user_id'] = $_SESSION['user_id'];
-			$template_laporan_id = $this->mlhp->insert_templateLaporan($post);
+			unset($post['img_id']);
+			
+			$template_laporan_id = $this->mtemplate->insertTemplateLaporan($post);
+			
+			if (count($imgId) != 0) {	
+				
+				foreach ($imgId as $id) {
+					$data = array(array(
+							'template_laporan_id' => $template_laporan_id,
+							'upload_template_id' => $id,
+					));
+					$this->mtemplate->insertTemplateLaporanMedia($data);
+				}
+				
+			}
+			
 			redirect('tlhp/template/daftarlap');
 		}
 		// $this->load->tlhp_template('tlhp/template_laporan');

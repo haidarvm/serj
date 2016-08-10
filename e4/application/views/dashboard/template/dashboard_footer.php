@@ -8,7 +8,7 @@
 			</div>
 			<div class="col-md-1">
 				<div class="footer-logo">
-					<img src="<?php echo base_url();?>assets/img/ikp-logo.png" class="right-img-footer" />
+					<img src="<?php echo base_url();?>assets/img/insp-logo.png" class="right-img-footer" />
 				</div>
 			</div>
 		</div>

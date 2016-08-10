@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?=base_url()?>assets/css/jquery.fileupload.css">
 <div class="container" style="padding:10px;">
     <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
