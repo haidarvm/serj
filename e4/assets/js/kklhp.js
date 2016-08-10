@@ -45,7 +45,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				selfR.data.kerugianNegaraCbk(true);
 			}
 			selfR.data.nilaiRekomendasi(nilaiRekomendasi);
-			selfR.uiKodeRekomendasi(kodeRekomendasi);
+			selfR.uiKodeRekomendasi(kodeRekomendasi+": "+oriUraianRekomendasi);
 		}
 		
 		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
@@ -150,9 +150,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			}
 			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
 			
-			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan+' '+deskripsi_temuan);
-			selfK.uiKodeSebab(kodeSebab);
-			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi);
+			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan+': '+deskripsi_temuan);
+			selfK.uiKodeSebab(kodeSebab+": "+uraianSebab);
+			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi+': '+firstOriUraianRekomendasi);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -493,8 +493,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							var rData = [];
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
-									id: data.data[i].kode_temuan_id,
-									text: data.data[i].kelompok+'.'+data.data[i].sub_kelompok +"."+data.data[i].jenis+" "+data.data[i].kode_temuan
+									id: data.data[i].kode_temuan,
+									text: data.data[i].kode_temuan+': '+data.data[i].deskripsi
 								}
 								rData.push(item);
 							}
@@ -538,7 +538,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
 									id: data.data[i].kode_sebab_id,
-									text: data.data[i].kode_sebab
+									text: data.data[i].kode_sebab+': '+ data.data[i].uraian_sebab
 								}
 								rData.push(item);
 							}
@@ -617,7 +617,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
 									id: data.data[i].kode_rekomendasi_id,
-									text: data.data[i].kode_rekomendasi
+									text: data.data[i].kode_rekomendasi+': '+data.data[i].uraian_rekomendasi
 								}
 								rData.push(item);
 							}

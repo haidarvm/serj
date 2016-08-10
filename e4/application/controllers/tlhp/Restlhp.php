@@ -83,8 +83,16 @@ class Restlhp extends REST_Controller {
 	public function codtemuan_get() {
 		$this->load->model('Mlhp', 'mlhp');
 		$listKodeTemuan = $this->mlhp->getAllKodeTemuan();
+		$returnKodeTemuan = array();
+		foreach ($listKodeTemuan as $kodeTemuan) {
+			$kode = $kodeTemuan->kelompok.'.'.$kodeTemuan->sub_kelompok.'.'.$kodeTemuan->jenis;
+			array_push($returnKodeTemuan, array(
+				'kode_temuan' => $kode,
+				'deskripsi' => $kodeTemuan->kode_temuan
+			));
+		}
 		$dataResponse = array(
-			'data' => $listKodeTemuan,
+			'data' => $returnKodeTemuan,
 			'size' => count($listKodeTemuan)
 		);
 		$this->response($dataResponse, 200);

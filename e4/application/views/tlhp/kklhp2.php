@@ -152,7 +152,7 @@
 											<td>
 												<select class="form-control select-simple border-input"
 												data-bind="kodeTemuan: true, value: data.kodeTemuanId, 
-												uiKodeTemuan: uiKodeTemuan, idnya: data.kodeTemuanId">
+												uiKodeTemuan: uiKodeTemuan">
 												</select>
 											</td>
 											<td>
