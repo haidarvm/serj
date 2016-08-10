@@ -93,6 +93,7 @@ class Restlhp extends REST_Controller {
 			$kode = $kodeTemuan->kelompok.'.'.$kodeTemuan->sub_kelompok.'.'.$kodeTemuan->jenis;
 			$deskripsi = $this->clean($kodeTemuan->kode_temuan);
 			array_push($returnKodeTemuan, array(
+				'kode_temuan_id' => $kodeTemuan->kode_temuan_id,
 				'kode_temuan' => $kode,
 				'deskripsi' => $deskripsi
 			));
@@ -171,6 +172,9 @@ class Restlhp extends REST_Controller {
 							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rekomendasi["kerugian_negara"],
 							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
+							"nama_ppk" => $rekomendasi["nama_ppk"],
+							"nama_pj" => $rekomendasi["nama_pj"],
+							"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
 						));
 					}
 					$this->mlhp->insertBatchRekomendasi($dataRekomendasi);				
@@ -258,7 +262,10 @@ class Restlhp extends REST_Controller {
 							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
 							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rekomendasi["kerugian_negara"],
-							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0
+							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
+							"nama_ppk" => $rekomendasi["nama_ppk"],
+							"nama_pj" => $rekomendasi["nama_pj"],
+							"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
 						));
 					} else {
 						//new row kkt
@@ -267,7 +274,10 @@ class Restlhp extends REST_Controller {
 							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
 							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rekomendasi["kerugian_negara"],
-							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0
+							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
+							"nama_ppk" => $rekomendasi["nama_ppk"],
+							"nama_pj" => $rekomendasi["nama_pj"],
+							"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
 						));
 					}
 				}
@@ -311,6 +321,9 @@ class Restlhp extends REST_Controller {
 							"uraian_rekomendasi" => $rowRekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rowRekomendasi["kerugian_negara"],
 							"nilai_rekomendasi" => isset($rowRekomendasi["nilai_rekomendasi"]) ? $rowRekomendasi["nilai_rekomendasi"] : 0,
+							"nama_ppk" => $rowRekomendasi["nama_ppk"],
+							"nama_pj" => $rowRekomendasi["nama_pj"],
+							"unit_kerja_id" => $rowRekomendasi["unit_kerja_id"],
 						));
 					}
 					if (count($newRekomendasi) > 0) {

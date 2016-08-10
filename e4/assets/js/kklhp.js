@@ -16,8 +16,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			nilaiRekomendasi: ko.observable(),
 			nilaiRekomendasiEnable: ko.observable(false),
 			
-			NamaPpk : ko.observable(),
-			NamaPj : ko.observable(),
+			namaPpk : ko.observable(),
+			namaPj : ko.observable(),
 			periodeTindakLanjut : ko.observable(),
 			uraianTindakLanjut : ko.observable(),
 			dokumentPendukungTl : ko.observable(),
@@ -107,8 +107,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			firstNilaiRekomendasi: ko.observable(),
 			firtsNilaiRekomendasiEnable: ko.observable(false),
 			
-			firstNamaPpk : ko.observable(),
-			firstNamaPj : ko.observable(),
+			firstUnitKerja: ko.observable(),
+			firstNamaPpk: ko.observable(),
+			firstNamaPj: ko.observable(),
 			firstPeriodeTindakLanjut : ko.observable(),
 			firstUraianTindakLanjut : ko.observable(),
 			firstDokumentPendukungTl : ko.observable(),
@@ -244,12 +245,17 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					var listRekomendasi = [];
 					if (kertasKerjaTemuan.data.firstKodeRekomendasiId() != undefined &&
 						kertasKerjaTemuan.data.firstUraianRekomendasi() != undefined) {
+//						console.info('first unit kerja');
+//						console.debug(kertasKerjaTemuan.data.firstUnitKerja());
 						listRekomendasi.push({
 							rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
 							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
 							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
 							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
 							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
+							nama_ppk: kertasKerjaTemuan.data.firstNamaPpk(),
+							nama_pj: kertasKerjaTemuan.data.firstNamaPj(),
+							unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id
 						});
 					}
 					
@@ -260,7 +266,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
 							uraian_rekomendasi: item.data.uraianRekomendasi(),
 							kerugian_negara: item.data.kerugianNegara(),
-							nilai_rekomendasi: item.data.nilaiRekomendasi()
+							nilai_rekomendasi: item.data.nilaiRekomendasi(),
+							nama_ppk: item.data.namaPpk(),
+							nama_pj: item.data.namaPj(),
+							unit_kerja_id: item.data.unitKerja().unit_kerja_id
 						}
 						listRekomendasi.push(itemRekomendasi);
 					});
@@ -306,7 +315,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				action = "POST";
 			}
 			console.debug('action '+ action);
-//			console.debug(kklhpData);
+			console.debug(kklhpData);
 			self.postKklhp(action, kklhpData);
 		} // end do insert
 		
@@ -524,7 +533,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							var rData = [];
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
-									id: data.data[i].kode_temuan,
+									id: data.data[i].kode_temuan_id,
 									text: data.data[i].kode_temuan+": "+data.data[i].deskripsi
 								}
 								rData.push(item);

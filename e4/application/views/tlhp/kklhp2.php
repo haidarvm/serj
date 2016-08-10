@@ -215,16 +215,18 @@
 											</td>
 											<td>
 												<select class="form-control select-simple border-input" 
-												data-bind="options: $root.unitKerja, optionsText: 'unit_kerja'">
+												data-bind="options: $root.unitKerja, optionsText: 'unit_kerja', value: data.firstUnitKerja">
 												</select>
 											</td>
 											<td>
 												<!-- nama ppk -->
-												<textarea class="form-control border-input"></textarea>
+												<input type="text" class="form-control border-input" data-bind="value: data.firstNamaPpk"
+												style="width: 200px;"/>
 											</td>
 											<td>
 												<!-- nama pj -->
-												<textarea class="form-control border-input"></textarea>
+												<input type="text" class="form-control border-input" data-bind="value: data.firstNamaPj"
+												style="width: 200px;"/>
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
@@ -284,16 +286,18 @@
 											</td>
 											<td>
 												<select class="form-control" data-bind="options: $root.unitKerja, 
-												optionsText: 'unit_kerja'">
+												optionsText: 'unit_kerja', value: data.unitKerja">
 												</select>
 											</td>
 											<td>
 												<!-- nama ppk -->
-												<textarea class="form-control border-input"></textarea>
+												<input type="text" class="form-control border-input" 
+												data-bind="value: data.namaPpk"/>
 											</td>
 											<td>
 												<!-- nama pj -->
-												<textarea class="form-control border-input"></textarea>
+												<input type="text" class="form-control border-input" 
+												data-bind="value: data.namaPj"/>
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
