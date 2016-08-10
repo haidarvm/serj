@@ -45,16 +45,13 @@ class Upload extends MY_Controller {
 	}
 	
 	private function writeToExcel($param = NULL) {
-	
-		require_once dirname(__FILE__) . '/../../../assets/inc/PHPExcel/Classes/PHPExcel.php';
+		$root =  $_SERVER['DOCUMENT_ROOT'];
+		require_once $root.'/assets/inc/PHPExcel/Classes/PHPExcel.php';
 		
 		define('EOL',(PHP_SAPI == 'cli') ? PHP_EOL : '<br />');
 		
-		// Create new PHPExcel object
-		echo date('H:i:s') , " Create new PHPExcel object" , EOL;
-		
 		$objReader = PHPExcel_IOFactory::createReader('Excel5');
-		$tpl = dirname(__FILE__) . '/../../../assets/template-excel/tpl_update_lhp.xls';
+		$tpl = $root.'/assets/template-excel/tpl_update_lhp.xls';
 		$objPHPExcel = $objReader->load($tpl);
 		
 		if (@$param['title'] != "") {
@@ -80,20 +77,10 @@ class Upload extends MY_Controller {
 			}
 		}
 		
-		echo date('H:i:s') , " Write to Excel5 format" , EOL;
 		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
-		$objWriter->save(str_replace('.php', '.xls', __FILE__));
-		echo date('H:i:s') , " File written to " , str_replace('.php', '.xls', pathinfo(__FILE__, PATHINFO_BASENAME)) , EOL;
-		
-		
-		// Echo memory peak usage
-		echo date('H:i:s') , " Peak memory usage: " , (memory_get_peak_usage(true) / 1024 / 1024) , " MB" , EOL;
-		
-		// Echo done
-		echo date('H:i:s') , " Done writing file" , EOL;
-		echo 'File has been created in ' , getcwd() , EOL;
-		
-		
+		$saving = $root.'/assets/data/lhp.xls';
+		//$objWriter->save(str_replace('.php', '.xls', __FILE__));
+		$objWriter->save($saving);
 	}
 	
 }
