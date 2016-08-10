@@ -22,17 +22,12 @@
    	            	var url =  file.url;
    	            	var dir =  url.replace(site_url, "");
    	            	
-//   	            	$.ajax({
-//						method : "POST",
-//						url : site_url + "admin/atlet/update",
-//						data : atlet_data
-//					// On Done Insert New atlet
-//					}
    	            	$.ajax({
-	   	         		type : "POST",
+	   	         		type : "GET",
 	   	         		url : site_url+'tlhp/template/upload_media_proccess',
 	   	         		data: 'file_name='+name+'&ext='+type+'&size='+size+'&url='+url+'&path='+dir,
 	   	         		success : function(id) {
+	   	         			//console.log(data.result.files);
 	   	         			$('<input type="text" name="img_id[]"/>').val(id).appendTo('#files');
 	   	         		}
 	   	         	});
@@ -48,4 +43,9 @@
    	    }).prop('disabled', !$.support.fileInput)
    	        .parent().addClass($.support.fileInput ? undefined : 'disabled');
    	});
+   	
+   	
 });
+   
+   
+   

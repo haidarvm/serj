@@ -44,15 +44,19 @@ class Mtemplate extends CI_Model {
 	}
 
 	public function insertMedia($data) {
+// 		print_r($data);
+		$file_name = $data[0]['file_name'];
 		$this->db->insert_batch("upload_template_laporan", $data);
 		$upload_template_id = $this->db->insert_id();
-		return $this->renameFile($upload_template_id);
-// 		return true;?
+		return $this->renameFile($file_name,$upload_template_id);
 	}
 
-	public function renameFile($upload_tempalate_id) {
-		$data['file_name'] = $upload_tempalate_id;
-		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' => $upload_tempalate_id));
+	public function renameFile($file_name,$upload_tempalate_id) {
+		$ext = getExt($file_name);
+		$oldname = FCPATH . 'assets/media/'.$file_name;
+		$newname = FCPATH . 'assets/media/template/'.$upload_tempalate_id.$ext;
+		return rename($oldname, $newname);
+// 		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' => $upload_tempalate_id));
 	}
 
 	public function insertTemplateLaporanMedia($data) {

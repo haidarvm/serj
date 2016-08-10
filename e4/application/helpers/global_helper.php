@@ -390,6 +390,10 @@ function delExt($filename) {
 	return preg_replace('/\\.[^.\\s]{3,4}$/', '', $filename);
 }
 
+function getExt($filename) {
+	return '.'.pathinfo($filename, PATHINFO_EXTENSION);
+}
+
 // delect char
 function delNonChar($text) {
 	return preg_replace('/[^\da-z]/i', '', strtolower($text));

@@ -104,12 +104,13 @@ class Template extends MY_Controller {
 		$get = $this->input->get();
 		$data = array (array(
 				'file_name' => @$get['file_name'],
-				'ext' => @$get['ext'],
+				'ext' => getExt(@$get['file_name']),
 				'size' => @$get['size'],
 				'url' => @$get['url'],
 				'path' => @$get['path']
 		));
-		
+// 		$post = $this->input->post();
+// 		print_r($post);
 		echo $this->mtemplate->insertMedia($data);
 // 		exit();
 		
