@@ -302,12 +302,29 @@
 													<option>BIRO KASN</option>
 												</select>
 											</td>
-											<td><textarea class="form-control border-input"></textarea></td>
-											<td><textarea class="form-control border-input"></textarea></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- nama ppk -->
+												<textarea class="form-control border-input"></textarea>
+											</td>
+											<td>
+												<!-- nama pj -->
+												<textarea class="form-control border-input"></textarea>
+											</td>
+											<td>
+												<!-- periode tindak lanjut -->
+												<span></span>
+											</td>
+											<td>
+												<!-- uraian tindak lanjut -->
+												<span data-bind="text: data.uraianTindakLanjut">[uraian tindak lanjut]</span>
+											</td>
+											<td>
+												<!-- dokument pendukung -->
+											</td>
+											<td>
+												<!-- nilai -->
+												<span data-bind="text: uiJumlahTl">[nilai dari tindak lanjut]</span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>

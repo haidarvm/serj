@@ -54,7 +54,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfR.uiKodeRekomendasi = ko.observable();
 		selfR.uiNilaiRekomendasi = ko.observable();
 		selfR.uiJumlahTl = ko.computed(function(){
-			return "testing jumlah tl";
+			return accounting.formatMoney(selfR.data.nilaiRekomendasi(), "Rp", 0, ".", ",");
 		});
 	}
 	
@@ -442,7 +442,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		self.addTindakLanjut = function(data){
 			self.resetDataTindakLanjut();
 			console.debug(data);
-			self.viewTindaLanjut = data;
+			self.viewTindakLanjut = data;
 			self.dataTindakLanjut.uraianRekomendasi(data.data.uraianRekomendasi());
 			$('#formTindakLanjut').modal('show');
 		}
@@ -454,6 +454,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
 				self.firstViewTindakLanjut.data.firstTanggalTl(self.dataTindakLanjut.tanggalTl());
 			} else {
+				console.debug(self.viewTindakLanjut);
 				self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
 				self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
 				self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
