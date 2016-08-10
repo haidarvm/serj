@@ -53,8 +53,16 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
 		selfR.uiKodeRekomendasi = ko.observable();
 		selfR.uiNilaiRekomendasi = ko.observable();
+		
 		selfR.uiJumlahTl = ko.computed(function(){
-			return accounting.formatMoney(selfR.data.nilaiRekomendasi(), "Rp", 0, ".", ",");
+			if (selfR.data.jumlahTl() != undefined) {
+				console.debug('jumlahtl will be formated');
+				console.debug(selfR.data.jumlahTl());
+				return accounting.formatMoney(selfR.data.jumlahTl(), "Rp", 0, ".", ",");
+			} else {
+				return null;
+			}
+			
 		});
 	}
 	
@@ -423,6 +431,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			uraianRekomendasi: ko.observable(),
 			uraianTindakLanjut: ko.observable(),
 			jumlahTl: ko.observable(),
+			uiJumlahTl: ko.observable(),
 			dokument : ko.observableArray([]),
 			tanggalTl: ko.observable()
 		}
@@ -468,6 +477,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			self.dataTindakLanjut.uraianRekomendasi(null);
 			self.dataTindakLanjut.uraianTindakLanjut(null);
 			self.dataTindakLanjut.jumlahTl(null);
+			self.dataTindakLanjut.uiJumlahTl(null);
 			self.dataTindakLanjut.dokument([]);
 			self.dataTindakLanjut.tanggalTl(null);
 		}

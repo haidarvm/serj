@@ -10,26 +10,31 @@
 					<h4 class="modal-title" id="userModalLabel">Tambah Tindak Lanjut</h4>
 				</div>
 	            <div class="modal-body modal-form" role="form">
-	                <form class="form-horizontal">
-	                	<label for="rekomendasi">Rekomendasi</label>
-	                	<textarea name="rekomendasi" class="form-control" 
-	                	data-bind="value: dataTindakLanjut.uraianRekomendasi" disabled="disabled"></textarea>
-	                	
-                		<label for="tindakLanjut">Tindak Lanjut</label>
-    					<textarea name="tindakLanjut" class="form-control" 
-    					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
-    					
-                		<label for="rekomendasi">Nilai</label>
-    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.jumlahTl"/>
-	                		
-                		<label for="dokumen">Dokumen</label>
-    					<input type="file"/>
-	                	
-                		<label for="rekomendasi">Tanggal</label>
-    					<input type="text" class="form-control"
-    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
-    					class="datepicker"/>
-	                </form>
+	            	<div class="row">
+	            		<div class="col-lg-9">
+			                <form class="form-horizontal">
+			                	<label for="rekomendasi">Rekomendasi</label>
+			                	<textarea name="rekomendasi" class="form-control" 
+			                	data-bind="value: dataTindakLanjut.uraianRekomendasi" disabled="disabled"></textarea>
+			                	
+		                		<label for="tindakLanjut">Tindak Lanjut</label>
+		    					<textarea name="tindakLanjut" class="form-control" 
+		    					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
+		    					
+		                		<label for="rekomendasi">Nilai</label>
+		    					<input type="text" class="form-control" data-bind="priceformat: true, 
+		    					value: dataTindakLanjut.uiJumlahTl, originalNumber: dataTindakLanjut.jumlahTl"/>
+			                		
+		                		<label for="dokumen">Dokumen</label>
+		    					<input type="file"/>
+			                	
+		                		<label for="rekomendasi">Tanggal</label>
+		    					<input type="text" class="form-control"
+		    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
+		    					class="datepicker"/>
+			                </form>
+	            		</div>
+	            	</div>
 	            </div>
 	            <div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
