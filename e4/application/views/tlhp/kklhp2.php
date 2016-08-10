@@ -192,7 +192,7 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
 												</textarea>
-												<a href="#" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
+												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
 													Tambah Tindak Lanjut
 												</a>
 											</td>
@@ -273,7 +273,7 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
 												</textarea>
-												<a href="#" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
+												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
 													Tambah Tindak Lanjut
 												</a>
 											</td>
