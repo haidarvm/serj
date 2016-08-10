@@ -13,7 +13,7 @@
 	                <form class="form-horizontal">
 	                	<label for="rekomendasi">Rekomendasi</label>
 	                	<textarea name="rekomendasi" class="form-control" 
-	                	data-bind="value: dataTindakLanjut.uraianRekomendasi"></textarea>
+	                	data-bind="value: dataTindakLanjut.uraianRekomendasi" disabled="disabled"></textarea>
 	                	
                 		<label for="tindakLanjut">Tindak Lanjut</label>
     					<textarea name="tindakLanjut" class="form-control" 
@@ -32,8 +32,8 @@
 	                </form>
 	            </div>
 	            <div class="modal-footer">
-		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        	<button type="button" class="btn btn-primary" data-bind="event: {click: insertTindakLanjut}">Save changes</button>
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+		        	<button type="button" class="btn btn-primary" data-bind="event: {click: insertTindakLanjut}">Simpan</button>
 		      </div>
 			</div>
 		</div>
