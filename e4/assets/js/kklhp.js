@@ -150,7 +150,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			}
 			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
 			
-			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan);
+			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan+' '+deskripsi_temuan);
 			selfK.uiKodeSebab(kodeSebab);
 			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi);
 		}
@@ -494,7 +494,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
 									id: data.data[i].kode_temuan_id,
-									text: data.data[i].kelompok+'.'+data.data[i].sub_kelompok +"."+data.data[i].jenis
+									text: data.data[i].kelompok+'.'+data.data[i].sub_kelompok +"."+data.data[i].jenis+" "+data.data[i].kode_temuan
 								}
 								rData.push(item);
 							}
