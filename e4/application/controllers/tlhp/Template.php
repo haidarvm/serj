@@ -111,7 +111,7 @@ class Template extends MY_Controller {
 		));
 		
 		echo $this->mtemplate->insertMedia($data);
-		exit();
+// 		exit();
 		
 	}
 	

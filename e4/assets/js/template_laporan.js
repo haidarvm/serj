@@ -22,8 +22,14 @@
    	            	var url =  file.url;
    	            	var dir =  url.replace(site_url, "");
    	            	
+//   	            	$.ajax({
+//						method : "POST",
+//						url : site_url + "admin/atlet/update",
+//						data : atlet_data
+//					// On Done Insert New atlet
+//					}
    	            	$.ajax({
-	   	         		type : "GET",
+	   	         		type : "POST",
 	   	         		url : site_url+'tlhp/template/upload_media_proccess',
 	   	         		data: 'file_name='+name+'&ext='+type+'&size='+size+'&url='+url+'&path='+dir,
 	   	         		success : function(id) {

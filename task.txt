@@ -5,6 +5,10 @@ Atang
 - bikin history riwayat tl modal, form
 
 
+Haidar
+- upload template rename file to ID
+- using jquery priceformat
+
 
 
 TLHP
