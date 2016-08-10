@@ -97,6 +97,14 @@ tr td.success {
     color: #fff;
     padding: 1px 10px 2px;
     border-radius: 4px;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.add-case:hover, .add-case:focus {
+	color: #fff;
+	background: #429cb6;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }
 button.btn {
 	font-size: 12px;
