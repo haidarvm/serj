@@ -228,6 +228,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
 			self.loadLhp();
+			self.loadUnitKerja();
 		}
 		
 		self.doInsert = function() {
@@ -480,6 +481,27 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			self.dataTindakLanjut.uiJumlahTl(null);
 			self.dataTindakLanjut.dokument([]);
 			self.dataTindakLanjut.tanggalTl(null);
+		}
+		
+		self.unitKerja = ko.observableArray([]);
+		self.loadUnitKerja = function() {
+			$.ajax({
+				type: 'GET',
+				contentType: 'application/json',
+				url: site_url + "tlhp/restlhp/unitkerja",
+				beforeSend: function(){
+					console.info('attempting to contact server to get data unitkerja');
+				},
+				success: function(data) {
+					var unitKerja = data.data;
+					_.each(unitKerja, function(item){
+						self.unitKerja.push(item);
+					});
+				},
+				error: function(xhr, msg) {
+					alert("Internal Server Error..");
+				}
+			});
 		}
 		
 	} // end mainViewModel

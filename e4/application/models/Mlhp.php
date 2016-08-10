@@ -361,4 +361,8 @@ class MLhp extends CI_Model {
 		$this->db->where("kode_sebab_id", $kodeSebabId);
 		return $this->db->get("kode_sebab")->row();
 	}
+	
+	public function getAllUnitKerja() {
+		return $this->db->get('unit_kerja')->result();
+	}
 }

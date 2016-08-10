@@ -214,18 +214,8 @@
 												style="width: 200px"/>
 											</td>
 											<td>
-												<select class="form-control select-simple border-input">
-													<option>-- Unit Kerja --</option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
+												<select class="form-control select-simple border-input" 
+												data-bind="options: $root.unitKerja, optionsText: 'unit_kerja'">
 												</select>
 											</td>
 											<td>
@@ -293,18 +283,8 @@
 												enable: data.nilaiRekomendasiEnable"/>
 											</td>
 											<td>
-												<select class="form-control">
-													<option>--  Unit Kerja --</option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
+												<select class="form-control" data-bind="options: $root.unitKerja, 
+												optionsText: 'unit_kerja'">
 												</select>
 											</td>
 											<td>

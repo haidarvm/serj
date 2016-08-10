@@ -347,6 +347,18 @@ class Restlhp extends REST_Controller {
 			), 404);
 		}
 	}
+	
+	public function unitkerja_get() {
+		$this->load->model('Mlhp', 'mlhp');
+		$listUnitKerja = $this->mlhp->getAllUnitKerja();
+		
+		$dataResponse = array(
+			'data' => $listUnitKerja,
+			'size' => count($listUnitKerja)
+		);
+		
+		$this->response($dataResponse, 200);
+	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		
