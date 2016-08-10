@@ -1,5 +1,5 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
-        ], function($, ko, _, accounting){
+        "jquerypriceformat"], function($, ko, _, accounting){
 	
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
@@ -46,10 +46,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			}
 			selfR.data.nilaiRekomendasi(nilaiRekomendasi);
 			selfR.uiKodeRekomendasi(kodeRekomendasi+": "+oriUraianRekomendasi);
+			selfR.uiNilaiRekomendasi(accounting.formatMoney(nilaiRekomendasi, "Rp", 0, ".", ","));
 		}
 		
 		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
 		selfR.uiKodeRekomendasi = ko.observable();
+		selfR.uiNilaiRekomendasi = ko.observable();
 		selfR.uiJumlahTl = ko.computed(function(){
 			return "testing jumlah tl";
 		});
@@ -149,31 +151,24 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				selfK.data.firstKerugianNegaraCbk(true);
 			}
 			selfK.data.firstNilaiRekomendasi(firstNilaiRekomendasi);
+			selfK.uiFirstNilaiRekomendasi(accounting.formatMoney(firstNilaiRekomendasi, "Rp", ",", "."));
 			
 			selfK.uiKodeTemuan(kelompokTemuan+'.'+subKelompokTemuan+'.'+jenisKelompokTemuan+': '+deskripsi_temuan);
 			selfK.uiKodeSebab(kodeSebab+": "+uraianSebab);
 			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi+': '+firstOriUraianRekomendasi);
+			
+			selfK.uiNilaiTemuan(accounting.formatMoney(nilaiTemuan, "Rp", ",", "."));
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
 		selfK.uiKodeSebab = ko.observable();
 		selfK.uiFirstKodeRekomendasi = ko.observable();
-		
-//		selfK.uiNilaiTemuan = ko.observable();
-//		selfk.data.uiNilaiTemuan.subscribe(function(newVal){
-//			self.data.nilaiTemuan(newVal);
-//		});
-		
-		selfK.toMoneyFormat = function() {
-			console.info('calling money format');
-			var newVal = accounting.formatNumber(selfK.data.nilaiTemuan());
-			console.debug(newVal);
-			selfK.data.nilaiTemuan('kenapa ya');
-		}
-		
+		selfK.uiFirstNilaiRekomendasi = ko.observable();
+		selfK.uiNilaiTemuan = ko.observable();
+
 		selfK.uiFirstJumlahTl = ko.computed(function(){
 			if (selfK.data.firstJumlahTl() != undefined) {
-				return accounting.formatNumber(selfK.data.firstJumlahTl(), 2, ".", ",");
+				return accounting.formatNumber(selfK.data.firstJumlahTl(), "Rp", 2, ".", ",");
 			} else {
 				return null;
 			}
@@ -316,7 +311,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			success: function(data) {
 				console.info('kklhp saved');
 				alert('Data sudah disimpan');
-				window.location = site_url+ "tlhp/menusa";
+//				window.location = site_url+ "tlhp/menusa";
 //				console.debug(window.location);
 			},
 			error: function(xhr, msg) {
@@ -494,7 +489,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							for (var i=0; i<data.data.length; i++) {
 								var item = {
 									id: data.data[i].kode_temuan,
-									text: data.data[i].kode_temuan+': '+data.data[i].deskripsi
+									text: data.data[i].kode_temuan+": "+data.data[i].deskripsi
 								}
 								rData.push(item);
 							}
@@ -645,6 +640,37 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				}
 			}
 	}
+	
+	ko.bindingHandlers.priceformat = {
+		init: function(element, valueAccessor, allBindings) {
+			$(element).on('blur', function(){
+				var originalVal = allBindings().value();
+				if (originalVal == undefined) {
+					originalVal = $(this).val();
+					allBindings().originalNumber(originalVal);
+					var formatedVal = accounting.formatMoney(originalVal, "Rp", 0, ".", ",")
+					allBindings().value(formatedVal);
+				} else {
+					var unformat = accounting.unformat(originalVal, ",");
+					allBindings().originalNumber(unformat);
+					var formatedVal = accounting.formatMoney(unformat, "Rp", 0, ".", ",")
+					allBindings().value(formatedVal);
+				}
+				
+				
+			});
+		}
+	}
+//	ko.bindingHandlers.priceformat = {
+//		init: function(element, valueAccessor, allBindings) {
+//			$(element).priceFormat({
+//			    prefix: 'Rp.',
+//			    centsSeparator: ',',
+//			    thousandsSeparator: '.'
+//			});
+//		}
+//	}
+	
 	
 	$(function(){
 		ko.applyBindings(vm);

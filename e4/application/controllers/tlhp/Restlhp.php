@@ -79,6 +79,11 @@ class Restlhp extends REST_Controller {
 			), 400);
 		}
 	}
+
+	function clean($string) {
+	   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+	   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+	}
 	
 	public function codtemuan_get() {
 		$this->load->model('Mlhp', 'mlhp');
@@ -86,9 +91,10 @@ class Restlhp extends REST_Controller {
 		$returnKodeTemuan = array();
 		foreach ($listKodeTemuan as $kodeTemuan) {
 			$kode = $kodeTemuan->kelompok.'.'.$kodeTemuan->sub_kelompok.'.'.$kodeTemuan->jenis;
+			$deskripsi = $this->clean($kodeTemuan->kode_temuan);
 			array_push($returnKodeTemuan, array(
 				'kode_temuan' => $kode,
-				'deskripsi' => $kodeTemuan->kode_temuan
+				'deskripsi' => $deskripsi
 			));
 		}
 		$dataResponse = array(
