@@ -116,6 +116,7 @@
 							<div class="col-md-8">
 								<!--.col-md-8-->
 							</div>
+							<?php if(!empty($template)) {?>
 							<div class="col-md-4">
 								<button type="button" class="btn btn-wd btn-warning btn-fill btn-margin">
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>
@@ -126,9 +127,8 @@
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-print"></i>
 									</span> PRINT
 								</button>
-								<!-- <a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print </a>
-								<a href="#" onclick="window.print()" class="btn btn-warning btn-wd btn-margin"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> PDF </a> -->
 							</div>
+							<?php }?>
 						</div>
 					</div>
 				</div>
@@ -177,16 +177,4 @@
         }
     });
     requirejs(["jspath/lhp"]);
-</script>
-
-<script type="text/javascript">
-     
-     function printDiv(elementId) {
-    var a = document.getElementById('print-area-2').value;
-    var b = document.getElementById(elementId).innerHTML;
-    window.frames["print_frame"].document.title = document.title;
-    window.frames["print_frame"].document.body.innerHTML = '<style>' + a + '</style>' + b;
-    window.frames["print_frame"].window.focus();
-    window.frames["print_frame"].window.print();
-}
 </script>
