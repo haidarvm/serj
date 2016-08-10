@@ -10,7 +10,7 @@
    	$(function () {
    	    'use strict';
    	    var url = window.location.hostname === 'blueimp.github.io' ?
-   	                '//jquery-file-upload.appspot.com/' : '../../inc/multiupload/server/php/';
+   	                '//jquery-file-upload.appspot.com/' : site_url+'inc/multiupload/server/php/';
    	    $('#fileupload').fileupload({
    	        url: url,
    	        dataType: 'json',
