@@ -15,4 +15,9 @@ class TplLaporan extends CI_Model {
 		$this->db->insert_batch("upload_template_laporan", $data);
 		return $this->db->insert_id();
 	}
+	
+	public function insertTemplateLaporanMedia($data) {
+		$this->db->insert_batch("template_laporan_media", $data);
+		return $this->db->insert_id();
+	}
 }

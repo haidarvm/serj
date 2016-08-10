@@ -112,6 +112,7 @@ class Template extends MY_Controller {
 		));
 		
 		echo $this->TplLaporan->insertMedia($data);
+		exit();
 		
 	}
 	
@@ -119,10 +120,29 @@ class Template extends MY_Controller {
 
 	public function insert_template_laporan() {
 		$post = $this->input->post();
+		
+		// Insert Img ID
+		$imgId = $post['img_id'];
+		
 		if ($post) {
 			// $insert['waktu']=date('Y-m-d H:i:s');
 			$post['user_id'] = $_SESSION['user_id'];
+			unset($post['img_id']);
+			
 			$template_laporan_id = $this->mlhp->insert_templateLaporan($post);
+			
+			if (count($imgId) != 0) {
+				
+				foreach ($imgId as $id) {
+					$data = array(array(
+							'template_laporan_id' => $template_laporan_id,
+							'upload_template_id' => $id,
+					));
+					$this->TplLaporan->insertTemplateLaporanMedia($data);
+				}
+				
+			}
+			
 			redirect('tlhp/template/daftarlap');
 		}
 		// $this->load->tlhp_template('tlhp/template_laporan');
