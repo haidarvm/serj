@@ -198,6 +198,7 @@ class Restlhp extends REST_Controller {
 		$lhp_id = $this->get("lhp_id");
 		$lhp = $this->mlhp->getbyid($lhp_id);
 		$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);
+		$unitKerja = $this->mlhp->getAllUnitKerja();
 		
 		$kktIds = array();
 		foreach ($kkt as $kktRow) {
@@ -215,6 +216,7 @@ class Restlhp extends REST_Controller {
 						array_push($kktRekomendasi, $rekRow);
 					}
 				}
+				
 				$kktRow->rekomendasi = $kktRekomendasi;
 			}
 		}

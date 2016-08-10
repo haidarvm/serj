@@ -141,7 +141,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				kodeTemuanId, kelompokTemuan, subKelompokTemuan, jenisKelompokTemuan,
 				deskripsi_temuan, uraianTemuan, kodeSebabId, kodeSebab, uraianSebab, nilaiTemuan, firstRekomendasiId,
 				firstKodeRekomendasiId, firstKodeRekomendasi, firstOriUraianRekomendasi, firstUraianRekomendasi, 
-				firstKerugianNegara, firstNilaiRekomendasi) {
+				firstKerugianNegara, firstNilaiRekomendasi, firstUnitKerja, firstNamaPpk, firstNamaPj) {
 			selfK.data.kertasKerjaId(kertasKerjaId);
 			selfK.data.lhpId(lhpId);
 			selfK.data.jenisTemuan(jenisTemuan);
@@ -168,6 +168,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfK.uiFirstKodeRekomendasi(firstKodeRekomendasi+': '+firstOriUraianRekomendasi);
 			
 			selfK.uiNilaiTemuan(accounting.formatMoney(nilaiTemuan, "Rp", 0, ".", ","));
+			
+			selfK.data.firstUnitKerja(firstUnitKerja);
+			selfK.data.firstNamaPpk(firstNamaPpk);
+			selfK.data.firstNamaPj(firstNamaPj);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -225,11 +229,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				
 		}
 		self.init = function() {
+			self.loadUnitKerja();
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
 			self.loadLhp();
-			self.loadUnitKerja();
 		}
 		
 		self.doInsert = function() {
@@ -377,6 +381,16 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 								
 								if (a.rekomendasi.length > 0) {
 //									kodeTemuanId, kelompok_temuan, sub_kelompok_temuan, jenis_kelompok_temuan,
+									var firstUnitKerja = {
+										'unit_kerja_id': a.rekomendasi[0].unit_kerja_id,
+										'unit_kerja': a.rekomendasi[0].unit_kerja
+									}
+									_.each(self.unitKerja(), function(ukerja){
+										var firstUnitKerjaId = a.rekomendasi[0].unit_kerja_id;
+										if (ukerja.unit_kerja_id == firstUnitKerjaId) {
+											firstUnitKerja = ukerja;
+										}
+									});
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
 											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
@@ -387,7 +401,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 											a.rekomendasi[0].ori_uraian_rekomendasi, 
 											a.rekomendasi[0].uraian_rekomendasi, 
 											a.rekomendasi[0].kerugian_negara, 
-											a.rekomendasi[0].nilai_rekomendasi);
+											a.rekomendasi[0].nilai_rekomendasi,
+											firstUnitKerja,
+											a.rekomendasi[0].nama_ppk,
+											a.rekomendasi[0].nama_pj
+											);
 								} else {
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
