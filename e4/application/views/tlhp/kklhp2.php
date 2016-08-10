@@ -10,26 +10,31 @@
 					<h4 class="modal-title" id="userModalLabel">Tambah Tindak Lanjut</h4>
 				</div>
 	            <div class="modal-body modal-form" role="form">
-	                <form class="form-horizontal">
-	                	<label for="rekomendasi">Rekomendasi</label>
-	                	<textarea name="rekomendasi" class="form-control" 
-	                	data-bind="value: dataTindakLanjut.uraianRekomendasi" disabled="disabled"></textarea>
-	                	
-                		<label for="tindakLanjut">Tindak Lanjut</label>
-    					<textarea name="tindakLanjut" class="form-control" 
-    					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
-    					
-                		<label for="rekomendasi">Nilai</label>
-    					<input type="number" class="form-control" data-bind="value: dataTindakLanjut.jumlahTl"/>
-	                		
-                		<label for="dokumen">Dokumen</label>
-    					<input type="file"/>
-	                	
-                		<label for="rekomendasi">Tanggal</label>
-    					<input type="text" class="form-control"
-    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
-    					class="datepicker"/>
-	                </form>
+	            	<div class="row">
+	            		<div class="col-lg-9">
+			                <form class="form-horizontal">
+			                	<label for="rekomendasi">Rekomendasi</label>
+			                	<textarea name="rekomendasi" class="form-control" 
+			                	data-bind="value: dataTindakLanjut.uraianRekomendasi" disabled="disabled"></textarea>
+			                	
+		                		<label for="tindakLanjut">Tindak Lanjut</label>
+		    					<textarea name="tindakLanjut" class="form-control" 
+		    					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
+		    					
+		                		<label for="rekomendasi">Nilai</label>
+		    					<input type="text" class="form-control" data-bind="priceformat: true, 
+		    					value: dataTindakLanjut.uiJumlahTl, originalNumber: dataTindakLanjut.jumlahTl"/>
+			                		
+		                		<label for="dokumen">Dokumen</label>
+		    					<input type="file"/>
+			                	
+		                		<label for="rekomendasi">Tanggal</label>
+		    					<input type="text" class="form-control"
+		    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
+		    					class="datepicker"/>
+			                </form>
+	            		</div>
+	            	</div>
 	            </div>
 	            <div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
@@ -173,8 +178,8 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<input type="number" class="form-control border-input" 
-												data-bind="value: data.nilaiTemuan" style="width: 200px"/>
+												<input type="text" class="form-control border-input" 
+												data-bind="priceformat: true, value: uiNilaiTemuan, originalNumber: data.nilaiTemuan" style="width: 200px"/>
 											</td>
 											<!-- Rekomendasi -->
 											<td>
@@ -192,7 +197,7 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
 												</textarea>
-												<a href="#" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
+												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
 													Tambah Tindak Lanjut
 												</a>
 											</td>
@@ -203,22 +208,14 @@
 												<!-- nilai -->
 <!--												<textarea class="form-control border-input" value="value: data.firstNilaiRekomendasi">-->
 <!--												</textarea>-->
-												<input type="number" class="form-control border-input" 
-												data-bind="value: data.firstNilaiRekomendasi, enable: data.firtsNilaiRekomendasiEnable" style="width: 200px"/>
+												<input type="text" class="form-control border-input" 
+												data-bind="priceformat: true, value: uiFirstNilaiRekomendasi, originalNumber: data.firstNilaiRekomendasi, 
+												enable: data.firtsNilaiRekomendasiEnable" 
+												style="width: 200px"/>
 											</td>
 											<td>
-												<select class="form-control select-simple border-input">
-													<option>-- Unit Kerja --</option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
+												<select class="form-control select-simple border-input" 
+												data-bind="options: $root.unitKerja, optionsText: 'unit_kerja'">
 												</select>
 											</td>
 											<td>
@@ -271,7 +268,7 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
 												</textarea>
-												<a href="#" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
+												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
 													Tambah Tindak Lanjut
 												</a>
 											</td>
@@ -281,30 +278,38 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<input type="number" class="form-control border-input" 
-												data-bind="value: data.nilaiRekomendasi, enable: data.nilaiRekomendasiEnable"/>
+												<input type="text" class="form-control border-input" 
+												data-bind="priceformat: true, value: uiNilaiRekomendasi, originalNumber: data.nilaiRekomendasi, 
+												enable: data.nilaiRekomendasiEnable"/>
 											</td>
 											<td>
-												<select class="form-control">
-													<option>--  Unit Kerja --</option>
-													<option>DEPUTI I</option>
-													<option>DEPUTI II</option>
-													<option>DEPUTI III</option>
-													<option>DEPUTI IV</option>
-													<option>STAFF AHLI</option>
-													<option>INSPEKTORAT</option>
-													<option>BIRO SDMU</option>
-													<option>BIRO HUKIP</option>
-													<option>BIRO BMOK</option>
-													<option>BIRO KASN</option>
+												<select class="form-control" data-bind="options: $root.unitKerja, 
+												optionsText: 'unit_kerja'">
 												</select>
 											</td>
-											<td><textarea class="form-control border-input"></textarea></td>
-											<td><textarea class="form-control border-input"></textarea></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- nama ppk -->
+												<textarea class="form-control border-input"></textarea>
+											</td>
+											<td>
+												<!-- nama pj -->
+												<textarea class="form-control border-input"></textarea>
+											</td>
+											<td>
+												<!-- periode tindak lanjut -->
+												<span></span>
+											</td>
+											<td>
+												<!-- uraian tindak lanjut -->
+												<span data-bind="text: data.uraianTindakLanjut">[uraian tindak lanjut]</span>
+											</td>
+											<td>
+												<!-- dokument pendukung -->
+											</td>
+											<td>
+												<!-- nilai -->
+												<span data-bind="text: uiJumlahTl">[nilai dari tindak lanjut]</span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -372,7 +377,8 @@
 //            "papertlhp" : {"deps": ["jquery","bootstrap"]},
             "select2" : {deps: ["jquery"]},
             "datetimepicker" : {deps: ["jquery", "moment"]},
-            "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]}
+            "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]},
+            "jquerypriceformat": {deps: ["jquery"]}
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -385,6 +391,7 @@
          	"datebindinghandler": site_url+"assets/js/datebindinghandler",
          	"datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
+            "jquerypriceformat" : site_url+ "assets/js/jquery.price_format.2.0.min",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
