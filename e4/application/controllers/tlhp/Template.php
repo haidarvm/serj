@@ -13,6 +13,7 @@ class Template extends MY_Controller {
 		parent::__construct();
 		$this->load->model('muser');
 		$this->load->model('mlhp');
+		$this->load->model('TplLaporan');
 		$this->muser = new MUser();
 		$this->mlhp = new MLhp();
 	}
@@ -99,6 +100,22 @@ class Template extends MY_Controller {
 	public function update_proccess() {
 		// test
 	}
+	
+	public function upload_media_proccess() {
+		$get = $this->input->get();
+		$data = array (array(
+				'file_name' => @$get['file_name'],
+				'ext' => @$get['ext'],
+				'size' => @$get['size'],
+				'url' => @$get['url'],
+				'path' => @$get['path']
+		));
+		
+		echo $this->TplLaporan->insertMedia($data);
+		
+	}
+	
+	
 
 	public function insert_template_laporan() {
 		$post = $this->input->post();

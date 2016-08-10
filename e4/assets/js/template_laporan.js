@@ -16,7 +16,21 @@
    	        dataType: 'json',
    	        done: function (e, data) {
    	            $.each(data.result.files, function (index, file) {
-   	                $('<input type="text" name="img_result[]"/>').val(file.name).appendTo('#files');
+   	            	
+   	            	var name =  file.name;
+   	            	var type =  file.type;
+   	            	var size =  file.size;
+   	            	var url =  file.url;
+   	            	var dir =  url.replace(site_url, "");
+   	            	
+   	            	$.ajax({
+	   	         		type : "GET",
+	   	         		url : site_url+'tlhp/template/upload_media_proccess',
+	   	         		data: 'file_name='+name+'&ext='+type+'&size='+size+'&url='+url+'&path='+dir,
+	   	         		success : function(id) {
+	   	         			$('<input type="text" name="img_id[]"/>').val(id).appendTo('#files');
+	   	         		}
+	   	         	});
    	            });
    	        },
    	        progressall: function (e, data) {
