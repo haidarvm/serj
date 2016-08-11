@@ -18,7 +18,8 @@
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
-            "datetimepicker" : {deps: ["jquery", "moment"]}
+            "datetimepicker" : {deps: ["jquery", "moment"]},
+            "notify": {deps: ["jquery"]}
         },
         "paths": {
             "jspath": site_url+ "assets/js/",
@@ -26,7 +27,8 @@
             "knockout": site_url+ "assets/js/knockout-3.2.0",
             "datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
-            "bootstrap": site_url+ "assets/js/bootstrap.min"
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "notify": site_url+"assets/js/notify.min",
         }
     });
     requirejs(["jspath/lhp"]);

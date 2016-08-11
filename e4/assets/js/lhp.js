@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function($, ko, moment){
+define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"], function($, ko, moment){
 	
 	function TeamViewModel() {
 		var selfD = this;
@@ -13,8 +13,8 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 		
 		self.data = {
 			userId: ko.observable(),
-			noSuratTugas: ko.observable(),
-			tglSuratTugas: ko.observable(),
+			noSuratTugas: ko.observable().extend({require: true}),
+			tglSuratTugas: ko.observable().extend({require: true}),
 			jenisPengawasanId: ko.observable(),
 			objekPengawasan: ko.observable(),
 			
@@ -66,12 +66,60 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 		self.doInsert = function() {
 			var reqData = ko.toJSON(self.data);
 			console.debug(reqData);
-			$.ajax({
-				type: 'POST',
-				data: reqData,
-				contentType: 'application/json',
-				url: site_url + "tlhp/restlhp",
-				beforeSend: function() {
+			
+			var errorMsg = [];
+			
+			if (self.data.noSuratTugas() == undefined) {
+				errorMsg.push('No surat tugas tidak boleh kosong');
+			}
+			
+			if (self.data.tglSuratTugas() == undefined) {
+				errorMsg.push('Tgl surat tugas tidak boleh kosong');
+			}
+			
+			if (self.data.jenisPengawasanId() == undefined) {
+				errorMsg.push('Jenis pengawasan tidak boleh kosong');
+			}
+			
+			if (self.data.objekPengawasan() == undefined) {
+				errorMsg.push('No surat tugas tidak boleh kosong');
+			}
+			
+			if (self.data.startHariPenugasan() == undefined || self.data.endHariPenugasan() == undefined) {
+				errorMsg.push('Hari awal atau akhir penugasan tidak boleh kosong');
+			}
+			
+			if (self.data.startHariPengawasan() == undefined || self.data.endHariPengawasan() == undefined) {
+				errorMsg.push('Hari awal atau akhir pengawasan tidak boleh kosong');
+			}
+			
+			if (self.data.startSkopPenugasan() == undefined || self.data.endSkopPenugasan() == undefined) {
+				errorMsg.push('Hari awal atau skop penugasan tidak boleh kosong');
+			}
+			
+			if (self.data.nomorLhp() == undefined) {
+				errorMsg.push('Nomer LHP tidak boleh kosong');
+			}
+			
+			if (self.data.judulLhp() == undefined) {
+				errorMsg.push('Judul LHP tidak boleh kosong');
+			}
+			
+			if (self.data.tglLhp() == undefined) {
+				errorMsg.push('Tanggal LHP tidak boleh kosong');
+			}
+			
+			if (errorMsg.length > 0) {
+				for(var i=0; i<errorMsg.length; i++) {
+					$.notify(errorMsg[i]);
+				}
+			} else {
+				$.ajax({
+					type: 'POST',
+					data: reqData,
+					contentType: 'application/json',
+					url: site_url + "tlhp/restlhp",
+					beforeSend: function() {
 					$('#btnSave').attr('disabled', 'disabled');
 				},
 				success: function(data) {
@@ -83,9 +131,10 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker"], function
 					alert('Ups, Internal Server Error');
 //					$("#notify").notify("Internal Server Error", "alert alert-error");
 				}
-			}).always(function(){
-				$('#btnSave').removeAttr('disabled');
-			}); 
+				}).always(function(){
+					$('#btnSave').removeAttr('disabled');
+				}); 
+			}
 		}
 	}
 	

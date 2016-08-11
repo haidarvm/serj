@@ -17,7 +17,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> 
 							<input type="text" name="tanggal_surat_tugas" class="form-control border-input date-input-big datepicker" 
-							required="true" data-bind="datepicker: true, selectedDate: data.tglSuratTugas"/>
+							data-bind="datepicker: true, selectedDate: data.tglSuratTugas" required/>
 						</div>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-10">
-					<label for="inputEmail3" class="control-label t-left">SKOP PEMERIKSAAN<star>*</star></label>
+					<label for="inputEmail3" class="control-label t-left">SKOP PENUGASAN<star>*</star></label>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="l-float input-group">
