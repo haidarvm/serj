@@ -370,7 +370,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 //			console.debug('lhp_id '+ lhp_id);
 			$.ajax({
 				type: 'GET',
-				data: {'lhp_id': lhp_id},
+				data: {'lhp_id': lhp_id, 'kkt': true},
 				contentType: 'application/json',
 				dataType: 'json',
 				url: site_url + "tlhp/restlhp/lhp",

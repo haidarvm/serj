@@ -141,7 +141,7 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 			var lhp_id = $('#lhp_id').val();
 			$.ajax({
 				type: 'GET',
-				data: {'lhp_id': lhp_id, 'kkt': true},
+				data: {'lhp_id': lhp_id},
 				contentType: 'application/json',
 				dataType: 'json',
 				url: site_url + "tlhp/restlhp/lhp",
