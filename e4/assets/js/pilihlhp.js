@@ -55,6 +55,7 @@ define(["jquery", "knockout", "notify"], function($, ko){
 					url: site_url+"restlhp/lhpcontent",
 					beforeSend: function(){
 						self.tlhpList.removeAll();
+						$('#btnSearch').attr('disabled', 'disabled');
 					},
 					success: function(data) {
 						for (var i=0; i< data.length; i++) {
@@ -64,6 +65,8 @@ define(["jquery", "knockout", "notify"], function($, ko){
 					error: function(xhr, msg) {
 						$.notify("Maaf saat ini sistem sedang mengalami masalah, silahkan hubungi Administrator", "error");
 					}
+				}).always(function(){
+					$('#btnSearch').removeAttr('disabled');
 				});
 			}
 		}
