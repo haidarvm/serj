@@ -234,7 +234,9 @@
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
-												<span></span>
+												<a href="#">
+													<span data-bind="text: uiPeriodeTindakLanjut"></span>
+												</a>
 											</td>
 											<td>
 												<!-- uraian tindak lanjut -->
@@ -307,7 +309,9 @@
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
-												<span></span>
+												<a href="#">
+													<span data-bind="text: uiPeriodeTindakLanjut"></span>
+												</a>
 											</td>
 											<td>
 												<!-- uraian tindak lanjut -->

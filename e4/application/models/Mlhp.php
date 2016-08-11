@@ -394,4 +394,19 @@ class MLhp extends CI_Model {
 	public function deleteTimLhp($lhp_id) {
 		$this->db->delete('tim_lhp', array('lhp_id' => $lhp_id));
 	}
+	
+	public function getRekomendasi($rekomendasiId) {
+		$this->db->where('rekomendasi_id', $rekomendasiId);
+		return $this->db->get('rekomendasi')->row();
+	}
+	
+	public function getKertasKerjaTemuan($kktId) {
+		$this->db->where('kertas_kerja_id', $kktId);
+		return $this->db->get('kertas_kerja_temuan')->row();
+	}
+	
+	public function getAllTindakLanjut($rekomendasiId) {
+		$this->db->where('rekomendasi_id', $rekomendasiId);
+		return $this->db->get('tindak_lanjut')->result();
+	}
 }

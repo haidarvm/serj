@@ -1,7 +1,7 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
-        "notify"], function($, ko, _, accounting){
+        "notify", "moment"], function($, ko, _, accounting, moment){
 	
-	
+//	console.debug(moment);
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
@@ -53,9 +53,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfR.data.namaPpk(namaPpk);
 			selfR.data.namaPj(namaPj);
 			
-			console.debug(selfR.data.unitKerja());
-			console.debug(selfR.data.namaPpk());
-			console.debug(selfR.data.namaPj());
+//			console.debug(selfR.data.unitKerja());
+//			console.debug(selfR.data.namaPpk());
+//			console.debug(selfR.data.namaPj());
 			selfR.uiKodeRekomendasi(kodeRekomendasi+": "+oriUraianRekomendasi);
 			selfR.uiNilaiRekomendasi(accounting.formatMoney(nilaiRekomendasi, "Rp", 0, ".", ","));
 		}
@@ -73,6 +73,19 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				return null;
 			}
 			
+		});
+		
+		selfR.uiPeriodeTindakLanjut = ko.computed(function(){
+			if (selfR.data.tanggalTl() != undefined) {
+				var month = moment(selfR.data.tanggalTl()).format("M");
+				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
+					return "SEMESTER I";
+				} else if (parseInt(month) > 6 && parseInt(month) <= 12 ) {
+					return "SEMESTER II";
+				}
+			} else {
+				return null;
+			}
 		});
 	}
 	
@@ -199,6 +212,21 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				return null;
 			}
 			
+		});
+		
+		selfK.uiPeriodeTindakLanjut = ko.computed(function(){
+			if (selfK.data.firstTanggalTl() != undefined) {
+				var month = moment(selfK.data.firstTanggalTl()).format("M");
+				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
+					return "SEMESTER I";
+				} else if (parseInt(month) > 6 && parseInt(month) <= 12 ) {
+					return "SEMESTER II";
+				} else {
+					return '-';
+				}
+			} else {
+				return '-';
+			}
 		});
 	}
 	
@@ -516,10 +544,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			rekomendasiId: ko.observable(),
 			uraianRekomendasi: ko.observable(),
 			uraianTindakLanjut: ko.observable(),
+			
 			jumlahTl: ko.observable(),
 			uiJumlahTl: ko.observable(),
+			
 			dokument : ko.observableArray([]),
-			tanggalTl: ko.observable()
+			tanggalTl: ko.observable(),
 		}
 		
 		self.firstViewTindakTindakLanjut;
