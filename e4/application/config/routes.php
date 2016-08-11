@@ -55,4 +55,6 @@ $route['tlhp'] = "tlhp/home";
 $route['dashboard'] = "dashboard/dashboard";
 $route['404_override'] = 'home/error';
 $route['translate_uri_dashes'] = FALSE;
+$route['upload'] = 'upload';
+$route['upload/do_upload'] = 'upload/do_upload';
 
