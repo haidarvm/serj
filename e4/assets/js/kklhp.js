@@ -16,6 +16,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			nilaiRekomendasi: ko.observable(),
 			nilaiRekomendasiEnable: ko.observable(false),
 			
+			unitKerja: ko.observable(),
 			namaPpk : ko.observable(),
 			namaPj : ko.observable(),
 			periodeTindakLanjut : ko.observable(),
@@ -37,7 +38,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		});
 		
 		selfR.initData = function(rekomendasiId, kertasKerjaId, kodeRekomendasiId, kodeRekomendasi, 
-				oriUraianRekomendasi, uraianRekomendasi, kerugianNegara, nilaiRekomendasi) {
+				oriUraianRekomendasi, uraianRekomendasi, kerugianNegara, nilaiRekomendasi, 
+				unitKerja, namaPpk, namaPj) {
 			selfR.data.rekomendasiId(rekomendasiId);
 			selfR.data.kertasKerjaId(kertasKerjaId);
 			selfR.data.kodeRekomendasiId(kodeRekomendasiId);
@@ -46,6 +48,14 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				selfR.data.kerugianNegaraCbk(true);
 			}
 			selfR.data.nilaiRekomendasi(nilaiRekomendasi);
+			console.debug('initData rekomendasi');
+			selfR.data.unitKerja(unitKerja);
+			selfR.data.namaPpk(namaPpk);
+			selfR.data.namaPj(namaPj);
+			
+			console.debug(selfR.data.unitKerja());
+			console.debug(selfR.data.namaPpk());
+			console.debug(selfR.data.namaPj());
 			selfR.uiKodeRekomendasi(kodeRekomendasi+": "+oriUraianRekomendasi);
 			selfR.uiNilaiRekomendasi(accounting.formatMoney(nilaiRekomendasi, "Rp", 0, ".", ","));
 		}
@@ -249,8 +259,6 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					var listRekomendasi = [];
 					if (kertasKerjaTemuan.data.firstKodeRekomendasiId() != undefined &&
 						kertasKerjaTemuan.data.firstUraianRekomendasi() != undefined) {
-//						console.info('first unit kerja');
-//						console.debug(kertasKerjaTemuan.data.firstUnitKerja());
 						listRekomendasi.push({
 							rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
 							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
@@ -259,7 +267,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
 							nama_ppk: kertasKerjaTemuan.data.firstNamaPpk(),
 							nama_pj: kertasKerjaTemuan.data.firstNamaPj(),
-							unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id
+							unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id,
+							tindak_lanjut: {
+								tindak_lanjut: kertasKerjaTemuan.data.firstUraianTindakLanjut(),
+								tanggal_tl: kertasKerjaTemuan.data.firstTanggalTl(),
+								nilai: kertasKerjaTemuan.data.firstJumlahTl()
+							}
 						});
 					}
 					
@@ -273,7 +286,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							nilai_rekomendasi: item.data.nilaiRekomendasi(),
 							nama_ppk: item.data.namaPpk(),
 							nama_pj: item.data.namaPj(),
-							unit_kerja_id: item.data.unitKerja().unit_kerja_id
+							unit_kerja_id: item.data.unitKerja().unit_kerja_id,
+							tindak_lanjut: {
+								tindak_lanjut: item.data.uraianTindakLanjut(),
+								tanggal_tl: item.data.tanggalTl(),
+								nilai: item.data.jumlahTl()
+							}
 						}
 						listRekomendasi.push(itemRekomendasi);
 					});
@@ -422,6 +440,14 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 								for (var i=0; i< a.rekomendasi.length; i++) {
 									if (i != 0) {
 										var rekView = new RekomendasiViewModel(false);
+										
+										var unitKerja;
+										_.each(self.unitKerja(), function(ukerja){
+											var unitKerjaId = a.rekomendasi[i].unit_kerja_id;
+											if (ukerja.unit_kerja_id == unitKerjaId) {
+												unitKerja = ukerja;
+											}
+										});
 										rekView.initData(a.rekomendasi[i].rekomendasi_id, 
 												a.rekomendasi[i].kertas_kerja_id, 
 												a.rekomendasi[i].kode_rekomendasi_id,
@@ -429,7 +455,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 												a.rekomendasi[i].ori_uraian_rekomendasi, 
 												a.rekomendasi[i].uraian_rekomendasi, 
 												a.rekomendasi[i].kerugian_negara, 
-												a.rekomendasi[i].nilai_rekomendasi);
+												a.rekomendasi[i].nilai_rekomendasi, 
+												unitKerja,
+												a.rekomendasi[i].nama_ppk,
+												a.rekomendasi[i].nama_pj);
 										newKkt.data.rekomendasi.push(rekView);
 									}
 								}

@@ -296,6 +296,7 @@ class Restlhp extends REST_Controller {
 			$this->mlhp->updateBatchRekomendasi($updatedRekomendasiData);
 		}
 		
+//		var_dump($newRowRekomendasi);
 		if (count($newRowRekomendasi) > 0) {
 			$this->mlhp->insertBatchRekomendasi($newRowRekomendasi);
 		}
@@ -341,7 +342,7 @@ class Restlhp extends REST_Controller {
 			'message' => 'Data berhasil diperbaharui',
 			'updateDateCount' => count($updatedData),
 			'updatedData' => $updatedData,
-			'addedData' => $addedData
+			'addedData' => $addedData,
 		), 200);
 	}
 	
