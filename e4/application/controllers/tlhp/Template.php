@@ -87,8 +87,18 @@ class Template extends MY_Controller {
 		
 		$post = $this->input->post();
 		if ($post) {
-// 			echo 'masuk';exit();
-			$this->mtemplate->updateTemplateLaporan($post,$id);
+			// echo 'masuk';exit();
+			$this->mtemplate->updateTemplateLaporan($post, $id);
+			// $this->insert_template_laporan();
+			$fileId = $post['file_id'];
+			unset($post['file_id']);
+// 			print_r()
+			if (count($fileId) != 0) {
+				foreach ( $fileId as $upload_id ) {
+					$data = array('template_laporan_id' => $id, 'upload_template_id' => $upload_id);
+					$this->mtemplate->insertTemplateLaporanMedia($data);
+				}
+			}
 			redirect('tlhp/template/daftarlap');
 		} else {
 			$data['template'] = $this->mtemplate->getTemplate($id);
@@ -99,50 +109,34 @@ class Template extends MY_Controller {
 	public function update_proccess() {
 		// test
 	}
-	
+
 	public function upload_media_proccess() {
 		$get = $this->input->get();
-		$data = array (array(
-				'file_name' => @$get['file_name'],
-				'ext' => getExt(@$get['file_name']),
-				'size' => @$get['size'],
-				'url' => @$get['url'],
-				'path' => @$get['path']
-		));
-// 		$post = $this->input->post();
-// 		print_r($post);
+		$data = array('file_name' => @$get['file_name'], 'ext' => getExt(@$get['file_name']), 'size' => @$get['size'], 'url' => @$get['url'], 'path' => @$get['path']);
+		// $post = $this->input->post();
+		// print_r($post);
 		echo $this->mtemplate->insertMedia($data);
-// 		exit();
-		
+		exit();
 	}
-	
-	
 
 	public function insert_template_laporan() {
 		$post = $this->input->post();
 		
-		// Insert Img ID
-		$imgId = $post['img_id'];
+		// Insert File ID
+		$fileId = $post['file_id'];
 		
 		if ($post) {
 			// $insert['waktu']=date('Y-m-d H:i:s');
 			$post['user_id'] = $_SESSION['user_id'];
-			unset($post['img_id']);
+			unset($post['file_id']);
 			
 			$template_laporan_id = $this->mtemplate->insertTemplateLaporan($post);
-			
-			if (count($imgId) != 0) {	
-				
-				foreach ($imgId as $id) {
-					$data = array(array(
-							'template_laporan_id' => $template_laporan_id,
-							'upload_template_id' => $id,
-					));
+			if (count($fileId) != 0) {
+				foreach ( $fileId as $id ) {
+					$data = array('template_laporan_id' => $template_laporan_id, 'upload_template_id' => $id);
 					$this->mtemplate->insertTemplateLaporanMedia($data);
 				}
-				
 			}
-			
 			redirect('tlhp/template/daftarlap');
 		}
 		// $this->load->tlhp_template('tlhp/template_laporan');

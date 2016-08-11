@@ -13,6 +13,7 @@ class Mtemplate extends CI_Model {
 	public function insertTemplateLaporan($data) {
 		unset($data['files']);
 		unset($data['file']);
+		unset($data['file_id']);
 		$data['tanggal_laporan'] = sqlDateFormat($data['tanggal_laporan']);
 		$query = $this->db->insert('template_laporan', $data);
 		return $this->db->insert_id();
@@ -40,27 +41,39 @@ class Mtemplate extends CI_Model {
 	public function updateTemplateLaporan($data, $template_laporan_id) {
 		unset($data['file']);
 		unset($data['files']);
+		unset($data['img_id']);
+		unset($data['file_id']);
 		return $this->db->update('template_laporan', $data, array('template_laporan_id' => $template_laporan_id));
 	}
 
 	public function insertMedia($data) {
 // 		print_r($data);
-		$file_name = $data[0]['file_name'];
-		$this->db->insert_batch("upload_template_laporan", $data);
+		$file_name = $data['file_name'];
+		$this->db->insert("upload_template_laporan", $data);
 		$upload_template_id = $this->db->insert_id();
-		return $this->renameFile($file_name,$upload_template_id);
+		$this->renameFile($file_name,$upload_template_id);
+		return $upload_template_id;
 	}
+	
+	
 
 	public function renameFile($file_name,$upload_tempalate_id) {
 		$ext = getExt($file_name);
 		$oldname = FCPATH . 'assets/media/'.$file_name;
 		$newname = FCPATH . 'assets/media/template/'.$upload_tempalate_id.$ext;
+		$data['path'] = 'assets/media/template/'.$upload_tempalate_id.$ext;
+		$data['url'] = base_url(). 'assets/media/template/'.$upload_tempalate_id.$ext;
+		$this->updateMedia($data,$upload_tempalate_id);
 		return rename($oldname, $newname);
 // 		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' => $upload_tempalate_id));
 	}
+	
+	public function updateMedia($data,$upload_template_id) {
+		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' =>$upload_template_id));
+	}
 
 	public function insertTemplateLaporanMedia($data) {
-		$this->db->insert_batch("template_laporan_media", $data);
+		$this->db->insert("template_laporan_media", $data);
 		return $this->db->insert_id();
 	}
 }

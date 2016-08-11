@@ -28,7 +28,7 @@
 	   	         		data: 'file_name='+name+'&ext='+type+'&size='+size+'&url='+url+'&path='+dir,
 	   	         		success : function(id) {
 	   	         			//console.log(data.result.files);
-	   	         			$('<input type="text" name="img_id[]"/>').val(id).appendTo('#files');
+	   	         			$('<input type="text" name="file_id[]"/>').val(id).appendTo('#files');
 	   	         		}
 	   	         	});
    	            });
