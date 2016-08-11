@@ -229,6 +229,16 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				kertasKerjaTemuan.urutan(urutan);
 			}
 		}
+		
+		selfJ.totalNilaiTemuan = ko.computed(function(){
+			var totalNilaiTemuan = 0;
+			_.each(selfJ.data.kertasKerjaTemuan(), function(kktItem){
+				var nilaiTemuan = parseFloat(kktItem.data.nilaiTemuan());
+				totalNilaiTemuan += nilaiTemuan;
+			});
+			
+			return accounting.formatMoney(totalNilaiTemuan, "Rp", 0, ".", ",");
+		});
 	}
 	
 	function MainViewModel() {
@@ -588,6 +598,24 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			});
 		}
 		
+		
+		self.totalNilaiTemuan = ko.computed(function() {
+			var totalNilaiTemuan = 0;
+			_.each(self.jenisTemuan(), function(item){
+				_.each(item.data.kertasKerjaTemuan(), function(kktItem){
+					console.info('kkt item');
+					console.debug(kktItem.data.nilaiTemuan());
+					totalNilaiTemuan += 1;
+				});
+				
+			});
+			
+			return accounting.formatMoney(totalNilaiTemuan, "Rp", 0, ".", ",");
+		});
+		
+		self.totalNilaiRekomendasi = ko.computed(function(){
+			
+		});
 	} // end mainViewModel
 	
 	var vm = new MainViewModel();

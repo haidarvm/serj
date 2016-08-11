@@ -334,6 +334,26 @@
 										<!-- /rekomendasi -->
 										
 										<!-- /ko -->
+										<tr>
+											<td colspan="5">
+												<span class="pull-right">
+													<b>TOTAL</b>
+												</span>
+											</td>
+											<td>
+												<span class="pull-right">
+													<b><span data-bind="text: totalNilaiTemuan">Rp.0</span></b>
+												</span>
+											</td>
+											<td></td>
+											<td colspan="3"></td>
+											<td>
+												<span class="pull-right">
+													<b><span>Rp.0</span></b>
+												</span>
+											</td>
+											<td colspan="15"></td>
+										</tr>
 										<!-- /ko -->
 										<!-- Bagian Update -->
 									</tbody>
