@@ -156,11 +156,11 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 					self.data.jenisPengawasanId(msg.data.lhp.jenis_pengawasan_id)
 					self.data.objekPengawasan(msg.data.lhp.objek_pengawasan);
 					
-					self.data.startHariPenugasan(moment(msg.data.hari_awal_penugasan).format('DD-MM-YYYY'));
-					self.data.endHariPenugasan(moment(msg.data.hari_akhir_penugasan).format('DD-MM-YYYY'));
+					self.data.startHariPenugasan(moment(msg.data.lhp.hari_awal_penugasan).format('DD-MM-YYYY'));
+					self.data.endHariPenugasan(moment(msg.data.lhp.hari_akhir_penugasan).format('DD-MM-YYYY'));
 					
-					self.data.startSkopPenugasan(moment(msg.data.skop_awal_penugasan).format('DD-MM-YYYY'));
-					self.data.endSkopPenugasan(moment(msg.data.skop_akhir_penugasan).format('DD-MM-YYYY'));
+					self.data.startSkopPenugasan(moment(msg.data.lhp.skop_awal_penugasan).format('DD-MM-YYYY'));
+					self.data.endSkopPenugasan(moment(msg.data.lhp.skop_akhir_penugasan).format('DD-MM-YYYY'));
 					
 					self.data.nomorLhp(msg.data.lhp.nomor_lhp);
 					self.data.judulLhp(msg.data.lhp.judul_lhp);
