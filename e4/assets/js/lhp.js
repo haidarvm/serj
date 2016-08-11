@@ -213,8 +213,13 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 		
 		self.init = function() {
 			var lhp_id = $('#lhp_id').val();
-			if (lhp_id != undefined) {
+			console.info('ini dipanggil');
+			console.debug(lhp_id === '');
+			if (lhp_id !== '') {
+				console.info('di load lhp');
 				self.loadLhp();
+			} else {
+				console.info('tidak di load lhp');
 			}
 			
 		}
@@ -245,9 +250,9 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 	        });
 		}
 	}
-	lhpView.init();
+	
     $(function(){
-    	
+    	lhpView.init();
     	ko.applyBindings(lhpView);
     	
 //    	var datepickerCfg = {

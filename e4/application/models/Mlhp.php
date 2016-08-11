@@ -302,7 +302,7 @@ class MLhp extends CI_Model {
 	// }
 	
 	public function findAllByYear($year) {
-		$query = "SELECT lhp_id, dul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '".$year."'";
+		$query = "SELECT lhp_id, judul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '".$year."' ORDER BY lhp_id DESC";
 		return $this->db->query($query)->result();
 	}
 	
