@@ -196,36 +196,40 @@ class Restlhp extends REST_Controller {
 	public function lhp_get() {
 		$this->load->model('Mlhp', 'mlhp');
 		$lhp_id = $this->get("lhp_id");
+		$kkt = $this->get("kkt");
+		
 		$lhp = $this->mlhp->getbyid($lhp_id);
-		$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);
-		$unitKerja = $this->mlhp->getAllUnitKerja();
-		
-		$kktIds = array();
-		foreach ($kkt as $kktRow) {
-			array_push($kktIds, $kktRow->kertas_kerja_id);
-		}
-		$kktUniqueIds = array_unique($kktIds);
-		
-		if (count($kktUniqueIds) > 0) {
-			$rekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktUniqueIds);
-			
-			foreach ($kkt as $kktRow){
-				$kktRekomendasi = array();
-				foreach ($rekomendasi as $rekRow) {
-					if ($rekRow->kertas_kerja_id == $kktRow->kertas_kerja_id) {
-						array_push($kktRekomendasi, $rekRow);
-					}
-				}
-				
-				$kktRow->rekomendasi = $kktRekomendasi;
-			}
-		}
-		
 		$dataResponse = array(
-			'lhp' => $lhp,
-			'kertasKerjaTemuan' => $kkt,
-			'totalKertasKerjaTemuan' => count($kkt),
+			'lhp' => $lhp
 		);
+		if ($kkt) {
+			$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);
+			$unitKerja = $this->mlhp->getAllUnitKerja();
+			
+			$kktIds = array();
+			foreach ($kkt as $kktRow) {
+				array_push($kktIds, $kktRow->kertas_kerja_id);
+			}
+			$kktUniqueIds = array_unique($kktIds);
+			
+			if (count($kktUniqueIds) > 0) {
+				$rekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktUniqueIds);
+				
+				foreach ($kkt as $kktRow){
+					$kktRekomendasi = array();
+					foreach ($rekomendasi as $rekRow) {
+						if ($rekRow->kertas_kerja_id == $kktRow->kertas_kerja_id) {
+							array_push($kktRekomendasi, $rekRow);
+						}
+					}
+					
+					$kktRow->rekomendasi = $kktRekomendasi;
+				}
+			}
+			$dataResponse['kertasKerjaTemuan'] = $kkt;
+			$dataResponse['totalKertasKerjaTemuan'] =count($kkt);
+		} 
+		
 		$this->response(array(
 			'data' => $dataResponse
 		), 200);

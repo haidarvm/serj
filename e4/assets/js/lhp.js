@@ -13,8 +13,8 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 		
 		self.data = {
 			userId: ko.observable(),
-			noSuratTugas: ko.observable().extend({require: true}),
-			tglSuratTugas: ko.observable().extend({require: true}),
+			noSuratTugas: ko.observable(),
+			tglSuratTugas: ko.observable(),
 			jenisPengawasanId: ko.observable(),
 			objekPengawasan: ko.observable(),
 			
@@ -136,6 +136,65 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 				}); 
 			}
 		}
+		
+		self.loadLhp = function() {
+			var lhp_id = $('#lhp_id').val();
+			$.ajax({
+				type: 'GET',
+				data: {'lhp_id': lhp_id, 'kkt': true},
+				contentType: 'application/json',
+				dataType: 'json',
+				url: site_url + "tlhp/restlhp/lhp",
+				beforeSend: function(){
+					console.info('attempting to load lhp data');
+				},
+				success: function(msg) {
+					console.info('success to get lhp with id '+ lhp_id);
+					
+					self.data.noSuratTugas(msg.data.lhp.no_surat_tugas);
+					self.data.tglSuratTugas(moment(msg.data.lhp.tanggal_surat_tugas).format('DD-MM-YYYY'));
+					self.data.jenisPengawasanId(msg.data.lhp.jenis_pengawasan_id)
+					self.data.objekPengawasan(msg.data.lhp.objek_pengawasan);
+					
+					self.data.startHariPenugasan(moment(msg.data.hari_awal_penugasan).format('DD-MM-YYYY'));
+					self.data.endHariPenugasan(moment(msg.data.hari_akhir_penugasan).format('DD-MM-YYYY'));
+					
+					self.data.startSkopPenugasan(moment(msg.data.skop_awal_penugasan).format('DD-MM-YYYY'));
+					self.data.endSkopPenugasan(moment(msg.data.skop_akhir_penugasan).format('DD-MM-YYYY'));
+					
+					self.data.nomorLhp(msg.data.lhp.nomor_lhp);
+					self.data.judulLhp(msg.data.lhp.judul_lhp);
+					
+					self.data.tglLhp(moment(msg.data.lhp.tanggal_lhp).format('DD-MM-YYYY'));
+//					team: ko.observableArray([]),
+					
+					self.data.stPerpanjangan(msg.data.lhp.st_perpanjangan);
+					if (msg.data.lhp.tgl_st_perpanjangan != null) {
+						self.data.tglStPerpanjangan(moment(msg.data.lhp.tgl_st_perpanjangan).format('DD-MM-YYYY'));
+					}
+					if (msg.data.lhp.hari_awal_perpanjangan_penugasan != null) {
+						self.data.startPerpanjanganPenugasan(moment(msg.data.lhp.hari_awal_perpanjangan_penugasan).format('DD-MM-YYYY'));
+					}
+					if (msg.data.lhp.hari_akhir_perpanjangan_penugasan != null) {
+						self.data.endPerpanjanganPenugasan(moment(msg.data.lhp.hari_akhir_perpanjangan_penugasan).format('DD-MM-YYYY'));
+					}						
+					
+//					teamPerpanjangan: ko.observableArray([])
+					console.debug(ko.toJSON(self.data));
+				},
+				error: function() {
+					$.notify("Internal Serverl Error, Cannot Load LHP Data");
+				}
+			});
+		}
+		
+		self.init = function() {
+			var lhp_id = $('#lhp_id').val();
+			if (lhp_id != undefined) {
+				self.loadLhp();
+			}
+			
+		}
 	}
 	
 	var lhpView = new LhpViewModel();
@@ -163,8 +222,9 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 	        });
 		}
 	}
-	
+	lhpView.init();
     $(function(){
+    	
     	ko.applyBindings(lhpView);
     	
 //    	var datepickerCfg = {
