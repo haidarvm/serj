@@ -118,7 +118,9 @@ class Restlhp extends REST_Controller {
 					'nama_tim' => $member['namaTim']
 				));
 			}
+			
 			if (count($teamLhp) > 0) {
+				$this->load->model('timlhp');
 				$this->timlhp->insert_batch($teamLhp);
 			}
 		}
