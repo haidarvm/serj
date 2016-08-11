@@ -353,12 +353,13 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			},
 			success: function(data) {
 				console.info('kklhp saved');
-				alert('Data sudah disimpan');
+//				alert('Data sudah disimpan');
+				$.notify("Data sudah disimpan", "success");
 //				window.location = site_url+ "tlhp/menusa";
 //				console.debug(window.location);
 			},
 			error: function(xhr, msg) {
-				alert("Internal Server Error..");
+				alert("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
 			}
 			}).always(function(){
 				$('#btnSave').removeAttr('disabled');
@@ -378,9 +379,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					console.info('attempting to load lhp data');
 				},
 				success: function(msg) {
-					console.debug(msg);
-					console.info('return from server lhpId '+ lhp_id);
-					console.debug(msg.data.kertasKerjaTemuan.length);
+//					console.debug(msg);
+//					console.info('return from server lhpId '+ lhp_id);
+//					console.debug(msg.data.kertasKerjaTemuan.length);
 					_.each(self.jenisTemuan(), function(item){
 						var kodeTemuan = item.data.kodeTemuan().toLowerCase();
 						var kkt = _.filter(msg.data.kertasKerjaTemuan, function(kktItem){
