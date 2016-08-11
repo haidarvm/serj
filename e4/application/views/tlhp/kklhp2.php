@@ -12,6 +12,7 @@
 	            <div class="modal-body modal-form" role="form">
 	            	<div class="row">
 	            		<div class="col-lg-9">
+	            			<div id="notify"></div>
 			                <form class="form-horizontal">
 			                	<label for="rekomendasi">Rekomendasi</label>
 			                	<textarea name="rekomendasi" class="form-control" 
@@ -29,6 +30,7 @@
 		    					<input type="file"/>
 			                	
 		                		<label for="rekomendasi">Tanggal</label>
+		                		<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
 		    					<input type="text" class="form-control"
 		    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
 		    					class="datepicker"/>
@@ -197,9 +199,11 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
 												</textarea>
+												<?php if ($action == 'update') : ?>
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
 													Tambah Tindak Lanjut
 												</a>
+												<?php endif; ?>
 											</td>
 											<td>
 												<input type="checkbox" data-bind="checked: data.firstKerugianNegaraCbk"/>
@@ -270,9 +274,11 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
 												</textarea>
+												<?php if ($action == 'update') : ?>
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
 													Tambah Tindak Lanjut
 												</a>
+												<?php endif; ?>
 											</td>
 											<td>
 												<!-- kerugian negara -->
@@ -382,7 +388,8 @@
             "select2" : {deps: ["jquery"]},
             "datetimepicker" : {deps: ["jquery", "moment"]},
             "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]},
-            "jquerypriceformat": {deps: ["jquery"]}
+            "jquerypriceformat": {deps: ["jquery"]},
+            "notify": {"deps": ["jquery"]},
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -396,6 +403,7 @@
          	"datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
             "jquerypriceformat" : site_url+ "assets/js/jquery.price_format.2.0.min",
+            "notify": site_url+"assets/js/notify.min",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
