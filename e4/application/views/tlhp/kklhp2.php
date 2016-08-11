@@ -198,9 +198,11 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
 												</textarea>
+												<?php if ($action == 'update') : ?>
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
 													Tambah Tindak Lanjut
 												</a>
+												<?php endif; ?>
 											</td>
 											<td>
 												<input type="checkbox" data-bind="checked: data.firstKerugianNegaraCbk"/>
@@ -271,9 +273,11 @@
 												<!-- uraian rekomendasi -->
 												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
 												</textarea>
+												<?php if ($action == 'update') : ?>
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
 													Tambah Tindak Lanjut
 												</a>
+												<?php endif; ?>
 											</td>
 											<td>
 												<!-- kerugian negara -->
