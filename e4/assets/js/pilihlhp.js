@@ -1,6 +1,4 @@
-define(["jquery", "knockout"], function($, ko){
-	var getUri = window.location;
-	var baseUri = getUri.protocol+"//"+ getUri.host + "/";
+define(["jquery", "knockout", "notify"], function($, ko){
 	
 	function ViewModel() {
 		var self = this;
@@ -53,7 +51,8 @@ define(["jquery", "knockout"], function($, ko){
 				var reqYear = self.choosenYear();
 				$.ajax({
 					type: "GET",
-					url: site_url+"tlhp/addlhp/get_all/"+ reqYear,
+					data: {'year': year},
+					url: site_url+"restlhp/lhpcontent",
 					beforeSend: function(){
 						self.tlhpList.removeAll();
 					},
@@ -63,7 +62,7 @@ define(["jquery", "knockout"], function($, ko){
 						}
 					},
 					error: function(xhr, msg) {
-						alert("Sory, there is something wrong in our system");
+						$.notify("Maaf saat ini sistem sedang mengalami masalah, silahkan hubungi Administrator", "error");
 					}
 				});
 			}

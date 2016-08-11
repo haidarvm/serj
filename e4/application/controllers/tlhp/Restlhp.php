@@ -460,6 +460,21 @@ class Restlhp extends REST_Controller {
 		
 		$this->response($dataResponse, 200);
 	}
+	
+	public function lhpcontent_get() {
+		$year = $this->get('year');
+		$this->load->model('Mlhp', 'mlhp');
+		$lhpList = $this->mlhp->findAllByYear($year);
+		$dataResponse = array();
+		foreach ($lhpList as $lhp) {
+			array_push($dataResponse, array(
+				'lhp_id' => $lhp->lhp_id,
+				'lhp_title' => $lhp->judul_lhp
+			));
+		}
+		
+		$this->response($dataResponse, 200);
+	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		

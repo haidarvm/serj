@@ -48,13 +48,15 @@
 <script>
     requirejs.config({
         "shim": {
-    		"bootstrap": {"deps": ["jquery"]}
+    		"bootstrap": {"deps": ["jquery"]},
+    		"notify": {"deps": ["jquery"]},
     	},
         "paths": {
             "jspath": site_url+ "assets/js/",
             "knockout": site_url+ "assets/js/knockout-3.2.0",
             "jquery": site_url+ "assets/js/jquery-2.1.4.min",
-            "bootstrap": site_url+ "assets/js/bootstrap.min"
+            "bootstrap": site_url+ "assets/js/bootstrap.min",
+            "notify": site_url+"assets/js/notify.min",
         }
     });
     requirejs(["jspath/pilihlhp"]);
