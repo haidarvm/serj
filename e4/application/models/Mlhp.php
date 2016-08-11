@@ -369,4 +369,8 @@ class MLhp extends CI_Model {
 	public function getAllUnitKerja() {
 		return $this->db->get('unit_kerja')->result();
 	}
+	
+	public function insertBatchTindakLanjut($arrTindakLanjut) {
+		$this->db->insert_batch("tindak_lanjut", $arrTindakLanjut);
+	}
 }

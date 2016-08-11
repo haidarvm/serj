@@ -269,7 +269,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							nama_pj: kertasKerjaTemuan.data.firstNamaPj(),
 							unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id,
 							tindak_lanjut: {
-								tindak_lanjut: kertasKerjaTemuan.data.firstUraianTindakLanjut(),
+								uraian_tindak_lanjut: kertasKerjaTemuan.data.firstUraianTindakLanjut(),
 								tanggal_tl: kertasKerjaTemuan.data.firstTanggalTl(),
 								nilai: kertasKerjaTemuan.data.firstJumlahTl()
 							}
@@ -288,7 +288,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							nama_pj: item.data.namaPj(),
 							unit_kerja_id: item.data.unitKerja().unit_kerja_id,
 							tindak_lanjut: {
-								tindak_lanjut: item.data.uraianTindakLanjut(),
+								uraian_tindak_lanjut: item.data.uraianTindakLanjut(),
 								tanggal_tl: item.data.tanggalTl(),
 								nilai: item.data.jumlahTl()
 							}

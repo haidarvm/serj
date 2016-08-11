@@ -241,6 +241,9 @@ class Restlhp extends REST_Controller {
 		$updatedData = array();
 		$updatedRekomendasiData = array();
 		$newRowRekomendasi = array();
+		$newRowTindakLanjut = array();
+		
+		$testTindakLanjut;
 		
 		$addedData = array();
 		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
@@ -269,6 +272,19 @@ class Restlhp extends REST_Controller {
 							"nama_pj" => $rekomendasi["nama_pj"],
 							"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
 						));
+						
+						if (isset($rekomendasi['tindak_lanjut'])) {
+							$tindakLanjut = $rekomendasi['tindak_lanjut'];
+							if (count($tindakLanjut) > 0)
+							array_push($newRowTindakLanjut, array(
+								'rekomendasi_id' => $rekomendasi['rekomendasi_id'],
+								'tindak_lanjut' => $tindakLanjut['uraian_tindak_lanjut'],
+								'nilai' => $tindakLanjut['nilai'],
+								'tanggal_tl' => $tindakLanjut['tanggal_tl'],
+								'user_id' => $this->session->userdata('user_id')
+							));
+							
+						}
 					} else {
 						//new row kkt
 						array_push($newRowRekomendasi, array(
@@ -294,6 +310,10 @@ class Restlhp extends REST_Controller {
 		
 		if (count($updatedRekomendasiData)) {
 			$this->mlhp->updateBatchRekomendasi($updatedRekomendasiData);
+		}
+		
+		if (count($newRowTindakLanjut)) {
+			$this->mlhp->insertBatchTindakLanjut($newRowTindakLanjut);
 		}
 		
 //		var_dump($newRowRekomendasi);
@@ -343,6 +363,7 @@ class Restlhp extends REST_Controller {
 			'updateDateCount' => count($updatedData),
 			'updatedData' => $updatedData,
 			'addedData' => $addedData,
+			'newRowTindakLanjut' => $newRowTindakLanjut
 		), 200);
 	}
 	
