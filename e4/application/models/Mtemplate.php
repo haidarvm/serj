@@ -56,6 +56,13 @@ class Mtemplate extends CI_Model {
 	}
 	
 	
+	public function getMediaList($template_laporan_id) {
+		$query = "
+				SELECT * FROM {PRE}template_laporan_media tlm  
+				LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id 
+				AND tlm.template_laporan_id = '$template_laporan_id' ";
+		return $this->db->query($query);
+	}
 
 	public function renameFile($file_name,$upload_tempalate_id) {
 		$ext = getExt($file_name);

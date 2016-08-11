@@ -105,6 +105,25 @@ class Template extends MY_Controller {
 			$this->load->tlhp_template('tlhp/template_laporan', $data);
 		}
 	}
+	
+	
+	public function show_file_list() {
+		$get = $this->input->get();
+		
+		if ($get != NULL) {
+			$template_laporan_id = $get['template_laporan_id'];
+			$getMediaLists =  $this->mtemplate->getMediaList($template_laporan_id);
+			
+			foreach ($getMediaLists->result() as $files) {
+				$col['file_name'] = $files->file_name;	
+				$col['ext'] = $files->ext;
+				$col['url'] = $files->url;
+				$col['update_date'] = $files->update_date;
+				$get_col[] = $col;
+			}
+			exit(json_encode($get_col));
+		} 
+	}
 
 	public function update_proccess() {
 		// test
