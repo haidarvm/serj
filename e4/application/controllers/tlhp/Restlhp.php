@@ -251,12 +251,16 @@ class Restlhp extends REST_Controller {
 	
 	public function lhp_get() {
 		$this->load->model('Mlhp', 'mlhp');
+		$this->load->model('Timlhp', 'teamLhp');
+		
 		$lhp_id = $this->get("lhp_id");
 		$kkt = $this->get("kkt");
 		
 		$lhp = $this->mlhp->getbyid($lhp_id);
+		$teamLhp = $this->teamLhp->get_tim($lhp_id);
 		$dataResponse = array(
-			'lhp' => $lhp
+			'lhp' => $lhp,
+			'tim' => $teamLhp
 		);
 		if ($kkt) {
 			$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);

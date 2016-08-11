@@ -187,6 +187,21 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 						self.data.endPerpanjanganPenugasan(moment(msg.data.lhp.hari_akhir_perpanjangan_penugasan).format('DD-MM-YYYY'));
 					}						
 					
+					if (msg.data.tim.length > 0) {
+						for (var i=0; i < msg.data.tim.length; i++) {
+							var member = msg.data.tim[i];
+							var teamVm = new TeamViewModel();
+							teamVm.teamId(member.tim_id);
+							teamVm.namaTim(member.nama_tim);
+							teamVm.kategoryTim(member.kategori_tim);
+							
+							if (teamVm.kategoryTim() == 'biasa') {
+								self.data.team.push(teamVm);
+							} else {
+								self.data.teamPerpanjangan.push(teamVm);
+							}
+						}
+					}
 //					teamPerpanjangan: ko.observableArray([])
 					console.debug(ko.toJSON(self.data));
 				},
