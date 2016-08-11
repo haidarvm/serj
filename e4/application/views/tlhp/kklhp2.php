@@ -12,6 +12,7 @@
 	            <div class="modal-body modal-form" role="form">
 	            	<div class="row">
 	            		<div class="col-lg-9">
+	            			<div id="notify"></div>
 			                <form class="form-horizontal">
 			                	<label for="rekomendasi">Rekomendasi</label>
 			                	<textarea name="rekomendasi" class="form-control" 
@@ -382,7 +383,8 @@
             "select2" : {deps: ["jquery"]},
             "datetimepicker" : {deps: ["jquery", "moment"]},
             "datebindinghandler": {deps: ["jquery", "knockout", "moment", "bootstrap", "datetimepicker"]},
-            "jquerypriceformat": {deps: ["jquery"]}
+            "jquerypriceformat": {deps: ["jquery"]},
+            "notify": {"deps": ["jquery"]},
 		},
 		"paths": {
 			"jspath": site_url+"assets/js/",
@@ -396,6 +398,7 @@
          	"datetimepicker": site_url+ "assets/js/bootstrap-datetimepicker.min",
             "moment" : site_url+ "assets/js/moment.min",
             "jquerypriceformat" : site_url+ "assets/js/jquery.price_format.2.0.min",
+            "notify": site_url+"assets/js/notify.min",
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});

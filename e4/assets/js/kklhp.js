@@ -1,5 +1,5 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
-        "jquerypriceformat"], function($, ko, _, accounting){
+        "notify"], function($, ko, _, accounting){
 	
 	
 	function RekomendasiViewModel(isFirstRow) {
@@ -515,19 +515,46 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		self.insertTindakLanjut = function() {
 			console.info('insert tindak lanjut was clicked');
-			if (self.isFirstLineTindakLanjut == true) {
-				self.firstViewTindakLanjut.data.firstUraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
-				self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
-				self.firstViewTindakLanjut.data.firstTanggalTl(self.dataTindakLanjut.tanggalTl());
-			} else {
-				console.debug(self.viewTindakLanjut);
-				self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
-				self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
-				self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
+			var errorMsg = [];
+			if (self.dataTindakLanjut.uraianTindakLanjut() == undefined) {
+				errorMsg.push('Uraian tindak lanjut tidak boleh kosong');
 			}
 			
-			$('#formTindakLanjut').modal('hide');
-//			console.debug(viewTindakLanjut.data);
+			if (self.dataTindakLanjut.jumlahTl() == undefined) {
+				errorMsg.push('Nilai tidak boleh kosong');
+			}
+			
+			if (self.dataTindakLanjut.tanggalTl() == undefined) {
+				errorMsg.push('Tanggal tidak boleh kosong');
+			}
+			
+			if (self.dataTindakLanjut.uraianRekomendasi() == undefined) {
+				errorMsg.push('Uraian Rekomendasi tidak boleh kosong');
+			}
+			
+			if (errorMsg.length == 0) {
+				if (self.isFirstLineTindakLanjut == true) {
+					self.firstViewTindakLanjut.data.firstUraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
+					self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
+					self.firstViewTindakLanjut.data.firstTanggalTl(self.dataTindakLanjut.tanggalTl());
+				} else {
+					console.debug(self.viewTindakLanjut);
+					self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
+					self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
+					self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
+				}
+				$('#formTindakLanjut').modal('hide');
+			} else {
+//				console.info('ada error bung ');
+//				alert('Data harus diisi semua');
+//				var msg;
+//				_.each(errorMsg, function(error){
+//					msg += "/n "+ error;
+//				});
+				
+				$("#notify").notify("Data belum terisi semua, silahkan lenkapi", "alert alert-error");
+			}
+			
 		}
 		
 		self.resetDataTindakLanjut = function() {
