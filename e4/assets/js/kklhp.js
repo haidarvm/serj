@@ -233,8 +233,26 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfJ.totalNilaiTemuan = ko.computed(function(){
 			var totalNilaiTemuan = 0;
 			_.each(selfJ.data.kertasKerjaTemuan(), function(kktItem){
-				var nilaiTemuan = parseFloat(kktItem.data.nilaiTemuan());
-				totalNilaiTemuan += nilaiTemuan;
+				if (kktItem.data.nilaiTemuan() != undefined) {
+					var nilaiTemuan = parseFloat(kktItem.data.nilaiTemuan());
+					totalNilaiTemuan += nilaiTemuan;
+				}
+			});
+			
+			return accounting.formatMoney(totalNilaiTemuan, "Rp", 0, ".", ",");
+		});
+		
+		selfJ.totalNilaiRekomendasi = ko.computed(function(){
+			var totalNilaiTemuan = 0;
+			_.each(selfJ.data.kertasKerjaTemuan(), function(kktItem){
+				if (kktItem.data.firstNilaiRekomendasi() != undefined) {
+					totalNilaiTemuan += parseFloat(kktItem.data.firstNilaiRekomendasi());
+					_.each(kktItem.data.rekomendasi(), function(itemRek){
+						if (itemRek.data.nilaiRekomendasi() != undefined) {
+							totalNilaiTemuan += parseFloat(itemRek.data.nilaiRekomendasi());
+						}
+					});
+				}
 			});
 			
 			return accounting.formatMoney(totalNilaiTemuan, "Rp", 0, ".", ",");

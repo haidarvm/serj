@@ -349,7 +349,7 @@
 											<td colspan="3"></td>
 											<td>
 												<span class="pull-right">
-													<b><span>Rp.0</span></b>
+													<b><span data-bind="text: totalNilaiRekomendasi">Rp.0</span></b>
 												</span>
 											</td>
 											<td colspan="15"></td>
