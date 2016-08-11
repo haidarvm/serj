@@ -25,6 +25,7 @@ class Addlhp extends MY_Controller {
 	}
 
 	public function add(){
+		$data['action'] = 'insert';
 		$data['title'] = "Buat Laporan Hasil Pengawasan Baru";
 		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
 		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();
@@ -48,6 +49,7 @@ class Addlhp extends MY_Controller {
 	public function edit($lhp_id){
 		//TODO: error handling when lhp_id not found
 		$data['lhp'] = $this->mlhp->getLHP($lhp_id);
+		$data['action'] = 'update';
 		$data['title'] = "Edit Laporan Hasil Pengawasan";
 		$data['getAllJenisTim'] = $this->mlhp->getAllJenisTim();
 		$data['getAllJenisPengawasan'] = $this->mlhp->getAllJenisPengawasan();

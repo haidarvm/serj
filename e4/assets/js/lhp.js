@@ -13,6 +13,7 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 		
 		self.data = {
 			userId: ko.observable(),
+			lhpId: ko.observable(),
 			noSuratTugas: ko.observable(),
 			tglSuratTugas: ko.observable(),
 			jenisPengawasanId: ko.observable(),
@@ -89,10 +90,6 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 				errorMsg.push('Hari awal atau akhir penugasan tidak boleh kosong');
 			}
 			
-			if (self.data.startHariPengawasan() == undefined || self.data.endHariPengawasan() == undefined) {
-				errorMsg.push('Hari awal atau akhir pengawasan tidak boleh kosong');
-			}
-			
 			if (self.data.startSkopPenugasan() == undefined || self.data.endSkopPenugasan() == undefined) {
 				errorMsg.push('Hari awal atau skop penugasan tidak boleh kosong');
 			}
@@ -114,8 +111,15 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 					$.notify(errorMsg[i]);
 				}
 			} else {
+				var reqAction = $('#action').val();
+				var action = 'POST';
+				if (reqAction == 'update') {
+					action = 'PUT';
+				}
+				
+				console.debug(reqData);
 				$.ajax({
-					type: 'POST',
+					type: action,
 					data: reqData,
 					contentType: 'application/json',
 					url: site_url + "tlhp/restlhp",
@@ -124,12 +128,15 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 				},
 				success: function(data) {
 					console.info(data.message);
-					window.location = site_url+ "tlhp/kklhpbaru/add/" + data.newLhp.lhpId;
+					if (reqAction == 'insert') {
+						window.location = site_url+ "tlhp/kklhpbaru/add/" + data.newLhp.lhpId;
+					} else if (reqAction == 'update') {
+						$.notify("Data sudah diubah", "success");
+					}
 //					$("#notify").notify("Data telah disimpan", "alert alert-info");
 				},
 				error: function(xhr, msg) {
-					alert('Ups, Internal Server Error');
-//					$("#notify").notify("Internal Server Error", "alert alert-error");
+					$.notify("Maaf saat ini sistem sedang mengalami masalah, silahkan hubungi Administrator", "error");
 				}
 				}).always(function(){
 					$('#btnSave').removeAttr('disabled');
@@ -151,6 +158,7 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 				success: function(msg) {
 					console.info('success to get lhp with id '+ lhp_id);
 					
+					self.data.lhpId(msg.data.lhp.lhp_id);
 					self.data.noSuratTugas(msg.data.lhp.no_surat_tugas);
 					self.data.tglSuratTugas(moment(msg.data.lhp.tanggal_surat_tugas).format('DD-MM-YYYY'));
 					self.data.jenisPengawasanId(msg.data.lhp.jenis_pengawasan_id)

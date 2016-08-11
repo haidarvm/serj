@@ -34,8 +34,6 @@ class Restlhp extends REST_Controller {
 				'judul_lhp' => $this->post('judulLhp'),
 				'tanggal_lhp' => $this->post('tglLhp'),
 			
-	//			'nama_ppk' => $this->post('namaPpk'),
-	//			'pj_kegiatan' => $this->post('pjKegiatan'),
 				'st_perpanjangan' => $this->post('stPerpanjangan'),
 				'tgl_st_perpanjangan' => $this->post('tglStPerpanjangan'),
 				'hari_awal_perpanjangan_penugasan' => $this->post('startPerpanjanganPenugasan'),
@@ -79,7 +77,63 @@ class Restlhp extends REST_Controller {
 			), 400);
 		}
 	}
-
+	
+	public function index_put() {
+		$team = array_merge($this->put('team'), $this->put('teamPerpanjangan'));
+		
+		$lhpData = array(
+			'no_surat_tugas' => $this->put('noSuratTugas'),
+			'tanggal_surat_tugas' => $this->put('tglSuratTugas'),
+			'jenis_pengawasan_id' => $this->put('jenisPengawasanId'),
+			'objek_pengawasan' => $this->put('objekPengawasan'),
+			'hari_awal_penugasan' => $this->put('startHariPenugasan'),
+			'hari_akhir_penugasan' => $this->put('endHariPenugasan'),
+			'skop_awal_penugasan' => $this->put('startSkopPenugasan'),
+			'skop_akhir_penugasan' => $this->put('endSkopPenugasan'),
+			
+			'nomor_lhp' => $this->put('nomorLhp'),
+			'judul_lhp' => $this->put('judulLhp'),
+			'tanggal_lhp' => $this->put('tglLhp'),
+		
+			'st_perpanjangan' => $this->put('stPerpanjangan'),
+			'tgl_st_perpanjangan' => $this->put('tglStPerpanjangan'),
+			'hari_awal_perpanjangan_penugasan' => $this->put('startPerpanjanganPenugasan'),
+			'hari_akhir_perpanjangan_penugasan' => $this->put('endPerpanjanganPenugasan'),
+			'user_id' => $this->session->userdata('user_id')
+		);
+			
+		$teamLhp = array();
+		//workaround for transction
+		$this->load->model('mlhp');
+		$lhpId = $this->put('lhpId');
+		if ($this->mlhp->updateLHP($lhpData, $lhpId)) {
+			//I hate this code, should be refactor to be one transction
+			$this->mlhp->deleteTimLhp($lhpId);
+			
+			foreach($team as $member) {
+				array_push($teamLhp, array(
+					'lhp_id' => $lhpId,
+					'kategory_tim' => $member['kategoryTim'],
+					'tim_id' => $member['teamId'],
+					'nama_tim' => $member['namaTim']
+				));
+			}
+			if (count($teamLhp) > 0) {
+				$this->timlhp->insert_batch($teamLhp);
+			}
+		}
+			
+		$lhpData['team'] = $teamLhp;
+		$lhpData['lhpId'] = $lhpId;
+		$dataResponse = array(
+			'newLhp' => $lhpData,
+			'totalTeamMember' => count($teamLhp),
+			'message' => 'Data berhasil disimpan'
+		);
+		
+		$this->response($dataResponse, 201);
+	}
+	
 	function clean($string) {
 	   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
 	   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.

@@ -1,5 +1,6 @@
 <form class="form-horizontal">
 	<input type="hidden" id="lhp_id" value="<?php echo isset($lhp->lhp_id) ? $lhp->lhp_id : null; ?>"/>
+	<input type="hidden" id="action" value="<?php echo isset($action) ? $action : null; ?>"/>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">

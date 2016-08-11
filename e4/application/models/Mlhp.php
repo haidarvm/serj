@@ -182,7 +182,7 @@ class MLhp extends CI_Model {
 // 		$this->db->from('tlhp_lhp');
 // 		$this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
 		
-// 		$this->db->order_by("judul_lhp", "asc");
+// 		$this->db->order_by("dul_lhp", "asc");
 // 		return $sql = $this->db->get();
 // 	}
 
@@ -261,7 +261,7 @@ class MLhp extends CI_Model {
 	// $this->db->from('tlhp_lhp');
 	// $this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
 	
-	// $this->db->order_by("judul_lhp", "asc");
+	// $this->db->order_by("dul_lhp", "asc");
 	// return $sql = $this->db->get();
 	// }
 	
@@ -285,7 +285,7 @@ class MLhp extends CI_Model {
 	// $this->db->from('tlhp_lhp');
 	// $this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
 	
-	// $this->db->order_by("judul_lhp", "asc");
+	// $this->db->order_by("dul_lhp", "asc");
 	// return $sql = $this->db->get();
 	// }
 	
@@ -302,7 +302,7 @@ class MLhp extends CI_Model {
 	// }
 	
 	public function findAllByYear($year) {
-		$query = "SELECT lhp_id, judul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '".$year."'";
+		$query = "SELECT lhp_id, dul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '".$year."'";
 		return $this->db->query($query)->result();
 	}
 	
@@ -370,7 +370,28 @@ class MLhp extends CI_Model {
 		return $this->db->get('unit_kerja')->result();
 	}
 	
-	public function insertBatchTindakLanjut($arrTindakLanjut) {
-		$this->db->insert_batch("tindak_lanjut", $arrTindakLanjut);
+	public function insertBatchTindakLant($arrTindakLant) {
+		$this->db->insert_batch("tindak_lant", $arrTindakLant);
+	}
+	
+	public function updateLHP($data, $lhp_id) {
+		unset($data['lhp_id']);
+		$remove = array('tim');
+		$clean = array_diff_key($data, array_flip($remove));
+		$clean['tanggal_surat_tugas'] = sqlDateFormat($data['tanggal_surat_tugas']);
+		$clean['hari_awal_penugasan'] = sqlDateFormat($data['hari_awal_penugasan']);
+		$clean['hari_akhir_penugasan'] = sqlDateFormat($data['hari_akhir_penugasan']);
+		$clean['skop_awal_penugasan'] = sqlDateFormat($data['skop_awal_penugasan']);
+		$clean['skop_akhir_penugasan'] = sqlDateFormat($data['skop_akhir_penugasan']);
+		$clean['tanggal_lhp'] = sqlDateFormat($data['tanggal_lhp']);
+		$clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
+		$clean['hari_awal_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_awal_perpanjangan_penugasan']) : null;
+		$clean['hari_akhir_perpanjangan_penugasan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['hari_akhir_perpanjangan_penugasan']) : null;
+		// debug(array_filter($clean));exit;
+		return $this->db->update('lhp', array_filter($clean), array('lhp_id' => $lhp_id));
+	}
+	
+	public function deleteTimLhp($lhp_id) {
+		$this->db->delete('tim_lhp', array('lhp_id' => $lhp_id));
 	}
 }
