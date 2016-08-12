@@ -39,7 +39,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfR.initData = function(rekomendasiId, kertasKerjaId, kodeRekomendasiId, kodeRekomendasi, 
 				oriUraianRekomendasi, uraianRekomendasi, kerugianNegara, nilaiRekomendasi, 
-				unitKerja, namaPpk, namaPj) {
+				unitKerja, namaPpk, namaPj, 
+				uraianTindakLanjut, tanggalTl, nilaiTl) {
 			selfR.data.rekomendasiId(rekomendasiId);
 			selfR.data.kertasKerjaId(kertasKerjaId);
 			selfR.data.kodeRekomendasiId(kodeRekomendasiId);
@@ -52,7 +53,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfR.data.unitKerja(unitKerja);
 			selfR.data.namaPpk(namaPpk);
 			selfR.data.namaPj(namaPj);
-			
+			selfR.data.uraianTindakLanjut(uraianTindakLanjut);
+			selfR.data.tanggalTl(tanggalTl);
+			selfR.data.jumlahTl(nilaiTl);
 //			console.debug(selfR.data.unitKerja());
 //			console.debug(selfR.data.namaPpk());
 //			console.debug(selfR.data.namaPj());
@@ -88,6 +91,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				return null;
 			}
 		});
+		
+		self.viewHistoryTl = function(data) {
+			console.info('reoo');
+			var rekId = data.data.rekomendasiId();
+			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
+		}
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -521,6 +530,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 												unitKerja = ukerja;
 											}
 										});
+//										uraianTindakLanjut, tanggalTl, nilaiTl
 										rekView.initData(a.rekomendasi[i].rekomendasi_id, 
 												a.rekomendasi[i].kertas_kerja_id, 
 												a.rekomendasi[i].kode_rekomendasi_id,
@@ -531,7 +541,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 												a.rekomendasi[i].nilai_rekomendasi, 
 												unitKerja,
 												a.rekomendasi[i].nama_ppk,
-												a.rekomendasi[i].nama_pj);
+												a.rekomendasi[i].nama_pj, 
+												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.tindak_lanjut : null,
+												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.tanggal_tl : null,
+												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.nilai : null);
 										newKkt.data.rekomendasi.push(rekView);
 									}
 								}
