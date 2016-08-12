@@ -617,6 +617,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
 					self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
 					self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
+					
+					console.debug(self.viewTindakLanjut.data.uraianTindakLanjut());
+					console.debug(self.viewTindakLanjut.data.jumlahTl());
+					console.debug(self.viewTindakLanjut.data.tanggalTl());
 				}
 				$('#formTindakLanjut').modal('hide');
 			} else {
