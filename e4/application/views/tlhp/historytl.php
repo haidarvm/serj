@@ -77,7 +77,7 @@
 						    <td>
 						    	<input type="text"/>
 						    </td>
-						    <td></td>
+						    <td>Rp<?php echo number_format($rekomendasi->nilai_rekomendasi, 0, ",", ".") ?></td>
 						    <td>
 						    	<select name="status">
 						    		<option>sesuai rekomendasi</option>
@@ -91,6 +91,10 @@
 							<button class="btn">Cetak</button>
 							<button class="btn">Simpan History Tl</button>
 						</div>
+						<form action="<?php base_url()?>/tlhp/pilihlhp/updatelhp" method="post">
+							<input type="hidden" name="lhp_id" value="<?php echo $lhp->lhp_id?>">
+							<button class="btn">Kembali ke KKLHP</button>
+						</form>
 					</div>
 				</div>
 			</div>
