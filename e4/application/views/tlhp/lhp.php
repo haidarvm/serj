@@ -14,7 +14,6 @@
 	</div>
 </div>
 <script>
-//	console.debug(site_url);
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},

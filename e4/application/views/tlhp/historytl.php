@@ -74,7 +74,9 @@
 						    <td>Rp<?php echo number_format($rowTl-> nilai, 0, ",", ".") ?></td>
 						    <td>-</td>
 						    <td><input type="checkbox"/></td>
-						    <td>Rp0</td>
+						    <td>
+						    	<input type="text"/>
+						    </td>
 						    <td></td>
 						    <td>
 						    	<select name="status">
@@ -85,10 +87,31 @@
 						  </tr>
 						  <?php endforeach; ?>
 						</table>
+						<div class="pull-right">
+							<button class="btn">Cetak</button>
+							<button class="btn">Simpan History Tl</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	require.config({
+		"shim": {
+			"tlhp" : {"deps": ["jquery"]},
+//            "notify": {"deps": ["jquery"]},
+		},
+		"paths": {
+			"jspath": site_url+"assets/js/",
+        	"jquery": site_url+"assets/js/jquery-2.1.4.min",
+         	"knockout": site_url+"assets/js/knockout-3.2.0",
+         	"underscore": site_url+"assets/js/underscore",
+         	"accounting": site_url+"assets/js/accounting.min",
+//            "notify": site_url+"assets/js/notify.min",
+		}
+	});
+//	requirejs(["jspath/historytl"]);
+</script> 
 

@@ -1,5 +1,5 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
-        "notify", "moment"], function($, ko, _, accounting, moment){
+        "notify", "moment"], function($, ko, _, accounting){
 	
 //	console.debug(moment);
 	function RekomendasiViewModel(isFirstRow) {
@@ -77,6 +77,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfR.uiPeriodeTindakLanjut = ko.computed(function(){
 			if (selfR.data.tanggalTl() != undefined) {
+				var moment = require('moment');
 				var month = moment(selfR.data.tanggalTl()).format("M");
 				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
 					return "SEMESTER I";
@@ -164,7 +165,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				kodeTemuanId, kelompokTemuan, subKelompokTemuan, jenisKelompokTemuan,
 				deskripsi_temuan, uraianTemuan, kodeSebabId, kodeSebab, uraianSebab, nilaiTemuan, firstRekomendasiId,
 				firstKodeRekomendasiId, firstKodeRekomendasi, firstOriUraianRekomendasi, firstUraianRekomendasi, 
-				firstKerugianNegara, firstNilaiRekomendasi, firstUnitKerja, firstNamaPpk, firstNamaPj) {
+				firstKerugianNegara, firstNilaiRekomendasi, firstUnitKerja, firstNamaPpk, firstNamaPj, 
+				uraianTindakLanjut, tanggalTl, nilaiTl) {
 			selfK.data.kertasKerjaId(kertasKerjaId);
 			selfK.data.lhpId(lhpId);
 			selfK.data.jenisTemuan(jenisTemuan);
@@ -195,6 +197,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfK.data.firstUnitKerja(firstUnitKerja);
 			selfK.data.firstNamaPpk(firstNamaPpk);
 			selfK.data.firstNamaPj(firstNamaPj);
+			selfK.data.firstUraianTindakLanjut(uraianTindakLanjut);
+//			firstDokumentPendukungTl : ko.observable(),
+			selfK.data.firstTanggalTl(tanggalTl);
+			selfK.data.firstJumlahTl(nilaiTl);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -215,19 +221,26 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		});
 		
 		selfK.uiPeriodeTindakLanjut = ko.computed(function(){
+			var moment = require('moment');
 			if (selfK.data.firstTanggalTl() != undefined) {
 				var month = moment(selfK.data.firstTanggalTl()).format("M");
+//				var month = moment('2016-08-17').format("M");
 				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
 					return "SEMESTER I";
 				} else if (parseInt(month) > 6 && parseInt(month) <= 12 ) {
 					return "SEMESTER II";
 				} else {
-					return '-';
+					return 'Unknown date '+ selfK.data.firstTanggalTl();
 				}
 			} else {
 				return '-';
 			}
 		});
+		
+		self.viewHistoryTl = function(data) {
+			var rekId = data.data.firstRekomendasiId();
+			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
+		}
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
@@ -466,6 +479,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 											firstUnitKerja = ukerja;
 										}
 									});
+//									uraianTindakLanjut, tanggalTl, nilaiTl
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
 											a.deskripsi_temuan, a.uraian_temuan, a.kode_sebab_id, 
@@ -479,8 +493,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 											a.rekomendasi[0].nilai_rekomendasi,
 											firstUnitKerja,
 											a.rekomendasi[0].nama_ppk,
-											a.rekomendasi[0].nama_pj
-											);
+											a.rekomendasi[0].nama_pj,
+											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.tindak_lanjut : null,
+											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.tanggal_tl : null,
+											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.nilai : null);
 								} else {
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
@@ -531,7 +547,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					}); // end each jenis temuan
 				},
 				error: function(xhr, msg) {
-					alert("Internal Server Error");
+					$.notify("Internal Serverl Error, Cannot Load LHP Data");
 				}
 			}).always(function(){
 				

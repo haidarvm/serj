@@ -279,6 +279,14 @@ class Restlhp extends REST_Controller {
 					$kktRekomendasi = array();
 					foreach ($rekomendasi as $rekRow) {
 						if ($rekRow->kertas_kerja_id == $kktRow->kertas_kerja_id) {
+							//TODO: jgn sampe kaya gini ah..
+							$tindaklanjut = $this->mlhp->getAllTindakLanjut($rekRow->rekomendasi_id);
+							if (count($tindaklanjut) > 0) {
+								$rekRow->tindak_lanjut = $tindaklanjut[0];	
+							} else {
+								$rekRow->tindak_lanjut = null;
+							}
+							
 							array_push($kktRekomendasi, $rekRow);
 						}
 					}
