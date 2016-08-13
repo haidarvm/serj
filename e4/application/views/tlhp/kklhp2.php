@@ -155,7 +155,7 @@
 												</button>
 												
 												<button type="button" class="ngurang" data-bind="visible: !isFirstRow(), 
-												event: {click: $parent.removeRow}">
+												event: {click: $parent.removeRow}, enable: data.kertasKerjaId() == undefined">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
