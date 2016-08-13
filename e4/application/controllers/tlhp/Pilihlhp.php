@@ -53,24 +53,27 @@ class Pilihlhp extends MY_Controller {
 		redirect('tlhp/addlhp/update');
 	}
 
-	public function updatelhp() {
-		$post = $this->input->post();
-		if ($post) {
-			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
-			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
-			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
-			$data['title'] = "UPDATE LHP";
-			$data['action'] = "update";
-			$lhp_id = $post['lhp_id'];
-			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
-			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-			// $data['update'] = "update";
-			// $data['getAll'] = $this->muser->getAllUser();
-			$this->load->tlhp_template('tlhp/kklhp2', $data);
-		} else {
-			// redirect pilih
-		}
-	}
+//	public function editlhp() {
+//		$gets = $this->input->get();
+//		$data['lhp'] = $this->mlhp->getLHP($gets['lhp_id']);
+//		$data['action'] = "update";
+//		$this->load->tlhp_template('tlhp/kklhp2', $data);
+//		if ($post) {
+//			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
+//			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
+//			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
+//			$data['title'] = "UPDATE LHP";
+//			$data['action'] = "update";
+//			$lhp_id = $post['lhp_id'];
+//			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
+//			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+//			// $data['update'] = "update";
+//			// $data['getAll'] = $this->muser->getAllUser();
+//			$this->load->tlhp_template('tlhp/kklhp2', $data);
+//		} else {
+//			// redirect pilih
+//		}
+//	}
 	
 	public function updatekklhp() {
 			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();

@@ -58,8 +58,16 @@ class Lhp extends MY_Controller {
 			
 			array_push($toBeInsert, $tl);
 		}
-		
+
 		$this->rtl->insertAll($toBeInsert);
 		echo "berhasil";
+		//redirect('tlhp/'.$lhp_id);
+	}
+	
+	public function edit() {
+		$gets = $this->input->get();
+		$data['lhp'] = $this->mlhp->getLHP($gets['lhp_id']);
+		$data['action'] = "update";
+		$this->load->tlhp_template('tlhp/kklhp2', $data);
 	}
 }
