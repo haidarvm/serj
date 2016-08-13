@@ -250,7 +250,7 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<span data-bind="text: uiFirstJumlahTl">[nilai dari tindak lanjut]</span>
+												<span data-bind="text: data.firstTotalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
 											<td></td>
 											<td></td>
@@ -325,7 +325,7 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<span data-bind="text: uiJumlahTl">[nilai dari tindak lanjut]</span>
+												<span data-bind="text: data.totalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
 											<td></td>
 											<td></td>

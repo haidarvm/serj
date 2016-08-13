@@ -283,6 +283,7 @@ class Restlhp extends REST_Controller {
 							$tindaklanjut = $this->mlhp->getAllTindakLanjut($rekRow->rekomendasi_id);
 							if (count($tindaklanjut) > 0) {
 								$rekRow->tindak_lanjut = $tindaklanjut[0];	
+								$rekRow->total_tindak_lanjut = count($tindaklanjut);
 							} else {
 								$rekRow->tindak_lanjut = null;
 							}
