@@ -20,13 +20,25 @@ class Mtemplate extends CI_Model {
 		// echo $this->db->last_query();exit;
 	}
 
+// 	public function getAllTemplate($cond = NULL, $order_by = NULL) {
+// 		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
+// 		$sql = "SELECT *, tl.template_laporan_id as template_laporan_id, tl.create_date as create_date
+// 				FROM {PRE}template_laporan tl
+//     			LEFT JOIN {PRE}template_laporan_media tlm ON tlm.template_laporan_id = tl.template_laporan_id
+//     			LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id
+//     			" . $cond . " " . $order_by;
+// 		$query = $this->db->query($sql);
+// 		// echo $this->db->last_query();exit;
+// 		return $query;
+// 	}
+	
 	public function getAllTemplate($cond = NULL, $order_by = NULL) {
 		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
 		$sql = "SELECT *, tl.template_laporan_id as template_laporan_id, tl.create_date as create_date
 				FROM {PRE}template_laporan tl
     			LEFT JOIN {PRE}template_laporan_media tlm ON tlm.template_laporan_id = tl.template_laporan_id
     			LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id
-    			" . $cond . " " . $order_by;
+    			" . $cond . " GROUP BY tl.template_laporan_id  " . $order_by;
 		$query = $this->db->query($sql);
 		// echo $this->db->last_query();exit;
 		return $query;
@@ -51,7 +63,7 @@ class Mtemplate extends CI_Model {
 		$file_name = $data['file_name'];
 		$this->db->insert("upload_template_laporan", $data);
 		$upload_template_id = $this->db->insert_id();
-		$this->renameFile($file_name,$upload_template_id);
+		//$this->renameFile($file_name,$upload_template_id);
 		return $upload_template_id;
 	}
 	
@@ -60,7 +72,7 @@ class Mtemplate extends CI_Model {
 		$query = "
 				SELECT * FROM {PRE}template_laporan_media tlm  
 				LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id 
-				AND tlm.template_laporan_id = '$template_laporan_id' ";
+				WHERE  tlm.template_laporan_id = '$template_laporan_id' ";
 		return $this->db->query($query);
 	}
 
@@ -68,6 +80,7 @@ class Mtemplate extends CI_Model {
 		$ext = getExt($file_name);
 		$oldname = FCPATH . 'assets/media/'.$file_name;
 		$newname = FCPATH . 'assets/media/template/'.$upload_tempalate_id.$ext;
+		
 		$data['path'] = 'assets/media/template/'.$upload_tempalate_id.$ext;
 		$data['url'] = base_url(). 'assets/media/template/'.$upload_tempalate_id.$ext;
 		$this->updateMedia($data,$upload_tempalate_id);

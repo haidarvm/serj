@@ -124,6 +124,19 @@ class Template extends MY_Controller {
 			exit(json_encode($get_col));
 		} 
 	}
+	
+	public function download_files() {
+		$get = $this->input->get();
+		$this->load->helper('download');
+	
+		if ($get != NULL) {
+			$files = $get['file'];
+			$name = $files;
+			$data = file_get_contents($files);
+			force_download($name, $data);
+			redirect('template/daftarlap','refresh');
+		}
+	}
 
 	public function update_proccess() {
 		// test

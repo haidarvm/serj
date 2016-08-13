@@ -35,9 +35,9 @@ define([ "jquery", "knockout", "bootstrap", "data-table" ], function($, ko) {
 	     * Show file list
 	     * agusprasetyo811@gmail.com
 	     */
-	   $('.showfileListModal').on('click', function(e) {
+	    $(document).on("click", ".showfileListModal", function (e) {
 		   $('#fileListModal').modal('show');
-		   var id = $('.showfileListModal').data("id");
+		   var id = $(this).data("id");
 		   $('#fileListContainer').html('<div align="center">Loading File ...</div');
 		   var table = 
 			   '<table class="table">'
@@ -59,7 +59,7 @@ define([ "jquery", "knockout", "bootstrap", "data-table" ], function($, ko) {
 					for (var i = 0; i< getFiles.length; i++) {
 						table +=
 						  '<tr>'
-				  			+'<td>'+getFiles[i].file_name+'</td>'
+				  			+'<td><a href="'+site_url+'tlhp/template/download_files?file='+getFiles[i].url+'">'+getFiles[i].file_name+'</a></td>'
 				  			+'<td>'+getFiles[i].ext+'</td>'
 				  			+'<td>'+getFiles[i].update_date+'</td>'
 				  		+'</tr>';
