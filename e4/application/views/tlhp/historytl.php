@@ -74,9 +74,13 @@
 						    <td><?php echo $rowTl->tindak_lanjut ?></td>
 						    <td>Rp<?php echo number_format($rowTl-> nilai, 0, ",", ".") ?></td>
 						    <td>-</td>
-						    <td><input type="checkbox" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalStatus]"/></td>
 						    <td>
-						    	<input type="text" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalValue]"/>
+						    	<input type="checkbox" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalStatus]"
+						    	<?php echo isset($rowTl->approval_status) && $rowTl->approval_status == 'approved' ? "checked" : ''?>/>
+						    </td>
+						    <td>
+						    	<input type="text" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalValue]"
+						    	value="<?php echo $rowTl->nilai_disetujui ?>"/>
 						    </td>
 						    <td>
 						    	<input type="hidden" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][saldoRekomendasi]"
@@ -85,8 +89,8 @@
 						    </td>
 						    <td>
 						    	<select name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][status]">
-						    		<option value="1">sesuai rekomendasi</option>
-						    		<option value="0">tidak sesuai rekomendasi</option>
+						    		<option value="1" <?php echo $rowTl->status_tl == '1' ? "selected" : ''?>>sesuai rekomendasi</option>
+						    		<option value="0" <?php echo $rowTl->status_tl == '0' ? "selected" : '' ?>>tidak sesuai rekomendasi</option>
 						    	</select>
 						    </td>
 						  </tr>
@@ -96,10 +100,9 @@
 							<button class="btn">Cetak</button>
 							<button class="btn">Simpan History Tl</button>
 						</div>
-						</form>
-						<form action="<?php base_url()?>/tlhp/pilihlhp/updatelhp" method="post">
-							<input type="hidden" name="lhp_id" value="<?php echo $lhp->lhp_id?>">
-							<button class="btn">Kembali ke KKLHP</button>
+							<a class="btn" href="<?php echo base_url().'tlhp/lhp/edit?lhp_id='.$lhp->lhp_id ?>">
+								Kembali ke KKLHP
+							</a>
 						</form>
 					</div>
 				</div>

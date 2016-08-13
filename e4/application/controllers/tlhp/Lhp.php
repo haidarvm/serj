@@ -60,8 +60,7 @@ class Lhp extends MY_Controller {
 		}
 
 		$this->rtl->insertAll($toBeInsert);
-		echo "berhasil";
-		//redirect('tlhp/'.$lhp_id);
+		redirect('tlhp/edit?lhp_id='.$lhp_id);
 	}
 	
 	public function edit() {
