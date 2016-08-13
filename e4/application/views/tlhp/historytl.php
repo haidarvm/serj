@@ -51,6 +51,7 @@
 							</form>
 						<!-- end form -->
 						<h4>RIWAYAT TINDAK LANJUT</h4>
+						<form action="<?php echo base_url() ?>tlhp/lhp/savetl" method="post">
 						<table class="table table-bordered">
 						  <tr>
 						    <th rowspan="2">No</th>
@@ -73,15 +74,19 @@
 						    <td><?php echo $rowTl->tindak_lanjut ?></td>
 						    <td>Rp<?php echo number_format($rowTl-> nilai, 0, ",", ".") ?></td>
 						    <td>-</td>
-						    <td><input type="checkbox"/></td>
+						    <td><input type="checkbox" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalStatus]"/></td>
 						    <td>
-						    	<input type="text"/>
+						    	<input type="text" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalValue]"/>
 						    </td>
-						    <td>Rp<?php echo number_format($rekomendasi->nilai_rekomendasi, 0, ",", ".") ?></td>
 						    <td>
-						    	<select name="status">
-						    		<option>sesuai rekomendasi</option>
-						    		<option>tidak sesuai rekomendasi</option>
+						    	<input type="hidden" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][saldoRekomendasi]"
+						    	value="<?php echo $rekomendasi->nilai_rekomendasi ?>"/>
+						    	Rp<?php echo number_format($rekomendasi->nilai_rekomendasi, 0, ",", ".") ?>
+						    </td>
+						    <td>
+						    	<select name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][status]">
+						    		<option value="1">sesuai rekomendasi</option>
+						    		<option value="0">tidak sesuai rekomendasi</option>
 						    	</select>
 						    </td>
 						  </tr>
@@ -91,6 +96,7 @@
 							<button class="btn">Cetak</button>
 							<button class="btn">Simpan History Tl</button>
 						</div>
+						</form>
 						<form action="<?php base_url()?>/tlhp/pilihlhp/updatelhp" method="post">
 							<input type="hidden" name="lhp_id" value="<?php echo $lhp->lhp_id?>">
 							<button class="btn">Kembali ke KKLHP</button>
