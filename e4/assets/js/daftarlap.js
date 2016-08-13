@@ -59,7 +59,7 @@ define([ "jquery", "knockout", "bootstrap", "data-table" ], function($, ko) {
 					for (var i = 0; i< getFiles.length; i++) {
 						table +=
 						  '<tr>'
-				  			+'<td>'+getFiles[i].file_name+'</td>'
+				  			+'<td><a href="'+site_url+'tlhp/template/download_files?file='+getFiles[i].url+'">'+getFiles[i].file_name+'</a></td>'
 				  			+'<td>'+getFiles[i].ext+'</td>'
 				  			+'<td>'+getFiles[i].update_date+'</td>'
 				  		+'</tr>';
