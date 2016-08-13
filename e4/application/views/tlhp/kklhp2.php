@@ -237,7 +237,7 @@
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
-												<a href="#" data-bind="event: {click: viewHistoryTl}">
+												<a href="#" data-bind="event: {click: firstViewHistoryTl}">
 													<span data-bind="text: uiPeriodeTindakLanjut"></span>
 												</a>
 											</td>

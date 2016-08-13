@@ -95,7 +95,6 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		});
 		
 		self.viewHistoryTl = function(data) {
-			console.info('reoo');
 			var rekId = data.data.rekomendasiId();
 			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
 		}
@@ -252,7 +251,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			}
 		});
 		
-		self.viewHistoryTl = function(data) {
+		self.firstViewHistoryTl = function(data) {
 			var rekId = data.data.firstRekomendasiId();
 			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
 		}
