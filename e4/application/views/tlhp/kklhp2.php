@@ -30,10 +30,13 @@
 		    					<input type="file"/>
 			                	
 		                		<label for="rekomendasi">Tanggal</label>
-		                		<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span>
-		    					<input type="text" class="form-control"
+		                		<div class="input-group">
+									<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" class="form-control border-input date-input-big datepicker"
 		    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
-		    					class="datepicker"/>
+		    					class="datepicker"/>				
+								</div>
+
+		                		
 			                </form>
 	            		</div>
 	            	</div>
