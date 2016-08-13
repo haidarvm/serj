@@ -62,6 +62,7 @@ class Pilihlhp extends MY_Controller {
 			$data['title'] = "UPDATE LHP";
 			$data['action'] = "update";
 			$lhp_id = $post['lhp_id'];
+			$data['lhp_id']  =$lhp_id;
 			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
 			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
 			// $data['update'] = "update";
@@ -89,13 +90,22 @@ class Pilihlhp extends MY_Controller {
 	
 	
 	
-	public function save_to_excel() {
-		$param['title'] = 'Hasil JUDUL 123';
-		$param['to'] = 'Pada Pengawasan';
+	public function save_to_excel($lhp_id) {
+		
+		$kode_temuan = $this->mlhp->getAllKodeTemuan();
+		$kode_sebab = $this->mlhp->getAllKodeSebab();
+		$kode_rekomendasi = $this->mlhp->getAllKodeRekomendasi();
+		$lhp = $this->mlhp->getLHP($lhp_id);
+		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+		
+		var_dump($kode_sebab);
+		
+		$param['title'] =$lhp->judul_lhp;
+		$param['to'] = $lhp->objek_pengawasan;
 		$param['table_top'] = array(
-				'tahun'=> '2016',
-				'no_lhp'=>'67699',
-				'judul_lhp'=> '1234AAA',
+				'tahun'=>  isset($lhp->tanggal_lhp) ? year_only($lhp->tanggal_lhp):"",
+				'no_lhp'=>  isset($lhp->nomor_lhp) ? year_only($lhp->nomor_lhp):"",
+				'judul_lhp'=> isset($lhp->judul_lhp) ? $lhp->judul_lhp:"",
 				'temuan' => '0',
 				'rekom'=> '0',
 				'sesuai'=>'0',
@@ -103,7 +113,7 @@ class Pilihlhp extends MY_Controller {
 				'belum_tl'=>'0',
 				'tidak_dpt_tl'=>'0',
 		);
-		$this->writeToExcel($param);
+		//$this->writeToExcel($param);
 	}
 	
 	private function writeToExcel($param = NULL) {
