@@ -249,11 +249,16 @@
 												<!-- dokument pendukung -->
 											</td>
 											<td>
-												<!-- nilai -->
+												<!-- total tindak lanjut -->
 												<span data-bind="text: data.firstTotalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- total tindak lanjut -->
+												<span data-bind="text: data.firstMatchedTlRowCount">nilai</span>
+											</td>
+											<td>
+												<span data-bind="text: uiFirstMatchedTlTotalAmount">jumlah</span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -328,8 +333,14 @@
 												<!-- nilai -->
 												<span data-bind="text: data.totalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- matched total amount -->
+												<span data-bind="text: uiMatchedTlTotalAmount"></span>
+											</td>
+											<td>
+												<!-- matched total amount -->
+												<span data-bind="text: data.matchedTlRowCount"></span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>

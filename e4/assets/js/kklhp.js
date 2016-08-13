@@ -25,6 +25,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			tanggalTl: ko.observable(),
 			jumlahTl : ko.observable(),
 			totalTindakLanjut : ko.observable(),
+			
+			matchedTlRowCount: ko.observable(),
+			matchedTlTotalAmount: ko.observable()
 		}
 		
 		selfR.data.kerugianNegaraCbk.subscribe(function(newVal){
@@ -41,7 +44,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfR.initData = function(rekomendasiId, kertasKerjaId, kodeRekomendasiId, kodeRekomendasi, 
 				oriUraianRekomendasi, uraianRekomendasi, kerugianNegara, nilaiRekomendasi, 
 				unitKerja, namaPpk, namaPj, 
-				uraianTindakLanjut, tanggalTl, nilaiTl, totalTindakLanjut) {
+				uraianTindakLanjut, tanggalTl, nilaiTl, totalTindakLanjut, 
+				matchedTl) {
 			selfR.data.rekomendasiId(rekomendasiId);
 			selfR.data.kertasKerjaId(kertasKerjaId);
 			selfR.data.kodeRekomendasiId(kodeRekomendasiId);
@@ -58,6 +62,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfR.data.tanggalTl(tanggalTl);
 			selfR.data.jumlahTl(nilaiTl);
 			selfR.data.totalTindakLanjut(totalTindakLanjut);
+			selfR.data.matchedTlRowCount(matchedTl.rowCount);
+			selfR.data.matchedTlTotalAmount(matchedTl.totalAmount);
 //			console.debug(selfR.data.unitKerja());
 //			console.debug(selfR.data.namaPpk());
 //			console.debug(selfR.data.namaPj());
@@ -94,10 +100,18 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			}
 		});
 		
-		self.viewHistoryTl = function(data) {
+		selfR.viewHistoryTl = function(data) {
 			var rekId = data.data.rekomendasiId();
 			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
 		}
+		
+		selfR.uiMatchedTlTotalAmount = ko.computed(function() {
+			if (selfR.data.matchedTlTotalAmount() != undefined) {
+				return accounting.formatMoney(selfR.data.matchedTlTotalAmount(), "Rp", 0, ".", ",");
+			} else {
+				return "N/A";
+			}
+		});
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -150,7 +164,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			firstTanggalTl: ko.observable(),
 			firstJumlahTl : ko.observable(),
 			
-			firstTotalTindakLanjut: ko.observable()
+			firstTotalTindakLanjut: ko.observable(),
+			firstMatchedTlRowCount: ko.observable(),
+			firstMatchedTlTotalAmount: ko.observable()
 		}
 		
 		selfK.data.firstKerugianNegaraCbk.subscribe(function(newVal){
@@ -178,7 +194,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				deskripsi_temuan, uraianTemuan, kodeSebabId, kodeSebab, uraianSebab, nilaiTemuan, firstRekomendasiId,
 				firstKodeRekomendasiId, firstKodeRekomendasi, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi, firstUnitKerja, firstNamaPpk, firstNamaPj, 
-				uraianTindakLanjut, tanggalTl, nilaiTl, totalTindakLanjut) {
+				uraianTindakLanjut, tanggalTl, nilaiTl, totalTindakLanjut, 
+				firstMatchedTl) {
 			selfK.data.kertasKerjaId(kertasKerjaId);
 			selfK.data.lhpId(lhpId);
 			selfK.data.jenisTemuan(jenisTemuan);
@@ -214,6 +231,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfK.data.firstTanggalTl(tanggalTl);
 			selfK.data.firstJumlahTl(nilaiTl);
 			selfK.data.firstTotalTindakLanjut(totalTindakLanjut);
+			
+			selfK.data.firstMatchedTlRowCount(firstMatchedTl.rowCount);
+			selfK.data.firstMatchedTlTotalAmount(firstMatchedTl.totalAmount);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -255,6 +275,14 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			var rekId = data.data.firstRekomendasiId();
 			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
 		}
+		
+		selfK.uiFirstMatchedTlTotalAmount = ko.computed(function() {
+			if (selfK.firstMatchedTlTotalAmount != undefined) {
+				return accounting.formatMoney(selfK.data.firstMatchedTlTotalAmount(), "Rp", 0, ".", ",");
+			} else {
+				return "N/A";
+			}
+		});
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
@@ -511,7 +539,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.tindak_lanjut : null,
 											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.tanggal_tl : null,
 											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.nilai : null, 
-											a.rekomendasi[0].total_tindak_lanjut != undefined ? a.rekomendasi[0].total_tindak_lanjut : 0);
+											a.rekomendasi[0].total_tindak_lanjut != undefined ? a.rekomendasi[0].total_tindak_lanjut : 0, 
+											a.rekomendasi[0].matchedtl != undefined ? a.rekomendasi[0].matchedtl : null);
 								} else {
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
@@ -551,7 +580,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.tindak_lanjut : null,
 												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.tanggal_tl : null,
 												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.nilai : null, 
-												a.rekomendasi[i].total_tindak_lanjut != undefined ? a.rekomendasi[i].total_tindak_lanjut : 0);
+												a.rekomendasi[i].total_tindak_lanjut != undefined ? a.rekomendasi[i].total_tindak_lanjut : 0,
+												a.rekomendasi[i].matchedtl != undefined ? a.rekomendasi[i].matchedtl : null);
 										newKkt.data.rekomendasi.push(rekView);
 									}
 								}

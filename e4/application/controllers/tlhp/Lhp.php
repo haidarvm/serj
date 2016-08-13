@@ -69,4 +69,5 @@ class Lhp extends MY_Controller {
 		$data['action'] = "update";
 		$this->load->tlhp_template('tlhp/kklhp2', $data);
 	}
+	
 }
