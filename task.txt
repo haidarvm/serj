@@ -1,4 +1,5 @@
 Atang
+- perlu kah redirect setelah edit LHP
 - unit kerja ambil dari table unit_kerja
 - insert unit kerja, nama_ppk, nama_pj
 - bikin view details di column periode tindak lanjut
