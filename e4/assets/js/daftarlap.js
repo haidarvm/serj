@@ -35,9 +35,9 @@ define([ "jquery", "knockout", "bootstrap", "data-table" ], function($, ko) {
 	     * Show file list
 	     * agusprasetyo811@gmail.com
 	     */
-	   $('.showfileListModal').on('click', function(e) {
+	    $(document).on("click", ".showfileListModal", function (e) {
 		   $('#fileListModal').modal('show');
-		   var id = $('.showfileListModal').data("id");
+		   var id = $(this).data("id");
 		   $('#fileListContainer').html('<div align="center">Loading File ...</div');
 		   var table = 
 			   '<table class="table">'
