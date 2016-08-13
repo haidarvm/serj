@@ -281,22 +281,41 @@ class Restlhp extends REST_Controller {
 				}
 				$this->load->model('Mtindaklanjut', 'rtl');
 				$matchedTtl = $this->rtl->countAndSumStatusTl($rtlIds, true);
+				$notmatchedTtl = $this->rtl->countAndSumStatusTl($rtlIds, false);
 				
 				foreach ($kkt as $kktRow){
 					$kktRekomendasi = array();
 					foreach ($rekomendasi as $rekRow) {
 						// temukan $matchedtl by rekomendasiId
-						foreach ($matchedTtl as $value) {
-							if ($rekRow->rekomendasi_id == $value->rekomendasi_id) {
-								$rekRow->matchedtl = array(
-									'rowCount' => $value->rowCount,
-									'totalAmount' => $value->totalAmount
-								);
-							} else {
-								$rekRow->matchedtl = array(
-									'rowCount' => 0,
-									'totalAmount' => 0
-								);
+						$rekRow->matchedtl = array(
+							'rowCount' => 0,
+							'totalAmount' => 0
+						);
+						
+						$rekRow->notmatchedtl = array(
+							'rowCount' => 0,
+							'totalAmount' => 0
+						);
+						
+						if (count($matchedTtl) > 0) {
+							foreach ($matchedTtl as $value) {
+								if ($rekRow->rekomendasi_id == $value->rekomendasi_id) {
+									$rekRow->matchedtl = array(
+										'rowCount' => $value->rowCount,
+										'totalAmount' => $value->totalAmount
+									);
+								} 
+							}
+						}
+						
+						if (count($notmatchedTtl) > 0) {
+							foreach ($notmatchedTtl as $value) {
+								if ($rekRow->rekomendasi_id == $value->rekomendasi_id) {
+									$rekRow->notmatchedtl = array(
+										'rowCount' => $value->rowCount,
+										'totalAmount' => $value->totalAmount
+									);
+								} 
 							}
 						}
 						

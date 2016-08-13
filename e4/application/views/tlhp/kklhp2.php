@@ -260,8 +260,14 @@
 												<!-- total tindak lanjut -->
 												<span data-bind="text: data.firstMatchedTlRowCount">nilai</span>												
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- not matched nili -->
+												<span data-bind="text: uiFirstNotMatchedTlTotalAmount">jumlah</span>
+											</td>
+											<td>
+												<!-- total tindak lanjut -->
+												<span data-bind="text: data.firstNotMatchedTlRowCount">nilai</span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -342,8 +348,14 @@
 												<!-- matched total amount -->
 												<span data-bind="text: data.matchedTlRowCount"></span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- matched total amount -->
+												<span data-bind="text: uiNotMatchedTlTotalAmount"></span>
+											</td>
+											<td>
+												<!-- matched total amount -->
+												<span data-bind="text: data.notmatchedTlRowCount"></span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>
