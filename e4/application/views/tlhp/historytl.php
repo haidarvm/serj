@@ -66,9 +66,9 @@
 						    <td>SALDO<br>REKOMENDASI</td>
 						    <td>STATUS</td>
 						  </tr>
-						  <?php foreach ($tindakLanjut as $rowTl) :?>
+						  <?php foreach ($tindakLanjut as $idx => $rowTl) :?>
 						  <tr>
-						    <td>1</td>
+						    <td><?php echo $idx+1 ?></td>
 						    <td><?php echo $rowTl->tanggal_tl ?></td>
 						    <td><?php echo $rowTl->tindak_lanjut ?></td>
 						    <td>Rp<?php echo number_format($rowTl-> nilai, 0, ",", ".") ?></td>
