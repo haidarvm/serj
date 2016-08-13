@@ -30,7 +30,44 @@ class Lhp extends MY_Controller {
 			'kertasKerjaTemuan' => $kertasKerjaTemuan,
 			'lhp' => $lhp
 		);
-		
 		$this->load->tlhp_template('tlhp/historytl', $data);
 	}
+	
+	public function savetl() {
+		$this->load->library('session');
+		$this->load->model('mtindaklanjut', 'rtl');
+		$posts = $this->input->post();
+//		var_dump($posts);
+		$toBeInsert = array();
+		foreach ($posts['tindakLanjut'] as $idx => $rowTl) {
+			$updater = $this->session->userdata('user_id');
+			$tl = array(
+				'tindak_lanjut_id' => $idx,
+				'nilai_disetujui' => $rowTl['approvalValue'],
+				'status_tl' => $rowTl['status'],
+				'saldo_rekomendasi' => $rowTl['saldoRekomendasi']
+			);
+			
+			if (isset($rowTl['approvalStatus'])) {
+				$tl['approval_status'] = 'approved';
+				$tl['approved_by'] = $updater;
+			} else {
+				$tl['approval_status'] = 'rejected';
+				$tl['rejected_by'] = $updater;
+			}
+			
+			array_push($toBeInsert, $tl);
+		}
+
+		$this->rtl->insertAll($toBeInsert);
+		redirect('tlhp/edit?lhp_id='.$lhp_id);
+	}
+	
+	public function edit() {
+		$gets = $this->input->get();
+		$data['lhp'] = $this->mlhp->getLHP($gets['lhp_id']);
+		$data['action'] = "update";
+		$this->load->tlhp_template('tlhp/kklhp2', $data);
+	}
+	
 }

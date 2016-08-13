@@ -155,7 +155,7 @@
 												</button>
 												
 												<button type="button" class="ngurang" data-bind="visible: !isFirstRow(), 
-												event: {click: $parent.removeRow}">
+												event: {click: $parent.removeRow}, enable: data.kertasKerjaId() == undefined">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
@@ -237,7 +237,7 @@
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
-												<a href="#" data-bind="event: {click: viewHistoryTl}">
+												<a href="#" data-bind="event: {click: firstViewHistoryTl}">
 													<span data-bind="text: uiPeriodeTindakLanjut"></span>
 												</a>
 											</td>
@@ -249,11 +249,17 @@
 												<!-- dokument pendukung -->
 											</td>
 											<td>
-												<!-- nilai -->
-												<span data-bind="text: uiFirstJumlahTl">[nilai dari tindak lanjut]</span>
+												<!-- total tindak lanjut -->
+												<span data-bind="text: data.firstTotalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- nilai matched tindak lanjut -->
+												<span data-bind="text: uiFirstMatchedTlTotalAmount">jumlah</span>
+											</td>
+											<td>
+												<!-- total tindak lanjut -->
+												<span data-bind="text: data.firstMatchedTlRowCount">nilai</span>												
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -265,7 +271,8 @@
 										<tr>
 											<td colspan="6"></td>
 											<td>
-												<button class="ngurang" type="button" data-bind="event: {click: $parent.removeRow}">
+												<button class="ngurang" type="button" 
+												data-bind="event: {click: $parent.removeRow}, enable: data.rekomendasiId() == undefined">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
@@ -325,10 +332,16 @@
 											</td>
 											<td>
 												<!-- nilai -->
-												<span data-bind="text: uiJumlahTl">[nilai dari tindak lanjut]</span>
+												<span data-bind="text: data.totalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- matched total amount -->
+												<span data-bind="text: uiMatchedTlTotalAmount"></span>
+											</td>
+											<td>
+												<!-- matched total amount -->
+												<span data-bind="text: data.matchedTlRowCount"></span>
+											</td>
 											<td></td>
 											<td></td>
 											<td></td>

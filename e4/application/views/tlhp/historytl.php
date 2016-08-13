@@ -51,6 +51,7 @@
 							</form>
 						<!-- end form -->
 						<h4>RIWAYAT TINDAK LANJUT</h4>
+						<form action="<?php echo base_url() ?>tlhp/lhp/savetl" method="post">
 						<table class="table table-bordered">
 						  <tr>
 						    <th rowspan="2">No</th>
@@ -66,22 +67,30 @@
 						    <td>SALDO<br>REKOMENDASI</td>
 						    <td>STATUS</td>
 						  </tr>
-						  <?php foreach ($tindakLanjut as $rowTl) :?>
+						  <?php foreach ($tindakLanjut as $idx => $rowTl) :?>
 						  <tr>
-						    <td>1</td>
+						    <td><?php echo $idx+1 ?></td>
 						    <td><?php echo $rowTl->tanggal_tl ?></td>
 						    <td><?php echo $rowTl->tindak_lanjut ?></td>
 						    <td>Rp<?php echo number_format($rowTl-> nilai, 0, ",", ".") ?></td>
 						    <td>-</td>
-						    <td><input type="checkbox"/></td>
 						    <td>
-						    	<input type="text"/>
+						    	<input type="checkbox" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalStatus]"
+						    	<?php echo isset($rowTl->approval_status) && $rowTl->approval_status == 'approved' ? "checked" : ''?>/>
 						    </td>
-						    <td>Rp<?php echo number_format($rekomendasi->nilai_rekomendasi, 0, ",", ".") ?></td>
 						    <td>
-						    	<select name="status">
-						    		<option>sesuai rekomendasi</option>
-						    		<option>tidak sesuai rekomendasi</option>
+						    	<input type="text" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][approvalValue]"
+						    	value="<?php echo $rowTl->nilai_disetujui ?>"/>
+						    </td>
+						    <td>
+						    	<input type="hidden" name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][saldoRekomendasi]"
+						    	value="<?php echo $rekomendasi->nilai_rekomendasi ?>"/>
+						    	Rp<?php echo number_format($rekomendasi->nilai_rekomendasi, 0, ",", ".") ?>
+						    </td>
+						    <td>
+						    	<select name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][status]">
+						    		<option value="1" <?php echo $rowTl->status_tl == '1' ? "selected" : ''?>>sesuai rekomendasi</option>
+						    		<option value="0" <?php echo $rowTl->status_tl == '0' ? "selected" : '' ?>>tidak sesuai rekomendasi</option>
 						    	</select>
 						    </td>
 						  </tr>
@@ -91,9 +100,9 @@
 							<button class="btn">Cetak</button>
 							<button class="btn">Simpan History Tl</button>
 						</div>
-						<form action="<?php base_url()?>/tlhp/pilihlhp/updatelhp" method="post">
-							<input type="hidden" name="lhp_id" value="<?php echo $lhp->lhp_id?>">
-							<button class="btn">Kembali ke KKLHP</button>
+							<a class="btn" href="<?php echo base_url().'tlhp/lhp/edit?lhp_id='.$lhp->lhp_id ?>">
+								Kembali ke KKLHP
+							</a>
 						</form>
 					</div>
 				</div>

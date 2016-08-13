@@ -9,7 +9,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-7 col-md-offset-2 top-space">
-								<form class="form-horizontal" action="<?php echo site_url() ?>tlhp/pilihlhp/updatelhp" method="POST" id="formLhp"> 
+								<form class="form-horizontal" action="<?php echo site_url() ?>tlhp/pilihlhp/updatelhp" method="get" id="formLhp"> 
 									<div class="form-group">
 										<label for="inputEmail3" class="col-sm-3 control-label t-left nopadding min-top-margin">TAHUN</label>
 										<div class="col-sm-9">

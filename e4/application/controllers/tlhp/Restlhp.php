@@ -275,14 +275,37 @@ class Restlhp extends REST_Controller {
 			if (count($kktUniqueIds) > 0) {
 				$rekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktUniqueIds);
 				
+				$rtlIds = array();
+				foreach ($rekomendasi as $rek) {
+					array_push($rtlIds, $rek->rekomendasi_id);
+				}
+				$this->load->model('Mtindaklanjut', 'rtl');
+				$matchedTtl = $this->rtl->countAndSumStatusTl($rtlIds, true);
+				
 				foreach ($kkt as $kktRow){
 					$kktRekomendasi = array();
 					foreach ($rekomendasi as $rekRow) {
+						// temukan $matchedtl by rekomendasiId
+						foreach ($matchedTtl as $value) {
+							if ($rekRow->rekomendasi_id == $value->rekomendasi_id) {
+								$rekRow->matchedtl = array(
+									'rowCount' => $value->rowCount,
+									'totalAmount' => $value->totalAmount
+								);
+							} else {
+								$rekRow->matchedtl = array(
+									'rowCount' => 0,
+									'totalAmount' => 0
+								);
+							}
+						}
+						
 						if ($rekRow->kertas_kerja_id == $kktRow->kertas_kerja_id) {
 							//TODO: jgn sampe kaya gini ah..
 							$tindaklanjut = $this->mlhp->getAllTindakLanjut($rekRow->rekomendasi_id);
 							if (count($tindaklanjut) > 0) {
 								$rekRow->tindak_lanjut = $tindaklanjut[0];	
+								$rekRow->total_tindak_lanjut = count($tindaklanjut);
 							} else {
 								$rekRow->tindak_lanjut = null;
 							}
