@@ -292,6 +292,11 @@ class Restlhp extends REST_Controller {
 									'rowCount' => $value->rowCount,
 									'totalAmount' => $value->totalAmount
 								);
+							} else {
+								$rekRow->matchedtl = array(
+									'rowCount' => 0,
+									'totalAmount' => 0
+								);
 							}
 						}
 						

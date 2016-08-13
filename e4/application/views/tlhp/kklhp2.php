@@ -253,11 +253,12 @@
 												<span data-bind="text: data.firstTotalTindakLanjut">[nilai dari tindak lanjut]</span>
 											</td>
 											<td>
-												<!-- total tindak lanjut -->
-												<span data-bind="text: data.firstMatchedTlRowCount">nilai</span>
+												<!-- nilai matched tindak lanjut -->
+												<span data-bind="text: uiFirstMatchedTlTotalAmount">jumlah</span>
 											</td>
 											<td>
-												<span data-bind="text: uiFirstMatchedTlTotalAmount">jumlah</span>
+												<!-- total tindak lanjut -->
+												<span data-bind="text: data.firstMatchedTlRowCount">nilai</span>												
 											</td>
 											<td></td>
 											<td></td>

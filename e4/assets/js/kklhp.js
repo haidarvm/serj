@@ -106,11 +106,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		}
 		
 		selfR.uiMatchedTlTotalAmount = ko.computed(function() {
-			if (selfR.data.matchedTlTotalAmount() != undefined) {
-				return accounting.formatMoney(selfR.data.matchedTlTotalAmount(), "Rp", 0, ".", ",");
-			} else {
-				return "N/A";
-			}
+			return accounting.formatMoney(selfR.data.matchedTlTotalAmount(), "Rp", 0, ".", ",");
 		});
 	}
 	
@@ -277,11 +273,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		}
 		
 		selfK.uiFirstMatchedTlTotalAmount = ko.computed(function() {
-			if (selfK.firstMatchedTlTotalAmount != undefined) {
-				return accounting.formatMoney(selfK.data.firstMatchedTlTotalAmount(), "Rp", 0, ".", ",");
-			} else {
-				return "N/A";
-			}
+			return accounting.formatMoney(selfK.data.firstMatchedTlTotalAmount(), "Rp", 0, ".", ",");
 		});
 	}
 	

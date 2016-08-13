@@ -14,7 +14,8 @@ class Mtindaklanjut extends CI_Model {
 	public function countAndSumStatusTl($rekomendasiIds, $statusTl) {
 		$rekIds = implode(",", $rekomendasiIds);
 		$query = "SELECT rekomendasi_id, COUNT(*) AS rowCount, SUM(nilai_disetujui) AS totalAmount 
-		FROM {PRE}tindak_lanjut WHERE rekomendasi_id IN (".$rekIds.") GROUP BY rekomendasi_id";
+		FROM {PRE}tindak_lanjut WHERE status_tl = ".$statusTl." AND  
+		rekomendasi_id IN (".$rekIds.") GROUP BY rekomendasi_id";
 		
 		return $this->db->query($query)->result();
 	}
