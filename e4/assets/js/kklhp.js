@@ -238,6 +238,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			var moment = require('moment');
 			if (selfK.data.firstTanggalTl() != undefined) {
 				var month = moment(selfK.data.firstTanggalTl()).format("M");
+				console.debug('selected month '+ month);
 //				var month = moment('2016-08-17').format("M");
 				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
 					return "SEMESTER I";
@@ -643,14 +644,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					console.debug(self.viewTindakLanjut.data.tanggalTl());
 				}
 				$('#formTindakLanjut').modal('hide');
+				self.isFirstLineTindakLanjut = false;
 			} else {
-//				console.info('ada error bung ');
-//				alert('Data harus diisi semua');
-//				var msg;
-//				_.each(errorMsg, function(error){
-//					msg += "/n "+ error;
-//				});
-				
 				$("#notify").notify("Data belum terisi semua, silahkan lenkapi", "alert alert-error");
 			}
 			
