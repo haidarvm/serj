@@ -265,7 +265,8 @@
 										<tr>
 											<td colspan="6"></td>
 											<td>
-												<button class="ngurang" type="button" data-bind="event: {click: $parent.removeRow}">
+												<button class="ngurang" type="button" 
+												data-bind="event: {click: $parent.removeRow}, enable: data.rekomendasiId() == undefined">
 													<i aria-hidden="true" class="fa fa-minus"></i>
 												</button>
 											</td>
