@@ -7,7 +7,8 @@ Atang
 
 
 Haidar
-- upload template rename file to ID
+- change post to get from update lhp
+- upload template rename file to ID done
 - using jquery priceformat
 
 
