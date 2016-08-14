@@ -52,32 +52,24 @@
 												</div>
 											</div>
 										</fieldset>
-										<?php if($action=="update") {
-												//foreach($files)?>
+										<?php if ($action == "update") {
+												if($templateFiles->num_rows() > 0) {?>
 										<fieldset>
 											<div class="form-group">
 												<label class="col-sm-3 control-label">Files</label>
 												<div class="col-sm-8">
 													<div class="input-group">
-													<ul class="files">
-														<li>
-															<i aria-hidden="true" class="fa fa-file-image-o"></i>
-															haidar
-														</li>
-														<li>
-															<i aria-hidden="true" class="fa fa-file-image-o"></i>
-															haidar
-														</li>
-														<li>
-															<i aria-hidden="true" class="fa fa-file-image-o"></i>
-															haidar
-														</li>
-													</ul>
+														<ul class="files list-inline">
+															<?php foreach($templateFiles->result() as $file) {?>
+																<li><a href="<?=site_url()?>tlhp/template/download_files/<?=$file->upload_template_id?>"><i aria-hidden="true" class="fa fa-file-image-o"></i> <?php echo $file->file_name?></a></li>
+															<?php } ?>
+														</ul>
 													</div>
 												</div>
 											</div>
 										</fieldset>
-										<?php } ?>
+										<?php }
+										}?>
 										<fieldset>
 											<div class="form-group">
 												<label for="exampleInputFile" class="col-sm-3 control-label">Upload Cover<star>*</star></label>

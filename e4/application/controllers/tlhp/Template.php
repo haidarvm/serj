@@ -81,27 +81,28 @@ class Template extends MY_Controller {
 		$this->load->tlhp_template('tlhp/template_laporan', $data);
 	}
 
-	public function update_laporan($id) {
+	public function update_laporan($template_laporan_id) {
 		$data['title'] = "UPDATE Template";
 		$data['action'] = "update";
 		
 		$post = $this->input->post();
 		if ($post) {
 			// echo 'masuk';exit();
-			$this->mtemplate->updateTemplateLaporan($post, $id);
+			$this->mtemplate->updateTemplateLaporan($post, $template_laporan_id);
 			// $this->insert_template_laporan();
 			$fileId = $post['file_id'];
 			unset($post['file_id']);
 			// print_r()
 			if (count($fileId) != 0) {
 				foreach ( $fileId as $upload_id ) {
-					$data = array('template_laporan_id' => $id, 'upload_template_id' => $upload_id);
+					$data = array('template_laporan_id' => $template_laporan_id, 'upload_template_id' => $upload_id);
 					$this->mtemplate->insertTemplateLaporanMedia($data);
 				}
 			}
 			redirect('tlhp/template/daftarlap');
 		} else {
-			$data['template'] = $this->mtemplate->getTemplate($id);
+			$data['template'] = $this->mtemplate->getTemplate($template_laporan_id);
+			$data['templateFiles'] = $this->mtemplate->getMediaList($template_laporan_id);
 			$this->load->tlhp_template('tlhp/template_laporan', $data);
 		}
 	}
