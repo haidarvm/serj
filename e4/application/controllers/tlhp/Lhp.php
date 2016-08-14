@@ -79,7 +79,7 @@ class Lhp extends MY_Controller {
 		$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
 		$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
 		$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
-		$data['totalBlmSesuaiRek'] = 0;
+		$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
 		$data['totalBlmTl'] = 0;
 		$data['totalTdkTl'] = 0;
 		$data['action'] = "update";

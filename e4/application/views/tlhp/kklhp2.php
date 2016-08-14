@@ -82,7 +82,7 @@
 									<td><?php echo isset($totalTemuan) ? $totalTemuan : 0 ?></td>
 									<td><?php echo isset($totalRekomendasi) ? $totalRekomendasi : 0 ?></td>
 									<td><?php echo isset($totalSesuaiRek) ? $totalSesuaiRek : 0 ?></td>
-									<td><?php echo isset($totalBlmSesuaiRek) ? $totalSesuaiRek : 0 ?></td>
+									<td><?php echo isset($totalBlmSesuaiRek) ? $totalBlmSesuaiRek : 0 ?></td>
 									<td><?php echo isset($totalBlmTl) ? $totalBlmTl : 0 ?></td>
 									<td><?php echo isset($totalTdkTl) ? $totalTdkTl : 0 ?></td>
 									<td>
