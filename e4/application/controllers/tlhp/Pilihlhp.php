@@ -53,7 +53,6 @@ class Pilihlhp extends MY_Controller {
 		redirect('tlhp/addlhp/update');
 	}
 
-<<<<<<< HEAD
 	public function updatelhp() {
 		$post = $this->input->post();
 		if ($post) {
@@ -73,7 +72,7 @@ class Pilihlhp extends MY_Controller {
 			// redirect pilih
 		}
 	}
-=======
+
 //	public function editlhp() {
 //		$gets = $this->input->get();
 //		$data['lhp'] = $this->mlhp->getLHP($gets['lhp_id']);
@@ -95,7 +94,7 @@ class Pilihlhp extends MY_Controller {
 //			// redirect pilih
 //		}
 //	}
->>>>>>> a2208a2f639f959c30d5939994147a78c73a7d70
+
 	
 	public function updatekklhp() {
 			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
@@ -116,13 +115,8 @@ class Pilihlhp extends MY_Controller {
 	
 	public function save_to_excel($lhp_id) {
 		
-		$kode_temuan = $this->mlhp->getAllKodeTemuan();
-		$kode_sebab = $this->mlhp->getAllKodeSebab();
-		$kode_rekomendasi = $this->mlhp->getAllKodeRekomendasi();
 		$lhp = $this->mlhp->getLHP($lhp_id);
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-		
-		var_dump($kode_sebab);
 		
 		$param['title'] =$lhp->judul_lhp;
 		$param['to'] = $lhp->objek_pengawasan;
@@ -137,7 +131,163 @@ class Pilihlhp extends MY_Controller {
 				'belum_tl'=>'0',
 				'tidak_dpt_tl'=>'0',
 		);
-		//$this->writeToExcel($param);
+		
+		
+		
+		$table_req = ' {
+			"data": [{
+				"lhp_id": 30,
+				"jenis_temuan": {
+					"kode_jenis_temuan": "A",
+					"jenis_temuan": "SISTEM PENGENDALIAN INTERNAL"
+				},
+				"no_temuan": "",
+				"kode_temuan_id": 1,
+				"uraian_temuan": "agus",
+				"kode_sebab_id": 2,
+				"uraian_sebab": "Penyebab lain yang belum didefinisikan (nihil)",
+				"nilai_temuan": 12121212,
+				"rekomendasi": [{
+					"kode_rekomendasi_id": 6,
+					"uraian_rekomendasi": "sddsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 0,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": {
+						"uraian_tindak_lanjut": "wewewe",
+						"tanggal_tl": "15-08-2016",
+						"nilai": 0
+					}
+				}, {
+					"kode_rekomendasi_id": 6,
+					"uraian_rekomendasi": "sfsfsfsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 13313,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": []
+				}]
+			}, {
+				"lhp_id": 30,
+				"jenis_temuan": {
+					"kode_jenis_temuan": "B",
+					"jenis_temuan": "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN"
+				},
+				"no_temuan": "",
+				"kode_temuan_id": 1,
+				"uraian_temuan": "aadad",
+				"kode_sebab_id": 2,
+				"uraian_sebab": "Penyebab lain yang belum didefinisikan (nihil)",
+				"nilai_temuan": 1212121212,
+				"rekomendasi": [{
+					"kode_rekomendasi_id": 7,
+					"uraian_rekomendasi": "sfsfsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 32242,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": []
+				}]
+			}, {
+				"lhp_id": 30,
+				"jenis_temuan": {
+					"kode_jenis_temuan": "C",
+					"jenis_temuan": "LAPORAN KEUANGAN"
+				},
+				"no_temuan": "",
+				"kode_temuan_id": 1,
+				"uraian_temuan": "adadad",
+				"kode_sebab_id": 2,
+				"uraian_sebab": "Penyebab lain yang belum didefinisikan (nihil)",
+				"nilai_temuan": 112121212,
+				"rekomendasi": [{
+					"kode_rekomendasi_id": 7,
+					"uraian_rekomendasi": "sfsfsfsfsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 242424,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": []
+				}]
+			}],
+			"message": "Data berhasil diperbaharui",
+			"updateDateCount": 0,
+			"updatedData": [],
+			"addedData": [{
+				"lhp_id": 30,
+				"jenis_temuan": {
+					"kode_jenis_temuan": "A",
+					"jenis_temuan": "SISTEM PENGENDALIAN INTERNAL"
+				},
+				"no_temuan": "",
+				"kode_temuan_id": 1,
+				"uraian_temuan": "agus",
+				"kode_sebab_id": 2,
+				"uraian_sebab": "Penyebab lain yang belum didefinisikan (nihil)",
+				"nilai_temuan": 12121212,
+				"rekomendasi": [{
+					"kode_rekomendasi_id": 6,
+					"uraian_rekomendasi": "sddsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 0,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": {
+						"uraian_tindak_lanjut": "wewewe",
+						"tanggal_tl": "15-08-2016",
+						"nilai": 0
+					}
+				}, {
+					"kode_rekomendasi_id": 6,
+					"uraian_rekomendasi": "sfsfsfsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 13313,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": []
+				}]
+			}, {
+				"lhp_id": 30,
+				"jenis_temuan": {
+					"kode_jenis_temuan": "B",
+					"jenis_temuan": "KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN"
+				},
+				"no_temuan": "",
+				"kode_temuan_id": 1,
+				"uraian_temuan": "aadad",
+				"kode_sebab_id": 2,
+				"uraian_sebab": "Penyebab lain yang belum didefinisikan (nihil)",
+				"nilai_temuan": 1212121212,
+				"rekomendasi": [{
+					"kode_rekomendasi_id": 7,
+					"uraian_rekomendasi": "sfsfsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 32242,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": []
+				}]
+			}, {
+				"lhp_id": 30,
+				"jenis_temuan": {
+					"kode_jenis_temuan": "C",
+					"jenis_temuan": "LAPORAN KEUANGAN"
+				},
+				"no_temuan": "",
+				"kode_temuan_id": 1,
+				"uraian_temuan": "adadad",
+				"kode_sebab_id": 2,
+				"uraian_sebab": "Penyebab lain yang belum didefinisikan (nihil)",
+				"nilai_temuan": 112121212,
+				"rekomendasi": [{
+					"kode_rekomendasi_id": 7,
+					"uraian_rekomendasi": "sfsfsfsfsf",
+					"kerugian_negara": true,
+					"nilai_rekomendasi": 242424,
+					"unit_kerja_id": 1,
+					"tindak_lanjut": []
+				}]
+			}],
+			"rekomendasiData": [],
+			"newRowTindakLanjut": []
+		}';
+		
+		$param['table_data'] = $table_req;
+		$this->writeToExcel($param);
 	}
 	
 	private function writeToExcel($param = NULL) {
@@ -169,6 +319,19 @@ class Pilihlhp extends MY_Controller {
 				$objPHPExcel->getActiveSheet()->setCellValue('H7', @$tTop['belum_tl']);
 				$objPHPExcel->getActiveSheet()->setCellValue('I7', @$tTop['tidak_dpt_tl']);
 			}
+		}
+		
+		if (@$param['table_data'] != "") {
+			$tableData = json_decode(@$param['table_data']);
+			
+			$indexCol = 13;
+			foreach ($tableData->data as $data) {
+				$index = $indexCol++;
+				$tableTitle = $data->jenis_temuan->kode_jenis_temuan." ".$data->jenis_temuan->jenis_temuan;
+				$objPHPExcel->getActiveSheet()->mergeCells('A'.$index.':Y'.$index);
+				$objPHPExcel->getActiveSheet()->setCellValue('A'.$index, $tableTitle);
+			}
+			
 		}
 	
 		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
