@@ -74,7 +74,7 @@ class Lhp extends MY_Controller {
 		foreach ($rekomendasi as $rowRek) {
 			array_push($rekomendasiIds, $rowRek->rekomendasi_id);
 		}
-		
+				
 		$data['lhp'] = $this->mlhp->getbyid($gets['lhp_id']);
 		$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
 		$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
