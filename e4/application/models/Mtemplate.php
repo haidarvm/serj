@@ -19,19 +19,18 @@ class Mtemplate extends CI_Model {
 		return $this->db->insert_id();
 		// echo $this->db->last_query();exit;
 	}
-
-// 	public function getAllTemplate($cond = NULL, $order_by = NULL) {
-// 		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
-// 		$sql = "SELECT *, tl.template_laporan_id as template_laporan_id, tl.create_date as create_date
-// 				FROM {PRE}template_laporan tl
-//     			LEFT JOIN {PRE}template_laporan_media tlm ON tlm.template_laporan_id = tl.template_laporan_id
-//     			LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id
-//     			" . $cond . " " . $order_by;
-// 		$query = $this->db->query($sql);
-// 		// echo $this->db->last_query();exit;
-// 		return $query;
-// 	}
 	
+	// public function getAllTemplate($cond = NULL, $order_by = NULL) {
+	// $cond = ! empty($cond) ? " WHERE 1=1 " . $cond : null;
+	// $sql = "SELECT *, tl.template_laporan_id as template_laporan_id, tl.create_date as create_date
+	// FROM {PRE}template_laporan tl
+	// LEFT JOIN {PRE}template_laporan_media tlm ON tlm.template_laporan_id = tl.template_laporan_id
+	// LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id
+	// " . $cond . " " . $order_by;
+	// $query = $this->db->query($sql);
+	// // echo $this->db->last_query();exit;
+	// return $query;
+	// }
 	public function getAllTemplate($cond = NULL, $order_by = NULL) {
 		$cond = ! empty($cond) ? " WHERE 1=1  " . $cond : null;
 		$sql = "SELECT *, tl.template_laporan_id as template_laporan_id, tl.create_date as create_date
@@ -59,37 +58,40 @@ class Mtemplate extends CI_Model {
 	}
 
 	public function insertMedia($data) {
-// 		print_r($data);
+		// print_r($data);
 		$file_name = $data['file_name'];
 		$this->db->insert("upload_template_laporan", $data);
 		$upload_template_id = $this->db->insert_id();
-		//$this->renameFile($file_name,$upload_template_id);
+		// $this->renameFile($file_name,$upload_template_id);
 		return $upload_template_id;
 	}
-	
-	
+
+	public function getUploadTemplate($upload_template_id) {
+		$query = $this->db->get_where('upload_template_laporan', array('upload_template_id' => $upload_template_id));
+		return checkRow($query);
+	}
+
 	public function getMediaList($template_laporan_id) {
-		$query = "
-				SELECT * FROM {PRE}template_laporan_media tlm  
+		$query = "SELECT *, utl.upload_template_id as upload_template_id FROM {PRE}template_laporan_media tlm  
 				LEFT JOIN {PRE}upload_template_laporan utl ON tlm.upload_template_id = utl.upload_template_id 
 				WHERE  tlm.template_laporan_id = '$template_laporan_id' ";
 		return $this->db->query($query);
 	}
 
-	public function renameFile($file_name,$upload_tempalate_id) {
+	public function renameFile($file_name, $upload_tempalate_id) {
 		$ext = getExt($file_name);
-		$oldname = FCPATH . 'assets/media/'.$file_name;
-		$newname = FCPATH . 'assets/media/template/'.$upload_tempalate_id.$ext;
+		$oldname = FCPATH . 'assets/media/' . $file_name;
+		$newname = FCPATH . 'assets/media/template/' . $upload_tempalate_id . $ext;
 		
-		$data['path'] = 'assets/media/template/'.$upload_tempalate_id.$ext;
-		$data['url'] = base_url(). 'assets/media/template/'.$upload_tempalate_id.$ext;
-		$this->updateMedia($data,$upload_tempalate_id);
+		$data['path'] = 'assets/media/template/' . $upload_tempalate_id . $ext;
+		$data['url'] = base_url() . 'assets/media/template/' . $upload_tempalate_id . $ext;
+		$this->updateMedia($data, $upload_tempalate_id);
 		return rename($oldname, $newname);
-// 		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' => $upload_tempalate_id));
+		// return $this->db->update('upload_template_laporan', $data, array('upload_template_id' => $upload_tempalate_id));
 	}
-	
-	public function updateMedia($data,$upload_template_id) {
-		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' =>$upload_template_id));
+
+	public function updateMedia($data, $upload_template_id) {
+		return $this->db->update('upload_template_laporan', $data, array('upload_template_id' => $upload_template_id));
 	}
 
 	public function insertTemplateLaporanMedia($data) {

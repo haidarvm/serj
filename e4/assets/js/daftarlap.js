@@ -48,18 +48,19 @@ define([ "jquery", "knockout", "bootstrap", "data-table" ], function($, ko) {
 			  			+'<th>Tanggal Upload</th>'
 			  		+'</tr>'
 			  		+'</thead>';
-		   
+
+		   var values = $(this).serialize();
 		   $.ajax({
-				type: 'GET',
+				type: 'POST',
 				url: site_url + "tlhp/template/show_file_list",
 				data: "template_laporan_id="+ id,
-				success: function(data) {
-					console.info(data);
-					var getFiles = $.parseJSON(data);
+				success: function(response) {
+					console.info(response);
+					var getFiles = $.parseJSON(response);
 					for (var i = 0; i< getFiles.length; i++) {
 						table +=
 						  '<tr>'
-				  			+'<td><a href="'+site_url+'tlhp/template/download_files?file='+getFiles[i].url+'">'+getFiles[i].file_name+'</a></td>'
+				  			+'<td><a href="'+site_url+'tlhp/template/download_files/'+getFiles[i].upload_template_id+'">'+getFiles[i].file_name+'</a></td>'
 				  			+'<td>'+getFiles[i].ext+'</td>'
 				  			+'<td>'+getFiles[i].update_date+'</td>'
 				  		+'</tr>';

@@ -92,7 +92,7 @@ class Template extends MY_Controller {
 			// $this->insert_template_laporan();
 			$fileId = $post['file_id'];
 			unset($post['file_id']);
-// 			print_r()
+			// print_r()
 			if (count($fileId) != 0) {
 				foreach ( $fileId as $upload_id ) {
 					$data = array('template_laporan_id' => $id, 'upload_template_id' => $upload_id);
@@ -105,36 +105,39 @@ class Template extends MY_Controller {
 			$this->load->tlhp_template('tlhp/template_laporan', $data);
 		}
 	}
-	
-	
+
 	public function show_file_list() {
-		$get = $this->input->get();
-		
-		if ($get != NULL) {
-			$template_laporan_id = $get['template_laporan_id'];
-			$getMediaLists =  $this->mtemplate->getMediaList($template_laporan_id);
+		$post = $this->input->post();
+		if ($post != NULL) {
+			$template_laporan_id = $post['template_laporan_id'];
+			$getMediaLists = $this->mtemplate->getMediaList($template_laporan_id);
 			
-			foreach ($getMediaLists->result() as $files) {
-				$col['file_name'] = $files->file_name;	
+			foreach ( $getMediaLists->result() as $files ) {
+				$col['upload_template_id'] = $files->upload_template_id;
+				$col['file_name'] = $files->file_name;
 				$col['ext'] = $files->ext;
 				$col['url'] = $files->url;
 				$col['update_date'] = $files->update_date;
 				$get_col[] = $col;
 			}
 			exit(json_encode($get_col));
-		} 
+		}
 	}
-	
-	public function download_files() {
-		$get = $this->input->get();
-		$this->load->helper('download');
-	
-		if ($get != NULL) {
-			$files = $get['file'];
-			$name = $files;
-			$data = file_get_contents($files);
-			force_download($name, $data);
-			redirect('template/daftarlap','refresh');
+
+	public function download_files($upload_template_id) {
+		// $post = $this->input->post();
+		if ($upload_template_id) {
+			$file = $this->mtemplate->getUploadTemplate($upload_template_id);
+			
+			$this->load->helper('download');
+			
+			if (!empty($file)) {
+				$files = $file->url;
+				$name = $file->file_name;
+				$data = file_get_contents($files);
+				force_download($name, $data);
+				//redirect('template/daftarlap', 'refresh');
+			}
 		}
 	}
 
