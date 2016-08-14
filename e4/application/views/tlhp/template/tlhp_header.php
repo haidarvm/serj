@@ -37,6 +37,7 @@
 <!--  Summernote     -->
 <link href="<?=base_url();?>assets/css/summernote.css" rel="stylesheet" />
 <link href="<?=base_url();?>assets/css/select2.min.css" rel="stylesheet" />
+<link href="<?=base_url();?>assets/css/jquery.fileupload.css" rel="stylesheet" />
 <style type="text/css">
 body.modal-open .datepicker {
     z-index: 1200 !important;
