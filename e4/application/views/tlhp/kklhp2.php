@@ -79,12 +79,12 @@
 									<td> <?php echo isset($lhp->tanggal_lhp) ? year_only($lhp->tanggal_lhp):"";?></td>
 									<td> <?php echo isset($lhp->nomor_lhp) ? $lhp->nomor_lhp:"";?></td>
 									<td> <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
+									<td><?php echo isset($totalTemuan) ? $totalTemuan : 0 ?></td>
+									<td><?php echo isset($totalRekomendasi) ? $totalRekomendasi : 0 ?></td>
+									<td><?php echo isset($totalSesuaiRek) ? $totalSesuaiRek : 0 ?></td>
+									<td><?php echo isset($totalBlmSesuaiRek) ? $totalSesuaiRek : 0 ?></td>
+									<td><?php echo isset($totalBlmTl) ? $totalBlmTl : 0 ?></td>
+									<td><?php echo isset($totalTdkTl) ? $totalTdkTl : 0 ?></td>
 									<td>
 										<a class="btn btn-info circle-perfect" href="<?php echo site_url() ?>tlhp/addlhp/edit/<?php echo $lhp->lhp_id?>"> 
 										<i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>

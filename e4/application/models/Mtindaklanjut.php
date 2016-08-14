@@ -1,6 +1,11 @@
 <?php
 
-
+/**
+ * 
+ * Enter description here ...
+ * @author atang sutisna
+ * email: atang.sutisna.87@gmail.com
+ */
 class Mtindaklanjut extends CI_Model {
 	
 	function __construct() {
@@ -20,4 +25,15 @@ class Mtindaklanjut extends CI_Model {
 		
 		return $this->db->query($query)->result();
 	}
-}
+	
+	public function count($rekomendasiIds, $statusTl) {
+		$statusTl = $statusTl ? 1 : 0;
+		$rekIds = implode(",", $rekomendasiIds);
+		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE status_tl = ".$statusTl." AND  
+		rekomendasi_id IN (".$rekIds.")";
+		
+		$result = $this->db->query($query)->row();
+		
+		return $result->rowCount;
+	}
+}     

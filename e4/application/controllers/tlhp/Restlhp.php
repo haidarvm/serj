@@ -257,13 +257,14 @@ class Restlhp extends REST_Controller {
 		$kkt = $this->get("kkt");
 		
 		$lhp = $this->mlhp->getbyid($lhp_id);
-		$teamLhp = $this->teamLhp->get_tim($lhp_id);
+//		$teamLhp = $this->teamLhp->get_tim($lhp_id);
 		$dataResponse = array(
 			'lhp' => $lhp,
-			'tim' => $teamLhp
+//			'tim' => $teamLhp
 		);
 		if ($kkt) {
 			$kkt = $this->mlhp->getAllKertasKerjaTemuan($lhp_id);
+			$dataResponse['totalTemuan'] = count($kkt);
 			$unitKerja = $this->mlhp->getAllUnitKerja();
 			
 			$kktIds = array();
@@ -274,7 +275,7 @@ class Restlhp extends REST_Controller {
 			
 			if (count($kktUniqueIds) > 0) {
 				$rekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktUniqueIds);
-				
+					
 				$rtlIds = array();
 				foreach ($rekomendasi as $rek) {
 					array_push($rtlIds, $rek->rekomendasi_id);
@@ -337,7 +338,6 @@ class Restlhp extends REST_Controller {
 				}
 			}
 			$dataResponse['kertasKerjaTemuan'] = $kkt;
-			$dataResponse['totalKertasKerjaTemuan'] =count($kkt);
 		} 
 		
 		$this->response(array(
