@@ -31,8 +31,6 @@ class MRekomendasi extends CI_Model {
 					INNER JOIN {PRE}lhp lhp
 					ON kkt.lhp_id = lhp.lhp_id
 					WHERE lhp.lhp_id = ".$lhp_id;
-		$result = $this->db->query($query)->row();
-		
-		return $result->totalRekomendasi;
+		return $this->db->query($query)->result();
 	}
 }
