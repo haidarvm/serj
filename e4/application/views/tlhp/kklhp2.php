@@ -200,13 +200,15 @@
 											</td>
 											<td>
 												<!-- uraian rekomendasi -->
-												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
-												</textarea>
-												<?php if ($action == 'update') : ?>
-												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
-													Tambah Tindak Lanjut
-												</a>
-												<?php endif; ?>
+												<div class="col-md-11 nopadding">
+													<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
+													</textarea>
+												</div>
+												<div class="col-md-1 nopadding">
+													<?php if ($action == 'update') : ?>
+													<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}" title="Tambah Tindak Lanjut"><i aria-hidden="true" class="fa fa-plus"></i></a>
+													<?php endif; ?>
+												</div>
 											</td>
 											<td>
 												<input type="checkbox" data-bind="checked: data.firstKerugianNegaraCbk"/>
