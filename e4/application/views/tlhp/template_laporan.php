@@ -58,10 +58,19 @@
 												<label class="col-sm-3 control-label">Files</label>
 												<div class="col-sm-8">
 													<div class="input-group">
-													<ul>
-													<li>haidar</li>
-													<li>haidar</li>
-													<li>haidar</li>
+													<ul class="files">
+														<li>
+															<i aria-hidden="true" class="fa fa-file-image-o"></i>
+															haidar
+														</li>
+														<li>
+															<i aria-hidden="true" class="fa fa-file-image-o"></i>
+															haidar
+														</li>
+														<li>
+															<i aria-hidden="true" class="fa fa-file-image-o"></i>
+															haidar
+														</li>
 													</ul>
 													</div>
 												</div>

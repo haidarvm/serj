@@ -90,6 +90,17 @@ tr td.success {
 .sidebar-mini {
 	background-color: #f4f3ef !important;
 }
+.files {
+	list-style: none;
+	padding: 0;
+	margin: 5px;
+}
+.files li {
+	margin-bottom: 7px;
+}
+.files li i.fa {
+	margin-right: 5px;
+}
 .add-case {
 	display: inline-block;
     margin: 5px 0 0px;
