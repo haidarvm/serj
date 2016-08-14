@@ -581,6 +581,20 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				console.info('kklhp saved');
 //				alert('Data sudah disimpan');
 				$.notify("Data sudah disimpan", "success");
+				var obj = $.parseJSON(data);
+				$.ajax({
+					type: 'POST',
+					data:'lhp_id='+obj.data[0].lhp_id+'table_data='+data,
+					url: site_url + "tlhp/lhp/save_to_excel",
+					beforeSend: function(){
+						console.info('attempting to contact server to save data kklhp');
+						$('#btnSave').attr('disabled', 'disabled');
+					},
+					success: function(data) {
+						
+					}
+				});
+				
 				//window.location = site_url+ "tlhp/menusa";
 //				console.debug(window.location);
 			},
