@@ -8,8 +8,8 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">TOTAL TEMUAN SEJAK TAHUN 2013</p>
-                                       <span class="t-number">50</span>
+	                                   <p class="t-card">TOTAL TEMUAN SEJAK TAHUN <?php echo $current_year ?></p>
+                                       <span class="t-number"><?php echo $totalTemuan ?></span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -23,8 +23,8 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">TOTAL REKOMENDASI SEJAK TAHUN 2013</p>
-                                       <span class="t-number">70</span>
+	                                   <p class="t-card">TOTAL REKOMENDASI SEJAK TAHUN <?php echo $current_year ?></p>
+                                       <span class="t-number"><?php echo $totalRekomendasi ?></span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -102,7 +102,7 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">KERUGIAN NEGARA SEJAK TAHUN 2013</p>
+	                                   <p class="t-card">KERUGIAN NEGARA SEJAK TAHUN <?php echo $current_year ?></p>
                                        <span class="t-number">RP 8.000.000</span>
 	                               </div>
 	                           </div>

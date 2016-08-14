@@ -33,4 +33,14 @@ class MRekomendasi extends CI_Model {
 					WHERE lhp.lhp_id = ".$lhp_id;
 		return $this->db->query($query)->result();
 	}
+	
+	public function countByYear($year) {
+		$query = "SELECT COUNT(*) AS countRow FROM {PRE}rekomendasi rek
+		INNER JOIN {PRE}kertas_kerja_temuan kkt
+		ON rek.kertas_kerja_id = kkt.kertas_kerja_id 
+		WHERE YEAR(kkt.create_date) = '".$year."' ";
+		$result = $this->db->query($query)->row();
+		
+		return $result->countRow;
+	}
 }

@@ -19,8 +19,15 @@ class Menusa extends MY_Controller {
 	 * Redirect to product_list
 	 */
 	public function index() {
+		$this->load->model('Mkertaskerjatemuan', 'mkkt');
+		$this->load->model('MRekomendasi', 'mrekomendasi');
+		$this->load->model('Mtindaklanjut', 'mttl');
+		
 		$data['title'] = "TLHP Dashboard";
-		//$data['getAll'] = $this->muser->getAllUser();
+		$data['current_year'] = date('Y');
+		$data['totalTemuan'] = $this->mkkt->countByYear(date('Y'));
+		$data['totalRekomendasi'] = $this->mrekomendasi->countByYear(date('Y'));
+		$data['totalFinishedTl'] = $this->mttl->countFinishTl();
 		$this->load->tlhp_template('tlhp/menusa', $data);
 	}
 	
