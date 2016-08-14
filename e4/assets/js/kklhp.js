@@ -361,7 +361,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		self.jenisTemuan = ko.observableArray([]);
 		self.data = {
-				
+			totalTemuan: ko.observable(0),
+			totalRekomendasi: ko.observable(0),
+			totalSesuaiRekomendasi: ko.observable(0),
+			totalTdkSesuaiRekomendasi: ko.observable(0),
+			totalBlmTindakLanjut: ko.observable(0),
+			totalTdkTdpTl: ko.observable(0),
 		}
 		self.init = function() {
 			self.loadUnitKerja();

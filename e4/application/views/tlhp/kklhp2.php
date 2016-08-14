@@ -79,12 +79,12 @@
 									<td> <?php echo isset($lhp->tanggal_lhp) ? year_only($lhp->tanggal_lhp):"";?></td>
 									<td> <?php echo isset($lhp->nomor_lhp) ? $lhp->nomor_lhp:"";?></td>
 									<td> <?php echo isset($lhp->judul_lhp) ? $lhp->judul_lhp:"";?></td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
+									<td><?php echo isset($totalTemuan) ? $totalTemuan : 0 ?></td>
+									<td><?php echo isset($totalRekomendasi) ? $totalRekomendasi : 0 ?></td>
+									<td><?php echo isset($totalSesuaiRek) ? $totalSesuaiRek : 0 ?></td>
+									<td><?php echo isset($totalBlmSesuaiRek) ? $totalBlmSesuaiRek : 0 ?></td>
+									<td><?php echo isset($totalBlmTl) ? $totalBlmTl : 0 ?></td>
+									<td><?php echo isset($totalTdkTl) ? $totalTdkTl : 0 ?></td>
 									<td>
 										<a class="btn btn-info circle-perfect" href="<?php echo site_url() ?>tlhp/addlhp/edit/<?php echo $lhp->lhp_id?>"> 
 										<i aria-hidden="true" class="fa fa-cogs"></i> <span class="sr-only">Edit</span>
@@ -200,13 +200,17 @@
 											</td>
 											<td>
 												<!-- uraian rekomendasi -->
-												<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
-												</textarea>
-												<?php if ($action == 'update') : ?>
-												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}">
-													Tambah Tindak Lanjut
-												</a>
-												<?php endif; ?>
+												<div class="col-md-11 nopadding">
+													<textarea class="form-control border-input" data-bind="value: data.firstUraianRekomendasi">
+													</textarea>
+												</div>
+												<div class="col-md-1 nopadding">
+													<?php if ($action == 'update') : ?>
+													<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}" title="Tambah Tindak Lanjut">
+														<i aria-hidden="true" class="fa fa-plus"></i>
+													</a>
+													<?php endif; ?>
+												</div>
 											</td>
 											<td>
 												<input type="checkbox" data-bind="checked: data.firstKerugianNegaraCbk"/>
@@ -237,7 +241,7 @@
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
-												<a href="#" data-bind="event: {click: firstViewHistoryTl}">
+												<a href="#" data-bind="event: {click: firstViewHistoryTl}, visible: data.firstRekomendasiId() != undefined">
 													<span data-bind="text: uiPeriodeTindakLanjut"></span>
 												</a>
 											</td>
@@ -290,11 +294,13 @@
 											</td>
 											<td>
 												<!-- uraian rekomendasi -->
-												<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
-												</textarea>
+												<div class="col-md-11 nopadding">
+													<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
+													</textarea>
+												</div>
 												<?php if ($action == 'update') : ?>
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
-													Tambah Tindak Lanjut
+													<i aria-hidden="true" class="fa fa-plus"></i>
 												</a>
 												<?php endif; ?>
 											</td>

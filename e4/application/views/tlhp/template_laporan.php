@@ -1,13 +1,10 @@
-<link rel="stylesheet" href="<?=base_url()?>assets/css/jquery.fileupload.css">
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 custom-form">
 				<div class="card">
 					<div class="content">
-
 						<div class="row">
-
 						<?php
 						$update = ! empty($action) == "update" ? true : false;
 						?>
@@ -55,6 +52,31 @@
 												</div>
 											</div>
 										</fieldset>
+										<?php if($action=="update") {?>
+										<fieldset>
+											<div class="form-group">
+												<label class="col-sm-3 control-label">Files</label>
+												<div class="col-sm-8">
+													<div class="input-group">
+													<ul class="files">
+														<li>
+															<i aria-hidden="true" class="fa fa-file-image-o"></i>
+															haidar
+														</li>
+														<li>
+															<i aria-hidden="true" class="fa fa-file-image-o"></i>
+															haidar
+														</li>
+														<li>
+															<i aria-hidden="true" class="fa fa-file-image-o"></i>
+															haidar
+														</li>
+													</ul>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<?php } ?>
 										<fieldset>
 											<div class="form-group">
 												<label for="exampleInputFile" class="col-sm-3 control-label">Upload Cover<star>*</star></label>
@@ -84,7 +106,7 @@
 												<center>
 													<b>KATA PENGANTAR</b>
 												</center>
-												<textarea name="kata_pengantar" id="summernote" ><?php echo !empty($template) ? $template->kata_pengantar : "" ?></textarea>
+												<textarea name="kata_pengantar" id="summernote"><?php echo !empty($template) ? $template->kata_pengantar : "" ?></textarea>
 											</fieldset>
 										</div>
 									</div>
@@ -131,10 +153,10 @@
 			</div>
 		</div>
 	</div>
+</div>
 
 
-
-	<script>
+<script>
     requirejs.config({
         "shim": {
             "bootstrap": {"deps": ["jquery"]},

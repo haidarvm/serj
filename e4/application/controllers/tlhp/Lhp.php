@@ -64,9 +64,26 @@ class Lhp extends MY_Controller {
 	}
 	
 	public function edit() {
+		$this->load->model('Mkertaskerjatemuan', 'mkkt');
+		$this->load->model('MRekomendasi', 'mrekomendasi');
+		$this->load->model('Mtindaklanjut', 'mtl');
+		
 		$gets = $this->input->get();
-		$data['lhp'] = $this->mlhp->getLHP($gets['lhp_id']);
+		$rekomendasiIds = array();
+		$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
+		foreach ($rekomendasi as $rowRek) {
+			array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+		}
+				
+		$data['lhp'] = $this->mlhp->getbyid($gets['lhp_id']);
+		$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
+		$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
+		$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
+		$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
+		$data['totalBlmTl'] = 0;
+		$data['totalTdkTl'] = 0;
 		$data['action'] = "update";
+//		var_dump($data);
 		$this->load->tlhp_template('tlhp/kklhp2', $data);
 	}
 	
