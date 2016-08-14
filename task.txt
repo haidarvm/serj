@@ -1,4 +1,8 @@
 Atang
+- bug on export to excel
+- setelah add tindak lanjut baiknya lgsg ke simpan tidak perlu di save
+- setelah simpan history tl error
+- bug double on tindak lanjut in history tl error
 - perlu kah redirect setelah edit LHP
 - unit kerja ambil dari table unit_kerja
 - insert unit kerja, nama_ppk, nama_pj
@@ -7,6 +11,7 @@ Atang
 
 
 Haidar
+- template laporan mengikuti permenpan pdf
 - change post to get from update lhp
 - upload template rename file to ID done
 - using jquery priceformat
