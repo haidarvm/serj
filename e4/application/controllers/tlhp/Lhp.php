@@ -366,7 +366,7 @@ class Lhp extends MY_Controller {
 					"newRowTindakLanjut": []
 				}';
 	
-		$table_req = $this->
+		$table_req = $table_data;
 		$param ['table_data'] = $table_req;
 		$this->writeToExcel ( $param );
 	}
