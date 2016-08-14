@@ -52,7 +52,8 @@
 												</div>
 											</div>
 										</fieldset>
-										<?php if($action=="update") {?>
+										<?php if($action=="update") {
+												//foreach($files)?>
 										<fieldset>
 											<div class="form-group">
 												<label class="col-sm-3 control-label">Files</label>
