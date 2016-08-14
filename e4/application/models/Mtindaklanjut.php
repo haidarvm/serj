@@ -12,7 +12,7 @@ class Mtindaklanjut extends CI_Model {
 		parent::__construct();
 	}
 	
-	public function insertAll($arrTindakLanjut) {
+	public function updateAll($arrTindakLanjut) {
 		$this->db->update_batch("tindak_lanjut", $arrTindakLanjut, 'tindak_lanjut_id');
 	}
 	

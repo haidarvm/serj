@@ -59,8 +59,8 @@ class Lhp extends MY_Controller {
 			array_push($toBeInsert, $tl);
 		}
 
-		$this->rtl->insertAll($toBeInsert);
-		redirect('tlhp/edit?lhp_id='.$lhp_id);
+		$this->rtl->updateAll($toBeInsert);
+		redirect('tlhp/lhp/edit?lhp_id='.$posts['lhp_id']);
 	}
 	
 	public function edit() {

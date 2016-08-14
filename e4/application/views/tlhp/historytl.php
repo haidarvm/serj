@@ -52,6 +52,7 @@
 						<!-- end form -->
 						<h4>RIWAYAT TINDAK LANJUT</h4>
 						<form action="<?php echo base_url() ?>tlhp/lhp/savetl" method="post">
+						<input type="hidden" name="lhp_id" value="<?php echo $lhp->lhp_id ?>">
 						<table class="table table-bordered">
 						  <tr>
 						    <th rowspan="2">No</th>
