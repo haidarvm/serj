@@ -395,7 +395,7 @@ class Restlhp extends REST_Controller {
 								'tindak_lanjut' => $tindakLanjut['uraian_tindak_lanjut'],
 								'nilai' => $tindakLanjut['nilai'],
 								'tanggal_tl' => sqlDateFormat($tindakLanjut['tanggal_tl']),
-								'user_id' => $this->session->userdata('user_id')
+								'created_by' => $this->session->userdata('user_id')
 							));
 							
 						}

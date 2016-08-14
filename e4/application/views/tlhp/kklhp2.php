@@ -241,7 +241,7 @@
 											</td>
 											<td>
 												<!-- periode tindak lanjut -->
-												<a href="#" data-bind="event: {click: firstViewHistoryTl}">
+												<a href="#" data-bind="event: {click: firstViewHistoryTl}, visible: data.firstRekomendasiId() != undefined">
 													<span data-bind="text: uiPeriodeTindakLanjut"></span>
 												</a>
 											</td>
