@@ -52,50 +52,6 @@ class Pilihlhp extends MY_Controller {
 	public function updatelhponly(){
 		redirect('tlhp/addlhp/update');
 	}
-
-<<<<<<< HEAD
-	public function updatelhp() {
-		$post = $this->input->post();
-		if ($post) {
-			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
-			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
-			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
-			$data['title'] = "UPDATE LHP";
-			$data['action'] = "update";
-			$lhp_id = $post['lhp_id'];
-			$data['lhp_id']  =$lhp_id;
-			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
-			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-			// $data['update'] = "update";
-			// $data['getAll'] = $this->muser->getAllUser();
-			$this->load->tlhp_template('tlhp/kklhp2', $data);
-		} else {
-			// redirect pilih
-		}
-	}
-=======
-//	public function editlhp() {
-//		$gets = $this->input->get();
-//		$data['lhp'] = $this->mlhp->getLHP($gets['lhp_id']);
-//		$data['action'] = "update";
-//		$this->load->tlhp_template('tlhp/kklhp2', $data);
-//		if ($post) {
-//			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
-//			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
-//			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
-//			$data['title'] = "UPDATE LHP";
-//			$data['action'] = "update";
-//			$lhp_id = $post['lhp_id'];
-//			$data['lhp'] = $this->mlhp->getLHP($lhp_id);
-//			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
-//			// $data['update'] = "update";
-//			// $data['getAll'] = $this->muser->getAllUser();
-//			$this->load->tlhp_template('tlhp/kklhp2', $data);
-//		} else {
-//			// redirect pilih
-//		}
-//	}
->>>>>>> a2208a2f639f959c30d5939994147a78c73a7d70
 	
 	public function updatekklhp() {
 			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
@@ -115,7 +71,6 @@ class Pilihlhp extends MY_Controller {
 	
 	
 	public function save_to_excel($lhp_id) {
-		
 		$kode_temuan = $this->mlhp->getAllKodeTemuan();
 		$kode_sebab = $this->mlhp->getAllKodeSebab();
 		$kode_rekomendasi = $this->mlhp->getAllKodeRekomendasi();
