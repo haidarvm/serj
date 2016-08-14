@@ -406,7 +406,10 @@
 <!-- 								</button> -->
 
 								<!-- href="<?=site_url()?>tlhp/pilihlhp/save_to_excel/<?=@$lhp_id?>"  -->
-								<a data-bind="event: {click: doExportToExcel}" href="javascript:;"  class="btn btn-wd btn-info btn-fill btn-margin">  EXPORT TO EXCEL</a>
+								<a data-bind="event: {click: doExportToExcel}" href="javascript:;"  
+								class="btn btn-wd btn-info btn-fill btn-margin" btn="btnExportToXls"> 
+								 EXPORT TO EXCEL
+								</a>
 								
 								<button type="submit" id="kklhp" class="btn btn-wd btn-warning btn-fill btn-margin">
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>

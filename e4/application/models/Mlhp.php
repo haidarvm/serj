@@ -332,21 +332,25 @@ class MLhp extends CI_Model {
 	}
 	
 	public function getAllRekomendasiByKktIds($kktids){
-		$reqIds = implode(", ", $kktids);
-		$query = "SELECT rek.rekomendasi_id, rek.kertas_kerja_id, rek.kode_rekomendasi_id, 
-		kode_rek.uraian_rekomendasi AS ori_uraian_rekomendasi,
-		kode_rek.kode_rekomendasi,
-		rek.uraian_rekomendasi, 
-		rek.kerugian_negara, rek.nilai_rekomendasi,
-		rek.nama_ppk, rek.nama_pj, 
-		rek.unit_kerja_id, uk.unit_kerja 
-		FROM {PRE}rekomendasi AS rek
-		INNER JOIN {PRE}kode_rekomendasi AS kode_rek 
-		ON rek.kode_rekomendasi_id = kode_rek.kode_rekomendasi_id
-		INNER JOIN {PRE}unit_kerja AS uk 
-		ON rek.unit_kerja_id = uk.unit_kerja_id 
-		WHERE kertas_kerja_id IN (".$reqIds.")";
-		return $this->db->query($query)->result();
+		if (count($kktids) > 0) {
+			$reqIds = implode(", ", $kktids);
+			$query = "SELECT rek.rekomendasi_id, rek.kertas_kerja_id, rek.kode_rekomendasi_id, 
+			kode_rek.uraian_rekomendasi AS ori_uraian_rekomendasi,
+			kode_rek.kode_rekomendasi,
+			rek.uraian_rekomendasi, 
+			rek.kerugian_negara, rek.nilai_rekomendasi,
+			rek.nama_ppk, rek.nama_pj, 
+			rek.unit_kerja_id, uk.unit_kerja 
+			FROM {PRE}rekomendasi AS rek
+			INNER JOIN {PRE}kode_rekomendasi AS kode_rek 
+			ON rek.kode_rekomendasi_id = kode_rek.kode_rekomendasi_id
+			INNER JOIN {PRE}unit_kerja AS uk 
+			ON rek.unit_kerja_id = uk.unit_kerja_id 
+			WHERE kertas_kerja_id IN (".$reqIds.")";
+			return $this->db->query($query)->result();
+		} else {
+			return array();
+		}
 	} 
 	
 	public function updateBatchKkt($arrKkt) {

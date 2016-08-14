@@ -482,140 +482,153 @@ class Restlhp extends REST_Controller {
 	}
 	
 	
-	public function kklhp_export_excel_put() {
-		$postLhp = $this->put('lhp');
-	
+	public function kktcontent_get() {
 		$this->load->model('Mlhp', 'mlhp');
-		//TODO: harusnya dalam 1 transaksi
-		$postKertasKerjaTemuan = $this->put('kertasKerjaTemuan');
-	
-		$updatedData = array();
-		$updatedRekomendasiData = array();
-		$newRowRekomendasi = array();
-		$newRowTindakLanjut = array();
-	
-		$testTindakLanjut;
-	
-		$addedData = array();
-		foreach ($postKertasKerjaTemuan as $kertasKerjaTemuan) {
-			if (isset($kertasKerjaTemuan["kertas_kerja_id"])) {
-				array_push($updatedData, array(
-						'kertas_kerja_id' => $kertasKerjaTemuan["kertas_kerja_id"],
-						'lhp_id' => $postLhp['lhp_id'],
-						'jenis_temuan' => strtolower($kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan']),
-						'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
-						'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
-						'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
-						'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
-						'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
-						'user_id' => $this->session->userdata('user_id')
-				));
-				$listRekomendasi = $kertasKerjaTemuan['rekomendasi'];
-				foreach ($listRekomendasi as $rekomendasi) {
-					if (isset($rekomendasi["rekomendasi_id"])) {
-						array_push($updatedRekomendasiData, array(
-								"rekomendasi_id" => $rekomendasi["rekomendasi_id"],
-								"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
-								"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
-								"kerugian_negara" => $rekomendasi["kerugian_negara"],
-								"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
-								"nama_ppk" => $rekomendasi["nama_ppk"],
-								"nama_pj" => $rekomendasi["nama_pj"],
-								"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
-						));
-	
-						if (isset($rekomendasi['tindak_lanjut'])) {
-							$tindakLanjut = $rekomendasi['tindak_lanjut'];
-							if (count($tindakLanjut) > 0)
-								array_push($newRowTindakLanjut, array(
-										'rekomendasi_id' => $rekomendasi['rekomendasi_id'],
-										'tindak_lanjut' => $tindakLanjut['uraian_tindak_lanjut'],
-										'nilai' => $tindakLanjut['nilai'],
-										'tanggal_tl' => sqlDateFormat($tindakLanjut['tanggal_tl']),
-										'created_by' => $this->session->userdata('user_id')
-								));
-									
-						}
-					} else {
-						//new row kkt
-						array_push($newRowRekomendasi, array(
-								"kertas_kerja_id" => $kertasKerjaTemuan["kertas_kerja_id"],
-								"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
-								"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
-								"kerugian_negara" => $rekomendasi["kerugian_negara"],
-								"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
-								"nama_ppk" => $rekomendasi["nama_ppk"],
-								"nama_pj" => $rekomendasi["nama_pj"],
-								"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
-						));
-					}
-				}
-			} else {
-				array_push($addedData, $kertasKerjaTemuan);
-			}
-		}
-		//TODO: should be in one transaction
-		if (count($updatedData)) {
-			$this->mlhp->updateBatchKkt($updatedData);
-		}
-	
-		if (count($updatedRekomendasiData)) {
-			$this->mlhp->updateBatchRekomendasi($updatedRekomendasiData);
-		}
-	
-		if (count($newRowTindakLanjut)) {
-			$this->mlhp->insertBatchTindakLanjut($newRowTindakLanjut);
-		}
-	
-		//		var_dump($newRowRekomendasi);
-		if (count($newRowRekomendasi) > 0) {
-			$this->mlhp->insertBatchRekomendasi($newRowRekomendasi);
-		}
-	
-		if (count($addedData) > 0) {
-			//			$this->mlhp->insertBatchKkt($addedData);
-			foreach ($addedData as $addedRow) {
-				$kktId = $this->mlhp->insertKKLHP(array(
-						'lhp_id' => @$addedRow['lhp_id'],
-						'jenis_temuan' => @strtolower($addedRow['jenis_temuan']['kode_jenis_temuan']),
-						'kode_temuan_id' => @$addedRow['kode_temuan_id'],
-						'uraian_temuan' => @$addedRow['uraian_temuan'],
-						'kode_sebab_id' => @$addedRow['kode_sebab_id'],
-						'uraian_sebab' => @$addedRow['uraian_sebab'],
-						'nilai_temuan' => @$addedRow['nilai_temuan'],
-						'user_id' => $this->session->userdata('user_id')
-				));
-				$rekomendasi = $addedRow['rekomendasi'];
-				if (isset($kktId)) {
-					$newRekomendasi = array();
-					foreach ($rekomendasi as $rowRekomendasi) {
-						array_push($newRekomendasi, array(
-								"kertas_kerja_id" => $kktId,
-								"kode_rekomendasi_id" => $rowRekomendasi["kode_rekomendasi_id"],
-								"uraian_rekomendasi" => $rowRekomendasi["uraian_rekomendasi"],
-								"kerugian_negara" => $rowRekomendasi["kerugian_negara"],
-								"nilai_rekomendasi" => isset($rowRekomendasi["nilai_rekomendasi"]) ? $rowRekomendasi["nilai_rekomendasi"] : 0,
-								"nama_ppk" => @$rowRekomendasi["nama_ppk"],
-								"nama_pj" => @$rowRekomendasi["nama_pj"],
-								"unit_kerja_id" =>@$rowRekomendasi["unit_kerja_id"],
-						));
-					}
-					if (count($newRekomendasi) > 0) {
-						//$this->mlhp->insertBatchRekomendasi($newRekomendasi);
-					}
+		$this->load->model('Mtindaklanjut', 'mtl');
+		
+		$arrJenisTemuan = array(
+			'A' => 'SISTEM PENGENDALIAN INTERNAL',
+			'B' => 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN',
+			'C' => 'Laporan Keuangan'
+		);
+		$lhp_id = $this->get('lhp_id');
+		
+		$arrKertasKerjaTemuan = $this->mlhp->getAllKertasKerjaTemuan(24);
+		
+		$kktIds = array();
+		foreach ($arrKertasKerjaTemuan as $rowKkt) {
+			array_push($kktIds, $rowKkt->kertas_kerja_id);
+		}	
+		$arrRekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktIds);
+		
+		foreach ($arrKertasKerjaTemuan as $rowKkt) {
+			foreach ($arrJenisTemuan as $idx => $value) {
+				if ($rowKkt->jenis_temuan == strtolower($idx)) {
+					$rowKkt->jenis_temuan = array(
+						'kode_jenis_temuan' => $idx,
+						'jenis_temuan' => $value
+					);
 				}
 			}
 		}
-	
-	
+		
+		foreach ($arrKertasKerjaTemuan as $rowKkt) {
+			$rowKkt->rekomendasi = array();
+			foreach ($arrRekomendasi as $rek) {
+				if ($rowKkt->kertas_kerja_id == $rek->kertas_kerja_id) {
+					//TODO: di refactor nanti y
+					$tindaklanjut = $this->mlhp->getAllTindakLanjut($rek->rekomendasi_id);
+					if (count($tindaklanjut) > 0) {
+						$rek->tindak_lanjut = $tindaklanjut[0];
+					}
+					array_push($rowKkt->rekomendasi, $rek);
+				}
+			}
+			
+		}
+		
+//		$updatedData = array();
+//		$updatedRekomendasiData = array();
+//		$newRowRekomendasi = array();
+//		$newRowTindakLanjut = array();
+//	
+//		$addedData = array();
+//		foreach ($arrKertasKerjaTemuan as $kertasKerjaTemuan) {
+//			if (isset($kertasKerjaTemuan["kertas_kerja_id"])) {
+//				array_push($updatedData, array(
+//						'kertas_kerja_id' => $kertasKerjaTemuan["kertas_kerja_id"],
+//						'lhp_id' => $postLhp['lhp_id'],
+//						'jenis_temuan' => strtolower($kertasKerjaTemuan['jenis_temuan']['kode_jenis_temuan']),
+//						'kode_temuan_id' => $kertasKerjaTemuan['kode_temuan_id'],
+//						'uraian_temuan' => $kertasKerjaTemuan['uraian_temuan'],
+//						'kode_sebab_id' => $kertasKerjaTemuan['kode_sebab_id'],
+//						'uraian_sebab' => $kertasKerjaTemuan['uraian_sebab'],
+//						'nilai_temuan' => $kertasKerjaTemuan['nilai_temuan'],
+//						'user_id' => $this->session->userdata('user_id')
+//				));
+//				
+//				foreach ($listRekomendasi as $rekomendasi) {
+//					if (isset($rekomendasi["rekomendasi_id"])) {
+//						array_push($updatedRekomendasiData, array(
+//								"rekomendasi_id" => $rekomendasi["rekomendasi_id"],
+//								"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
+//								"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+//								"kerugian_negara" => $rekomendasi["kerugian_negara"],
+//								"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
+//								"nama_ppk" => $rekomendasi["nama_ppk"],
+//								"nama_pj" => $rekomendasi["nama_pj"],
+//								"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
+//						));
+//	
+//						if (isset($rekomendasi['tindak_lanjut'])) {
+//							$tindakLanjut = $rekomendasi['tindak_lanjut'];
+//							if (count($tindakLanjut) > 0)
+//								array_push($newRowTindakLanjut, array(
+//										'rekomendasi_id' => $rekomendasi['rekomendasi_id'],
+//										'tindak_lanjut' => $tindakLanjut['uraian_tindak_lanjut'],
+//										'nilai' => $tindakLanjut['nilai'],
+//										'tanggal_tl' => sqlDateFormat($tindakLanjut['tanggal_tl']),
+//										'created_by' => $this->session->userdata('user_id')
+//								));
+//									
+//						}
+//					} else {
+//						//new row kkt
+//						array_push($newRowRekomendasi, array(
+//								"kertas_kerja_id" => $kertasKerjaTemuan["kertas_kerja_id"],
+//								"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
+//								"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
+//								"kerugian_negara" => $rekomendasi["kerugian_negara"],
+//								"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
+//								"nama_ppk" => $rekomendasi["nama_ppk"],
+//								"nama_pj" => $rekomendasi["nama_pj"],
+//								"unit_kerja_id" => $rekomendasi["unit_kerja_id"],
+//						));
+//					}
+//				}
+//			} else {
+//				array_push($addedData, $kertasKerjaTemuan);
+//			}
+//		}
+//	
+//		if (count($addedData) > 0) {
+//			//			$this->mlhp->insertBatchKkt($addedData);
+//			foreach ($addedData as $addedRow) {
+//				$kktId = $this->mlhp->insertKKLHP(array(
+//						'lhp_id' => @$addedRow['lhp_id'],
+//						'jenis_temuan' => @strtolower($addedRow['jenis_temuan']['kode_jenis_temuan']),
+//						'kode_temuan_id' => @$addedRow['kode_temuan_id'],
+//						'uraian_temuan' => @$addedRow['uraian_temuan'],
+//						'kode_sebab_id' => @$addedRow['kode_sebab_id'],
+//						'uraian_sebab' => @$addedRow['uraian_sebab'],
+//						'nilai_temuan' => @$addedRow['nilai_temuan'],
+//						'user_id' => $this->session->userdata('user_id')
+//				));
+//				$rekomendasi = $addedRow['rekomendasi'];
+//				if (isset($kktId)) {
+//					$newRekomendasi = array();
+//					foreach ($rekomendasi as $rowRekomendasi) {
+//						array_push($newRekomendasi, array(
+//								"kertas_kerja_id" => $kktId,
+//								"kode_rekomendasi_id" => $rowRekomendasi["kode_rekomendasi_id"],
+//								"uraian_rekomendasi" => $rowRekomendasi["uraian_rekomendasi"],
+//								"kerugian_negara" => $rowRekomendasi["kerugian_negara"],
+//								"nilai_rekomendasi" => isset($rowRekomendasi["nilai_rekomendasi"]) ? $rowRekomendasi["nilai_rekomendasi"] : 0,
+//								"nama_ppk" => @$rowRekomendasi["nama_ppk"],
+//								"nama_pj" => @$rowRekomendasi["nama_pj"],
+//								"unit_kerja_id" =>@$rowRekomendasi["unit_kerja_id"],
+//						));
+//					}
+//					if (count($newRekomendasi) > 0) {
+//						//$this->mlhp->insertBatchRekomendasi($newRekomendasi);
+//					}
+//				}
+//			}
+//		}
+		
 		$this->response(array(
-				'data' => $postKertasKerjaTemuan,
-				'message' => 'Data berhasil diperbaharui',
-				'updateDateCount' => count($updatedData),
-				'updatedData' => $updatedData,
-				'addedData' => $addedData,
-				'rekomendasiData' => $updatedRekomendasiData,
-				'newRowTindakLanjut' => $newRowTindakLanjut
+				'data' => $arrKertasKerjaTemuan,
+				'lhp_id' => $lhp_id
 		), 200);
 	}
 	
@@ -663,6 +676,7 @@ class Restlhp extends REST_Controller {
 		
 		$this->response($dataResponse, 200);
 	}
+	
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		

@@ -88,22 +88,67 @@ class Lhp extends MY_Controller {
 	}
 	
 	
-	public function save_to_excel() {
-		$post= $this->input->post();
-		$lhp_id = @$post['lhp_id'];
-		$table_data = @$post['table_data'];
-	
-		if ($lhp_id == NULL) {
-			$col['notif'] = 'error';
-			$col['msg'] = 'LHP ID not found';
-			exit(json_encode($col));
-		} else if ($table_data == NULL) {
-			$col['notif'] = 'error';
-			$col['msg'] = 'Table Data Null';
-			exit(json_encode($col));
+	public function downloadxls() {
+//		$post= $this->input->post();
+//		$lhp_id = @$post['lhp_id'];
+//		$table_data = @$post['table_data'];
+//	
+//		if ($lhp_id == NULL) {
+//			$col['notif'] = 'error';
+//			$col['msg'] = 'LHP ID not found';
+//			exit(json_encode($col));
+//		} else if ($table_data == NULL) {
+//			$col['notif'] = 'error';
+//			$col['msg'] = 'Table Data Null';
+//			exit(json_encode($col));
+//		}
+		$get = $this->input->get();	
+		$lhp = $this->mlhp->getLHP ($get['lhp_id']);
+		
+		$this->load->model('Mlhp', 'mlhp');
+		$this->load->model('Mtindaklanjut', 'mtl');
+		
+		$arrJenisTemuan = array(
+			'A' => 'SISTEM PENGENDALIAN INTERNAL',
+			'B' => 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN',
+			'C' => 'Laporan Keuangan'
+		);
+		
+		$arrKertasKerjaTemuan = $this->mlhp->getAllKertasKerjaTemuan($get['lhp_id']);
+		
+		$kktIds = array();
+		foreach ($arrKertasKerjaTemuan as $rowKkt) {
+			array_push($kktIds, $rowKkt->kertas_kerja_id);
+		}	
+		$arrRekomendasi = $this->mlhp->getAllRekomendasiByKktIds($kktIds);
+		
+		foreach ($arrKertasKerjaTemuan as $rowKkt) {
+			foreach ($arrJenisTemuan as $idx => $value) {
+				if ($rowKkt->jenis_temuan == strtolower($idx)) {
+					$rowKkt->jenis_temuan = array(
+						'kode_jenis_temuan' => $idx,
+						'jenis_temuan' => $value
+					);
+				}
+			}
 		}
 		
-		$lhp = $this->mlhp->getLHP ( $lhp_id );
+		foreach ($arrKertasKerjaTemuan as $rowKkt) {
+			$rowKkt->rekomendasi = array();
+			foreach ($arrRekomendasi as $rek) {
+				if ($rowKkt->kertas_kerja_id == $rek->kertas_kerja_id) {
+					//TODO: di refactor nanti y
+					$tindaklanjut = $this->mlhp->getAllTindakLanjut($rek->rekomendasi_id);
+					if (count($tindaklanjut) > 0) {
+						$rek->tindak_lanjut = $tindaklanjut[0];
+					}
+					array_push($rowKkt->rekomendasi, $rek);
+				}
+			}
+			
+		}
+		
+		
 		$param ['title'] = $lhp->judul_lhp;
 		$param ['to'] = $lhp->objek_pengawasan;
 		$param ['table_top'] = array (
@@ -117,7 +162,7 @@ class Lhp extends MY_Controller {
 				'belum_tl' => '0',
 				'tidak_dpt_tl' => '0'
 		);
-	
+		/**
 		$table_req = '{
 					"data": [{
 						"lhp_id": 30,
@@ -365,9 +410,10 @@ class Lhp extends MY_Controller {
 					"rekomendasiData": [],
 					"newRowTindakLanjut": []
 				}';
-	
-		$table_req = $table_data;
-		$param ['table_data'] = $table_req;
+		**/
+//		$table_req = $table_data;
+//		$param ['table_data'] = $table_req;
+		$param ['table_data'] = $arrKertasKerjaTemuan;
 		$this->writeToExcel ( $param );
 	}
 
@@ -410,10 +456,10 @@ class Lhp extends MY_Controller {
 		);
 	
 		if (@$param ['table_data'] != "") {
-			$tableData = json_decode ( @$param ['table_data'] );
-				
-			foreach ( $tableData->data as $data ) {
-				$jenisTemuan [] = $data->jenis_temuan->jenis_temuan;
+//			$tableData = json_decode ( @$param ['table_data'] );
+			$tableData = @$param ['table_data'];
+			foreach ( $tableData as $data ) {
+				$jenisTemuan [] = $data->jenis_temuan['jenis_temuan'];
 			}
 				
 			$jenisTemuanValue = array_count_values ( $jenisTemuan );
@@ -423,12 +469,12 @@ class Lhp extends MY_Controller {
 			$rekomendasiA = 1;
 			$temuanPassA = 0;
 			$colPasCont = array ();
-			foreach ( $tableData->data as $data ) {
-				if ($jenisTemuanData [0] == $data->jenis_temuan->jenis_temuan) {
+			foreach ( $tableData as $data ) {
+				if ($jenisTemuanData [0] == $data->jenis_temuan['jenis_temuan']) {
 					$indexNo = $temuanA ++;
 					if ($indexNo == 1) {
 						$index = $indexCol;
-						$tableTitle = $data->jenis_temuan->kode_jenis_temuan . " " . $data->jenis_temuan->jenis_temuan;
+						$tableTitle = $data->jenis_temuan['kode_jenis_temuan'] . " " . $data->jenis_temuan['jenis_temuan'];
 						$objPHPExcel->getActiveSheet ()->mergeCells ( 'A' . $index . ':Y' . $index );
 						$objPHPExcel->getActiveSheet ()->setCellValue ( 'A' . $index, $tableTitle );
 					}
@@ -483,7 +529,7 @@ class Lhp extends MY_Controller {
 						$objPHPExcel->getActiveSheet ()->setCellValue ( 'N' . $indexColRekomendasi, $namaPj );
 	
 						if (is_object ( $rekomendasi->tindak_lanjut )) {
-							$uraian_tindak_lanjut = $rekomendasi->tindak_lanjut->uraian_tindak_lanjut;
+							$uraian_tindak_lanjut = $rekomendasi->tindak_lanjut->tindak_lanjut;
 							$objPHPExcel->getActiveSheet ()->setCellValue ( 'P' . $indexColRekomendasi, $uraian_tindak_lanjut );
 								
 							$nilai = $rekomendasi->tindak_lanjut->nilai;
@@ -500,12 +546,12 @@ class Lhp extends MY_Controller {
 			$rekomendasiB = 1;
 			$temuanPassB = 0;
 			$colPasContB = array ();
-			foreach ( $tableData->data as $data ) {
-				if ($jenisTemuanData [1] == $data->jenis_temuan->jenis_temuan) {
+			foreach ( $tableData as $data ) {
+				if ($jenisTemuanData [1] == $data->jenis_temuan['jenis_temuan']) {
 					$indexNo = $temuanB ++;
 					if ($indexNo == 1) {
 						$index = $indexColB;
-						$tableTitle = $data->jenis_temuan->kode_jenis_temuan . " " . $data->jenis_temuan->jenis_temuan;
+						$tableTitle = $data->jenis_temuan['kode_jenis_temuan'] . " " . $data->jenis_temuan['jenis_temuan'];
 						$objPHPExcel->getActiveSheet ()->mergeCells ( 'A' . $index . ':Y' . $index );
 						$objPHPExcel->getActiveSheet ()->setCellValue ( 'A' . $index, $tableTitle );
 					}
@@ -578,12 +624,12 @@ class Lhp extends MY_Controller {
 			$rekomendasiC = 1;
 			$temuanPassC = 0;
 			$colPasContC = array ();
-			foreach ( $tableData->data as $data ) {
-				if ($jenisTemuanData [2] == $data->jenis_temuan->jenis_temuan) {
+			foreach ( $tableData as $data ) {
+				if ($jenisTemuanData [2] == $data->jenis_temuan['jenis_temuan']) {
 					$indexNo = $temuanC ++;
 					if ($indexNo == 1) {
 						$index = $indexColC;
-						$tableTitle = $data->jenis_temuan->kode_jenis_temuan . " " . $data->jenis_temuan->jenis_temuan;
+						$tableTitle = $data->jenis_temuan['kode_jenis_temuan'] . " " . $data->jenis_temuan['jenis_temuan'];
 						$objPHPExcel->getActiveSheet ()->mergeCells ( 'A' . $index . ':Y' . $index );
 						$objPHPExcel->getActiveSheet ()->setCellValue ( 'A' . $index, $tableTitle );
 					}
@@ -651,8 +697,12 @@ class Lhp extends MY_Controller {
 			}
 				
 			$objWriter = PHPExcel_IOFactory::createWriter ( $objPHPExcel, 'Excel5' );
-			$saving = $root . '/assets/data/lhp.xls';
-			$objWriter->save ( $saving );
+			header('Content-Type: application/vnd.ms-excel');
+			header('Content-Disposition: attachment;filename="myFile.xls"');
+			header('Cache-Control: max-age=0');
+			$objWriter->save ('php://output');
+//			$saving = $root . '/assets/data/lhp.xls';
+//			$objWriter->save ( $saving );
 		}
 	}
 	

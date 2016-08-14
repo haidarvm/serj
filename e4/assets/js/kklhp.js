@@ -473,138 +473,49 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		
 		self.doExportToExcel = function() {
-			var kktList = [];
-			var errorList = [];
-			for (var i=0; i<self.jenisTemuan().length; i++) {
-				var jenisTemuan = {
-					kode_jenis_temuan: self.jenisTemuan()[i].data.kodeTemuan(),
-					jenis_temuan: self.jenisTemuan()[i].data.jenisTemuan(),
-				}
-				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
-				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
-					var listRekomendasi = [];
-					if (kertasKerjaTemuan.data.firstKodeRekomendasiId() != undefined &&
-						kertasKerjaTemuan.data.firstUraianRekomendasi() != undefined) {
-						listRekomendasi.push({
-							rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
-							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
-							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
-							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
-							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
-							nama_ppk: kertasKerjaTemuan.data.firstNamaPpk(),
-							nama_pj: kertasKerjaTemuan.data.firstNamaPj(),
-							unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id,
-							tindak_lanjut: {
-								uraian_tindak_lanjut: kertasKerjaTemuan.data.firstUraianTindakLanjut(),
-								tanggal_tl: kertasKerjaTemuan.data.firstTanggalTl(),
-								nilai: kertasKerjaTemuan.data.firstJumlahTl()
-							}
-						});
-					}
-					
-					_.each(kertasKerjaTemuan.data.rekomendasi(), function(item){
-						console.debug(ko.toJSON(item.data));
-						var itemRekomendasi = {
-							rekomendasi_id: item.data.rekomendasiId(),
-							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
-							uraian_rekomendasi: item.data.uraianRekomendasi(),
-							kerugian_negara: item.data.kerugianNegara(),
-							nilai_rekomendasi: item.data.nilaiRekomendasi(),
-							nama_ppk: item.data.namaPpk(),
-							nama_pj: item.data.namaPj(),
-							unit_kerja_id: item.data.unitKerja().unit_kerja_id,
-							tindak_lanjut: {
-								uraian_tindak_lanjut: item.data.uraianTindakLanjut(),
-								tanggal_tl: item.data.tanggalTl(),
-								nilai: item.data.jumlahTl()
-							}
-						}
-						listRekomendasi.push(itemRekomendasi);
-					});
-					
-					
-					var itemKkt = {
-						kertas_kerja_id: kertasKerjaTemuan.data.kertasKerjaId(),
-						lhp_id: kertasKerjaTemuan.data.lhpId(),
-						jenis_temuan: jenisTemuan,
-						no_temuan: '',
-						kode_temuan_id: kertasKerjaTemuan.data.kodeTemuanId(),
-						uraian_temuan: kertasKerjaTemuan.data.uraianTemuan(),
-						kode_sebab_id: kertasKerjaTemuan.data.kodeSebabId(),
-						uraian_sebab: kertasKerjaTemuan.data.uraianSebab(),
-						nilai_temuan: kertasKerjaTemuan.data.nilaiTemuan(),
-						rekomendasi: listRekomendasi
-					}
-					
-//					console.debug(itemKkt);
-//					console.info(itemKkt.listRekomendasi);
-					
-					if (itemKkt.kode_temuan_id !== undefined &&
-						itemKkt.uraian_temuan !== undefined &&
-						itemKkt.kode_sebab_id !== undefined &&
-						itemKkt.uraian_sebab !== undefined &&
-						itemKkt.nilai_temuan !== undefined) {
-						kktList.push(itemKkt);
-					}
-				});
-			}
-			
-			var kklhpData = {
-					'lhp': {
-						'lhp_id': $('#lhp_id').val()
-					}, 
-					'kertasKerjaTemuan': kktList
-				}
-//			console.debug(kklhpData);
-			var action = $('#action').val();
-			if (action == "update") {
-				action = "PUT";
-			} else {
-				action = "POST";
-			}
-			console.debug('action '+ action);
-			console.debug(kklhpData);
-			self.postKklhpExportToExcel(action, kklhpData);
+			console.debug('doExportToExcel');
+			var lhp_id = $('#lhp_id').val();
+			window.open(site_url+"tlhp/lhp/downloadxls?lhp_id="+lhp_id, "_blank");
 		} // end do Export To Excel
 		
-		self.postKklhpExportToExcel = function(actionType, postData) {
-			$.ajax({
-				type: actionType,
-				data: JSON.stringify(postData),
-				contentType: 'application/json',
-				url: site_url + "tlhp/restlhp/kklhp_export_excel",
-				beforeSend: function(){
-				console.info('attempting to contact server to save data kklhp');
-				$('#btnSave').attr('disabled', 'disabled');
-			},
-			success: function(data) {
-				console.info('kklhp saved');
-//				alert('Data sudah disimpan');
-				$.notify("Data sudah disimpan", "success");
-				var obj = $.parseJSON(data);
-				$.ajax({
-					type: 'POST',
-					data:'lhp_id='+obj.data[0].lhp_id+'table_data='+data,
-					url: site_url + "tlhp/lhp/save_to_excel",
-					beforeSend: function(){
-						console.info('attempting to contact server to save data kklhp');
-						$('#btnSave').attr('disabled', 'disabled');
-					},
-					success: function(data) {
-						
-					}
-				});
-				
-				//window.location = site_url+ "tlhp/menusa";
-//				console.debug(window.location);
-			},
-			error: function(xhr, msg) {
-				alert("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
-			}
-			}).always(function(){
-				$('#btnSave').removeAttr('disabled');
-			});
-		}
+//		self.postKklhpExportToExcel = function(actionType, postData) {
+//			$.ajax({
+//				type: actionType,
+//				data: JSON.stringify(postData),
+//				contentType: 'application/json',
+//				url: site_url + "tlhp/restlhp/kklhp_export_excel",
+//				beforeSend: function(){
+//				console.info('attempting to contact server to save data kklhp');
+//				$('#btnSave').attr('disabled', 'disabled');
+//			},
+//			success: function(data) {
+//				console.info('kklhp saved');
+////				alert('Data sudah disimpan');
+//				$.notify("Data sudah disimpan", "success");
+//				var obj = $.parseJSON(data);
+//				$.ajax({
+//					type: 'POST',
+//					data:'lhp_id='+obj.data[0].lhp_id+'table_data='+data,
+//					url: site_url + "tlhp/lhp/save_to_excel",
+//					beforeSend: function(){
+//						console.info('attempting to contact server to save data kklhp');
+//						$('#btnSave').attr('disabled', 'disabled');
+//					},
+//					success: function(data) {
+//						
+//					}
+//				});
+//				
+//				//window.location = site_url+ "tlhp/menusa";
+////				console.debug(window.location);
+//			},
+//			error: function(xhr, msg) {
+//				alert("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
+//			}
+//			}).always(function(){
+//				$('#btnSave').removeAttr('disabled');
+//			});
+//		}
 		
 		self.postKklhp = function(actionType, postData) {
 			$.ajax({
