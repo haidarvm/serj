@@ -52,7 +52,7 @@ class Pilihlhp extends MY_Controller {
 	public function updatelhponly(){
 		redirect('tlhp/addlhp/update');
 	}
-<<<<<<< HEAD
+
 
 	public function updatelhp() {
 		$post = $this->input->post();
@@ -96,8 +96,6 @@ class Pilihlhp extends MY_Controller {
 //		}
 //	}
 
-=======
->>>>>>> e76bd8b0bcd8ab2113fabe5fc2d53fe7633e9c03
 	
 	public function updatekklhp() {
 			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
@@ -117,13 +115,7 @@ class Pilihlhp extends MY_Controller {
 	
 	
 	public function save_to_excel($lhp_id) {
-<<<<<<< HEAD
-		
-=======
-		$kode_temuan = $this->mlhp->getAllKodeTemuan();
-		$kode_sebab = $this->mlhp->getAllKodeSebab();
-		$kode_rekomendasi = $this->mlhp->getAllKodeRekomendasi();
->>>>>>> e76bd8b0bcd8ab2113fabe5fc2d53fe7633e9c03
+
 		$lhp = $this->mlhp->getLHP($lhp_id);
 		$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
 		
