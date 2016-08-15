@@ -416,7 +416,7 @@ class MLhp extends CI_Model {
 	
 	public function getAllTindakLanjut($rekomendasiId) {
 		$this->db->where('rekomendasi_id', $rekomendasiId);
-		$this->db->order_by('tindak_lanjut_id', 'desc');
+		$this->db->order_by('tindak_lanjut_id', 'asc');
 		return $this->db->get('tindak_lanjut')->result();
 	}
 }
