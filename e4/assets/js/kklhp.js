@@ -382,15 +382,19 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			var kktList = [];
 			var errorList = [];
 			for (var i=0; i<self.jenisTemuan().length; i++) {
+				var kdTemuan = self.jenisTemuan()[i];
 				var jenisTemuan = {
 					kode_jenis_temuan: self.jenisTemuan()[i].data.kodeTemuan(),
 					jenis_temuan: self.jenisTemuan()[i].data.jenisTemuan(),
 				}
 				var kertasKerjaTemuanList = self.jenisTemuan()[i].data.kertasKerjaTemuan();
+				var kktRow = 1;
 				_.each(kertasKerjaTemuanList, function(kertasKerjaTemuan){
+//					var kertasKerjaTemuan = kertasKerjaTemuanList[i];
 					var listRekomendasi = [];
 					if (kertasKerjaTemuan.data.firstKodeRekomendasiId() != undefined &&
 						kertasKerjaTemuan.data.firstUraianRekomendasi() != undefined) {
+						console.debug('execute baris ke-'+ kktRow);
 						var firstRekomendasi = {
 								rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
 								kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
@@ -446,7 +450,6 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 						listRekomendasi.push(itemRekomendasi);
 					});
 					
-					
 					var itemKkt = {
 						kertas_kerja_id: kertasKerjaTemuan.data.kertasKerjaId(),
 						lhp_id: kertasKerjaTemuan.data.lhpId(),
@@ -460,17 +463,21 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 						rekomendasi: listRekomendasi
 					}
 					
-//					console.debug(itemKkt);
-//					console.info(itemKkt.listRekomendasi);
-					
 					if (itemKkt.kode_temuan_id !== undefined &&
 						itemKkt.uraian_temuan !== undefined &&
 						itemKkt.kode_sebab_id !== undefined &&
 						itemKkt.uraian_sebab !== undefined &&
 						itemKkt.nilai_temuan !== undefined) {
 						kktList.push(itemKkt);
+//						console.debug(itemKkt.rekomendasi.length);
+						if (itemKkt.rekomendasi.length == 0) {
+							errorList.push('Rekomendasi untuk temuan '+ kdTemuan.data.kodeTemuan() +' baris '+ kktRow + ' belum lengkap');
+						}
 					}
-				});
+					
+					kktRow += parseInt(1);
+//					console.debug(kktRow);
+				}); //end loop kkt
 			}
 			
 			var kklhpData = {
@@ -488,7 +495,13 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			}
 			console.debug('action '+ action);
 			console.debug(kklhpData);
-			self.postKklhp(action, kklhpData);
+			if (errorList.length > 0) {
+				_.each(errorList, function(errItem){
+					$.notify(errItem);
+				});
+			} else {
+				self.postKklhp(action, kklhpData);
+			}
 		} // end do insert
 		
 		
