@@ -66,11 +66,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfR.data.jumlahTl(nilaiTl);
 			selfR.data.totalTindakLanjut(totalTindakLanjut);
 			
-			selfR.data.matchedTlRowCount(matchedTl.rowCount);
-			selfR.data.matchedTlTotalAmount(matchedTl.totalAmount);
-			
-			selfR.data.notmatchedTlRowCount(notmatchedTl.rowCount);
-			selfR.data.notmatchedTlTotalAmount(notmatchedTl.totalAmount);
+//			selfR.data.matchedTlRowCount(matchedTl.rowCount);
+//			selfR.data.matchedTlTotalAmount(matchedTl.totalAmount);
+//			
+//			selfR.data.notmatchedTlRowCount(notmatchedTl.rowCount);
+//			selfR.data.notmatchedTlTotalAmount(notmatchedTl.totalAmount);
 //			console.debug(selfR.data.unitKerja());
 //			console.debug(selfR.data.namaPpk());
 //			console.debug(selfR.data.namaPj());
@@ -96,7 +96,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfR.uiPeriodeTindakLanjut = ko.computed(function(){
 			if (selfR.data.tanggalTl() != undefined) {
 				var moment = require('moment');
-				var month = moment(selfR.data.tanggalTl()).format("M");
+				var month = moment(selfR.data.tanggalTl(), "DD-MM-YYYY").format("M");
 				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
 					return "SEMESTER I";
 				} else if (parseInt(month) > 6 && parseInt(month) <= 12 ) {
@@ -243,11 +243,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfK.data.firstJumlahTl(nilaiTl);
 			selfK.data.firstTotalTindakLanjut(totalTindakLanjut);
 			
-			selfK.data.firstMatchedTlRowCount(firstMatchedTl.rowCount);
-			selfK.data.firstMatchedTlTotalAmount(firstMatchedTl.totalAmount);
-			
-			selfK.data.firstNotMatchedTlRowCount(firstNotMatchedTl.rowCount);
-			selfK.data.firstNotMatchedTlTotalAmount(firstNotMatchedTl.totalAmount);
+//			selfK.data.firstMatchedTlRowCount(firstMatchedTl.rowCount);
+//			selfK.data.firstMatchedTlTotalAmount(firstMatchedTl.totalAmount);
+//			
+//			selfK.data.firstNotMatchedTlRowCount(firstNotMatchedTl.rowCount);
+//			selfK.data.firstNotMatchedTlTotalAmount(firstNotMatchedTl.totalAmount);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -270,8 +270,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfK.uiPeriodeTindakLanjut = ko.computed(function(){
 			var moment = require('moment');
 			if (selfK.data.firstTanggalTl() != undefined) {
-				var month = moment(selfK.data.firstTanggalTl()).format("M");
-				console.debug('selected month '+ month);
+				var tglTl = selfK.data.firstTanggalTl();
+				var month = moment(tglTl, "DD-MM-YYYY").format("M");
+//				console.debug('selected month '+ month);
 //				var month = moment('2016-08-17').format("M");
 				if (parseInt(month) > 1 && parseInt(month) <= 6 ) {
 					return "SEMESTER I";
@@ -389,21 +390,31 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					var listRekomendasi = [];
 					if (kertasKerjaTemuan.data.firstKodeRekomendasiId() != undefined &&
 						kertasKerjaTemuan.data.firstUraianRekomendasi() != undefined) {
-						listRekomendasi.push({
-							rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
-							kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
-							uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
-							kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
-							nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
-							nama_ppk: kertasKerjaTemuan.data.firstNamaPpk(),
-							nama_pj: kertasKerjaTemuan.data.firstNamaPj(),
-							unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id,
-							tindak_lanjut: {
+						var firstRekomendasi = {
+								rekomendasi_id: kertasKerjaTemuan.data.firstRekomendasiId(),
+								kode_rekomendasi_id: kertasKerjaTemuan.data.firstKodeRekomendasiId(),
+								uraian_rekomendasi: kertasKerjaTemuan.data.firstUraianRekomendasi(),
+								kerugian_negara: kertasKerjaTemuan.data.firstKerugianNegara(),
+								nilai_rekomendasi: kertasKerjaTemuan.data.firstNilaiRekomendasi(),
+								nama_ppk: kertasKerjaTemuan.data.firstNamaPpk(),
+								nama_pj: kertasKerjaTemuan.data.firstNamaPj(),
+								unit_kerja_id: kertasKerjaTemuan.data.firstUnitKerja().unit_kerja_id,
+						}
+						
+						var firstUraianTl = kertasKerjaTemuan.data.firstUraianTindakLanjut();
+						var firstJumlahTl = kertasKerjaTemuan.data.firstJumlahTl();
+						console.debug(firstUraianTl);
+						console.debug(firstJumlahTl);
+						if ((firstUraianTl != undefined || firstUraianTl != null) &&
+								(firstJumlahTl != undefined || firstJumlahTl != null)) {
+							firstRekomendasi.tindak_lanjut = {
 								uraian_tindak_lanjut: kertasKerjaTemuan.data.firstUraianTindakLanjut(),
 								tanggal_tl: kertasKerjaTemuan.data.firstTanggalTl(),
 								nilai: kertasKerjaTemuan.data.firstJumlahTl()
 							}
-						});
+						}
+						
+						listRekomendasi.push(firstRekomendasi);
 					}
 					
 					_.each(kertasKerjaTemuan.data.rekomendasi(), function(item){
@@ -416,8 +427,14 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 							nilai_rekomendasi: item.data.nilaiRekomendasi(),
 							nama_ppk: item.data.namaPpk(),
 							nama_pj: item.data.namaPj(),
-							unit_kerja_id: item.data.unitKerja().unit_kerja_id,
-							tindak_lanjut: {
+							unit_kerja_id: item.data.unitKerja().unit_kerja_id
+						}
+						
+						var uraianTl = item.data.uraianTindakLanjut();
+						var jumlahTl = item.data.jumlahTl();
+						if ((uraianTl != undefined || uraianTl != null)&& 
+								(item.data.jumlahTl() != undefined || jumlahTl != null)) {
+							itemRekomendasi.tindak_lanjut = {
 								uraian_tindak_lanjut: item.data.uraianTindakLanjut(),
 								tanggal_tl: item.data.tanggalTl(),
 								nilai: item.data.jumlahTl()
@@ -531,7 +548,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				console.info('kklhp saved');
 //				alert('Data sudah disimpan');
 				$.notify("Data sudah disimpan", "success");
-				window.location = site_url+ "tlhp/menusa";
+//				window.location = site_url+ "tlhp/menusa";
 //				console.debug(window.location);
 			},
 			error: function(xhr, msg) {
