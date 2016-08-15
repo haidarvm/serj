@@ -24,6 +24,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			dokumentPendukungTl : ko.observable(),
 			tanggalTl: ko.observable(),
 			jumlahTl : ko.observable(),
+			isNewTl: ko.observable(false),
 			totalTindakLanjut : ko.observable(),
 			
 			matchedTlRowCount: ko.observable(),
@@ -170,7 +171,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			firstDokumentPendukungTl : ko.observable(),
 			firstTanggalTl: ko.observable(),
 			firstJumlahTl : ko.observable(),
-			
+			isFirstNewTl: ko.observable(false),
 			firstTotalTindakLanjut: ko.observable(),
 			
 			firstMatchedTlRowCount: ko.observable(),
@@ -403,10 +404,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 						
 						var firstUraianTl = kertasKerjaTemuan.data.firstUraianTindakLanjut();
 						var firstJumlahTl = kertasKerjaTemuan.data.firstJumlahTl();
+						var isFirstNewTl = kertasKerjaTemuan.data.isFirstNewTl();
 						console.debug(firstUraianTl);
 						console.debug(firstJumlahTl);
 						if ((firstUraianTl != undefined || firstUraianTl != null) &&
-								(firstJumlahTl != undefined || firstJumlahTl != null)) {
+								(firstJumlahTl != undefined || firstJumlahTl != null) && isFirstNewTl == true) {
 							firstRekomendasi.tindak_lanjut = {
 								uraian_tindak_lanjut: kertasKerjaTemuan.data.firstUraianTindakLanjut(),
 								tanggal_tl: kertasKerjaTemuan.data.firstTanggalTl(),
@@ -432,8 +434,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 						
 						var uraianTl = item.data.uraianTindakLanjut();
 						var jumlahTl = item.data.jumlahTl();
+						var isNewTl = item.data.isNewTl();
 						if ((uraianTl != undefined || uraianTl != null)&& 
-								(item.data.jumlahTl() != undefined || jumlahTl != null)) {
+								(item.data.jumlahTl() != undefined || jumlahTl != null) && isNewTl == true) {
 							itemRekomendasi.tindak_lanjut = {
 								uraian_tindak_lanjut: item.data.uraianTindakLanjut(),
 								tanggal_tl: item.data.tanggalTl(),
@@ -494,45 +497,6 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			var lhp_id = $('#lhp_id').val();
 			window.open(site_url+"tlhp/lhp/downloadxls?lhp_id="+lhp_id, "_blank");
 		} // end do Export To Excel
-		
-//		self.postKklhpExportToExcel = function(actionType, postData) {
-//			$.ajax({
-//				type: actionType,
-//				data: JSON.stringify(postData),
-//				contentType: 'application/json',
-//				url: site_url + "tlhp/restlhp/kklhp_export_excel",
-//				beforeSend: function(){
-//				console.info('attempting to contact server to save data kklhp');
-//				$('#btnSave').attr('disabled', 'disabled');
-//			},
-//			success: function(data) {
-//				console.info('kklhp saved');
-////				alert('Data sudah disimpan');
-//				$.notify("Data sudah disimpan", "success");
-//				var obj = $.parseJSON(data);
-//				$.ajax({
-//					type: 'POST',
-//					data:'lhp_id='+obj.data[0].lhp_id+'table_data='+data,
-//					url: site_url + "tlhp/lhp/save_to_excel",
-//					beforeSend: function(){
-//						console.info('attempting to contact server to save data kklhp');
-//						$('#btnSave').attr('disabled', 'disabled');
-//					},
-//					success: function(data) {
-//						
-//					}
-//				});
-//				
-//				//window.location = site_url+ "tlhp/menusa";
-////				console.debug(window.location);
-//			},
-//			error: function(xhr, msg) {
-//				alert("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
-//			}
-//			}).always(function(){
-//				$('#btnSave').removeAttr('disabled');
-//			});
-//		}
 		
 		self.postKklhp = function(actionType, postData) {
 			$.ajax({
@@ -746,15 +710,17 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					self.firstViewTindakLanjut.data.firstUraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
 					self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
 					self.firstViewTindakLanjut.data.firstTanggalTl(self.dataTindakLanjut.tanggalTl());
+					self.firstViewTindakLanjut.data.isFirstNewTl(true);
 				} else {
 					console.debug(self.viewTindakLanjut);
 					self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
 					self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
 					self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
+					self.viewTindakLanjut.data.isNewTl(true);
 					
-					console.debug(self.viewTindakLanjut.data.uraianTindakLanjut());
-					console.debug(self.viewTindakLanjut.data.jumlahTl());
-					console.debug(self.viewTindakLanjut.data.tanggalTl());
+//					console.debug(self.viewTindakLanjut.data.uraianTindakLanjut());
+//					console.debug(self.viewTindakLanjut.data.jumlahTl());
+//					console.debug(self.viewTindakLanjut.data.tanggalTl());
 				}
 				$('#formTindakLanjut').modal('hide');
 				self.isFirstLineTindakLanjut = false;
