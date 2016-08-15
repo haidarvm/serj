@@ -1,7 +1,6 @@
 Atang
-- bug on export to excel
-- setelah add tindak lanjut baiknya lgsg ke simpan tidak perlu di save
-- setelah simpan history tl error
+- error validasi blun .. klo nama ppk & Pj ga di isi
+- setelah add tindak lanjut baiknya lgsg ke simpan tidak perlu di save (halaman updatelhp)
 - bug double on tindak lanjut in history tl error
 - perlu kah redirect setelah edit LHP
 - unit kerja ambil dari table unit_kerja
@@ -11,6 +10,7 @@ Atang
 
 
 Haidar
+- perhitungan dashboard (belum tindak lanjut)
 - template laporan mengikuti permenpan pdf
 - change post to get from update lhp
 - upload template rename file to ID done
@@ -38,6 +38,11 @@ CSS
 - bug button 
 
 Dashboard
+
+
+
+- bug on export to excel ... done
+- setelah simpan history tl error ... done
 
 
 # real htaccess

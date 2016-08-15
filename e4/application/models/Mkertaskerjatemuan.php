@@ -13,9 +13,15 @@ class Mkertaskerjatemuan extends CI_Model {
 		parent::__construct();
 	}
 	
+	
+	/**
+	 * TODO 
+	 * harus di perhitungan per diputi
+	 * @param unknown $lhpId
+	 */
 	public function countByLhpId($lhpId) {
 		$query = "SELECT COUNT(*) AS totalTemuan FROM {PRE}kertas_kerja_temuan 
-		WHERE lhp_id = ".$lhpId;
+		WHERE lhp_id = ".$lhpId.' ';
 		
 		$result = $this->db->query($query)->row();
 		return $result->totalTemuan;

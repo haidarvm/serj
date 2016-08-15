@@ -101,13 +101,7 @@ class MLhp extends CI_Model {
 	function cleanArray($array) {
 		return array_filter(array_map('array_filter', $array));
 	}
-	
-	// function getAllLHP($atlet_id) {
-	// $query = $this->db->get_where('lhp', array( 'tanggal_lhp' => $atlet_id ));
-	// // echo $this->db->last_query(); exit;
-	// return checkRes($query);
-	// }
-	
+
 	/**
 	 * For Datatable Only
 	 *
@@ -143,19 +137,13 @@ class MLhp extends CI_Model {
 		return $clean['tgl_st_perpanjangan'] = ! empty($clean['tgl_st_perpanjangan']) ? sqlDateFormat($data['tgl_st_perpanjangan']) : null;
 	}
 
-
-
-	//----------rudi----------
-	
-	
-	// ----------rudi----------
 	function getAllKodeSebab() {
 		$query = $this->db->get("kode_sebab");
 		return checkRes($query);
 	}
 
 	function getAllKodeRekomendasi() {
-//		$this->db->select("kode_rekomendasi_id, kode_rekomendasi, uraian_rekomendasi");
+		// $this->db->select("kode_rekomendasi_id, kode_rekomendasi, uraian_rekomendasi");
 		$query = $this->db->get("kode_rekomendasi");
 		return checkRes($query);
 	}
@@ -165,42 +153,6 @@ class MLhp extends CI_Model {
 		return checkRes($query);
 	}
 
-
-	
-// 	function updateTemuan($lhp_id, $jenis_temuan) {
-// 		$this->db->where("lhp_id", $lhp_id);
-// 		$this->db->where("jenis_temuan", $jenis_temuan);
-// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-// 	}
-	
-// 	function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
-		
-// 	}
-
-// 	function data_lhp() {
-// 		$this->db->select("*");
-// 		$this->db->from('tlhp_lhp');
-// 		$this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
-		
-// 		$this->db->order_by("dul_lhp", "asc");
-// 		return $sql = $this->db->get();
-// 	}
-
-// 	function data_temuan_update($lhp_id, $jenis_temuan) {
-// 		$this->db->where("lhp_id", $lhp_id);
-// 		$this->db->where("jenis_temuan", $jenis_temuan);
-// 		return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-// 	}
-
-// 	function data_rekomen_update($kertas_kerja, $jenis_temuan) {
-// 		$this->db->where("kertas_kerja_id", $kertas_kerja);
-		
-// 		return $sql = $this->db->get("tlhp_rekomendasi");
-// 	}
-
-
-//insert template laporan
-	
 	function updateKKLHP($kertas_kerja_id, $data) {
 		$this->db->update('kertas_kerja_temuan', $data, array('kertas_kerja_id' => $kertas_kerja_id));
 	}
@@ -217,15 +169,11 @@ class MLhp extends CI_Model {
 
 	function deleteKKKLHP($kertas_kerja_id) {
 		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
-
 	}
 
 	function deleteKKKLHPId($lhp_id) {
 		$this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
 	}
-
-
-
 
 	function deleteRekomendasi($kertas_kerja_id) {
 		$this->db->delete('kertas_kerja_temuan', array('kertas_kerja_id' => $kertas_kerja_id));
@@ -233,93 +181,30 @@ class MLhp extends CI_Model {
 
 	function deleteRekomendasiLHPId($lhp_id) {
 		$sql = "delete from {PRE}rekomendasi where kertas_kerja_id in(select kertas_kerja_id from {PRE}kertas_kerja_temuan where lhp_id='" . $lhp_id . "')";
-		return $this->db->query($sql);
-		/*
-		 * DELETE posts
-		 * FROM posts
-		 * INNER JOIN projects ON projects.project_id = posts.project_id
-		 * WHERE projects.client_id = $lhp_id
-		 */
 		// $this->db->delete('kertas_kerja_temuan', array('lhp_id' => $lhp_id));
+		return $this->db->query($sql);
 	}
-	
 
-	
-	
-	// function updateTemuan($lhp_id, $jenis_temuan) {
-	// $this->db->where("lhp_id", $lhp_id);
-	// $this->db->where("jenis_temuan", $jenis_temuan);
-	// return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-	// }
-	
-	// function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
-	
-	// }
-	
-	// function data_lhp() {
-	// $this->db->select("*");
-	// $this->db->from('tlhp_lhp');
-	// $this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
-	
-	// $this->db->order_by("dul_lhp", "asc");
-	// return $sql = $this->db->get();
-	// }
-	
-	// function data_temuan_update($lhp_id, $jenis_temuan) {
-	// $this->db->where("lhp_id", $lhp_id);
-	// $this->db->where("jenis_temuan", $jenis_temuan);
-	// return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-	// }
-	
-	// function data_rekomen_update($kertas_kerja, $jenis_temuan) {
-	// $this->db->where("kertas_kerja_id", $kertas_kerja);
-	
-	// return $sql = $this->db->get("tlhp_rekomendasi");
-	// }
-	// function updateTemuanRekomen($kertas_kerja, $jenis_temuan) {
-	
-	// }
-	
-	// function data_lhp() {
-	// $this->db->select("*");
-	// $this->db->from('tlhp_lhp');
-	// $this->db->where('lhp_id in(select lhp_id from tlhp_kertas_kerja_temuan)');
-	
-	// $this->db->order_by("dul_lhp", "asc");
-	// return $sql = $this->db->get();
-	// }
-	
-	// function data_temuan_update($lhp_id, $jenis_temuan) {
-	// $this->db->where("lhp_id", $lhp_id);
-	// $this->db->where("jenis_temuan", $jenis_temuan);
-	// return $sql = $this->db->get("tlhp_kertas_kerja_temuan");
-	// }
-	
-	// function data_rekomen_update($kertas_kerja, $jenis_temuan) {
-	// $this->db->where("kertas_kerja_id", $kertas_kerja);
-	
-	// return $sql = $this->db->get("tlhp_rekomendasi");
-	// }
-	
 	/**
-	 * @deprecated
-	 * Enter description here ...
-	 * @param $year
+	 *
+	 * @deprecated Enter description here ...
+	 * @param
+	 *        	$year
 	 */
 	public function findAllByYear($year) {
-		$query = "SELECT lhp_id, judul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '".$year."' ORDER BY lhp_id DESC";
+		$query = "SELECT lhp_id, judul_lhp FROM {PRE}lhp WHERE YEAR(tanggal_surat_tugas) = '" . $year . "' ORDER BY lhp_id DESC";
 		return $this->db->query($query)->result();
 	}
-	
+
 	public function insertBatchRekomendasi($arrRekomendasi) {
 		$this->db->insert_batch("rekomendasi", $arrRekomendasi);
 	}
-	
+
 	public function getbyid($lhp_id) {
 		$this->db->where('lhp_id', $lhp_id);
 		return $this->db->get('lhp')->row();
 	}
-	
+
 	public function getAllKertasKerjaTemuan($lhp_id) {
 		$query = "SELECT kkt.kertas_kerja_id, kkt.lhp_id, kkt.jenis_temuan, 
 		kkt.kode_temuan_id, 
@@ -332,11 +217,11 @@ class MLhp extends CI_Model {
 		kkt.nilai_temuan FROM {PRE}kertas_kerja_temuan AS kkt
 		INNER JOIN {PRE}kode_temuan AS kt ON kkt.kode_temuan_id = kt.kode_temuan_id
 		INNER JOIN {PRE}kode_sebab AS ks ON kkt.kode_sebab_id = ks.kode_sebab_id
-		WHERE kkt.lhp_id = ".$lhp_id;
+		WHERE kkt.lhp_id = " . $lhp_id;
 		return $this->db->query($query)->result();
 	}
-	
-	public function getAllRekomendasiByKktIds($kktids){
+
+	public function getAllRekomendasiByKktIds($kktids) {
 		if (count($kktids) > 0) {
 			$reqIds = implode(", ", $kktids);
 			$query = "SELECT rek.rekomendasi_id, rek.kertas_kerja_id, rek.kode_rekomendasi_id, 
@@ -351,38 +236,38 @@ class MLhp extends CI_Model {
 			ON rek.kode_rekomendasi_id = kode_rek.kode_rekomendasi_id
 			INNER JOIN {PRE}unit_kerja AS uk 
 			ON rek.unit_kerja_id = uk.unit_kerja_id 
-			WHERE kertas_kerja_id IN (".$reqIds.")";
+			WHERE kertas_kerja_id IN (" . $reqIds . ")";
 			return $this->db->query($query)->result();
 		} else {
 			return array();
 		}
-	} 
-	
+	}
+
 	public function updateBatchKkt($arrKkt) {
 		$this->db->update_batch("kertas_kerja_temuan", $arrKkt, "kertas_kerja_id");
 	}
-	
+
 	public function insertBatchKkt($arrKkt) {
 		$this->db->insert_batch("kertas_kerja_temuan", $arrKkt);
 	}
-	
+
 	public function updateBatchRekomendasi($arrRekomendasi) {
 		$this->db->update_batch("rekomendasi", $arrRekomendasi, "rekomendasi_id");
 	}
-	
+
 	public function getKodeSebab($kodeSebabId) {
 		$this->db->where("kode_sebab_id", $kodeSebabId);
 		return $this->db->get("kode_sebab")->row();
 	}
-	
+
 	public function getAllUnitKerja() {
 		return $this->db->get('unit_kerja')->result();
 	}
-	
+
 	public function insertBatchTindakLanjut($arrTindakLanjut) {
 		$this->db->insert_batch("tindak_lanjut", $arrTindakLanjut);
 	}
-	
+
 	public function updateLHP($data, $lhp_id) {
 		unset($data['lhp_id']);
 		$remove = array('tim');
@@ -399,21 +284,21 @@ class MLhp extends CI_Model {
 		// debug(array_filter($clean));exit;
 		return $this->db->update('lhp', array_filter($clean), array('lhp_id' => $lhp_id));
 	}
-	
+
 	public function deleteTimLhp($lhp_id) {
 		$this->db->delete('tim_lhp', array('lhp_id' => $lhp_id));
 	}
-	
+
 	public function getRekomendasi($rekomendasiId) {
 		$this->db->where('rekomendasi_id', $rekomendasiId);
 		return $this->db->get('rekomendasi')->row();
 	}
-	
+
 	public function getKertasKerjaTemuan($kktId) {
 		$this->db->where('kertas_kerja_id', $kktId);
 		return $this->db->get('kertas_kerja_temuan')->row();
 	}
-	
+
 	public function getAllTindakLanjut($rekomendasiId) {
 		$this->db->where('rekomendasi_id', $rekomendasiId);
 		$this->db->order_by('tindak_lanjut_id', 'asc');
