@@ -62,15 +62,19 @@ class Mtindaklanjut extends CI_Model {
 	}
 	
 	public function countBelumTLByRekIds($rekomendasiIds) {
-		$rekIds = implode(",", $rekomendasiIds);
-		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut
-				  WHERE approved_by IS NULL 
-				  AND rejected_by IS NULL 
-				  AND status_tl IS NULL 
-				  AND approval_status IS NULL
-				  AND rekomendasi_id IN (". $rekIds .")";
-		$result = $this->db->query($query)->row();
-		
-		return $result->rowCount;
+		if (count($rekomendasiIds) > 0) {
+			$rekIds = implode(",", $rekomendasiIds);
+			$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut
+					  WHERE approved_by IS NULL 
+					  AND rejected_by IS NULL 
+					  AND status_tl IS NULL 
+					  AND approval_status IS NULL
+					  AND rekomendasi_id IN (". $rekIds .")";
+			$result = $this->db->query($query)->row();
+			
+			return $result->rowCount;
+		} else {
+			return 0;
+		}
 	}
 }     
