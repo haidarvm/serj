@@ -72,7 +72,7 @@
 						  <tr>
 						    <td><?php echo $idx+1 ?></td>
 						    <td><?php echo $rowTl->tanggal_tl ?></td>
-						    <td><?php echo $rowTl->tindak_lanjut ?></td>
+						    <td><?php echo $rowTl->rekomendasi_id ?>><?php echo $rowTl->tindak_lanjut ?></td>
 						    <td>Rp<?php echo number_format($rowTl-> nilai, 0, ",", ".") ?></td>
 						    <td>-</td>
 						    <td>
@@ -89,7 +89,8 @@
 						    	Rp<?php echo number_format($rekomendasi->nilai_rekomendasi, 0, ",", ".") ?>
 						    </td>
 						    <td>
-						    	<select name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][status]">
+						    	<select name="tindakLanjut[<?php echo $rowTl->tindak_lanjut_id ?>][status_tl]">
+						    		<option value="-1">-- Status Tl --</option>
 						    		<option value="1" <?php echo $rowTl->status_tl == '1' ? "selected" : ''?>>sesuai rekomendasi</option>
 						    		<option value="0" <?php echo $rowTl->status_tl == '0' ? "selected" : '' ?>>tidak sesuai rekomendasi</option>
 						    	</select>

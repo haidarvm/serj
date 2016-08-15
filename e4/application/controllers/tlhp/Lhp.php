@@ -37,16 +37,20 @@ class Lhp extends MY_Controller {
 		$this->load->library('session');
 		$this->load->model('mtindaklanjut', 'rtl');
 		$posts = $this->input->post();
-//		var_dump($posts);
+		
 		$toBeInsert = array();
 		foreach ($posts['tindakLanjut'] as $idx => $rowTl) {
 			$updater = $this->session->userdata('user_id');
 			$tl = array(
 				'tindak_lanjut_id' => $idx,
 				'nilai_disetujui' => $rowTl['approvalValue'],
-				'status_tl' => $rowTl['status'],
 				'saldo_rekomendasi' => $rowTl['saldoRekomendasi']
 			);
+			
+			$status = (int) $rowTl['status_tl'];
+			if ($status > 0) {
+				$tl['status_tl'] = $status;
+			}
 			
 			if (isset($rowTl['approvalStatus'])) {
 				$tl['approval_status'] = 'approved';
@@ -58,7 +62,8 @@ class Lhp extends MY_Controller {
 			
 			array_push($toBeInsert, $tl);
 		}
-
+		
+//		var_dump($toBeInsert);
 		$this->rtl->updateAll($toBeInsert);
 		redirect('tlhp/lhp/edit?lhp_id='.$posts['lhp_id']);
 	}
