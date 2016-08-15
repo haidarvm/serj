@@ -7,7 +7,7 @@
  * email: atang.sutisna.87@gmail.com
  *
  */
-class MRekomendasi extends CI_Model {
+class Mrekomendasi extends CI_Model {
 	
 	function __construct() {
 		parent::__construct();

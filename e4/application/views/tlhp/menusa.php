@@ -55,7 +55,7 @@
 	                       <div class="row">
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
-	                                   <p class="t-card">BELUM SESUAI REKOMENDASI	</p>
+	                                   <p class="t-card">BELUM SESUAI REKOMENDASI</p>
                                        <span class="t-number">15</span>
 	                               </div>
 	                           </div>
@@ -70,7 +70,7 @@
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
 	                                   <p class="t-card">BELUM DITINDAKLANJUTI</p>
-                                       <span class="t-number">30</span>
+                                       <span class="t-number"><?php echo $totalBelumTl ?></span>
 	                               </div>
 	                           </div>
 	                       </div>

@@ -65,7 +65,7 @@ class Lhp extends MY_Controller {
 	
 	public function edit() {
 		$this->load->model('Mkertaskerjatemuan', 'mkkt');
-		$this->load->model('MRekomendasi', 'mrekomendasi');
+		$this->load->model('Mrekomendasi', 'mrekomendasi');
 		$this->load->model('Mtindaklanjut', 'mtl');
 		
 		$gets = $this->input->get();

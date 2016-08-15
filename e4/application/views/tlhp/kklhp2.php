@@ -11,29 +11,39 @@
 				</div>
 	            <div class="modal-body modal-form" role="form">
 	            	<div class="row">
-	            		<div class="col-lg-9">
+	            		<div class="col-md-offset-1 col-lg-10">
 	            			<div id="notify"></div>
 			                <form class="form-horizontal">
-			                	<label for="rekomendasi">Rekomendasi</label>
-			                	<textarea name="rekomendasi" class="form-control" 
+			                	<div class="form-group small-top-space">
+			                		<label for="rekomendasi">Rekomendasi</label>
+			                		<textarea name="rekomendasi" class="form-control" 
 			                	data-bind="value: dataTindakLanjut.uraianRekomendasi" disabled="disabled"></textarea>
+			                	</div>
 			                	
+			                	<div class="form-group small-top-space">
 		                		<label for="tindakLanjut">Tindak Lanjut</label>
 		    					<textarea name="tindakLanjut" class="form-control" 
 		    					data-bind="value: dataTindakLanjut.uraianTindakLanjut"></textarea>
-		    					
+		    					</div>
+
+		    					<div class="form-group small-top-space">
 		                		<label for="rekomendasi">Nilai</label>
 		    					<input type="text" class="form-control" data-bind="priceformat: true, 
 		    					value: dataTindakLanjut.uiJumlahTl, originalNumber: dataTindakLanjut.jumlahTl"/>
-			                		
+			                	</div>
+
+			                	<div class="form-group small-top-space">
 		                		<label for="dokumen">Dokumen</label>
 		    					<input type="file"/>
-			                	
-		                		<label for="rekomendasi">Tanggal</label>
-		                		<div class="input-group">
+			                	</div>
+
+			                	<div class="form-group small-top-space">
+		                			<label for="rekomendasi">Tanggal</label>
+		                			<div class="input-group">
 									<span class="input-group-addon"><i aria-hidden="true" class="fa fa-calendar"></i></span> <input type="text" class="form-control border-input date-input-big datepicker"
 		    					data-bind="datepicker: true, selectedDate: dataTindakLanjut.tanggalTl, value: dataTindakLanjut.tanggalTl"
-		    					class="datepicker"/>				
+		    					class="datepicker"/>
+		    						</div>				
 								</div>
 
 		                		
@@ -362,8 +372,6 @@
 												<!-- matched total amount -->
 												<span data-bind="text: data.notmatchedTlRowCount"></span>
 											</td>
-											<td></td>
-											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
