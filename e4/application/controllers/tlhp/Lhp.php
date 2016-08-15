@@ -85,7 +85,7 @@ class Lhp extends MY_Controller {
 		$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
 		$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
 		$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
-		$data['totalBlmTl'] = 0;
+		$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
 		$data['totalTdkTl'] = 0;
 		$data['action'] = "update";
 //		var_dump($data);

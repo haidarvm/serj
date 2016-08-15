@@ -30,8 +30,8 @@ class Mtindaklanjut extends CI_Model {
 		if (count($rekomendasiIds) > 0) {
 			$statusTl = $statusTl ? 1 : 0;
 			$rekIds = implode(",", $rekomendasiIds);
-			$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE status_tl = ".$statusTl." AND  
-			rekomendasi_id IN (".$rekIds.")";
+			$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE status_tl = ".$statusTl." AND approved_by IS NOT NULL  
+			AND rekomendasi_id IN (".$rekIds.")";
 			
 			$result = $this->db->query($query)->row();
 			
@@ -49,11 +49,25 @@ class Mtindaklanjut extends CI_Model {
 		return $result->rowCount;
 	}
 	
+	/**
+	 * atang: ane belum paham method ini
+	 * Enter description here ...
+	 */
 	public function countBelumTL() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}rekomendasi rek
 				  LEFT JOIN {PRE}tindak_lanjut tl ON rek.rekomendasi_id = tl.rekomendasi_id
 				  WHERE tl.rekomendasi_id is NULL ";
 		$result = $this->db->query($query)->row();
+		return $result->rowCount;
+	}
+	
+	public function countBelumTLByRekIds($rekomendasiIds) {
+		$rekIds = implode(",", $rekomendasiIds);
+		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut
+				  WHERE approved_by AND rejected_by IS NULL AND status_tl IS NULL 
+				  AND rekomendasi_id IN (". $rekIds .")";
+		$result = $this->db->query($query)->row();
+		
 		return $result->rowCount;
 	}
 }     
