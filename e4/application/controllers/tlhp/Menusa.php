@@ -12,7 +12,9 @@ class Menusa extends MY_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('muser');
+		$this->load->model('mlhp');
 		$this->muser = new MUser();
+		$this->mlhp = new MLhp();
 	}
 
 	/**
