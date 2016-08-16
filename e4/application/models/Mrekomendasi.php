@@ -43,7 +43,7 @@ class Mrekomendasi extends CI_Model {
 		return $result->countRow;
 	}
 	
-	public function totalKerugianNegara() {
+	public function sumKerugianNegara() {
 		$sql = "SELECT SUM(nilai_rekomendasi) as total_kerugian FROM {PRE}rekomendasi";
 		$query  = $this->db->query($sql);
 		return checkRow($query);

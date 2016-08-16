@@ -31,10 +31,10 @@ class Menusa extends MY_Controller {
 		$data['current_year'] = date('Y');
 		$data['totalTemuan'] = $this->mkertaskerjatemuan->countByYear(date('Y'));
 		$data['totalRekomendasi'] = $this->mrekomendasi->countByYear(date('Y'));
-		$data['totalSelesaiTl'] = $this->mtindaklanjut->totalSelesaiTl();
-		$data['totalBelumTl'] = $this->mtindaklanjut->totalBelumTL();
-		$data['totalBelumSesuaiRekomendasi'] = $this->mtindaklanjut->totalBelumSesuaiRekomendasi();
-		$data['totalKerugianNegara'] = $this->mrekomendasi->totalKerugianNegara();
+		$data['totalSelesaiTl'] = $this->mtindaklanjut->countSelesaiTl();
+		$data['totalBelumTl'] = $this->mtindaklanjut->countBelumTL();
+		$data['totalBelumSesuaiRekomendasi'] = $this->mtindaklanjut->countBelumSesuaiRekomendasi();
+		$data['totalKerugianNegara'] = $this->mrekomendasi->sumKerugianNegara();
 		$this->load->tlhp_template('tlhp/menusa', $data);
 // 		$data['totalTidakTl'] = $this->mtindaklanjut->totalBelumSesuaiRekomendasi();
 	}
@@ -44,10 +44,10 @@ class Menusa extends MY_Controller {
 		$data['current_year'] = date('Y');
 		$data['totalTemuan'] = $this->mkertaskerjatemuan->countByYear(date('Y'));
 		$data['totalRekomendasi'] = $this->mrekomendasi->countByYear(date('Y'));
-		$data['totalSelesaiTl'] = $this->mtindaklanjut->totalSelesaiTl();
-		$data['totalBelumTl'] = $this->mtindaklanjut->totalBelumTL();
-		$data['totalBelumSesuaiRekomendasi'] = $this->mtindaklanjut->totalBelumSesuaiRekomendasi();
-		$data['totalKerugianNegara'] = $this->mrekomendasi->totalKerugianNegara();
+		$data['totalSelesaiTl'] = $this->mtindaklanjut->countSelesaiTl();
+		$data['totalBelumTl'] = $this->mtindaklanjut->countBelumTL();
+		$data['totalBelumSesuaiRekomendasi'] = $this->mtindaklanjut->countBelumSesuaiRekomendasi();
+		$data['totalKerugianNegara'] = $this->mrekomendasi->sumKerugianNegara();
 		$this->load->view('tlhp/menusa_print',$data);
 	}
 	

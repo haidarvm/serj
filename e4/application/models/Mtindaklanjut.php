@@ -42,21 +42,21 @@ class Mtindaklanjut extends CI_Model {
 		
 	}
 	
-	public function totalSelesaiTl() {
+	public function countSelesaiTl() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE 
 					status_tl IS NOT NULL AND (approved_by OR rejected_by) IS NOT NULL";
 		$result = $this->db->query($query)->row();
 		return $result->rowCount;
 	}
 	
-	public function totalBelumSesuaiRekomendasi() {
+	public function countBelumSesuaiRekomendasi() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE
 					status_tl = 0 AND (approved_by OR rejected_by) IS NOT NULL";
 		$result = $this->db->query($query)->row();
 		return $result->rowCount;
 	}
 	
-	public function totalBelumTL() {
+	public function countBelumTL() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}rekomendasi rek
 				  LEFT JOIN {PRE}tindak_lanjut tl ON rek.rekomendasi_id = tl.rekomendasi_id
 				  WHERE tl.rekomendasi_id is NULL ";
@@ -79,5 +79,9 @@ class Mtindaklanjut extends CI_Model {
 		} else {
 			return 0;
 		}
+	}
+	
+	public function countAndSumHasNotYetTl(){
+		
 	}
 }     
