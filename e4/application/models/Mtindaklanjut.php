@@ -42,9 +42,9 @@ class Mtindaklanjut extends CI_Model {
 		
 	}
 	
-	public function countFinishTl() {
+	public function totalSelesaiTl() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE 
-		status_tl IS NOT NULL AND (approved_by OR rejected_by) IS NOT NULL";
+					status_tl IS NOT NULL AND (approved_by OR rejected_by) IS NOT NULL";
 		$result = $this->db->query($query)->row();
 		return $result->rowCount;
 	}
@@ -53,7 +53,14 @@ class Mtindaklanjut extends CI_Model {
 	 * atang: ane belum paham method ini
 	 * Enter description here ...
 	 */
-	public function countBelumTL() {
+	public function totalBelumSesuaiRekomendasi() {
+		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE
+					status_tl = 0 AND (approved_by OR rejected_by) IS NOT NULL";
+		$result = $this->db->query($query)->row();
+		return $result->rowCount;
+	}
+	
+	public function totalBelumTL() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}rekomendasi rek
 				  LEFT JOIN {PRE}tindak_lanjut tl ON rek.rekomendasi_id = tl.rekomendasi_id
 				  WHERE tl.rekomendasi_id is NULL ";

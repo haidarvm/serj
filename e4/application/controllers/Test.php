@@ -48,10 +48,7 @@ class Test extends MY_Controller {
 		exit();
 	}
 	
-	public function menusa_print() {
-		$data['pageTitle'] = "Rekapitulasi hasil pengawasan inspektorat";
-		$this->load->view('tlhp/menusa_print',$data);
-	}
+	
 
 	public function menusa() {
 		$data['pageTitle'] = 'Report Dashboard TLHP ' . get_current_app();

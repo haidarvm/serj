@@ -1,4 +1,4 @@
-define(["jquery", "canvasjs", "bootstrap"], function($, window){
+define(["jquery", "canvasjs", "bootstrap", "price_format"], function($, window){
     $(function(){
     	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
     			{
@@ -30,9 +30,13 @@ define(["jquery", "canvasjs", "bootstrap"], function($, window){
     				]
     			});
     	tindak_lanjut.render();
-    });
     
-    $(function(){
+    $('.rupiah').priceFormat({
+		prefix : 'Rp ',
+		thousandsSeparator : ',',
+		centsLimit : 0
+	});
+    
     	var kerugian = new CanvasJS.Chart("kerugian",
     			{
 //    				title:{

@@ -41,40 +41,40 @@
 						<th colspan='2' align="center">KERUGIAN KEUANGAN NEGARA</th>
 					</tr>
 					<tr>
-						<td>TOTAL TEMUAN SEJAK TAHUN 2013</td>
-						<td>50</td>
-						<td>TOTAL TEMUAN SEJAK TAHUN 2013</td>
-						<td>50</td>
+						<td>TOTAL TEMUAN SEJAK TAHUN <?php echo $current_year ?></td>
+						<td><?php echo $totalTemuan ?></td>
+						<td></td>
+						<td></td>
 					</tr>
 					<tr>
-						<td>TOTAL REKOMENDASI SEJAK TAHUN 2013</td>
+						<td>TOTAL REKOMENDASI SEJAK TAHUN <?php echo $current_year ?></td>
 						<td>70</td>
-						<td>TOTAL REKOMENDASI SEJAK TAHUN 2013</td>
-						<td>70</td>
+						<td>KERUGIAN NEGARA SEJAK TAHUN <?php echo $current_year ?></td>
+						<td><span class="rupiah"><?php echo $totalKerugianNegara->total_kerugian ?></span></td>
 					</tr>
 					<tr>
 						<td>SELESAI DITINDAKLANJUTI</td>
-						<td>50</td>
-						<td>SELESAI DITINDAKLANJUTI</td>
-						<td>50</td>
+						<td><?php echo $totalSelesaiTl?></td>
+						<td>TELAH DISETOR KE KAS NEGARA	</td>
+						<td><span class="rupiah"><?php echo $totalKerugianNegara->total_kerugian ?></span></td>
 					</tr>
 					<tr>
 						<td>BELUM SESUAI REKOMENDASI</td>
 						<td>15</td>
-						<td>BELUM SESUAI REKOMENDASI</td>
-						<td>15</td>
+						<td>BELUM DISETOR KE KAS NEGARA</td>
+						<td><span class="rupiah"><?php echo $totalKerugianNegara->total_kerugian ?></span></td>
 					</tr>
 					<tr>
 						<td>BELUM DITINDAKLANJUTI</td>
-						<td>30</td>
-						<td>BELUM DITINDAKLANJUTI</td>
-						<td>30</td>
+						<td><span class="rupiah"><?php echo $totalBelumTl ?></td>
+						<td></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>TIDAK DAPAT DITINDAKLANJUTI</td>
 						<td>2</td>
-						<td>TIDAK DAPAT DITINDAKLANJUTI</td>
-						<td>2</td>
+						<td></td>
+						<td></td>
 					</tr>
 				</table>
 
@@ -117,6 +117,7 @@
 	</div>
 	<script src="<?php echo base_url()?>assets/js/jquery-3.1.0.min.js"></script>
 	<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.price_format.2.0.min.js"></script>
 	<script src="<?php echo base_url()?>assets/js/canvasjs.min.js"></script>
 	<script>
 
@@ -142,6 +143,12 @@
 	} */
 	
 $(function(){
+	  $('.rupiah').priceFormat({
+			prefix : 'Rp ',
+			thousandsSeparator : ',',
+			centsLimit : 0
+		});
+	    
 	var tindak_lanjut = new CanvasJS.Chart("tindak_lanjut",
 			{
 //				title:{
@@ -163,9 +170,9 @@ $(function(){
 					showInLegend: true,
 					toolTipContent: "{y} - <strong>#percent%</strong>",
 					dataPoints: [
-						{  y: 38, legendText:"belum tl", indexLabel: "BELUM TL : 38" },
-						{  y: 45, legendText:"selesai tl", indexLabel: "SELESAI TL : 45" },
-						{  y: 17, legendText:"belum sesuai",exploded: true, indexLabel: "BELUM SESUAI : 17" },
+						{  y: 38, legendText:"belum tl", indexLabel: "BELUM TL : <?php echo $totalBelumTl ?>" },
+						{  y: 45, legendText:"selesai tl", indexLabel: "SELESAI TL : <?php echo $totalSelesaiTl?>" },
+						{  y: 17, legendText:"belum sesuai",exploded: true, indexLabel: "BELUM SESUAI : <?php echo $totalBelumSesuaiRekomendasi?>" },
 						{  y: 1, legendText:"tidak dapat tl" , indexLabel: "TIDAK DAPAT TL : 1"},
 					]
 				}

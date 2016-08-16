@@ -39,7 +39,7 @@
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
 	                                   <p class="t-card">SELESAI DITINDAKLANJUTI</p>
-                                       <span class="t-number">40</span>
+                                       <span class="t-number"><?php echo $totalSelesaiTl?></span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -56,7 +56,7 @@
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
 	                                   <p class="t-card">BELUM SESUAI REKOMENDASI</p>
-                                       <span class="t-number">15</span>
+                                       <span class="t-number"><?php echo $totalBelumSesuaiRekomendasi?></span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -103,7 +103,7 @@
 	                           <div class="col-xs-12">
 	                               <div class="numbers">
 	                                   <p class="t-card">KERUGIAN NEGARA SEJAK TAHUN <?php echo $current_year ?></p>
-                                       <span class="t-number">RP 8.000.000</span>
+                                       <span class="t-number rupiah"><?php echo $totalKerugianNegara->total_kerugian ?></span>
 	                               </div>
 	                           </div>
 	                       </div>
@@ -150,7 +150,7 @@
 	                                   <div class="col-xs-9">
 	                                   <div class="numbers">
 	                                   <p>CETAK DOKUMEN</p>
-                                          <a href="<?=site_url()?>test/menusa_print" class="btn btn-danger btn-fill btn-wd"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
+                                          <a href="<?=site_url()?>tlhp/menusa/cetak" class="btn btn-danger btn-fill btn-wd"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
 	                                   </div>
 	                                   </div>
 	                                </div>
@@ -228,13 +228,9 @@
 					<h4 class="title">
 						<b>TINDAK LANJUT HASIL PENGAWASAN</b>
 					</h4>
-<!-- 					<p class="category">Pie Chart</p> -->
 				</div>
 				<div class="content">
 					<div id="tindak_lanjut" style="height: 300px; width: 100%;"></div>
-					<!--  <canvas id="pieTindakLanjut" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
-
-
 				</div>
 			</div>
 		</div>
@@ -244,12 +240,9 @@
 					<h4 class="title">
 						<b>KERUGIAN KEUANGAN NEGARA</b>
 					</h4>
-<!-- 					<p class="category">Pie Chart</p> -->
 				</div>
 				<div class="content">
 					<div id="kerugian" style="height: 300px; width: 100%;"></div>
-					<!--  <canvas id="pieKerugian" class="full-width" width="300" height="200" style="width: 300px; height: 200px;"></canvas>-->
-
 				</div>
 			</div>
 		</div>
@@ -261,6 +254,7 @@
         "shim": {
             "bootstrap": {"deps": ["jquery"]},
     		"notify": {"deps": ["jquery"]},
+    		"price_format": {"deps": ["jquery"]},
     		"canvasjs" : {"deps": ["jquery"]}
 //     		"papertlhp" : {"deps": ["jquery","bootstrap"]},
 //    		"demo" : {"deps": ["jquery","bootstrap","paper-dashboard"]},
@@ -271,6 +265,8 @@
             "notify": site_url+"assets/js/notify.min",
             "bootstrap": site_url + "assets/js/bootstrap.min",
             "canvasjs": site_url + "assets/js/jquery.canvasjs.min",
+            "price_format": site_url + "assets/js/jquery.price_format.2.0.min",
+            
 //            "demo": site_url + "assets/js/demo",
 //             "papertlhp": site_url + "assets/js/paper-dashboard"
         }
