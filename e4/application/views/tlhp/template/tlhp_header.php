@@ -62,6 +62,8 @@ var site_url = "<?=base_url()?>";
 					<a href="<?=site_url();?>dashboard/"><img src="<?=base_url();?>assets/img/logo-e4.png"></a>
 				</div>
 				<div class="clr"></div>
+				
+				<?php if($_SESSION['user_level_id'] == 1) {?>
 				<ul class="nav">
 					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa"> <i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard</p>
@@ -88,6 +90,37 @@ var site_url = "<?=base_url()?>";
 							<p title="Logout">Logout</p>
 					</a></li>
 				</ul>
+				<?php } elseif($_SESSION['user_level_id'] == 2) {?>
+				<ul class="nav">
+					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa"> <i class="ti-dashboard"></i>
+							<p title="Dashboard">Dashboard</p>
+					</a></li>
+					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp"> <i class="ti-new-window"></i>
+							<p title="Update LHP">Monitoring TL</p>
+					</a></li>
+					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template"> <i class="ti-agenda"></i>
+							<p title="Template Laporan">Cetak Laporan</p>
+					</a></li>
+					<li <?=$this->uri->segment(2)  == 'kodefikasi' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/kodefikasi"> <i class="ti-menu-alt"></i>
+							<p title="Kodefikasi">Kodefikasi</p>
+					</a></li>
+					<li><a href="<?=site_url();?>auth/logout"> <i class="ti-power-off"></i>
+							<p title="Logout">Logout</p>
+					</a></li>
+				</ul>
+				<?php } elseif ($_SESSION['user_level_id'] ==3) {?>
+				<ul class="nav">
+					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa"> <i class="ti-dashboard"></i>
+							<p title="Dashboard">Dashboard</p>
+					</a></li>
+					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp"> <i class="ti-new-window"></i>
+							<p title="Update LHP">Tindak Lanjut</p>
+					</a></li>
+					<li><a href="<?=site_url();?>auth/logout"> <i class="ti-power-off"></i>
+							<p title="Logout">Logout</p>
+					</a></li>
+				</ul>
+				<?php } ?>
 			</div>
 		</div>
 		<div class="main-panel">
