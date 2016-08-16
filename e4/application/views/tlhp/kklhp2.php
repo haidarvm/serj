@@ -282,8 +282,14 @@
 												<!-- total tindak lanjut -->
 												<span data-bind="text: data.firstNotMatchedTlRowCount">nilai</span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- nilai yang belum ditindak lanjuti -->
+												<span data-bind="text: uiFirstNotYetActionTlTotalAmount">jumlah</span>
+											</td>
+											<td>
+												<!-- total yang belum ditindak lanjuti -->
+												<span data-bind="text: data.firstNotYetActionTlRowCount">nilai</span>
+											</td>
 											<td></td>
 										</tr>
 										<!-- rekomendasi -->
@@ -372,8 +378,14 @@
 												<!-- matched total amount -->
 												<span data-bind="text: data.notmatchedTlRowCount"></span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<!-- total amount belum ditindak lnjuti-->
+												<span data-bind="text: uiNotYetActionTlTotalAmount"></span>
+											</td>
+											<td>
+												<!-- total qty belum ditindak lnjuti-->
+												<span data-bind="text: data.notYetActionTlRowCount"></span>
+											</td>
 											<td></td>
 										</tr>
 										<!-- /ko -->

@@ -81,7 +81,16 @@ class Mtindaklanjut extends CI_Model {
 		}
 	}
 	
-	public function countAndSumHasNotYetTl(){
+	public function countAndSumHasNotYetTl($rekomendasiIds){
+		$rekIds = implode(",", $rekomendasiIds);
+		$query = "SELECT rekomendasi_id, COUNT(*) AS rowCount, SUM(nilai) AS totalAmount 
+		FROM {PRE}tindak_lanjut 
+		WHERE approved_by IS NULL 
+		AND rejected_by IS NULL 
+		AND status_tl IS NULL 
+		AND approval_status IS NULL
+		AND rekomendasi_id IN (".$rekIds.") GROUP BY rekomendasi_id";
 		
+		return $this->db->query($query)->result();
 	}
 }     

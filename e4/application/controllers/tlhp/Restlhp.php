@@ -282,9 +282,13 @@ class Restlhp extends REST_Controller {
 				}
 				$this->load->model('Mtindaklanjut', 'rtl');
 				$this->rtl = new MTindaklanjut();
+				$matchedTtl = array();
+				$notmatchedTtl = array();
+				$notYetAction = array();
 				if (count($rtlIds) > 0) {
 					$matchedTtl = $this->rtl->countAndSumStatusTl($rtlIds, true);
 					$notmatchedTtl = $this->rtl->countAndSumStatusTl($rtlIds, false);
+					$notYetAction = $this->rtl->countAndSumHasNotYetTl($rtlIds);
 				}
 				
 				foreach ($kkt as $kktRow){
@@ -297,6 +301,11 @@ class Restlhp extends REST_Controller {
 						);
 						
 						$rekRow->notmatchedtl = array(
+							'rowCount' => 0,
+							'totalAmount' => 0
+						);
+						
+						$rekRow->notYetActionTl = array(
 							'rowCount' => 0,
 							'totalAmount' => 0
 						);
@@ -320,6 +329,17 @@ class Restlhp extends REST_Controller {
 										'totalAmount' => $value->totalAmount
 									);
 								} 
+							}
+						}
+						
+						if (count($notYetAction) > 0) {
+							foreach ($notYetAction as $value) {
+								if ($rekRow->rekomendasi_id == $value->rekomendasi_id) {
+									$rekRow->notYetActionTl = array(
+										'rowCount' => $value->rowCount,
+										'totalAmount' => $value->totalAmount
+									);
+								}
 							}
 						}
 						

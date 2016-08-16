@@ -31,7 +31,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			matchedTlTotalAmount: ko.observable(),
 			
 			notmatchedTlRowCount: ko.observable(),
-			notmatchedTlTotalAmount: ko.observable()
+			notmatchedTlTotalAmount: ko.observable(),
+			
+			notYetActionTlRowCount: ko.observable(),
+			notYetActionTlTotalAmount: ko.observable()
 		}
 		
 		selfR.data.kerugianNegaraCbk.subscribe(function(newVal){
@@ -49,7 +52,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				oriUraianRekomendasi, uraianRekomendasi, kerugianNegara, nilaiRekomendasi, 
 				unitKerja, namaPpk, namaPj, 
 				uraianTindakLanjut, tanggalTl, nilaiTl, totalTindakLanjut, 
-				matchedTl, notmatchedTl) {
+				matchedTl, notmatchedTl, notYetActionTl) {
 			selfR.data.rekomendasiId(rekomendasiId);
 			selfR.data.kertasKerjaId(kertasKerjaId);
 			selfR.data.kodeRekomendasiId(kodeRekomendasiId);
@@ -77,6 +80,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 //			console.debug(selfR.data.namaPj());
 			selfR.uiKodeRekomendasi(kodeRekomendasi+": "+oriUraianRekomendasi);
 			selfR.uiNilaiRekomendasi(accounting.formatMoney(nilaiRekomendasi, "Rp", 0, ".", ","));
+			
+			selfR.data.notYetActionTlRowCount(notYetActionTl.rowCount);
+			selfR.data.notYetActionTlTotalAmount(notYetActionTl.totalAmount);
 		}
 		
 		selfR.nilaiKerugianNegaraEnable = ko.observable(false);
@@ -119,6 +125,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfR.uiNotMatchedTlTotalAmount = ko.computed(function() {
 			return accounting.formatMoney(selfR.data.notmatchedTlTotalAmount(), "Rp", 0, ".", ",");
+		});
+		
+		selfR.uiNotYetActionTlTotalAmount = ko.computed(function() {
+			return accounting.formatMoney(selfR.data.notYetActionTlTotalAmount(), "Rp", 0, ".", ",");
 		});
 	}
 	
@@ -178,7 +188,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			firstMatchedTlTotalAmount: ko.observable(),
 			
 			firstNotMatchedTlRowCount: ko.observable(),
-			firstNotMatchedTlTotalAmount: ko.observable()
+			firstNotMatchedTlTotalAmount: ko.observable(),
+			
+			firstNotYetActionTlRowCount: ko.observable(),
+			firstNotYetActionTlTotalAmount: ko.observable(),
 		}
 		
 		selfK.data.firstKerugianNegaraCbk.subscribe(function(newVal){
@@ -207,7 +220,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				firstKodeRekomendasiId, firstKodeRekomendasi, firstOriUraianRekomendasi, firstUraianRekomendasi, 
 				firstKerugianNegara, firstNilaiRekomendasi, firstUnitKerja, firstNamaPpk, firstNamaPj, 
 				uraianTindakLanjut, tanggalTl, nilaiTl, totalTindakLanjut, 
-				firstMatchedTl, firstNotMatchedTl) {
+				firstMatchedTl, firstNotMatchedTl, firstNotYetActionTl) {
 			selfK.data.kertasKerjaId(kertasKerjaId);
 			selfK.data.lhpId(lhpId);
 			selfK.data.jenisTemuan(jenisTemuan);
@@ -249,6 +262,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 //			
 			selfK.data.firstNotMatchedTlRowCount(firstNotMatchedTl.rowCount);
 			selfK.data.firstNotMatchedTlTotalAmount(firstNotMatchedTl.totalAmount);
+			
+			console.info('firstnotyet action');
+			console.debug(firstNotYetActionTl);
+			selfK.data.firstNotYetActionTlRowCount(firstNotYetActionTl.rowCount);
+			selfK.data.firstNotYetActionTlRowCount(firstNotYetActionTl.totalAmount);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();
@@ -298,6 +316,10 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfK.uiFirstNotMatchedTlTotalAmount = ko.computed(function() {
 			return accounting.formatMoney(selfK.data.firstNotMatchedTlTotalAmount(), "Rp", 0, ".", ",");
+		});
+		
+		selfK.uiFirstNotYetActionTlTotalAmount = ko.computed(function() {
+			return accounting.formatMoney(selfK.data.firstNotYetActionTlTotalAmount(), "Rp", 0, ".", ",");
 		});
 	}
 	
@@ -614,7 +636,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 											a.rekomendasi[0].tindak_lanjut != undefined ? a.rekomendasi[0].tindak_lanjut.nilai : null, 
 											a.rekomendasi[0].total_tindak_lanjut != undefined ? a.rekomendasi[0].total_tindak_lanjut : 0, 
 											a.rekomendasi[0].matchedtl != undefined ? a.rekomendasi[0].matchedtl : null, 
-											a.rekomendasi[0].notmatchedtl);
+											a.rekomendasi[0].notmatchedtl, 
+											a.rekomendasi[0].notYetActionTl);
 								} else {
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
@@ -656,7 +679,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 												a.rekomendasi[i].tindak_lanjut != undefined ? a.rekomendasi[i].tindak_lanjut.nilai : null, 
 												a.rekomendasi[i].total_tindak_lanjut != undefined ? a.rekomendasi[i].total_tindak_lanjut : 0,
 												a.rekomendasi[i].matchedtl != undefined ? a.rekomendasi[i].matchedtl : null,
-												a.rekomendasi[i].notmatchedtl);
+												a.rekomendasi[i].notmatchedtl, 
+												a.rekomendasi[i].notYetActionTl);
 										newKkt.data.rekomendasi.push(rekView);
 									}
 								}
