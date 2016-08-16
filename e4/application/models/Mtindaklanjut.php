@@ -49,10 +49,6 @@ class Mtindaklanjut extends CI_Model {
 		return $result->rowCount;
 	}
 	
-	/**
-	 * atang: ane belum paham method ini
-	 * Enter description here ...
-	 */
 	public function totalBelumSesuaiRekomendasi() {
 		$query = "SELECT COUNT(*) AS rowCount FROM {PRE}tindak_lanjut WHERE
 					status_tl = 0 AND (approved_by OR rejected_by) IS NOT NULL";
