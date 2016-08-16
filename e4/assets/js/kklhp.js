@@ -469,10 +469,24 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 						itemKkt.uraian_sebab !== undefined &&
 						itemKkt.nilai_temuan !== undefined) {
 						kktList.push(itemKkt);
-//						console.debug(itemKkt.rekomendasi.length);
 						if (itemKkt.rekomendasi.length == 0) {
 							errorList.push('Rekomendasi untuk temuan '+ kdTemuan.data.kodeTemuan() +' baris '+ kktRow + ' belum lengkap');
 						}
+						
+						_.each(itemKkt.rekomendasi, function(itemRek){
+//							kode_rekomendasi_id: item.data.kodeRekomendasiId(),
+//							uraian_rekomendasi: item.data.uraianRekomendasi(),
+//							kerugian_negara: item.data.kerugianNegara(),
+//							nilai_rekomendasi: item.data.nilaiRekomendasi(),
+//							nama_ppk: item.data.namaPpk(),
+//							nama_pj: item.data.namaPj(),
+							if (itemRek.kode_rekomendasi_id == undefined || itemRek.kode_rekomendasi_id == null &&
+								itemRek.uraian_rekomendasi == undefined || itemRek.uraian_rekomendasi == null &&
+								itemRek.nama_ppk == undefined || itemRek.nama_ppk == null &&
+								itemRek.nama_pj == undefined || itemRek.nama_pj == null) {
+								errorList.push('Data rekomendasi '+ kdTemuan.data.kodeTemuan() +' baris '+ kktRow + ' belum lengkap');
+							}
+						});
 					}
 					
 					kktRow += parseInt(1);
