@@ -54,7 +54,7 @@ class Lhp extends MY_Controller {
 			);
 			
 			$status = (int) $rowTl['status_tl'];
-			if ($status > 0) {
+			if ($status >= 0) {
 				$tl['status_tl'] = $status;
 			}
 			
