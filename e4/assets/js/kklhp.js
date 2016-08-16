@@ -67,11 +67,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfR.data.jumlahTl(nilaiTl);
 			selfR.data.totalTindakLanjut(totalTindakLanjut);
 			
-//			selfR.data.matchedTlRowCount(matchedTl.rowCount);
-//			selfR.data.matchedTlTotalAmount(matchedTl.totalAmount);
+			selfR.data.matchedTlRowCount(matchedTl.rowCount);
+			selfR.data.matchedTlTotalAmount(matchedTl.totalAmount);
 //			
-//			selfR.data.notmatchedTlRowCount(notmatchedTl.rowCount);
-//			selfR.data.notmatchedTlTotalAmount(notmatchedTl.totalAmount);
+			selfR.data.notmatchedTlRowCount(notmatchedTl.rowCount);
+			selfR.data.notmatchedTlTotalAmount(notmatchedTl.totalAmount);
 //			console.debug(selfR.data.unitKerja());
 //			console.debug(selfR.data.namaPpk());
 //			console.debug(selfR.data.namaPj());
@@ -244,11 +244,11 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfK.data.firstJumlahTl(nilaiTl);
 			selfK.data.firstTotalTindakLanjut(totalTindakLanjut);
 			
-//			selfK.data.firstMatchedTlRowCount(firstMatchedTl.rowCount);
-//			selfK.data.firstMatchedTlTotalAmount(firstMatchedTl.totalAmount);
+			selfK.data.firstMatchedTlRowCount(firstMatchedTl.rowCount);
+			selfK.data.firstMatchedTlTotalAmount(firstMatchedTl.totalAmount);
 //			
-//			selfK.data.firstNotMatchedTlRowCount(firstNotMatchedTl.rowCount);
-//			selfK.data.firstNotMatchedTlTotalAmount(firstNotMatchedTl.totalAmount);
+			selfK.data.firstNotMatchedTlRowCount(firstNotMatchedTl.rowCount);
+			selfK.data.firstNotMatchedTlTotalAmount(firstNotMatchedTl.totalAmount);
 		}
 		
 		selfK.uiKodeTemuan = ko.observable();

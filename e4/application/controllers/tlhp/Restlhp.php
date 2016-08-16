@@ -280,7 +280,7 @@ class Restlhp extends REST_Controller {
 				foreach ($rekomendasi as $rek) {
 					array_push($rtlIds, $rek->rekomendasi_id);
 				}
-				$this->load->model('mtindaklanjut', 'rtl');
+				$this->load->model('Mtindaklanjut', 'rtl');
 				$this->rtl = new MTindaklanjut();
 				if (count($rtlIds) > 0) {
 					$matchedTtl = $this->rtl->countAndSumStatusTl($rtlIds, true);
