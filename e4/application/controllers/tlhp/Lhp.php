@@ -14,8 +14,14 @@ class Lhp extends MY_Controller {
 		parent::__construct();
 		$this->load->model('muser');
 		$this->load->model('mlhp');
+		$this->load->model('Mkertaskerjatemuan', 'mkkt');
+		$this->load->model('Mrekomendasi', 'mrekomendasi');
+		$this->load->model('Mtindaklanjut', 'mtl');
 		$this->muser = new MUser();
 		$this->mlhp = new MLhp();
+		$this->mtl = new Mtindaklanjut();
+		$this->mrekomendasi = new Mrekomendasi();
+		$this->mkkt = new Mkertaskerjatemuan();
 	}
 	
 	public function historytl($rekomendasiId) {
@@ -69,9 +75,7 @@ class Lhp extends MY_Controller {
 	}
 	
 	public function edit() {
-		$this->load->model('Mkertaskerjatemuan', 'mkkt');
-		$this->load->model('Mrekomendasi', 'mrekomendasi');
-		$this->load->model('Mtindaklanjut', 'mtl');
+		$data['pageTitle'] = 'KKLHP' . get_current_app();
 		
 		$gets = $this->input->get();
 		$rekomendasiIds = array();
@@ -533,7 +537,7 @@ class Lhp extends MY_Controller {
 						$namaPj = $rekomendasi->nama_pj;
 						$objPHPExcel->getActiveSheet ()->setCellValue ( 'N' . $indexColRekomendasi, $namaPj );
 	
-						if (is_object ( $rekomendasi->tindak_lanjut )) {
+						if (is_object ( !empty($rekomendasi->tindak_lanjut) )) {
 							$uraian_tindak_lanjut = $rekomendasi->tindak_lanjut->tindak_lanjut;
 							$objPHPExcel->getActiveSheet ()->setCellValue ( 'P' . $indexColRekomendasi, $uraian_tindak_lanjut );
 								
@@ -703,7 +707,7 @@ class Lhp extends MY_Controller {
 				
 			$objWriter = PHPExcel_IOFactory::createWriter ( $objPHPExcel, 'Excel5' );
 			header('Content-Type: application/vnd.ms-excel');
-			header('Content-Disposition: attachment;filename="myFile.xls"');
+			header('Content-Disposition: attachment;filename="KKLHP.xls"');
 			header('Cache-Control: max-age=0');
 			$objWriter->save ('php://output');
 //			$saving = $root . '/assets/data/lhp.xls';
