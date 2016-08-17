@@ -9,26 +9,6 @@ if (! defined('BASEPATH'))
  */
 
 class Lhp extends MY_Controller {
-//	private $user_group = array(
-//		 1 => 'Super Admin',
-//		 2 => 'Admin',
-//		 3 => 'User'
-//	);
-//	
-//	private $user_services = array(
-//		array(
-//		'user_group_id' => 1,
-//		'services' => array('view', 'insert', 'update', 'delete')
-//		),
-//		array(
-//		'user_group_id' => 2,
-//		'services' => array('view')
-//		),
-//		array(
-//		'user_group_id' => 3,
-//		'services' => array('view', 'edit')
-//		),
-//	);
 	
 	public function __construct() {
 		parent::__construct();
@@ -66,16 +46,6 @@ class Lhp extends MY_Controller {
 	}
 	
 	public function edit() {
-//		$user_group_id = $_SESSION['user_level_id'];
-//		echo $user_group_id;
-//		$idx = array_search($user_group_id, 
-//			array_column($this->user_services, "user_group_id"));
-//		if (!$idx) {
-//			echo "You not allowed to access this page";
-//		}
-//		$services = $this->user_services[$idx]['services'];
-//		var_dump($services);
-		
 		try {
 			$data['pageTitle'] = 'KKLHP' . get_current_app();
 		
@@ -750,6 +720,32 @@ class Lhp extends MY_Controller {
 			$this->load->tlhp_template('tlhp/kklhp/view', $data);
 		} catch (Exception $e) {
 			echo "LHP with id ".$gets['lhp_id'].' not found';			
+		}
+	}
+	
+	public function add() {
+		$get = $this->input->get();
+		$lhp = $this->mlhp->getLHP($get['lhp_id']);
+		
+		$allowedGroupId = 1;
+		$currGroupId = $_SESSION['user_level_id'];
+		
+		try {
+			check_permission($allowedGroupId, $currGroupId);
+			check_not_null($lhp);
+			
+			$data['lhp'] = $lhp; 
+			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+			$data['action'] = "add";
+			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
+			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
+			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
+			// $data['getAll'] = $this->muser->getAllUser();
+			$this->load->tlhp_template('tlhp/kklhp2', $data);
+		} catch (AccessDeniedException $e) {
+			$this->access_denied();				
+		} catch (Exception $e) {
+			show_404();
 		}
 	}
 	

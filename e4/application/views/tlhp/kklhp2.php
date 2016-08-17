@@ -215,11 +215,11 @@
 													</textarea>
 												</div>
 												<div class="col-md-1 nopadding">
-													<?php if ($action == 'update') : ?>
+												  <!-- 
 													<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}" title="Tambah Tindak Lanjut">
 														<i aria-hidden="true" class="fa fa-plus">TL</i>
 													</a>
-													<?php endif; ?>
+													-->
 												</div>
 											</td>
 											<td>
@@ -314,11 +314,11 @@
 													<textarea class="form-control border-input" data-bind="value: data.uraianRekomendasi">
 													</textarea>
 												</div>
-												<?php if ($action == 'update') : ?>
+												<!--  
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
 													<i aria-hidden="true" class="fa fa-plus">TL</i>
 												</a>
-												<?php endif; ?>
+												-->
 											</td>
 											<td>
 												<!-- kerugian negara -->

@@ -45,6 +45,10 @@ class Kklhpbaru extends MY_Controller {
 		
 	}
 
+	/**
+	 * @deprecated
+	 * Enter description here ...
+	 */
 	public function insert() {
 		// entry Jumlah Temuan A
 		// print_r($_POST); exit();

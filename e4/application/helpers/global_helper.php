@@ -688,3 +688,15 @@ function multi_do_upload($files, $path) {
 
 }
 
+function check_permission($allowed_group, $loggedin_group) {
+	if ($allowed_group != $loggedin_group) {
+		throw new AccessDeniedException("Access Denied");
+	}
+}
+
+function check_not_null($subject) {
+	if ($subject == null || is_bool($subject)) {
+		throw new Exception("LHP not found");
+	}
+}
+
