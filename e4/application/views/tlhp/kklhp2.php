@@ -217,7 +217,7 @@
 												<div class="col-md-1 nopadding">
 													<?php if ($action == 'update') : ?>
 													<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjutFirstLine}" title="Tambah Tindak Lanjut">
-														<i aria-hidden="true" class="fa fa-plus"></i>
+														<i aria-hidden="true" class="fa fa-plus">TL</i>
 													</a>
 													<?php endif; ?>
 												</div>
@@ -316,7 +316,7 @@
 												</div>
 												<?php if ($action == 'update') : ?>
 												<a href="#" class="add-case" data-toggle="modal" data-bind="event: {click: $root.addTindakLanjut}">
-													<i aria-hidden="true" class="fa fa-plus"></i>
+													<i aria-hidden="true" class="fa fa-plus">TL</i>
 												</a>
 												<?php endif; ?>
 											</td>

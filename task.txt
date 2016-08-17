@@ -1,4 +1,5 @@
 Atang
+- select2 di kodefikasi ga jalan
 - error validasi blun .. klo nama ppk & Pj ga di isi
 - setelah add tindak lanjut baiknya lgsg ke simpan tidak perlu di save (halaman updatelhp)
 - bug double on tindak lanjut in history tl error
