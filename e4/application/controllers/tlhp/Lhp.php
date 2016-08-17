@@ -741,7 +741,7 @@ class Lhp extends MY_Controller {
 			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
 			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
 			// $data['getAll'] = $this->muser->getAllUser();
-			$this->load->tlhp_template('tlhp/kklhp2', $data);
+			$this->load->tlhp_template('tlhp/kklhp/add', $data);
 		} catch (AccessDeniedException $e) {
 			$this->access_denied();				
 		} catch (Exception $e) {
