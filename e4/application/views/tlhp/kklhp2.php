@@ -466,7 +466,6 @@
 		"shim": {
 			"tlhp" : {"deps": ["jquery"]},
             "bootstrap" : {deps: ["jquery"]},
-            "select2" : {deps: ["jquery"]},
             //masih suka bermasalah
 //            "papertlhp" : {"deps": ["jquery","bootstrap"]},
             "select2" : {deps: ["jquery"]},
