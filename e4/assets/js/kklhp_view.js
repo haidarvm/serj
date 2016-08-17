@@ -371,6 +371,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		self.jenisTemuan = ko.observableArray([]);
 		
 		self.init = function() {
+			self.loadUnitKerja();
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
@@ -524,6 +525,27 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			
 			return accounting.formatMoney(totalNilaiTemuan, "Rp", 0, ".", ",");
 		});
+		
+		self.unitKerja = ko.observableArray([]);
+		self.loadUnitKerja = function() {
+			$.ajax({
+				type: 'GET',
+				contentType: 'application/json',
+				url: site_url + "tlhp/restlhp/unitkerja",
+				beforeSend: function(){
+					console.info('attempting to contact server to get data unitkerja');
+				},
+				success: function(data) {
+					var unitKerja = data.data;
+					_.each(unitKerja, function(item){
+						self.unitKerja.push(item);
+					});
+				},
+				error: function(xhr, msg) {
+					alert("Internal Server Error..");
+				}
+			});
+		}
 		
 	} // end mainViewModel
 	

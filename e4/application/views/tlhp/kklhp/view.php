@@ -3,10 +3,40 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-7">
 				<div class="card">
-					<div class="header">
-						<h4 class="title">MATRIKS PEMANTAUAN TINDAK LANJUT</h4>
-						<p class="category">Hasil <?php echo isset($lhp->judul_lhp) ? ucfirst($lhp->judul_lhp) : "undefined"; ?></p>
-						<p class="category">Pada <?php echo isset($lhp->objek_pengawasan) ? ucfirst($lhp->objek_pengawasan) : "undefined"; ?></p>
+					<div class="header text-center">
+						<h5 class="title">
+							MATRIKS PEMANTAUAN TINDAK LANJUT <br/>
+							Hasil <?php echo isset($lhp->judul_lhp) ? ucfirst($lhp->judul_lhp) : "undefined"; ?> <br/>
+							Pada <?php echo isset($lhp->objek_pengawasan) ? ucfirst($lhp->objek_pengawasan) : "undefined"; ?>
+						</h5>
+					</div><br/><br/>
+					<div class="content">
+						<h5>Filter Data</h5>
+						<form class="form-inline">
+							<div class="form-group">
+						    	<label for="kerugianNegara">Kerugian Negara</label>
+						    	<select>
+						    		<option value="yes">Ya</option>
+						    		<option value="no">Tidak</option>
+						    		<option value="all">All</option>
+						    	</select>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="unitKerja">Unit Kerja</label>
+						    	<select data-bind="options: unitKerja, optionsText: 'unit_kerja'">
+						    	</select>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="statusTl">Status</label>
+						    	<select>
+						    		<option value="sesuai">Sesuai</option>
+						    		<option value="belum_sesuai">Belum Sesuai</option>
+						    		<option value="belum_tl">Belum Tindak Lanjut</option>
+						    		<option value="tidak_tl">Tidak Dapat Tindak Lanjut</option>
+						    		<option value="all">All</option>
+						    	</select>
+						  	</div>
+						</form>
 					</div>
 					<!-- these are very importan, be carefull dont rename them -->
 					<input type="hidden" id="lhp_id" value="<?php echo isset($lhp->lhp_id) ? $lhp->lhp_id : null; ?>"/>
