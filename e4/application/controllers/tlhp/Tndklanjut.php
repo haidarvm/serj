@@ -46,36 +46,50 @@ class Tndklanjut extends MY_Controller {
 			array_push($toBeInsert, $tl);
 		}
 		
-//		var_dump($toBeInsert);
 		$this->mtl->updateAll($toBeInsert);
 		redirect('tlhp/lhp/edit?lhp_id='.$posts['lhp_id']);
 	}
 	
 	public function view($rekomendasiId) {
 		try {
-			$rekomendasi = $this->mlhp->getRekomendasi($rekomendasiId);
-			if ($rekomendasi == null) {
-				throw new Exception("Undefined rekomendasi id");
-			}
-			
-			$tindakLanjut = $this->mlhp->getAllTindakLanjut($rekomendasi->rekomendasi_id); 
-			$kertasKerjaTemuan = $this->mlhp->getKertasKerjaTemuan($rekomendasi->kertas_kerja_id);
-			$lhp = $this->mlhp->getLHP($kertasKerjaTemuan->lhp_id);
-			if ($lhp == null) {
-				throw new Exception("Undefined lhp id");
-			}
-			
-			$data = array(
-				'title' => "DATA TEMUAN",
-				'rekomendasi' => $rekomendasi,
-				'tindakLanjut' => $tindakLanjut,
-				'kertasKerjaTemuan' => $kertasKerjaTemuan,
-				'lhp' => $lhp,
-			);
+			$data = $this->get_data($rekomendasiId);
 			$this->load->tlhp_template('tlhp/tndklanjut/view', $data);	
 		} catch (Exception $e) {
 			show_404();
 		}
+	}
+	
+	public function edit($rekomendasiId) {
+		try {
+			$data = $this->get_data($rekomendasiId);
+			$this->load->tlhp_template('tlhp/tndklanjut/edit', $data);	
+		} catch (Exception $e) {
+			show_404();
+		}
+	}
+	
+	private function get_data($rekomendasiId) {
+		$rekomendasi = $this->mlhp->getRekomendasi($rekomendasiId);
+		if ($rekomendasi == null) {
+			throw new Exception("Undefined rekomendasi id");
+		}
+		
+		$tindakLanjut = $this->mlhp->getAllTindakLanjut($rekomendasi->rekomendasi_id); 
+		$kertasKerjaTemuan = $this->mlhp->getKertasKerjaTemuan($rekomendasi->kertas_kerja_id);
+		$lhp = $this->mlhp->getLHP($kertasKerjaTemuan->lhp_id);
+		if ($lhp == null) {
+			throw new Exception("Undefined lhp id");
+		}
+		
+		$data = array(
+			'title' => "DATA TEMUAN",
+			'rekomendasi' => $rekomendasi,
+			'tindakLanjut' => $tindakLanjut,
+			'kertasKerjaTemuan' => $kertasKerjaTemuan,
+			'lhp' => $lhp,
+		);
+		
+		return $data;
 	}
 		
 }

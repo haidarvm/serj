@@ -310,7 +310,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		self.firstViewHistoryTl = function(data) {
 			var rekId = data.data.firstRekomendasiId();
-			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
+			window.location = site_url+"/tlhp/tndklanjut/view/"+rekId;
 		}
 		
 		selfK.uiFirstMatchedTlTotalAmount = ko.computed(function() {
