@@ -75,12 +75,20 @@ class Template extends MY_Controller {
 		$this->load->tlhp_template('tlhp/daftarlap', $data);
 	}
 
+	/**
+	 * Add New Laporan
+	 */
 	public function laporan() {
 		$data['title'] = "Tambah Template";
 		$data['action'] = "add";
+		$data['kata_pengantar'] = $this->kata_pengantar();
 		$this->load->tlhp_template('tlhp/template_laporan', $data);
 	}
 
+	/**
+	 * edit laporan
+	 * @param unknown $template_laporan_id
+	 */
 	public function update_laporan($template_laporan_id) {
 		$data['title'] = "UPDATE Template";
 		$data['action'] = "update";
@@ -101,6 +109,7 @@ class Template extends MY_Controller {
 			}
 			redirect('tlhp/template/daftarlap');
 		} else {
+			$data['kata_pengantar'] = $this->kata_pengantar();
 			$data['template'] = $this->mtemplate->getTemplate($template_laporan_id);
 			$data['templateFiles'] = $this->mtemplate->getMediaList($template_laporan_id);
 			$this->load->tlhp_template('tlhp/template_laporan', $data);
@@ -176,5 +185,10 @@ class Template extends MY_Controller {
 			redirect('tlhp/template/daftarlap');
 		}
 		// $this->load->tlhp_template('tlhp/template_laporan');
+	}
+	
+	public function kata_pengantar() {
+		$template = '<p style="text-align: left; "><b>KATA PENGANTAR</b></p><p style="text-align: left; "><b>DAFTAR ISI</b></p><p style="text-align: left;"><b>RINGKASAN UNTUK PIMPINAN</b></p><p style="text-align: left;"><b>BAB I INFORMASI UMUM</b></p><p style="text-align: left;">A. Dasar Hukum</p><p style="text-align: left;">B. Struktur Organisasi</p><p style="text-align: left;">C. Tujuan Penyusunan Ikhtisar Pelaporan</p><p style="text-align: left;">D. Program Pengawasan dan Realisasinya</p><p style="text-align: left;"><b>BAB II HASIL PENGAWASAN</b></p><p style="text-align: left;">A. Audit</p><p style="text-align: left;">1. Audit Kinerja</p><p style="text-align: left;">2. Audit Dengan Tujuan Tertentu</p><p style="text-align: left;">B. Reviu</p><p style="text-align: left;">C. Evaluasi</p><p style="text-align: left;">D. Pemantauan</p><p style="text-align: left;">E. Kegiatan Pengawasan Lainnya</p><p style="text-align: left;"><b>BAB III HASIL PEMANTAUAN TINDAK LANJUT</b></p><p style="text-align: left;">A. Pemantauan Tindak Lanjut Hasil Pemeriksaan BPK-RI</p><p style="text-align: left;">B. Pemantauan Tindak Lanjut Hasil Pengawasan APIP</p><p style="text-align: left;"><b>BAB IV HASIL PENANGANAN PENGADUAN MASYARAKAT</b></p><p style="text-align: left;"><b>BAB V SIMPULAN, HAMBATAN DAN REKOMENDASI</b></p><p style="text-align: left;">A. Simpulan</p><p style="text-align: left;">B. Hambatan</p><p style="text-align: left;">C. Rekomendasi</p><p style="text-align: left;"><b>LAMPIRAN-LAMPIRAN</b></p>';
+		return $template;
 	}
 }

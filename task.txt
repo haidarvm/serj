@@ -10,7 +10,7 @@ Atang
 
 
 Haidar
-- perhitungan dashboard (belum tindak lanjut)
+- perhitungan dashboard (belum tindak lanjut) , kerugian negara blun di setor
 - template laporan mengikuti permenpan pdf
 - change post to get from update lhp
 - upload template rename file to ID done
