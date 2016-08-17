@@ -99,7 +99,7 @@
 												<center>
 													<b>KATA PENGANTAR</b>
 												</center>
-												<textarea name="kata_pengantar" id="summernote"><?php echo !empty($template) ? $template->kata_pengantar : "" ?></textarea>
+												<textarea name="kata_pengantar" id="summernote"><?php echo !empty($template) ? $template->kata_pengantar : $kata_pengantar ?></textarea>
 											</fieldset>
 										</div>
 									</div>
