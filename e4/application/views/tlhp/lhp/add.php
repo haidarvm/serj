@@ -5,7 +5,7 @@
 				<div class="card">
 					<div class="content">
 						<!-- start form -->
-						<?php $this->load->view('tlhp/form_lhp') ?>
+						<?php $this->load->view('tlhp/lhp/form_lhp') ?>
 						<!-- end form -->
 					</div>
 				</div>

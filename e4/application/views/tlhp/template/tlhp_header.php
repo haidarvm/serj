@@ -71,7 +71,7 @@ var site_url = "<?=base_url()?>";
 					<li <?=$this->uri->segment(2)  == 'manus' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/manus"> <i class="ti-user"></i>
 							<p title="Management User">Management User</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/addlhp"> <i class="ti-pencil-alt"></i>
+					<li <?=$this->uri->segment(2)  == 'addlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/lhp/add"> <i class="ti-pencil-alt"></i>
 							<p title="Buat LHP Baru">Buat LHP Baru</p>
 					</a></li>
 					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp"> <i class="ti-new-window"></i>

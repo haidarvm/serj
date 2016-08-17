@@ -594,7 +594,7 @@ class Kkt extends MY_Controller {
 						$namaPj = $rekomendasi->nama_pj;
 						$objPHPExcel->getActiveSheet ()->setCellValue ( 'N' . $indexColBRekomendasi, $namaPj );
 	
-						if (is_object ( $rekomendasi->tindak_lanjut )) {
+						if (isset($rekomendasi->tindak_lanjut ) && is_object ( $rekomendasi->tindak_lanjut )) {
 							$uraian_tindak_lanjut = $rekomendasi->tindak_lanjut->uraian_tindak_lanjut;
 							$objPHPExcel->getActiveSheet ()->setCellValue ( 'P' . $indexColBRekomendasi, $uraian_tindak_lanjut );
 	

@@ -129,7 +129,7 @@ define(["jquery", "knockout", "moment", "bootstrap", "datetimepicker", "notify"]
 				success: function(data) {
 					console.info(data.message);
 					if (reqAction == 'insert') {
-						window.location = site_url+ "tlhp/kklhpbaru/add/" + data.newLhp.lhpId;
+						window.location = site_url+ "tlhp/kkt/add?lhp_id=" + data.newLhp.lhpId;
 					} else if (reqAction == 'update') {
 						$.notify("Data sudah diubah", "success");
 					}
