@@ -42,7 +42,7 @@ define(["jquery", "knockout", "notify"], function($, ko){
 			if (selectedLhp == undefined) {
 				alert("Lhp tidak boleh kosong");
 			} else {
-				window.location = site_url+"tlhp/lhp/edit?lhp_id="+selectedLhp.lhp_id;
+				window.location = site_url+"tlhp/kkt/edit?lhp_id="+selectedLhp.lhp_id;
 			}
 		}
 		
