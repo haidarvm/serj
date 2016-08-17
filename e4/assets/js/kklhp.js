@@ -61,8 +61,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				selfR.data.kerugianNegaraCbk(true);
 			}
 			selfR.data.nilaiRekomendasi(nilaiRekomendasi);
-			console.debug('initData rekomendasi');
 			selfR.data.unitKerja(unitKerja);
+			selfR.uiUnitKerja(unitKerja.unit_kerja);
 			selfR.data.namaPpk(namaPpk);
 			selfR.data.namaPj(namaPj);
 			selfR.data.uraianTindakLanjut(uraianTindakLanjut);
@@ -130,6 +130,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfR.uiNotYetActionTlTotalAmount = ko.computed(function() {
 			return accounting.formatMoney(selfR.data.notYetActionTlTotalAmount(), "Rp", 0, ".", ",");
 		});
+		
+		selfR.uiUnitKerja = ko.observable();
 	}
 	
 	function KertasKerjaTemuanViewModel(urutan, isFirstRow) {
@@ -249,6 +251,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			selfK.uiNilaiTemuan(accounting.formatMoney(nilaiTemuan, "Rp", 0, ".", ","));
 			
 			selfK.data.firstUnitKerja(firstUnitKerja);
+			selfK.uiFirstUnitKerja(firstUnitKerja.unit_kerja);
 			selfK.data.firstNamaPpk(firstNamaPpk);
 			selfK.data.firstNamaPj(firstNamaPj);
 			selfK.data.firstUraianTindakLanjut(uraianTindakLanjut);
@@ -321,6 +324,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		selfK.uiFirstNotYetActionTlTotalAmount = ko.computed(function() {
 			return accounting.formatMoney(selfK.data.firstNotYetActionTlTotalAmount(), "Rp", 0, ".", ",");
 		});
+		
+		selfK.uiFirstUnitKerja = ko.observable();
 	}
 	
 	function JenisTemuanViewModel(kodeTemuan, jenisTemuan) {
@@ -431,8 +436,8 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 						var firstUraianTl = kertasKerjaTemuan.data.firstUraianTindakLanjut();
 						var firstJumlahTl = kertasKerjaTemuan.data.firstJumlahTl();
 						var isFirstNewTl = kertasKerjaTemuan.data.isFirstNewTl();
-						console.debug(firstUraianTl);
-						console.debug(firstJumlahTl);
+//						console.debug(firstUraianTl);
+//						console.debug(firstJumlahTl);
 						if ((firstUraianTl != undefined || firstUraianTl != null) &&
 								(firstJumlahTl != undefined || firstJumlahTl != null) && isFirstNewTl == true) {
 							firstRekomendasi.tindak_lanjut = {

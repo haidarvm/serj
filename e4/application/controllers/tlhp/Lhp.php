@@ -9,6 +9,26 @@ if (! defined('BASEPATH'))
  */
 
 class Lhp extends MY_Controller {
+//	private $user_group = array(
+//		 1 => 'Super Admin',
+//		 2 => 'Admin',
+//		 3 => 'User'
+//	);
+//	
+//	private $user_services = array(
+//		array(
+//		'user_group_id' => 1,
+//		'services' => array('view', 'insert', 'update', 'delete')
+//		),
+//		array(
+//		'user_group_id' => 2,
+//		'services' => array('view')
+//		),
+//		array(
+//		'user_group_id' => 3,
+//		'services' => array('view', 'edit')
+//		),
+//	);
 	
 	public function __construct() {
 		parent::__construct();
@@ -22,6 +42,8 @@ class Lhp extends MY_Controller {
 		$this->mtl = new Mtindaklanjut();
 		$this->mrekomendasi = new Mrekomendasi();
 		$this->mkkt = new Mkertaskerjatemuan();
+		
+		$this->load->library('session');
 	}
 	
 	public function historytl($rekomendasiId) {
@@ -75,6 +97,16 @@ class Lhp extends MY_Controller {
 	}
 	
 	public function edit() {
+//		$user_group_id = $_SESSION['user_level_id'];
+//		echo $user_group_id;
+//		$idx = array_search($user_group_id, 
+//			array_column($this->user_services, "user_group_id"));
+//		if (!$idx) {
+//			echo "You not allowed to access this page";
+//		}
+//		$services = $this->user_services[$idx]['services'];
+//		var_dump($services);
+		
 		$data['pageTitle'] = 'KKLHP' . get_current_app();
 		
 		$gets = $this->input->get();
@@ -715,6 +747,32 @@ class Lhp extends MY_Controller {
 		}
 	}
 	
-	
+	public function view() {
+		$gets = $this->input->get();
+		try {
+			$lhp = $this->mlhp->getbyid($gets['lhp_id']);
+			if (!isset($lhp)) {
+				throw new Exception("Undefined LHP");
+			}
+			$data['pageTitle'] = 'KKLHP' . get_current_app();
+			
+			$rekomendasiIds = array();
+			$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
+			foreach ($rekomendasi as $rowRek) {
+				array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+			}
+					
+			$data['lhp'] = $this->mlhp->getbyid($gets['lhp_id']);
+			$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
+			$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
+			$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
+			$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
+			$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
+			$data['totalTdkTl'] = 0;
+			$this->load->tlhp_template('tlhp/kklhp/view', $data);
+		} catch (Exception $e) {
+			echo "LHP with id ".$gets['lhp_id'].' not found';			
+		}
+	}
 	
 }
