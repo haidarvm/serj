@@ -115,7 +115,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfR.viewHistoryTl = function(data) {
 			var rekId = data.data.rekomendasiId();
-			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
+			window.location = site_url+"/tlhp/lhp/historytl/"+rekId+"?act=view";
 		}
 		
 		selfR.uiMatchedTlTotalAmount = ko.computed(function() {
@@ -309,7 +309,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		self.firstViewHistoryTl = function(data) {
 			var rekId = data.data.firstRekomendasiId();
-			window.location = site_url+"/tlhp/lhp/historytl/"+rekId;
+			window.location = site_url+"/tlhp/lhp/historytl/"+rekId+"?act=view";
 		}
 		
 		selfK.uiFirstMatchedTlTotalAmount = ko.computed(function() {

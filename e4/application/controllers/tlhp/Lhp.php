@@ -47,18 +47,33 @@ class Lhp extends MY_Controller {
 	}
 	
 	public function historytl($rekomendasiId) {
-		$rekomendasi = $this->mlhp->getRekomendasi($rekomendasiId);
-		$tindakLanjut = $this->mlhp->getAllTindakLanjut($rekomendasi->rekomendasi_id); 
-		$kertasKerjaTemuan = $this->mlhp->getKertasKerjaTemuan($rekomendasi->kertas_kerja_id);
-		$lhp = $this->mlhp->getLHP($kertasKerjaTemuan->lhp_id);
-		$data = array(
-			'title' => "DATA TEMUAN",
-			'rekomendasi' => $rekomendasi,
-			'tindakLanjut' => $tindakLanjut,
-			'kertasKerjaTemuan' => $kertasKerjaTemuan,
-			'lhp' => $lhp
-		);
-		$this->load->tlhp_template('tlhp/historytl', $data);
+		try {
+			$rekomendasi = $this->mlhp->getRekomendasi($rekomendasiId);
+			if ($rekomendasi == null) {
+				throw new Exception("Undefined rekomendasi id");
+			}
+			
+			$tindakLanjut = $this->mlhp->getAllTindakLanjut($rekomendasi->rekomendasi_id); 
+			$kertasKerjaTemuan = $this->mlhp->getKertasKerjaTemuan($rekomendasi->kertas_kerja_id);
+			$lhp = $this->mlhp->getLHP($kertasKerjaTemuan->lhp_id);
+			if ($lhp == null) {
+				throw new Exception("Undefined lhp id");
+			}
+			
+			$data = array(
+				'title' => "DATA TEMUAN",
+				'rekomendasi' => $rekomendasi,
+				'tindakLanjut' => $tindakLanjut,
+				'kertasKerjaTemuan' => $kertasKerjaTemuan,
+				'lhp' => $lhp,
+				'action' => $act 
+			);
+			$this->load->tlhp_template('tlhp/historytl', $data);	
+		} catch (Exception $e) {
+			show_404();
+		}
+		
+		
 	}
 	
 	public function savetl() {
