@@ -654,6 +654,11 @@ button.ngurang {
 tbody td {
 	padding: 3px 8px !important;
 }
+.top-pad {
+	padding-top: 4px !important;
+}
+.bg-grey label { 
+}
 
 .bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::after,
 	.bootstrap-datetimepicker-widget.dropdown-menu.usetwentyfour::before,
@@ -901,6 +906,11 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
 	text-align: center;
 	border: 1px solid #eee;
 	font-family: "Muli-Bold";
+	font-weight: normal;
+}
+.historytl td {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
 }
 
 .last-one-img {
