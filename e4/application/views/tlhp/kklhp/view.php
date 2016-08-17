@@ -301,11 +301,8 @@
 							</div>
 
 							<div class="col-md-5 t-ce ter top-space">
-								<button type="submit" class="btn btn-wd btn-danger btn-fill btn-margin"
-								id="btnSave" 
-								data-bind="event: {click: doInsert}">
-									<span class="btn-label"> <i class="ti-save"></i>
-									</span> SAVE
+								<button type="submit" class="btn btn-wd btn-danger btn-fill btn-margin">
+									KELUAR
 								</button>
 							</div>
 							<div class="col-md-12 top-space">&nbsp;</div>
@@ -349,5 +346,5 @@
 //         	"papertlhp": site_url + "assets/js/paper-dashboard"
 		}
 	});
-	requirejs(["jspath/kklhp", "jspath/datebindinghandler"]);
+	requirejs(["jspath/kklhp_view"]);
 </script> 
