@@ -8,7 +8,7 @@ if (! defined('BASEPATH'))
  * email : atang.sutisna.87@gmail.com
  */
 
-class Lhp extends MY_Controller {
+class Kkt extends MY_Controller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -697,11 +697,11 @@ class Lhp extends MY_Controller {
 	
 	public function view() {
 		$gets = $this->input->get();
+		
 		try {
 			$lhp = $this->mlhp->getbyid($gets['lhp_id']);
-			if (!isset($lhp)) {
-				throw new Exception("Undefined LHP");
-			}
+			check_not_null($lhp);
+			
 			$data['pageTitle'] = 'KKLHP' . get_current_app();
 			
 			$rekomendasiIds = array();
@@ -719,7 +719,7 @@ class Lhp extends MY_Controller {
 			$data['totalTdkTl'] = 0;
 			$this->load->tlhp_template('tlhp/kklhp/view', $data);
 		} catch (Exception $e) {
-			echo "LHP with id ".$gets['lhp_id'].' not found';			
+			show_404();			
 		}
 	}
 	

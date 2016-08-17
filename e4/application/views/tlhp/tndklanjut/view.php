@@ -98,7 +98,7 @@
 						</table>
 						<div class="pull-right">
 							<button class="btn" onclick="alert('Sorry, this fiture undercontruction'); return false;">Cetak</button>
-							<a class="btn" href="<?php echo base_url().'tlhp/lhp/view?lhp_id='.$lhp->lhp_id ?>">
+							<a class="btn" href="<?php echo base_url().'tlhp/kkt/view?lhp_id='.$lhp->lhp_id ?>">
 								Kembali
 							</a>
 						</div>

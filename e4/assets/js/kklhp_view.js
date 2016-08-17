@@ -381,7 +381,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		self.doExportToExcel = function() {
 			console.debug('doExportToExcel');
 			var lhp_id = $('#lhp_id').val();
-			window.open(site_url+"tlhp/lhp/downloadxls?lhp_id="+lhp_id, "_blank");
+			window.open(site_url+"tlhp/kkt/downloadxls?lhp_id="+lhp_id, "_blank");
 		} // end do Export To Excel
 		
 		self.loadLhp = function() {

@@ -102,7 +102,7 @@
 							<button class="btn" onclick="alert('Sorry, this fiture undercontruction'); return false;">Cetak</button>
 							<button class="btn">Simpan History Tl</button>
 						</div>
-							<a class="btn" href="<?php echo base_url().'tlhp/lhp/edit?lhp_id='.$lhp->lhp_id ?>">
+							<a class="btn" href="<?php echo base_url().'tlhp/kkt/edit?lhp_id='.$lhp->lhp_id ?>">
 								Kembali ke KKLHP
 							</a>
 						</form>
