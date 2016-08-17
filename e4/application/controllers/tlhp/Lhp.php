@@ -9,6 +9,26 @@ if (! defined('BASEPATH'))
  */
 
 class Lhp extends MY_Controller {
+//	private $user_group = array(
+//		 1 => 'Super Admin',
+//		 2 => 'Admin',
+//		 3 => 'User'
+//	);
+//	
+//	private $user_services = array(
+//		array(
+//		'user_group_id' => 1,
+//		'services' => array('view', 'insert', 'update', 'delete')
+//		),
+//		array(
+//		'user_group_id' => 2,
+//		'services' => array('view')
+//		),
+//		array(
+//		'user_group_id' => 3,
+//		'services' => array('view', 'edit')
+//		),
+//	);
 	
 	public function __construct() {
 		parent::__construct();
@@ -22,78 +42,68 @@ class Lhp extends MY_Controller {
 		$this->mtl = new Mtindaklanjut();
 		$this->mrekomendasi = new Mrekomendasi();
 		$this->mkkt = new Mkertaskerjatemuan();
-	}
-	
-	public function historytl($rekomendasiId) {
-		$rekomendasi = $this->mlhp->getRekomendasi($rekomendasiId);
-		$tindakLanjut = $this->mlhp->getAllTindakLanjut($rekomendasi->rekomendasi_id); 
-		$kertasKerjaTemuan = $this->mlhp->getKertasKerjaTemuan($rekomendasi->kertas_kerja_id);
-		$lhp = $this->mlhp->getLHP($kertasKerjaTemuan->lhp_id);
-		$data = array(
-			'title' => "DATA TEMUAN",
-			'rekomendasi' => $rekomendasi,
-			'tindakLanjut' => $tindakLanjut,
-			'kertasKerjaTemuan' => $kertasKerjaTemuan,
-			'lhp' => $lhp
-		);
-		$this->load->tlhp_template('tlhp/historytl', $data);
-	}
-	
-	public function savetl() {
+		
 		$this->load->library('session');
-		$this->load->model('mtindaklanjut', 'rtl');
-		$posts = $this->input->post();
-		
-		$toBeInsert = array();
-		foreach ($posts['tindakLanjut'] as $idx => $rowTl) {
-			$updater = $this->session->userdata('user_id');
-			$tl = array(
-				'tindak_lanjut_id' => $idx,
-				'nilai_disetujui' => $rowTl['approvalValue'],
-				'saldo_rekomendasi' => $rowTl['saldoRekomendasi']
-			);
-			
-			$status = (int) $rowTl['status_tl'];
-			if ($status >= 0) {
-				$tl['status_tl'] = $status;
-			}
-			
-			if (isset($rowTl['approvalStatus'])) {
-				$tl['approval_status'] = 'approved';
-				$tl['approved_by'] = $updater;
-			} else {
-				$tl['approval_status'] = 'rejected';
-				$tl['rejected_by'] = $updater;
-			}
-			
-			array_push($toBeInsert, $tl);
-		}
-		
-//		var_dump($toBeInsert);
-		$this->rtl->updateAll($toBeInsert);
-		redirect('tlhp/lhp/edit?lhp_id='.$posts['lhp_id']);
+	}
+	
+	/**
+	 * @deprecated
+	 * moved to Tndklanjut->view
+	 * Enter description here ...
+	 * @param unknown_type $rekomendasiId
+	 */
+	public function historytl($rekomendasiId) {
+		show_404();
+	}
+	
+	/**
+	 * @deprecated
+	 * moved to Tndklanjut->update 
+	 * Enter description here ...
+	 */
+	public function savetl() {
+		show_404();
 	}
 	
 	public function edit() {
-		$data['pageTitle'] = 'KKLHP' . get_current_app();
+//		$user_group_id = $_SESSION['user_level_id'];
+//		echo $user_group_id;
+//		$idx = array_search($user_group_id, 
+//			array_column($this->user_services, "user_group_id"));
+//		if (!$idx) {
+//			echo "You not allowed to access this page";
+//		}
+//		$services = $this->user_services[$idx]['services'];
+//		var_dump($services);
 		
-		$gets = $this->input->get();
-		$rekomendasiIds = array();
-		$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
-		foreach ($rekomendasi as $rowRek) {
-			array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+		try {
+			$data['pageTitle'] = 'KKLHP' . get_current_app();
+		
+			$gets = $this->input->get();
+			$rekomendasiIds = array();
+			$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
+			foreach ($rekomendasi as $rowRek) {
+				array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+			}
+			
+			$lhp = $this->mlhp->getbyid($gets['lhp_id']);
+			if ($lhp == null) {
+				throw new Exception("Undefined LHP id");
+			}
+			
+			$data['lhp'] = $lhp;
+			$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
+			$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
+			$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
+			$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
+			$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
+			$data['totalTdkTl'] = 0;
+			$data['action'] = "update";
+			$this->load->tlhp_template('tlhp/kklhp2', $data);			
+		} catch (Exception $e) {
+			show_404();
 		}
-				
-		$data['lhp'] = $this->mlhp->getbyid($gets['lhp_id']);
-		$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
-		$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
-		$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
-		$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
-		$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
-		$data['totalTdkTl'] = 0;
-		$data['action'] = "update";
-//		var_dump($data);
-		$this->load->tlhp_template('tlhp/kklhp2', $data);
+		
 	}
 	
 	
@@ -715,6 +725,32 @@ class Lhp extends MY_Controller {
 		}
 	}
 	
-	
+	public function view() {
+		$gets = $this->input->get();
+		try {
+			$lhp = $this->mlhp->getbyid($gets['lhp_id']);
+			if (!isset($lhp)) {
+				throw new Exception("Undefined LHP");
+			}
+			$data['pageTitle'] = 'KKLHP' . get_current_app();
+			
+			$rekomendasiIds = array();
+			$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
+			foreach ($rekomendasi as $rowRek) {
+				array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+			}
+					
+			$data['lhp'] = $this->mlhp->getbyid($gets['lhp_id']);
+			$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
+			$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
+			$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
+			$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
+			$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
+			$data['totalTdkTl'] = 0;
+			$this->load->tlhp_template('tlhp/kklhp/view', $data);
+		} catch (Exception $e) {
+			echo "LHP with id ".$gets['lhp_id'].' not found';			
+		}
+	}
 	
 }
