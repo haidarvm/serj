@@ -46,69 +46,23 @@ class Lhp extends MY_Controller {
 		$this->load->library('session');
 	}
 	
+	/**
+	 * @deprecated
+	 * moved to Tndklanjut->view
+	 * Enter description here ...
+	 * @param unknown_type $rekomendasiId
+	 */
 	public function historytl($rekomendasiId) {
-		try {
-			$rekomendasi = $this->mlhp->getRekomendasi($rekomendasiId);
-			if ($rekomendasi == null) {
-				throw new Exception("Undefined rekomendasi id");
-			}
-			
-			$tindakLanjut = $this->mlhp->getAllTindakLanjut($rekomendasi->rekomendasi_id); 
-			$kertasKerjaTemuan = $this->mlhp->getKertasKerjaTemuan($rekomendasi->kertas_kerja_id);
-			$lhp = $this->mlhp->getLHP($kertasKerjaTemuan->lhp_id);
-			if ($lhp == null) {
-				throw new Exception("Undefined lhp id");
-			}
-			
-			$data = array(
-				'title' => "DATA TEMUAN",
-				'rekomendasi' => $rekomendasi,
-				'tindakLanjut' => $tindakLanjut,
-				'kertasKerjaTemuan' => $kertasKerjaTemuan,
-				'lhp' => $lhp,
-				'action' => $act 
-			);
-			$this->load->tlhp_template('tlhp/historytl', $data);	
-		} catch (Exception $e) {
-			show_404();
-		}
-		
-		
+		show_404();
 	}
 	
+	/**
+	 * @deprecated
+	 * moved to Tndklanjut->update 
+	 * Enter description here ...
+	 */
 	public function savetl() {
-		$this->load->library('session');
-		$this->load->model('mtindaklanjut', 'rtl');
-		$posts = $this->input->post();
-		
-		$toBeInsert = array();
-		foreach ($posts['tindakLanjut'] as $idx => $rowTl) {
-			$updater = $this->session->userdata('user_id');
-			$tl = array(
-				'tindak_lanjut_id' => $idx,
-				'nilai_disetujui' => $rowTl['approvalValue'],
-				'saldo_rekomendasi' => $rowTl['saldoRekomendasi']
-			);
-			
-			$status = (int) $rowTl['status_tl'];
-			if ($status >= 0) {
-				$tl['status_tl'] = $status;
-			}
-			
-			if (isset($rowTl['approvalStatus'])) {
-				$tl['approval_status'] = 'approved';
-				$tl['approved_by'] = $updater;
-			} else {
-				$tl['approval_status'] = 'rejected';
-				$tl['rejected_by'] = $updater;
-			}
-			
-			array_push($toBeInsert, $tl);
-		}
-		
-//		var_dump($toBeInsert);
-		$this->rtl->updateAll($toBeInsert);
-		redirect('tlhp/lhp/edit?lhp_id='.$posts['lhp_id']);
+		show_404();
 	}
 	
 	public function edit() {
@@ -122,25 +76,34 @@ class Lhp extends MY_Controller {
 //		$services = $this->user_services[$idx]['services'];
 //		var_dump($services);
 		
-		$data['pageTitle'] = 'KKLHP' . get_current_app();
+		try {
+			$data['pageTitle'] = 'KKLHP' . get_current_app();
 		
-		$gets = $this->input->get();
-		$rekomendasiIds = array();
-		$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
-		foreach ($rekomendasi as $rowRek) {
-			array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+			$gets = $this->input->get();
+			$rekomendasiIds = array();
+			$rekomendasi = $this->mrekomendasi->findAllRekomendasi($gets['lhp_id']);
+			foreach ($rekomendasi as $rowRek) {
+				array_push($rekomendasiIds, $rowRek->rekomendasi_id);
+			}
+			
+			$lhp = $this->mlhp->getbyid($gets['lhp_id']);
+			if ($lhp == null) {
+				throw new Exception("Undefined LHP id");
+			}
+			
+			$data['lhp'] = $lhp;
+			$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
+			$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
+			$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
+			$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
+			$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
+			$data['totalTdkTl'] = 0;
+			$data['action'] = "update";
+			$this->load->tlhp_template('tlhp/kklhp2', $data);			
+		} catch (Exception $e) {
+			show_404();
 		}
-				
-		$data['lhp'] = $this->mlhp->getbyid($gets['lhp_id']);
-		$data['totalTemuan'] = $this->mkkt->countByLhpId($gets['lhp_id']);
-		$data['totalRekomendasi'] = $this->mrekomendasi->countRekomendasiByLhpId($gets['lhp_id']);
-		$data['totalSesuaiRek'] = $this->mtl->count($rekomendasiIds, true);
-		$data['totalBlmSesuaiRek'] = $this->mtl->count($rekomendasiIds, false);
-		$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
-		$data['totalTdkTl'] = 0;
-		$data['action'] = "update";
-//		var_dump($data);
-		$this->load->tlhp_template('tlhp/kklhp2', $data);
+		
 	}
 	
 	
