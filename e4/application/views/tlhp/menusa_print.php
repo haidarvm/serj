@@ -66,7 +66,7 @@
 					</tr>
 					<tr>
 						<td>BELUM DITINDAKLANJUTI</td>
-						<td><span class="rupiah"><?php echo $totalBelumTl ?></td>
+						<td><?php echo $totalBelumTl ?></td>
 						<td></td>
 						<td></td>
 					</tr>
