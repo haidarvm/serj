@@ -566,7 +566,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 				console.info('kklhp saved');
 //				alert('Data sudah disimpan');
 				$.notify("Data sudah disimpan", "success");
-//				window.location = site_url+ "tlhp/menusa";
+				window.location = site_url+ "tlhp/menusa";
 //				console.debug(window.location);
 			},
 			error: function(xhr, msg) {
