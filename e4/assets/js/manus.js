@@ -53,13 +53,13 @@ define(["jquery", "knockout", "bootstrap",
 				success: function(data) {
 					console.info('new user was added');
 					refreshManusTable();
-					if (actionType == "POST") {
-						self.resetData();
-//						$("#notify").notify("Data telah disimpan", "alert alert-info");
-						$('#userModal').modal('hide');
-					} else {
-						$('#userModal').modal('hide');
-					}
+					$('#userModal').modal('hide');
+//					if (actionType == "POST") {
+//						self.resetData();
+//						
+//					} else {
+//						$('#userModal').modal('hide');
+//					}
 				},
 				error: function(xhr, msg) {
 //					self.userNotif("Internal Server Error");
