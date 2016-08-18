@@ -47,7 +47,7 @@ class Tndklanjut extends MY_Controller {
 		}
 		
 		$this->mtl->updateAll($toBeInsert);
-		redirect('tlhp/lhp/edit?lhp_id='.$posts['lhp_id']);
+		redirect('tlhp/kkt/edit?lhp_id='.$posts['lhp_id']);
 	}
 	
 	public function view($rekomendasiId) {

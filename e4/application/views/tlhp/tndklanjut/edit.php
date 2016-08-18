@@ -51,7 +51,7 @@
 							</form>
 						<!-- end form -->
 						<h4>RIWAYAT TINDAK LANJUT</h4>
-						<form action="<?php echo base_url() ?>tlhp/lhp/savetl" method="post">
+						<form action="<?php echo base_url() ?>tlhp/tndklanjut/update" method="post">
 						<input type="hidden" name="lhp_id" value="<?php echo $lhp->lhp_id ?>">
 						<table class="table table-bordered">
 						  <tr>
@@ -100,7 +100,8 @@
 						</table>
 						<div class="pull-right">
 							<button class="btn" onclick="alert('Sorry, this fiture undercontruction'); return false;">Cetak</button>
-							<button class="btn" onclick="alert('Maaf, Anda tidak dapat edit ini'); return false;">Simpan History Tl</button>
+<!--							<button class="btn" onclick="alert('Maaf, Anda tidak dapat edit ini'); return false;">Simpan History Tl</button>-->
+							<button class="btn">Simpan History Tl</button>
 						</div>
 							<a class="btn" href="<?php echo base_url().'tlhp/kkt/edit?lhp_id='.$lhp->lhp_id ?>">
 								Kembali ke KKLHP
