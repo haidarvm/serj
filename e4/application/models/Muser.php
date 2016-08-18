@@ -36,6 +36,17 @@ class MUser extends CI_Model {
 // 		echo $this->db->last_query();
 		return $query;
 	}
+	
+	function getAllUserDtInactive($cond = NULL, $order_by = NULL) {
+		$cond = ! empty($cond) ? " AND 1=1  " . $cond : null;
+		$sql = "SELECT * FROM {PRE}user u
+    			left JOIN {PRE}user_level l ON l.user_level_id = u.user_level_id
+    			left JOIN {PRE}unit_kerja uk ON uk.unit_kerja_id = u.unit_kerja_id
+    			 WHERE active =0 " . $cond . " " . $order_by;
+		$query = $this->db->query($sql);
+		// 		echo $this->db->last_query();
+		return $query;
+	}
 
 	/**
 	 * Get User Profile
@@ -167,6 +178,13 @@ class MUser extends CI_Model {
 	function delete($id) {
 		// unset($data ['id']);
 		$data['active'] = 0;
+		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
+		//$this->db->delete('user', array('user_id' => $id));
+	}
+	
+	function acticated($id) {
+		// unset($data ['id']);
+		$data['active'] = 1;
 		$query = $this->db->update('user', $data, array( 'user_id' => $id ));
 		//$this->db->delete('user', array('user_id' => $id));
 	}

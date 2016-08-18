@@ -4,13 +4,14 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="header">
-						<h4 class="title">Management User</h4>
-						<p class="category">List User</p>
+						<h4 class="title">Management User Inactive User</h4>
+						<p class="category">List Inactive User</p>
 					</div>
 					<div class="content table-responsive">
 						<!-- Data Table -->
+						<a class="btn btn-danger" href="<?=site_url()?>tlhp/manus"><i class="fa fa-undo"></i> Kembali Management User</a>
 						<div class="clr"></div>
-						<table id="manus-grid" class="table table-striped table-custom-head t-grid" width="100%">
+						<table id="manus-inactive-grid" class="table table-striped table-custom-head t-grid" width="100%">
 							<thead>
 								<tr class="info">
 									<th class="tsort" width="5%">ID</th>
@@ -29,9 +30,7 @@
 							<button class="btn btn-primary user-modal" data-bind="event: {click: newUser}">
 								<i class="fa fa-plus fa-lg"></i> Tambah User
 							</button>
-							<a  href="<?php echo site_url()?>tlhp/manus/inactive" class="btn btn-danger">
-								<i class="fa fa-edit fa-lg"></i> Aktifasi User
-							</a>
+							
 						</div>
 						<!-- Modal Add / Edit User -->
 						<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">

@@ -431,10 +431,10 @@
 								 EXPORT TO EXCEL
 								</a>
 								
-								<button type="submit" id="kklhp" class="btn btn-wd btn-warning btn-fill btn-margin">
+								<!-- <button type="submit" id="kklhp" class="btn btn-wd btn-warning btn-fill btn-margin">
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-file-pdf-o"></i>
 									</span> EXPORT TO PDF
-								</button>
+								</button> -->
 
 								<button type="submit" id="kklhp" class="btn btn-wd btn-success btn-fill btn-margin">
 									<span class="btn-label"> <i aria-hidden="true" class="fa fa-print"></i>
