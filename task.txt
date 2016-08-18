@@ -12,6 +12,7 @@ Atang
 
 Haidar
 - export to pdf
+- deactive user
 - perhitungan dashboard (belum tindak lanjut) , kerugian negara blun di setor
 - template laporan mengikuti permenpan pdf
 - change post to get from update lhp
