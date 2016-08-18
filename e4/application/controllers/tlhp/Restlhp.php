@@ -227,7 +227,7 @@ class Restlhp extends REST_Controller {
 							"kode_rekomendasi_id" => $rekomendasi["kode_rekomendasi_id"],
 							"uraian_rekomendasi" => $rekomendasi["uraian_rekomendasi"],
 							"kerugian_negara" => $rekomendasi["kerugian_negara"],
-							"nilai_rekomendasi" => $rekomendasi["nilai_rekomendasi"],
+							"nilai_rekomendasi" => isset($rekomendasi["nilai_rekomendasi"]) ? $rekomendasi["nilai_rekomendasi"] : 0,
 							"nama_ppk" => $rekomendasi["nama_ppk"],
 							"nama_pj" => $rekomendasi["nama_pj"],
 							"unit_kerja_id" => $rekomendasi["unit_kerja_id"],

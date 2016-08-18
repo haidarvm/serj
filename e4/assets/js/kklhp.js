@@ -570,7 +570,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 //				console.debug(window.location);
 			},
 			error: function(xhr, msg) {
-				alert("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
+				$.notify("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
 			}
 			}).always(function(){
 				$('#btnSave').removeAttr('disabled');
