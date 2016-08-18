@@ -100,7 +100,7 @@
 						</table>
 						<div class="pull-right">
 							<button class="btn" onclick="alert('Sorry, this fiture undercontruction'); return false;">Cetak</button>
-							<button class="btn">Simpan History Tl</button>
+							<button class="btn" onclick="alert('Maaf, Anda tidak dapat edit ini'); return false;">Simpan History Tl</button>
 						</div>
 							<a class="btn" href="<?php echo base_url().'tlhp/kkt/edit?lhp_id='.$lhp->lhp_id ?>">
 								Kembali ke KKLHP
