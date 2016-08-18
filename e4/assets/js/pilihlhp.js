@@ -40,7 +40,7 @@ define(["jquery", "knockout", "notify"], function($, ko){
 		self.doEdit = function() {
 			var selectedLhp = self.choosenTlhpTitle();
 			if (selectedLhp == undefined) {
-				alert("Lhp tidak boleh kosong");
+				$.notify('Tahun dan Judul Lhp tidak boleh kosong');
 			} else {
 				window.location = site_url+"tlhp/kkt/edit?lhp_id="+selectedLhp.lhp_id;
 			}
@@ -49,9 +49,18 @@ define(["jquery", "knockout", "notify"], function($, ko){
 		self.openMonitoringPage = function() {
 			var selectedLhp = self.choosenTlhpTitle();
 			if (selectedLhp == undefined) {
-				alert("Lhp tidak boleh kosong");
+				$.notify('Tahun dan Judul Lhp tidak boleh kosong');
 			} else {
 				window.location = site_url+"tlhp/kkt/view?lhp_id="+selectedLhp.lhp_id;
+			}
+		}
+		
+		self.openAddTndklanjutPage = function() {
+			var selectedLhp = self.choosenTlhpTitle();
+			if (selectedLhp == undefined) {
+				$.notify('Tahun dan Judul Lhp tidak boleh kosong');
+			} else {
+				window.location = site_url+"tlhp/kkt/add_tndklanjut?lhp_id="+selectedLhp.lhp_id;
 			}
 		}
 		

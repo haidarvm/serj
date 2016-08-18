@@ -46,6 +46,7 @@ class Kkt extends MY_Controller {
 	}
 	
 	public function edit() {
+		//TODO: kasih permission
 		try {
 			$data['pageTitle'] = 'KKLHP' . get_current_app();
 		
@@ -69,7 +70,7 @@ class Kkt extends MY_Controller {
 			$data['totalBlmTl'] = $this->mtl->countBelumTLByRekIds($rekomendasiIds);
 			$data['totalTdkTl'] = 0;
 			$data['action'] = "update";
-			$this->load->tlhp_template('tlhp/kklhp2', $data);			
+			$this->load->tlhp_template('tlhp/kklhp/edit', $data);			
 		} catch (Exception $e) {
 			show_404();
 		}
@@ -742,6 +743,31 @@ class Kkt extends MY_Controller {
 			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
 			// $data['getAll'] = $this->muser->getAllUser();
 			$this->load->tlhp_template('tlhp/kklhp/add', $data);
+		} catch (AccessDeniedException $e) {
+			$this->access_denied();				
+		} catch (Exception $e) {
+			show_404();
+		}
+	}
+	
+	public function add_tndklanjut() {
+		$get = $this->input->get();
+		$lhp = $this->mlhp->getLHP($get['lhp_id']);
+		
+		$allowedGroupId = 3;
+		$currGroupId = $_SESSION['user_level_id'];
+		try {
+			check_permission($allowedGroupId, $currGroupId);
+			check_not_null($lhp);
+			
+			$data['lhp'] = $lhp; 
+			$data['title'] = "Kertas Kerja Laporan Hasil Pengawasan Baru";
+			$data['action'] = "add";
+			$data['kode_temuan'] = $this->mlhp->getAllKodeTemuan();
+			$data['kode_sebab'] = $this->mlhp->getAllKodeSebab();
+			$data['kode_rekomendasi'] = $this->mlhp->getAllKodeRekomendasi();
+			// $data['getAll'] = $this->muser->getAllUser();
+			$this->load->tlhp_template('tlhp/kklhp/add_tndklanjut', $data);
 		} catch (AccessDeniedException $e) {
 			$this->access_denied();				
 		} catch (Exception $e) {

@@ -30,7 +30,7 @@ class Lhp extends MY_Controller {
 	}
 	
 	public function monitoring() {
-		$allowedGroup = 2;
+		$allowedGroup = 2; //admin
 		$currGroup = $_SESSION['user_level_id'];
 		try {
 			check_permission($allowedGroup, $currGroup);
@@ -41,7 +41,20 @@ class Lhp extends MY_Controller {
 		} catch (Exception $e) {
 			$this->access_denied();
 		}
-		
+	}
+	
+	public function add_tndktl() {
+		$allowedGroup = 3; // user
+		$currGroup = $_SESSION['user_level_id'];
+		try {
+			check_permission($allowedGroup, $currGroup);
+			
+			$data ['title'] = "UPDATE LHP";
+			$data ['getAllLHP'] = $this->mlhp->getAllLHP ();
+			$this->load->tlhp_template ( 'tlhp/lhp/form_add_tndktl', $data );	
+		} catch (Exception $e) {
+			$this->access_denied();
+		}
 	}
 	
 }

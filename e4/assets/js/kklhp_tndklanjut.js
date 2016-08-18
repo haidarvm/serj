@@ -1,6 +1,7 @@
 define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2", 
         "notify", "moment"], function($, ko, _, accounting){
 	
+//	console.debug(moment);
 	function RekomendasiViewModel(isFirstRow) {
 		var selfR = this;
 		
@@ -115,7 +116,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		selfR.viewHistoryTl = function(data) {
 			var rekId = data.data.rekomendasiId();
-			window.location = site_url+"tlhp/tndklanjut/view/"+rekId;
+			window.location = site_url+"tlhp/tndklanjut/edit/"+rekId;
 		}
 		
 		selfR.uiMatchedTlTotalAmount = ko.computed(function() {
@@ -309,7 +310,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		self.firstViewHistoryTl = function(data) {
 			var rekId = data.data.firstRekomendasiId();
-			window.location = site_url+"tlhp/tndklanjut/view/"+rekId;
+			window.location = site_url+"tlhp/tndklanjut/edit/"+rekId;
 		}
 		
 		selfK.uiFirstMatchedTlTotalAmount = ko.computed(function() {
@@ -334,6 +335,25 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			kodeTemuan: ko.observable(kodeTemuan),
 			jenisTemuan: ko.observable(jenisTemuan),
 			kertasKerjaTemuan: ko.observableArray([new KertasKerjaTemuanViewModel(1, true)])
+		}
+		
+		selfJ.addRow = function() {
+			var urutan = selfJ.data.kertasKerjaTemuan().length + 1;
+			var kkt = new KertasKerjaTemuanViewModel(urutan, false);
+			kkt.data.jenisTemuan(selfJ.data.kodeTemuan());
+			kkt.data.lhpId($('#lhp_id').val());
+			
+			console.debug(kkt.data.lhpId());
+			selfJ.data.kertasKerjaTemuan.push(kkt);
+		}
+		
+		selfJ.removeRow = function(vModel) {
+			selfJ.data.kertasKerjaTemuan.remove(vModel);
+			for (var i=0; i< selfJ.data.kertasKerjaTemuan().length; i++) {
+				var urutan = i+1;
+				var kertasKerjaTemuan = selfJ.data.kertasKerjaTemuan()[i];
+				kertasKerjaTemuan.urutan(urutan);
+			}
 		}
 		
 		selfJ.totalNilaiTemuan = ko.computed(function(){
@@ -369,9 +389,16 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		var self = this;
 		
 		self.jenisTemuan = ko.observableArray([]);
-		
+		self.data = {
+			totalTemuan: ko.observable(0),
+			totalRekomendasi: ko.observable(0),
+			totalSesuaiRekomendasi: ko.observable(0),
+			totalTdkSesuaiRekomendasi: ko.observable(0),
+			totalBlmTindakLanjut: ko.observable(0),
+			totalTdkTdpTl: ko.observable(0),
+		}
 		self.init = function() {
-			self.loadUnitKerja();
+//			self.loadUnitKerja();
 			self.jenisTemuan.push(new JenisTemuanViewModel('A', 'SISTEM PENGENDALIAN INTERNAL'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('B', 'KEPATUHAN TERHADAP PERATURAN DAN PERUNDANG-UNDANGAN'));
 			self.jenisTemuan.push(new JenisTemuanViewModel('C', 'LAPORAN KEUANGAN'));
@@ -386,6 +413,7 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 		
 		self.loadLhp = function() {
 			var lhp_id = $('#lhp_id').val();
+//			console.debug('lhp_id '+ lhp_id);
 			$.ajax({
 				type: 'GET',
 				data: {'lhp_id': lhp_id, 'kkt': true},
@@ -396,6 +424,9 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 					console.info('attempting to load lhp data');
 				},
 				success: function(msg) {
+//					console.debug(msg);
+//					console.info('return from server lhpId '+ lhp_id);
+//					console.debug(msg.data.kertasKerjaTemuan.length);
 					_.each(self.jenisTemuan(), function(item){
 						var kodeTemuan = item.data.kodeTemuan().toLowerCase();
 						var kkt = _.filter(msg.data.kertasKerjaTemuan, function(kktItem){
@@ -418,7 +449,12 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 										'unit_kerja_id': a.rekomendasi[0].unit_kerja_id,
 										'unit_kerja': a.rekomendasi[0].unit_kerja
 									}
-									
+//									_.each(self.unitKerja(), function(ukerja){
+//										var firstUnitKerjaId = a.rekomendasi[0].unit_kerja_id;
+//										if (ukerja.unit_kerja_id == firstUnitKerjaId) {
+//											firstUnitKerja = ukerja;
+//										}
+//									});
 //									uraianTindakLanjut, tanggalTl, nilaiTl
 									newKkt.initData(a.kertas_kerja_id, a.lhp_id, a.jenis_temuan, null, 
 											a.kode_temuan_id, a.kelompok_temuan, a.sub_kelompok_temuan, a.jenis_kelompok_temuan, 
@@ -459,10 +495,15 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 										var rekView = new RekomendasiViewModel(false);
 										
 										var unitKerja = {
-											"unit_kerja_id" : a.rekomendasi[i].unit_kerja_id,
-											"unit_kerja" : a.rekomendasi[i].unit_kerja,
+												'unit_kerja_id': a.rekomendasi[i].unit_kerja_id,
+												'unit_kerja': a.rekomendasi[i].unit_kerja
 										}
-										
+//										_.each(self.unitKerja(), function(ukerja){
+//											var unitKerjaId = a.rekomendasi[i].unit_kerja_id;
+//											if (ukerja.unit_kerja_id == unitKerjaId) {
+//												unitKerja = ukerja;
+//											}
+//										});
 //										uraianTindakLanjut, tanggalTl, nilaiTl
 										rekView.initData(a.rekomendasi[i].rekomendasi_id, 
 												a.rekomendasi[i].kertas_kerja_id, 
@@ -510,6 +551,126 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			});
 		}
 		
+		
+		self.dataTindakLanjut = {
+			kertasKerjaId: ko.observable(),
+			rekomendasiId: ko.observable(),
+			uraianRekomendasi: ko.observable(),
+			uraianTindakLanjut: ko.observable(),
+			
+			jumlahTl: ko.observable(),
+			uiJumlahTl: ko.observable(),
+			
+			dokument : ko.observableArray([]),
+			tanggalTl: ko.observable(),
+		}
+		
+		self.firstViewTindakTindakLanjut;
+		self.viewTindakLanjut;
+		self.isFirstLineTindakLanjut = false;
+		
+		self.addTindakLanjutFirstLine = function(data){
+			self.resetDataTindakLanjut();
+			self.isFirstLineTindakLanjut = true;
+			self.firstViewTindakLanjut = data;
+			self.dataTindakLanjut.uraianRekomendasi(data.data.firstUraianRekomendasi());
+			$('#formTindakLanjut').modal('show');
+		}
+		
+		self.addTindakLanjut = function(data){
+			self.resetDataTindakLanjut();
+			console.debug(data);
+			self.viewTindakLanjut = data;
+			self.dataTindakLanjut.uraianRekomendasi(data.data.uraianRekomendasi());
+			$('#formTindakLanjut').modal('show');
+		}
+		
+		self.insertTindakLanjut = function() {
+			console.info('insert tindak lanjut was clicked');
+			var errorMsg = [];
+			if (self.dataTindakLanjut.uraianTindakLanjut() == undefined) {
+				errorMsg.push('Uraian tindak lanjut tidak boleh kosong');
+			}
+			
+			if (self.dataTindakLanjut.jumlahTl() == undefined) {
+				errorMsg.push('Nilai tidak boleh kosong');
+			}
+			
+			if (self.dataTindakLanjut.tanggalTl() == undefined) {
+				errorMsg.push('Tanggal tidak boleh kosong');
+			}
+			
+			if (self.dataTindakLanjut.uraianRekomendasi() == undefined) {
+				errorMsg.push('Uraian Rekomendasi tidak boleh kosong');
+			}
+			
+			var sentToServer = {
+				'tindak_lanjut': self.dataTindakLanjut.uraianTindakLanjut(),
+				'nilai': self.dataTindakLanjut.jumlahTl(),
+				'tanggal_tl': self.dataTindakLanjut.tanggalTl(),	
+			}
+			
+			if (errorMsg.length == 0) {
+				if (self.isFirstLineTindakLanjut == true) {
+					self.firstViewTindakLanjut.data.firstUraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
+					self.firstViewTindakLanjut.data.firstJumlahTl(self.dataTindakLanjut.jumlahTl());
+					self.firstViewTindakLanjut.data.firstTanggalTl(self.dataTindakLanjut.tanggalTl());
+					self.firstViewTindakLanjut.data.isFirstNewTl(true);
+					sentToServer.rekomendasi_id = self.firstViewTindakLanjut.data.firstRekomendasiId();
+				} else {
+					console.debug(self.viewTindakLanjut);
+					self.viewTindakLanjut.data.uraianTindakLanjut(self.dataTindakLanjut.uraianTindakLanjut());
+					self.viewTindakLanjut.data.jumlahTl(self.dataTindakLanjut.jumlahTl());
+					self.viewTindakLanjut.data.tanggalTl(self.dataTindakLanjut.tanggalTl());
+					self.viewTindakLanjut.data.isNewTl(true);
+					
+					sentToServer.rekomendasi_id = self.viewTindakLanjut.data.firstRekomendasiId();
+//					console.debug(self.viewTindakLanjut.data.uraianTindakLanjut());
+//					console.debug(self.viewTindakLanjut.data.jumlahTl());
+//					console.debug(self.viewTindakLanjut.data.tanggalTl());
+				}
+				
+				self.postTndkLanjut(sentToServer);
+				self.isFirstLineTindakLanjut = false;
+				console.debug(sentToServer);
+			} else {
+				$("#notify").notify("Data belum terisi semua, silahkan lenkapi", "alert alert-error");
+			}
+			
+		}
+		
+		self.postTndkLanjut = function(postData) {
+			console.info('post tindak lnjut');
+			$.ajax({
+				type: 'POST',
+				data: JSON.stringify(postData),
+				contentType: 'application/json',
+				url: site_url + "tlhp/restlhp/tndklanjut",
+				beforeSend: function(){
+				console.info('attempting to contact server to save data kklhp');
+				$('#btnSave').attr('disabled', 'disabled');
+			},
+			success: function(data) {
+				$.notify("Data sudah disimpan", "success");
+				$('#formTindakLanjut').modal('hide');
+			},
+			error: function(xhr, msg) {
+				$.notify("Maaf sistem sedang mengalami gangguan, silahkan hubungi Administrator", "error");
+			}
+			}).always(function(){
+				$('#btnSave').removeAttr('disabled');
+			});
+		}
+		
+		self.resetDataTindakLanjut = function() {
+			self.dataTindakLanjut.uraianRekomendasi(null);
+			self.dataTindakLanjut.uraianTindakLanjut(null);
+			self.dataTindakLanjut.jumlahTl(null);
+			self.dataTindakLanjut.uiJumlahTl(null);
+			self.dataTindakLanjut.dokument([]);
+			self.dataTindakLanjut.tanggalTl(null);
+		}
+		
 		self.totalNilaiTemuan = ko.computed(function() {
 			var totalNilaiTemuan = 0;
 			_.each(self.jenisTemuan(), function(item){
@@ -524,30 +685,212 @@ define(["jquery", "knockout","underscore", "accounting",  "bootstrap","select2",
 			return accounting.formatMoney(totalNilaiTemuan, "Rp", 0, ".", ",");
 		});
 		
-		self.unitKerja = ko.observableArray([]);
-		self.loadUnitKerja = function() {
-			$.ajax({
-				type: 'GET',
-				contentType: 'application/json',
-				url: site_url + "tlhp/restlhp/unitkerja",
-				beforeSend: function(){
-					console.info('attempting to contact server to get data unitkerja');
-				},
-				success: function(data) {
-					var unitKerja = data.data;
-					_.each(unitKerja, function(item){
-						self.unitKerja.push(item);
-					});
-				},
-				error: function(xhr, msg) {
-					alert("Internal Server Error..");
-				}
-			});
-		}
-		
+		self.totalNilaiRekomendasi = ko.computed(function(){
+			
+		});
 	} // end mainViewModel
 	
 	var vm = new MainViewModel();
+	
+	//TODO: kode dibawah masih banyak yang duplicate,
+	// sederhanakan lagi ya
+	ko.bindingHandlers.kodeTemuan = {
+		init: function(element, valueAccessor, allBindings, s, te) {
+			var options = {
+					ajax: {
+						action: 'GET',
+						dataType: 'json',
+						url: site_url + "tlhp/restlhp/codtemuan",
+						success: function() {
+							console.info('success');
+						}, 
+						processResults: function(data, params) {
+							var rData = [];
+							for (var i=0; i<data.data.length; i++) {
+								var item = {
+									id: data.data[i].kode_temuan_id,
+									text: data.data[i].kode_temuan+": "+data.data[i].deskripsi
+								}
+								rData.push(item);
+							}
+							
+							return {
+							    results: rData,
+							    pagination: {
+							      more: data.more
+							    }
+							};
+						},
+						error: function(e) {
+							console.info('error');
+						}
+					}	
+			}
+			
+			var kodeTemuanId = allBindings().value();
+			var uiKodeTemuan = allBindings().uiKodeTemuan();
+			if (kodeTemuanId != undefined && uiKodeTemuan != undefined) {
+				options.data = [{id: kodeTemuanId, text: uiKodeTemuan}];
+				$(element).select2(options).val(1);
+			} else {
+				$(element).select2(options);
+			}
+		},
+	}
+	
+	ko.bindingHandlers.kodeSebab = {
+		init: function(element, valueAccessor, allBindings) {
+			var options = {
+					ajax: {
+						action: 'GET',
+						dataType: 'json',
+						url: site_url + "tlhp/restlhp/codsebab",
+						success: function() {
+							console.info('success');
+						}, 
+						processResults: function(data, params) {
+							var rData = [];
+							for (var i=0; i<data.data.length; i++) {
+								var item = {
+									id: data.data[i].kode_sebab_id,
+									text: data.data[i].kode_sebab+': '+ data.data[i].uraian_sebab
+								}
+								rData.push(item);
+							}
+							
+							return {
+							    results: rData,
+							    pagination: {
+							      more: data.more
+							    }
+							};
+						},
+						error: function(e) {
+							console.info('error');
+						}
+					}	
+			}
+			
+			var uiKodeSebab = allBindings().uiKodeSebab();
+			var kodeSebabId = allBindings().value();
+			console.debug('uiKodeSebab: '+ uiKodeSebab);
+			console.debug('kodeSebabId: '+ kodeSebabId);
+			
+			var autoCompleteUraian = function(kodeSebabId) {
+				console.debug('autocomplete with id '+ kodeSebabId);
+				
+			}
+			
+			var $select2;
+			if (kodeSebabId != undefined) {
+				options.data = [{id: kodeSebabId, text: uiKodeSebab}];
+				$select2 = $(element).select2(options).val(kodeSebabId);
+			} else {
+				$select2 = $(element).select2(options);
+			}
+			
+			$select2.on('select2:select', function(evt){
+				var id = $(element).val();
+				$.ajax({
+					action: 'GET',
+					data: {'kode_sebab_id': id},
+					dataType: 'json',
+					url: site_url + "tlhp/restlhp/getcodesebab",
+					beforeSend: function() {
+						allBindings().uraianSebab('Please wait..');
+					},
+					success: function(data) {
+						allBindings().uraianSebab(data.data.uraian_sebab);
+					}, 
+					error: function(e) {
+						console.info('error');
+					}
+				})
+			});
+			
+		}
+	}
+	
+
+	$(document).ready(function() {
+	  $(".select-kode").select2();
+	});
+	
+	ko.bindingHandlers.kodeRekomendasi = {
+			init: function(element, valueAccessor, allBindings) {
+				var options = {
+						ajax: {
+						action: 'GET',
+						dataType: 'json',
+						url: site_url + "tlhp/restlhp/codrekomendasi",
+						success: function(msg) {
+							console.info('success');
+							console.debug(msg.data);
+						}, 
+						processResults: function(data, params) {
+							var rData = [];
+							for (var i=0; i<data.data.length; i++) {
+								var item = {
+									id: data.data[i].kode_rekomendasi_id,
+									text: data.data[i].kode_rekomendasi+': '+data.data[i].uraian_rekomendasi
+								}
+								rData.push(item);
+							}
+							
+							return {
+							    results: rData,
+							    pagination: {
+							      more: data.more
+							    }
+							};
+						},
+						error: function(e) {
+							console.info('error');
+						}
+					}	
+				}
+				
+				var rowRekomendasiId = allBindings().value();
+				var kodeRekomendasi = allBindings().uiKodeRekomendasi();
+				if (rowRekomendasiId != undefined) {
+					options.data = [{id: rowRekomendasiId, text: kodeRekomendasi}];
+					$(element).select2(options);
+				} else {
+					$(element).select2(options);
+				}
+			}
+	}
+	
+	ko.bindingHandlers.priceformat = {
+		init: function(element, valueAccessor, allBindings) {
+			$(element).on('blur', function(){
+				var originalVal = allBindings().value();
+				if (originalVal == undefined) {
+					originalVal = $(this).val();
+					allBindings().originalNumber(originalVal);
+					var formatedVal = accounting.formatMoney(originalVal, "Rp", 0, ".", ",")
+					allBindings().value(formatedVal);
+				} else {
+					var unformat = accounting.unformat(originalVal, ",");
+					allBindings().originalNumber(unformat);
+					var formatedVal = accounting.formatMoney(unformat, "Rp", 0, ".", ",")
+					allBindings().value(formatedVal);
+				}
+				
+				
+			});
+		}
+	}
+//	ko.bindingHandlers.priceformat = {
+//		init: function(element, valueAccessor, allBindings) {
+//			$(element).priceFormat({
+//			    prefix: 'Rp.',
+//			    centsSeparator: ',',
+//			    thousandsSeparator: '.'
+//			});
+//		}
+//	}
+	
 	
 	$(function(){
 	

@@ -700,6 +700,25 @@ class Restlhp extends REST_Controller {
 		$this->response($dataResponse, 200);
 	}
 	
+	public function tndklanjut_post() {
+		$post = $this->post();
+		$newRowTindakLanjut = array(array(
+			'rekomendasi_id' => $post['rekomendasi_id'],
+			'tindak_lanjut' => $post['tindak_lanjut'],
+			'nilai' => $post['nilai'],
+			'tanggal_tl' => sqlDateFormat($post['tanggal_tl']),
+			'created_by' => $this->session->userdata('user_id')
+		));
+		
+		$this->load->model('Mlhp', 'mlhp');
+		$this->mlhp->insertBatchTindakLanjut($newRowTindakLanjut);
+		
+		$dataResponse = array(
+			'data'=> $newRowTindakLanjut,
+			'message'=> 'Data sudah disimpan'
+		);
+		$this->response($dataResponse, 200);
+	}
 //	public function test_post() {
 //		$postTeam = $this->post('childs');
 //		
