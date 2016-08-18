@@ -95,7 +95,7 @@ var site_url = "<?=base_url()?>";
 					<li <?=$this->uri->segment(2)  == 'menusa' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/menusa"> <i class="ti-dashboard"></i>
 							<p title="Dashboard">Dashboard</p>
 					</a></li>
-					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/pilihlhp"> <i class="ti-new-window"></i>
+					<li <?=$this->uri->segment(2)  == 'pilihlhp' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/lhp/monitoring"> <i class="ti-new-window"></i>
 							<p title="Update LHP">Monitoring TL</p>
 					</a></li>
 					<li <?=$this->uri->segment(2)  == 'template' ? 'class="active"' : '' ?>><a href="<?=site_url();?>tlhp/template"> <i class="ti-agenda"></i>

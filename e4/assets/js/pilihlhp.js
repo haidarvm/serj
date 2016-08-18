@@ -46,6 +46,15 @@ define(["jquery", "knockout", "notify"], function($, ko){
 			}
 		}
 		
+		self.openMonitoringPage = function() {
+			var selectedLhp = self.choosenTlhpTitle();
+			if (selectedLhp == undefined) {
+				alert("Lhp tidak boleh kosong");
+			} else {
+				window.location = site_url+"tlhp/kkt/view?lhp_id="+selectedLhp.lhp_id;
+			}
+		}
+		
 		self.init = function() {
 			if (self.choosenYear() != undefined) {
 				var reqYear = self.choosenYear();

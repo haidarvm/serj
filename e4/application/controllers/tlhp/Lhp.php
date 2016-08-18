@@ -29,4 +29,19 @@ class Lhp extends MY_Controller {
 		}
 	}
 	
+	public function monitoring() {
+		$allowedGroup = 2;
+		$currGroup = $_SESSION['user_level_id'];
+		try {
+			check_permission($allowedGroup, $currGroup);
+			
+			$data ['title'] = "UPDATE LHP";
+			$data ['getAllLHP'] = $this->mlhp->getAllLHP ();
+			$this->load->tlhp_template ( 'tlhp/lhp/form_monitoring', $data );	
+		} catch (Exception $e) {
+			$this->access_denied();
+		}
+		
+	}
+	
 }
